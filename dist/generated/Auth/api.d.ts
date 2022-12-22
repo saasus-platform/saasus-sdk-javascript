@@ -119,36 +119,6 @@ export interface AuthorizationTempCode {
     'code': string;
 }
 /**
- * 中国の寧夏、北京を除く全てのAWSリージョンが選択可能です。
- * @export
- * @enum {string}
- */
-export declare const AwsRegion: {
-    readonly UsEast1: "us-east-1";
-    readonly UsEast2: "us-east-2";
-    readonly UsWest1: "us-west-1";
-    readonly UsWest2: "us-west-2";
-    readonly AfSouth1: "af-south-1";
-    readonly ApEast1: "ap-east-1";
-    readonly ApSouth1: "ap-south-1";
-    readonly ApNortheast1: "ap-northeast-1";
-    readonly ApNortheast2: "ap-northeast-2";
-    readonly ApNortheast3: "ap-northeast-3";
-    readonly ApSoutheast1: "ap-southeast-1";
-    readonly ApSoutheast2: "ap-southeast-2";
-    readonly ApSoutheast3: "ap-southeast-3";
-    readonly CaCentral1: "ca-central-1";
-    readonly EuCentral1: "eu-central-1";
-    readonly EuNorth1: "eu-north-1";
-    readonly EuSouth1: "eu-south-1";
-    readonly EuWest1: "eu-west-1";
-    readonly EuWest2: "eu-west-2";
-    readonly EuWest3: "eu-west-3";
-    readonly MeSouth1: "me-south-1";
-    readonly SaEast1: "sa-east-1";
-};
-export declare type AwsRegion = typeof AwsRegion[keyof typeof AwsRegion];
-/**
  *
  * @export
  * @interface BasicInfo
@@ -190,6 +160,12 @@ export interface BasicInfo {
      * @memberof BasicInfo
      */
     'default_domain_name': string;
+    /**
+     * 認証メールの送信元メールアドレス
+     * @type {string}
+     * @memberof BasicInfo
+     */
+    'from_email_address': string;
 }
 /**
  *
@@ -249,7 +225,7 @@ export interface CreateTenantUserParam {
      */
     'email': string;
     /**
-     * 属性情報（SaaSus コンソールでテナント属性定義を行い設定した情報）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定した情報）
      * @type {{ [key: string]: any; }}
      * @memberof CreateTenantUserParam
      */
@@ -521,25 +497,6 @@ export interface Envs {
 /**
  *
  * @export
- * @interface EventBridgeSettings
- */
-export interface EventBridgeSettings {
-    /**
-     * AWSアカウントID
-     * @type {string}
-     * @memberof EventBridgeSettings
-     */
-    'aws_account_id': string;
-    /**
-     *
-     * @type {AwsRegion}
-     * @memberof EventBridgeSettings
-     */
-    'aws_region': AwsRegion;
-}
-/**
- *
- * @export
  * @interface IdentityProviderProps
  */
 export interface IdentityProviderProps {
@@ -780,11 +737,11 @@ export interface PlanHistory {
      */
     'plan_id': string;
     /**
-     * 登録日
-     * @type {string}
+     * 登録日時
+     * @type {number}
      * @memberof PlanHistory
      */
-    'plan_applied_at': string;
+    'plan_applied_at': number;
 }
 /**
  * reCAPTCHA認証設定 ※ 未提供の機能のため、変更・保存はできません
@@ -1002,11 +959,11 @@ export interface Tenant {
      */
     'next_plan_id'?: string;
     /**
-     * 次回料金プラン開始日
-     * @type {string}
+     * 次回料金プラン開始日時
+     * @type {number}
      * @memberof Tenant
      */
-    'using_next_plan_from'?: string;
+    'using_next_plan_from'?: number;
     /**
      * 事務管理部門スタッフメールアドレス
      * @type {string}
@@ -1079,11 +1036,11 @@ export interface TenantProps {
      */
     'next_plan_id'?: string;
     /**
-     * 次回料金プラン開始日
-     * @type {string}
+     * 次回料金プラン開始日時
+     * @type {number}
      * @memberof TenantProps
      */
-    'using_next_plan_from'?: string;
+    'using_next_plan_from'?: number;
     /**
      * 事務管理部門スタッフメールアドレス
      * @type {string}
@@ -1116,6 +1073,12 @@ export interface UpdateBasicInfoParam {
      * @memberof UpdateBasicInfoParam
      */
     'domain_name': string;
+    /**
+     * 認証メールの送信元メールアドレス
+     * @type {string}
+     * @memberof UpdateBasicInfoParam
+     */
+    'from_email_address': string;
 }
 /**
  *
@@ -1384,7 +1347,7 @@ export interface UpdateSoftwareTokenParam {
  */
 export interface UpdateTenantUserParam {
     /**
-     * 属性情報（SaaSus コンソールでテナント属性定義を行い設定した情報）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定した情報）
      * @type {{ [key: string]: any; }}
      * @memberof UpdateTenantUserParam
      */
@@ -1423,7 +1386,7 @@ export interface User {
      */
     'email': string;
     /**
-     * 属性情報（SaaSus コンソールでテナント属性定義を行い設定された情報を取得します）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）
      * @type {{ [key: string]: any; }}
      * @memberof User
      */
@@ -1774,20 +1737,6 @@ export declare class AuthInfoApi extends BaseAPI {
  */
 export declare const BasicInfoApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-     * @summary イベント連携のテスト送信
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    createEventBridgeTestEvent: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-     * @summary イベント連携設定を削除
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    deleteEventBridgeSettings: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
      * 各種通知メールテンプレートを取得します。
      * @summary 通知メールテンプレートを取得
      * @param {*} [options] Override http request option.
@@ -1815,21 +1764,6 @@ export declare const BasicInfoApiAxiosParamCreator: (configuration?: Configurati
      * @throws {RequiredError}
      */
     getCustomizePages: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-     * @summary イベント連携設定を取得
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getEventBridgeSettings: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-     * @summary イベント連携設定を更新
-     * @param {EventBridgeSettings} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    saveEventBridgeSettings: (body?: EventBridgeSettings | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。
      * @summary 基本設定情報の更新
@@ -1869,20 +1803,6 @@ export declare const BasicInfoApiAxiosParamCreator: (configuration?: Configurati
  */
 export declare const BasicInfoApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-     * @summary イベント連携のテスト送信
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    createEventBridgeTestEvent(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-     * @summary イベント連携設定を削除
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    deleteEventBridgeSettings(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
-    /**
      * 各種通知メールテンプレートを取得します。
      * @summary 通知メールテンプレートを取得
      * @param {*} [options] Override http request option.
@@ -1910,21 +1830,6 @@ export declare const BasicInfoApiFp: (configuration?: Configuration | undefined)
      * @throws {RequiredError}
      */
     getCustomizePages(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CustomizePages>>;
-    /**
-     * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-     * @summary イベント連携設定を取得
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getEventBridgeSettings(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EventBridgeSettings>>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-     * @summary イベント連携設定を更新
-     * @param {EventBridgeSettings} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    saveEventBridgeSettings(body?: EventBridgeSettings | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。
      * @summary 基本設定情報の更新
@@ -1964,20 +1869,6 @@ export declare const BasicInfoApiFp: (configuration?: Configuration | undefined)
  */
 export declare const BasicInfoApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-     * @summary イベント連携のテスト送信
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    createEventBridgeTestEvent(options?: any): AxiosPromise<void>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-     * @summary イベント連携設定を削除
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    deleteEventBridgeSettings(options?: any): AxiosPromise<void>;
-    /**
      * 各種通知メールテンプレートを取得します。
      * @summary 通知メールテンプレートを取得
      * @param {*} [options] Override http request option.
@@ -2005,21 +1896,6 @@ export declare const BasicInfoApiFactory: (configuration?: Configuration | undef
      * @throws {RequiredError}
      */
     getCustomizePages(options?: any): AxiosPromise<CustomizePages>;
-    /**
-     * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-     * @summary イベント連携設定を取得
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getEventBridgeSettings(options?: any): AxiosPromise<EventBridgeSettings>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-     * @summary イベント連携設定を更新
-     * @param {EventBridgeSettings} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    saveEventBridgeSettings(body?: EventBridgeSettings | undefined, options?: any): AxiosPromise<void>;
     /**
      * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。
      * @summary 基本設定情報の更新
@@ -2061,22 +1937,6 @@ export declare const BasicInfoApiFactory: (configuration?: Configuration | undef
  */
 export declare class BasicInfoApi extends BaseAPI {
     /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-     * @summary イベント連携のテスト送信
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    createEventBridgeTestEvent(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-     * @summary イベント連携設定を削除
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    deleteEventBridgeSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-    /**
      * 各種通知メールテンプレートを取得します。
      * @summary 通知メールテンプレートを取得
      * @param {*} [options] Override http request option.
@@ -2108,23 +1968,6 @@ export declare class BasicInfoApi extends BaseAPI {
      * @memberof BasicInfoApi
      */
     getCustomizePages(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CustomizePages, any>>;
-    /**
-     * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-     * @summary イベント連携設定を取得
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    getEventBridgeSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<EventBridgeSettings, any>>;
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-     * @summary イベント連携設定を更新
-     * @param {EventBridgeSettings} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    saveEventBridgeSettings(body?: EventBridgeSettings, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。
      * @summary 基本設定情報の更新

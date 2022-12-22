@@ -136,40 +136,6 @@ export interface AuthorizationTempCode {
     'code': string;
 }
 /**
- * 中国の寧夏、北京を除く全てのAWSリージョンが選択可能です。
- * @export
- * @enum {string}
- */
-
-export const AwsRegion = {
-    UsEast1: 'us-east-1',
-    UsEast2: 'us-east-2',
-    UsWest1: 'us-west-1',
-    UsWest2: 'us-west-2',
-    AfSouth1: 'af-south-1',
-    ApEast1: 'ap-east-1',
-    ApSouth1: 'ap-south-1',
-    ApNortheast1: 'ap-northeast-1',
-    ApNortheast2: 'ap-northeast-2',
-    ApNortheast3: 'ap-northeast-3',
-    ApSoutheast1: 'ap-southeast-1',
-    ApSoutheast2: 'ap-southeast-2',
-    ApSoutheast3: 'ap-southeast-3',
-    CaCentral1: 'ca-central-1',
-    EuCentral1: 'eu-central-1',
-    EuNorth1: 'eu-north-1',
-    EuSouth1: 'eu-south-1',
-    EuWest1: 'eu-west-1',
-    EuWest2: 'eu-west-2',
-    EuWest3: 'eu-west-3',
-    MeSouth1: 'me-south-1',
-    SaEast1: 'sa-east-1'
-} as const;
-
-export type AwsRegion = typeof AwsRegion[keyof typeof AwsRegion];
-
-
-/**
  * 
  * @export
  * @interface BasicInfo
@@ -211,6 +177,12 @@ export interface BasicInfo {
      * @memberof BasicInfo
      */
     'default_domain_name': string;
+    /**
+     * 認証メールの送信元メールアドレス
+     * @type {string}
+     * @memberof BasicInfo
+     */
+    'from_email_address': string;
 }
 /**
  * 
@@ -270,7 +242,7 @@ export interface CreateTenantUserParam {
      */
     'email': string;
     /**
-     * 属性情報（SaaSus コンソールでテナント属性定義を行い設定した情報）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定した情報）
      * @type {{ [key: string]: any; }}
      * @memberof CreateTenantUserParam
      */
@@ -546,25 +518,6 @@ export interface Envs {
 /**
  * 
  * @export
- * @interface EventBridgeSettings
- */
-export interface EventBridgeSettings {
-    /**
-     * AWSアカウントID
-     * @type {string}
-     * @memberof EventBridgeSettings
-     */
-    'aws_account_id': string;
-    /**
-     * 
-     * @type {AwsRegion}
-     * @memberof EventBridgeSettings
-     */
-    'aws_region': AwsRegion;
-}
-/**
- * 
- * @export
  * @interface IdentityProviderProps
  */
 export interface IdentityProviderProps {
@@ -809,11 +762,11 @@ export interface PlanHistory {
      */
     'plan_id': string;
     /**
-     * 登録日
-     * @type {string}
+     * 登録日時
+     * @type {number}
      * @memberof PlanHistory
      */
-    'plan_applied_at': string;
+    'plan_applied_at': number;
 }
 /**
  * reCAPTCHA認証設定 ※ 未提供の機能のため、変更・保存はできません 
@@ -1029,11 +982,11 @@ export interface Tenant {
      */
     'next_plan_id'?: string;
     /**
-     * 次回料金プラン開始日
-     * @type {string}
+     * 次回料金プラン開始日時
+     * @type {number}
      * @memberof Tenant
      */
-    'using_next_plan_from'?: string;
+    'using_next_plan_from'?: number;
     /**
      * 事務管理部門スタッフメールアドレス
      * @type {string}
@@ -1104,11 +1057,11 @@ export interface TenantProps {
      */
     'next_plan_id'?: string;
     /**
-     * 次回料金プラン開始日
-     * @type {string}
+     * 次回料金プラン開始日時
+     * @type {number}
      * @memberof TenantProps
      */
-    'using_next_plan_from'?: string;
+    'using_next_plan_from'?: number;
     /**
      * 事務管理部門スタッフメールアドレス
      * @type {string}
@@ -1141,6 +1094,12 @@ export interface UpdateBasicInfoParam {
      * @memberof UpdateBasicInfoParam
      */
     'domain_name': string;
+    /**
+     * 認証メールの送信元メールアドレス
+     * @type {string}
+     * @memberof UpdateBasicInfoParam
+     */
+    'from_email_address': string;
 }
 /**
  * 
@@ -1412,7 +1371,7 @@ export interface UpdateSoftwareTokenParam {
  */
 export interface UpdateTenantUserParam {
     /**
-     * 属性情報（SaaSus コンソールでテナント属性定義を行い設定した情報）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定した情報）
      * @type {{ [key: string]: any; }}
      * @memberof UpdateTenantUserParam
      */
@@ -1449,7 +1408,7 @@ export interface User {
      */
     'email': string;
     /**
-     * 属性情報（SaaSus コンソールでテナント属性定義を行い設定された情報を取得します）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）
      * @type {{ [key: string]: any; }}
      * @memberof User
      */
@@ -2029,74 +1988,6 @@ export class AuthInfoApi extends BaseAPI {
 export const BasicInfoApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します 
-         * @summary イベント連携のテスト送信
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createEventBridgeTestEvent: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/eventbridge/test-event`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Bearer required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します 
-         * @summary イベント連携設定を削除
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        deleteEventBridgeSettings: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/eventbridge/settings`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Bearer required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * 各種通知メールテンプレートを取得します。
          * @summary 通知メールテンプレートを取得
          * @param {*} [options] Override http request option.
@@ -2226,78 +2117,6 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します 
-         * @summary イベント連携設定を取得
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getEventBridgeSettings: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/eventbridge/settings`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Bearer required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します 
-         * @summary イベント連携設定を更新
-         * @param {EventBridgeSettings} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        saveEventBridgeSettings: async (body?: EventBridgeSettings, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/eventbridge/settings`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Bearer required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -2467,26 +2286,6 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = BasicInfoApiAxiosParamCreator(configuration)
     return {
         /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します 
-         * @summary イベント連携のテスト送信
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async createEventBridgeTestEvent(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createEventBridgeTestEvent(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します 
-         * @summary イベント連携設定を削除
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async deleteEventBridgeSettings(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteEventBridgeSettings(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * 各種通知メールテンプレートを取得します。
          * @summary 通知メールテンプレートを取得
          * @param {*} [options] Override http request option.
@@ -2524,27 +2323,6 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
          */
         async getCustomizePages(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomizePages>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomizePages(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します 
-         * @summary イベント連携設定を取得
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getEventBridgeSettings(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EventBridgeSettings>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getEventBridgeSettings(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します 
-         * @summary イベント連携設定を更新
-         * @param {EventBridgeSettings} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async saveEventBridgeSettings(body?: EventBridgeSettings, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.saveEventBridgeSettings(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2602,24 +2380,6 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
     const localVarFp = BasicInfoApiFp(configuration)
     return {
         /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します 
-         * @summary イベント連携のテスト送信
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createEventBridgeTestEvent(options?: any): AxiosPromise<void> {
-            return localVarFp.createEventBridgeTestEvent(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します 
-         * @summary イベント連携設定を削除
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        deleteEventBridgeSettings(options?: any): AxiosPromise<void> {
-            return localVarFp.deleteEventBridgeSettings(options).then((request) => request(axios, basePath));
-        },
-        /**
          * 各種通知メールテンプレートを取得します。
          * @summary 通知メールテンプレートを取得
          * @param {*} [options] Override http request option.
@@ -2654,25 +2414,6 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
          */
         getCustomizePages(options?: any): AxiosPromise<CustomizePages> {
             return localVarFp.getCustomizePages(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します 
-         * @summary イベント連携設定を取得
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getEventBridgeSettings(options?: any): AxiosPromise<EventBridgeSettings> {
-            return localVarFp.getEventBridgeSettings(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します 
-         * @summary イベント連携設定を更新
-         * @param {EventBridgeSettings} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        saveEventBridgeSettings(body?: EventBridgeSettings, options?: any): AxiosPromise<void> {
-            return localVarFp.saveEventBridgeSettings(body, options).then((request) => request(axios, basePath));
         },
         /**
          * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
@@ -2725,28 +2466,6 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
  */
 export class BasicInfoApi extends BaseAPI {
     /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します 
-     * @summary イベント連携のテスト送信
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    public createEventBridgeTestEvent(options?: AxiosRequestConfig) {
-        return BasicInfoApiFp(this.configuration).createEventBridgeTestEvent(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します 
-     * @summary イベント連携設定を削除
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    public deleteEventBridgeSettings(options?: AxiosRequestConfig) {
-        return BasicInfoApiFp(this.configuration).deleteEventBridgeSettings(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * 各種通知メールテンプレートを取得します。
      * @summary 通知メールテンプレートを取得
      * @param {*} [options] Override http request option.
@@ -2788,29 +2507,6 @@ export class BasicInfoApi extends BaseAPI {
      */
     public getCustomizePages(options?: AxiosRequestConfig) {
         return BasicInfoApiFp(this.configuration).getCustomizePages(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します 
-     * @summary イベント連携設定を取得
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    public getEventBridgeSettings(options?: AxiosRequestConfig) {
-        return BasicInfoApiFp(this.configuration).getEventBridgeSettings(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します 
-     * @summary イベント連携設定を更新
-     * @param {EventBridgeSettings} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BasicInfoApi
-     */
-    public saveEventBridgeSettings(body?: EventBridgeSettings, options?: AxiosRequestConfig) {
-        return BasicInfoApiFp(this.configuration).saveEventBridgeSettings(body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

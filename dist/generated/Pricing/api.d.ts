@@ -91,6 +91,31 @@ export interface MeteringUnitMonthCounts {
 /**
  *
  * @export
+ * @interface MeteringUnitTimestampCount
+ */
+export interface MeteringUnitTimestampCount {
+    /**
+     * 計測ユニット名
+     * @type {string}
+     * @memberof MeteringUnitTimestampCount
+     */
+    'metering_unit_name': string;
+    /**
+     * タイムスタンプ
+     * @type {number}
+     * @memberof MeteringUnitTimestampCount
+     */
+    'timestamp': number;
+    /**
+     * 件数
+     * @type {number}
+     * @memberof MeteringUnitTimestampCount
+     */
+    'count': number;
+}
+/**
+ *
+ * @export
  * @interface ModelError
  */
 export interface ModelError {
@@ -1186,47 +1211,47 @@ export declare type UnitType = typeof UnitType[keyof typeof UnitType];
  * @export
  * @enum {string}
  */
-export declare const UpdateMeteringUnitDateCountMethod: {
+export declare const UpdateMeteringUnitTimestampCountMethod: {
     readonly Add: "add";
     readonly Sub: "sub";
     readonly Direct: "direct";
 };
-export declare type UpdateMeteringUnitDateCountMethod = typeof UpdateMeteringUnitDateCountMethod[keyof typeof UpdateMeteringUnitDateCountMethod];
+export declare type UpdateMeteringUnitTimestampCountMethod = typeof UpdateMeteringUnitTimestampCountMethod[keyof typeof UpdateMeteringUnitTimestampCountMethod];
 /**
  *
  * @export
- * @interface UpdateMeteringUnitDateCountParam
+ * @interface UpdateMeteringUnitTimestampCountNowParam
  */
-export interface UpdateMeteringUnitDateCountParam {
+export interface UpdateMeteringUnitTimestampCountNowParam {
     /**
      *
-     * @type {UpdateMeteringUnitDateCountMethod}
-     * @memberof UpdateMeteringUnitDateCountParam
+     * @type {UpdateMeteringUnitTimestampCountMethod}
+     * @memberof UpdateMeteringUnitTimestampCountNowParam
      */
-    'method': UpdateMeteringUnitDateCountMethod;
+    'method': UpdateMeteringUnitTimestampCountMethod;
     /**
      * 件数
      * @type {number}
-     * @memberof UpdateMeteringUnitDateCountParam
+     * @memberof UpdateMeteringUnitTimestampCountNowParam
      */
     'count': number;
 }
 /**
  *
  * @export
- * @interface UpdateMeteringUnitDateCountTodayParam
+ * @interface UpdateMeteringUnitTimestampCountParam
  */
-export interface UpdateMeteringUnitDateCountTodayParam {
+export interface UpdateMeteringUnitTimestampCountParam {
     /**
      *
-     * @type {UpdateMeteringUnitDateCountMethod}
-     * @memberof UpdateMeteringUnitDateCountTodayParam
+     * @type {UpdateMeteringUnitTimestampCountMethod}
+     * @memberof UpdateMeteringUnitTimestampCountParam
      */
-    'method': UpdateMeteringUnitDateCountMethod;
+    'method': UpdateMeteringUnitTimestampCountMethod;
     /**
      * 件数
      * @type {number}
-     * @memberof UpdateMeteringUnitDateCountTodayParam
+     * @memberof UpdateMeteringUnitTimestampCountParam
      */
     'count': number;
 }
@@ -1249,24 +1274,24 @@ export interface UpdatePricingPlansUsedParam {
  */
 export declare const MeteringApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * 指定した日付のメータリングユニットカウントを削除します。
-     * @summary 指定した日付のメータリングユニットカウントを削除
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
+     * @param {number} timestamp タイムスタンプ
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteMeteringUnitDateCount: (tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    deleteMeteringUnitTimestampCount: (tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 当日のメータリングユニットカウントを削除します。
-     * @summary 当日のメータリングユニットカウントを削除
+     * 現在時刻のメータリングユニットカウントを削除します。
+     * @summary 現在時刻のメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteMeteringUnitDateCountToday: (tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    deleteMeteringUnitTimestampCountNow: (tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 指定した日付のメータリングユニットカウントを取得します。
      * @summary 指定した日付のメータリングユニットカウントを取得
@@ -1324,26 +1349,26 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth: (tenantId: string, month: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 指定した日付のメータリングユニットカウントを更新します。
-     * @summary 指定した日付のメータリングユニットカウントを更新
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
-     * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+     * @param {number} timestamp タイムスタンプ
+     * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateMeteringUnitDateCount: (tenantId: string, meteringUnitName: string, date: string, updateMeteringUnitDateCountParam?: UpdateMeteringUnitDateCountParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateMeteringUnitTimestampCount: (tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 当日のメータリングユニットカウントを更新します。
-     * @summary 当日のメータリングユニットカウントを更新
+     * 現在時刻のメータリングユニットカウントを更新します。
+     * @summary 現在時刻のメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+     * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateMeteringUnitDateCountToday: (tenantId: string, meteringUnitName: string, updateMeteringUnitDateCountTodayParam?: UpdateMeteringUnitDateCountTodayParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateMeteringUnitTimestampCountNow: (tenantId: string, meteringUnitName: string, updateMeteringUnitTimestampCountNowParam?: UpdateMeteringUnitTimestampCountNowParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * MeteringApi - functional programming interface
@@ -1351,24 +1376,24 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
  */
 export declare const MeteringApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * 指定した日付のメータリングユニットカウントを削除します。
-     * @summary 指定した日付のメータリングユニットカウントを削除
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
+     * @param {number} timestamp タイムスタンプ
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteMeteringUnitDateCount(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * 当日のメータリングユニットカウントを削除します。
-     * @summary 当日のメータリングユニットカウントを削除
+     * 現在時刻のメータリングユニットカウントを削除します。
+     * @summary 現在時刻のメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteMeteringUnitDateCountToday(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * 指定した日付のメータリングユニットカウントを取得します。
      * @summary 指定した日付のメータリングユニットカウントを取得
@@ -1426,26 +1451,26 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitMonthCounts>>;
     /**
-     * 指定した日付のメータリングユニットカウントを更新します。
-     * @summary 指定した日付のメータリングユニットカウントを更新
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
-     * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+     * @param {number} timestamp タイムスタンプ
+     * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateMeteringUnitDateCount(tenantId: string, meteringUnitName: string, date: string, updateMeteringUnitDateCountParam?: UpdateMeteringUnitDateCountParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDateCount>>;
+    updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitTimestampCount>>;
     /**
-     * 当日のメータリングユニットカウントを更新します。
-     * @summary 当日のメータリングユニットカウントを更新
+     * 現在時刻のメータリングユニットカウントを更新します。
+     * @summary 現在時刻のメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+     * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateMeteringUnitDateCountToday(tenantId: string, meteringUnitName: string, updateMeteringUnitDateCountTodayParam?: UpdateMeteringUnitDateCountTodayParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDateCount>>;
+    updateMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, updateMeteringUnitTimestampCountNowParam?: UpdateMeteringUnitTimestampCountNowParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitTimestampCount>>;
 };
 /**
  * MeteringApi - factory interface
@@ -1453,24 +1478,24 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
  */
 export declare const MeteringApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * 指定した日付のメータリングユニットカウントを削除します。
-     * @summary 指定した日付のメータリングユニットカウントを削除
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
+     * @param {number} timestamp タイムスタンプ
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteMeteringUnitDateCount(tenantId: string, meteringUnitName: string, date: string, options?: any): AxiosPromise<void>;
+    deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: any): AxiosPromise<void>;
     /**
-     * 当日のメータリングユニットカウントを削除します。
-     * @summary 当日のメータリングユニットカウントを削除
+     * 現在時刻のメータリングユニットカウントを削除します。
+     * @summary 現在時刻のメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteMeteringUnitDateCountToday(tenantId: string, meteringUnitName: string, options?: any): AxiosPromise<void>;
+    deleteMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, options?: any): AxiosPromise<void>;
     /**
      * 指定した日付のメータリングユニットカウントを取得します。
      * @summary 指定した日付のメータリングユニットカウントを取得
@@ -1528,26 +1553,26 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: any): AxiosPromise<MeteringUnitMonthCounts>;
     /**
-     * 指定した日付のメータリングユニットカウントを更新します。
-     * @summary 指定した日付のメータリングユニットカウントを更新
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
-     * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+     * @param {number} timestamp タイムスタンプ
+     * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateMeteringUnitDateCount(tenantId: string, meteringUnitName: string, date: string, updateMeteringUnitDateCountParam?: UpdateMeteringUnitDateCountParam | undefined, options?: any): AxiosPromise<MeteringUnitDateCount>;
+    updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam | undefined, options?: any): AxiosPromise<MeteringUnitTimestampCount>;
     /**
-     * 当日のメータリングユニットカウントを更新します。
-     * @summary 当日のメータリングユニットカウントを更新
+     * 現在時刻のメータリングユニットカウントを更新します。
+     * @summary 現在時刻のメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+     * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateMeteringUnitDateCountToday(tenantId: string, meteringUnitName: string, updateMeteringUnitDateCountTodayParam?: UpdateMeteringUnitDateCountTodayParam | undefined, options?: any): AxiosPromise<MeteringUnitDateCount>;
+    updateMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, updateMeteringUnitTimestampCountNowParam?: UpdateMeteringUnitTimestampCountNowParam | undefined, options?: any): AxiosPromise<MeteringUnitTimestampCount>;
 };
 /**
  * MeteringApi - object-oriented interface
@@ -1557,26 +1582,26 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
  */
 export declare class MeteringApi extends BaseAPI {
     /**
-     * 指定した日付のメータリングユニットカウントを削除します。
-     * @summary 指定した日付のメータリングユニットカウントを削除
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
+     * @param {number} timestamp タイムスタンプ
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    deleteMeteringUnitDateCount(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 当日のメータリングユニットカウントを削除します。
-     * @summary 当日のメータリングユニットカウントを削除
+     * 現在時刻のメータリングユニットカウントを削除します。
+     * @summary 現在時刻のメータリングユニットカウントを削除
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    deleteMeteringUnitDateCountToday(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * 指定した日付のメータリングユニットカウントを取得します。
      * @summary 指定した日付のメータリングユニットカウントを取得
@@ -1640,28 +1665,28 @@ export declare class MeteringApi extends BaseAPI {
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCounts, any>>;
     /**
-     * 指定した日付のメータリングユニットカウントを更新します。
-     * @summary 指定した日付のメータリングユニットカウントを更新
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {string} date 日
-     * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+     * @param {number} timestamp タイムスタンプ
+     * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    updateMeteringUnitDateCount(tenantId: string, meteringUnitName: string, date: string, updateMeteringUnitDateCountParam?: UpdateMeteringUnitDateCountParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
+    updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any>>;
     /**
-     * 当日のメータリングユニットカウントを更新します。
-     * @summary 当日のメータリングユニットカウントを更新
+     * 現在時刻のメータリングユニットカウントを更新します。
+     * @summary 現在時刻のメータリングユニットカウントを更新
      * @param {string} tenantId テナントID
      * @param {string} meteringUnitName 計測ユニット名
-     * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+     * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    updateMeteringUnitDateCountToday(tenantId: string, meteringUnitName: string, updateMeteringUnitDateCountTodayParam?: UpdateMeteringUnitDateCountTodayParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
+    updateMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, updateMeteringUnitTimestampCountNowParam?: UpdateMeteringUnitTimestampCountNowParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any>>;
 }
 /**
  * PricingMenusApi - axios parameter creator

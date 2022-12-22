@@ -12,7 +12,7 @@
     var date__default = /*#__PURE__*/_interopDefaultLegacy(date);
 
     /* tslint:disable */
-    const BASE_PATH$2 = "https://api.saasus.io/v0/auth".replace(/\/+$/, "");
+    const BASE_PATH$2 = "https://api.saasus.io/v1/auth".replace(/\/+$/, "");
     /**
      *
      * @export
@@ -458,62 +458,6 @@
     const BasicInfoApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-             * @summary イベント連携のテスト送信
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            createEventBridgeTestEvent: async (options = {}) => {
-                const localVarPath = `/eventbridge/test-event`;
-                // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
-                let baseOptions;
-                if (configuration) {
-                    baseOptions = configuration.baseOptions;
-                }
-                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
-                const localVarHeaderParameter = {};
-                const localVarQueryParameter = {};
-                // authentication Bearer required
-                // http bearer authentication required
-                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
-                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
-                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                return {
-                    url: toPathString$2(localVarUrlObj),
-                    options: localVarRequestOptions,
-                };
-            },
-            /**
-             * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-             * @summary イベント連携設定を削除
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            deleteEventBridgeSettings: async (options = {}) => {
-                const localVarPath = `/eventbridge/settings`;
-                // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
-                let baseOptions;
-                if (configuration) {
-                    baseOptions = configuration.baseOptions;
-                }
-                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
-                const localVarHeaderParameter = {};
-                const localVarQueryParameter = {};
-                // authentication Bearer required
-                // http bearer authentication required
-                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
-                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
-                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                return {
-                    url: toPathString$2(localVarUrlObj),
-                    options: localVarRequestOptions,
-                };
-            },
-            /**
              * 各種通知メールテンプレートを取得します。
              * @summary 通知メールテンプレートを取得
              * @param {*} [options] Override http request option.
@@ -620,65 +564,6 @@
                 setSearchParams$2(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                return {
-                    url: toPathString$2(localVarUrlObj),
-                    options: localVarRequestOptions,
-                };
-            },
-            /**
-             * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-             * @summary イベント連携設定を取得
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            getEventBridgeSettings: async (options = {}) => {
-                const localVarPath = `/eventbridge/settings`;
-                // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
-                let baseOptions;
-                if (configuration) {
-                    baseOptions = configuration.baseOptions;
-                }
-                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
-                const localVarHeaderParameter = {};
-                const localVarQueryParameter = {};
-                // authentication Bearer required
-                // http bearer authentication required
-                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
-                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
-                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                return {
-                    url: toPathString$2(localVarUrlObj),
-                    options: localVarRequestOptions,
-                };
-            },
-            /**
-             * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-             * @summary イベント連携設定を更新
-             * @param {EventBridgeSettings} [body]
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            saveEventBridgeSettings: async (body, options = {}) => {
-                const localVarPath = `/eventbridge/settings`;
-                // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
-                let baseOptions;
-                if (configuration) {
-                    baseOptions = configuration.baseOptions;
-                }
-                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
-                const localVarHeaderParameter = {};
-                const localVarQueryParameter = {};
-                // authentication Bearer required
-                // http bearer authentication required
-                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
-                localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
-                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$2(body, localVarRequestOptions, configuration);
                 return {
                     url: toPathString$2(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -818,26 +703,6 @@
         const localVarAxiosParamCreator = BasicInfoApiAxiosParamCreator(configuration);
         return {
             /**
-             * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-             * @summary イベント連携のテスト送信
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            async createEventBridgeTestEvent(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.createEventBridgeTestEvent(options);
-                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
-            },
-            /**
-             * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-             * @summary イベント連携設定を削除
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            async deleteEventBridgeSettings(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteEventBridgeSettings(options);
-                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
-            },
-            /**
              * 各種通知メールテンプレートを取得します。
              * @summary 通知メールテンプレートを取得
              * @param {*} [options] Override http request option.
@@ -875,27 +740,6 @@
              */
             async getCustomizePages(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomizePages(options);
-                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
-            },
-            /**
-             * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-             * @summary イベント連携設定を取得
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            async getEventBridgeSettings(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.getEventBridgeSettings(options);
-                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
-            },
-            /**
-             * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-             * @summary イベント連携設定を更新
-             * @param {EventBridgeSettings} [body]
-             * @param {*} [options] Override http request option.
-             * @throws {RequiredError}
-             */
-            async saveEventBridgeSettings(body, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.saveEventBridgeSettings(body, options);
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
@@ -952,26 +796,6 @@
      */
     class BasicInfoApi extends BaseAPI$2 {
         /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定をテストする為のテストイベントを送信します
-         * @summary イベント連携のテスト送信
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         * @memberof BasicInfoApi
-         */
-        createEventBridgeTestEvent(options) {
-            return BasicInfoApiFp(this.configuration).createEventBridgeTestEvent(options).then((request) => request(this.axios, this.basePath));
-        }
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します
-         * @summary イベント連携設定を削除
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         * @memberof BasicInfoApi
-         */
-        deleteEventBridgeSettings(options) {
-            return BasicInfoApiFp(this.configuration).deleteEventBridgeSettings(options).then((request) => request(this.axios, this.basePath));
-        }
-        /**
          * 各種通知メールテンプレートを取得します。
          * @summary 通知メールテンプレートを取得
          * @param {*} [options] Override http request option.
@@ -1010,27 +834,6 @@
          */
         getCustomizePages(options) {
             return BasicInfoApiFp(this.configuration).getCustomizePages(options).then((request) => request(this.axios, this.basePath));
-        }
-        /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します
-         * @summary イベント連携設定を取得
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         * @memberof BasicInfoApi
-         */
-        getEventBridgeSettings(options) {
-            return BasicInfoApiFp(this.configuration).getEventBridgeSettings(options).then((request) => request(this.axios, this.basePath));
-        }
-        /**
-         * 監視対象となっている全ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します
-         * @summary イベント連携設定を更新
-         * @param {EventBridgeSettings} [body]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         * @memberof BasicInfoApi
-         */
-        saveEventBridgeSettings(body, options) {
-            return BasicInfoApiFp(this.configuration).saveEventBridgeSettings(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。
@@ -4078,7 +3881,7 @@
     }
 
     /* tslint:disable */
-    const BASE_PATH$1 = "https://api.saasus.io/v0/billing".replace(/\/+$/, "");
+    const BASE_PATH$1 = "https://api.saasus.io/v1/billing".replace(/\/+$/, "");
     /**
      *
      * @export
@@ -4407,7 +4210,7 @@
     }
 
     /* tslint:disable */
-    const BASE_PATH = "https://api.saasus.io/v0/pricing".replace(/\/+$/, "");
+    const BASE_PATH = "https://api.saasus.io/v1/pricing".replace(/\/+$/, "");
     /**
      *
      * @export
@@ -4531,25 +4334,25 @@
     const MeteringApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 指定した日付のメータリングユニットカウントを削除します。
-             * @summary 指定した日付のメータリングユニットカウントを削除
+             * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+             * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
-             * @param {string} date 日
+             * @param {number} timestamp タイムスタンプ
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            deleteMeteringUnitDateCount: async (tenantId, meteringUnitName, date, options = {}) => {
+            deleteMeteringUnitTimestampCount: async (tenantId, meteringUnitName, timestamp, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists('deleteMeteringUnitDateCount', 'tenantId', tenantId);
+                assertParamExists('deleteMeteringUnitTimestampCount', 'tenantId', tenantId);
                 // verify required parameter 'meteringUnitName' is not null or undefined
-                assertParamExists('deleteMeteringUnitDateCount', 'meteringUnitName', meteringUnitName);
-                // verify required parameter 'date' is not null or undefined
-                assertParamExists('deleteMeteringUnitDateCount', 'date', date);
-                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/date/{date}`
+                assertParamExists('deleteMeteringUnitTimestampCount', 'meteringUnitName', meteringUnitName);
+                // verify required parameter 'timestamp' is not null or undefined
+                assertParamExists('deleteMeteringUnitTimestampCount', 'timestamp', timestamp);
+                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/timestamp/{timestamp}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"metering_unit_name"}}`, encodeURIComponent(String(meteringUnitName)))
-                    .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+                    .replace(`{${"timestamp"}}`, encodeURIComponent(String(timestamp)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
                 let baseOptions;
@@ -4571,19 +4374,19 @@
                 };
             },
             /**
-             * 当日のメータリングユニットカウントを削除します。
-             * @summary 当日のメータリングユニットカウントを削除
+             * 現在時刻のメータリングユニットカウントを削除します。
+             * @summary 現在時刻のメータリングユニットカウントを削除
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            deleteMeteringUnitDateCountToday: async (tenantId, meteringUnitName, options = {}) => {
+            deleteMeteringUnitTimestampCountNow: async (tenantId, meteringUnitName, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists('deleteMeteringUnitDateCountToday', 'tenantId', tenantId);
+                assertParamExists('deleteMeteringUnitTimestampCountNow', 'tenantId', tenantId);
                 // verify required parameter 'meteringUnitName' is not null or undefined
-                assertParamExists('deleteMeteringUnitDateCountToday', 'meteringUnitName', meteringUnitName);
-                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/today`
+                assertParamExists('deleteMeteringUnitTimestampCountNow', 'meteringUnitName', meteringUnitName);
+                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/now`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"metering_unit_name"}}`, encodeURIComponent(String(meteringUnitName)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -4831,26 +4634,26 @@
                 };
             },
             /**
-             * 指定した日付のメータリングユニットカウントを更新します。
-             * @summary 指定した日付のメータリングユニットカウントを更新
+             * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+             * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
-             * @param {string} date 日
-             * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+             * @param {number} timestamp タイムスタンプ
+             * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            updateMeteringUnitDateCount: async (tenantId, meteringUnitName, date, updateMeteringUnitDateCountParam, options = {}) => {
+            updateMeteringUnitTimestampCount: async (tenantId, meteringUnitName, timestamp, updateMeteringUnitTimestampCountParam, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists('updateMeteringUnitDateCount', 'tenantId', tenantId);
+                assertParamExists('updateMeteringUnitTimestampCount', 'tenantId', tenantId);
                 // verify required parameter 'meteringUnitName' is not null or undefined
-                assertParamExists('updateMeteringUnitDateCount', 'meteringUnitName', meteringUnitName);
-                // verify required parameter 'date' is not null or undefined
-                assertParamExists('updateMeteringUnitDateCount', 'date', date);
-                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/date/{date}`
+                assertParamExists('updateMeteringUnitTimestampCount', 'meteringUnitName', meteringUnitName);
+                // verify required parameter 'timestamp' is not null or undefined
+                assertParamExists('updateMeteringUnitTimestampCount', 'timestamp', timestamp);
+                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/timestamp/{timestamp}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"metering_unit_name"}}`, encodeURIComponent(String(meteringUnitName)))
-                    .replace(`{${"date"}}`, encodeURIComponent(String(date)));
+                    .replace(`{${"timestamp"}}`, encodeURIComponent(String(timestamp)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
                 let baseOptions;
@@ -4867,27 +4670,27 @@
                 setSearchParams(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded(updateMeteringUnitDateCountParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded(updateMeteringUnitTimestampCountParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
             /**
-             * 当日のメータリングユニットカウントを更新します。
-             * @summary 当日のメータリングユニットカウントを更新
+             * 現在時刻のメータリングユニットカウントを更新します。
+             * @summary 現在時刻のメータリングユニットカウントを更新
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
-             * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+             * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            updateMeteringUnitDateCountToday: async (tenantId, meteringUnitName, updateMeteringUnitDateCountTodayParam, options = {}) => {
+            updateMeteringUnitTimestampCountNow: async (tenantId, meteringUnitName, updateMeteringUnitTimestampCountNowParam, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists('updateMeteringUnitDateCountToday', 'tenantId', tenantId);
+                assertParamExists('updateMeteringUnitTimestampCountNow', 'tenantId', tenantId);
                 // verify required parameter 'meteringUnitName' is not null or undefined
-                assertParamExists('updateMeteringUnitDateCountToday', 'meteringUnitName', meteringUnitName);
-                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/today`
+                assertParamExists('updateMeteringUnitTimestampCountNow', 'meteringUnitName', meteringUnitName);
+                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/now`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"metering_unit_name"}}`, encodeURIComponent(String(meteringUnitName)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -4906,7 +4709,7 @@
                 setSearchParams(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded(updateMeteringUnitDateCountTodayParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded(updateMeteringUnitTimestampCountNowParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -4922,28 +4725,28 @@
         const localVarAxiosParamCreator = MeteringApiAxiosParamCreator(configuration);
         return {
             /**
-             * 指定した日付のメータリングユニットカウントを削除します。
-             * @summary 指定した日付のメータリングユニットカウントを削除
+             * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+             * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
-             * @param {string} date 日
+             * @param {number} timestamp タイムスタンプ
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async deleteMeteringUnitDateCount(tenantId, meteringUnitName, date, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMeteringUnitDateCount(tenantId, meteringUnitName, date, options);
+            async deleteMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, options);
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * 当日のメータリングユニットカウントを削除します。
-             * @summary 当日のメータリングユニットカウントを削除
+             * 現在時刻のメータリングユニットカウントを削除します。
+             * @summary 現在時刻のメータリングユニットカウントを削除
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async deleteMeteringUnitDateCountToday(tenantId, meteringUnitName, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMeteringUnitDateCountToday(tenantId, meteringUnitName, options);
+            async deleteMeteringUnitTimestampCountNow(tenantId, meteringUnitName, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMeteringUnitTimestampCountNow(tenantId, meteringUnitName, options);
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
@@ -5021,30 +4824,30 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * 指定した日付のメータリングユニットカウントを更新します。
-             * @summary 指定した日付のメータリングユニットカウントを更新
+             * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+             * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
-             * @param {string} date 日
-             * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+             * @param {number} timestamp タイムスタンプ
+             * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async updateMeteringUnitDateCount(tenantId, meteringUnitName, date, updateMeteringUnitDateCountParam, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.updateMeteringUnitDateCount(tenantId, meteringUnitName, date, updateMeteringUnitDateCountParam, options);
+            async updateMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, updateMeteringUnitTimestampCountParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, updateMeteringUnitTimestampCountParam, options);
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * 当日のメータリングユニットカウントを更新します。
-             * @summary 当日のメータリングユニットカウントを更新
+             * 現在時刻のメータリングユニットカウントを更新します。
+             * @summary 現在時刻のメータリングユニットカウントを更新
              * @param {string} tenantId テナントID
              * @param {string} meteringUnitName 計測ユニット名
-             * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+             * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async updateMeteringUnitDateCountToday(tenantId, meteringUnitName, updateMeteringUnitDateCountTodayParam, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.updateMeteringUnitDateCountToday(tenantId, meteringUnitName, updateMeteringUnitDateCountTodayParam, options);
+            async updateMeteringUnitTimestampCountNow(tenantId, meteringUnitName, updateMeteringUnitTimestampCountNowParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateMeteringUnitTimestampCountNow(tenantId, meteringUnitName, updateMeteringUnitTimestampCountNowParam, options);
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
         };
@@ -5057,29 +4860,29 @@
      */
     class MeteringApi extends BaseAPI {
         /**
-         * 指定した日付のメータリングユニットカウントを削除します。
-         * @summary 指定した日付のメータリングユニットカウントを削除
+         * 指定したタイムスタンプのメータリングユニットカウントを削除します。
+         * @summary 指定したタイムスタンプのメータリングユニットカウントを削除
          * @param {string} tenantId テナントID
          * @param {string} meteringUnitName 計測ユニット名
-         * @param {string} date 日
+         * @param {number} timestamp タイムスタンプ
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
          */
-        deleteMeteringUnitDateCount(tenantId, meteringUnitName, date, options) {
-            return MeteringApiFp(this.configuration).deleteMeteringUnitDateCount(tenantId, meteringUnitName, date, options).then((request) => request(this.axios, this.basePath));
+        deleteMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, options) {
+            return MeteringApiFp(this.configuration).deleteMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 当日のメータリングユニットカウントを削除します。
-         * @summary 当日のメータリングユニットカウントを削除
+         * 現在時刻のメータリングユニットカウントを削除します。
+         * @summary 現在時刻のメータリングユニットカウントを削除
          * @param {string} tenantId テナントID
          * @param {string} meteringUnitName 計測ユニット名
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
          */
-        deleteMeteringUnitDateCountToday(tenantId, meteringUnitName, options) {
-            return MeteringApiFp(this.configuration).deleteMeteringUnitDateCountToday(tenantId, meteringUnitName, options).then((request) => request(this.axios, this.basePath));
+        deleteMeteringUnitTimestampCountNow(tenantId, meteringUnitName, options) {
+            return MeteringApiFp(this.configuration).deleteMeteringUnitTimestampCountNow(tenantId, meteringUnitName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * 指定した日付のメータリングユニットカウントを取得します。
@@ -5156,31 +4959,31 @@
             return MeteringApiFp(this.configuration).getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId, month, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定した日付のメータリングユニットカウントを更新します。
-         * @summary 指定した日付のメータリングユニットカウントを更新
+         * 指定したタイムスタンプのメータリングユニットカウントを更新します。
+         * @summary 指定したタイムスタンプのメータリングユニットカウントを更新
          * @param {string} tenantId テナントID
          * @param {string} meteringUnitName 計測ユニット名
-         * @param {string} date 日
-         * @param {UpdateMeteringUnitDateCountParam} [updateMeteringUnitDateCountParam]
+         * @param {number} timestamp タイムスタンプ
+         * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
          */
-        updateMeteringUnitDateCount(tenantId, meteringUnitName, date, updateMeteringUnitDateCountParam, options) {
-            return MeteringApiFp(this.configuration).updateMeteringUnitDateCount(tenantId, meteringUnitName, date, updateMeteringUnitDateCountParam, options).then((request) => request(this.axios, this.basePath));
+        updateMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, updateMeteringUnitTimestampCountParam, options) {
+            return MeteringApiFp(this.configuration).updateMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, updateMeteringUnitTimestampCountParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 当日のメータリングユニットカウントを更新します。
-         * @summary 当日のメータリングユニットカウントを更新
+         * 現在時刻のメータリングユニットカウントを更新します。
+         * @summary 現在時刻のメータリングユニットカウントを更新
          * @param {string} tenantId テナントID
          * @param {string} meteringUnitName 計測ユニット名
-         * @param {UpdateMeteringUnitDateCountTodayParam} [updateMeteringUnitDateCountTodayParam]
+         * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
          */
-        updateMeteringUnitDateCountToday(tenantId, meteringUnitName, updateMeteringUnitDateCountTodayParam, options) {
-            return MeteringApiFp(this.configuration).updateMeteringUnitDateCountToday(tenantId, meteringUnitName, updateMeteringUnitDateCountTodayParam, options).then((request) => request(this.axios, this.basePath));
+        updateMeteringUnitTimestampCountNow(tenantId, meteringUnitName, updateMeteringUnitTimestampCountNowParam, options) {
+            return MeteringApiFp(this.configuration).updateMeteringUnitTimestampCountNow(tenantId, meteringUnitName, updateMeteringUnitTimestampCountNowParam, options).then((request) => request(this.axios, this.basePath));
         }
     }
     /**
