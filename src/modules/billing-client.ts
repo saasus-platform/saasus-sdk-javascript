@@ -28,10 +28,10 @@ export class BillingClient {
     }
 
     const config = new Configuration({
-      basePath: this.apiBase + "/v0/billing",
+      basePath: this.apiBase + "/v1/billing",
     });
 
-    this.instance = getAxiosInstance(this.apiBase + "/v0/billing");
+    this.instance = getAxiosInstance(this.apiBase + "/v1/billing");
 
     this.stripeApi = new StripeApi(config, "", this.instance);
   }

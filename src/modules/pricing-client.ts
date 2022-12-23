@@ -37,10 +37,10 @@ export class PricingClient {
     }
 
     const config = new Configuration({
-      basePath: this.apiBase + "/v0/pricing",
+      basePath: this.apiBase + "/v1/pricing",
     });
 
-    this.instance = getAxiosInstance(this.apiBase + "/v0/pricing");
+    this.instance = getAxiosInstance(this.apiBase + "/v1/pricing");
 
     this.meteringApi = new MeteringApi(config, "", this.instance);
     this.pricingMenusApi = new PricingMenusApi(config, "", this.instance);

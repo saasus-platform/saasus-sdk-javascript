@@ -52,10 +52,10 @@ export class AuthClient {
       this.apiBase = "https://api.saasus.io";
     }
 
-    this.instance = getAxiosInstance(this.apiBase + "/v0/auth");
+    this.instance = getAxiosInstance(this.apiBase + "/v1/auth");
 
     const config = new Configuration({
-      basePath: this.apiBase + "/v0/auth",
+      basePath: this.apiBase + "/v1/auth",
     });
 
     this.authInfoApi = new AuthInfoApi(config, "", this.instance);

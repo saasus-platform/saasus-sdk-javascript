@@ -22,19 +22,19 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
 /**
- * アカウント認証設定 未提供の機能のため、変更・保存はできません 
+ * アカウント認証設定(Account authentication settings) ※ 未提供の機能のため、変更・保存はできません(Unable to change/save due to unprovided function) 
  * @export
  * @interface AccountVerification
  */
 export interface AccountVerification {
     /**
-     * code: 検証コード link: 検証リンク ※ 未提供の機能のため、変更・保存はできません 
+     * code: 検証コード(verification code) link: 検証リンク(verification link) ※ 未提供の機能のため、変更・保存はできません(Unable to change/save due to unprovided function) 
      * @type {string}
      * @memberof AccountVerification
      */
     'verification_method': AccountVerificationVerificationMethodEnum;
     /**
-     * email: Eメール sms: SMS smsOrEmail: SMS不可の場合にEメール 
+     * email: Eメール(e-mail) sms: SMS smsOrEmail: SMS不可の場合にEメール(Email if SMS is not possible) 
      * @type {string}
      * @memberof AccountVerification
      */
@@ -62,7 +62,7 @@ export type AccountVerificationSendingToEnum = typeof AccountVerificationSending
  */
 export interface ApiKeys {
     /**
-     * APIキー
+     * APIキー(API key)
      * @type {Array<string>}
      * @memberof ApiKeys
      */
@@ -75,13 +75,13 @@ export interface ApiKeys {
  */
 export interface Attribute {
     /**
-     * 属性名
+     * 属性名(attribute name)
      * @type {string}
      * @memberof Attribute
      */
     'attribute_name': string;
     /**
-     * 表示名
+     * 表示名(Display name)
      * @type {string}
      * @memberof Attribute
      */
@@ -94,7 +94,7 @@ export interface Attribute {
     'attribute_type': AttributeType;
 }
 /**
- * 型（dateはYYYY-MM-DDの形式で使用する事ができます。）
+ * 型（dateはYYYY-MM-DDの形式で使用する事ができます。） (Type (date can be used in YYYY-MM-DD format.)) 
  * @export
  * @enum {string}
  */
@@ -116,7 +116,7 @@ export type AttributeType = typeof AttributeType[keyof typeof AttributeType];
  */
 export interface AuthInfo {
     /**
-     * 認証後遷移先
+     * 認証後遷移先(Transition destination after authentication)
      * @type {string}
      * @memberof AuthInfo
      */
@@ -142,13 +142,13 @@ export interface AuthorizationTempCode {
  */
 export interface BasicInfo {
     /**
-     * ドメイン名
+     * ドメイン名(Domain name)
      * @type {string}
      * @memberof BasicInfo
      */
     'domain_name': string;
     /**
-     * DNSレコードの検証結果
+     * DNSレコードの検証結果(DNS record verification results)
      * @type {boolean}
      * @memberof BasicInfo
      */
@@ -166,19 +166,19 @@ export interface BasicInfo {
      */
     'cloud_front_dns_record': DnsRecord;
     /**
-     * DKIM DNS レコード
+     * DKIM DNS レコード(DKIM DNS records)
      * @type {Array<DnsRecord>}
      * @memberof BasicInfo
      */
     'dkim_dns_records': Array<DnsRecord>;
     /**
-     * ドメイン名
+     * デフォルトドメイン名(default domain name)
      * @type {string}
      * @memberof BasicInfo
      */
     'default_domain_name': string;
     /**
-     * 認証メールの送信元メールアドレス
+     * 認証メールの送信元メールアドレス(Sender email address of authentication email)
      * @type {string}
      * @memberof BasicInfo
      */
@@ -191,7 +191,7 @@ export interface BasicInfo {
  */
 export interface ClientSecret {
     /**
-     * クライアントシークレット
+     * クライアントシークレット(client secret)
      * @type {string}
      * @memberof ClientSecret
      */
@@ -204,13 +204,13 @@ export interface ClientSecret {
  */
 export interface CreateSaasUserParam {
     /**
-     * メールアドレス
+     * メールアドレス(e-mail)
      * @type {string}
      * @memberof CreateSaasUserParam
      */
     'email': string;
     /**
-     * 
+     * パスワード(password)
      * @type {string}
      * @memberof CreateSaasUserParam
      */
@@ -223,7 +223,7 @@ export interface CreateSaasUserParam {
  */
 export interface CreateSecretCodeParam {
     /**
-     * アクセストークン
+     * アクセストークン(access token)
      * @type {string}
      * @memberof CreateSecretCodeParam
      */
@@ -236,13 +236,13 @@ export interface CreateSecretCodeParam {
  */
 export interface CreateTenantUserParam {
     /**
-     * メールアドレス
+     * メールアドレス(e-mail)
      * @type {string}
      * @memberof CreateTenantUserParam
      */
     'email': string;
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定した情報）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Obtain the information set by defining tenant attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
      * @memberof CreateTenantUserParam
      */
@@ -255,7 +255,7 @@ export interface CreateTenantUserParam {
  */
 export interface CreateTenantUserRolesParam {
     /**
-     * 役割(ロール)情報
+     * 役割(ロール)情報(Role info)
      * @type {Array<string>}
      * @memberof CreateTenantUserRolesParam
      */
@@ -268,19 +268,19 @@ export interface CreateTenantUserRolesParam {
  */
 export interface Credentials {
     /**
-     * IDトークン
+     * IDトークン(ID token)
      * @type {string}
      * @memberof Credentials
      */
     'id_token': string;
     /**
-     * アクセストークン
+     * アクセストークン(access token)
      * @type {string}
      * @memberof Credentials
      */
     'access_token': string;
     /**
-     * リフレッシュトークン
+     * リフレッシュトークン(refresh token)
      * @type {string}
      * @memberof Credentials
      */
@@ -293,19 +293,19 @@ export interface Credentials {
  */
 export interface CustomizePageProps {
     /**
-     * 画面のHTMLを編集できます ※ 未提供の機能のため、変更・保存はできません 
+     * 画面のHTMLを編集できます ※ 未提供の機能のため、変更・保存はできません  You can edit the HTML of the screen ※ Unable to change/save due to unprovided function 
      * @type {string}
      * @memberof CustomizePageProps
      */
     'html_contents': string;
     /**
-     * 利用規約の同意チェックボックスを表示するが設定されているか
+     * 利用規約の同意チェックボックスを表示するが設定されているか(Whether or not to display the agreement check box for the terms of use)
      * @type {boolean}
      * @memberof CustomizePageProps
      */
     'is_terms_of_service': boolean;
     /**
-     * プライバシーポリシーチェックボックスを表示するが設定されているか
+     * プライバシーポリシーチェックボックスを表示するが設定されているか(Whether to show the privacy policy checkbox)
      * @type {boolean}
      * @memberof CustomizePageProps
      */
@@ -318,37 +318,37 @@ export interface CustomizePageProps {
  */
 export interface CustomizePageSettings {
     /**
-     * サービスアイコン
+     * サービスアイコン(Service Icon)
      * @type {string}
      * @memberof CustomizePageSettings
      */
     'icon': string;
     /**
-     * ファビコン
+     * ファビコン(favicon)
      * @type {string}
      * @memberof CustomizePageSettings
      */
     'favicon': string;
     /**
-     * サービス名
+     * サービス名(Service name)
      * @type {string}
      * @memberof CustomizePageSettings
      */
     'title': string;
     /**
-     * 利用規約URL
+     * 利用規約URL(Terms of use URL)
      * @type {string}
      * @memberof CustomizePageSettings
      */
     'terms_of_service_url': string;
     /**
-     * プライバシーポリシーURL
+     * プライバシーポリシーURL(Privacy Policy URL)
      * @type {string}
      * @memberof CustomizePageSettings
      */
     'privacy_policy_url': string;
     /**
-     * Google Tag Manager コンテナ ID
+     * Google Tag Manager コンテナ ID(Google Tag Manager container ID)
      * @type {string}
      * @memberof CustomizePageSettings
      */
@@ -361,13 +361,13 @@ export interface CustomizePageSettings {
  */
 export interface CustomizePageSettingsAllOf {
     /**
-     * サービスアイコン
+     * サービスアイコン(Service Icon)
      * @type {string}
      * @memberof CustomizePageSettingsAllOf
      */
     'icon': string;
     /**
-     * ファビコン
+     * ファビコン(favicon)
      * @type {string}
      * @memberof CustomizePageSettingsAllOf
      */
@@ -380,25 +380,25 @@ export interface CustomizePageSettingsAllOf {
  */
 export interface CustomizePageSettingsProps {
     /**
-     * サービス名
+     * サービス名(Service name)
      * @type {string}
      * @memberof CustomizePageSettingsProps
      */
     'title': string;
     /**
-     * 利用規約URL
+     * 利用規約URL(Terms of use URL)
      * @type {string}
      * @memberof CustomizePageSettingsProps
      */
     'terms_of_service_url': string;
     /**
-     * プライバシーポリシーURL
+     * プライバシーポリシーURL(Privacy Policy URL)
      * @type {string}
      * @memberof CustomizePageSettingsProps
      */
     'privacy_policy_url': string;
     /**
-     * Google Tag Manager コンテナ ID
+     * Google Tag Manager コンテナ ID(Google Tag Manager container ID)
      * @type {string}
      * @memberof CustomizePageSettingsProps
      */
@@ -430,13 +430,13 @@ export interface CustomizePages {
     'password_reset_page': CustomizePageProps;
 }
 /**
- * 信頼済みデバイスの記憶の設定
+ * 信頼済みデバイスの記憶の設定(Settings for remembering trusted devices) 
  * @export
  * @interface DeviceConfiguration
  */
 export interface DeviceConfiguration {
     /**
-     * always: 常に記憶する userOptIn: ユーザーオプトイン no: 記憶しない 
+     * always: 常に記憶する(always remember) userOptIn: ユーザーオプトイン(User opt-in) no: (don\'t save) 
      * @type {string}
      * @memberof DeviceConfiguration
      */
@@ -458,19 +458,19 @@ export type DeviceConfigurationDeviceRememberingEnum = typeof DeviceConfiguratio
  */
 export interface DnsRecord {
     /**
-     * CNAMEリソースレコード
+     * CNAMEリソースレコード(CNAME resource record)
      * @type {string}
      * @memberof DnsRecord
      */
     'type': DnsRecordTypeEnum;
     /**
-     * レコード名
+     * レコード名(record name)
      * @type {string}
      * @memberof DnsRecord
      */
     'name': string;
     /**
-     * 値
+     * 値(value)
      * @type {string}
      * @memberof DnsRecord
      */
@@ -484,7 +484,7 @@ export const DnsRecordTypeEnum = {
 export type DnsRecordTypeEnum = typeof DnsRecordTypeEnum[keyof typeof DnsRecordTypeEnum];
 
 /**
- * 環境情報
+ * 環境情報(Env info)
  * @export
  * @interface Env
  */
@@ -496,14 +496,14 @@ export interface Env {
      */
     'id': number;
     /**
-     * 環境名
+     * 環境名(Env name)
      * @type {string}
      * @memberof Env
      */
     'name': string;
 }
 /**
- * env一覧
+ * env一覧(Env list)
  * @export
  * @interface Envs
  */
@@ -560,26 +560,26 @@ export interface IdentityProviders {
  */
 export interface MessageTemplate {
     /**
-     * タイトル
+     * タイトル(title)
      * @type {string}
      * @memberof MessageTemplate
      */
     'subject': string;
     /**
-     * メッセージ
+     * メッセージ(message)
      * @type {string}
      * @memberof MessageTemplate
      */
     'message': string;
 }
 /**
- * MFAデバイス認証設定 未提供の機能のため、変更・保存はできません 
+ * MFAデバイス認証設定(MFA device authentication settings) ※ 未提供の機能のため、変更・保存はできません(Unable to change/save due to unprovided function) 
  * @export
  * @interface MfaConfiguration
  */
 export interface MfaConfiguration {
     /**
-     * on: 全ユーザーがログイン時に適用 optional: MFA要素が有効になっている個別ユーザーに適用 ※ パラメータは現在optionalで固定となります。 
+     * on: 全ユーザーがログイン時に適用(Apply when all users log in) optional: MFA要素が有効になっている個別ユーザーに適用(Applies to individual users with MFA factor enabled) ※ パラメータは現在optionalで固定となります。(The parameter is currently optional and fixed.) 
      * @type {string}
      * @memberof MfaConfiguration
      */
@@ -600,13 +600,13 @@ export type MfaConfigurationMfaConfigurationEnum = typeof MfaConfigurationMfaCon
  */
 export interface MfaPreference {
     /**
-     * MFAを有効にするか否か
+     * MFAを有効にするか否か(Whether to enable MFA)
      * @type {boolean}
      * @memberof MfaPreference
      */
     'enabled': boolean;
     /**
-     * MFAの方法(enabledがtrueの場合は必須)
+     * MFAの方法(enabledがtrueの場合は必須)(MFA method (required if enabled is true))
      * @type {string}
      * @memberof MfaPreference
      */
@@ -694,43 +694,43 @@ export interface NotificationMessages {
     'authentication_mfa': MessageTemplate;
 }
 /**
- * パスワードポリシー
+ * パスワードポリシー(password policy)
  * @export
  * @interface PasswordPolicy
  */
 export interface PasswordPolicy {
     /**
-     * 最小文字数
+     * 最小文字数(minimum number of characters)
      * @type {number}
      * @memberof PasswordPolicy
      */
     'minimum_length': number;
     /**
-     * 一文字以上の小文字を含むが設定されているか
+     * 一文字以上の小文字を含むが設定されているか(Contains one or more lowercase characters is set)
      * @type {boolean}
      * @memberof PasswordPolicy
      */
     'is_require_lowercase': boolean;
     /**
-     * 一文字以上の数字を含むが設定されているか
+     * 一文字以上の数字を含むが設定されているか(Contains one or more numeric characters is set)
      * @type {boolean}
      * @memberof PasswordPolicy
      */
     'is_require_numbers': boolean;
     /**
-     * 一文字以上の特殊文字を含むが設定されているか
+     * 一文字以上の特殊文字を含むが設定されているか(Contains one or more special characters is set)
      * @type {boolean}
      * @memberof PasswordPolicy
      */
     'is_require_symbols': boolean;
     /**
-     * 一文字以上の大文字を含むが設定されているか
+     * 一文字以上の大文字を含むが設定されているか(Contains one or more uppercase letters is set)
      * @type {boolean}
      * @memberof PasswordPolicy
      */
     'is_require_uppercase': boolean;
     /**
-     * 仮パスワードの有効期限
+     * 仮パスワードの有効期限(Temporary password expiration date)
      * @type {number}
      * @memberof PasswordPolicy
      */
@@ -769,38 +769,38 @@ export interface PlanHistory {
     'plan_applied_at': number;
 }
 /**
- * reCAPTCHA認証設定 ※ 未提供の機能のため、変更・保存はできません 
+ * reCAPTCHA認証設定(reCAPTCHA authentication settings) ※ 未提供の機能のため、変更・保存はできません(Unable to change/save due to unprovided function) 
  * @export
  * @interface RecaptchaProps
  */
 export interface RecaptchaProps {
     /**
-     * Site key
+     * サイトキー(Site key)
      * @type {string}
      * @memberof RecaptchaProps
      */
     'site_key': string;
     /**
-     * Secret key
+     * シークレットキー(Secret key)
      * @type {string}
      * @memberof RecaptchaProps
      */
     'secret_key': string;
 }
 /**
- * 役割(ロール)情報
+ * 役割(ロール)情報(role info)
  * @export
  * @interface Role
  */
 export interface Role {
     /**
-     * 役割(ロール)名
+     * 役割(ロール)名(role name)
      * @type {string}
      * @memberof Role
      */
     'role_name': string;
     /**
-     * 役割(ロール)表示名
+     * 役割(ロール)表示名(role display name)
      * @type {string}
      * @memberof Role
      */
@@ -822,25 +822,25 @@ export interface Roles {
 /**
  * 
  * @export
- * @interface SaasID
+ * @interface SaasId
  */
-export interface SaasID {
+export interface SaasId {
     /**
      * 
      * @type {string}
-     * @memberof SaasID
+     * @memberof SaasId
      */
     'tenant_id': string;
     /**
      * 
      * @type {number}
-     * @memberof SaasID
+     * @memberof SaasId
      */
     'env_id': number;
     /**
      * saas id
      * @type {string}
-     * @memberof SaasID
+     * @memberof SaasId
      */
     'saas_id': string;
 }
@@ -857,7 +857,7 @@ export interface SaasUser {
      */
     'id': string;
     /**
-     * メールアドレス
+     * メールアドレス(e-mail)
      * @type {string}
      * @memberof SaasUser
      */
@@ -877,7 +877,7 @@ export interface SaasUsers {
     'users': Array<SaasUser>;
 }
 /**
- * セルフサインアップを許可設定
+ * セルフサインアップを許可設定(Self sign-up permission setting)
  * @export
  * @interface SelfRegist
  */
@@ -939,7 +939,7 @@ export interface SignInSettings {
  */
 export interface SoftwareTokenSecretCode {
     /**
-     * シークレットコード
+     * シークレットコード(secret code)
      * @type {string}
      * @memberof SoftwareTokenSecretCode
      */
@@ -964,13 +964,13 @@ export interface Tenant {
      */
     'plan_id'?: string;
     /**
-     * テナント名
+     * テナント名(Tenant name)
      * @type {string}
      * @memberof Tenant
      */
     'name': string;
     /**
-     * 属性情報
+     * 属性情報(Attribute info)
      * @type {{ [key: string]: any; }}
      * @memberof Tenant
      */
@@ -982,13 +982,13 @@ export interface Tenant {
      */
     'next_plan_id'?: string;
     /**
-     * 次回料金プラン開始日時
+     * 次回料金プラン開始日時（stripe連携時、当月月初の0時（UTC）を指定すると当月月初開始のサブスクリプションを作成できます。ex. 2023年1月の場合は、1672531200 ） (Next billing plan start time (When working with stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.)) 
      * @type {number}
      * @memberof Tenant
      */
     'using_next_plan_from'?: number;
     /**
-     * 事務管理部門スタッフメールアドレス
+     * 事務管理部門スタッフメールアドレス(Administrative staff email address)
      * @type {string}
      * @memberof Tenant
      */
@@ -1026,7 +1026,7 @@ export interface TenantAllOf {
  */
 export interface TenantAttributes {
     /**
-     * テナント属性定義
+     * テナント属性定義(Tenant attribute definition)
      * @type {Array<Attribute>}
      * @memberof TenantAttributes
      */
@@ -1039,13 +1039,13 @@ export interface TenantAttributes {
  */
 export interface TenantProps {
     /**
-     * テナント名
+     * テナント名(Tenant name)
      * @type {string}
      * @memberof TenantProps
      */
     'name': string;
     /**
-     * 属性情報
+     * 属性情報(Attribute info)
      * @type {{ [key: string]: any; }}
      * @memberof TenantProps
      */
@@ -1057,20 +1057,20 @@ export interface TenantProps {
      */
     'next_plan_id'?: string;
     /**
-     * 次回料金プラン開始日時
+     * 次回料金プラン開始日時（stripe連携時、当月月初の0時（UTC）を指定すると当月月初開始のサブスクリプションを作成できます。ex. 2023年1月の場合は、1672531200 ） (Next billing plan start time (When working with stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.)) 
      * @type {number}
      * @memberof TenantProps
      */
     'using_next_plan_from'?: number;
     /**
-     * 事務管理部門スタッフメールアドレス
+     * 事務管理部門スタッフメールアドレス(Administrative staff email address)
      * @type {string}
      * @memberof TenantProps
      */
     'back_office_staff_email': string;
 }
 /**
- * テナント情報
+ * テナント情報(Tenant info)
  * @export
  * @interface Tenants
  */
@@ -1089,13 +1089,13 @@ export interface Tenants {
  */
 export interface UpdateBasicInfoParam {
     /**
-     * 
+     * ドメイン名(Domain name)
      * @type {string}
      * @memberof UpdateBasicInfoParam
      */
     'domain_name': string;
     /**
-     * 認証メールの送信元メールアドレス
+     * 認証メールの送信元メールアドレス(Sender email address of authentication email)
      * @type {string}
      * @memberof UpdateBasicInfoParam
      */
@@ -1108,37 +1108,37 @@ export interface UpdateBasicInfoParam {
  */
 export interface UpdateCustomizePageSettingsParam {
     /**
-     * サービスアイコン
+     * サービスアイコン(Service Icon)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParam
      */
     'icon': string;
     /**
-     * ファビコン
+     * ファビコン(favicon)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParam
      */
     'favicon': string;
     /**
-     * サービス名
+     * サービス名(Service name)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParam
      */
     'title': string;
     /**
-     * 利用規約URL
+     * 利用規約URL(Terms of use URL)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParam
      */
     'terms_of_service_url': string;
     /**
-     * プライバシーポリシーURL
+     * プライバシーポリシーURL(Privacy Policy URL)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParam
      */
     'privacy_policy_url': string;
     /**
-     * Google Tag Manager コンテナ ID
+     * Google Tag Manager コンテナ ID(Google Tag Manager container ID)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParam
      */
@@ -1151,13 +1151,13 @@ export interface UpdateCustomizePageSettingsParam {
  */
 export interface UpdateCustomizePageSettingsParamAllOf {
     /**
-     * サービスアイコン
+     * サービスアイコン(Service Icon)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParamAllOf
      */
     'icon': string;
     /**
-     * ファビコン
+     * ファビコン(favicon)
      * @type {string}
      * @memberof UpdateCustomizePageSettingsParamAllOf
      */
@@ -1195,7 +1195,7 @@ export interface UpdateCustomizePagesParam {
  */
 export interface UpdateEnvParam {
     /**
-     * 
+     * 環境名(Env name)
      * @type {string}
      * @memberof UpdateEnvParam
      */
@@ -1283,7 +1283,7 @@ export interface UpdateNotificationMessagesParam {
  */
 export interface UpdateSaasUserEmailParam {
     /**
-     * 
+     * メールアドレス(e-mail)
      * @type {string}
      * @memberof UpdateSaasUserEmailParam
      */
@@ -1296,7 +1296,7 @@ export interface UpdateSaasUserEmailParam {
  */
 export interface UpdateSaasUserPasswordParam {
     /**
-     * 
+     * パスワード(password)
      * @type {string}
      * @memberof UpdateSaasUserPasswordParam
      */
@@ -1352,13 +1352,13 @@ export interface UpdateSignInSettingsParam {
  */
 export interface UpdateSoftwareTokenParam {
     /**
-     * アクセストークン
+     * アクセストークン(access token)
      * @type {string}
      * @memberof UpdateSoftwareTokenParam
      */
     'access_token': string;
     /**
-     * 検証コード
+     * 検証コード(verification code)
      * @type {string}
      * @memberof UpdateSoftwareTokenParam
      */
@@ -1371,7 +1371,7 @@ export interface UpdateSoftwareTokenParam {
  */
 export interface UpdateTenantUserParam {
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定した情報）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Obtain the information set by defining tenant attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
      * @memberof UpdateTenantUserParam
      */
@@ -1384,7 +1384,7 @@ export interface UpdateTenantUserParam {
  */
 export interface User {
     /**
-     * ユーザーID
+     * ユーザーID(User ID)
      * @type {string}
      * @memberof User
      */
@@ -1396,19 +1396,19 @@ export interface User {
      */
     'tenant_id': string;
     /**
-     * テナント名
+     * テナント名(Tenant name)
      * @type {string}
      * @memberof User
      */
     'tenant_name': string;
     /**
-     * メールアドレス
+     * メールアドレス(e-mail)
      * @type {string}
      * @memberof User
      */
     'email': string;
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）
+     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Obtain the information set by defining tenant attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
      * @memberof User
      */
@@ -1427,7 +1427,7 @@ export interface User {
  */
 export interface UserAttributes {
     /**
-     * ユーザー属性定義
+     * ユーザー属性定義(User attribute definition)
      * @type {Array<Attribute>}
      * @memberof UserAttributes
      */
@@ -1446,13 +1446,13 @@ export interface UserAvailableEnv {
      */
     'id': number;
     /**
-     * 環境名
+     * 環境名(Env name)
      * @type {string}
      * @memberof UserAvailableEnv
      */
     'name': string;
     /**
-     * 役割(ロール)情報
+     * 役割(ロール)情報(Role info)
      * @type {Array<Role>}
      * @memberof UserAvailableEnv
      */
@@ -1471,7 +1471,7 @@ export interface UserAvailableTenant {
      */
     'id': string;
     /**
-     * テナント名
+     * テナント名(Tenant name)
      * @type {string}
      * @memberof UserAvailableTenant
      */
@@ -1483,19 +1483,19 @@ export interface UserAvailableTenant {
      */
     'completed_sign_up': boolean;
     /**
-     * 環境情報、役割(ロール)情報
+     * 環境情報、役割(ロール)情報(Environmental info, role info)
      * @type {Array<UserAvailableEnv>}
      * @memberof UserAvailableTenant
      */
     'envs': Array<UserAvailableEnv>;
     /**
-     * 
+     * ユーザー追加属性(User Added Attribute)
      * @type {{ [key: string]: any; }}
      * @memberof UserAvailableTenant
      */
     'user_attribute': { [key: string]: any; };
     /**
-     * 
+     * バックオフィス担当者のメール(Back office contact email)
      * @type {string}
      * @memberof UserAvailableTenant
      */
@@ -1520,13 +1520,13 @@ export interface UserInfo {
      */
     'id': string;
     /**
-     * メールアドレス
+     * メールアドレス(e-mail)
      * @type {string}
      * @memberof UserInfo
      */
     'email': string;
     /**
-     * テナント情報
+     * テナント情報(Tenant info)
      * @type {Array<UserAvailableTenant>}
      * @memberof UserInfo
      */
@@ -1553,8 +1553,8 @@ export interface Users {
 export const AuthInfoApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-         * @summary 認証情報を取得
+         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK. 
+         * @summary 認証情報を取得(Get authentication info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1587,7 +1587,7 @@ export const AuthInfoApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * cognitoに設定している外部プロバイダ経由のサインイン情報取得
+         * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1620,8 +1620,8 @@ export const AuthInfoApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-         * @summary パスワード要件を取得
+         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get the user password requirement setting. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+         * @summary パスワード要件を取得(Get password requirement)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1654,8 +1654,8 @@ export const AuthInfoApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-         * @summary 認証情報を更新
+         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register a SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK. 
+         * @summary 認証情報を更新(Update authentication info)
          * @param {AuthInfo} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1729,8 +1729,8 @@ export const AuthInfoApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-         * @summary パスワード要件を更新
+         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirement settings. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+         * @summary パスワード要件を更新(Update password requirements)
          * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1777,8 +1777,8 @@ export const AuthInfoApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AuthInfoApiAxiosParamCreator(configuration)
     return {
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-         * @summary 認証情報を取得
+         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK. 
+         * @summary 認証情報を取得(Get authentication info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1787,7 +1787,7 @@ export const AuthInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * cognitoに設定している外部プロバイダ経由のサインイン情報取得
+         * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1796,8 +1796,8 @@ export const AuthInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-         * @summary パスワード要件を取得
+         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get the user password requirement setting. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+         * @summary パスワード要件を取得(Get password requirement)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1806,8 +1806,8 @@ export const AuthInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-         * @summary 認証情報を更新
+         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register a SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK. 
+         * @summary 認証情報を更新(Update authentication info)
          * @param {AuthInfo} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1827,8 +1827,8 @@ export const AuthInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-         * @summary パスワード要件を更新
+         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirement settings. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+         * @summary パスワード要件を更新(Update password requirements)
          * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1848,8 +1848,8 @@ export const AuthInfoApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = AuthInfoApiFp(configuration)
     return {
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-         * @summary 認証情報を取得
+         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK. 
+         * @summary 認証情報を取得(Get authentication info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1857,7 +1857,7 @@ export const AuthInfoApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getAuthInfo(options).then((request) => request(axios, basePath));
         },
         /**
-         * cognitoに設定している外部プロバイダ経由のサインイン情報取得
+         * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1865,8 +1865,8 @@ export const AuthInfoApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getIdentityProviders(options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-         * @summary パスワード要件を取得
+         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get the user password requirement setting. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+         * @summary パスワード要件を取得(Get password requirement)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1874,8 +1874,8 @@ export const AuthInfoApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getSignInSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-         * @summary 認証情報を更新
+         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register a SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK. 
+         * @summary 認証情報を更新(Update authentication info)
          * @param {AuthInfo} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1893,8 +1893,8 @@ export const AuthInfoApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.updateIdentityProvider(updateIdentityProviderParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-         * @summary パスワード要件を更新
+         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirement settings. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+         * @summary パスワード要件を更新(Update password requirements)
          * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1913,8 +1913,8 @@ export const AuthInfoApiFactory = function (configuration?: Configuration, baseP
  */
 export class AuthInfoApi extends BaseAPI {
     /**
-     * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-     * @summary 認証情報を取得
+     * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK. 
+     * @summary 認証情報を取得(Get authentication info)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthInfoApi
@@ -1924,7 +1924,7 @@ export class AuthInfoApi extends BaseAPI {
     }
 
     /**
-     * cognitoに設定している外部プロバイダ経由のサインイン情報取得
+     * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthInfoApi
@@ -1934,8 +1934,8 @@ export class AuthInfoApi extends BaseAPI {
     }
 
     /**
-     * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-     * @summary パスワード要件を取得
+     * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get the user password requirement setting. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+     * @summary パスワード要件を取得(Get password requirement)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthInfoApi
@@ -1945,8 +1945,8 @@ export class AuthInfoApi extends BaseAPI {
     }
 
     /**
-     * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。 
-     * @summary 認証情報を更新
+     * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register a SaaS URL to pass authentication after login. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK. 
+     * @summary 認証情報を更新(Update authentication info)
      * @param {AuthInfo} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1968,8 +1968,8 @@ export class AuthInfoApi extends BaseAPI {
     }
 
     /**
-     * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。 
-     * @summary パスワード要件を更新
+     * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirement settings. It is possible to set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols. 
+     * @summary パスワード要件を更新(Update password requirements)
      * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1988,8 +1988,8 @@ export class AuthInfoApi extends BaseAPI {
 export const BasicInfoApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 各種通知メールテンプレートを取得します。
-         * @summary 通知メールテンプレートを取得
+         * 各種通知メールテンプレートを取得します。  Get the registered notification email template. 
+         * @summary 通知メールテンプレートを取得(Get notification email templates)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2022,8 +2022,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * SaaSusID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。 
-         * @summary 基本設定情報の取得
+         * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on SaaS ID. Generate a login screen by setting CNAME record that you got to DNS. 
+         * @summary 基本設定情報の取得(Get basic configuration info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2056,8 +2056,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * 認証認可基本情報を取得します。
-         * @summary 認証認可基本情報取得
+         * 認証認可基本情報を取得します。  Get authentication authorization basic information. 
+         * @summary 認証認可基本情報取得(Acquisition of authentication authorization basic information)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2090,8 +2090,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。
-         * @summary 認証系画面設定情報取得
+         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Acquires the authentication screen setting information (new registration, login, password reset, etc.). 
+         * @summary 認証系画面設定情報取得(Acquisition of authentication screen setting information)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2124,8 +2124,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-         * @summary 基本設定情報の更新
+         * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name set as a parameter based on the SaaS ID. A CNAME record will be generated, so set it in your DNS. If you set it on a SaaS application that is already running, it will affect your behavior. 
+         * @summary 基本設定情報の更新(Update basic configuration info)
          * @param {UpdateBasicInfoParam} [updateBasicInfoParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2162,8 +2162,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * 認証認可基本情報を更新します。
-         * @summary 認証認可基本情報更新
+         * 認証認可基本情報を更新します。  Update authentication authorization basic information. 
+         * @summary 認証認可基本情報更新(Authentication authorization basic information update)
          * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2200,8 +2200,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。
-         * @summary 認証系画面設定情報設定
+         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication screen setting information (new registration, login, password reset, etc.). 
+         * @summary 認証系画面設定情報設定(Authentication screen setting information setting)
          * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2238,8 +2238,8 @@ export const BasicInfoApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * 各種通知メールテンプレート更新します。
-         * @summary 通知メールテンプレートを更新
+         * 各種通知メールテンプレート更新します。  Update the registered notification email template. 
+         * @summary 通知メールテンプレートを更新(Update notification email template)
          * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2286,8 +2286,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = BasicInfoApiAxiosParamCreator(configuration)
     return {
         /**
-         * 各種通知メールテンプレートを取得します。
-         * @summary 通知メールテンプレートを取得
+         * 各種通知メールテンプレートを取得します。  Get the registered notification email template. 
+         * @summary 通知メールテンプレートを取得(Get notification email templates)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2296,8 +2296,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSusID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。 
-         * @summary 基本設定情報の取得
+         * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on SaaS ID. Generate a login screen by setting CNAME record that you got to DNS. 
+         * @summary 基本設定情報の取得(Get basic configuration info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2306,8 +2306,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 認証認可基本情報を取得します。
-         * @summary 認証認可基本情報取得
+         * 認証認可基本情報を取得します。  Get authentication authorization basic information. 
+         * @summary 認証認可基本情報取得(Acquisition of authentication authorization basic information)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2316,8 +2316,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。
-         * @summary 認証系画面設定情報取得
+         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Acquires the authentication screen setting information (new registration, login, password reset, etc.). 
+         * @summary 認証系画面設定情報取得(Acquisition of authentication screen setting information)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2326,8 +2326,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-         * @summary 基本設定情報の更新
+         * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name set as a parameter based on the SaaS ID. A CNAME record will be generated, so set it in your DNS. If you set it on a SaaS application that is already running, it will affect your behavior. 
+         * @summary 基本設定情報の更新(Update basic configuration info)
          * @param {UpdateBasicInfoParam} [updateBasicInfoParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2337,8 +2337,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 認証認可基本情報を更新します。
-         * @summary 認証認可基本情報更新
+         * 認証認可基本情報を更新します。  Update authentication authorization basic information. 
+         * @summary 認証認可基本情報更新(Authentication authorization basic information update)
          * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2348,8 +2348,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。
-         * @summary 認証系画面設定情報設定
+         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication screen setting information (new registration, login, password reset, etc.). 
+         * @summary 認証系画面設定情報設定(Authentication screen setting information setting)
          * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2359,8 +2359,8 @@ export const BasicInfoApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 各種通知メールテンプレート更新します。
-         * @summary 通知メールテンプレートを更新
+         * 各種通知メールテンプレート更新します。  Update the registered notification email template. 
+         * @summary 通知メールテンプレートを更新(Update notification email template)
          * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2380,8 +2380,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
     const localVarFp = BasicInfoApiFp(configuration)
     return {
         /**
-         * 各種通知メールテンプレートを取得します。
-         * @summary 通知メールテンプレートを取得
+         * 各種通知メールテンプレートを取得します。  Get the registered notification email template. 
+         * @summary 通知メールテンプレートを取得(Get notification email templates)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2389,8 +2389,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.findNotificationMessages(options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSusID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。 
-         * @summary 基本設定情報の取得
+         * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on SaaS ID. Generate a login screen by setting CNAME record that you got to DNS. 
+         * @summary 基本設定情報の取得(Get basic configuration info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2398,8 +2398,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.getBasicInfo(options).then((request) => request(axios, basePath));
         },
         /**
-         * 認証認可基本情報を取得します。
-         * @summary 認証認可基本情報取得
+         * 認証認可基本情報を取得します。  Get authentication authorization basic information. 
+         * @summary 認証認可基本情報取得(Acquisition of authentication authorization basic information)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2407,8 +2407,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.getCustomizePageSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。
-         * @summary 認証系画面設定情報取得
+         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Acquires the authentication screen setting information (new registration, login, password reset, etc.). 
+         * @summary 認証系画面設定情報取得(Acquisition of authentication screen setting information)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2416,8 +2416,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.getCustomizePages(options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-         * @summary 基本設定情報の更新
+         * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name set as a parameter based on the SaaS ID. A CNAME record will be generated, so set it in your DNS. If you set it on a SaaS application that is already running, it will affect your behavior. 
+         * @summary 基本設定情報の更新(Update basic configuration info)
          * @param {UpdateBasicInfoParam} [updateBasicInfoParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2426,8 +2426,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.updateBasicInfo(updateBasicInfoParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * 認証認可基本情報を更新します。
-         * @summary 認証認可基本情報更新
+         * 認証認可基本情報を更新します。  Update authentication authorization basic information. 
+         * @summary 認証認可基本情報更新(Authentication authorization basic information update)
          * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2436,8 +2436,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.updateCustomizePageSettings(updateCustomizePageSettingsParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。
-         * @summary 認証系画面設定情報設定
+         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication screen setting information (new registration, login, password reset, etc.). 
+         * @summary 認証系画面設定情報設定(Authentication screen setting information setting)
          * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2446,8 +2446,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
             return localVarFp.updateCustomizePages(updateCustomizePagesParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * 各種通知メールテンプレート更新します。
-         * @summary 通知メールテンプレートを更新
+         * 各種通知メールテンプレート更新します。  Update the registered notification email template. 
+         * @summary 通知メールテンプレートを更新(Update notification email template)
          * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2466,8 +2466,8 @@ export const BasicInfoApiFactory = function (configuration?: Configuration, base
  */
 export class BasicInfoApi extends BaseAPI {
     /**
-     * 各種通知メールテンプレートを取得します。
-     * @summary 通知メールテンプレートを取得
+     * 各種通知メールテンプレートを取得します。  Get the registered notification email template. 
+     * @summary 通知メールテンプレートを取得(Get notification email templates)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BasicInfoApi
@@ -2477,8 +2477,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * SaaSusID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。 
-     * @summary 基本設定情報の取得
+     * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on SaaS ID. Generate a login screen by setting CNAME record that you got to DNS. 
+     * @summary 基本設定情報の取得(Get basic configuration info)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BasicInfoApi
@@ -2488,8 +2488,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * 認証認可基本情報を取得します。
-     * @summary 認証認可基本情報取得
+     * 認証認可基本情報を取得します。  Get authentication authorization basic information. 
+     * @summary 認証認可基本情報取得(Acquisition of authentication authorization basic information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BasicInfoApi
@@ -2499,8 +2499,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。
-     * @summary 認証系画面設定情報取得
+     * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Acquires the authentication screen setting information (new registration, login, password reset, etc.). 
+     * @summary 認証系画面設定情報取得(Acquisition of authentication screen setting information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BasicInfoApi
@@ -2510,8 +2510,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * SaaSus ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-     * @summary 基本設定情報の更新
+     * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name set as a parameter based on the SaaS ID. A CNAME record will be generated, so set it in your DNS. If you set it on a SaaS application that is already running, it will affect your behavior. 
+     * @summary 基本設定情報の更新(Update basic configuration info)
      * @param {UpdateBasicInfoParam} [updateBasicInfoParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2522,8 +2522,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * 認証認可基本情報を更新します。
-     * @summary 認証認可基本情報更新
+     * 認証認可基本情報を更新します。  Update authentication authorization basic information. 
+     * @summary 認証認可基本情報更新(Authentication authorization basic information update)
      * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2534,8 +2534,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。
-     * @summary 認証系画面設定情報設定
+     * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication screen setting information (new registration, login, password reset, etc.). 
+     * @summary 認証系画面設定情報設定(Authentication screen setting information setting)
      * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2546,8 +2546,8 @@ export class BasicInfoApi extends BaseAPI {
     }
 
     /**
-     * 各種通知メールテンプレート更新します。
-     * @summary 通知メールテンプレートを更新
+     * 各種通知メールテンプレート更新します。  Update the registered notification email template. 
+     * @summary 通知メールテンプレートを更新(Update notification email template)
      * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2566,8 +2566,8 @@ export class BasicInfoApi extends BaseAPI {
 export const CredentialApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。 
-         * @summary 認証・認可情報の保存
+         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the argument ID token, access token, and refresh token and return the temporary code for acquisition. Temporary codes are valid for 10 seconds from issuance. 
+         * @summary 認証・認可情報の保存(Saving authentication/authorization information)
          * @param {Credentials} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2604,9 +2604,9 @@ export const CredentialApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。
-         * @summary 認証・認可情報の取得
-         * @param {string} code 一時コード
+         * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get an ID token, access token, and refresh token using a temporary code. 
+         * @summary 認証・認可情報の取得(Acquisition of authentication/authorization information)
+         * @param {string} code 一時コード(temp code)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2655,8 +2655,8 @@ export const CredentialApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = CredentialApiAxiosParamCreator(configuration)
     return {
         /**
-         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。 
-         * @summary 認証・認可情報の保存
+         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the argument ID token, access token, and refresh token and return the temporary code for acquisition. Temporary codes are valid for 10 seconds from issuance. 
+         * @summary 認証・認可情報の保存(Saving authentication/authorization information)
          * @param {Credentials} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2666,9 +2666,9 @@ export const CredentialApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。
-         * @summary 認証・認可情報の取得
-         * @param {string} code 一時コード
+         * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get an ID token, access token, and refresh token using a temporary code. 
+         * @summary 認証・認可情報の取得(Acquisition of authentication/authorization information)
+         * @param {string} code 一時コード(temp code)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2687,8 +2687,8 @@ export const CredentialApiFactory = function (configuration?: Configuration, bas
     const localVarFp = CredentialApiFp(configuration)
     return {
         /**
-         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。 
-         * @summary 認証・認可情報の保存
+         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the argument ID token, access token, and refresh token and return the temporary code for acquisition. Temporary codes are valid for 10 seconds from issuance. 
+         * @summary 認証・認可情報の保存(Saving authentication/authorization information)
          * @param {Credentials} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2697,9 +2697,9 @@ export const CredentialApiFactory = function (configuration?: Configuration, bas
             return localVarFp.createAuthCredentials(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。
-         * @summary 認証・認可情報の取得
-         * @param {string} code 一時コード
+         * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get an ID token, access token, and refresh token using a temporary code. 
+         * @summary 認証・認可情報の取得(Acquisition of authentication/authorization information)
+         * @param {string} code 一時コード(temp code)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2717,8 +2717,8 @@ export const CredentialApiFactory = function (configuration?: Configuration, bas
  */
 export class CredentialApi extends BaseAPI {
     /**
-     * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。 
-     * @summary 認証・認可情報の保存
+     * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the argument ID token, access token, and refresh token and return the temporary code for acquisition. Temporary codes are valid for 10 seconds from issuance. 
+     * @summary 認証・認可情報の保存(Saving authentication/authorization information)
      * @param {Credentials} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2729,9 +2729,9 @@ export class CredentialApi extends BaseAPI {
     }
 
     /**
-     * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。
-     * @summary 認証・認可情報の取得
-     * @param {string} code 一時コード
+     * 一時コードを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get an ID token, access token, and refresh token using a temporary code. 
+     * @summary 認証・認可情報の取得(Acquisition of authentication/authorization information)
+     * @param {string} code 一時コード(temp code)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CredentialApi
@@ -2749,8 +2749,8 @@ export class CredentialApi extends BaseAPI {
 export const EnvApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 環境情報を作成します。 
-         * @summary 環境情報を作成
+         * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation. 
+         * @summary 環境情報を作成(Create env info)
          * @param {Env} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2787,9 +2787,9 @@ export const EnvApiAxiosParamCreator = function (configuration?: Configuration) 
             };
         },
         /**
-         * 環境情報を削除します。
-         * @summary 環境情報を削除
-         * @param {number} envId 環境ID
+         * 環境情報を削除します。  Delete env info. 
+         * @summary 環境情報を削除(Delete env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2825,9 +2825,9 @@ export const EnvApiAxiosParamCreator = function (configuration?: Configuration) 
             };
         },
         /**
-         * 環境情報の詳細を取得します。
-         * @summary 環境情報の取得
-         * @param {number} envId 環境ID
+         * 環境情報の詳細を取得します。  Get environment information details. 
+         * @summary 環境情報を取得(Get env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2863,8 +2863,8 @@ export const EnvApiAxiosParamCreator = function (configuration?: Configuration) 
             };
         },
         /**
-         * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 登録されている環境情報を取得します。 
-         * @summary 環境情報一覧を取得
+         * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Acquire the registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.      responses: 
+         * @summary 環境情報一覧を取得(Get env info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2897,9 +2897,9 @@ export const EnvApiAxiosParamCreator = function (configuration?: Configuration) 
             };
         },
         /**
-         * 環境情報を更新します。
-         * @summary 環境情報を更新
-         * @param {number} envId 環境ID
+         * 環境情報を更新します。  Update env info. 
+         * @summary 環境情報を更新(Update env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {UpdateEnvParam} [updateEnvParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2949,8 +2949,8 @@ export const EnvApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = EnvApiAxiosParamCreator(configuration)
     return {
         /**
-         * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 環境情報を作成します。 
-         * @summary 環境情報を作成
+         * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation. 
+         * @summary 環境情報を作成(Create env info)
          * @param {Env} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2960,9 +2960,9 @@ export const EnvApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 環境情報を削除します。
-         * @summary 環境情報を削除
-         * @param {number} envId 環境ID
+         * 環境情報を削除します。  Delete env info. 
+         * @summary 環境情報を削除(Delete env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2971,9 +2971,9 @@ export const EnvApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 環境情報の詳細を取得します。
-         * @summary 環境情報の取得
-         * @param {number} envId 環境ID
+         * 環境情報の詳細を取得します。  Get environment information details. 
+         * @summary 環境情報を取得(Get env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2982,8 +2982,8 @@ export const EnvApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 登録されている環境情報を取得します。 
-         * @summary 環境情報一覧を取得
+         * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Acquire the registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.      responses: 
+         * @summary 環境情報一覧を取得(Get env info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2992,9 +2992,9 @@ export const EnvApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 環境情報を更新します。
-         * @summary 環境情報を更新
-         * @param {number} envId 環境ID
+         * 環境情報を更新します。  Update env info. 
+         * @summary 環境情報を更新(Update env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {UpdateEnvParam} [updateEnvParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3014,8 +3014,8 @@ export const EnvApiFactory = function (configuration?: Configuration, basePath?:
     const localVarFp = EnvApiFp(configuration)
     return {
         /**
-         * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 環境情報を作成します。 
-         * @summary 環境情報を作成
+         * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation. 
+         * @summary 環境情報を作成(Create env info)
          * @param {Env} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3024,9 +3024,9 @@ export const EnvApiFactory = function (configuration?: Configuration, basePath?:
             return localVarFp.createEnv(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * 環境情報を削除します。
-         * @summary 環境情報を削除
-         * @param {number} envId 環境ID
+         * 環境情報を削除します。  Delete env info. 
+         * @summary 環境情報を削除(Delete env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3034,9 +3034,9 @@ export const EnvApiFactory = function (configuration?: Configuration, basePath?:
             return localVarFp.deleteEnv(envId, options).then((request) => request(axios, basePath));
         },
         /**
-         * 環境情報の詳細を取得します。
-         * @summary 環境情報の取得
-         * @param {number} envId 環境ID
+         * 環境情報の詳細を取得します。  Get environment information details. 
+         * @summary 環境情報を取得(Get env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3044,8 +3044,8 @@ export const EnvApiFactory = function (configuration?: Configuration, basePath?:
             return localVarFp.getEnv(envId, options).then((request) => request(axios, basePath));
         },
         /**
-         * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 登録されている環境情報を取得します。 
-         * @summary 環境情報一覧を取得
+         * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Acquire the registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.      responses: 
+         * @summary 環境情報一覧を取得(Get env info)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3053,9 +3053,9 @@ export const EnvApiFactory = function (configuration?: Configuration, basePath?:
             return localVarFp.getEnvs(options).then((request) => request(axios, basePath));
         },
         /**
-         * 環境情報を更新します。
-         * @summary 環境情報を更新
-         * @param {number} envId 環境ID
+         * 環境情報を更新します。  Update env info. 
+         * @summary 環境情報を更新(Update env info)
+         * @param {number} envId 環境ID(Env ID)
          * @param {UpdateEnvParam} [updateEnvParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3074,8 +3074,8 @@ export const EnvApiFactory = function (configuration?: Configuration, basePath?:
  */
 export class EnvApi extends BaseAPI {
     /**
-     * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 環境情報を作成します。 
-     * @summary 環境情報を作成
+     * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation. 
+     * @summary 環境情報を作成(Create env info)
      * @param {Env} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -3086,9 +3086,9 @@ export class EnvApi extends BaseAPI {
     }
 
     /**
-     * 環境情報を削除します。
-     * @summary 環境情報を削除
-     * @param {number} envId 環境ID
+     * 環境情報を削除します。  Delete env info. 
+     * @summary 環境情報を削除(Delete env info)
+     * @param {number} envId 環境ID(Env ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EnvApi
@@ -3098,9 +3098,9 @@ export class EnvApi extends BaseAPI {
     }
 
     /**
-     * 環境情報の詳細を取得します。
-     * @summary 環境情報の取得
-     * @param {number} envId 環境ID
+     * 環境情報の詳細を取得します。  Get environment information details. 
+     * @summary 環境情報を取得(Get env info)
+     * @param {number} envId 環境ID(Env ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EnvApi
@@ -3110,8 +3110,8 @@ export class EnvApi extends BaseAPI {
     }
 
     /**
-     * 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができるようになっており、 登録されている環境情報を取得します。 
-     * @summary 環境情報一覧を取得
+     * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Acquire the registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.      responses: 
+     * @summary 環境情報一覧を取得(Get env info)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EnvApi
@@ -3121,9 +3121,9 @@ export class EnvApi extends BaseAPI {
     }
 
     /**
-     * 環境情報を更新します。
-     * @summary 環境情報を更新
-     * @param {number} envId 環境ID
+     * 環境情報を更新します。  Update env info. 
+     * @summary 環境情報を更新(Update env info)
+     * @param {number} envId 環境ID(Env ID)
      * @param {UpdateEnvParam} [updateEnvParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -3142,8 +3142,8 @@ export class EnvApi extends BaseAPI {
 export const RoleApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-         * @summary 役割(ロール)を作成
+         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+         * @summary 役割(ロール)を作成(Create role)
          * @param {Role} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3180,9 +3180,9 @@ export const RoleApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
-         * 役割(ロール)を削除します。
-         * @summary 役割(ロール)を削除
-         * @param {string} roleName 役割(ロール)名
+         * 役割(ロール)を削除します。  Delete a role. 
+         * @summary 役割(ロール)を削除(Delete role)
+         * @param {string} roleName 役割(ロール)名(role name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3218,8 +3218,8 @@ export const RoleApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
-         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-         * @summary 役割(ロール)一覧を取得
+         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles as a list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+         * @summary 役割(ロール)一覧を取得(Get role list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3262,8 +3262,8 @@ export const RoleApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = RoleApiAxiosParamCreator(configuration)
     return {
         /**
-         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-         * @summary 役割(ロール)を作成
+         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+         * @summary 役割(ロール)を作成(Create role)
          * @param {Role} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3273,9 +3273,9 @@ export const RoleApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 役割(ロール)を削除します。
-         * @summary 役割(ロール)を削除
-         * @param {string} roleName 役割(ロール)名
+         * 役割(ロール)を削除します。  Delete a role. 
+         * @summary 役割(ロール)を削除(Delete role)
+         * @param {string} roleName 役割(ロール)名(role name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3284,8 +3284,8 @@ export const RoleApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-         * @summary 役割(ロール)一覧を取得
+         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles as a list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+         * @summary 役割(ロール)一覧を取得(Get role list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3304,8 +3304,8 @@ export const RoleApiFactory = function (configuration?: Configuration, basePath?
     const localVarFp = RoleApiFp(configuration)
     return {
         /**
-         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-         * @summary 役割(ロール)を作成
+         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+         * @summary 役割(ロール)を作成(Create role)
          * @param {Role} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3314,9 +3314,9 @@ export const RoleApiFactory = function (configuration?: Configuration, basePath?
             return localVarFp.createRole(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * 役割(ロール)を削除します。
-         * @summary 役割(ロール)を削除
-         * @param {string} roleName 役割(ロール)名
+         * 役割(ロール)を削除します。  Delete a role. 
+         * @summary 役割(ロール)を削除(Delete role)
+         * @param {string} roleName 役割(ロール)名(role name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3324,8 +3324,8 @@ export const RoleApiFactory = function (configuration?: Configuration, basePath?
             return localVarFp.deleteRole(roleName, options).then((request) => request(axios, basePath));
         },
         /**
-         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-         * @summary 役割(ロール)一覧を取得
+         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles as a list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+         * @summary 役割(ロール)一覧を取得(Get role list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3343,8 +3343,8 @@ export const RoleApiFactory = function (configuration?: Configuration, basePath?
  */
 export class RoleApi extends BaseAPI {
     /**
-     * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-     * @summary 役割(ロール)を作成
+     * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+     * @summary 役割(ロール)を作成(Create role)
      * @param {Role} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -3355,9 +3355,9 @@ export class RoleApi extends BaseAPI {
     }
 
     /**
-     * 役割(ロール)を削除します。
-     * @summary 役割(ロール)を削除
-     * @param {string} roleName 役割(ロール)名
+     * 役割(ロール)を削除します。  Delete a role. 
+     * @summary 役割(ロール)を削除(Delete role)
+     * @param {string} roleName 役割(ロール)名(role name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoleApi
@@ -3367,8 +3367,8 @@ export class RoleApi extends BaseAPI {
     }
 
     /**
-     * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。 
-     * @summary 役割(ロール)一覧を取得
+     * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles as a list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong. 
+     * @summary 役割(ロール)一覧を取得(Get role list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RoleApi
@@ -3386,13 +3386,13 @@ export class RoleApi extends BaseAPI {
 export const SaasUserApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * SaaSにユーザーを作成します。
-         * @summary SaaSにユーザーを作成
+         * SaaSにユーザーを作成します。  Create a user to SaaS. 
+         * @summary SaaSにユーザーを作成(Create User in SaaS)
          * @param {CreateSaasUserParam} [createSaasUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSaaSUser: async (createSaasUserParam?: CreateSaasUserParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createSaasUser: async (createSaasUserParam?: CreateSaasUserParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/users`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3424,9 +3424,9 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * 認証アプリケーション登録用のシークレットコードを作成します。
-         * @summary 認証アプリケーション登録用のシークレットコードを作成
-         * @param {string} userId ユーザーID
+         * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authenticator application registration. 
+         * @summary 認証アプリケーション登録用のシークレットコードを作成(Create secret code for authentication application registration)
+         * @param {string} userId ユーザーID(User ID)
          * @param {CreateSecretCodeParam} [createSecretCodeParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3466,15 +3466,15 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。
-         * @summary ユーザー情報を削除
-         * @param {string} userId ユーザーID
+         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Deletes all matching users based on the user ID from the tenant and also deletes them from SaaS. 
+         * @summary ユーザー情報を削除(Delete user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSaaSUser: async (userId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteSaasUser: async (userId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
-            assertParamExists('deleteSaaSUser', 'userId', userId)
+            assertParamExists('deleteSaasUser', 'userId', userId)
             const localVarPath = `/users/{user_id}`
                 .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -3504,15 +3504,15 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーIDからユーザー情報を取得します。
-         * @summary ユーザー情報を取得
-         * @param {string} userId ユーザーID
+         * ユーザーIDからユーザー情報を取得します。  Get user information from user ID. 
+         * @summary ユーザー情報を取得(Get user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSaaSUser: async (userId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSaasUser: async (userId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
-            assertParamExists('getSaaSUser', 'userId', userId)
+            assertParamExists('getSaasUser', 'userId', userId)
             const localVarPath = `/users/{user_id}`
                 .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -3542,12 +3542,12 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * SaaSのユーザー全件を取得します。
-         * @summary ユーザー一覧を取得
+         * SaaSのユーザー全件を取得します。  Get all SaaS users. 
+         * @summary ユーザー一覧を取得(Get user list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSaaSUsers: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSaasUsers: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/users`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3576,9 +3576,9 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーのMFA設定を取得します。
-         * @summary ユーザーのMFA設定を取得
-         * @param {string} userId ユーザーID
+         * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings. 
+         * @summary ユーザーのMFA設定を取得(Get user\'s MFA settings)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3614,9 +3614,9 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーのメールアドレスを変更します。
-         * @summary メールアドレスを変更
-         * @param {string} userId ユーザーID
+         * ユーザーのメールアドレスを変更します。  Change a user\'s email. 
+         * @summary メールアドレスを変更(change email)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3656,9 +3656,9 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーのログインパスワードを変更します。
-         * @summary パスワードを変更
-         * @param {string} userId ユーザーID
+         * ユーザーのログインパスワードを変更します。  Change a user\'s login password. 
+         * @summary パスワードを変更(change password)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3698,9 +3698,9 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * 認証アプリケーションを登録します。
-         * @summary 認証アプリケーションを登録
-         * @param {string} userId ユーザーID
+         * 認証アプリケーションを登録します。  Register an authenticator application. 
+         * @summary 認証アプリケーションを登録(Register authenticator application)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3740,9 +3740,9 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * ユーザーのMFA設定を更新します。
-         * @summary ユーザーのMFA設定を更新
-         * @param {string} userId ユーザーID
+         * ユーザーのMFA設定を更新します。  Update the user\'s MFA settings. 
+         * @summary ユーザーのMFA設定を更新(Update user\'s MFA settings)
+         * @param {string} userId ユーザーID(User ID)
          * @param {MfaPreference} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3792,20 +3792,20 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration)
     return {
         /**
-         * SaaSにユーザーを作成します。
-         * @summary SaaSにユーザーを作成
+         * SaaSにユーザーを作成します。  Create a user to SaaS. 
+         * @summary SaaSにユーザーを作成(Create User in SaaS)
          * @param {CreateSaasUserParam} [createSaasUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSaaSUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createSaaSUser(createSaasUserParam, options);
+        async createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createSaasUser(createSaasUserParam, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 認証アプリケーション登録用のシークレットコードを作成します。
-         * @summary 認証アプリケーション登録用のシークレットコードを作成
-         * @param {string} userId ユーザーID
+         * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authenticator application registration. 
+         * @summary 認証アプリケーション登録用のシークレットコードを作成(Create secret code for authentication application registration)
+         * @param {string} userId ユーザーID(User ID)
          * @param {CreateSecretCodeParam} [createSecretCodeParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3815,41 +3815,41 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。
-         * @summary ユーザー情報を削除
-         * @param {string} userId ユーザーID
+         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Deletes all matching users based on the user ID from the tenant and also deletes them from SaaS. 
+         * @summary ユーザー情報を削除(Delete user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteSaaSUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSaaSUser(userId, options);
+        async deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSaasUser(userId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーIDからユーザー情報を取得します。
-         * @summary ユーザー情報を取得
-         * @param {string} userId ユーザーID
+         * ユーザーIDからユーザー情報を取得します。  Get user information from user ID. 
+         * @summary ユーザー情報を取得(Get user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSaaSUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaaSUser(userId, options);
+        async getSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasUser(userId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSのユーザー全件を取得します。
-         * @summary ユーザー一覧を取得
+         * SaaSのユーザー全件を取得します。  Get all SaaS users. 
+         * @summary ユーザー一覧を取得(Get user list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSaaSUsers(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUsers>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaaSUsers(options);
+        async getSaasUsers(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUsers>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasUsers(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーのMFA設定を取得します。
-         * @summary ユーザーのMFA設定を取得
-         * @param {string} userId ユーザーID
+         * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings. 
+         * @summary ユーザーのMFA設定を取得(Get user\'s MFA settings)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3858,9 +3858,9 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーのメールアドレスを変更します。
-         * @summary メールアドレスを変更
-         * @param {string} userId ユーザーID
+         * ユーザーのメールアドレスを変更します。  Change a user\'s email. 
+         * @summary メールアドレスを変更(change email)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3870,9 +3870,9 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーのログインパスワードを変更します。
-         * @summary パスワードを変更
-         * @param {string} userId ユーザーID
+         * ユーザーのログインパスワードを変更します。  Change a user\'s login password. 
+         * @summary パスワードを変更(change password)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3882,9 +3882,9 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 認証アプリケーションを登録します。
-         * @summary 認証アプリケーションを登録
-         * @param {string} userId ユーザーID
+         * 認証アプリケーションを登録します。  Register an authenticator application. 
+         * @summary 認証アプリケーションを登録(Register authenticator application)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3894,9 +3894,9 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーのMFA設定を更新します。
-         * @summary ユーザーのMFA設定を更新
-         * @param {string} userId ユーザーID
+         * ユーザーのMFA設定を更新します。  Update the user\'s MFA settings. 
+         * @summary ユーザーのMFA設定を更新(Update user\'s MFA settings)
+         * @param {string} userId ユーザーID(User ID)
          * @param {MfaPreference} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3916,19 +3916,19 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = SaasUserApiFp(configuration)
     return {
         /**
-         * SaaSにユーザーを作成します。
-         * @summary SaaSにユーザーを作成
+         * SaaSにユーザーを作成します。  Create a user to SaaS. 
+         * @summary SaaSにユーザーを作成(Create User in SaaS)
          * @param {CreateSaasUserParam} [createSaasUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSaaSUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<SaasUser> {
-            return localVarFp.createSaaSUser(createSaasUserParam, options).then((request) => request(axios, basePath));
+        createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<SaasUser> {
+            return localVarFp.createSaasUser(createSaasUserParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * 認証アプリケーション登録用のシークレットコードを作成します。
-         * @summary 認証アプリケーション登録用のシークレットコードを作成
-         * @param {string} userId ユーザーID
+         * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authenticator application registration. 
+         * @summary 認証アプリケーション登録用のシークレットコードを作成(Create secret code for authentication application registration)
+         * @param {string} userId ユーザーID(User ID)
          * @param {CreateSecretCodeParam} [createSecretCodeParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3937,38 +3937,38 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createSecretCode(userId, createSecretCodeParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。
-         * @summary ユーザー情報を削除
-         * @param {string} userId ユーザーID
+         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Deletes all matching users based on the user ID from the tenant and also deletes them from SaaS. 
+         * @summary ユーザー情報を削除(Delete user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSaaSUser(userId: string, options?: any): AxiosPromise<void> {
-            return localVarFp.deleteSaaSUser(userId, options).then((request) => request(axios, basePath));
+        deleteSaasUser(userId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.deleteSaasUser(userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーIDからユーザー情報を取得します。
-         * @summary ユーザー情報を取得
-         * @param {string} userId ユーザーID
+         * ユーザーIDからユーザー情報を取得します。  Get user information from user ID. 
+         * @summary ユーザー情報を取得(Get user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSaaSUser(userId: string, options?: any): AxiosPromise<SaasUser> {
-            return localVarFp.getSaaSUser(userId, options).then((request) => request(axios, basePath));
+        getSaasUser(userId: string, options?: any): AxiosPromise<SaasUser> {
+            return localVarFp.getSaasUser(userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSのユーザー全件を取得します。
-         * @summary ユーザー一覧を取得
+         * SaaSのユーザー全件を取得します。  Get all SaaS users. 
+         * @summary ユーザー一覧を取得(Get user list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSaaSUsers(options?: any): AxiosPromise<SaasUsers> {
-            return localVarFp.getSaaSUsers(options).then((request) => request(axios, basePath));
+        getSaasUsers(options?: any): AxiosPromise<SaasUsers> {
+            return localVarFp.getSaasUsers(options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーのMFA設定を取得します。
-         * @summary ユーザーのMFA設定を取得
-         * @param {string} userId ユーザーID
+         * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings. 
+         * @summary ユーザーのMFA設定を取得(Get user\'s MFA settings)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -3976,9 +3976,9 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getUserMfaPreference(userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーのメールアドレスを変更します。
-         * @summary メールアドレスを変更
-         * @param {string} userId ユーザーID
+         * ユーザーのメールアドレスを変更します。  Change a user\'s email. 
+         * @summary メールアドレスを変更(change email)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3987,9 +3987,9 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.updateSaasUserEmail(userId, updateSaasUserEmailParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーのログインパスワードを変更します。
-         * @summary パスワードを変更
-         * @param {string} userId ユーザーID
+         * ユーザーのログインパスワードを変更します。  Change a user\'s login password. 
+         * @summary パスワードを変更(change password)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3998,9 +3998,9 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.updateSaasUserPassword(userId, updateSaasUserPasswordParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * 認証アプリケーションを登録します。
-         * @summary 認証アプリケーションを登録
-         * @param {string} userId ユーザーID
+         * 認証アプリケーションを登録します。  Register an authenticator application. 
+         * @summary 認証アプリケーションを登録(Register authenticator application)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4009,9 +4009,9 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.updateSoftwareToken(userId, updateSoftwareTokenParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーのMFA設定を更新します。
-         * @summary ユーザーのMFA設定を更新
-         * @param {string} userId ユーザーID
+         * ユーザーのMFA設定を更新します。  Update the user\'s MFA settings. 
+         * @summary ユーザーのMFA設定を更新(Update user\'s MFA settings)
+         * @param {string} userId ユーザーID(User ID)
          * @param {MfaPreference} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4030,21 +4030,21 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
  */
 export class SaasUserApi extends BaseAPI {
     /**
-     * SaaSにユーザーを作成します。
-     * @summary SaaSにユーザーを作成
+     * SaaSにユーザーを作成します。  Create a user to SaaS. 
+     * @summary SaaSにユーザーを作成(Create User in SaaS)
      * @param {CreateSaasUserParam} [createSaasUserParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    public createSaaSUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig) {
-        return SaasUserApiFp(this.configuration).createSaaSUser(createSaasUserParam, options).then((request) => request(this.axios, this.basePath));
+    public createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).createSaasUser(createSaasUserParam, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * 認証アプリケーション登録用のシークレットコードを作成します。
-     * @summary 認証アプリケーション登録用のシークレットコードを作成
-     * @param {string} userId ユーザーID
+     * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authenticator application registration. 
+     * @summary 認証アプリケーション登録用のシークレットコードを作成(Create secret code for authentication application registration)
+     * @param {string} userId ユーザーID(User ID)
      * @param {CreateSecretCodeParam} [createSecretCodeParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4055,44 +4055,44 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。
-     * @summary ユーザー情報を削除
-     * @param {string} userId ユーザーID
+     * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Deletes all matching users based on the user ID from the tenant and also deletes them from SaaS. 
+     * @summary ユーザー情報を削除(Delete user info)
+     * @param {string} userId ユーザーID(User ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    public deleteSaaSUser(userId: string, options?: AxiosRequestConfig) {
-        return SaasUserApiFp(this.configuration).deleteSaaSUser(userId, options).then((request) => request(this.axios, this.basePath));
+    public deleteSaasUser(userId: string, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).deleteSaasUser(userId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * ユーザーIDからユーザー情報を取得します。
-     * @summary ユーザー情報を取得
-     * @param {string} userId ユーザーID
+     * ユーザーIDからユーザー情報を取得します。  Get user information from user ID. 
+     * @summary ユーザー情報を取得(Get user info)
+     * @param {string} userId ユーザーID(User ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    public getSaaSUser(userId: string, options?: AxiosRequestConfig) {
-        return SaasUserApiFp(this.configuration).getSaaSUser(userId, options).then((request) => request(this.axios, this.basePath));
+    public getSaasUser(userId: string, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).getSaasUser(userId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * SaaSのユーザー全件を取得します。
-     * @summary ユーザー一覧を取得
+     * SaaSのユーザー全件を取得します。  Get all SaaS users. 
+     * @summary ユーザー一覧を取得(Get user list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    public getSaaSUsers(options?: AxiosRequestConfig) {
-        return SaasUserApiFp(this.configuration).getSaaSUsers(options).then((request) => request(this.axios, this.basePath));
+    public getSaasUsers(options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).getSaasUsers(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * ユーザーのMFA設定を取得します。
-     * @summary ユーザーのMFA設定を取得
-     * @param {string} userId ユーザーID
+     * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings. 
+     * @summary ユーザーのMFA設定を取得(Get user\'s MFA settings)
+     * @param {string} userId ユーザーID(User ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
@@ -4102,9 +4102,9 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * ユーザーのメールアドレスを変更します。
-     * @summary メールアドレスを変更
-     * @param {string} userId ユーザーID
+     * ユーザーのメールアドレスを変更します。  Change a user\'s email. 
+     * @summary メールアドレスを変更(change email)
+     * @param {string} userId ユーザーID(User ID)
      * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4115,9 +4115,9 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * ユーザーのログインパスワードを変更します。
-     * @summary パスワードを変更
-     * @param {string} userId ユーザーID
+     * ユーザーのログインパスワードを変更します。  Change a user\'s login password. 
+     * @summary パスワードを変更(change password)
+     * @param {string} userId ユーザーID(User ID)
      * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4128,9 +4128,9 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * 認証アプリケーションを登録します。
-     * @summary 認証アプリケーションを登録
-     * @param {string} userId ユーザーID
+     * 認証アプリケーションを登録します。  Register an authenticator application. 
+     * @summary 認証アプリケーションを登録(Register authenticator application)
+     * @param {string} userId ユーザーID(User ID)
      * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4141,9 +4141,9 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * ユーザーのMFA設定を更新します。
-     * @summary ユーザーのMFA設定を更新
-     * @param {string} userId ユーザーID
+     * ユーザーのMFA設定を更新します。  Update the user\'s MFA settings. 
+     * @summary ユーザーのMFA設定を更新(Update user\'s MFA settings)
+     * @param {string} userId ユーザーID(User ID)
      * @param {MfaPreference} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4162,8 +4162,8 @@ export class SaasUserApi extends BaseAPI {
 export const SaasusTenantApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * サーバサイド用に API キーを発行します。最大 2 つまで発行できます。
-         * @summary APIキーを作成
+         * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Issue an API key for the server side. Up to 2 can be issued. 
+         * @summary APIキーを作成(Create API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4196,9 +4196,9 @@ export const SaasusTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * サーバサイド用の API キーを削除します。
-         * @summary APIキーを削除
-         * @param {string} apiKey APIキー
+         * サーバサイド用の API キーを削除します。  Delete API Keys. 
+         * @summary APIキーを削除(Delete API key)
+         * @param {string} apiKey APIキー(API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4234,8 +4234,8 @@ export const SaasusTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * サーバサイド用に API キーを取得します。最大 2 つまで発行できます。
-         * @summary APIキー一覧を取得
+         * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get an API key for the server side. Up to 2 can be issued. 
+         * @summary APIキー一覧を取得(Get API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4268,8 +4268,8 @@ export const SaasusTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * クライアントへのすべての API リクエストでアプリが使用する固定文字列を取得します。 
-         * @summary クライアントシークレットを取得
+         * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests. 
+         * @summary クライアントシークレットを取得(get client secret)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4302,12 +4302,12 @@ export const SaasusTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。 
-         * @summary SaasIDを取得
+         * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. 
+         * @summary SaasIDを取得(Get SaasID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSaasID: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSaasId: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/saasid`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -4336,8 +4336,8 @@ export const SaasusTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * クライアントへのすべての API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。 
-         * @summary クライアントシークレットを更新
+         * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If you set it to a SaaS application that is already running, it will affect your behavior. 
+         * @summary クライアントシークレットを更新(Update client secret)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4370,12 +4370,12 @@ export const SaasusTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-         * @summary SaasIDを更新
+         * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If you set it on a SaaS application that is already running, it will affect your behavior. 
+         * @summary SaasIDを更新(Update SaasID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSaasID: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateSaasId: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/saasid`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -4414,8 +4414,8 @@ export const SaasusTenantApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SaasusTenantApiAxiosParamCreator(configuration)
     return {
         /**
-         * サーバサイド用に API キーを発行します。最大 2 つまで発行できます。
-         * @summary APIキーを作成
+         * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Issue an API key for the server side. Up to 2 can be issued. 
+         * @summary APIキーを作成(Create API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4424,9 +4424,9 @@ export const SaasusTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * サーバサイド用の API キーを削除します。
-         * @summary APIキーを削除
-         * @param {string} apiKey APIキー
+         * サーバサイド用の API キーを削除します。  Delete API Keys. 
+         * @summary APIキーを削除(Delete API key)
+         * @param {string} apiKey APIキー(API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4435,8 +4435,8 @@ export const SaasusTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * サーバサイド用に API キーを取得します。最大 2 つまで発行できます。
-         * @summary APIキー一覧を取得
+         * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get an API key for the server side. Up to 2 can be issued. 
+         * @summary APIキー一覧を取得(Get API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4445,8 +4445,8 @@ export const SaasusTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * クライアントへのすべての API リクエストでアプリが使用する固定文字列を取得します。 
-         * @summary クライアントシークレットを取得
+         * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests. 
+         * @summary クライアントシークレットを取得(get client secret)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4455,18 +4455,18 @@ export const SaasusTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。 
-         * @summary SaasIDを取得
+         * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. 
+         * @summary SaasIDを取得(Get SaasID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSaasID(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasID>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasID(options);
+        async getSaasId(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasId>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasId(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * クライアントへのすべての API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。 
-         * @summary クライアントシークレットを更新
+         * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If you set it to a SaaS application that is already running, it will affect your behavior. 
+         * @summary クライアントシークレットを更新(Update client secret)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4475,13 +4475,13 @@ export const SaasusTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-         * @summary SaasIDを更新
+         * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If you set it on a SaaS application that is already running, it will affect your behavior. 
+         * @summary SaasIDを更新(Update SaasID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateSaasID(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasID(options);
+        async updateSaasId(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasId(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -4495,8 +4495,8 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
     const localVarFp = SaasusTenantApiFp(configuration)
     return {
         /**
-         * サーバサイド用に API キーを発行します。最大 2 つまで発行できます。
-         * @summary APIキーを作成
+         * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Issue an API key for the server side. Up to 2 can be issued. 
+         * @summary APIキーを作成(Create API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4504,9 +4504,9 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.createApiKey(options).then((request) => request(axios, basePath));
         },
         /**
-         * サーバサイド用の API キーを削除します。
-         * @summary APIキーを削除
-         * @param {string} apiKey APIキー
+         * サーバサイド用の API キーを削除します。  Delete API Keys. 
+         * @summary APIキーを削除(Delete API key)
+         * @param {string} apiKey APIキー(API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4514,8 +4514,8 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.deleteApiKey(apiKey, options).then((request) => request(axios, basePath));
         },
         /**
-         * サーバサイド用に API キーを取得します。最大 2 つまで発行できます。
-         * @summary APIキー一覧を取得
+         * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get an API key for the server side. Up to 2 can be issued. 
+         * @summary APIキー一覧を取得(Get API key)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4523,8 +4523,8 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.getApiKeys(options).then((request) => request(axios, basePath));
         },
         /**
-         * クライアントへのすべての API リクエストでアプリが使用する固定文字列を取得します。 
-         * @summary クライアントシークレットを取得
+         * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests. 
+         * @summary クライアントシークレットを取得(get client secret)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4532,17 +4532,17 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.getClientSecret(options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。 
-         * @summary SaasIDを取得
+         * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. 
+         * @summary SaasIDを取得(Get SaasID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSaasID(options?: any): AxiosPromise<SaasID> {
-            return localVarFp.getSaasID(options).then((request) => request(axios, basePath));
+        getSaasId(options?: any): AxiosPromise<SaasId> {
+            return localVarFp.getSaasId(options).then((request) => request(axios, basePath));
         },
         /**
-         * クライアントへのすべての API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。 
-         * @summary クライアントシークレットを更新
+         * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If you set it to a SaaS application that is already running, it will affect your behavior. 
+         * @summary クライアントシークレットを更新(Update client secret)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4550,13 +4550,13 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.updateClientSecret(options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-         * @summary SaasIDを更新
+         * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If you set it on a SaaS application that is already running, it will affect your behavior. 
+         * @summary SaasIDを更新(Update SaasID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSaasID(options?: any): AxiosPromise<void> {
-            return localVarFp.updateSaasID(options).then((request) => request(axios, basePath));
+        updateSaasId(options?: any): AxiosPromise<void> {
+            return localVarFp.updateSaasId(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -4569,8 +4569,8 @@ export const SaasusTenantApiFactory = function (configuration?: Configuration, b
  */
 export class SaasusTenantApi extends BaseAPI {
     /**
-     * サーバサイド用に API キーを発行します。最大 2 つまで発行できます。
-     * @summary APIキーを作成
+     * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Issue an API key for the server side. Up to 2 can be issued. 
+     * @summary APIキーを作成(Create API key)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
@@ -4580,9 +4580,9 @@ export class SaasusTenantApi extends BaseAPI {
     }
 
     /**
-     * サーバサイド用の API キーを削除します。
-     * @summary APIキーを削除
-     * @param {string} apiKey APIキー
+     * サーバサイド用の API キーを削除します。  Delete API Keys. 
+     * @summary APIキーを削除(Delete API key)
+     * @param {string} apiKey APIキー(API key)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
@@ -4592,8 +4592,8 @@ export class SaasusTenantApi extends BaseAPI {
     }
 
     /**
-     * サーバサイド用に API キーを取得します。最大 2 つまで発行できます。
-     * @summary APIキー一覧を取得
+     * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get an API key for the server side. Up to 2 can be issued. 
+     * @summary APIキー一覧を取得(Get API key)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
@@ -4603,8 +4603,8 @@ export class SaasusTenantApi extends BaseAPI {
     }
 
     /**
-     * クライアントへのすべての API リクエストでアプリが使用する固定文字列を取得します。 
-     * @summary クライアントシークレットを取得
+     * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests. 
+     * @summary クライアントシークレットを取得(get client secret)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
@@ -4614,19 +4614,19 @@ export class SaasusTenantApi extends BaseAPI {
     }
 
     /**
-     * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。 
-     * @summary SaasIDを取得
+     * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. 
+     * @summary SaasIDを取得(Get SaasID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
      */
-    public getSaasID(options?: AxiosRequestConfig) {
-        return SaasusTenantApiFp(this.configuration).getSaasID(options).then((request) => request(this.axios, this.basePath));
+    public getSaasId(options?: AxiosRequestConfig) {
+        return SaasusTenantApiFp(this.configuration).getSaasId(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * クライアントへのすべての API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。 
-     * @summary クライアントシークレットを更新
+     * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If you set it to a SaaS application that is already running, it will affect your behavior. 
+     * @summary クライアントシークレットを更新(Update client secret)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
@@ -4636,14 +4636,14 @@ export class SaasusTenantApi extends BaseAPI {
     }
 
     /**
-     * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。 
-     * @summary SaasIDを更新
+     * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If you set it on a SaaS application that is already running, it will affect your behavior. 
+     * @summary SaasIDを更新(Update SaasID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasusTenantApi
      */
-    public updateSaasID(options?: AxiosRequestConfig) {
-        return SaasusTenantApiFp(this.configuration).updateSaasID(options).then((request) => request(this.axios, this.basePath));
+    public updateSaasId(options?: AxiosRequestConfig) {
+        return SaasusTenantApiFp(this.configuration).updateSaasId(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -4655,8 +4655,8 @@ export class SaasusTenantApi extends BaseAPI {
 export const TenantApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * SaaSus Platform で管理する、テナント情報を作成します。 
-         * @summary テナントを作成
+         * SaaSus Platform で管理する、テナント情報を作成します。  Create tenant information in the SaaSus Platform. 
+         * @summary テナントを作成(Create Tenant)
          * @param {TenantProps} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4693,8 +4693,8 @@ export const TenantApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * billing経由でstripeへ初期情報を設定
-         * @summary stripe初期設定
+         * billing経由でstripeへ初期情報を設定  Set initial information to stripe via billing 
+         * @summary stripe初期設定(stripe initial setting)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4727,9 +4727,9 @@ export const TenantApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を削除します。 
-         * @summary テナント情報を削除
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete tenant information managed by SaaSus Platform. 
+         * @summary テナント情報を削除(Delete tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4765,9 +4765,9 @@ export const TenantApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を取得します。 
-         * @summary テナント情報を取得
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get detailed information about a tenant registered with the SaaSus Platform. 
+         * @summary テナント情報を取得(Get tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4803,8 +4803,8 @@ export const TenantApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * SaaSus Platform で管理する、テナント情報の取得を行います。 
-         * @summary テナント一覧取得
+         * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenant information managed by SaaSus Platform. 
+         * @summary テナント一覧取得(Get tenant list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4837,9 +4837,9 @@ export const TenantApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を更新します。 
-         * @summary テナント情報を更新
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update tenant details managed by the SaaSus Platform. 
+         * @summary テナント情報を更新(Update tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {TenantProps} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4889,8 +4889,8 @@ export const TenantApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = TenantApiAxiosParamCreator(configuration)
     return {
         /**
-         * SaaSus Platform で管理する、テナント情報を作成します。 
-         * @summary テナントを作成
+         * SaaSus Platform で管理する、テナント情報を作成します。  Create tenant information in the SaaSus Platform. 
+         * @summary テナントを作成(Create Tenant)
          * @param {TenantProps} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4900,8 +4900,8 @@ export const TenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * billing経由でstripeへ初期情報を設定
-         * @summary stripe初期設定
+         * billing経由でstripeへ初期情報を設定  Set initial information to stripe via billing 
+         * @summary stripe初期設定(stripe initial setting)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4910,9 +4910,9 @@ export const TenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を削除します。 
-         * @summary テナント情報を削除
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete tenant information managed by SaaSus Platform. 
+         * @summary テナント情報を削除(Delete tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4921,9 +4921,9 @@ export const TenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を取得します。 
-         * @summary テナント情報を取得
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get detailed information about a tenant registered with the SaaSus Platform. 
+         * @summary テナント情報を取得(Get tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4932,8 +4932,8 @@ export const TenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform で管理する、テナント情報の取得を行います。 
-         * @summary テナント一覧取得
+         * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenant information managed by SaaSus Platform. 
+         * @summary テナント一覧取得(Get tenant list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4942,9 +4942,9 @@ export const TenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を更新します。 
-         * @summary テナント情報を更新
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update tenant details managed by the SaaSus Platform. 
+         * @summary テナント情報を更新(Update tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {TenantProps} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4964,8 +4964,8 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
     const localVarFp = TenantApiFp(configuration)
     return {
         /**
-         * SaaSus Platform で管理する、テナント情報を作成します。 
-         * @summary テナントを作成
+         * SaaSus Platform で管理する、テナント情報を作成します。  Create tenant information in the SaaSus Platform. 
+         * @summary テナントを作成(Create Tenant)
          * @param {TenantProps} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4974,8 +4974,8 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.createTenant(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * billing経由でstripeへ初期情報を設定
-         * @summary stripe初期設定
+         * billing経由でstripeへ初期情報を設定  Set initial information to stripe via billing 
+         * @summary stripe初期設定(stripe initial setting)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4983,9 +4983,9 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.createTenantAndPricing(options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を削除します。 
-         * @summary テナント情報を削除
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete tenant information managed by SaaSus Platform. 
+         * @summary テナント情報を削除(Delete tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -4993,9 +4993,9 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.deleteTenant(tenantId, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を取得します。 
-         * @summary テナント情報を取得
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get detailed information about a tenant registered with the SaaSus Platform. 
+         * @summary テナント情報を取得(Get tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5003,8 +5003,8 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.getTenant(tenantId, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform で管理する、テナント情報の取得を行います。 
-         * @summary テナント一覧取得
+         * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenant information managed by SaaSus Platform. 
+         * @summary テナント一覧取得(Get tenant list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5012,9 +5012,9 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.getTenants(options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を更新します。 
-         * @summary テナント情報を更新
-         * @param {string} tenantId テナントID
+         * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update tenant details managed by the SaaSus Platform. 
+         * @summary テナント情報を更新(Update tenant info)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {TenantProps} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5033,8 +5033,8 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
  */
 export class TenantApi extends BaseAPI {
     /**
-     * SaaSus Platform で管理する、テナント情報を作成します。 
-     * @summary テナントを作成
+     * SaaSus Platform で管理する、テナント情報を作成します。  Create tenant information in the SaaSus Platform. 
+     * @summary テナントを作成(Create Tenant)
      * @param {TenantProps} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5045,8 +5045,8 @@ export class TenantApi extends BaseAPI {
     }
 
     /**
-     * billing経由でstripeへ初期情報を設定
-     * @summary stripe初期設定
+     * billing経由でstripeへ初期情報を設定  Set initial information to stripe via billing 
+     * @summary stripe初期設定(stripe initial setting)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantApi
@@ -5056,9 +5056,9 @@ export class TenantApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform で管理する、テナントの詳細情報を削除します。 
-     * @summary テナント情報を削除
-     * @param {string} tenantId テナントID
+     * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete tenant information managed by SaaSus Platform. 
+     * @summary テナント情報を削除(Delete tenant info)
+     * @param {string} tenantId テナントID(Tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantApi
@@ -5068,9 +5068,9 @@ export class TenantApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform で管理する、テナントの詳細情報を取得します。 
-     * @summary テナント情報を取得
-     * @param {string} tenantId テナントID
+     * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get detailed information about a tenant registered with the SaaSus Platform. 
+     * @summary テナント情報を取得(Get tenant info)
+     * @param {string} tenantId テナントID(Tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantApi
@@ -5080,8 +5080,8 @@ export class TenantApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform で管理する、テナント情報の取得を行います。 
-     * @summary テナント一覧取得
+     * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenant information managed by SaaSus Platform. 
+     * @summary テナント一覧取得(Get tenant list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantApi
@@ -5091,9 +5091,9 @@ export class TenantApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform で管理する、テナントの詳細情報を更新します。 
-     * @summary テナント情報を更新
-     * @param {string} tenantId テナントID
+     * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update tenant details managed by the SaaSus Platform. 
+     * @summary テナント情報を更新(Update tenant info)
+     * @param {string} tenantId テナントID(Tenant ID)
      * @param {TenantProps} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5112,8 +5112,8 @@ export class TenantApi extends BaseAPI {
 export const TenantAttributeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-         * @summary テナント属性の作成
+         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+         * @summary テナント属性の作成(Create tenant attribute)
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5150,9 +5150,9 @@ export const TenantAttributeApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。 
-         * @summary テナント属性の削除
-         * @param {string} attributeName 属性名
+         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes additional attributes of tenants managed by SaaSus Platform. 
+         * @summary テナント属性の削除(Delete tenant attribute)
+         * @param {string} attributeName 属性名(attribute name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5188,8 +5188,8 @@ export const TenantAttributeApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-         * @summary テナント属性の一覧を取得
+         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+         * @summary テナント属性の一覧を取得(Get a list of tenant attributes)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5232,8 +5232,8 @@ export const TenantAttributeApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = TenantAttributeApiAxiosParamCreator(configuration)
     return {
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-         * @summary テナント属性の作成
+         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+         * @summary テナント属性の作成(Create tenant attribute)
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5243,9 +5243,9 @@ export const TenantAttributeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。 
-         * @summary テナント属性の削除
-         * @param {string} attributeName 属性名
+         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes additional attributes of tenants managed by SaaSus Platform. 
+         * @summary テナント属性の削除(Delete tenant attribute)
+         * @param {string} attributeName 属性名(attribute name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5254,8 +5254,8 @@ export const TenantAttributeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-         * @summary テナント属性の一覧を取得
+         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+         * @summary テナント属性の一覧を取得(Get a list of tenant attributes)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5274,8 +5274,8 @@ export const TenantAttributeApiFactory = function (configuration?: Configuration
     const localVarFp = TenantAttributeApiFp(configuration)
     return {
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-         * @summary テナント属性の作成
+         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+         * @summary テナント属性の作成(Create tenant attribute)
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5284,9 +5284,9 @@ export const TenantAttributeApiFactory = function (configuration?: Configuration
             return localVarFp.createTenantAttribute(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。 
-         * @summary テナント属性の削除
-         * @param {string} attributeName 属性名
+         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes additional attributes of tenants managed by SaaSus Platform. 
+         * @summary テナント属性の削除(Delete tenant attribute)
+         * @param {string} attributeName 属性名(attribute name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5294,8 +5294,8 @@ export const TenantAttributeApiFactory = function (configuration?: Configuration
             return localVarFp.deleteTenantAttribute(attributeName, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-         * @summary テナント属性の一覧を取得
+         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+         * @summary テナント属性の一覧を取得(Get a list of tenant attributes)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5313,8 +5313,8 @@ export const TenantAttributeApiFactory = function (configuration?: Configuration
  */
 export class TenantAttributeApi extends BaseAPI {
     /**
-     * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-     * @summary テナント属性の作成
+     * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+     * @summary テナント属性の作成(Create tenant attribute)
      * @param {Attribute} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5325,9 +5325,9 @@ export class TenantAttributeApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform で管理する、テナントの追加属性の削除を行います。 
-     * @summary テナント属性の削除
-     * @param {string} attributeName 属性名
+     * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes additional attributes of tenants managed by SaaSus Platform. 
+     * @summary テナント属性の削除(Delete tenant attribute)
+     * @param {string} attributeName 属性名(attribute name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantAttributeApi
@@ -5337,8 +5337,8 @@ export class TenantAttributeApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。 
-     * @summary テナント属性の一覧を取得
+     * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, you can have a tenant name, memo, etc., and you can get it from SaaS using the SaaSus SDK/API. 
+     * @summary テナント属性の一覧を取得(Get a list of tenant attributes)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantAttributeApi
@@ -5356,9 +5356,9 @@ export class TenantAttributeApi extends BaseAPI {
 export const TenantUserApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * テナントにユーザーを作成します。attributesを空のオブジェクトにした場合、追加属性は空で作成されます。
-         * @summary テナントにユーザーを作成
-         * @param {string} tenantId テナントID
+         * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a user in your tenant. If attributes is an empty object, the additional attributes will be created empty. 
+         * @summary テナントにユーザーを作成(Create user in tenant)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {CreateTenantUserParam} [createTenantUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5398,11 +5398,11 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントのユーザーに役割(ロール)を作成します。
-         * @summary テナントのユーザー情報に役割(ロール)を作成
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
-         * @param {number} envId 環境ID
+         * テナントのユーザーに役割(ロール)を作成します。  Create roles for tenant users. 
+         * @summary テナントのユーザー情報に役割(ロール)を作成(Create a role in tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {number} envId 環境ID(Env ID)
          * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5448,10 +5448,10 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントからユーザーを削除します。
-         * @summary テナントのユーザー情報を削除
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントからユーザーを削除します。  Delete a user from your tenant. 
+         * @summary テナントのユーザー情報を削除(Delete tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5490,12 +5490,12 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントのユーザーから役割(ロール)を削除します。
-         * @summary テナントのユーザーから役割(ロール)を削除
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
-         * @param {number} envId 環境ID
-         * @param {string} roleName 役割(ロール)名
+         * テナントのユーザーから役割(ロール)を削除します。  Delete a role (role) from a tenant user. 
+         * @summary テナントのユーザーから役割(ロール)を削除(Delete role from tenant user)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {number} envId 環境ID(Env ID)
+         * @param {string} roleName 役割(ロール)名(role name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5540,9 +5540,9 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * ユーザーIDからテナントに所属しているユーザー情報を取得します。複数テナントに所属している場合は別のオブジェクトとして返却されます。
-         * @summary ユーザー情報を取得
-         * @param {string} userId ユーザーID
+         * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get the user information belonging to the tenant from the user ID. If it belongs to multiple tenants, it will be returned as another object. 
+         * @summary ユーザー情報を取得(Get user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5578,8 +5578,8 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントに所属しているユーザー全件を取得します。複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。idは一意ではありません。
-         * @summary ユーザー一覧を取得
+         * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Acquires all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. id is not unique. 
+         * @summary ユーザー一覧を取得(Get user list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5612,10 +5612,10 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントのユーザーをIDから一件取得します。
-         * @summary テナントのユーザー情報を取得
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントのユーザーをIDから一件取得します。  Acquires one tenant user by specifying the ID. 
+         * @summary テナントのユーザー情報を取得(Get tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5654,9 +5654,9 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントに所属するユーザーを全件取得します。 idは一意です。
-         * @summary テナントのユーザー一覧を取得
-         * @param {string} tenantId テナントID
+         * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all users belonging to the tenant. id is unique. 
+         * @summary テナントのユーザー一覧を取得(Get tenant user list)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5692,10 +5692,10 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * テナントのユーザー属性情報を更新します。
-         * @summary テナントのユーザー属性情報を更新
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントのユーザー属性情報を更新します。  Update tenant user attribute information. 
+         * @summary テナントのユーザー属性情報を更新(Update tenant user attribute info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateTenantUserParam} [updateTenantUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5748,9 +5748,9 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = TenantUserApiAxiosParamCreator(configuration)
     return {
         /**
-         * テナントにユーザーを作成します。attributesを空のオブジェクトにした場合、追加属性は空で作成されます。
-         * @summary テナントにユーザーを作成
-         * @param {string} tenantId テナントID
+         * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a user in your tenant. If attributes is an empty object, the additional attributes will be created empty. 
+         * @summary テナントにユーザーを作成(Create user in tenant)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {CreateTenantUserParam} [createTenantUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5760,11 +5760,11 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントのユーザーに役割(ロール)を作成します。
-         * @summary テナントのユーザー情報に役割(ロール)を作成
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
-         * @param {number} envId 環境ID
+         * テナントのユーザーに役割(ロール)を作成します。  Create roles for tenant users. 
+         * @summary テナントのユーザー情報に役割(ロール)を作成(Create a role in tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {number} envId 環境ID(Env ID)
          * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5774,10 +5774,10 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントからユーザーを削除します。
-         * @summary テナントのユーザー情報を削除
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントからユーザーを削除します。  Delete a user from your tenant. 
+         * @summary テナントのユーザー情報を削除(Delete tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5786,12 +5786,12 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントのユーザーから役割(ロール)を削除します。
-         * @summary テナントのユーザーから役割(ロール)を削除
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
-         * @param {number} envId 環境ID
-         * @param {string} roleName 役割(ロール)名
+         * テナントのユーザーから役割(ロール)を削除します。  Delete a role (role) from a tenant user. 
+         * @summary テナントのユーザーから役割(ロール)を削除(Delete role from tenant user)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {number} envId 環境ID(Env ID)
+         * @param {string} roleName 役割(ロール)名(role name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5800,9 +5800,9 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ユーザーIDからテナントに所属しているユーザー情報を取得します。複数テナントに所属している場合は別のオブジェクトとして返却されます。
-         * @summary ユーザー情報を取得
-         * @param {string} userId ユーザーID
+         * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get the user information belonging to the tenant from the user ID. If it belongs to multiple tenants, it will be returned as another object. 
+         * @summary ユーザー情報を取得(Get user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5811,8 +5811,8 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントに所属しているユーザー全件を取得します。複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。idは一意ではありません。
-         * @summary ユーザー一覧を取得
+         * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Acquires all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. id is not unique. 
+         * @summary ユーザー一覧を取得(Get user list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5821,10 +5821,10 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントのユーザーをIDから一件取得します。
-         * @summary テナントのユーザー情報を取得
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントのユーザーをIDから一件取得します。  Acquires one tenant user by specifying the ID. 
+         * @summary テナントのユーザー情報を取得(Get tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5833,9 +5833,9 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントに所属するユーザーを全件取得します。 idは一意です。
-         * @summary テナントのユーザー一覧を取得
-         * @param {string} tenantId テナントID
+         * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all users belonging to the tenant. id is unique. 
+         * @summary テナントのユーザー一覧を取得(Get tenant user list)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5844,10 +5844,10 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * テナントのユーザー属性情報を更新します。
-         * @summary テナントのユーザー属性情報を更新
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントのユーザー属性情報を更新します。  Update tenant user attribute information. 
+         * @summary テナントのユーザー属性情報を更新(Update tenant user attribute info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateTenantUserParam} [updateTenantUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5867,9 +5867,9 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
     const localVarFp = TenantUserApiFp(configuration)
     return {
         /**
-         * テナントにユーザーを作成します。attributesを空のオブジェクトにした場合、追加属性は空で作成されます。
-         * @summary テナントにユーザーを作成
-         * @param {string} tenantId テナントID
+         * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a user in your tenant. If attributes is an empty object, the additional attributes will be created empty. 
+         * @summary テナントにユーザーを作成(Create user in tenant)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {CreateTenantUserParam} [createTenantUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5878,11 +5878,11 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.createTenantUser(tenantId, createTenantUserParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントのユーザーに役割(ロール)を作成します。
-         * @summary テナントのユーザー情報に役割(ロール)を作成
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
-         * @param {number} envId 環境ID
+         * テナントのユーザーに役割(ロール)を作成します。  Create roles for tenant users. 
+         * @summary テナントのユーザー情報に役割(ロール)を作成(Create a role in tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {number} envId 環境ID(Env ID)
          * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5891,10 +5891,10 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.createTenantUserRoles(tenantId, userId, envId, createTenantUserRolesParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントからユーザーを削除します。
-         * @summary テナントのユーザー情報を削除
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントからユーザーを削除します。  Delete a user from your tenant. 
+         * @summary テナントのユーザー情報を削除(Delete tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5902,12 +5902,12 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.deleteTenantUser(tenantId, userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントのユーザーから役割(ロール)を削除します。
-         * @summary テナントのユーザーから役割(ロール)を削除
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
-         * @param {number} envId 環境ID
-         * @param {string} roleName 役割(ロール)名
+         * テナントのユーザーから役割(ロール)を削除します。  Delete a role (role) from a tenant user. 
+         * @summary テナントのユーザーから役割(ロール)を削除(Delete role from tenant user)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {number} envId 環境ID(Env ID)
+         * @param {string} roleName 役割(ロール)名(role name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5915,9 +5915,9 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.deleteTenantUserRole(tenantId, userId, envId, roleName, options).then((request) => request(axios, basePath));
         },
         /**
-         * ユーザーIDからテナントに所属しているユーザー情報を取得します。複数テナントに所属している場合は別のオブジェクトとして返却されます。
-         * @summary ユーザー情報を取得
-         * @param {string} userId ユーザーID
+         * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get the user information belonging to the tenant from the user ID. If it belongs to multiple tenants, it will be returned as another object. 
+         * @summary ユーザー情報を取得(Get user info)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5925,8 +5925,8 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.getAllTenantUser(userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントに所属しているユーザー全件を取得します。複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。idは一意ではありません。
-         * @summary ユーザー一覧を取得
+         * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Acquires all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. id is not unique. 
+         * @summary ユーザー一覧を取得(Get user list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5934,10 +5934,10 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.getAllTenantUsers(options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントのユーザーをIDから一件取得します。
-         * @summary テナントのユーザー情報を取得
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントのユーザーをIDから一件取得します。  Acquires one tenant user by specifying the ID. 
+         * @summary テナントのユーザー情報を取得(Get tenant user info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5945,9 +5945,9 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.getTenantUser(tenantId, userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントに所属するユーザーを全件取得します。 idは一意です。
-         * @summary テナントのユーザー一覧を取得
-         * @param {string} tenantId テナントID
+         * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all users belonging to the tenant. id is unique. 
+         * @summary テナントのユーザー一覧を取得(Get tenant user list)
+         * @param {string} tenantId テナントID(Tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -5955,10 +5955,10 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.getTenantUsers(tenantId, options).then((request) => request(axios, basePath));
         },
         /**
-         * テナントのユーザー属性情報を更新します。
-         * @summary テナントのユーザー属性情報を更新
-         * @param {string} tenantId テナントID
-         * @param {string} userId ユーザーID
+         * テナントのユーザー属性情報を更新します。  Update tenant user attribute information. 
+         * @summary テナントのユーザー属性情報を更新(Update tenant user attribute info)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} userId ユーザーID(User ID)
          * @param {UpdateTenantUserParam} [updateTenantUserParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5977,9 +5977,9 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
  */
 export class TenantUserApi extends BaseAPI {
     /**
-     * テナントにユーザーを作成します。attributesを空のオブジェクトにした場合、追加属性は空で作成されます。
-     * @summary テナントにユーザーを作成
-     * @param {string} tenantId テナントID
+     * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a user in your tenant. If attributes is an empty object, the additional attributes will be created empty. 
+     * @summary テナントにユーザーを作成(Create user in tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
      * @param {CreateTenantUserParam} [createTenantUserParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5990,11 +5990,11 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントのユーザーに役割(ロール)を作成します。
-     * @summary テナントのユーザー情報に役割(ロール)を作成
-     * @param {string} tenantId テナントID
-     * @param {string} userId ユーザーID
-     * @param {number} envId 環境ID
+     * テナントのユーザーに役割(ロール)を作成します。  Create roles for tenant users. 
+     * @summary テナントのユーザー情報に役割(ロール)を作成(Create a role in tenant user info)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {number} envId 環境ID(Env ID)
      * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -6005,10 +6005,10 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントからユーザーを削除します。
-     * @summary テナントのユーザー情報を削除
-     * @param {string} tenantId テナントID
-     * @param {string} userId ユーザーID
+     * テナントからユーザーを削除します。  Delete a user from your tenant. 
+     * @summary テナントのユーザー情報を削除(Delete tenant user info)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} userId ユーザーID(User ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
@@ -6018,12 +6018,12 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントのユーザーから役割(ロール)を削除します。
-     * @summary テナントのユーザーから役割(ロール)を削除
-     * @param {string} tenantId テナントID
-     * @param {string} userId ユーザーID
-     * @param {number} envId 環境ID
-     * @param {string} roleName 役割(ロール)名
+     * テナントのユーザーから役割(ロール)を削除します。  Delete a role (role) from a tenant user. 
+     * @summary テナントのユーザーから役割(ロール)を削除(Delete role from tenant user)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {number} envId 環境ID(Env ID)
+     * @param {string} roleName 役割(ロール)名(role name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
@@ -6033,9 +6033,9 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * ユーザーIDからテナントに所属しているユーザー情報を取得します。複数テナントに所属している場合は別のオブジェクトとして返却されます。
-     * @summary ユーザー情報を取得
-     * @param {string} userId ユーザーID
+     * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get the user information belonging to the tenant from the user ID. If it belongs to multiple tenants, it will be returned as another object. 
+     * @summary ユーザー情報を取得(Get user info)
+     * @param {string} userId ユーザーID(User ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
@@ -6045,8 +6045,8 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントに所属しているユーザー全件を取得します。複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。idは一意ではありません。
-     * @summary ユーザー一覧を取得
+     * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Acquires all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. id is not unique. 
+     * @summary ユーザー一覧を取得(Get user list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
@@ -6056,10 +6056,10 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントのユーザーをIDから一件取得します。
-     * @summary テナントのユーザー情報を取得
-     * @param {string} tenantId テナントID
-     * @param {string} userId ユーザーID
+     * テナントのユーザーをIDから一件取得します。  Acquires one tenant user by specifying the ID. 
+     * @summary テナントのユーザー情報を取得(Get tenant user info)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} userId ユーザーID(User ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
@@ -6069,9 +6069,9 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントに所属するユーザーを全件取得します。 idは一意です。
-     * @summary テナントのユーザー一覧を取得
-     * @param {string} tenantId テナントID
+     * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all users belonging to the tenant. id is unique. 
+     * @summary テナントのユーザー一覧を取得(Get tenant user list)
+     * @param {string} tenantId テナントID(Tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
@@ -6081,10 +6081,10 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
-     * テナントのユーザー属性情報を更新します。
-     * @summary テナントのユーザー属性情報を更新
-     * @param {string} tenantId テナントID
-     * @param {string} userId ユーザーID
+     * テナントのユーザー属性情報を更新します。  Update tenant user attribute information. 
+     * @summary テナントのユーザー属性情報を更新(Update tenant user attribute info)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} userId ユーザーID(User ID)
      * @param {UpdateTenantUserParam} [updateTenantUserParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -6103,8 +6103,8 @@ export class TenantUserApi extends BaseAPI {
 export const UserAttributeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-         * @summary ユーザー属性の作成
+         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Register additional user attributes to be retained in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want to have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+         * @summary ユーザー属性の作成(Create user attributes)
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6141,9 +6141,9 @@ export const UserAttributeApiAxiosParamCreator = function (configuration?: Confi
             };
         },
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を削除します。 
-         * @summary ユーザー属性の削除
-         * @param {string} attributeName 属性名
+         * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete the additional attributes of the user retained by the SaaSus Platform. 
+         * @summary ユーザー属性の削除(Delete user attribute)
+         * @param {string} attributeName 属性名(attribute name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6179,8 +6179,8 @@ export const UserAttributeApiAxiosParamCreator = function (configuration?: Confi
             };
         },
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-         * @summary ユーザー属性の一覧を取得
+         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Acquire additional attributes of the user held in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+         * @summary ユーザー属性の一覧を取得(Get user attributes list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6223,8 +6223,8 @@ export const UserAttributeApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UserAttributeApiAxiosParamCreator(configuration)
     return {
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-         * @summary ユーザー属性の作成
+         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Register additional user attributes to be retained in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want to have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+         * @summary ユーザー属性の作成(Create user attributes)
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6234,9 +6234,9 @@ export const UserAttributeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を削除します。 
-         * @summary ユーザー属性の削除
-         * @param {string} attributeName 属性名
+         * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete the additional attributes of the user retained by the SaaSus Platform. 
+         * @summary ユーザー属性の削除(Delete user attribute)
+         * @param {string} attributeName 属性名(attribute name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6245,8 +6245,8 @@ export const UserAttributeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-         * @summary ユーザー属性の一覧を取得
+         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Acquire additional attributes of the user held in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+         * @summary ユーザー属性の一覧を取得(Get user attributes list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6265,8 +6265,8 @@ export const UserAttributeApiFactory = function (configuration?: Configuration, 
     const localVarFp = UserAttributeApiFp(configuration)
     return {
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-         * @summary ユーザー属性の作成
+         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Register additional user attributes to be retained in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want to have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+         * @summary ユーザー属性の作成(Create user attributes)
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6275,9 +6275,9 @@ export const UserAttributeApiFactory = function (configuration?: Configuration, 
             return localVarFp.createUserAttribute(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を削除します。 
-         * @summary ユーザー属性の削除
-         * @param {string} attributeName 属性名
+         * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete the additional attributes of the user retained by the SaaSus Platform. 
+         * @summary ユーザー属性の削除(Delete user attribute)
+         * @param {string} attributeName 属性名(attribute name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6285,8 +6285,8 @@ export const UserAttributeApiFactory = function (configuration?: Configuration, 
             return localVarFp.deleteUserAttribute(attributeName, options).then((request) => request(axios, basePath));
         },
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-         * @summary ユーザー属性の一覧を取得
+         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Acquire additional attributes of the user held in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+         * @summary ユーザー属性の一覧を取得(Get user attributes list)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6304,8 +6304,8 @@ export const UserAttributeApiFactory = function (configuration?: Configuration, 
  */
 export class UserAttributeApi extends BaseAPI {
     /**
-     * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-     * @summary ユーザー属性の作成
+     * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Register additional user attributes to be retained in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want to have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+     * @summary ユーザー属性の作成(Create user attributes)
      * @param {Attribute} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -6316,9 +6316,9 @@ export class UserAttributeApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform にて保持するユーザーの追加属性を削除します。 
-     * @summary ユーザー属性の削除
-     * @param {string} attributeName 属性名
+     * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete the additional attributes of the user retained by the SaaSus Platform. 
+     * @summary ユーザー属性の削除(Delete user attribute)
+     * @param {string} attributeName 属性名(attribute name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserAttributeApi
@@ -6328,8 +6328,8 @@ export class UserAttributeApi extends BaseAPI {
     }
 
     /**
-     * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。 
-     * @summary ユーザー属性の一覧を取得
+     * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Acquire additional attributes of the user held in the SaaSus Platform. For example, you can define items associated with a user, such as having a user name, having a birthday, etc. On the other hand, if you don\'t want have personal information on the SaaS Platform side, consider having personal information on the SaaS side without this user attribute definition. 
+     * @summary ユーザー属性の一覧を取得(Get user attributes list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserAttributeApi
@@ -6347,9 +6347,9 @@ export class UserAttributeApi extends BaseAPI {
 export const UserInfoApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。 
-         * @summary ユーザー情報取得
-         * @param {string} token IDトークン
+         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. By getting the ID token from the URL on the server side and calling this API, you can get the information of the user. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+         * @summary ユーザー情報取得(Get user info)
+         * @param {string} token IDトークン(ID token)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6398,9 +6398,9 @@ export const UserInfoApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UserInfoApiAxiosParamCreator(configuration)
     return {
         /**
-         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。 
-         * @summary ユーザー情報取得
-         * @param {string} token IDトークン
+         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. By getting the ID token from the URL on the server side and calling this API, you can get the information of the user. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+         * @summary ユーザー情報取得(Get user info)
+         * @param {string} token IDトークン(ID token)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6419,9 +6419,9 @@ export const UserInfoApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = UserInfoApiFp(configuration)
     return {
         /**
-         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。 
-         * @summary ユーザー情報取得
-         * @param {string} token IDトークン
+         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. By getting the ID token from the URL on the server side and calling this API, you can get the information of the user. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+         * @summary ユーザー情報取得(Get user info)
+         * @param {string} token IDトークン(ID token)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6439,9 +6439,9 @@ export const UserInfoApiFactory = function (configuration?: Configuration, baseP
  */
 export class UserInfoApi extends BaseAPI {
     /**
-     * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。 
-     * @summary ユーザー情報取得
-     * @param {string} token IDトークン
+     * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. By getting the ID token from the URL on the server side and calling this API, you can get the information of the user. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+     * @summary ユーザー情報取得(Get user info)
+     * @param {string} token IDトークン(ID token)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserInfoApi

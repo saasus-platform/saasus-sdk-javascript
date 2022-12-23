@@ -22,14 +22,14 @@ describe("getAxiosInstance", () => {
   it("return the same Authorization header when requests fulfilled", async () => {
     const options: RequestOptions = {
       method: "GET",
-      url: "https://api.dev.saasus.io/v0/auth/userinfo?token=token",
+      url: "https://api.dev.saasus.io/v1/auth/userinfo?token=token",
       query: {
         token: "token",
       },
     };
     const request = createRequest(options);
 
-    const instance = getAxiosInstance("https://api.dev.saasus.io/v0/auth");
+    const instance = getAxiosInstance("https://api.dev.saasus.io/v1/auth");
 
     const fulfilledReq: Request =
       // @ts-expect-error handlersでdoesn't exist エラーが出るため

@@ -51,7 +51,7 @@ export interface StripeInfo {
  */
 export interface UpdateStripeInfoParam {
     /**
-     * シークレットキー
+     * シークレットキー(secret key)
      * @type {string}
      * @memberof UpdateStripeInfoParam
      */
@@ -63,22 +63,22 @@ export interface UpdateStripeInfoParam {
  */
 export declare const StripeApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。
-     * @summary Stripeの連携情報を削除
+     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete information on linkage with external SaaS used in billing operations
+     * @summary Stripe連携情報を削除(Delete Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteStripeInfo: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。
-     * @summary Stripeの連携情報を取得
+     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Acquire information on linkage with external SaaS used in billing operations. It is now possible to integrate with Stripe. Without integration, you will need to implement billing processing using the SaaSus SDK/API.
+     * @summary Stripe連携情報を取得(Get Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getStripeInfo: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。
-     * @summary Stripeの連携情報を更新
+     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on linkage with external SaaS used in billing operations. Currently, it is possible to linkage with Stripe.
+     * @summary Stripe連携情報を更新(Update Stripe linkage info)
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -91,22 +91,22 @@ export declare const StripeApiAxiosParamCreator: (configuration?: Configuration 
  */
 export declare const StripeApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。
-     * @summary Stripeの連携情報を削除
+     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete information on linkage with external SaaS used in billing operations
+     * @summary Stripe連携情報を削除(Delete Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteStripeInfo(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。
-     * @summary Stripeの連携情報を取得
+     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Acquire information on linkage with external SaaS used in billing operations. It is now possible to integrate with Stripe. Without integration, you will need to implement billing processing using the SaaSus SDK/API.
+     * @summary Stripe連携情報を取得(Get Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getStripeInfo(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<StripeInfo>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。
-     * @summary Stripeの連携情報を更新
+     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on linkage with external SaaS used in billing operations. Currently, it is possible to linkage with Stripe.
+     * @summary Stripe連携情報を更新(Update Stripe linkage info)
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -119,22 +119,22 @@ export declare const StripeApiFp: (configuration?: Configuration | undefined) =>
  */
 export declare const StripeApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。
-     * @summary Stripeの連携情報を削除
+     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete information on linkage with external SaaS used in billing operations
+     * @summary Stripe連携情報を削除(Delete Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteStripeInfo(options?: any): AxiosPromise<void>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。
-     * @summary Stripeの連携情報を取得
+     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Acquire information on linkage with external SaaS used in billing operations. It is now possible to integrate with Stripe. Without integration, you will need to implement billing processing using the SaaSus SDK/API.
+     * @summary Stripe連携情報を取得(Get Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getStripeInfo(options?: any): AxiosPromise<StripeInfo>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。
-     * @summary Stripeの連携情報を更新
+     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on linkage with external SaaS used in billing operations. Currently, it is possible to linkage with Stripe.
+     * @summary Stripe連携情報を更新(Update Stripe linkage info)
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -149,24 +149,24 @@ export declare const StripeApiFactory: (configuration?: Configuration | undefine
  */
 export declare class StripeApi extends BaseAPI {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。
-     * @summary Stripeの連携情報を削除
+     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete information on linkage with external SaaS used in billing operations
+     * @summary Stripe連携情報を削除(Delete Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof StripeApi
      */
     deleteStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。
-     * @summary Stripeの連携情報を取得
+     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Acquire information on linkage with external SaaS used in billing operations. It is now possible to integrate with Stripe. Without integration, you will need to implement billing processing using the SaaSus SDK/API.
+     * @summary Stripe連携情報を取得(Get Stripe linkage information)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof StripeApi
      */
     getStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeInfo, any>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。
-     * @summary Stripeの連携情報を更新
+     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on linkage with external SaaS used in billing operations. Currently, it is possible to linkage with Stripe.
+     * @summary Stripe連携情報を更新(Update Stripe linkage info)
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
