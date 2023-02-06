@@ -12,7 +12,10 @@ jest.mock("../src/generated/Auth", () => {
     BasicInfoApi: jest.fn(),
     CredentialApi: jest.fn().mockImplementation(() => {
       return {
-        getAuthCredentials: (code: string) => {
+        getAuthCredentials: (
+          _authFlow: "tempCodeAuth" | "refreshTokenAuth",
+          code: string
+        ) => {
           if (code === "error") {
             return {} as AxiosError;
           }
