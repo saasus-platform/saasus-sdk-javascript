@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { Configuration, EventBridgeApi } from "src/generated/Integration";
+import { Configuration, EventBridgeApi } from "../generated/Integration";
 import getAxiosInstance from "./interceptor";
 
 export class IntegrationClient {
