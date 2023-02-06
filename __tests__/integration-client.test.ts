@@ -34,16 +34,16 @@ describe("IntegrationClient", () => {
     process.env.SAASUS_SECRET_KEY = "";
     process.env.SAASUS_SAAS_ID = "";
     process.env.SAASUS_API_KEY = "";
-    const integrationClient = new IntegrationClient();
-    await integrationClient.eventbridgeApi.getEventBridgeSettings();
+    const apiClient = new IntegrationClient();
+    await apiClient.eventbridgeApi.getEventBridgeSettings();
     expect(consoleSpy).toHaveBeenCalledWith(
       "SAASUS_SECRET_KEY, SAASUS_SAAS_ID and SAASUS_API_KEY are required."
     );
   });
 
   it("calls api successfully", async () => {
-    const integrationClient = new IntegrationClient();
-    await integrationClient.eventbridgeApi.getEventBridgeSettings();
+    const apiClient = new IntegrationClient();
+    await apiClient.eventbridgeApi.getEventBridgeSettings();
     expect(mockFn).toHaveBeenCalled();
   });
 });

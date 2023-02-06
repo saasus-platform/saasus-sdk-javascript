@@ -21,6 +21,7 @@ export async function CallbackRouteFunction(
   const apiClient = new AuthClient();
   try {
     const { data } = await apiClient.credentialApi.getAuthCredentials(
+      "tempCodeAuth",
       `${req.query.code}`
     );
     res.cookie("idToken", data.id_token, {
