@@ -23,7 +23,7 @@
 ## 認証情報
 
 - getAuthInfo ・・・認証情報を取得
-- updateAuthInfo ・・・認証情報を更
+- updateAuthInfo ・・・認証情報を更新
 - getSignInSettings ・・・パスワード要件を取得
 - updateSignInSettings ・・・パスワード要件を更新
 
@@ -52,7 +52,7 @@
 
 - getTenantUsers ・・・テナントのユーザー一覧を取得
 
-- getTenantUse ・・・テナントのユーザー情報を取得
+- getTenantUser ・・・テナントのユーザー情報を取得
 - createTenantUser ・・・テナントにユーザーを作成
 
 - updateTenantUser ・・・テナントのユーザー属性情報を更新
@@ -89,7 +89,7 @@
 
 ## SaaSus 情報
 
-- getApiKeys ・・・API キー一覧を取
+- getApiKeys ・・・API キー一覧を取得
 - createApiKey ・・・API キーを作成
 - deleteApiKey ・・・API キーを削除
 - getSaasId ・・・SaasID を取得

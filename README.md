@@ -1,5 +1,7 @@
 # JavaScript SDK for SaaSus Platform
 
+[English page is here.](./README_en.md)
+
 ---
 
 # SDK 利用の準備
@@ -18,7 +20,7 @@ npm install saasus-sdk
 
 ### 環境変数を定義
 
-```
+```ini
 ### for SaaSus Platform
 SAASUS_SAAS_ID="（画面のSaaS ID）"
 SAASUS_API_KEY="（画面のAPI KEY）"
