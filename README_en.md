@@ -1,6 +1,6 @@
 # JavaScript SDK for SaaSus Platform
 
-  [Japanese page is here.](./README.md)
+[Japanese page is here.](./README.md)
 
 ---
 

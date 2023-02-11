@@ -110,4 +110,3 @@ For details (arguments, return values), [refer to the API document](https://docs
 
 - getAuthCredentials ... Get Authentication/Authorization Information
 - createAuthCredentials ... Save Authentication/Authorization Information
-
