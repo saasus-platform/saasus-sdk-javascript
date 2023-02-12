@@ -2021,13 +2021,13 @@ export declare const CredentialApiAxiosParamCreator: (configuration?: Configurat
     /**
      * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
      * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [code] 一時コード(Temp Code)
+     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAuthCredentials: (authFlow?: "tempCodeAuth" | "refreshTokenAuth" | undefined, code?: string | undefined, refreshToken?: string | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    getAuthCredentials: (code?: string | undefined, authFlow?: "tempCodeAuth" | "refreshTokenAuth" | undefined, refreshToken?: string | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * CredentialApi - functional programming interface
@@ -2045,13 +2045,13 @@ export declare const CredentialApiFp: (configuration?: Configuration | undefined
     /**
      * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
      * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [code] 一時コード(Temp Code)
+     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAuthCredentials(authFlow?: "tempCodeAuth" | "refreshTokenAuth" | undefined, code?: string | undefined, refreshToken?: string | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Credentials>>;
+    getAuthCredentials(code?: string | undefined, authFlow?: "tempCodeAuth" | "refreshTokenAuth" | undefined, refreshToken?: string | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Credentials>>;
 };
 /**
  * CredentialApi - factory interface
@@ -2069,13 +2069,13 @@ export declare const CredentialApiFactory: (configuration?: Configuration | unde
     /**
      * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
      * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [code] 一時コード(Temp Code)
+     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAuthCredentials(authFlow?: "tempCodeAuth" | "refreshTokenAuth" | undefined, code?: string | undefined, refreshToken?: string | undefined, options?: any): AxiosPromise<Credentials>;
+    getAuthCredentials(code?: string | undefined, authFlow?: "tempCodeAuth" | "refreshTokenAuth" | undefined, refreshToken?: string | undefined, options?: any): AxiosPromise<Credentials>;
 };
 /**
  * CredentialApi - object-oriented interface
@@ -2096,14 +2096,14 @@ export declare class CredentialApi extends BaseAPI {
     /**
      * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
      * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [code] 一時コード(Temp Code)
+     * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
      * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CredentialApi
      */
-    getAuthCredentials(authFlow?: 'tempCodeAuth' | 'refreshTokenAuth', code?: string, refreshToken?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Credentials, any>>;
+    getAuthCredentials(code?: string, authFlow?: 'tempCodeAuth' | 'refreshTokenAuth', refreshToken?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Credentials, any>>;
 }
 /**
  * EnvApi - axios parameter creator

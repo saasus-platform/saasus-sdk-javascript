@@ -920,13 +920,13 @@
             /**
              * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
              * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
              * @param {string} [code] 一時コード(Temp Code)
+             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
              * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            getAuthCredentials: async (authFlow, code, refreshToken, options = {}) => {
+            getAuthCredentials: async (code, authFlow, refreshToken, options = {}) => {
                 const localVarPath = `/credentials`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
@@ -940,11 +940,11 @@
                 // authentication Bearer required
                 // http bearer authentication required
                 await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
-                if (authFlow !== undefined) {
-                    localVarQueryParameter['auth-flow'] = authFlow;
-                }
                 if (code !== undefined) {
                     localVarQueryParameter['code'] = code;
+                }
+                if (authFlow !== undefined) {
+                    localVarQueryParameter['auth-flow'] = authFlow;
                 }
                 if (refreshToken !== undefined) {
                     localVarQueryParameter['refresh-token'] = refreshToken;
@@ -980,14 +980,14 @@
             /**
              * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
              * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
              * @param {string} [code] 一時コード(Temp Code)
+             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
              * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async getAuthCredentials(authFlow, code, refreshToken, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.getAuthCredentials(authFlow, code, refreshToken, options);
+            async getAuthCredentials(code, authFlow, refreshToken, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getAuthCredentials(code, authFlow, refreshToken, options);
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
         };
@@ -1013,15 +1013,15 @@
         /**
          * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
          * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-         * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
          * @param {string} [code] 一時コード(Temp Code)
+         * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
          * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof CredentialApi
          */
-        getAuthCredentials(authFlow, code, refreshToken, options) {
-            return CredentialApiFp(this.configuration).getAuthCredentials(authFlow, code, refreshToken, options).then((request) => request(this.axios, this.basePath));
+        getAuthCredentials(code, authFlow, refreshToken, options) {
+            return CredentialApiFp(this.configuration).getAuthCredentials(code, authFlow, refreshToken, options).then((request) => request(this.axios, this.basePath));
         }
     }
     /**
@@ -6577,7 +6577,7 @@
         }
         const apiClient = new AuthClient();
         try {
-            const { data } = await apiClient.credentialApi.getAuthCredentials("tempCodeAuth", `${req.query.code}`);
+            const { data } = await apiClient.credentialApi.getAuthCredentials(`${req.query.code}`, "tempCodeAuth");
             res.cookie("idToken", data.id_token, {
                 maxAge: 60 * 60 * 24 * 30,
                 httpOnly: false,
