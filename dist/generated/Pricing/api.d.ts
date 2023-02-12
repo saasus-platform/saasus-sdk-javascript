@@ -19,7 +19,7 @@ import { RequestArgs, BaseAPI } from './base';
  */
 export interface MeteringUnitDateCount {
     /**
-     * 計測ユニット名(Metering unit name)
+     * 計測ユニット名(metering unit name)
      * @type {string}
      * @memberof MeteringUnitDateCount
      */
@@ -57,7 +57,7 @@ export interface MeteringUnitDateCounts {
  */
 export interface MeteringUnitMonthCount {
     /**
-     * 計測ユニット名(Metering unit name)
+     * 計測ユニット名(metering unit name)
      * @type {string}
      * @memberof MeteringUnitMonthCount
      */
@@ -293,25 +293,25 @@ export interface PricingMenu {
      */
     'id': string;
     /**
-     * メニュー名(Menu name)
+     * メニュー名(menu name)
      * @type {string}
      * @memberof PricingMenu
      */
     'name': string;
     /**
-     * メニュー表示名(Menu display name)
+     * メニュー表示名(menu display name)
      * @type {string}
      * @memberof PricingMenu
      */
     'display_name': string;
     /**
-     * メニュー説明(Menu description)
+     * メニュー説明(menu description)
      * @type {string}
      * @memberof PricingMenu
      */
     'description': string;
     /**
-     * メニューの使用済み設定(Menu used settings)
+     * メニューの使用済み設定(menu used settings)
      * @type {boolean}
      * @memberof PricingMenu
      */
@@ -343,25 +343,25 @@ export interface PricingMenuAllOf {
  */
 export interface PricingMenuProps {
     /**
-     * メニュー名(Menu name)
+     * メニュー名(menu name)
      * @type {string}
      * @memberof PricingMenuProps
      */
     'name': string;
     /**
-     * メニュー表示名(Menu display name)
+     * メニュー表示名(menu display name)
      * @type {string}
      * @memberof PricingMenuProps
      */
     'display_name': string;
     /**
-     * メニュー説明(Menu description)
+     * メニュー説明(menu description)
      * @type {string}
      * @memberof PricingMenuProps
      */
     'description': string;
     /**
-     * メニューの使用済み設定(Menu used settings)
+     * メニューの使用済み設定(menu used settings)
      * @type {boolean}
      * @memberof PricingMenuProps
      */
@@ -380,25 +380,25 @@ export interface PricingMenuProps {
  */
 export interface PricingMenuPropsAllOf {
     /**
-     * メニュー名(Menu name)
+     * メニュー名(menu name)
      * @type {string}
      * @memberof PricingMenuPropsAllOf
      */
     'name': string;
     /**
-     * メニュー表示名(Menu display name)
+     * メニュー表示名(menu display name)
      * @type {string}
      * @memberof PricingMenuPropsAllOf
      */
     'display_name': string;
     /**
-     * メニュー説明(Menu description)
+     * メニュー説明(menu description)
      * @type {string}
      * @memberof PricingMenuPropsAllOf
      */
     'description': string;
     /**
-     * メニューの使用済み設定(Menu used settings)
+     * メニューの使用済み設定(menu used settings)
      * @type {boolean}
      * @memberof PricingMenuPropsAllOf
      */
@@ -430,25 +430,25 @@ export interface PricingPlan {
      */
     'id': string;
     /**
-     * 料金プラン名(Pricing plan name)
+     * 料金プラン名(pricing plan name)
      * @type {string}
      * @memberof PricingPlan
      */
     'name': string;
     /**
-     * 料金プラン表示名(Pricing plan display name)
+     * 料金プラン表示名(pricing plan display name)
      * @type {string}
      * @memberof PricingPlan
      */
     'display_name': string;
     /**
-     * 料金プラン説明(Pricing plan description)
+     * 料金プラン説明(pricing plan description)
      * @type {string}
      * @memberof PricingPlan
      */
     'description': string;
     /**
-     * 料金プランの使用済み設定(Pricing plan used settings)
+     * 料金プランの使用済み設定(pricing plan used settings)
      * @type {boolean}
      * @memberof PricingPlan
      */
@@ -467,25 +467,25 @@ export interface PricingPlan {
  */
 export interface PricingPlanProps {
     /**
-     * 料金プラン名(Pricing plan name)
+     * 料金プラン名(pricing plan name)
      * @type {string}
      * @memberof PricingPlanProps
      */
     'name': string;
     /**
-     * 料金プラン表示名(Pricing plan display name)
+     * 料金プラン表示名(pricing plan display name)
      * @type {string}
      * @memberof PricingPlanProps
      */
     'display_name': string;
     /**
-     * 料金プラン説明(Pricing plan description)
+     * 料金プラン説明(pricing plan description)
      * @type {string}
      * @memberof PricingPlanProps
      */
     'description': string;
     /**
-     * 料金プランの使用済み設定(Pricing plan used settings)
+     * 料金プランの使用済み設定(pricing plan used settings)
      * @type {boolean}
      * @memberof PricingPlanProps
      */
@@ -504,25 +504,25 @@ export interface PricingPlanProps {
  */
 export interface PricingPlanPropsAllOf {
     /**
-     * 料金プラン名(Pricing plan name)
+     * 料金プラン名(pricing plan name)
      * @type {string}
      * @memberof PricingPlanPropsAllOf
      */
     'name': string;
     /**
-     * 料金プラン表示名(Pricing plan display name)
+     * 料金プラン表示名(pricing plan display name)
      * @type {string}
      * @memberof PricingPlanPropsAllOf
      */
     'display_name': string;
     /**
-     * 料金プラン説明(Pricing plan description)
+     * 料金プラン説明(pricing plan description)
      * @type {string}
      * @memberof PricingPlanPropsAllOf
      */
     'description': string;
     /**
-     * 料金プランの使用済み設定(Pricing plan used settings)
+     * 料金プランの使用済み設定(pricing plan used settings)
      * @type {boolean}
      * @memberof PricingPlanPropsAllOf
      */
@@ -554,13 +554,13 @@ export interface PricingTier {
      */
     'up_to': number;
     /**
-     * 単位金額(Amount per unit)
+     * 単位金額(amount per unit)
      * @type {number}
      * @memberof PricingTier
      */
     'unit_amount': number;
     /**
-     * 固定金額(Fixed Amount)
+     * 固定金額(fixed Amount)
      * @type {number}
      * @memberof PricingTier
      */
@@ -1019,7 +1019,7 @@ export interface PricingUsageUnit {
      */
     'upper_count': number;
     /**
-     * 使用量あたりの金額(Amount per usage)
+     * 使用量あたりの金額(amount per usage)
      * @type {number}
      * @memberof PricingUsageUnit
      */
@@ -1074,7 +1074,7 @@ export interface PricingUsageUnitForSave {
      */
     'upper_count': number;
     /**
-     * 使用量あたりの金額(Amount per usage)
+     * 使用量あたりの金額(amount per usage)
      * @type {number}
      * @memberof PricingUsageUnitForSave
      */
@@ -1129,7 +1129,7 @@ export interface PricingUsageUnitForSaveAllOf {
      */
     'upper_count': number;
     /**
-     * 使用量あたりの金額(Amount per usage)
+     * 使用量あたりの金額(amount per usage)
      * @type {number}
      * @memberof PricingUsageUnitForSaveAllOf
      */
@@ -1142,7 +1142,7 @@ export interface PricingUsageUnitForSaveAllOf {
     'metering_unit_name': string;
 }
 /**
- * 繰り返し期間(repeat period) month: 月単位(monthly) year: 年単位(yearly)
+ * 繰り返し期間(cycle) month: 月単位(monthly) year: 年単位(yearly)
  * @export
  * @enum {string}
  */
@@ -1158,25 +1158,25 @@ export declare type RecurringInterval = typeof RecurringInterval[keyof typeof Re
  */
 export interface SavePricingMenuParam {
     /**
-     * メニュー名(Menu name)
+     * メニュー名(menu name)
      * @type {string}
      * @memberof SavePricingMenuParam
      */
     'name': string;
     /**
-     * メニュー表示名(Menu display name)
+     * メニュー表示名(menu display name)
      * @type {string}
      * @memberof SavePricingMenuParam
      */
     'display_name': string;
     /**
-     * メニュー説明(Menu description)
+     * メニュー説明(menu description)
      * @type {string}
      * @memberof SavePricingMenuParam
      */
     'description': string;
     /**
-     * 追加するユニットID(the unit id to add)
+     * 追加するユニットID(unit id to add)
      * @type {Array<string>}
      * @memberof SavePricingMenuParam
      */
@@ -1189,32 +1189,32 @@ export interface SavePricingMenuParam {
  */
 export interface SavePricingPlanParam {
     /**
-     * 料金プラン名(Pricing plan name)
+     * 料金プラン名(pricing plan name)
      * @type {string}
      * @memberof SavePricingPlanParam
      */
     'name': string;
     /**
-     * 料金プラン表示名(Pricing plan display name)
+     * 料金プラン表示名(pricing plan display name)
      * @type {string}
      * @memberof SavePricingPlanParam
      */
     'display_name': string;
     /**
-     * 料金プラン説明(Pricing plan description)
+     * 料金プラン説明(pricing plan description)
      * @type {string}
      * @memberof SavePricingPlanParam
      */
     'description': string;
     /**
-     * メニューID（料金プランに追加するメニューIDを設定） Menu ID (set the menu ID to be added to the pricing plan)
+     * メニューID（料金プランに追加するメニューIDを設定） Menu ID (menu ID to be added to the pricing plan)
      * @type {Array<string>}
      * @memberof SavePricingPlanParam
      */
     'menu_ids': Array<string>;
 }
 /**
- * 計測単位の種別(Type of unit of measurement) fixed: 固定ユニット(fixed unit) usage: 使用量ユニット(usage unit) tiered: 段階ユニット(tiered unit) tiered_usage: 段階的使用量ユニット(tiered usage unit)
+ * 計測単位の種別(unit of measurement type) fixed: 固定ユニット(fixed unit) usage: 使用量ユニット(usage unit) tiered: 段階ユニット(tiered unit) tiered_usage: 段階的使用量ユニット(tiered usage unit)
  * @export
  * @enum {string}
  */
@@ -1226,7 +1226,7 @@ export declare const UnitType: {
 };
 export declare type UnitType = typeof UnitType[keyof typeof UnitType];
 /**
- * 更新方法(Update method) add: 加算(addition) sub: 減算(Subtract) direct: 上書き(direct)
+ * 更新方法(update method) add: 加算(addition) sub: 減算(subtraction) direct: 上書き(overwrite)
  * @export
  * @enum {string}
  */
@@ -1293,8 +1293,8 @@ export interface UpdatePricingPlansUsedParam {
  */
 export declare const MeteringApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1303,8 +1303,8 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
      */
     deleteMeteringUnitTimestampCount: (tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified date.
-     * @summary 指定した日付のメータリングユニットカウントを取得(Get the metering unit count for the specified date)
+     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
+     * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} date 日(date)
@@ -1314,7 +1314,7 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate: (tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-     * @summary 当日のメータリングユニットカウントを取得(Get metering unit count for the current day)
+     * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1323,7 +1323,7 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
     getMeteringUnitDateCountByTenantIdAndUnitNameToday: (tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-     * @summary 指定日の全メータリングユニットカウントを取得(Get all metering unit counts for a specified date)
+     * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} date 日(date)
      * @param {*} [options] Override http request option.
@@ -1332,7 +1332,7 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
     getMeteringUnitDateCountsByTenantIdAndDate: (tenantId: string, date: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-     * @summary 指定月のメータリングユニットカウントを取得(Get the metering unit count for the specified month)
+     * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} month 月(month)
@@ -1342,7 +1342,7 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
     getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth: (tenantId: string, meteringUnitName: string, month: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-     * @summary 当月のメータリングユニットカウントを取得(Get metering unit count for the current month)
+     * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1351,7 +1351,7 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
     getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth: (tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-     * @summary 指定月の全メータリングユニットカウントを取得(Get all metering unit count for the specified month)
+     * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} month 月(month)
      * @param {*} [options] Override http request option.
@@ -1359,8 +1359,8 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth: (tenantId: string, month: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1371,7 +1371,7 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
     updateMeteringUnitTimestampCount: (tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-     * @summary 現在時刻のメータリングユニットカウントを更新(Update metering unit count for current time)
+     * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
@@ -1386,8 +1386,8 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
  */
 export declare const MeteringApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1396,8 +1396,8 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
      */
     deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified date.
-     * @summary 指定した日付のメータリングユニットカウントを取得(Get the metering unit count for the specified date)
+     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
+     * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} date 日(date)
@@ -1407,7 +1407,7 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDateCount>>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-     * @summary 当日のメータリングユニットカウントを取得(Get metering unit count for the current day)
+     * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1416,7 +1416,7 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
     getMeteringUnitDateCountByTenantIdAndUnitNameToday(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDateCount>>;
     /**
      * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-     * @summary 指定日の全メータリングユニットカウントを取得(Get all metering unit counts for a specified date)
+     * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} date 日(date)
      * @param {*} [options] Override http request option.
@@ -1425,7 +1425,7 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
     getMeteringUnitDateCountsByTenantIdAndDate(tenantId: string, date: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDateCounts>>;
     /**
      * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-     * @summary 指定月のメータリングユニットカウントを取得(Get the metering unit count for the specified month)
+     * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} month 月(month)
@@ -1435,7 +1435,7 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
     getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth(tenantId: string, meteringUnitName: string, month: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitMonthCount>>;
     /**
      * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-     * @summary 当月のメータリングユニットカウントを取得(Get metering unit count for the current month)
+     * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1444,7 +1444,7 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
     getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitMonthCount>>;
     /**
      * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-     * @summary 指定月の全メータリングユニットカウントを取得(Get all metering unit count for the specified month)
+     * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} month 月(month)
      * @param {*} [options] Override http request option.
@@ -1452,8 +1452,8 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitMonthCounts>>;
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1464,7 +1464,7 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
     updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitTimestampCount>>;
     /**
      * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-     * @summary 現在時刻のメータリングユニットカウントを更新(Update metering unit count for current time)
+     * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
@@ -1479,8 +1479,8 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
  */
 export declare const MeteringApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1489,8 +1489,8 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
      */
     deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: any): AxiosPromise<void>;
     /**
-     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified date.
-     * @summary 指定した日付のメータリングユニットカウントを取得(Get the metering unit count for the specified date)
+     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
+     * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} date 日(date)
@@ -1500,7 +1500,7 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: any): AxiosPromise<MeteringUnitDateCount>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-     * @summary 当日のメータリングユニットカウントを取得(Get metering unit count for the current day)
+     * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1509,7 +1509,7 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
     getMeteringUnitDateCountByTenantIdAndUnitNameToday(tenantId: string, meteringUnitName: string, options?: any): AxiosPromise<MeteringUnitDateCount>;
     /**
      * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-     * @summary 指定日の全メータリングユニットカウントを取得(Get all metering unit counts for a specified date)
+     * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} date 日(date)
      * @param {*} [options] Override http request option.
@@ -1518,7 +1518,7 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
     getMeteringUnitDateCountsByTenantIdAndDate(tenantId: string, date: string, options?: any): AxiosPromise<MeteringUnitDateCounts>;
     /**
      * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-     * @summary 指定月のメータリングユニットカウントを取得(Get the metering unit count for the specified month)
+     * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} month 月(month)
@@ -1528,7 +1528,7 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
     getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth(tenantId: string, meteringUnitName: string, month: string, options?: any): AxiosPromise<MeteringUnitMonthCount>;
     /**
      * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-     * @summary 当月のメータリングユニットカウントを取得(Get metering unit count for the current month)
+     * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1537,7 +1537,7 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
     getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth(tenantId: string, meteringUnitName: string, options?: any): AxiosPromise<MeteringUnitMonthCount>;
     /**
      * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-     * @summary 指定月の全メータリングユニットカウントを取得(Get all metering unit count for the specified month)
+     * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} month 月(month)
      * @param {*} [options] Override http request option.
@@ -1545,8 +1545,8 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: any): AxiosPromise<MeteringUnitMonthCounts>;
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1557,7 +1557,7 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
     updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam | undefined, options?: any): AxiosPromise<MeteringUnitTimestampCount>;
     /**
      * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-     * @summary 現在時刻のメータリングユニットカウントを更新(Update metering unit count for current time)
+     * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
@@ -1574,8 +1574,8 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
  */
 export declare class MeteringApi extends BaseAPI {
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1585,8 +1585,8 @@ export declare class MeteringApi extends BaseAPI {
      */
     deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified date.
-     * @summary 指定した日付のメータリングユニットカウントを取得(Get the metering unit count for the specified date)
+     * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
+     * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} date 日(date)
@@ -1597,7 +1597,7 @@ export declare class MeteringApi extends BaseAPI {
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-     * @summary 当日のメータリングユニットカウントを取得(Get metering unit count for the current day)
+     * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1607,7 +1607,7 @@ export declare class MeteringApi extends BaseAPI {
     getMeteringUnitDateCountByTenantIdAndUnitNameToday(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
     /**
      * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-     * @summary 指定日の全メータリングユニットカウントを取得(Get all metering unit counts for a specified date)
+     * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} date 日(date)
      * @param {*} [options] Override http request option.
@@ -1617,7 +1617,7 @@ export declare class MeteringApi extends BaseAPI {
     getMeteringUnitDateCountsByTenantIdAndDate(tenantId: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCounts, any>>;
     /**
      * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-     * @summary 指定月のメータリングユニットカウントを取得(Get the metering unit count for the specified month)
+     * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {string} month 月(month)
@@ -1628,7 +1628,7 @@ export declare class MeteringApi extends BaseAPI {
     getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth(tenantId: string, meteringUnitName: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCount, any>>;
     /**
      * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-     * @summary 当月のメータリングユニットカウントを取得(Get metering unit count for the current month)
+     * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {*} [options] Override http request option.
@@ -1638,7 +1638,7 @@ export declare class MeteringApi extends BaseAPI {
     getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCount, any>>;
     /**
      * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-     * @summary 指定月の全メータリングユニットカウントを取得(Get all metering unit count for the specified month)
+     * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} month 月(month)
      * @param {*} [options] Override http request option.
@@ -1647,8 +1647,8 @@ export declare class MeteringApi extends BaseAPI {
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCounts, any>>;
     /**
-     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update the metering unit count for the specified timestamp.
-     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update metering unit count for specified timestamp)
+     * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
+     * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {number} timestamp タイムスタンプ(timestamp)
@@ -1660,7 +1660,7 @@ export declare class MeteringApi extends BaseAPI {
     updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any>>;
     /**
      * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-     * @summary 現在時刻のメータリングユニットカウントを更新(Update metering unit count for current time)
+     * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
      * @param {string} tenantId テナントID(tenant id)
      * @param {string} meteringUnitName 計測ユニット名(metering unit name)
      * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
@@ -1676,32 +1676,32 @@ export declare class MeteringApi extends BaseAPI {
  */
 export declare const PricingMenusApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * プライシング機能メニューを作成します。  Create a pricing features menu.
-     * @summary プライシング機能メニューを作成(Create a pricing features menu)
+     * プライシング機能メニューを作成します。  Create a pricing feature menu.
+     * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
      * @param {SavePricingMenuParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingMenu: (body?: SavePricingMenuParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * プライシング機能メニューを削除します。  Delete the Pricing Feature menu.
-     * @summary プライシング機能メニューを削除(Delete pricing feature menu)
+     * プライシング機能メニューを削除します。  Delete pricing feature menu.
+     * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingMenu: (menuId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * プライシング機能メニューを取得します。  Get the pricing features menu.
-     * @summary プライシング機能メニューを取得(Get pricing feature menu)
+     * プライシング機能メニューを取得します。  Get a pricing feature menu.
+     * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingMenu: (menuId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one features menu. Multiple features menus defined here are combined into one billing plan.
-     * @summary プライシング機能メニュー一覧を取得(Get pricing feature menu list)
+     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+     * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1722,32 +1722,32 @@ export declare const PricingMenusApiAxiosParamCreator: (configuration?: Configur
  */
 export declare const PricingMenusApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * プライシング機能メニューを作成します。  Create a pricing features menu.
-     * @summary プライシング機能メニューを作成(Create a pricing features menu)
+     * プライシング機能メニューを作成します。  Create a pricing feature menu.
+     * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
      * @param {SavePricingMenuParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingMenu(body?: SavePricingMenuParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingMenu>>;
     /**
-     * プライシング機能メニューを削除します。  Delete the Pricing Feature menu.
-     * @summary プライシング機能メニューを削除(Delete pricing feature menu)
+     * プライシング機能メニューを削除します。  Delete pricing feature menu.
+     * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingMenu(menuId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * プライシング機能メニューを取得します。  Get the pricing features menu.
-     * @summary プライシング機能メニューを取得(Get pricing feature menu)
+     * プライシング機能メニューを取得します。  Get a pricing feature menu.
+     * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingMenu(menuId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingMenu>>;
     /**
-     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one features menu. Multiple features menus defined here are combined into one billing plan.
-     * @summary プライシング機能メニュー一覧を取得(Get pricing feature menu list)
+     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+     * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1768,32 +1768,32 @@ export declare const PricingMenusApiFp: (configuration?: Configuration | undefin
  */
 export declare const PricingMenusApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * プライシング機能メニューを作成します。  Create a pricing features menu.
-     * @summary プライシング機能メニューを作成(Create a pricing features menu)
+     * プライシング機能メニューを作成します。  Create a pricing feature menu.
+     * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
      * @param {SavePricingMenuParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingMenu(body?: SavePricingMenuParam | undefined, options?: any): AxiosPromise<PricingMenu>;
     /**
-     * プライシング機能メニューを削除します。  Delete the Pricing Feature menu.
-     * @summary プライシング機能メニューを削除(Delete pricing feature menu)
+     * プライシング機能メニューを削除します。  Delete pricing feature menu.
+     * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingMenu(menuId: string, options?: any): AxiosPromise<void>;
     /**
-     * プライシング機能メニューを取得します。  Get the pricing features menu.
-     * @summary プライシング機能メニューを取得(Get pricing feature menu)
+     * プライシング機能メニューを取得します。  Get a pricing feature menu.
+     * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingMenu(menuId: string, options?: any): AxiosPromise<PricingMenu>;
     /**
-     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one features menu. Multiple features menus defined here are combined into one billing plan.
-     * @summary プライシング機能メニュー一覧を取得(Get pricing feature menu list)
+     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+     * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1816,8 +1816,8 @@ export declare const PricingMenusApiFactory: (configuration?: Configuration | un
  */
 export declare class PricingMenusApi extends BaseAPI {
     /**
-     * プライシング機能メニューを作成します。  Create a pricing features menu.
-     * @summary プライシング機能メニューを作成(Create a pricing features menu)
+     * プライシング機能メニューを作成します。  Create a pricing feature menu.
+     * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
      * @param {SavePricingMenuParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1825,8 +1825,8 @@ export declare class PricingMenusApi extends BaseAPI {
      */
     createPricingMenu(body?: SavePricingMenuParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenu, any>>;
     /**
-     * プライシング機能メニューを削除します。  Delete the Pricing Feature menu.
-     * @summary プライシング機能メニューを削除(Delete pricing feature menu)
+     * プライシング機能メニューを削除します。  Delete pricing feature menu.
+     * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1834,8 +1834,8 @@ export declare class PricingMenusApi extends BaseAPI {
      */
     deletePricingMenu(menuId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * プライシング機能メニューを取得します。  Get the pricing features menu.
-     * @summary プライシング機能メニューを取得(Get pricing feature menu)
+     * プライシング機能メニューを取得します。  Get a pricing feature menu.
+     * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
      * @param {string} menuId メニューID(menu ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1843,8 +1843,8 @@ export declare class PricingMenusApi extends BaseAPI {
      */
     getPricingMenu(menuId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenu, any>>;
     /**
-     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one features menu. Multiple features menus defined here are combined into one billing plan.
-     * @summary プライシング機能メニュー一覧を取得(Get pricing feature menu list)
+     * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+     * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PricingMenusApi
@@ -1867,55 +1867,62 @@ export declare class PricingMenusApi extends BaseAPI {
  */
 export declare const PricingPlansApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * 料金プランを作成します。  Create a pricing plan.
-     * @summary 料金プランを作成(Create pricing plan)
+     * 料金プランを作成します。  Create pricing plan.
+     * @summary 料金プランを作成(Create Pricing Plan)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingPlan: (body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 料金プランを削除します。  Delete a Pricing plan.
-     * @summary 料金プランを削除(Delete pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを削除します。  Delete pricing plan.
+     * @summary 料金プランを削除(Delete Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingPlan: (planId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 料金プランを取得します。  Get a Pricing plan.
-     * @summary 料金プランを取得(Get pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * stripe上の商品情報を削除します。  Delete product data from Stripe.
+     * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteStripePlan: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 料金プランを取得します。  Get pricing plan.
+     * @summary 料金プランを取得(Get Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingPlan: (planId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get the pricing plan list. Multiple function menus are grouped together and defined as one pricing plan. Each tenant can choose the pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and tie a pricing plan specifically for that tenant.
+     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
      * @summary 料金プラン一覧を取得(Get pricing plan list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingPlans: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * stripeへ情報を連携します。  Link information to stripe.
-     * @summary stripe連携(Link to stripe)
+     * stripeへ情報を連携します。  Connect information to Stripe.
+     * @summary stripe連携(Connect to Stripe)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     linkPlanToStripe: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 料金プランを更新します。  Update Pricing plan.
-     * @summary 料金プランを更新(Update pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを更新します。  Update pricing plan.
+     * @summary 料金プランを更新(Update Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     updatePricingPlan: (planId: string, body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Updates the price plan and feature menu/pricing unit to used.
-     * @summary 使用済みフラグ更新(Used flag update)
+     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
+     * @summary 使用済みフラグ更新(Update Used Flag)
      * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1928,55 +1935,62 @@ export declare const PricingPlansApiAxiosParamCreator: (configuration?: Configur
  */
 export declare const PricingPlansApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * 料金プランを作成します。  Create a pricing plan.
-     * @summary 料金プランを作成(Create pricing plan)
+     * 料金プランを作成します。  Create pricing plan.
+     * @summary 料金プランを作成(Create Pricing Plan)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingPlan(body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingPlan>>;
     /**
-     * 料金プランを削除します。  Delete a Pricing plan.
-     * @summary 料金プランを削除(Delete pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを削除します。  Delete pricing plan.
+     * @summary 料金プランを削除(Delete Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingPlan(planId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * 料金プランを取得します。  Get a Pricing plan.
-     * @summary 料金プランを取得(Get pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * stripe上の商品情報を削除します。  Delete product data from Stripe.
+     * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteStripePlan(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * 料金プランを取得します。  Get pricing plan.
+     * @summary 料金プランを取得(Get Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingPlan(planId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingPlan>>;
     /**
-     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get the pricing plan list. Multiple function menus are grouped together and defined as one pricing plan. Each tenant can choose the pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and tie a pricing plan specifically for that tenant.
+     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
      * @summary 料金プラン一覧を取得(Get pricing plan list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingPlans(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingPlans>>;
     /**
-     * stripeへ情報を連携します。  Link information to stripe.
-     * @summary stripe連携(Link to stripe)
+     * stripeへ情報を連携します。  Connect information to Stripe.
+     * @summary stripe連携(Connect to Stripe)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     linkPlanToStripe(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * 料金プランを更新します。  Update Pricing plan.
-     * @summary 料金プランを更新(Update pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを更新します。  Update pricing plan.
+     * @summary 料金プランを更新(Update Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     updatePricingPlan(planId: string, body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Updates the price plan and feature menu/pricing unit to used.
-     * @summary 使用済みフラグ更新(Used flag update)
+     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
+     * @summary 使用済みフラグ更新(Update Used Flag)
      * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1989,55 +2003,62 @@ export declare const PricingPlansApiFp: (configuration?: Configuration | undefin
  */
 export declare const PricingPlansApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * 料金プランを作成します。  Create a pricing plan.
-     * @summary 料金プランを作成(Create pricing plan)
+     * 料金プランを作成します。  Create pricing plan.
+     * @summary 料金プランを作成(Create Pricing Plan)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingPlan(body?: SavePricingPlanParam | undefined, options?: any): AxiosPromise<PricingPlan>;
     /**
-     * 料金プランを削除します。  Delete a Pricing plan.
-     * @summary 料金プランを削除(Delete pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを削除します。  Delete pricing plan.
+     * @summary 料金プランを削除(Delete Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingPlan(planId: string, options?: any): AxiosPromise<void>;
     /**
-     * 料金プランを取得します。  Get a Pricing plan.
-     * @summary 料金プランを取得(Get pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * stripe上の商品情報を削除します。  Delete product data from Stripe.
+     * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteStripePlan(options?: any): AxiosPromise<void>;
+    /**
+     * 料金プランを取得します。  Get pricing plan.
+     * @summary 料金プランを取得(Get Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingPlan(planId: string, options?: any): AxiosPromise<PricingPlan>;
     /**
-     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get the pricing plan list. Multiple function menus are grouped together and defined as one pricing plan. Each tenant can choose the pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and tie a pricing plan specifically for that tenant.
+     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
      * @summary 料金プラン一覧を取得(Get pricing plan list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingPlans(options?: any): AxiosPromise<PricingPlans>;
     /**
-     * stripeへ情報を連携します。  Link information to stripe.
-     * @summary stripe連携(Link to stripe)
+     * stripeへ情報を連携します。  Connect information to Stripe.
+     * @summary stripe連携(Connect to Stripe)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     linkPlanToStripe(options?: any): AxiosPromise<void>;
     /**
-     * 料金プランを更新します。  Update Pricing plan.
-     * @summary 料金プランを更新(Update pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを更新します。  Update pricing plan.
+     * @summary 料金プランを更新(Update Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     updatePricingPlan(planId: string, body?: SavePricingPlanParam | undefined, options?: any): AxiosPromise<void>;
     /**
-     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Updates the price plan and feature menu/pricing unit to used.
-     * @summary 使用済みフラグ更新(Used flag update)
+     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
+     * @summary 使用済みフラグ更新(Update Used Flag)
      * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2052,8 +2073,8 @@ export declare const PricingPlansApiFactory: (configuration?: Configuration | un
  */
 export declare class PricingPlansApi extends BaseAPI {
     /**
-     * 料金プランを作成します。  Create a pricing plan.
-     * @summary 料金プランを作成(Create pricing plan)
+     * 料金プランを作成します。  Create pricing plan.
+     * @summary 料金プランを作成(Create Pricing Plan)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2061,25 +2082,33 @@ export declare class PricingPlansApi extends BaseAPI {
      */
     createPricingPlan(body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any>>;
     /**
-     * 料金プランを削除します。  Delete a Pricing plan.
-     * @summary 料金プランを削除(Delete pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを削除します。  Delete pricing plan.
+     * @summary 料金プランを削除(Delete Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
     deletePricingPlan(planId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 料金プランを取得します。  Get a Pricing plan.
-     * @summary 料金プランを取得(Get pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * stripe上の商品情報を削除します。  Delete product data from Stripe.
+     * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PricingPlansApi
+     */
+    deleteStripePlan(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * 料金プランを取得します。  Get pricing plan.
+     * @summary 料金プランを取得(Get Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
     getPricingPlan(planId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any>>;
     /**
-     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get the pricing plan list. Multiple function menus are grouped together and defined as one pricing plan. Each tenant can choose the pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and tie a pricing plan specifically for that tenant.
+     * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
      * @summary 料金プラン一覧を取得(Get pricing plan list)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2087,17 +2116,17 @@ export declare class PricingPlansApi extends BaseAPI {
      */
     getPricingPlans(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlans, any>>;
     /**
-     * stripeへ情報を連携します。  Link information to stripe.
-     * @summary stripe連携(Link to stripe)
+     * stripeへ情報を連携します。  Connect information to Stripe.
+     * @summary stripe連携(Connect to Stripe)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
     linkPlanToStripe(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 料金プランを更新します。  Update Pricing plan.
-     * @summary 料金プランを更新(Update pricing plan)
-     * @param {string} planId 料金プランID(Price plan ID)
+     * 料金プランを更新します。  Update pricing plan.
+     * @summary 料金プランを更新(Update Pricing Plan)
+     * @param {string} planId 料金プランID(price plan ID)
      * @param {SavePricingPlanParam} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2105,8 +2134,8 @@ export declare class PricingPlansApi extends BaseAPI {
      */
     updatePricingPlan(planId: string, body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Updates the price plan and feature menu/pricing unit to used.
-     * @summary 使用済みフラグ更新(Used flag update)
+     * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
+     * @summary 使用済みフラグ更新(Update Used Flag)
      * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2120,39 +2149,39 @@ export declare class PricingPlansApi extends BaseAPI {
  */
 export declare const PricingUnitsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * プライシングユニットを作成します。  Create a Pricing Unit.
-     * @summary プライシングユニットを作成(Create pricing unit)
+     * プライシングユニットを作成します。  Create a pricing unit.
+     * @summary プライシングユニットを作成(Create Pricing Unit)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingUnit: (body?: PricingUnitForSave | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * プライシングユニットを削除します。  Delete a Pricing Unit.
-     * @summary プライシングユニットを削除(Delete pricing unit)
+     * プライシングユニットを削除します。  Delete a pricing unit.
+     * @summary プライシングユニットを削除(Delete Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingUnit: (pricingUnitId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * プライシングユニットを取得します。  Get a Pricing Unit.
-     * @summary プライシングユニットを取得(Get pricing unit)
+     * プライシングユニットを取得します。  Get a pricing unit.
+     * @summary プライシングユニットを取得(Get Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingUnit: (pricingUnitId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed unit\" (type=fixed) is a unit of monthly fixed charge such as basic charge, \"Usage unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered usage unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, like a volume discount.
-     * @summary プライシングユニットの一覧を取得(Get a list of pricing units)
+     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+     * @summary プライシングユニットの一覧を取得(Get Pricing Units)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingUnits: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * プライシングユニット情報を更新します。  Update Pricing Unit information.
-     * @summary プライシングユニットを更新(Update pricing unit)
+     * プライシングユニット情報を更新します。  Update pricing unit.
+     * @summary プライシングユニットを更新(Update Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
@@ -2166,39 +2195,39 @@ export declare const PricingUnitsApiAxiosParamCreator: (configuration?: Configur
  */
 export declare const PricingUnitsApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * プライシングユニットを作成します。  Create a Pricing Unit.
-     * @summary プライシングユニットを作成(Create pricing unit)
+     * プライシングユニットを作成します。  Create a pricing unit.
+     * @summary プライシングユニットを作成(Create Pricing Unit)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingUnit(body?: PricingUnitForSave | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingUnit>>;
     /**
-     * プライシングユニットを削除します。  Delete a Pricing Unit.
-     * @summary プライシングユニットを削除(Delete pricing unit)
+     * プライシングユニットを削除します。  Delete a pricing unit.
+     * @summary プライシングユニットを削除(Delete Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingUnit(pricingUnitId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
-     * プライシングユニットを取得します。  Get a Pricing Unit.
-     * @summary プライシングユニットを取得(Get pricing unit)
+     * プライシングユニットを取得します。  Get a pricing unit.
+     * @summary プライシングユニットを取得(Get Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingUnit(pricingUnitId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingUnit>>;
     /**
-     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed unit\" (type=fixed) is a unit of monthly fixed charge such as basic charge, \"Usage unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered usage unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, like a volume discount.
-     * @summary プライシングユニットの一覧を取得(Get a list of pricing units)
+     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+     * @summary プライシングユニットの一覧を取得(Get Pricing Units)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingUnits(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingUnits>>;
     /**
-     * プライシングユニット情報を更新します。  Update Pricing Unit information.
-     * @summary プライシングユニットを更新(Update pricing unit)
+     * プライシングユニット情報を更新します。  Update pricing unit.
+     * @summary プライシングユニットを更新(Update Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
@@ -2212,39 +2241,39 @@ export declare const PricingUnitsApiFp: (configuration?: Configuration | undefin
  */
 export declare const PricingUnitsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * プライシングユニットを作成します。  Create a Pricing Unit.
-     * @summary プライシングユニットを作成(Create pricing unit)
+     * プライシングユニットを作成します。  Create a pricing unit.
+     * @summary プライシングユニットを作成(Create Pricing Unit)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     createPricingUnit(body?: PricingUnitForSave | undefined, options?: any): AxiosPromise<PricingUnit>;
     /**
-     * プライシングユニットを削除します。  Delete a Pricing Unit.
-     * @summary プライシングユニットを削除(Delete pricing unit)
+     * プライシングユニットを削除します。  Delete a pricing unit.
+     * @summary プライシングユニットを削除(Delete Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deletePricingUnit(pricingUnitId: string, options?: any): AxiosPromise<void>;
     /**
-     * プライシングユニットを取得します。  Get a Pricing Unit.
-     * @summary プライシングユニットを取得(Get pricing unit)
+     * プライシングユニットを取得します。  Get a pricing unit.
+     * @summary プライシングユニットを取得(Get Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingUnit(pricingUnitId: string, options?: any): AxiosPromise<PricingUnit>;
     /**
-     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed unit\" (type=fixed) is a unit of monthly fixed charge such as basic charge, \"Usage unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered usage unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, like a volume discount.
-     * @summary プライシングユニットの一覧を取得(Get a list of pricing units)
+     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+     * @summary プライシングユニットの一覧を取得(Get Pricing Units)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPricingUnits(options?: any): AxiosPromise<PricingUnits>;
     /**
-     * プライシングユニット情報を更新します。  Update Pricing Unit information.
-     * @summary プライシングユニットを更新(Update pricing unit)
+     * プライシングユニット情報を更新します。  Update pricing unit.
+     * @summary プライシングユニットを更新(Update Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
@@ -2260,8 +2289,8 @@ export declare const PricingUnitsApiFactory: (configuration?: Configuration | un
  */
 export declare class PricingUnitsApi extends BaseAPI {
     /**
-     * プライシングユニットを作成します。  Create a Pricing Unit.
-     * @summary プライシングユニットを作成(Create pricing unit)
+     * プライシングユニットを作成します。  Create a pricing unit.
+     * @summary プライシングユニットを作成(Create Pricing Unit)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2269,8 +2298,8 @@ export declare class PricingUnitsApi extends BaseAPI {
      */
     createPricingUnit(body?: PricingUnitForSave, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnit, any>>;
     /**
-     * プライシングユニットを削除します。  Delete a Pricing Unit.
-     * @summary プライシングユニットを削除(Delete pricing unit)
+     * プライシングユニットを削除します。  Delete a pricing unit.
+     * @summary プライシングユニットを削除(Delete Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2278,8 +2307,8 @@ export declare class PricingUnitsApi extends BaseAPI {
      */
     deletePricingUnit(pricingUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * プライシングユニットを取得します。  Get a Pricing Unit.
-     * @summary プライシングユニットを取得(Get pricing unit)
+     * プライシングユニットを取得します。  Get a pricing unit.
+     * @summary プライシングユニットを取得(Get Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2287,16 +2316,16 @@ export declare class PricingUnitsApi extends BaseAPI {
      */
     getPricingUnit(pricingUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnit, any>>;
     /**
-     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed unit\" (type=fixed) is a unit of monthly fixed charge such as basic charge, \"Usage unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered usage unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, like a volume discount.
-     * @summary プライシングユニットの一覧を取得(Get a list of pricing units)
+     * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+     * @summary プライシングユニットの一覧を取得(Get Pricing Units)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PricingUnitsApi
      */
     getPricingUnits(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnits, any>>;
     /**
-     * プライシングユニット情報を更新します。  Update Pricing Unit information.
-     * @summary プライシングユニットを更新(Update pricing unit)
+     * プライシングユニット情報を更新します。  Update pricing unit.
+     * @summary プライシングユニットを更新(Update Pricing Unit)
      * @param {string} pricingUnitId ユニットID(unit id)
      * @param {PricingUnitForSave} [body]
      * @param {*} [options] Override http request option.

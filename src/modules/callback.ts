@@ -21,7 +21,8 @@ export async function CallbackRouteFunction(
   const apiClient = new AuthClient();
   try {
     const { data } = await apiClient.credentialApi.getAuthCredentials(
-      `${req.query.code}`
+      `${req.query.code}`,
+      "tempCodeAuth"
     );
     res.cookie("idToken", data.id_token, {
       maxAge: 60 * 60 * 24 * 30,
