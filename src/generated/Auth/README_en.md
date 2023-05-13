@@ -45,6 +45,11 @@ For details (arguments, return values), [refer to the API document](https://docs
 - getUserMfaPreference ... Get User's MFA Settings
 - updateUserMfaPreference ... Update User's MFA Settings
 
+- signUp ... Sign Up
+- resendSignUpConfirmationEmail ... Resend Sign Up Confirmation Email
+
+- unlinkProvider ... Unlink external identity providers
+
 ### Tenant User Info
 
 - getAllTenantUsers ... Get Users
@@ -85,6 +90,8 @@ For details (arguments, return values), [refer to the API document](https://docs
 - getTenant ... Get Tenant Details
 - createTenant ... Create Tenant
 - updateTenant ... Update Tenant Details
+- updateTenantPlan ... Update Tenant Plan Information
+- updateTenantBillingInfo ... Update Tenant Billing Information
 - deleteTenant ... Delete Tenant
 
 ## SaaSus Info

@@ -45,6 +45,11 @@
 - getUserMfaPreference ・・・ユーザーの MFA 設定を取得
 - updateUserMfaPreference ・・・ユーザーの MFA 設定を更新
 
+- signUp ・・・新規登録
+- resendSignUpConfirmationEmail ・・・新規登録時の確認メール再送信
+
+- unlinkProvider ・・・外部 ID プロバイダの連携解除
+
 ### Tenant ユーザー情報
 
 - getAllTenantUsers ・・・ユーザー一覧を取得
@@ -85,6 +90,8 @@
 - getTenant ・・・テナントを作成
 - createTenant ・・・テナント情報を取得
 - updateTenant ・・・テナント情報を更新
+- updateTenantPlan ・・・テナントのプラン情報を更新
+- updateTenantBillingInfo ・・・テナントの請求先情報を更新
 - deleteTenant ・・・テナント情報を削除
 
 ## SaaSus 情報
