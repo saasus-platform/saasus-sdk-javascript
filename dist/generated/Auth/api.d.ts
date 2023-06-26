@@ -263,6 +263,31 @@ export interface ClientSecret {
 /**
  *
  * @export
+ * @interface ConfirmSignUpWithAwsMarketplaceParam
+ */
+export interface ConfirmSignUpWithAwsMarketplaceParam {
+    /**
+     * テナント名(tenant name)
+     * @type {string}
+     * @memberof ConfirmSignUpWithAwsMarketplaceParam
+     */
+    'tenant_name'?: string;
+    /**
+     * アクセストークン(access token)
+     * @type {string}
+     * @memberof ConfirmSignUpWithAwsMarketplaceParam
+     */
+    'access_token': string;
+    /**
+     * Registration Token
+     * @type {string}
+     * @memberof ConfirmSignUpWithAwsMarketplaceParam
+     */
+    'registration_token': string;
+}
+/**
+ *
+ * @export
  * @interface CreateSaasUserParam
  */
 export interface CreateSaasUserParam {
@@ -305,7 +330,7 @@ export interface CreateTenantUserParam {
      */
     'email': string;
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining tenant attributes in the SaaS development console)
+     * 属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
      * @memberof CreateTenantUserParam
      */
@@ -644,6 +669,31 @@ export declare type InvoiceLanguage = typeof InvoiceLanguage[keyof typeof Invoic
 /**
  *
  * @export
+ * @interface LinkAwsMarketplaceParam
+ */
+export interface LinkAwsMarketplaceParam {
+    /**
+     * テナントID(tenant ID)
+     * @type {string}
+     * @memberof LinkAwsMarketplaceParam
+     */
+    'tenant_id': string;
+    /**
+     * アクセストークン(access token)
+     * @type {string}
+     * @memberof LinkAwsMarketplaceParam
+     */
+    'access_token': string;
+    /**
+     * Registration Token
+     * @type {string}
+     * @memberof LinkAwsMarketplaceParam
+     */
+    'registration_token': string;
+}
+/**
+ *
+ * @export
  * @interface MessageTemplate
  */
 export interface MessageTemplate {
@@ -851,6 +901,12 @@ export interface PlanHistory {
      * @memberof PlanHistory
      */
     'plan_applied_at': number;
+    /**
+     *
+     * @type {string}
+     * @memberof PlanHistory
+     */
+    'tax_rate_id'?: string;
 }
 /**
  *
@@ -870,6 +926,12 @@ export interface PlanReservation {
      * @memberof PlanReservation
      */
     'using_next_plan_from'?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof PlanReservation
+     */
+    'next_plan_tax_rate_id'?: string;
 }
 /**
  *
@@ -1079,6 +1141,25 @@ export interface SignUpParam {
 /**
  *
  * @export
+ * @interface SignUpWithAwsMarketplaceParam
+ */
+export interface SignUpWithAwsMarketplaceParam {
+    /**
+     * メールアドレス(Email Address)
+     * @type {string}
+     * @memberof SignUpWithAwsMarketplaceParam
+     */
+    'email': string;
+    /**
+     * Registration Token
+     * @type {string}
+     * @memberof SignUpWithAwsMarketplaceParam
+     */
+    'registration_token': string;
+}
+/**
+ *
+ * @export
  * @interface SoftwareTokenSecretCode
  */
 export interface SoftwareTokenSecretCode {
@@ -1145,6 +1226,12 @@ export interface Tenant {
      * @memberof Tenant
      */
     'using_next_plan_from'?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof Tenant
+     */
+    'next_plan_tax_rate_id'?: string;
     /**
      * 料金プラン履歴
      * @type {Array<PlanHistory>}
@@ -1518,7 +1605,7 @@ export interface UpdateSoftwareTokenParam {
  */
 export interface UpdateTenantUserParam {
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining tenant attributes in the SaaS development console)
+     * 属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
      * @memberof UpdateTenantUserParam
      */
@@ -1557,7 +1644,7 @@ export interface User {
      */
     'email': string;
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining tenant attributes in the SaaS development console)
+     * 属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
      * @memberof User
      */
@@ -2649,6 +2736,14 @@ export declare class RoleApi extends BaseAPI {
  */
 export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmSignUpWithAwsMarketplace: (confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
      * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -2697,6 +2792,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     getUserMfaPreference: (userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    linkAwsMarketplace: (linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2712,6 +2815,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     signUp: (signUpParam?: SignUpParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUpWithAwsMarketplace: (signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
@@ -2764,6 +2875,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
  */
 export declare const SaasUserApiFp: (configuration?: Configuration | undefined) => {
     /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Tenant>>;
+    /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
      * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -2812,6 +2931,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
      */
     getUserMfaPreference(userId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MfaPreference>>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2827,6 +2954,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     signUp(signUpParam?: SignUpParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SaasUser>>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SaasUser>>;
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
@@ -2879,6 +3014,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
  */
 export declare const SaasUserApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam | undefined, options?: any): AxiosPromise<Tenant>;
+    /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
      * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -2927,6 +3070,14 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
      */
     getUserMfaPreference(userId: string, options?: any): AxiosPromise<MfaPreference>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: any): AxiosPromise<void>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2942,6 +3093,14 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     signUp(signUpParam?: SignUpParam | undefined, options?: any): AxiosPromise<SaasUser>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam | undefined, options?: any): AxiosPromise<SaasUser>;
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
@@ -2995,6 +3154,15 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
  * @extends {BaseAPI}
  */
 export declare class SaasUserApi extends BaseAPI {
+    /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any>>;
     /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
@@ -3050,6 +3218,15 @@ export declare class SaasUserApi extends BaseAPI {
      */
     getUserMfaPreference(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MfaPreference, any>>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -3067,6 +3244,15 @@ export declare class SaasUserApi extends BaseAPI {
      * @memberof SaasUserApi
      */
     signUp(signUpParam?: SignUpParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)

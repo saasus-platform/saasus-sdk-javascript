@@ -1504,6 +1504,37 @@
     const SaasUserApiAxiosParamCreator = function (configuration) {
         return {
             /**
+             * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+             * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            confirmSignUpWithAwsMarketplace: async (confirmSignUpWithAwsMarketplaceParam, options = {}) => {
+                const localVarPath = `/aws-marketplace/sign-up-confirm`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(confirmSignUpWithAwsMarketplaceParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * SaaSにユーザーを作成します。  Create SaaS User.
              * @summary SaaSにユーザーを作成(Create SaaS User)
              * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -1694,6 +1725,37 @@
                 };
             },
             /**
+             * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+             * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            linkAwsMarketplace: async (linkAwsMarketplaceParam, options = {}) => {
+                const localVarPath = `/aws-marketplace/link`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(linkAwsMarketplaceParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
              * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
              * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -1750,6 +1812,37 @@
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 localVarRequestOptions.data = serializeDataIfNeeded$3(signUpParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+             * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            signUpWithAwsMarketplace: async (signUpWithAwsMarketplaceParam, options = {}) => {
+                const localVarPath = `/aws-marketplace/sign-up`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(signUpWithAwsMarketplaceParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString$3(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -1941,6 +2034,17 @@
         const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration);
         return {
             /**
+             * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+             * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
              * SaaSにユーザーを作成します。  Create SaaS User.
              * @summary SaaSにユーザーを作成(Create SaaS User)
              * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -2007,6 +2111,17 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
+             * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+             * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async linkAwsMarketplace(linkAwsMarketplaceParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.linkAwsMarketplace(linkAwsMarketplaceParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
              * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
              * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
              * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2026,6 +2141,17 @@
              */
             async signUp(signUpParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.signUp(signUpParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+             * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options);
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
@@ -2098,6 +2224,17 @@
      */
     class SaasUserApi extends BaseAPI$3 {
         /**
+         * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+         * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+         * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options) {
+            return SaasUserApiFp(this.configuration).confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * SaaSにユーザーを作成します。  Create SaaS User.
          * @summary SaaSにユーザーを作成(Create SaaS User)
          * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -2164,6 +2301,17 @@
             return SaasUserApiFp(this.configuration).getUserMfaPreference(userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+         * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+         * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        linkAwsMarketplace(linkAwsMarketplaceParam, options) {
+            return SaasUserApiFp(this.configuration).linkAwsMarketplace(linkAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
          * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
          * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2184,6 +2332,17 @@
          */
         signUp(signUpParam, options) {
             return SaasUserApiFp(this.configuration).signUp(signUpParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+         * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+         * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options) {
+            return SaasUserApiFp(this.configuration).signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
@@ -5599,12 +5758,12 @@
                 };
             },
             /**
-             * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+             * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            deleteAllPlansAndMenusAndUnitsAndMeters: async (options = {}) => {
+            deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates: async (options = {}) => {
                 const localVarPath = `/plans-initialization`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$1);
@@ -5861,13 +6020,13 @@
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
-             * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+             * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async deleteAllPlansAndMenusAndUnitsAndMeters(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAllPlansAndMenusAndUnitsAndMeters(options);
+            async deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options);
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
@@ -5966,14 +6125,14 @@
             return PricingPlansApiFp(this.configuration).createPricingPlan(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+         * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
          */
-        deleteAllPlansAndMenusAndUnitsAndMeters(options) {
-            return PricingPlansApiFp(this.configuration).deleteAllPlansAndMenusAndUnitsAndMeters(options).then((request) => request(this.axios, this.basePath));
+        deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options) {
+            return PricingPlansApiFp(this.configuration).deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * 料金プランを削除します。  Delete pricing plan.

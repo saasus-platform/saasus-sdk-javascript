@@ -1224,6 +1224,111 @@ export interface SavePricingPlanParam {
     'menu_ids': Array<string>;
 }
 /**
+ *
+ * @export
+ * @interface TaxRate
+ */
+export interface TaxRate {
+    /**
+     *
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'id': string;
+    /**
+     * 税率の名前(name of tax rate)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'name': string;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'display_name': string;
+    /**
+     * 税率(percentage)
+     * @type {number}
+     * @memberof TaxRate
+     */
+    'percentage': number;
+    /**
+     * 内税かどうか(inclusive or not)
+     * @type {boolean}
+     * @memberof TaxRate
+     */
+    'inclusive': boolean;
+    /**
+     * ISO 3166-1 alpha-2 の国コード(Country code of ISO 3166-1 alpha-2)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'country': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'description': string;
+}
+/**
+ *
+ * @export
+ * @interface TaxRateProps
+ */
+export interface TaxRateProps {
+    /**
+     * 税率の名前(name of tax rate)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'name': string;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'display_name': string;
+    /**
+     * 税率(percentage)
+     * @type {number}
+     * @memberof TaxRateProps
+     */
+    'percentage': number;
+    /**
+     * 内税かどうか(inclusive or not)
+     * @type {boolean}
+     * @memberof TaxRateProps
+     */
+    'inclusive': boolean;
+    /**
+     * ISO 3166-1 alpha-2 の国コード(Country code of ISO 3166-1 alpha-2)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'country': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'description': string;
+}
+/**
+ *
+ * @export
+ * @interface TaxRates
+ */
+export interface TaxRates {
+    /**
+     *
+     * @type {Array<TaxRate>}
+     * @memberof TaxRates
+     */
+    'tax_rates': Array<TaxRate>;
+}
+/**
  * 計測単位の種別(unit of measurement type) fixed: 固定ユニット(fixed unit) usage: 使用量ユニット(usage unit) tiered: 段階ユニット(tiered unit) tiered_usage: 段階的使用量ユニット(tiered usage unit)
  * @export
  * @enum {string}
@@ -1940,12 +2045,12 @@ export declare const PricingPlansApiAxiosParamCreator: (configuration?: Configur
      */
     createPricingPlan: (body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteAllPlansAndMenusAndUnitsAndMeters: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
@@ -2015,12 +2120,12 @@ export declare const PricingPlansApiFp: (configuration?: Configuration | undefin
      */
     createPricingPlan(body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingPlan>>;
     /**
-     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteAllPlansAndMenusAndUnitsAndMeters(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
@@ -2090,12 +2195,12 @@ export declare const PricingPlansApiFactory: (configuration?: Configuration | un
      */
     createPricingPlan(body?: SavePricingPlanParam | undefined, options?: any): AxiosPromise<PricingPlan>;
     /**
-     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteAllPlansAndMenusAndUnitsAndMeters(options?: any): AxiosPromise<void>;
+    deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: any): AxiosPromise<void>;
     /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
@@ -2168,13 +2273,13 @@ export declare class PricingPlansApi extends BaseAPI {
      */
     createPricingPlan(body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any>>;
     /**
-     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
-     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    deleteAllPlansAndMenusAndUnitsAndMeters(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
@@ -2427,4 +2532,92 @@ export declare class PricingUnitsApi extends BaseAPI {
      * @memberof PricingUnitsApi
      */
     updatePricingUnit(pricingUnitId: string, body?: PricingUnitForSave, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+}
+/**
+ * TaxRateApi - axios parameter creator
+ * @export
+ */
+export declare const TaxRateApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * 税率を作成します。  Creates a tax rate.
+     * @summary 税率の作成(Create Tax Rate)
+     * @param {TaxRateProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createTaxRate: (body?: TaxRateProps | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 税率を取得します。  Get all Tax Rates
+     * @summary 税率を取得します(Get Tax Rates)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTaxRates: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+};
+/**
+ * TaxRateApi - functional programming interface
+ * @export
+ */
+export declare const TaxRateApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * 税率を作成します。  Creates a tax rate.
+     * @summary 税率の作成(Create Tax Rate)
+     * @param {TaxRateProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createTaxRate(body?: TaxRateProps | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<TaxRate>>;
+    /**
+     * 税率を取得します。  Get all Tax Rates
+     * @summary 税率を取得します(Get Tax Rates)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTaxRates(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<TaxRates>>;
+};
+/**
+ * TaxRateApi - factory interface
+ * @export
+ */
+export declare const TaxRateApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * 税率を作成します。  Creates a tax rate.
+     * @summary 税率の作成(Create Tax Rate)
+     * @param {TaxRateProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createTaxRate(body?: TaxRateProps | undefined, options?: any): AxiosPromise<TaxRate>;
+    /**
+     * 税率を取得します。  Get all Tax Rates
+     * @summary 税率を取得します(Get Tax Rates)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTaxRates(options?: any): AxiosPromise<TaxRates>;
+};
+/**
+ * TaxRateApi - object-oriented interface
+ * @export
+ * @class TaxRateApi
+ * @extends {BaseAPI}
+ */
+export declare class TaxRateApi extends BaseAPI {
+    /**
+     * 税率を作成します。  Creates a tax rate.
+     * @summary 税率の作成(Create Tax Rate)
+     * @param {TaxRateProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaxRateApi
+     */
+    createTaxRate(body?: TaxRateProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRate, any>>;
+    /**
+     * 税率を取得します。  Get all Tax Rates
+     * @summary 税率を取得します(Get Tax Rates)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaxRateApi
+     */
+    getTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRates, any>>;
 }
