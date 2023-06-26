@@ -26,6 +26,8 @@
 - updateAuthInfo ・・・認証情報を更新
 - getSignInSettings ・・・パスワード要件を取得
 - updateSignInSettings ・・・パスワード要件を更新
+- getIdentityProviders ・・・外部プロバイダ経由のサインイン情報取得
+- updateIdentityProvider ・・・外部プロバイダ経由のサインイン情報更新
 
 ## SaaS ユーザー情報
 
@@ -49,6 +51,10 @@
 - resendSignUpConfirmationEmail ・・・新規登録時の確認メール再送信
 
 - unlinkProvider ・・・外部 ID プロバイダの連携解除
+
+- signUpWithAwsMarketplace ・・・AWS Marketplace によるユーザー新規登録
+- confirmSignUpWithAwsMarketplace ・・・AWS Marketplace によるユーザー新規登録の確定
+- linkAwsMarketplace ・・・AWS Marketplace と既存のテナントの連携
 
 ### Tenant ユーザー情報
 

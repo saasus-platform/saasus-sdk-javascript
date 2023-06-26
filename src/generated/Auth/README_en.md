@@ -26,6 +26,8 @@ For details (arguments, return values), [refer to the API document](https://docs
 - updateAuthInfo ... Update Authentication Info
 - getSignInSettings ... Get Password Requirements
 - updateSignInSettings ... Update Password Requirements
+- getIdentityProviders ・・・Get sign-in information via external provider
+- updateIdentityProvider ・・・Update sign-in information via external provider
 
 ## SaaS User Info
 
@@ -49,6 +51,10 @@ For details (arguments, return values), [refer to the API document](https://docs
 - resendSignUpConfirmationEmail ... Resend Sign Up Confirmation Email
 
 - unlinkProvider ... Unlink external identity providers
+
+- signUpWithAwsMarketplace ・・・Sign Up with AWS Marketplace
+- confirmSignUpWithAwsMarketplace ・・・Confirm Sign Up with AWS Marketplace
+- linkAwsMarketplace ・・・Link an existing tenant with AWS Marketplace
 
 ### Tenant User Info
 
