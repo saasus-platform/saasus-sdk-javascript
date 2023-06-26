@@ -1694,6 +1694,104 @@
                 };
             },
             /**
+             * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+             * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+             * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            resendSignUpConfirmationEmail: async (resendSignUpConfirmationEmailParam, options = {}) => {
+                const localVarPath = `/sign-up/resend`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(resendSignUpConfirmationEmailParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+             * @summary 新規登録(Sign Up)
+             * @param {SignUpParam} [signUpParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            signUp: async (signUpParam, options = {}) => {
+                const localVarPath = `/sign-up`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(signUpParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+             * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+             * @param {string} userId ユーザーID(User ID)
+             * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            unlinkProvider: async (userId, providerName, options = {}) => {
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$1('unlinkProvider', 'userId', userId);
+                // verify required parameter 'providerName' is not null or undefined
+                assertParamExists$1('unlinkProvider', 'providerName', providerName);
+                const localVarPath = `/users/{user_id}/providers/{provider_name}`
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)))
+                    .replace(`{${"provider_name"}}`, encodeURIComponent(String(providerName)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * ユーザーのメールアドレスを変更します。  Change user\'s email.
              * @summary メールアドレスを変更(Change Email)
              * @param {string} userId ユーザーID(User ID)
@@ -1909,6 +2007,40 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
+             * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+             * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+             * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+             * @summary 新規登録(Sign Up)
+             * @param {SignUpParam} [signUpParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async signUp(signUpParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.signUp(signUpParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+             * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+             * @param {string} userId ユーザーID(User ID)
+             * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async unlinkProvider(userId, providerName, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.unlinkProvider(userId, providerName, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
              * ユーザーのメールアドレスを変更します。  Change user\'s email.
              * @summary メールアドレスを変更(Change Email)
              * @param {string} userId ユーザーID(User ID)
@@ -2030,6 +2162,40 @@
          */
         getUserMfaPreference(userId, options) {
             return SaasUserApiFp(this.configuration).getUserMfaPreference(userId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+         * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+         * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options) {
+            return SaasUserApiFp(this.configuration).resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+         * @summary 新規登録(Sign Up)
+         * @param {SignUpParam} [signUpParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        signUp(signUpParam, options) {
+            return SaasUserApiFp(this.configuration).signUp(signUpParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+         * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        unlinkProvider(userId, providerName, options) {
+            return SaasUserApiFp(this.configuration).unlinkProvider(userId, providerName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * ユーザーのメールアドレスを変更します。  Change user\'s email.
@@ -2667,6 +2833,76 @@
                     options: localVarRequestOptions,
                 };
             },
+            /**
+             * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+             * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {BillingInfo} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateTenantBillingInfo: async (tenantId, body, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$1('updateTenantBillingInfo', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/billing-info`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(body, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+             * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {PlanReservation} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateTenantPlan: async (tenantId, body, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$1('updateTenantPlan', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/plans`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(body, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
         };
     };
     /**
@@ -2749,6 +2985,30 @@
              */
             async updateTenant(tenantId, body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenant(tenantId, body, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+             * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {BillingInfo} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateTenantBillingInfo(tenantId, body, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenantBillingInfo(tenantId, body, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+             * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {PlanReservation} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateTenantPlan(tenantId, body, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenantPlan(tenantId, body, options);
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
         };
@@ -2834,6 +3094,30 @@
          */
         updateTenant(tenantId, body, options) {
             return TenantApiFp(this.configuration).updateTenant(tenantId, body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+         * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {BillingInfo} [body]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantApi
+         */
+        updateTenantBillingInfo(tenantId, body, options) {
+            return TenantApiFp(this.configuration).updateTenantBillingInfo(tenantId, body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+         * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {PlanReservation} [body]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantApi
+         */
+        updateTenantPlan(tenantId, body, options) {
+            return TenantApiFp(this.configuration).updateTenantPlan(tenantId, body, options).then((request) => request(this.axios, this.basePath));
         }
     }
     /**
@@ -5315,6 +5599,34 @@
                 };
             },
             /**
+             * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            deleteAllPlansAndMenusAndUnitsAndMeters: async (options = {}) => {
+                const localVarPath = `/plans-initialization`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$1);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$1(localVarHeaderParameter, configuration);
+                setSearchParams$1(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$1(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * 料金プランを削除します。  Delete pricing plan.
              * @summary 料金プランを削除(Delete Pricing Plan)
              * @param {string} planId 料金プランID(price plan ID)
@@ -5549,6 +5861,16 @@
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
+             * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteAllPlansAndMenusAndUnitsAndMeters(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAllPlansAndMenusAndUnitsAndMeters(options);
+                return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
+            },
+            /**
              * 料金プランを削除します。  Delete pricing plan.
              * @summary 料金プランを削除(Delete Pricing Plan)
              * @param {string} planId 料金プランID(price plan ID)
@@ -5642,6 +5964,16 @@
          */
         createPricingPlan(body, options) {
             return PricingPlansApiFp(this.configuration).createPricingPlan(body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof PricingPlansApi
+         */
+        deleteAllPlansAndMenusAndUnitsAndMeters(options) {
+            return PricingPlansApiFp(this.configuration).deleteAllPlansAndMenusAndUnitsAndMeters(options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * 料金プランを削除します。  Delete pricing plan.

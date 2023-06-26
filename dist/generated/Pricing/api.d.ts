@@ -13,6 +13,16 @@ import { Configuration } from './configuration';
 import { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { RequestArgs, BaseAPI } from './base';
 /**
+ * 計測単位の通貨(unit of currency)
+ * @export
+ * @enum {string}
+ */
+export declare const Currency: {
+    readonly Jpy: "JPY";
+    readonly Usd: "USD";
+};
+export declare type Currency = typeof Currency[keyof typeof Currency];
+/**
  *
  * @export
  * @interface MeteringUnitDateCount
@@ -187,11 +197,11 @@ export interface PricingFixedUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingFixedUnit
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  *
@@ -255,11 +265,11 @@ export interface PricingFixedUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingFixedUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  *
@@ -639,11 +649,11 @@ export interface PricingTieredUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingTieredUnit
      */
-    'currency': string;
+    'currency': Currency;
     /**
      *
      * @type {Array<PricingTier>}
@@ -694,11 +704,11 @@ export interface PricingTieredUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingTieredUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
     /**
      *
      * @type {Array<PricingTier>}
@@ -792,11 +802,11 @@ export interface PricingTieredUsageUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingTieredUsageUnit
      */
-    'currency': string;
+    'currency': Currency;
     /**
      *
      * @type {Array<PricingTier>}
@@ -878,11 +888,11 @@ export interface PricingTieredUsageUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingTieredUsageUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
     /**
      *
      * @type {Array<PricingTier>}
@@ -958,11 +968,11 @@ export interface PricingUnitBaseProps {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingUnitBaseProps
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  * @type PricingUnitForSave
@@ -1055,11 +1065,11 @@ export interface PricingUsageUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingUsageUnit
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  *
@@ -1110,11 +1120,11 @@ export interface PricingUsageUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     *
+     * @type {Currency}
      * @memberof PricingUsageUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  *
@@ -1286,6 +1296,61 @@ export interface UpdatePricingPlansUsedParam {
      * @memberof UpdatePricingPlansUsedParam
      */
     'plan_ids': Array<string>;
+}
+/**
+ * ErrorApi - axios parameter creator
+ * @export
+ */
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+};
+/**
+ * ErrorApi - functional programming interface
+ * @export
+ */
+export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+};
+/**
+ * ErrorApi - factory interface
+ * @export
+ */
+export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError(options?: any): AxiosPromise<void>;
+};
+/**
+ * ErrorApi - object-oriented interface
+ * @export
+ * @class ErrorApi
+ * @extends {BaseAPI}
+ */
+export declare class ErrorApi extends BaseAPI {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ErrorApi
+     */
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }
 /**
  * MeteringApi - axios parameter creator
@@ -1875,6 +1940,13 @@ export declare const PricingPlansApiAxiosParamCreator: (configuration?: Configur
      */
     createPricingPlan: (body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAllPlansAndMenusAndUnitsAndMeters: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
      * @param {string} planId 料金プランID(price plan ID)
@@ -1943,6 +2015,13 @@ export declare const PricingPlansApiFp: (configuration?: Configuration | undefin
      */
     createPricingPlan(body?: SavePricingPlanParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PricingPlan>>;
     /**
+     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAllPlansAndMenusAndUnitsAndMeters(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
      * @param {string} planId 料金プランID(price plan ID)
@@ -2010,6 +2089,13 @@ export declare const PricingPlansApiFactory: (configuration?: Configuration | un
      * @throws {RequiredError}
      */
     createPricingPlan(body?: SavePricingPlanParam | undefined, options?: any): AxiosPromise<PricingPlan>;
+    /**
+     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAllPlansAndMenusAndUnitsAndMeters(options?: any): AxiosPromise<void>;
     /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)
@@ -2081,6 +2167,14 @@ export declare class PricingPlansApi extends BaseAPI {
      * @memberof PricingPlansApi
      */
     createPricingPlan(body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any>>;
+    /**
+     * 無条件に全料金プラン、メニュー、ユニット、メーターを削除します。  Unconditionally remove all rate plans, menus, units, and meters.
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PricingPlansApi
+     */
+    deleteAllPlansAndMenusAndUnitsAndMeters(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * 料金プランを削除します。  Delete pricing plan.
      * @summary 料金プランを削除(Delete Pricing Plan)

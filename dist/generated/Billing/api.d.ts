@@ -58,6 +58,61 @@ export interface UpdateStripeInfoParam {
     'secret_key': string;
 }
 /**
+ * ErrorApi - axios parameter creator
+ * @export
+ */
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+};
+/**
+ * ErrorApi - functional programming interface
+ * @export
+ */
+export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+};
+/**
+ * ErrorApi - factory interface
+ * @export
+ */
+export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError(options?: any): AxiosPromise<void>;
+};
+/**
+ * ErrorApi - object-oriented interface
+ * @export
+ * @class ErrorApi
+ * @extends {BaseAPI}
+ */
+export declare class ErrorApi extends BaseAPI {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ErrorApi
+     */
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+}
+/**
  * StripeApi - axios parameter creator
  * @export
  */
