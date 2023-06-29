@@ -22,6 +22,20 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
 /**
+ * 計測単位の通貨(unit of currency) 
+ * @export
+ * @enum {string}
+ */
+
+export const Currency = {
+    Jpy: 'JPY',
+    Usd: 'USD'
+} as const;
+
+export type Currency = typeof Currency[keyof typeof Currency];
+
+
+/**
  * 
  * @export
  * @interface MeteringUnitDateCount
@@ -196,11 +210,11 @@ export interface PricingFixedUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingFixedUnit
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  * 
@@ -264,11 +278,11 @@ export interface PricingFixedUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingFixedUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  * 
@@ -648,11 +662,11 @@ export interface PricingTieredUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingTieredUnit
      */
-    'currency': string;
+    'currency': Currency;
     /**
      * 
      * @type {Array<PricingTier>}
@@ -703,11 +717,11 @@ export interface PricingTieredUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingTieredUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
     /**
      * 
      * @type {Array<PricingTier>}
@@ -801,11 +815,11 @@ export interface PricingTieredUsageUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingTieredUsageUnit
      */
-    'currency': string;
+    'currency': Currency;
     /**
      * 
      * @type {Array<PricingTier>}
@@ -887,11 +901,11 @@ export interface PricingTieredUsageUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingTieredUsageUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
     /**
      * 
      * @type {Array<PricingTier>}
@@ -968,11 +982,11 @@ export interface PricingUnitBaseProps {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingUnitBaseProps
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  * @type PricingUnitForSave
@@ -1066,11 +1080,11 @@ export interface PricingUsageUnit {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingUsageUnit
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  * 
@@ -1121,11 +1135,11 @@ export interface PricingUsageUnitForSave {
      */
     'type': UnitType;
     /**
-     * 通貨(currency)
-     * @type {string}
+     * 
+     * @type {Currency}
      * @memberof PricingUsageUnitForSave
      */
-    'currency': string;
+    'currency': Currency;
 }
 /**
  * 
@@ -1229,6 +1243,111 @@ export interface SavePricingPlanParam {
     'menu_ids': Array<string>;
 }
 /**
+ * 
+ * @export
+ * @interface TaxRate
+ */
+export interface TaxRate {
+    /**
+     * 
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'id': string;
+    /**
+     * 税率の名前(name of tax rate)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'name': string;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'display_name': string;
+    /**
+     * 税率(percentage)
+     * @type {number}
+     * @memberof TaxRate
+     */
+    'percentage': number;
+    /**
+     * 内税かどうか(inclusive or not)
+     * @type {boolean}
+     * @memberof TaxRate
+     */
+    'inclusive': boolean;
+    /**
+     * ISO 3166-1 alpha-2 の国コード(Country code of ISO 3166-1 alpha-2)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'country': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof TaxRate
+     */
+    'description': string;
+}
+/**
+ * 
+ * @export
+ * @interface TaxRateProps
+ */
+export interface TaxRateProps {
+    /**
+     * 税率の名前(name of tax rate)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'name': string;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'display_name': string;
+    /**
+     * 税率(percentage)
+     * @type {number}
+     * @memberof TaxRateProps
+     */
+    'percentage': number;
+    /**
+     * 内税かどうか(inclusive or not)
+     * @type {boolean}
+     * @memberof TaxRateProps
+     */
+    'inclusive': boolean;
+    /**
+     * ISO 3166-1 alpha-2 の国コード(Country code of ISO 3166-1 alpha-2)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'country': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof TaxRateProps
+     */
+    'description': string;
+}
+/**
+ * 
+ * @export
+ * @interface TaxRates
+ */
+export interface TaxRates {
+    /**
+     * 
+     * @type {Array<TaxRate>}
+     * @memberof TaxRates
+     */
+    'tax_rates': Array<TaxRate>;
+}
+/**
  * 計測単位の種別(unit of measurement type) fixed: 固定ユニット(fixed unit) usage: 使用量ユニット(usage unit) tiered: 段階ユニット(tiered unit) tiered_usage: 段階的使用量ユニット(tiered usage unit) 
  * @export
  * @enum {string}
@@ -1245,7 +1364,7 @@ export type UnitType = typeof UnitType[keyof typeof UnitType];
 
 
 /**
- * 更新方法(update method) add: 加算(addition) sub: 減算(subtraction) direct: 上書き(overwrite)
+ * 更新方法(update method) add: 加算(addition) sub: 減算(subtraction) direct: 上書き(overwrite) 
  * @export
  * @enum {string}
  */
@@ -1310,6 +1429,108 @@ export interface UpdatePricingPlansUsedParam {
      */
     'plan_ids': Array<string>;
 }
+
+/**
+ * ErrorApi - axios parameter creator
+ * @export
+ */
+export const ErrorApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        returnInternalServerError: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/errors/internal-server-error`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * ErrorApi - functional programming interface
+ * @export
+ */
+export const ErrorApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ErrorApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async returnInternalServerError(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.returnInternalServerError(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * ErrorApi - factory interface
+ * @export
+ */
+export const ErrorApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ErrorApiFp(configuration)
+    return {
+        /**
+         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        returnInternalServerError(options?: any): AxiosPromise<void> {
+            return localVarFp.returnInternalServerError(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * ErrorApi - object-oriented interface
+ * @export
+ * @class ErrorApi
+ * @extends {BaseAPI}
+ */
+export class ErrorApi extends BaseAPI {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ErrorApi
+     */
+    public returnInternalServerError(options?: AxiosRequestConfig) {
+        return ErrorApiFp(this.configuration).returnInternalServerError(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
 
 /**
  * MeteringApi - axios parameter creator
@@ -2531,6 +2752,40 @@ export const PricingPlansApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
+         * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates. 
+         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/plans-initialization`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 料金プランを削除します。  Delete pricing plan. 
          * @summary 料金プランを削除(Delete Pricing Plan)
          * @param {string} planId 料金プランID(price plan ID)
@@ -2810,6 +3065,16 @@ export const PricingPlansApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates. 
+         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * 料金プランを削除します。  Delete pricing plan. 
          * @summary 料金プランを削除(Delete Pricing Plan)
          * @param {string} planId 料金プランID(price plan ID)
@@ -2905,6 +3170,15 @@ export const PricingPlansApiFactory = function (configuration?: Configuration, b
             return localVarFp.createPricingPlan(body, options).then((request) => request(axios, basePath));
         },
         /**
+         * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates. 
+         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: any): AxiosPromise<void> {
+            return localVarFp.deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options).then((request) => request(axios, basePath));
+        },
+        /**
          * 料金プランを削除します。  Delete pricing plan. 
          * @summary 料金プランを削除(Delete Pricing Plan)
          * @param {string} planId 料金プランID(price plan ID)
@@ -2992,6 +3266,17 @@ export class PricingPlansApi extends BaseAPI {
      */
     public createPricingPlan(body?: SavePricingPlanParam, options?: AxiosRequestConfig) {
         return PricingPlansApiFp(this.configuration).createPricingPlan(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates. 
+     * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PricingPlansApi
+     */
+    public deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: AxiosRequestConfig) {
+        return PricingPlansApiFp(this.configuration).deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3467,6 +3752,179 @@ export class PricingUnitsApi extends BaseAPI {
      */
     public updatePricingUnit(pricingUnitId: string, body?: PricingUnitForSave, options?: AxiosRequestConfig) {
         return PricingUnitsApiFp(this.configuration).updatePricingUnit(pricingUnitId, body, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * TaxRateApi - axios parameter creator
+ * @export
+ */
+export const TaxRateApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 税率を作成します。  Creates a tax rate. 
+         * @summary 税率の作成(Create Tax Rate)
+         * @param {TaxRateProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTaxRate: async (body?: TaxRateProps, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/tax-rates`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 税率を取得します。  Get all Tax Rates 
+         * @summary 税率を取得します(Get Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTaxRates: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/tax-rates`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TaxRateApi - functional programming interface
+ * @export
+ */
+export const TaxRateApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TaxRateApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 税率を作成します。  Creates a tax rate. 
+         * @summary 税率の作成(Create Tax Rate)
+         * @param {TaxRateProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createTaxRate(body?: TaxRateProps, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaxRate>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTaxRate(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 税率を取得します。  Get all Tax Rates 
+         * @summary 税率を取得します(Get Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getTaxRates(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaxRates>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTaxRates(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * TaxRateApi - factory interface
+ * @export
+ */
+export const TaxRateApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TaxRateApiFp(configuration)
+    return {
+        /**
+         * 税率を作成します。  Creates a tax rate. 
+         * @summary 税率の作成(Create Tax Rate)
+         * @param {TaxRateProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createTaxRate(body?: TaxRateProps, options?: any): AxiosPromise<TaxRate> {
+            return localVarFp.createTaxRate(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 税率を取得します。  Get all Tax Rates 
+         * @summary 税率を取得します(Get Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTaxRates(options?: any): AxiosPromise<TaxRates> {
+            return localVarFp.getTaxRates(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * TaxRateApi - object-oriented interface
+ * @export
+ * @class TaxRateApi
+ * @extends {BaseAPI}
+ */
+export class TaxRateApi extends BaseAPI {
+    /**
+     * 税率を作成します。  Creates a tax rate. 
+     * @summary 税率の作成(Create Tax Rate)
+     * @param {TaxRateProps} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaxRateApi
+     */
+    public createTaxRate(body?: TaxRateProps, options?: AxiosRequestConfig) {
+        return TaxRateApiFp(this.configuration).createTaxRate(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 税率を取得します。  Get all Tax Rates 
+     * @summary 税率を取得します(Get Tax Rates)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaxRateApi
+     */
+    public getTaxRates(options?: AxiosRequestConfig) {
+        return TaxRateApiFp(this.configuration).getTaxRates(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

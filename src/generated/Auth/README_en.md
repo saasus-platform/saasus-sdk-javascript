@@ -26,6 +26,8 @@ For details (arguments, return values), [refer to the API document](https://docs
 - updateAuthInfo ... Update Authentication Info
 - getSignInSettings ... Get Password Requirements
 - updateSignInSettings ... Update Password Requirements
+- getIdentityProviders ・・・Get sign-in information via external provider
+- updateIdentityProvider ・・・Update sign-in information via external provider
 
 ## SaaS User Info
 
@@ -44,6 +46,15 @@ For details (arguments, return values), [refer to the API document](https://docs
 
 - getUserMfaPreference ... Get User's MFA Settings
 - updateUserMfaPreference ... Update User's MFA Settings
+
+- signUp ... Sign Up
+- resendSignUpConfirmationEmail ... Resend Sign Up Confirmation Email
+
+- unlinkProvider ... Unlink external identity providers
+
+- signUpWithAwsMarketplace ・・・Sign Up with AWS Marketplace
+- confirmSignUpWithAwsMarketplace ・・・Confirm Sign Up with AWS Marketplace
+- linkAwsMarketplace ・・・Link an existing tenant with AWS Marketplace
 
 ### Tenant User Info
 
@@ -85,17 +96,9 @@ For details (arguments, return values), [refer to the API document](https://docs
 - getTenant ... Get Tenant Details
 - createTenant ... Create Tenant
 - updateTenant ... Update Tenant Details
+- updateTenantPlan ... Update Tenant Plan Information
+- updateTenantBillingInfo ... Update Tenant Billing Information
 - deleteTenant ... Delete Tenant
-
-## SaaSus Info
-
-- getApiKeys ... Get API Keys
-- createApiKey ... Create API Key
-- deleteApiKey ... Delete API Key
-- getSaasId ... Get SaasID
-- updateSaasId ... Update SaasID
-- getClientSecret ... Get Client Secret
-- updateClientSecret ... Update Client Secret
 
 ## Env Info
 

@@ -166,6 +166,86 @@ export interface BasicInfo {
      * @memberof BasicInfo
      */
     'from_email_address': string;
+    /**
+     * 認証メールの返信元メールアドレス(Reply-from email address of authentication email)
+     * @type {string}
+     * @memberof BasicInfo
+     */
+    'reply_email_address': string;
+    /**
+     * SESのサンドボックス解除及びCognitoのSES設定結果(SES sandbox release and Cognito SES configuration results)
+     * @type {boolean}
+     * @memberof BasicInfo
+     */
+    'is_ses_sandbox_granted': boolean;
+}
+/**
+ *
+ * @export
+ * @interface BillingAddress
+ */
+export interface BillingAddress {
+    /**
+     * 住所の通りの名前や番地を含めた部分  Street address, apartment or suite number.
+     * @type {string}
+     * @memberof BillingAddress
+     */
+    'street': string;
+    /**
+     * 住所の市区町村  City, district, suburb, town, or village.
+     * @type {string}
+     * @memberof BillingAddress
+     */
+    'city': string;
+    /**
+     * 住所の都道府県または州  State name or abbreviation.
+     * @type {string}
+     * @memberof BillingAddress
+     */
+    'state': string;
+    /**
+     * 住所の国を ISO 3166-1 alpha-2 コードで指定します。  Country of the address using ISO 3166-1 alpha-2 code.
+     * @type {string}
+     * @memberof BillingAddress
+     */
+    'country': string;
+    /**
+     * 建物名・部屋番号などの住所に関する追加情報  Additional information about the address, such as a building name, floor, or department name.
+     * @type {string}
+     * @memberof BillingAddress
+     */
+    'additional_address_info'?: string;
+    /**
+     * 郵便番号  ZIP or postal code.
+     * @type {string}
+     * @memberof BillingAddress
+     */
+    'postal_code': string;
+}
+/**
+ *
+ * @export
+ * @interface BillingInfo
+ */
+export interface BillingInfo {
+    /**
+     * 請求用のテナント名  Tenant name for billing
+     * @type {string}
+     * @memberof BillingInfo
+     */
+    'name': string;
+    /**
+     *
+     * @type {BillingAddress}
+     * @memberof BillingInfo
+     */
+    'address': BillingAddress;
+    /**
+     *
+     * @type {InvoiceLanguage}
+     * @memberof BillingInfo
+     */
+    'invoice_language': InvoiceLanguage;
 }
 /**
  *
@@ -179,6 +259,31 @@ export interface ClientSecret {
      * @memberof ClientSecret
      */
     'client_secret': string;
+}
+/**
+ *
+ * @export
+ * @interface ConfirmSignUpWithAwsMarketplaceParam
+ */
+export interface ConfirmSignUpWithAwsMarketplaceParam {
+    /**
+     * テナント名(tenant name)
+     * @type {string}
+     * @memberof ConfirmSignUpWithAwsMarketplaceParam
+     */
+    'tenant_name'?: string;
+    /**
+     * アクセストークン(access token)
+     * @type {string}
+     * @memberof ConfirmSignUpWithAwsMarketplaceParam
+     */
+    'access_token': string;
+    /**
+     * Registration Token
+     * @type {string}
+     * @memberof ConfirmSignUpWithAwsMarketplaceParam
+     */
+    'registration_token': string;
 }
 /**
  *
@@ -225,7 +330,7 @@ export interface CreateTenantUserParam {
      */
     'email': string;
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining tenant attributes in the SaaS development console)
+     * 属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
      * @memberof CreateTenantUserParam
      */
@@ -495,6 +600,25 @@ export interface Envs {
     'envs': Array<Env>;
 }
 /**
+ * 外部IDプロバイダを利用したサインインの設定をするために必要な情報です。(This information is required to set up sign-in using an external identity provider.) 変更はできません。(It cannot be changed.)
+ * @export
+ * @interface IdentityProviderConfiguration
+ */
+export interface IdentityProviderConfiguration {
+    /**
+     * ドメイン(domain)
+     * @type {string}
+     * @memberof IdentityProviderConfiguration
+     */
+    'domain': string;
+    /**
+     * リダイレクトURL(redirect URL)
+     * @type {string}
+     * @memberof IdentityProviderConfiguration
+     */
+    'redirect_url': string;
+}
+/**
  *
  * @export
  * @interface IdentityProviderProps
@@ -531,6 +655,41 @@ export interface IdentityProviders {
      * @memberof IdentityProviders
      */
     'google': IdentityProviderProps;
+}
+/**
+ * 請求書の言語  Language of invoice
+ * @export
+ * @enum {string}
+ */
+export declare const InvoiceLanguage: {
+    readonly JaJp: "ja-JP";
+    readonly EnUs: "en-US";
+};
+export declare type InvoiceLanguage = typeof InvoiceLanguage[keyof typeof InvoiceLanguage];
+/**
+ *
+ * @export
+ * @interface LinkAwsMarketplaceParam
+ */
+export interface LinkAwsMarketplaceParam {
+    /**
+     * テナントID(tenant ID)
+     * @type {string}
+     * @memberof LinkAwsMarketplaceParam
+     */
+    'tenant_id': string;
+    /**
+     * アクセストークン(access token)
+     * @type {string}
+     * @memberof LinkAwsMarketplaceParam
+     */
+    'access_token': string;
+    /**
+     * Registration Token
+     * @type {string}
+     * @memberof LinkAwsMarketplaceParam
+     */
+    'registration_token': string;
 }
 /**
  *
@@ -742,7 +901,47 @@ export interface PlanHistory {
      * @memberof PlanHistory
      */
     'plan_applied_at': number;
+    /**
+     *
+     * @type {string}
+     * @memberof PlanHistory
+     */
+    'tax_rate_id'?: string;
 }
+/**
+ *
+ * @export
+ * @interface PlanReservation
+ */
+export interface PlanReservation {
+    /**
+     *
+     * @type {string}
+     * @memberof PlanReservation
+     */
+    'next_plan_id'?: string;
+    /**
+     * 次回料金プラン開始日時（stripe連携時、当月月初の0時（UTC）を指定すると当月月初開始のサブスクリプションを作成できます。ex. 2023年1月の場合は、1672531200 ） (Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.))
+     * @type {number}
+     * @memberof PlanReservation
+     */
+    'using_next_plan_from'?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof PlanReservation
+     */
+    'next_plan_tax_rate_id'?: string;
+}
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare const ProviderName: {
+    readonly Google: "Google";
+};
+export declare type ProviderName = typeof ProviderName[keyof typeof ProviderName];
 /**
  * reCAPTCHA認証設定(reCAPTCHA authentication settings) ※ 未提供の機能のため、変更・保存はできません(This function is not yet provided, so it cannot be changed or saved.)
  * @export
@@ -761,6 +960,19 @@ export interface RecaptchaProps {
      * @memberof RecaptchaProps
      */
     'secret_key': string;
+}
+/**
+ *
+ * @export
+ * @interface ResendSignUpConfirmationEmailParam
+ */
+export interface ResendSignUpConfirmationEmailParam {
+    /**
+     * メールアドレス(Email Address)
+     * @type {string}
+     * @memberof ResendSignUpConfirmationEmailParam
+     */
+    'email': string;
 }
 /**
  * 役割(ロール)情報(role info)
@@ -906,6 +1118,44 @@ export interface SignInSettings {
      * @memberof SignInSettings
      */
     'self_regist': SelfRegist;
+    /**
+     *
+     * @type {IdentityProviderConfiguration}
+     * @memberof SignInSettings
+     */
+    'identity_provider_configuration': IdentityProviderConfiguration;
+}
+/**
+ *
+ * @export
+ * @interface SignUpParam
+ */
+export interface SignUpParam {
+    /**
+     * メールアドレス(Email Address)
+     * @type {string}
+     * @memberof SignUpParam
+     */
+    'email': string;
+}
+/**
+ *
+ * @export
+ * @interface SignUpWithAwsMarketplaceParam
+ */
+export interface SignUpWithAwsMarketplaceParam {
+    /**
+     * メールアドレス(Email Address)
+     * @type {string}
+     * @memberof SignUpWithAwsMarketplaceParam
+     */
+    'email': string;
+    /**
+     * Registration Token
+     * @type {string}
+     * @memberof SignUpWithAwsMarketplaceParam
+     */
+    'registration_token': string;
 }
 /**
  *
@@ -939,6 +1189,12 @@ export interface Tenant {
      */
     'plan_id'?: string;
     /**
+     *
+     * @type {BillingInfo}
+     * @memberof Tenant
+     */
+    'billing_info'?: BillingInfo;
+    /**
      * テナント名(tenant name)
      * @type {string}
      * @memberof Tenant
@@ -953,6 +1209,12 @@ export interface Tenant {
         [key: string]: any;
     };
     /**
+     * 事務管理部門スタッフメールアドレス(administrative staff email address)
+     * @type {string}
+     * @memberof Tenant
+     */
+    'back_office_staff_email': string;
+    /**
      *
      * @type {string}
      * @memberof Tenant
@@ -965,11 +1227,11 @@ export interface Tenant {
      */
     'using_next_plan_from'?: number;
     /**
-     * 事務管理部門スタッフメールアドレス(administrative staff email address)
+     *
      * @type {string}
      * @memberof Tenant
      */
-    'back_office_staff_email': string;
+    'next_plan_tax_rate_id'?: string;
     /**
      * 料金プラン履歴
      * @type {Array<PlanHistory>}
@@ -995,6 +1257,12 @@ export interface TenantAllOf {
      * @memberof TenantAllOf
      */
     'plan_id'?: string;
+    /**
+     *
+     * @type {BillingInfo}
+     * @memberof TenantAllOf
+     */
+    'billing_info'?: BillingInfo;
 }
 /**
  *
@@ -1029,18 +1297,6 @@ export interface TenantProps {
     'attributes': {
         [key: string]: any;
     };
-    /**
-     *
-     * @type {string}
-     * @memberof TenantProps
-     */
-    'next_plan_id'?: string;
-    /**
-     * 次回料金プラン開始日時（stripe連携時、当月月初の0時（UTC）を指定すると当月月初開始のサブスクリプションを作成できます。ex. 2023年1月の場合は、1672531200 ） (Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.))
-     * @type {number}
-     * @memberof TenantProps
-     */
-    'using_next_plan_from'?: number;
     /**
      * 事務管理部門スタッフメールアドレス(administrative staff email address)
      * @type {string}
@@ -1079,6 +1335,12 @@ export interface UpdateBasicInfoParam {
      * @memberof UpdateBasicInfoParam
      */
     'from_email_address': string;
+    /**
+     * 認証メールの返信元メールアドレス(Reply-from email address of authentication email)
+     * @type {string}
+     * @memberof UpdateBasicInfoParam
+     */
+    'reply_email_address'?: string;
 }
 /**
  *
@@ -1188,10 +1450,10 @@ export interface UpdateEnvParam {
 export interface UpdateIdentityProviderParam {
     /**
      *
-     * @type {string}
+     * @type {ProviderName}
      * @memberof UpdateIdentityProviderParam
      */
-    'provider': UpdateIdentityProviderParamProviderEnum;
+    'provider': ProviderName;
     /**
      *
      * @type {IdentityProviderProps}
@@ -1199,10 +1461,6 @@ export interface UpdateIdentityProviderParam {
      */
     'identity_provider_props'?: IdentityProviderProps;
 }
-export declare const UpdateIdentityProviderParamProviderEnum: {
-    readonly Google: "Google";
-};
-export declare type UpdateIdentityProviderParamProviderEnum = typeof UpdateIdentityProviderParamProviderEnum[keyof typeof UpdateIdentityProviderParamProviderEnum];
 /**
  *
  * @export
@@ -1347,7 +1605,7 @@ export interface UpdateSoftwareTokenParam {
  */
 export interface UpdateTenantUserParam {
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining tenant attributes in the SaaS development console)
+     * 属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
      * @memberof UpdateTenantUserParam
      */
@@ -1386,7 +1644,7 @@ export interface User {
      */
     'email': string;
     /**
-     * 属性情報（SaaS 開発コンソールでテナント属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining tenant attributes in the SaaS development console)
+     * 属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
      * @memberof User
      */
@@ -2297,6 +2555,61 @@ export declare class EnvApi extends BaseAPI {
     updateEnv(envId: number, updateEnvParam?: UpdateEnvParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }
 /**
+ * ErrorApi - axios parameter creator
+ * @export
+ */
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+};
+/**
+ * ErrorApi - functional programming interface
+ * @export
+ */
+export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+};
+/**
+ * ErrorApi - factory interface
+ * @export
+ */
+export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    returnInternalServerError(options?: any): AxiosPromise<void>;
+};
+/**
+ * ErrorApi - object-oriented interface
+ * @export
+ * @class ErrorApi
+ * @extends {BaseAPI}
+ */
+export declare class ErrorApi extends BaseAPI {
+    /**
+     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ErrorApi
+     */
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+}
+/**
  * RoleApi - axios parameter creator
  * @export
  */
@@ -2423,6 +2736,14 @@ export declare class RoleApi extends BaseAPI {
  */
 export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmSignUpWithAwsMarketplace: (confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
      * @param {CreateSaasUserParam} [createSaasUserParam]
@@ -2471,6 +2792,47 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     getUserMfaPreference: (userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    linkAwsMarketplace: (linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+     * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+     * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resendSignUpConfirmationEmail: (resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+     * @summary 新規登録(Sign Up)
+     * @param {SignUpParam} [signUpParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUp: (signUpParam?: SignUpParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUpWithAwsMarketplace: (signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+     * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    unlinkProvider: (userId: string, providerName: ProviderName, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
      * @param {string} userId ユーザーID(User ID)
@@ -2512,6 +2874,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
  * @export
  */
 export declare const SaasUserApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Tenant>>;
     /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
@@ -2561,6 +2931,47 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
      */
     getUserMfaPreference(userId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MfaPreference>>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+     * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+     * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+     * @summary 新規登録(Sign Up)
+     * @param {SignUpParam} [signUpParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUp(signUpParam?: SignUpParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SaasUser>>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SaasUser>>;
+    /**
+     * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+     * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    unlinkProvider(userId: string, providerName: ProviderName, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
      * @param {string} userId ユーザーID(User ID)
@@ -2602,6 +3013,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
  * @export
  */
 export declare const SaasUserApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam | undefined, options?: any): AxiosPromise<Tenant>;
     /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
@@ -2651,6 +3070,47 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
      */
     getUserMfaPreference(userId: string, options?: any): AxiosPromise<MfaPreference>;
     /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+     * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+     * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+     * @summary 新規登録(Sign Up)
+     * @param {SignUpParam} [signUpParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUp(signUpParam?: SignUpParam | undefined, options?: any): AxiosPromise<SaasUser>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam | undefined, options?: any): AxiosPromise<SaasUser>;
+    /**
+     * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+     * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    unlinkProvider(userId: string, providerName: ProviderName, options?: any): AxiosPromise<void>;
+    /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
      * @param {string} userId ユーザーID(User ID)
@@ -2694,6 +3154,15 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
  * @extends {BaseAPI}
  */
 export declare class SaasUserApi extends BaseAPI {
+    /**
+     * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+     * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any>>;
     /**
      * SaaSにユーザーを作成します。  Create SaaS User.
      * @summary SaaSにユーザーを作成(Create SaaS User)
@@ -2748,6 +3217,52 @@ export declare class SaasUserApi extends BaseAPI {
      * @memberof SaasUserApi
      */
     getUserMfaPreference(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MfaPreference, any>>;
+    /**
+     * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+     * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+     * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+     * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+     * @summary 新規登録(Sign Up)
+     * @param {SignUpParam} [signUpParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    signUp(signUpParam?: SignUpParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    /**
+     * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+     * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+     * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    /**
+     * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+     * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    unlinkProvider(userId: string, providerName: ProviderName, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
@@ -3081,6 +3596,24 @@ export declare const TenantApiAxiosParamCreator: (configuration?: Configuration 
      * @throws {RequiredError}
      */
     updateTenant: (tenantId: string, body?: TenantProps | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+     * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {BillingInfo} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantBillingInfo: (tenantId: string, body?: BillingInfo | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+     * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {PlanReservation} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantPlan: (tenantId: string, body?: PlanReservation | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * TenantApi - functional programming interface
@@ -3141,6 +3674,24 @@ export declare const TenantApiFp: (configuration?: Configuration | undefined) =>
      * @throws {RequiredError}
      */
     updateTenant(tenantId: string, body?: TenantProps | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+     * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {BillingInfo} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantBillingInfo(tenantId: string, body?: BillingInfo | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+     * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {PlanReservation} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantPlan(tenantId: string, body?: PlanReservation | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
 };
 /**
  * TenantApi - factory interface
@@ -3201,6 +3752,24 @@ export declare const TenantApiFactory: (configuration?: Configuration | undefine
      * @throws {RequiredError}
      */
     updateTenant(tenantId: string, body?: TenantProps | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+     * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {BillingInfo} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantBillingInfo(tenantId: string, body?: BillingInfo | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+     * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {PlanReservation} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantPlan(tenantId: string, body?: PlanReservation | undefined, options?: any): AxiosPromise<void>;
 };
 /**
  * TenantApi - object-oriented interface
@@ -3270,6 +3839,26 @@ export declare class TenantApi extends BaseAPI {
      * @memberof TenantApi
      */
     updateTenant(tenantId: string, body?: TenantProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+     * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {BillingInfo} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    updateTenantBillingInfo(tenantId: string, body?: BillingInfo, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+     * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {PlanReservation} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    updateTenantPlan(tenantId: string, body?: PlanReservation, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }
 /**
  * TenantAttributeApi - axios parameter creator

@@ -75,6 +75,14 @@ app.use(
 
   It is used for referencing/updating information related to external SaaS used in billing operations.
 
+- [Integration](./src/generated/Integration/README_en.md)
+
+  It is used for referencing/updating information related to Amazon EventBridge.
+
+- [AwsMarketplace](./src/generated/AwsMarketplace/README_en.md)
+
+  It is used for referencing/updating information related to AWS Marketplace.
+
 ---
 
 ## Use Case Sample
