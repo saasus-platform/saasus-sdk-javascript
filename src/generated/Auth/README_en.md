@@ -100,16 +100,6 @@ For details (arguments, return values), [refer to the API document](https://docs
 - updateTenantBillingInfo ... Update Tenant Billing Information
 - deleteTenant ... Delete Tenant
 
-## SaaSus Info
-
-- getApiKeys ... Get API Keys
-- createApiKey ... Create API Key
-- deleteApiKey ... Delete API Key
-- getSaasId ... Get SaasID
-- updateSaasId ... Update SaasID
-- getClientSecret ... Get Client Secret
-- updateClientSecret ... Update Client Secret
-
 ## Env Info
 
 - getEnvs ... Get Env Info
