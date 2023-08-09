@@ -3,7 +3,10 @@ import Hex from "crypto-js/enc-hex";
 import date from "date-and-time";
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
 
-export default function getAxiosInstance(baseURL: string): AxiosInstance {
+export default function getAxiosInstance(
+  baseURL: string,
+  referer?: string
+): AxiosInstance {
   const requestConfig: AxiosRequestConfig = {
     baseURL: baseURL,
     headers: {
@@ -26,6 +29,9 @@ export default function getAxiosInstance(baseURL: string): AxiosInstance {
       );
       const header = `SAASUSSIGV1 Sig=${hash}, SaaSID=${process.env.SAASUS_SAAS_ID}, APIKey=${process.env.SAASUS_API_KEY}`;
       config.headers!["Authorization"] = header;
+      if (referer) {
+        config.headers!["Referer"] = referer;
+      }
       return config;
     },
     (error: AxiosError) => error

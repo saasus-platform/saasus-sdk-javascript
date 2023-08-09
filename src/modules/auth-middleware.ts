@@ -28,8 +28,12 @@ export async function AuthMiddleware(
     console.error("Can not get SaaSus ID token.");
     return res.redirect(process.env.SAASUS_LOGIN_URL || "");
   }
+  let referer = "";
+  if (req.headers["referer"]) {
+    referer = req.headers["referer"];
+  }
   try {
-    const apiClient = new AuthClient();
+    const apiClient = new AuthClient(referer);
     const { data } = await apiClient.userInfoApi.getUserInfo(
       isAPI()
         ? req.headers["authorization"]!.split("Bearer ")[1]
