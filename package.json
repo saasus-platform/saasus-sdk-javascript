@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anti-Pattern-Inc/saasus-sdk-javascript"
+    "url": "git+https://github.com/saasus-platform/saasus-sdk-javascript"
   },
   "author": "Anti-Pattern Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Anti-Pattern-Inc/saasus-sdk-javascript/issues"
+    "url": "https://github.com/saasus-platform/saasus-sdk-javascript/issues"
   },
-  "homepage": "https://github.com/Anti-Pattern-Inc/saasus-sdk-javascript",
+  "homepage": "https://github.com/saasus-platform/saasus-sdk-javascript",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
     "@rollup/plugin-commonjs": "^22.0.1",
