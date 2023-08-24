@@ -4328,7 +4328,7 @@
         }
     }
 
-    function getAxiosInstance(baseURL) {
+    function getAxiosInstance(baseURL, referer) {
         const requestConfig = {
             baseURL: baseURL,
             headers: {
@@ -4345,13 +4345,16 @@
             const hash = Hex__default["default"].stringify(hmacSHA256__default["default"](now + apiKey + config.method?.toUpperCase() + path + body, secret));
             const header = `SAASUSSIGV1 Sig=${hash}, SaaSID=${process.env.SAASUS_SAAS_ID}, APIKey=${process.env.SAASUS_API_KEY}`;
             config.headers["Authorization"] = header;
+            if (referer) {
+                config.headers["Referer"] = referer;
+            }
             return config;
         }, (error) => error);
         return instance;
     }
 
     class AuthClient {
-        constructor() {
+        constructor(referer = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -4362,7 +4365,8 @@
             if (this.apiBase == "") {
                 this.apiBase = "https://api.saasus.io";
             }
-            this.instance = getAxiosInstance(this.apiBase + "/v1/auth");
+            this.referer = referer;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer);
             const config = new Configuration$4({
                 basePath: this.apiBase + "/v1/auth",
             });
@@ -7948,8 +7952,12 @@
             console.error("Can not get SaaSus ID token.");
             return res.redirect(process.env.SAASUS_LOGIN_URL || "");
         }
+        let referer = "";
+        if (req.headers["referer"]) {
+            referer = req.headers["referer"];
+        }
         try {
-            const apiClient = new AuthClient();
+            const apiClient = new AuthClient(referer);
             const { data } = await apiClient.userInfoApi.getUserInfo(isAPI()
                 ? req.headers["authorization"].split("Bearer ")[1]
                 : req.cookies.idToken);

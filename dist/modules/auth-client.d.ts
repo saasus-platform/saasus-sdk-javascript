@@ -17,5 +17,6 @@ export declare class AuthClient {
     private saasId;
     private apiKey;
     private apiBase;
-    constructor();
+    private referer;
+    constructor(referer?: string);
 }
