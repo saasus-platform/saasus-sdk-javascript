@@ -1,32 +1,20 @@
-import { AuthClient } from "../src/main";
+import { ApiLogClient } from "../src/main";
 
 const mockFn = jest.fn();
-jest.mock("../src/generated/Auth", () => {
+jest.mock("../src/generated/ApiLog", () => {
   return {
     Configuration: jest.fn().mockImplementation(() => {
       return {};
     }),
-    AuthInfoApi: jest.fn(),
-    BasicInfoApi: jest.fn(),
-    CredentialApi: jest.fn().mockImplementation(() => {
+    ApiLogApi: jest.fn().mockImplementation(() => {
       return {
-        getAuthCredentials: mockFn,
+        getLogs: mockFn,
       };
     }),
-    EnvApi: jest.fn(),
-    InvitationApi: jest.fn(),
-    RoleApi: jest.fn(),
-    SaasUserApi: jest.fn(),
-    SaasusTenantApi: jest.fn(),
-    TenantApi: jest.fn(),
-    TenantAttributeApi: jest.fn(),
-    TenantUserApi: jest.fn(),
-    UserAttributeApi: jest.fn(),
-    UserInfoApi: jest.fn(),
   };
 });
 
-describe("AuthClient", () => {
+describe("ApiLogClient", () => {
   const OLD_ENV = process.env;
   const consoleSpy = jest.spyOn(console, "error");
 
@@ -46,16 +34,16 @@ describe("AuthClient", () => {
     process.env.SAASUS_SECRET_KEY = "";
     process.env.SAASUS_SAAS_ID = "";
     process.env.SAASUS_API_KEY = "";
-    const apiClient = new AuthClient();
-    await apiClient.credentialApi.getAuthCredentials("token", "tempCodeAuth");
+    const apiClient = new ApiLogClient();
+    await apiClient.apiLogApi.getLogs();
     expect(consoleSpy).toHaveBeenCalledWith(
       "SAASUS_SECRET_KEY, SAASUS_SAAS_ID and SAASUS_API_KEY are required."
     );
   });
 
   it("calls api successfully", async () => {
-    const apiClient = new AuthClient();
-    await apiClient.credentialApi.getAuthCredentials("token", "tempCodeAuth");
+    const apiClient = new ApiLogClient();
+    await apiClient.apiLogApi.getLogs();
     expect(mockFn).toHaveBeenCalled();
   });
 });

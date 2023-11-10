@@ -1,5 +1,7 @@
+export * from "./modules/apilog-client";
 export * from "./modules/auth-client";
 export * from "./modules/billing-client";
+export * from "./modules/communication-client";
 export * from "./modules/pricing-client";
 export * from "./modules/integration-client";
 export * from "./modules/awsmarketplace-client";
