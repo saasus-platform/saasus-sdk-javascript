@@ -5,6 +5,7 @@ import {
   Configuration,
   CredentialApi,
   EnvApi,
+  InvitationApi,
   RoleApi,
   SaasUserApi,
   SaasusTenantApi,
@@ -23,6 +24,7 @@ export class AuthClient {
   basicInfoApi: BasicInfoApi;
   credentialApi: CredentialApi;
   envApi: EnvApi;
+  invitationApi: InvitationApi;
   roleApi: RoleApi;
   saasUserApi: SaasUserApi;
   saasusTenantApi: SaasusTenantApi;
@@ -65,6 +67,7 @@ export class AuthClient {
     this.basicInfoApi = new BasicInfoApi(config, "", this.instance);
     this.credentialApi = new CredentialApi(config, "", this.instance);
     this.envApi = new EnvApi(config, "", this.instance);
+    this.invitationApi = new InvitationApi(config, "", this.instance);
     this.roleApi = new RoleApi(config, "", this.instance);
     this.saasUserApi = new SaasUserApi(config, "", this.instance);
     this.saasusTenantApi = new SaasusTenantApi(config, "", this.instance);
