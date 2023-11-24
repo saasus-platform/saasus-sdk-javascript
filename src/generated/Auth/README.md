@@ -41,6 +41,9 @@
 
 - updateSaasUserEmail ・・・メールアドレスを変更
 
+- requestEmailUpdate ・・・ユーザーのメールアドレス変更要求
+- confirmEmailUpdate ・・・ユーザーのメールアドレス変更確認
+
 - createSecretCode ・・・認証アプリケーション登録用のシークレットコードを作成
 - updateSoftwareToken ・・・認証アプリケーションを登録
 
@@ -51,6 +54,9 @@
 - resendSignUpConfirmationEmail ・・・新規登録時の確認メール再送信
 
 - unlinkProvider ・・・外部 ID プロバイダの連携解除
+
+- requestExternalUserLink ・・・外部アカウントのユーザー連携要求
+- confirmExternalUserLink ・・・外部アカウントのユーザーの連携確認
 
 - signUpWithAwsMarketplace ・・・AWS Marketplace によるユーザー新規登録
 - confirmSignUpWithAwsMarketplace ・・・AWS Marketplace によるユーザー新規登録の確定
@@ -71,6 +77,16 @@
 
 - createTenantUserRoles ・・・テナントのユーザー情報に役割(ロール)を作成
 - deleteTenantUserRole ・・・テナントのユーザーから役割(ロール)を削除
+
+## Tenant 招待
+
+- createTenantInvitation ・・・テナントへの招待を作成
+- getTenantInvitations ・・・テナントの招待一覧を取得
+- getTenantInvitation ・・・テナントの招待情報を取得
+- deleteTenantInvitation ・・・テナントへの招待を削除
+- getInvitationValidity ・・・テナントへの招待の有効性を取得
+- validateInvitation ・・・テナントへの招待を検証
+
 
 ## 役割(ロール)情報
 
@@ -100,10 +116,12 @@
 - updateTenantBillingInfo ・・・テナントの請求先情報を更新
 - deleteTenant ・・・テナント情報を削除
 
+- getTenantIdentityProviders ・・・テナント毎の外部IDプロバイダ取得
+- updateTenantIdentityProvider ・・・テナント毎の外部IDプロバイダ更新
+
 ## 環境情報
 
 - getEnvs ・・・環境情報一覧を取得
-
 - getEnv ・・・環境情報の取得
 - createEnv ・・・環境情報を作成
 - updateEnv ・・・環境情報を更新
