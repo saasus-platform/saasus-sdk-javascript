@@ -12,14 +12,14 @@
     var date__default = /*#__PURE__*/_interopDefaultLegacy(date);
 
     /* tslint:disable */
-    const BASE_PATH$4 = "https://api.saasus.io/v1/auth".replace(/\/+$/, "");
+    const BASE_PATH$6 = "https://api.saasus.io/v1/apilog".replace(/\/+$/, "");
     /**
      *
      * @export
      * @class BaseAPI
      */
-    class BaseAPI$4 {
-        constructor(configuration, basePath = BASE_PATH$4, axios = globalAxios__default["default"]) {
+    class BaseAPI$6 {
+        constructor(configuration, basePath = BASE_PATH$6, axios = globalAxios__default["default"]) {
             this.basePath = basePath;
             this.axios = axios;
             if (configuration) {
@@ -34,7 +34,7 @@
      * @class RequiredError
      * @extends {Error}
      */
-    class RequiredError$2 extends Error {
+    class RequiredError$4 extends Error {
         constructor(field, msg) {
             super(msg);
             this.field = field;
@@ -47,22 +47,22 @@
      *
      * @export
      */
-    const DUMMY_BASE_URL$4 = 'https://example.com';
+    const DUMMY_BASE_URL$6 = 'https://example.com';
     /**
      *
      * @throws {RequiredError}
      * @export
      */
-    const assertParamExists$2 = function (functionName, paramName, paramValue) {
+    const assertParamExists$4 = function (functionName, paramName, paramValue) {
         if (paramValue === null || paramValue === undefined) {
-            throw new RequiredError$2(paramName, `Required parameter ${paramName} was null or undefined when calling ${functionName}.`);
+            throw new RequiredError$4(paramName, `Required parameter ${paramName} was null or undefined when calling ${functionName}.`);
         }
     };
     /**
      *
      * @export
      */
-    const setBearerAuthToObject$4 = async function (object, configuration) {
+    const setBearerAuthToObject$6 = async function (object, configuration) {
         if (configuration && configuration.accessToken) {
             const accessToken = typeof configuration.accessToken === 'function'
                 ? await configuration.accessToken()
@@ -70,13 +70,13 @@
             object["Authorization"] = "Bearer " + accessToken;
         }
     };
-    function setFlattenedQueryParams$4(urlSearchParams, parameter, key = "") {
+    function setFlattenedQueryParams$6(urlSearchParams, parameter, key = "") {
         if (typeof parameter === "object") {
             if (Array.isArray(parameter)) {
-                parameter.forEach(item => setFlattenedQueryParams$4(urlSearchParams, item, key));
+                parameter.forEach(item => setFlattenedQueryParams$6(urlSearchParams, item, key));
             }
             else {
-                Object.keys(parameter).forEach(currentKey => setFlattenedQueryParams$4(urlSearchParams, parameter[currentKey], `${key}${key !== '' ? '.' : ''}${currentKey}`));
+                Object.keys(parameter).forEach(currentKey => setFlattenedQueryParams$6(urlSearchParams, parameter[currentKey], `${key}${key !== '' ? '.' : ''}${currentKey}`));
             }
         }
         else {
@@ -92,16 +92,333 @@
      *
      * @export
      */
-    const setSearchParams$4 = function (url, ...objects) {
+    const setSearchParams$6 = function (url, ...objects) {
         const searchParams = new URLSearchParams(url.search);
-        setFlattenedQueryParams$4(searchParams, objects);
+        setFlattenedQueryParams$6(searchParams, objects);
         url.search = searchParams.toString();
     };
     /**
      *
      * @export
      */
-    const serializeDataIfNeeded$4 = function (value, requestOptions, configuration) {
+    const toPathString$6 = function (url) {
+        return url.pathname + url.search + url.hash;
+    };
+    /**
+     *
+     * @export
+     */
+    const createRequestFunction$6 = function (axiosArgs, globalAxios, BASE_PATH, configuration) {
+        return (axios = globalAxios, basePath = BASE_PATH) => {
+            const axiosRequestArgs = { ...axiosArgs.options, url: (configuration?.basePath || basePath) + axiosArgs.url };
+            return axios.request(axiosRequestArgs);
+        };
+    };
+
+    /* tslint:disable */
+    /**
+     * ApiLogApi - axios parameter creator
+     * @export
+     */
+    const ApiLogApiAxiosParamCreator = function (configuration) {
+        return {
+            /**
+             * 指定したIDのAPI実行のログ登録を取得します。
+             * @summary API実行ログ取得
+             * @param {string} apiLogId APIログID(API Log ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getLog: async (apiLogId, options = {}) => {
+                // verify required parameter 'apiLogId' is not null or undefined
+                assertParamExists$4('getLog', 'apiLogId', apiLogId);
+                const localVarPath = `/logs/{api_log_id}`
+                    .replace(`{${"api_log_id"}}`, encodeURIComponent(String(apiLogId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$6);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$6(localVarHeaderParameter, configuration);
+                setSearchParams$6(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$6(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 全API実行のログ登録を取得します。
+             * @summary API実行ログ取得
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getLogs: async (options = {}) => {
+                const localVarPath = `/logs`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$6);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$6(localVarHeaderParameter, configuration);
+                setSearchParams$6(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$6(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+        };
+    };
+    /**
+     * ApiLogApi - functional programming interface
+     * @export
+     */
+    const ApiLogApiFp = function (configuration) {
+        const localVarAxiosParamCreator = ApiLogApiAxiosParamCreator(configuration);
+        return {
+            /**
+             * 指定したIDのAPI実行のログ登録を取得します。
+             * @summary API実行ログ取得
+             * @param {string} apiLogId APIログID(API Log ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getLog(apiLogId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getLog(apiLogId, options);
+                return createRequestFunction$6(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$6, configuration);
+            },
+            /**
+             * 全API実行のログ登録を取得します。
+             * @summary API実行ログ取得
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getLogs(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(options);
+                return createRequestFunction$6(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$6, configuration);
+            },
+        };
+    };
+    /**
+     * ApiLogApi - object-oriented interface
+     * @export
+     * @class ApiLogApi
+     * @extends {BaseAPI}
+     */
+    class ApiLogApi extends BaseAPI$6 {
+        /**
+         * 指定したIDのAPI実行のログ登録を取得します。
+         * @summary API実行ログ取得
+         * @param {string} apiLogId APIログID(API Log ID)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof ApiLogApi
+         */
+        getLog(apiLogId, options) {
+            return ApiLogApiFp(this.configuration).getLog(apiLogId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 全API実行のログ登録を取得します。
+         * @summary API実行ログ取得
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof ApiLogApi
+         */
+        getLogs(options) {
+            return ApiLogApiFp(this.configuration).getLogs(options).then((request) => request(this.axios, this.basePath));
+        }
+    }
+
+    /* tslint:disable */
+    /* eslint-disable */
+    /**
+     * SaaSus ApiLog API Schema
+     * SaaSus ApiLog API Schema
+     *
+     * The version of the OpenAPI document: 1.0.0
+     *
+     *
+     * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+     * https://openapi-generator.tech
+     * Do not edit the class manually.
+     */
+    class Configuration$6 {
+        constructor(param = {}) {
+            this.apiKey = param.apiKey;
+            this.username = param.username;
+            this.password = param.password;
+            this.accessToken = param.accessToken;
+            this.basePath = param.basePath;
+            this.baseOptions = param.baseOptions;
+            this.formDataCtor = param.formDataCtor;
+        }
+        /**
+         * Check if the given MIME is a JSON MIME.
+         * JSON MIME examples:
+         *   application/json
+         *   application/json; charset=UTF8
+         *   APPLICATION/JSON
+         *   application/vnd.company+json
+         * @param mime - MIME (Multipurpose Internet Mail Extensions)
+         * @return True if the given MIME is JSON, false otherwise.
+         */
+        isJsonMime(mime) {
+            const jsonMime = new RegExp('^(application\/json|[^;/ \t]+\/[^;/ \t]+[+]json)[ \t]*(;.*)?$', 'i');
+            return mime !== null && (jsonMime.test(mime) || mime.toLowerCase() === 'application/json-patch+json');
+        }
+    }
+
+    function getAxiosInstance(baseURL, referer) {
+        const requestConfig = {
+            baseURL: baseURL,
+            headers: {
+                "content-type": "application/json",
+            },
+        };
+        const instance = globalAxios__default["default"].create(requestConfig);
+        instance.interceptors.request.use((config) => {
+            const now = date__default["default"].format(new Date(), "YYYYMMDDHHmm", true);
+            const secret = process.env.SAASUS_SECRET_KEY || "";
+            const apiKey = process.env.SAASUS_API_KEY || "";
+            const path = config.url?.split("//")[1];
+            const body = config.data ? config.data : "";
+            const hash = Hex__default["default"].stringify(hmacSHA256__default["default"](now + apiKey + config.method?.toUpperCase() + path + body, secret));
+            const header = `SAASUSSIGV1 Sig=${hash}, SaaSID=${process.env.SAASUS_SAAS_ID}, APIKey=${process.env.SAASUS_API_KEY}`;
+            config.headers["Authorization"] = header;
+            if (referer) {
+                config.headers["Referer"] = referer;
+            }
+            return config;
+        }, (error) => error);
+        return instance;
+    }
+
+    class ApiLogClient {
+        constructor() {
+            this.secret = process.env.SAASUS_SECRET_KEY || "";
+            this.saasId = process.env.SAASUS_SAAS_ID || "";
+            this.apiKey = process.env.SAASUS_API_KEY || "";
+            if (this.secret == "" || this.saasId == "" || this.apiKey == "") {
+                console.error("SAASUS_SECRET_KEY, SAASUS_SAAS_ID and SAASUS_API_KEY are required.");
+            }
+            this.apiBase = process.env.SAASUS_API_URL_BASE || "";
+            if (this.apiBase == "") {
+                this.apiBase = "https://api.saasus.io";
+            }
+            this.instance = getAxiosInstance(this.apiBase + "/v1/apilog");
+            const config = new Configuration$6({
+                basePath: this.apiBase + "/v1/apilog",
+            });
+            this.apiLogApi = new ApiLogApi(config, "", this.instance);
+        }
+    }
+
+    /* tslint:disable */
+    const BASE_PATH$5 = "https://api.saasus.io/v1/auth".replace(/\/+$/, "");
+    /**
+     *
+     * @export
+     * @class BaseAPI
+     */
+    class BaseAPI$5 {
+        constructor(configuration, basePath = BASE_PATH$5, axios = globalAxios__default["default"]) {
+            this.basePath = basePath;
+            this.axios = axios;
+            if (configuration) {
+                this.configuration = configuration;
+                this.basePath = configuration.basePath || this.basePath;
+            }
+        }
+    }
+    /**
+     *
+     * @export
+     * @class RequiredError
+     * @extends {Error}
+     */
+    class RequiredError$3 extends Error {
+        constructor(field, msg) {
+            super(msg);
+            this.field = field;
+            this.name = "RequiredError";
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     *
+     * @export
+     */
+    const DUMMY_BASE_URL$5 = 'https://example.com';
+    /**
+     *
+     * @throws {RequiredError}
+     * @export
+     */
+    const assertParamExists$3 = function (functionName, paramName, paramValue) {
+        if (paramValue === null || paramValue === undefined) {
+            throw new RequiredError$3(paramName, `Required parameter ${paramName} was null or undefined when calling ${functionName}.`);
+        }
+    };
+    /**
+     *
+     * @export
+     */
+    const setBearerAuthToObject$5 = async function (object, configuration) {
+        if (configuration && configuration.accessToken) {
+            const accessToken = typeof configuration.accessToken === 'function'
+                ? await configuration.accessToken()
+                : await configuration.accessToken;
+            object["Authorization"] = "Bearer " + accessToken;
+        }
+    };
+    function setFlattenedQueryParams$5(urlSearchParams, parameter, key = "") {
+        if (typeof parameter === "object") {
+            if (Array.isArray(parameter)) {
+                parameter.forEach(item => setFlattenedQueryParams$5(urlSearchParams, item, key));
+            }
+            else {
+                Object.keys(parameter).forEach(currentKey => setFlattenedQueryParams$5(urlSearchParams, parameter[currentKey], `${key}${key !== '' ? '.' : ''}${currentKey}`));
+            }
+        }
+        else {
+            if (urlSearchParams.has(key)) {
+                urlSearchParams.append(key, parameter);
+            }
+            else {
+                urlSearchParams.set(key, parameter);
+            }
+        }
+    }
+    /**
+     *
+     * @export
+     */
+    const setSearchParams$5 = function (url, ...objects) {
+        const searchParams = new URLSearchParams(url.search);
+        setFlattenedQueryParams$5(searchParams, objects);
+        url.search = searchParams.toString();
+    };
+    /**
+     *
+     * @export
+     */
+    const serializeDataIfNeeded$5 = function (value, requestOptions, configuration) {
         const nonString = typeof value !== 'string';
         const needsSerialization = nonString && configuration && configuration.isJsonMime
             ? configuration.isJsonMime(requestOptions.headers['Content-Type'])
@@ -114,14 +431,14 @@
      *
      * @export
      */
-    const toPathString$4 = function (url) {
+    const toPathString$5 = function (url) {
         return url.pathname + url.search + url.hash;
     };
     /**
      *
      * @export
      */
-    const createRequestFunction$4 = function (axiosArgs, globalAxios, BASE_PATH, configuration) {
+    const createRequestFunction$5 = function (axiosArgs, globalAxios, BASE_PATH, configuration) {
         return (axios = globalAxios, basePath = BASE_PATH) => {
             const axiosRequestArgs = { ...axiosArgs.options, url: (configuration?.basePath || basePath) + axiosArgs.url };
             return axios.request(axiosRequestArgs);
@@ -144,7 +461,7 @@
             getAuthInfo: async (options = {}) => {
                 const localVarPath = `/auth-info`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -154,12 +471,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -171,7 +488,7 @@
             getIdentityProviders: async (options = {}) => {
                 const localVarPath = `/identity-providers`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -181,12 +498,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -199,7 +516,7 @@
             getSignInSettings: async (options = {}) => {
                 const localVarPath = `/sign-in-settings`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -209,12 +526,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -228,7 +545,7 @@
             updateAuthInfo: async (body, options = {}) => {
                 const localVarPath = `/auth-info`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -238,14 +555,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -258,7 +575,7 @@
             updateIdentityProvider: async (updateIdentityProviderParam, options = {}) => {
                 const localVarPath = `/identity-providers`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -268,14 +585,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateIdentityProviderParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateIdentityProviderParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -289,7 +606,7 @@
             updateSignInSettings: async (updateSignInSettingsParam, options = {}) => {
                 const localVarPath = `/sign-in-settings`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -299,14 +616,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateSignInSettingsParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateSignInSettingsParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -327,7 +644,7 @@
              */
             async getAuthInfo(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getAuthInfo(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito
@@ -336,7 +653,7 @@
              */
             async getIdentityProviders(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getIdentityProviders(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
@@ -346,7 +663,7 @@
              */
             async getSignInSettings(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getSignInSettings(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
@@ -357,7 +674,7 @@
              */
             async updateAuthInfo(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateAuthInfo(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 外部IDプロバイダのサインイン情報更新
@@ -367,7 +684,7 @@
              */
             async updateIdentityProvider(updateIdentityProviderParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateIdentityProvider(updateIdentityProviderParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
@@ -378,7 +695,7 @@
              */
             async updateSignInSettings(updateSignInSettingsParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateSignInSettings(updateSignInSettingsParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -388,7 +705,7 @@
      * @class AuthInfoApi
      * @extends {BaseAPI}
      */
-    class AuthInfoApi extends BaseAPI$4 {
+    class AuthInfoApi extends BaseAPI$5 {
         /**
          * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
          * @summary 認証情報を取得(Get Authentication Info)
@@ -466,7 +783,7 @@
             findNotificationMessages: async (options = {}) => {
                 const localVarPath = `/notification-messages`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -476,12 +793,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -494,7 +811,7 @@
             getBasicInfo: async (options = {}) => {
                 const localVarPath = `/basic-info`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -504,12 +821,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -522,7 +839,7 @@
             getCustomizePageSettings: async (options = {}) => {
                 const localVarPath = `/customize-page-settings`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -532,12 +849,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -550,7 +867,7 @@
             getCustomizePages: async (options = {}) => {
                 const localVarPath = `/customize-pages`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -560,12 +877,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -579,7 +896,7 @@
             updateBasicInfo: async (updateBasicInfoParam, options = {}) => {
                 const localVarPath = `/basic-info`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -589,14 +906,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateBasicInfoParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateBasicInfoParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -610,7 +927,7 @@
             updateCustomizePageSettings: async (updateCustomizePageSettingsParam, options = {}) => {
                 const localVarPath = `/customize-page-settings`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -620,14 +937,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateCustomizePageSettingsParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateCustomizePageSettingsParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -641,7 +958,7 @@
             updateCustomizePages: async (updateCustomizePagesParam, options = {}) => {
                 const localVarPath = `/customize-pages`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -651,14 +968,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateCustomizePagesParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateCustomizePagesParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -672,7 +989,7 @@
             updateNotificationMessages: async (updateNotificationMessagesParam, options = {}) => {
                 const localVarPath = `/notification-messages`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -682,14 +999,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateNotificationMessagesParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateNotificationMessagesParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -710,7 +1027,7 @@
              */
             async findNotificationMessages(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.findNotificationMessages(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
@@ -720,7 +1037,7 @@
              */
             async getBasicInfo(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getBasicInfo(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 認証認可基本情報を取得します。  Get authentication authorization basic information.
@@ -730,7 +1047,7 @@
              */
             async getCustomizePageSettings(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomizePageSettings(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Get the authentication screen setting information (new registration, login, password reset, etc.).
@@ -740,7 +1057,7 @@
              */
             async getCustomizePages(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomizePages(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
@@ -751,7 +1068,7 @@
              */
             async updateBasicInfo(updateBasicInfoParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateBasicInfo(updateBasicInfoParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 認証認可基本情報を更新します。  Update authentication authorization basic information.
@@ -762,7 +1079,7 @@
              */
             async updateCustomizePageSettings(updateCustomizePageSettingsParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateCustomizePageSettings(updateCustomizePageSettingsParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication page setting information (new registration, login, password reset, etc.).
@@ -773,7 +1090,7 @@
              */
             async updateCustomizePages(updateCustomizePagesParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateCustomizePages(updateCustomizePagesParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 各種通知メールテンプレート更新します。  Update notification email template.
@@ -784,7 +1101,7 @@
              */
             async updateNotificationMessages(updateNotificationMessagesParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateNotificationMessages(updateNotificationMessagesParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -794,7 +1111,7 @@
      * @class BasicInfoApi
      * @extends {BaseAPI}
      */
-    class BasicInfoApi extends BaseAPI$4 {
+    class BasicInfoApi extends BaseAPI$5 {
         /**
          * 各種通知メールテンプレートを取得します。  Get notification email templates.
          * @summary 通知メールテンプレートを取得(Get Notification Email Templates)
@@ -896,7 +1213,7 @@
             createAuthCredentials: async (body, options = {}) => {
                 const localVarPath = `/credentials`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -906,14 +1223,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -929,7 +1246,7 @@
             getAuthCredentials: async (code, authFlow, refreshToken, options = {}) => {
                 const localVarPath = `/credentials`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -939,7 +1256,7 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 if (code !== undefined) {
                     localVarQueryParameter['code'] = code;
                 }
@@ -949,11 +1266,11 @@
                 if (refreshToken !== undefined) {
                     localVarQueryParameter['refresh-token'] = refreshToken;
                 }
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -975,7 +1292,7 @@
              */
             async createAuthCredentials(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createAuthCredentials(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
@@ -988,7 +1305,7 @@
              */
             async getAuthCredentials(code, authFlow, refreshToken, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getAuthCredentials(code, authFlow, refreshToken, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -998,7 +1315,7 @@
      * @class CredentialApi
      * @extends {BaseAPI}
      */
-    class CredentialApi extends BaseAPI$4 {
+    class CredentialApi extends BaseAPI$5 {
         /**
          * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
          * @summary 認証・認可情報の保存(Save Authentication/Authorization Information)
@@ -1040,7 +1357,7 @@
             createEnv: async (body, options = {}) => {
                 const localVarPath = `/envs`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1050,14 +1367,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1070,11 +1387,11 @@
              */
             deleteEnv: async (envId, options = {}) => {
                 // verify required parameter 'envId' is not null or undefined
-                assertParamExists$2('deleteEnv', 'envId', envId);
+                assertParamExists$3('deleteEnv', 'envId', envId);
                 const localVarPath = `/envs/{env_id}`
                     .replace(`{${"env_id"}}`, encodeURIComponent(String(envId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1084,12 +1401,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1102,11 +1419,11 @@
              */
             getEnv: async (envId, options = {}) => {
                 // verify required parameter 'envId' is not null or undefined
-                assertParamExists$2('getEnv', 'envId', envId);
+                assertParamExists$3('getEnv', 'envId', envId);
                 const localVarPath = `/envs/{env_id}`
                     .replace(`{${"env_id"}}`, encodeURIComponent(String(envId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1116,12 +1433,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1134,7 +1451,7 @@
             getEnvs: async (options = {}) => {
                 const localVarPath = `/envs`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1144,12 +1461,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1163,11 +1480,11 @@
              */
             updateEnv: async (envId, updateEnvParam, options = {}) => {
                 // verify required parameter 'envId' is not null or undefined
-                assertParamExists$2('updateEnv', 'envId', envId);
+                assertParamExists$3('updateEnv', 'envId', envId);
                 const localVarPath = `/envs/{env_id}`
                     .replace(`{${"env_id"}}`, encodeURIComponent(String(envId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1177,14 +1494,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateEnvParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateEnvParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1206,7 +1523,7 @@
              */
             async createEnv(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createEnv(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 環境情報を削除します。  Delete env info.
@@ -1217,7 +1534,7 @@
              */
             async deleteEnv(envId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteEnv(envId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 環境情報の詳細を取得します。  Get environment details.
@@ -1228,7 +1545,7 @@
              */
             async getEnv(envId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getEnv(envId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
@@ -1238,7 +1555,7 @@
              */
             async getEnvs(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getEnvs(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 環境情報を更新します。  Update env info.
@@ -1250,7 +1567,7 @@
              */
             async updateEnv(envId, updateEnvParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateEnv(envId, updateEnvParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -1260,7 +1577,7 @@
      * @class EnvApi
      * @extends {BaseAPI}
      */
-    class EnvApi extends BaseAPI$4 {
+    class EnvApi extends BaseAPI$5 {
         /**
          * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
          * @summary 環境情報を作成(Create Env Info)
@@ -1318,6 +1635,377 @@
         }
     }
     /**
+     * InvitationApi - axios parameter creator
+     * @export
+     */
+    const InvitationApiAxiosParamCreator = function (configuration) {
+        return {
+            /**
+             * テナントへの招待を作成します。  Create an invitation to the tenant.
+             * @summary テナントへの招待を作成(Create Tenant Invitation)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            createTenantInvitation: async (tenantId, createTenantInvitationParam, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('createTenantInvitation', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/invitations`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(createTenantInvitationParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナントへの招待を削除します。  Delete an invitation to the tenant.
+             * @summary テナントへの招待を削除(Delete Tenant Invitation)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            deleteTenantInvitation: async (tenantId, invitationId, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('deleteTenantInvitation', 'tenantId', tenantId);
+                // verify required parameter 'invitationId' is not null or undefined
+                assertParamExists$3('deleteTenantInvitation', 'invitationId', invitationId);
+                const localVarPath = `/tenants/{tenant_id}/invitations/{invitation_id}`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
+                    .replace(`{${"invitation_id"}}`, encodeURIComponent(String(invitationId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+             * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getInvitationValidity: async (invitationId, options = {}) => {
+                // verify required parameter 'invitationId' is not null or undefined
+                assertParamExists$3('getInvitationValidity', 'invitationId', invitationId);
+                const localVarPath = `/invitations/{invitation_id}/validity`
+                    .replace(`{${"invitation_id"}}`, encodeURIComponent(String(invitationId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+             * @summary テナントの招待情報を取得(Get Tenant Invitation)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getTenantInvitation: async (tenantId, invitationId, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('getTenantInvitation', 'tenantId', tenantId);
+                // verify required parameter 'invitationId' is not null or undefined
+                assertParamExists$3('getTenantInvitation', 'invitationId', invitationId);
+                const localVarPath = `/tenants/{tenant_id}/invitations/{invitation_id}`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
+                    .replace(`{${"invitation_id"}}`, encodeURIComponent(String(invitationId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+             * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getTenantInvitations: async (tenantId, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('getTenantInvitations', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/invitations`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナントへの招待を検証します。  Validate an invitation to the tenant.
+             * @summary テナントへの招待を検証(Validate Invitation)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {ValidateInvitationParam} [validateInvitationParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            validateInvitation: async (invitationId, validateInvitationParam, options = {}) => {
+                // verify required parameter 'invitationId' is not null or undefined
+                assertParamExists$3('validateInvitation', 'invitationId', invitationId);
+                const localVarPath = `/invitations/{invitation_id}/validate`
+                    .replace(`{${"invitation_id"}}`, encodeURIComponent(String(invitationId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(validateInvitationParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+        };
+    };
+    /**
+     * InvitationApi - functional programming interface
+     * @export
+     */
+    const InvitationApiFp = function (configuration) {
+        const localVarAxiosParamCreator = InvitationApiAxiosParamCreator(configuration);
+        return {
+            /**
+             * テナントへの招待を作成します。  Create an invitation to the tenant.
+             * @summary テナントへの招待を作成(Create Tenant Invitation)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async createTenantInvitation(tenantId, createTenantInvitationParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createTenantInvitation(tenantId, createTenantInvitationParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナントへの招待を削除します。  Delete an invitation to the tenant.
+             * @summary テナントへの招待を削除(Delete Tenant Invitation)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteTenantInvitation(tenantId, invitationId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTenantInvitation(tenantId, invitationId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+             * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getInvitationValidity(invitationId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getInvitationValidity(invitationId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+             * @summary テナントの招待情報を取得(Get Tenant Invitation)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getTenantInvitation(tenantId, invitationId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getTenantInvitation(tenantId, invitationId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+             * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getTenantInvitations(tenantId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getTenantInvitations(tenantId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナントへの招待を検証します。  Validate an invitation to the tenant.
+             * @summary テナントへの招待を検証(Validate Invitation)
+             * @param {string} invitationId 招待ID(Invitation ID)
+             * @param {ValidateInvitationParam} [validateInvitationParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async validateInvitation(invitationId, validateInvitationParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.validateInvitation(invitationId, validateInvitationParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+        };
+    };
+    /**
+     * InvitationApi - object-oriented interface
+     * @export
+     * @class InvitationApi
+     * @extends {BaseAPI}
+     */
+    class InvitationApi extends BaseAPI$5 {
+        /**
+         * テナントへの招待を作成します。  Create an invitation to the tenant.
+         * @summary テナントへの招待を作成(Create Tenant Invitation)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof InvitationApi
+         */
+        createTenantInvitation(tenantId, createTenantInvitationParam, options) {
+            return InvitationApiFp(this.configuration).createTenantInvitation(tenantId, createTenantInvitationParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * テナントへの招待を削除します。  Delete an invitation to the tenant.
+         * @summary テナントへの招待を削除(Delete Tenant Invitation)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} invitationId 招待ID(Invitation ID)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof InvitationApi
+         */
+        deleteTenantInvitation(tenantId, invitationId, options) {
+            return InvitationApiFp(this.configuration).deleteTenantInvitation(tenantId, invitationId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+         * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+         * @param {string} invitationId 招待ID(Invitation ID)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof InvitationApi
+         */
+        getInvitationValidity(invitationId, options) {
+            return InvitationApiFp(this.configuration).getInvitationValidity(invitationId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+         * @summary テナントの招待情報を取得(Get Tenant Invitation)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {string} invitationId 招待ID(Invitation ID)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof InvitationApi
+         */
+        getTenantInvitation(tenantId, invitationId, options) {
+            return InvitationApiFp(this.configuration).getTenantInvitation(tenantId, invitationId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+         * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof InvitationApi
+         */
+        getTenantInvitations(tenantId, options) {
+            return InvitationApiFp(this.configuration).getTenantInvitations(tenantId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * テナントへの招待を検証します。  Validate an invitation to the tenant.
+         * @summary テナントへの招待を検証(Validate Invitation)
+         * @param {string} invitationId 招待ID(Invitation ID)
+         * @param {ValidateInvitationParam} [validateInvitationParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof InvitationApi
+         */
+        validateInvitation(invitationId, validateInvitationParam, options) {
+            return InvitationApiFp(this.configuration).validateInvitation(invitationId, validateInvitationParam, options).then((request) => request(this.axios, this.basePath));
+        }
+    }
+    /**
      * RoleApi - axios parameter creator
      * @export
      */
@@ -1333,7 +2021,7 @@
             createRole: async (body, options = {}) => {
                 const localVarPath = `/roles`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1343,14 +2031,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1363,11 +2051,11 @@
              */
             deleteRole: async (roleName, options = {}) => {
                 // verify required parameter 'roleName' is not null or undefined
-                assertParamExists$2('deleteRole', 'roleName', roleName);
+                assertParamExists$3('deleteRole', 'roleName', roleName);
                 const localVarPath = `/roles/{role_name}`
                     .replace(`{${"role_name"}}`, encodeURIComponent(String(roleName)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1377,12 +2065,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1395,7 +2083,7 @@
             getRoles: async (options = {}) => {
                 const localVarPath = `/roles`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1405,12 +2093,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1432,7 +2120,7 @@
              */
             async createRole(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createRole(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 役割(ロール)を削除します。  Delete role.
@@ -1443,7 +2131,7 @@
              */
             async deleteRole(roleName, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteRole(roleName, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
@@ -1453,7 +2141,7 @@
              */
             async getRoles(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getRoles(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -1463,7 +2151,7 @@
      * @class RoleApi
      * @extends {BaseAPI}
      */
-    class RoleApi extends BaseAPI$4 {
+    class RoleApi extends BaseAPI$5 {
         /**
          * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
          * @summary 役割(ロール)を作成(Create Role)
@@ -1504,16 +2192,20 @@
     const SaasUserApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
-             * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+             * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+             * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+             * @param {string} userId ユーザーID(User ID)
+             * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            confirmSignUpWithAwsMarketplace: async (confirmSignUpWithAwsMarketplaceParam, options = {}) => {
-                const localVarPath = `/aws-marketplace/sign-up-confirm`;
+            confirmEmailUpdate: async (userId, confirmEmailUpdateParam, options = {}) => {
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$3('confirmEmailUpdate', 'userId', userId);
+                const localVarPath = `/users/{user_id}/email/confirm`
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1523,14 +2215,76 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(confirmSignUpWithAwsMarketplaceParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(confirmEmailUpdateParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+             * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+             * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            confirmExternalUserLink: async (confirmExternalUserLinkParam, options = {}) => {
+                const localVarPath = `/external-users/confirm`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(confirmExternalUserLinkParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+             * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            confirmSignUpWithAwsMarketplace: async (confirmSignUpWithAwsMarketplaceParam, options = {}) => {
+                const localVarPath = `/aws-marketplace/sign-up-confirm`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(confirmSignUpWithAwsMarketplaceParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1544,7 +2298,7 @@
             createSaasUser: async (createSaasUserParam, options = {}) => {
                 const localVarPath = `/users`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1554,14 +2308,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(createSaasUserParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(createSaasUserParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1575,11 +2329,11 @@
              */
             createSecretCode: async (userId, createSecretCodeParam, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('createSecretCode', 'userId', userId);
+                assertParamExists$3('createSecretCode', 'userId', userId);
                 const localVarPath = `/users/{user_id}/mfa/software-token/secret-code`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1589,14 +2343,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(createSecretCodeParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(createSecretCodeParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1609,11 +2363,11 @@
              */
             deleteSaasUser: async (userId, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('deleteSaasUser', 'userId', userId);
+                assertParamExists$3('deleteSaasUser', 'userId', userId);
                 const localVarPath = `/users/{user_id}`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1623,12 +2377,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1641,11 +2395,11 @@
              */
             getSaasUser: async (userId, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('getSaasUser', 'userId', userId);
+                assertParamExists$3('getSaasUser', 'userId', userId);
                 const localVarPath = `/users/{user_id}`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1655,12 +2409,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1673,7 +2427,7 @@
             getSaasUsers: async (options = {}) => {
                 const localVarPath = `/users`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1683,12 +2437,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1701,11 +2455,11 @@
              */
             getUserMfaPreference: async (userId, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('getUserMfaPreference', 'userId', userId);
+                assertParamExists$3('getUserMfaPreference', 'userId', userId);
                 const localVarPath = `/users/{user_id}/mfa/preference`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1715,12 +2469,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1734,7 +2488,7 @@
             linkAwsMarketplace: async (linkAwsMarketplaceParam, options = {}) => {
                 const localVarPath = `/aws-marketplace/link`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1744,14 +2498,80 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(linkAwsMarketplaceParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(linkAwsMarketplaceParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+             * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+             * @param {string} userId ユーザーID(User ID)
+             * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            requestEmailUpdate: async (userId, requestEmailUpdateParam, options = {}) => {
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$3('requestEmailUpdate', 'userId', userId);
+                const localVarPath = `/users/{user_id}/email/request`
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(requestEmailUpdateParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+             * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+             * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            requestExternalUserLink: async (requestExternalUserLinkParam, options = {}) => {
+                const localVarPath = `/external-users/request`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(requestExternalUserLinkParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1765,7 +2585,7 @@
             resendSignUpConfirmationEmail: async (resendSignUpConfirmationEmailParam, options = {}) => {
                 const localVarPath = `/sign-up/resend`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1775,14 +2595,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(resendSignUpConfirmationEmailParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(resendSignUpConfirmationEmailParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1796,7 +2616,7 @@
             signUp: async (signUpParam, options = {}) => {
                 const localVarPath = `/sign-up`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1806,14 +2626,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(signUpParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(signUpParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1827,7 +2647,7 @@
             signUpWithAwsMarketplace: async (signUpWithAwsMarketplaceParam, options = {}) => {
                 const localVarPath = `/aws-marketplace/sign-up`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1837,35 +2657,35 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(signUpWithAwsMarketplaceParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(signUpWithAwsMarketplaceParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
             /**
              * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
              * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+             * @param {string} providerName
              * @param {string} userId ユーザーID(User ID)
-             * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            unlinkProvider: async (userId, providerName, options = {}) => {
-                // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('unlinkProvider', 'userId', userId);
+            unlinkProvider: async (providerName, userId, options = {}) => {
                 // verify required parameter 'providerName' is not null or undefined
-                assertParamExists$2('unlinkProvider', 'providerName', providerName);
+                assertParamExists$3('unlinkProvider', 'providerName', providerName);
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$3('unlinkProvider', 'userId', userId);
                 const localVarPath = `/users/{user_id}/providers/{provider_name}`
-                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)))
-                    .replace(`{${"provider_name"}}`, encodeURIComponent(String(providerName)));
+                    .replace(`{${"provider_name"}}`, encodeURIComponent(String(providerName)))
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1875,12 +2695,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1894,11 +2714,11 @@
              */
             updateSaasUserEmail: async (userId, updateSaasUserEmailParam, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('updateSaasUserEmail', 'userId', userId);
+                assertParamExists$3('updateSaasUserEmail', 'userId', userId);
                 const localVarPath = `/users/{user_id}/email`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1908,14 +2728,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateSaasUserEmailParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateSaasUserEmailParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1929,11 +2749,11 @@
              */
             updateSaasUserPassword: async (userId, updateSaasUserPasswordParam, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('updateSaasUserPassword', 'userId', userId);
+                assertParamExists$3('updateSaasUserPassword', 'userId', userId);
                 const localVarPath = `/users/{user_id}/password`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1943,14 +2763,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateSaasUserPasswordParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateSaasUserPasswordParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1964,11 +2784,11 @@
              */
             updateSoftwareToken: async (userId, updateSoftwareTokenParam, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('updateSoftwareToken', 'userId', userId);
+                assertParamExists$3('updateSoftwareToken', 'userId', userId);
                 const localVarPath = `/users/{user_id}/mfa/software-token`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -1978,14 +2798,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateSoftwareTokenParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateSoftwareTokenParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -1999,11 +2819,11 @@
              */
             updateUserMfaPreference: async (userId, body, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('updateUserMfaPreference', 'userId', userId);
+                assertParamExists$3('updateUserMfaPreference', 'userId', userId);
                 const localVarPath = `/users/{user_id}/mfa/preference`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2013,14 +2833,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2034,6 +2854,29 @@
         const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration);
         return {
             /**
+             * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+             * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+             * @param {string} userId ユーザーID(User ID)
+             * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async confirmEmailUpdate(userId, confirmEmailUpdateParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.confirmEmailUpdate(userId, confirmEmailUpdateParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+             * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+             * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async confirmExternalUserLink(confirmExternalUserLinkParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.confirmExternalUserLink(confirmExternalUserLinkParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
              * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
              * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
@@ -2042,7 +2885,7 @@
              */
             async confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSにユーザーを作成します。  Create SaaS User.
@@ -2053,7 +2896,7 @@
              */
             async createSaasUser(createSaasUserParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createSaasUser(createSaasUserParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authentication application registration.
@@ -2065,7 +2908,7 @@
              */
             async createSecretCode(userId, createSecretCodeParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createSecretCode(userId, createSecretCodeParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Delete all users with matching user ID from the tenant and SaaS.
@@ -2076,7 +2919,7 @@
              */
             async deleteSaasUser(userId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSaasUser(userId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーIDからユーザー情報を取得します。  Get user information based on user ID.
@@ -2087,7 +2930,7 @@
              */
             async getSaasUser(userId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasUser(userId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSのユーザー全件を取得します。  Get all SaaS users.
@@ -2097,7 +2940,7 @@
              */
             async getSaasUsers(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasUsers(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings.
@@ -2108,7 +2951,7 @@
              */
             async getUserMfaPreference(userId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getUserMfaPreference(userId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
@@ -2119,7 +2962,30 @@
              */
             async linkAwsMarketplace(linkAwsMarketplaceParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.linkAwsMarketplace(linkAwsMarketplaceParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+             * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+             * @param {string} userId ユーザーID(User ID)
+             * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async requestEmailUpdate(userId, requestEmailUpdateParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.requestEmailUpdate(userId, requestEmailUpdateParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+             * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+             * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async requestExternalUserLink(requestExternalUserLinkParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.requestExternalUserLink(requestExternalUserLinkParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
@@ -2130,7 +2996,7 @@
              */
             async resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
@@ -2141,7 +3007,7 @@
              */
             async signUp(signUpParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.signUp(signUpParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
@@ -2152,19 +3018,19 @@
              */
             async signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
              * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+             * @param {string} providerName
              * @param {string} userId ユーザーID(User ID)
-             * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async unlinkProvider(userId, providerName, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.unlinkProvider(userId, providerName, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+            async unlinkProvider(providerName, userId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.unlinkProvider(providerName, userId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーのメールアドレスを変更します。  Change user\'s email.
@@ -2176,7 +3042,7 @@
              */
             async updateSaasUserEmail(userId, updateSaasUserEmailParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasUserEmail(userId, updateSaasUserEmailParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーのログインパスワードを変更します。  Change user\'s login password.
@@ -2188,7 +3054,7 @@
              */
             async updateSaasUserPassword(userId, updateSaasUserPasswordParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasUserPassword(userId, updateSaasUserPasswordParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * 認証アプリケーションを登録します。  Register an authentication application.
@@ -2200,7 +3066,7 @@
              */
             async updateSoftwareToken(userId, updateSoftwareTokenParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateSoftwareToken(userId, updateSoftwareTokenParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーのMFA設定を更新します。  Update user\'s MFA settings.
@@ -2212,7 +3078,7 @@
              */
             async updateUserMfaPreference(userId, body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateUserMfaPreference(userId, body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -2222,7 +3088,30 @@
      * @class SaasUserApi
      * @extends {BaseAPI}
      */
-    class SaasUserApi extends BaseAPI$4 {
+    class SaasUserApi extends BaseAPI$5 {
+        /**
+         * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+         * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        confirmEmailUpdate(userId, confirmEmailUpdateParam, options) {
+            return SaasUserApiFp(this.configuration).confirmEmailUpdate(userId, confirmEmailUpdateParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+         * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+         * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        confirmExternalUserLink(confirmExternalUserLinkParam, options) {
+            return SaasUserApiFp(this.configuration).confirmExternalUserLink(confirmExternalUserLinkParam, options).then((request) => request(this.axios, this.basePath));
+        }
         /**
          * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
          * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
@@ -2312,6 +3201,29 @@
             return SaasUserApiFp(this.configuration).linkAwsMarketplace(linkAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+         * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+         * @param {string} userId ユーザーID(User ID)
+         * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        requestEmailUpdate(userId, requestEmailUpdateParam, options) {
+            return SaasUserApiFp(this.configuration).requestEmailUpdate(userId, requestEmailUpdateParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+         * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+         * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        requestExternalUserLink(requestExternalUserLinkParam, options) {
+            return SaasUserApiFp(this.configuration).requestExternalUserLink(requestExternalUserLinkParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
          * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
          * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2347,14 +3259,14 @@
         /**
          * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
          * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+         * @param {string} providerName
          * @param {string} userId ユーザーID(User ID)
-         * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof SaasUserApi
          */
-        unlinkProvider(userId, providerName, options) {
-            return SaasUserApiFp(this.configuration).unlinkProvider(userId, providerName, options).then((request) => request(this.axios, this.basePath));
+        unlinkProvider(providerName, userId, options) {
+            return SaasUserApiFp(this.configuration).unlinkProvider(providerName, userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * ユーザーのメールアドレスを変更します。  Change user\'s email.
@@ -2420,7 +3332,7 @@
             createApiKey: async (options = {}) => {
                 const localVarPath = `/apikeys`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2430,12 +3342,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2448,11 +3360,11 @@
              */
             deleteApiKey: async (apiKey, options = {}) => {
                 // verify required parameter 'apiKey' is not null or undefined
-                assertParamExists$2('deleteApiKey', 'apiKey', apiKey);
+                assertParamExists$3('deleteApiKey', 'apiKey', apiKey);
                 const localVarPath = `/apikeys/{api_key}`
                     .replace(`{${"api_key"}}`, encodeURIComponent(String(apiKey)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2462,12 +3374,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2480,7 +3392,7 @@
             getApiKeys: async (options = {}) => {
                 const localVarPath = `/apikeys`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2490,12 +3402,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2508,7 +3420,7 @@
             getClientSecret: async (options = {}) => {
                 const localVarPath = `/client-secret`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2518,12 +3430,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2536,7 +3448,7 @@
             getSaasId: async (options = {}) => {
                 const localVarPath = `/saasid`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2546,12 +3458,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2564,7 +3476,7 @@
             updateClientSecret: async (options = {}) => {
                 const localVarPath = `/client-secret`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2574,12 +3486,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2592,7 +3504,7 @@
             updateSaasId: async (options = {}) => {
                 const localVarPath = `/saasid`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2602,12 +3514,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2628,7 +3540,7 @@
              */
             async createApiKey(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createApiKey(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * サーバサイド用の API キーを削除します。  Delete API Key.
@@ -2639,7 +3551,7 @@
              */
             async deleteApiKey(apiKey, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteApiKey(apiKey, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get API key for the server side. Up to 2 can be generated.
@@ -2649,7 +3561,7 @@
              */
             async getApiKeys(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getApiKeys(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests.
@@ -2659,7 +3571,7 @@
              */
             async getClientSecret(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getClientSecret(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK.
@@ -2669,7 +3581,7 @@
              */
             async getSaasId(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasId(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If changed on a SaaS application that is already running, it will affect the behavior.
@@ -2679,7 +3591,7 @@
              */
             async updateClientSecret(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateClientSecret(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If changed on an SaaS application that is already running, it will affect the behavior.
@@ -2689,7 +3601,7 @@
              */
             async updateSaasId(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasId(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -2699,7 +3611,7 @@
      * @class SaasusTenantApi
      * @extends {BaseAPI}
      */
-    class SaasusTenantApi extends BaseAPI$4 {
+    class SaasusTenantApi extends BaseAPI$5 {
         /**
          * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Generate an API key for the server side. Up to 2 can be generated.
          * @summary APIキーを作成(Create API Key)
@@ -2788,7 +3700,7 @@
             createTenant: async (body, options = {}) => {
                 const localVarPath = `/tenants`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2798,14 +3710,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2818,7 +3730,7 @@
             createTenantAndPricing: async (options = {}) => {
                 const localVarPath = `/stripe/init`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2828,12 +3740,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2846,7 +3758,7 @@
             deleteStripeTenantAndPricing: async (options = {}) => {
                 const localVarPath = `/stripe`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2856,12 +3768,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2874,11 +3786,11 @@
              */
             deleteTenant: async (tenantId, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('deleteTenant', 'tenantId', tenantId);
+                assertParamExists$3('deleteTenant', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2888,12 +3800,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2906,11 +3818,11 @@
              */
             getTenant: async (tenantId, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('getTenant', 'tenantId', tenantId);
+                assertParamExists$3('getTenant', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2920,12 +3832,44 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+             * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getTenantIdentityProviders: async (tenantId, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('getTenantIdentityProviders', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/identity-providers`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2938,7 +3882,7 @@
             getTenants: async (options = {}) => {
                 const localVarPath = `/tenants`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2948,12 +3892,40 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+             * @summary プランに関わる情報を全削除
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            resetPlan: async (options = {}) => {
+                const localVarPath = `/plans/reset`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -2967,11 +3939,11 @@
              */
             updateTenant: async (tenantId, body, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('updateTenant', 'tenantId', tenantId);
+                assertParamExists$3('updateTenant', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -2981,14 +3953,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3002,11 +3974,11 @@
              */
             updateTenantBillingInfo: async (tenantId, body, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('updateTenantBillingInfo', 'tenantId', tenantId);
+                assertParamExists$3('updateTenantBillingInfo', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}/billing-info`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3016,14 +3988,49 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+             * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateTenantIdentityProvider: async (tenantId, updateTenantIdentityProviderParam, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('updateTenantIdentityProvider', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/identity-providers`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateTenantIdentityProviderParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3037,11 +4044,11 @@
              */
             updateTenantPlan: async (tenantId, body, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('updateTenantPlan', 'tenantId', tenantId);
+                assertParamExists$3('updateTenantPlan', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}/plans`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3051,14 +4058,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3080,7 +4087,7 @@
              */
             async createTenant(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createTenant(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * billing経由でstripeへ初期情報を設定  Set Stripe initial information via billing
@@ -3090,7 +4097,7 @@
              */
             async createTenantAndPricing(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createTenantAndPricing(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * stripe上の顧客情報・商品情報を削除します  Delete customer and product from Stripe.
@@ -3100,7 +4107,7 @@
              */
             async deleteStripeTenantAndPricing(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStripeTenantAndPricing(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete SaaSus Platform tenant.
@@ -3111,7 +4118,7 @@
              */
             async deleteTenant(tenantId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTenant(tenantId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get the details of tenant managed on the SaaSus Platform.
@@ -3122,7 +4129,18 @@
              */
             async getTenant(tenantId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getTenant(tenantId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+             * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getTenantIdentityProviders(tenantId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getTenantIdentityProviders(tenantId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
@@ -3132,7 +4150,17 @@
              */
             async getTenants(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getTenants(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+             * @summary プランに関わる情報を全削除
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async resetPlan(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.resetPlan(options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
@@ -3144,7 +4172,7 @@
              */
             async updateTenant(tenantId, body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenant(tenantId, body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
@@ -3156,7 +4184,19 @@
              */
             async updateTenantBillingInfo(tenantId, body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenantBillingInfo(tenantId, body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+             * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+             * @param {string} tenantId テナントID(Tenant ID)
+             * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateTenantIdentityProvider(tenantId, updateTenantIdentityProviderParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenantIdentityProvider(tenantId, updateTenantIdentityProviderParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
@@ -3168,7 +4208,7 @@
              */
             async updateTenantPlan(tenantId, body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenantPlan(tenantId, body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -3178,7 +4218,7 @@
      * @class TenantApi
      * @extends {BaseAPI}
      */
-    class TenantApi extends BaseAPI$4 {
+    class TenantApi extends BaseAPI$5 {
         /**
          * SaaSus Platform で管理する、テナント情報を作成します。  Create a tenant managed by the SaaSus Platform.
          * @summary テナントを作成(Create Tenant)
@@ -3233,6 +4273,17 @@
             return TenantApiFp(this.configuration).getTenant(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+         * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantApi
+         */
+        getTenantIdentityProviders(tenantId, options) {
+            return TenantApiFp(this.configuration).getTenantIdentityProviders(tenantId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
          * @summary テナント一覧取得(Get Tenants)
          * @param {*} [options] Override http request option.
@@ -3241,6 +4292,16 @@
          */
         getTenants(options) {
             return TenantApiFp(this.configuration).getTenants(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+         * @summary プランに関わる情報を全削除
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantApi
+         */
+        resetPlan(options) {
+            return TenantApiFp(this.configuration).resetPlan(options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
@@ -3265,6 +4326,18 @@
          */
         updateTenantBillingInfo(tenantId, body, options) {
             return TenantApiFp(this.configuration).updateTenantBillingInfo(tenantId, body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+         * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+         * @param {string} tenantId テナントID(Tenant ID)
+         * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantApi
+         */
+        updateTenantIdentityProvider(tenantId, updateTenantIdentityProviderParam, options) {
+            return TenantApiFp(this.configuration).updateTenantIdentityProvider(tenantId, updateTenantIdentityProviderParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
@@ -3295,7 +4368,7 @@
             createTenantAttribute: async (body, options = {}) => {
                 const localVarPath = `/tenant-attributes`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3305,14 +4378,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3325,11 +4398,11 @@
              */
             deleteTenantAttribute: async (attributeName, options = {}) => {
                 // verify required parameter 'attributeName' is not null or undefined
-                assertParamExists$2('deleteTenantAttribute', 'attributeName', attributeName);
+                assertParamExists$3('deleteTenantAttribute', 'attributeName', attributeName);
                 const localVarPath = `/tenant-attributes/{attribute_name}`
                     .replace(`{${"attribute_name"}}`, encodeURIComponent(String(attributeName)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3339,12 +4412,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3357,7 +4430,7 @@
             getTenantAttributes: async (options = {}) => {
                 const localVarPath = `/tenant-attributes`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3367,12 +4440,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3394,7 +4467,7 @@
              */
             async createTenantAttribute(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createTenantAttribute(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes tenant attributes managed by SaaSus Platform.
@@ -3405,7 +4478,7 @@
              */
             async deleteTenantAttribute(attributeName, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTenantAttribute(attributeName, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
@@ -3415,7 +4488,7 @@
              */
             async getTenantAttributes(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getTenantAttributes(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -3425,7 +4498,7 @@
      * @class TenantAttributeApi
      * @extends {BaseAPI}
      */
-    class TenantAttributeApi extends BaseAPI$4 {
+    class TenantAttributeApi extends BaseAPI$5 {
         /**
          * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
          * @summary テナント属性の作成(Create Tenant Attribute)
@@ -3475,11 +4548,11 @@
              */
             createTenantUser: async (tenantId, createTenantUserParam, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('createTenantUser', 'tenantId', tenantId);
+                assertParamExists$3('createTenantUser', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}/users`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3489,14 +4562,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(createTenantUserParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(createTenantUserParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3512,17 +4585,17 @@
              */
             createTenantUserRoles: async (tenantId, userId, envId, createTenantUserRolesParam, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('createTenantUserRoles', 'tenantId', tenantId);
+                assertParamExists$3('createTenantUserRoles', 'tenantId', tenantId);
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('createTenantUserRoles', 'userId', userId);
+                assertParamExists$3('createTenantUserRoles', 'userId', userId);
                 // verify required parameter 'envId' is not null or undefined
-                assertParamExists$2('createTenantUserRoles', 'envId', envId);
+                assertParamExists$3('createTenantUserRoles', 'envId', envId);
                 const localVarPath = `/tenants/{tenant_id}/users/{user_id}/envs/{env_id}/roles`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)))
                     .replace(`{${"env_id"}}`, encodeURIComponent(String(envId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3532,14 +4605,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(createTenantUserRolesParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(createTenantUserRolesParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3553,14 +4626,14 @@
              */
             deleteTenantUser: async (tenantId, userId, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('deleteTenantUser', 'tenantId', tenantId);
+                assertParamExists$3('deleteTenantUser', 'tenantId', tenantId);
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('deleteTenantUser', 'userId', userId);
+                assertParamExists$3('deleteTenantUser', 'userId', userId);
                 const localVarPath = `/tenants/{tenant_id}/users/{user_id}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3570,12 +4643,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3591,20 +4664,20 @@
              */
             deleteTenantUserRole: async (tenantId, userId, envId, roleName, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('deleteTenantUserRole', 'tenantId', tenantId);
+                assertParamExists$3('deleteTenantUserRole', 'tenantId', tenantId);
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('deleteTenantUserRole', 'userId', userId);
+                assertParamExists$3('deleteTenantUserRole', 'userId', userId);
                 // verify required parameter 'envId' is not null or undefined
-                assertParamExists$2('deleteTenantUserRole', 'envId', envId);
+                assertParamExists$3('deleteTenantUserRole', 'envId', envId);
                 // verify required parameter 'roleName' is not null or undefined
-                assertParamExists$2('deleteTenantUserRole', 'roleName', roleName);
+                assertParamExists$3('deleteTenantUserRole', 'roleName', roleName);
                 const localVarPath = `/tenants/{tenant_id}/users/{user_id}/envs/{env_id}/roles/{role_name}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)))
                     .replace(`{${"env_id"}}`, encodeURIComponent(String(envId)))
                     .replace(`{${"role_name"}}`, encodeURIComponent(String(roleName)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3614,12 +4687,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3632,11 +4705,11 @@
              */
             getAllTenantUser: async (userId, options = {}) => {
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('getAllTenantUser', 'userId', userId);
+                assertParamExists$3('getAllTenantUser', 'userId', userId);
                 const localVarPath = `/tenants/all/users/{user_id}`
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3646,12 +4719,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3664,7 +4737,7 @@
             getAllTenantUsers: async (options = {}) => {
                 const localVarPath = `/tenants/all/users`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3674,12 +4747,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3693,14 +4766,14 @@
              */
             getTenantUser: async (tenantId, userId, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('getTenantUser', 'tenantId', tenantId);
+                assertParamExists$3('getTenantUser', 'tenantId', tenantId);
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('getTenantUser', 'userId', userId);
+                assertParamExists$3('getTenantUser', 'userId', userId);
                 const localVarPath = `/tenants/{tenant_id}/users/{user_id}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3710,12 +4783,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3728,11 +4801,11 @@
              */
             getTenantUsers: async (tenantId, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('getTenantUsers', 'tenantId', tenantId);
+                assertParamExists$3('getTenantUsers', 'tenantId', tenantId);
                 const localVarPath = `/tenants/{tenant_id}/users`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3742,12 +4815,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3762,14 +4835,14 @@
              */
             updateTenantUser: async (tenantId, userId, updateTenantUserParam, options = {}) => {
                 // verify required parameter 'tenantId' is not null or undefined
-                assertParamExists$2('updateTenantUser', 'tenantId', tenantId);
+                assertParamExists$3('updateTenantUser', 'tenantId', tenantId);
                 // verify required parameter 'userId' is not null or undefined
-                assertParamExists$2('updateTenantUser', 'userId', userId);
+                assertParamExists$3('updateTenantUser', 'userId', userId);
                 const localVarPath = `/tenants/{tenant_id}/users/{user_id}`
                     .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
                     .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -3779,14 +4852,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(updateTenantUserParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateTenantUserParam, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -3809,7 +4882,7 @@
              */
             async createTenantUser(tenantId, createTenantUserParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createTenantUser(tenantId, createTenantUserParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントのユーザーに役割(ロール)を作成します。  Create roles on tenant users.
@@ -3823,7 +4896,7 @@
              */
             async createTenantUserRoles(tenantId, userId, envId, createTenantUserRolesParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createTenantUserRoles(tenantId, userId, envId, createTenantUserRolesParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントからユーザーを削除します。  Delete a user from your tenant.
@@ -3835,7 +4908,7 @@
              */
             async deleteTenantUser(tenantId, userId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTenantUser(tenantId, userId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントのユーザーから役割(ロール)を削除します。  Remove a role from a tenant user.
@@ -3849,7 +4922,7 @@
              */
             async deleteTenantUserRole(tenantId, userId, envId, roleName, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTenantUserRole(tenantId, userId, envId, roleName, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
@@ -3860,7 +4933,7 @@
              */
             async getAllTenantUser(userId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getAllTenantUser(userId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
@@ -3870,7 +4943,7 @@
              */
             async getAllTenantUsers(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getAllTenantUsers(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントのユーザーをIDから一件取得します。  Get one tenant user by specific ID.
@@ -3882,7 +4955,7 @@
              */
             async getTenantUser(tenantId, userId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getTenantUser(tenantId, userId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all the users belonging to the tenant. Id is unique.
@@ -3893,7 +4966,7 @@
              */
             async getTenantUsers(tenantId, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getTenantUsers(tenantId, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * テナントのユーザー属性情報を更新します。  Update tenant user attributes.
@@ -3906,7 +4979,7 @@
              */
             async updateTenantUser(tenantId, userId, updateTenantUserParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateTenantUser(tenantId, userId, updateTenantUserParam, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -3916,7 +4989,7 @@
      * @class TenantUserApi
      * @extends {BaseAPI}
      */
-    class TenantUserApi extends BaseAPI$4 {
+    class TenantUserApi extends BaseAPI$5 {
         /**
          * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a tenant user. If attributes is empty, the additional attributes will be created empty.
          * @summary テナントにユーザーを作成(Create Tenant User)
@@ -4043,7 +5116,7 @@
             createUserAttribute: async (body, options = {}) => {
                 const localVarPath = `/user-attributes`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -4053,14 +5126,14 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 localVarHeaderParameter['Content-Type'] = 'application/json';
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$4(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -4073,11 +5146,11 @@
              */
             deleteUserAttribute: async (attributeName, options = {}) => {
                 // verify required parameter 'attributeName' is not null or undefined
-                assertParamExists$2('deleteUserAttribute', 'attributeName', attributeName);
+                assertParamExists$3('deleteUserAttribute', 'attributeName', attributeName);
                 const localVarPath = `/user-attributes/{attribute_name}`
                     .replace(`{${"attribute_name"}}`, encodeURIComponent(String(attributeName)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -4087,12 +5160,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -4105,7 +5178,7 @@
             getUserAttributes: async (options = {}) => {
                 const localVarPath = `/user-attributes`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -4115,12 +5188,12 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -4142,7 +5215,7 @@
              */
             async createUserAttribute(body, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.createUserAttribute(body, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete user attributes kept on the SaaSus Platform.
@@ -4153,7 +5226,7 @@
              */
             async deleteUserAttribute(attributeName, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.deleteUserAttribute(attributeName, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
              * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
@@ -4163,7 +5236,7 @@
              */
             async getUserAttributes(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getUserAttributes(options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -4173,7 +5246,7 @@
      * @class UserAttributeApi
      * @extends {BaseAPI}
      */
-    class UserAttributeApi extends BaseAPI$4 {
+    class UserAttributeApi extends BaseAPI$5 {
         /**
          * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
          * @summary ユーザー属性の作成(Create User Attributes)
@@ -4222,10 +5295,10 @@
              */
             getUserInfo: async (token, options = {}) => {
                 // verify required parameter 'token' is not null or undefined
-                assertParamExists$2('getUserInfo', 'token', token);
+                assertParamExists$3('getUserInfo', 'token', token);
                 const localVarPath = `/userinfo`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
-                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
@@ -4235,15 +5308,15 @@
                 const localVarQueryParameter = {};
                 // authentication Bearer required
                 // http bearer authentication required
-                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
                 if (token !== undefined) {
                     localVarQueryParameter['token'] = token;
                 }
-                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
-                    url: toPathString$4(localVarUrlObj),
+                    url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
                 };
             },
@@ -4265,7 +5338,7 @@
              */
             async getUserInfo(token, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfo(token, options);
-                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
     };
@@ -4275,7 +5348,7 @@
      * @class UserInfoApi
      * @extends {BaseAPI}
      */
-    class UserInfoApi extends BaseAPI$4 {
+    class UserInfoApi extends BaseAPI$5 {
         /**
          * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
          * @summary ユーザー情報取得(Get User Info)
@@ -4294,6 +5367,348 @@
     /**
      * SaaSus Auth API Schema
      * スキーマ
+     *
+     * The version of the OpenAPI document: 1.0.0
+     *
+     *
+     * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+     * https://openapi-generator.tech
+     * Do not edit the class manually.
+     */
+    class Configuration$5 {
+        constructor(param = {}) {
+            this.apiKey = param.apiKey;
+            this.username = param.username;
+            this.password = param.password;
+            this.accessToken = param.accessToken;
+            this.basePath = param.basePath;
+            this.baseOptions = param.baseOptions;
+            this.formDataCtor = param.formDataCtor;
+        }
+        /**
+         * Check if the given MIME is a JSON MIME.
+         * JSON MIME examples:
+         *   application/json
+         *   application/json; charset=UTF8
+         *   APPLICATION/JSON
+         *   application/vnd.company+json
+         * @param mime - MIME (Multipurpose Internet Mail Extensions)
+         * @return True if the given MIME is JSON, false otherwise.
+         */
+        isJsonMime(mime) {
+            const jsonMime = new RegExp('^(application\/json|[^;/ \t]+\/[^;/ \t]+[+]json)[ \t]*(;.*)?$', 'i');
+            return mime !== null && (jsonMime.test(mime) || mime.toLowerCase() === 'application/json-patch+json');
+        }
+    }
+
+    class AuthClient {
+        constructor(referer = "") {
+            this.secret = process.env.SAASUS_SECRET_KEY || "";
+            this.saasId = process.env.SAASUS_SAAS_ID || "";
+            this.apiKey = process.env.SAASUS_API_KEY || "";
+            if (this.secret == "" || this.saasId == "" || this.apiKey == "") {
+                console.error("SAASUS_SECRET_KEY, SAASUS_SAAS_ID and SAASUS_API_KEY are required.");
+            }
+            this.apiBase = process.env.SAASUS_API_URL_BASE || "";
+            if (this.apiBase == "") {
+                this.apiBase = "https://api.saasus.io";
+            }
+            this.referer = referer;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer);
+            const config = new Configuration$5({
+                basePath: this.apiBase + "/v1/auth",
+            });
+            this.authInfoApi = new AuthInfoApi(config, "", this.instance);
+            this.basicInfoApi = new BasicInfoApi(config, "", this.instance);
+            this.credentialApi = new CredentialApi(config, "", this.instance);
+            this.envApi = new EnvApi(config, "", this.instance);
+            this.invitationApi = new InvitationApi(config, "", this.instance);
+            this.roleApi = new RoleApi(config, "", this.instance);
+            this.saasUserApi = new SaasUserApi(config, "", this.instance);
+            this.saasusTenantApi = new SaasusTenantApi(config, "", this.instance);
+            this.tenantApi = new TenantApi(config, "", this.instance);
+            this.tenantAttributeApi = new TenantAttributeApi(config, "", this.instance);
+            this.tenantUserApi = new TenantUserApi(config, "", this.instance);
+            this.userAttributeApi = new UserAttributeApi(config, "", this.instance);
+            this.userInfoApi = new UserInfoApi(config, "", this.instance);
+        }
+    }
+
+    /* tslint:disable */
+    const BASE_PATH$4 = "https://api.saasus.io/v1/billing".replace(/\/+$/, "");
+    /**
+     *
+     * @export
+     * @class BaseAPI
+     */
+    class BaseAPI$4 {
+        constructor(configuration, basePath = BASE_PATH$4, axios = globalAxios__default["default"]) {
+            this.basePath = basePath;
+            this.axios = axios;
+            if (configuration) {
+                this.configuration = configuration;
+                this.basePath = configuration.basePath || this.basePath;
+            }
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     *
+     * @export
+     */
+    const DUMMY_BASE_URL$4 = 'https://example.com';
+    /**
+     *
+     * @export
+     */
+    const setBearerAuthToObject$4 = async function (object, configuration) {
+        if (configuration && configuration.accessToken) {
+            const accessToken = typeof configuration.accessToken === 'function'
+                ? await configuration.accessToken()
+                : await configuration.accessToken;
+            object["Authorization"] = "Bearer " + accessToken;
+        }
+    };
+    function setFlattenedQueryParams$4(urlSearchParams, parameter, key = "") {
+        if (typeof parameter === "object") {
+            if (Array.isArray(parameter)) {
+                parameter.forEach(item => setFlattenedQueryParams$4(urlSearchParams, item, key));
+            }
+            else {
+                Object.keys(parameter).forEach(currentKey => setFlattenedQueryParams$4(urlSearchParams, parameter[currentKey], `${key}${key !== '' ? '.' : ''}${currentKey}`));
+            }
+        }
+        else {
+            if (urlSearchParams.has(key)) {
+                urlSearchParams.append(key, parameter);
+            }
+            else {
+                urlSearchParams.set(key, parameter);
+            }
+        }
+    }
+    /**
+     *
+     * @export
+     */
+    const setSearchParams$4 = function (url, ...objects) {
+        const searchParams = new URLSearchParams(url.search);
+        setFlattenedQueryParams$4(searchParams, objects);
+        url.search = searchParams.toString();
+    };
+    /**
+     *
+     * @export
+     */
+    const serializeDataIfNeeded$4 = function (value, requestOptions, configuration) {
+        const nonString = typeof value !== 'string';
+        const needsSerialization = nonString && configuration && configuration.isJsonMime
+            ? configuration.isJsonMime(requestOptions.headers['Content-Type'])
+            : nonString;
+        return needsSerialization
+            ? JSON.stringify(value !== undefined ? value : {})
+            : (value || "");
+    };
+    /**
+     *
+     * @export
+     */
+    const toPathString$4 = function (url) {
+        return url.pathname + url.search + url.hash;
+    };
+    /**
+     *
+     * @export
+     */
+    const createRequestFunction$4 = function (axiosArgs, globalAxios, BASE_PATH, configuration) {
+        return (axios = globalAxios, basePath = BASE_PATH) => {
+            const axiosRequestArgs = { ...axiosArgs.options, url: (configuration?.basePath || basePath) + axiosArgs.url };
+            return axios.request(axiosRequestArgs);
+        };
+    };
+
+    /* tslint:disable */
+    /**
+     * StripeApi - axios parameter creator
+     * @export
+     */
+    const StripeApiAxiosParamCreator = function (configuration) {
+        return {
+            /**
+             * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
+             * @summary Stripe連携情報を削除(Delete Stripe Connection)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            deleteStripeInfo: async (options = {}) => {
+                const localVarPath = `/stripe/info`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$4(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+             * @summary Stripe連携情報を取得(Get Stripe Connection information)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getStripeInfo: async (options = {}) => {
+                const localVarPath = `/stripe/info`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$4(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+             * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+             * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateStripeInfo: async (updateStripeInfoParam, options = {}) => {
+                const localVarPath = `/stripe/info`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$4);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$4(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$4(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$4(updateStripeInfoParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$4(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+        };
+    };
+    /**
+     * StripeApi - functional programming interface
+     * @export
+     */
+    const StripeApiFp = function (configuration) {
+        const localVarAxiosParamCreator = StripeApiAxiosParamCreator(configuration);
+        return {
+            /**
+             * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
+             * @summary Stripe連携情報を削除(Delete Stripe Connection)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteStripeInfo(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStripeInfo(options);
+                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+            },
+            /**
+             * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+             * @summary Stripe連携情報を取得(Get Stripe Connection information)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getStripeInfo(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getStripeInfo(options);
+                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+            },
+            /**
+             * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+             * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+             * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateStripeInfo(updateStripeInfoParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateStripeInfo(updateStripeInfoParam, options);
+                return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
+            },
+        };
+    };
+    /**
+     * StripeApi - object-oriented interface
+     * @export
+     * @class StripeApi
+     * @extends {BaseAPI}
+     */
+    class StripeApi extends BaseAPI$4 {
+        /**
+         * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
+         * @summary Stripe連携情報を削除(Delete Stripe Connection)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof StripeApi
+         */
+        deleteStripeInfo(options) {
+            return StripeApiFp(this.configuration).deleteStripeInfo(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+         * @summary Stripe連携情報を取得(Get Stripe Connection information)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof StripeApi
+         */
+        getStripeInfo(options) {
+            return StripeApiFp(this.configuration).getStripeInfo(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+         * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+         * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof StripeApi
+         */
+        updateStripeInfo(updateStripeInfoParam, options) {
+            return StripeApiFp(this.configuration).updateStripeInfo(updateStripeInfoParam, options).then((request) => request(this.axios, this.basePath));
+        }
+    }
+
+    /* tslint:disable */
+    /* eslint-disable */
+    /**
+     * SaaSus Billing API Schema
+     * SaaSus Billing API Schema
      *
      * The version of the OpenAPI document: 1.0.0
      *
@@ -4328,33 +5743,8 @@
         }
     }
 
-    function getAxiosInstance(baseURL, referer) {
-        const requestConfig = {
-            baseURL: baseURL,
-            headers: {
-                "content-type": "application/json",
-            },
-        };
-        const instance = globalAxios__default["default"].create(requestConfig);
-        instance.interceptors.request.use((config) => {
-            const now = date__default["default"].format(new Date(), "YYYYMMDDHHmm", true);
-            const secret = process.env.SAASUS_SECRET_KEY || "";
-            const apiKey = process.env.SAASUS_API_KEY || "";
-            const path = config.url?.split("//")[1];
-            const body = config.data ? config.data : "";
-            const hash = Hex__default["default"].stringify(hmacSHA256__default["default"](now + apiKey + config.method?.toUpperCase() + path + body, secret));
-            const header = `SAASUSSIGV1 Sig=${hash}, SaaSID=${process.env.SAASUS_SAAS_ID}, APIKey=${process.env.SAASUS_API_KEY}`;
-            config.headers["Authorization"] = header;
-            if (referer) {
-                config.headers["Referer"] = referer;
-            }
-            return config;
-        }, (error) => error);
-        return instance;
-    }
-
-    class AuthClient {
-        constructor(referer = "") {
+    class BillingClient {
+        constructor() {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -4365,28 +5755,16 @@
             if (this.apiBase == "") {
                 this.apiBase = "https://api.saasus.io";
             }
-            this.referer = referer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer);
             const config = new Configuration$4({
-                basePath: this.apiBase + "/v1/auth",
+                basePath: this.apiBase + "/v1/billing",
             });
-            this.authInfoApi = new AuthInfoApi(config, "", this.instance);
-            this.basicInfoApi = new BasicInfoApi(config, "", this.instance);
-            this.credentialApi = new CredentialApi(config, "", this.instance);
-            this.envApi = new EnvApi(config, "", this.instance);
-            this.roleApi = new RoleApi(config, "", this.instance);
-            this.saasUserApi = new SaasUserApi(config, "", this.instance);
-            this.saasusTenantApi = new SaasusTenantApi(config, "", this.instance);
-            this.tenantApi = new TenantApi(config, "", this.instance);
-            this.tenantAttributeApi = new TenantAttributeApi(config, "", this.instance);
-            this.tenantUserApi = new TenantUserApi(config, "", this.instance);
-            this.userAttributeApi = new UserAttributeApi(config, "", this.instance);
-            this.userInfoApi = new UserInfoApi(config, "", this.instance);
+            this.instance = getAxiosInstance(this.apiBase + "/v1/billing");
+            this.stripeApi = new StripeApi(config, "", this.instance);
         }
     }
 
     /* tslint:disable */
-    const BASE_PATH$3 = "https://api.saasus.io/v1/billing".replace(/\/+$/, "");
+    const BASE_PATH$3 = "https://api.saasus.io/v1/communication".replace(/\/+$/, "");
     /**
      *
      * @export
@@ -4402,6 +5780,19 @@
             }
         }
     }
+    /**
+     *
+     * @export
+     * @class RequiredError
+     * @extends {Error}
+     */
+    class RequiredError$2 extends Error {
+        constructor(field, msg) {
+            super(msg);
+            this.field = field;
+            this.name = "RequiredError";
+        }
+    }
 
     /* tslint:disable */
     /**
@@ -4409,6 +5800,16 @@
      * @export
      */
     const DUMMY_BASE_URL$3 = 'https://example.com';
+    /**
+     *
+     * @throws {RequiredError}
+     * @export
+     */
+    const assertParamExists$2 = function (functionName, paramName, paramValue) {
+        if (paramValue === null || paramValue === undefined) {
+            throw new RequiredError$2(paramName, `Required parameter ${paramName} was null or undefined when calling ${functionName}.`);
+        }
+    };
     /**
      *
      * @export
@@ -4481,19 +5882,120 @@
 
     /* tslint:disable */
     /**
-     * StripeApi - axios parameter creator
+     * FeedbackApi - axios parameter creator
      * @export
      */
-    const StripeApiAxiosParamCreator = function (configuration) {
+    const FeedbackApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-             * @summary Stripe連携情報を削除(Delete Stripe Connection)
+             * フィードバックを起票
+             * @param {CreateFeedbackParam} [createFeedbackParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            deleteStripeInfo: async (options = {}) => {
-                const localVarPath = `/stripe/info`;
+            createFeedback: async (createFeedbackParam, options = {}) => {
+                const localVarPath = `/feedbacks`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(createFeedbackParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックへのコメント
+             * @param {string} feedbackId
+             * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            createFeedbackComment: async (feedbackId, createFeedbackCommentParam, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('createFeedbackComment', 'feedbackId', feedbackId);
+                const localVarPath = `/feedbacks/{feedback_id}/comments`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(createFeedbackCommentParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックへの投票
+             * @param {string} feedbackId
+             * @param {CreateVoteUserParam} [createVoteUserParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            createVoteUser: async (feedbackId, createVoteUserParam, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('createVoteUser', 'feedbackId', feedbackId);
+                const localVarPath = `/feedbacks/{feedback_id}/votes/users`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(createVoteUserParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックの削除
+             * @param {string} feedbackId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            deleteFeedback: async (feedbackId, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('deleteFeedback', 'feedbackId', feedbackId);
+                const localVarPath = `/feedbacks/{feedback_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
                 let baseOptions;
@@ -4515,13 +6017,86 @@
                 };
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-             * @summary Stripe連携情報を取得(Get Stripe Connection information)
+             * フィードバックへのコメント削除
+             * @param {string} feedbackId
+             * @param {string} commentId
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            getStripeInfo: async (options = {}) => {
-                const localVarPath = `/stripe/info`;
+            deleteFeedbackComment: async (feedbackId, commentId, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('deleteFeedbackComment', 'feedbackId', feedbackId);
+                // verify required parameter 'commentId' is not null or undefined
+                assertParamExists$2('deleteFeedbackComment', 'commentId', commentId);
+                const localVarPath = `/feedbacks/{feedback_id}/comments/{comment_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)))
+                    .replace(`{${"comment_id"}}`, encodeURIComponent(String(commentId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックへの投票の取消
+             * @param {string} feedbackId
+             * @param {string} userId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            deleteVoteForFeedback: async (feedbackId, userId, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('deleteVoteForFeedback', 'feedbackId', feedbackId);
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$2('deleteVoteForFeedback', 'userId', userId);
+                const localVarPath = `/feedbacks/{feedback_id}/votes/users/{user_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)))
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックの取得
+             * @param {string} feedbackId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getFeedback: async (feedbackId, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('getFeedback', 'feedbackId', feedbackId);
+                const localVarPath = `/feedbacks/{feedback_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
                 let baseOptions;
@@ -4543,21 +6118,86 @@
                 };
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-             * @summary Stripe連携情報を更新(Update Stripe Connection Info)
-             * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
+             * フィードバックへのコメント取得
+             * @param {string} feedbackId
+             * @param {string} commentId
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            updateStripeInfo: async (updateStripeInfoParam, options = {}) => {
-                const localVarPath = `/stripe/info`;
+            getFeedbackComment: async (feedbackId, commentId, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('getFeedbackComment', 'feedbackId', feedbackId);
+                // verify required parameter 'commentId' is not null or undefined
+                assertParamExists$2('getFeedbackComment', 'commentId', commentId);
+                const localVarPath = `/feedbacks/{feedback_id}/comments/{comment_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)))
+                    .replace(`{${"comment_id"}}`, encodeURIComponent(String(commentId)));
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
                 let baseOptions;
                 if (configuration) {
                     baseOptions = configuration.baseOptions;
                 }
-                const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックの一覧を取得
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getFeedbacks: async (options = {}) => {
+                const localVarPath = `/feedbacks`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックの編集
+             * @param {string} feedbackId
+             * @param {UpdateFeedbackParam} [updateFeedbackParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateFeedback: async (feedbackId, updateFeedbackParam, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('updateFeedback', 'feedbackId', feedbackId);
+                const localVarPath = `/feedbacks/{feedback_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
                 const localVarHeaderParameter = {};
                 const localVarQueryParameter = {};
                 // authentication Bearer required
@@ -4567,7 +6207,79 @@
                 setSearchParams$3(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$3(updateStripeInfoParam, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$3(updateFeedbackParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックへのコメント編集
+             * @param {string} feedbackId
+             * @param {string} commentId
+             * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateFeedbackComment: async (feedbackId, commentId, updateFeedbackCommentParam, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('updateFeedbackComment', 'feedbackId', feedbackId);
+                // verify required parameter 'commentId' is not null or undefined
+                assertParamExists$2('updateFeedbackComment', 'commentId', commentId);
+                const localVarPath = `/feedbacks/{feedback_id}/comments/{comment_id}`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)))
+                    .replace(`{${"comment_id"}}`, encodeURIComponent(String(commentId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(updateFeedbackCommentParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$3(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * フィードバックのステータス更新
+             * @param {string} feedbackId
+             * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateFeedbackStatus: async (feedbackId, updateFeedbackStatusParam, options = {}) => {
+                // verify required parameter 'feedbackId' is not null or undefined
+                assertParamExists$2('updateFeedbackStatus', 'feedbackId', feedbackId);
+                const localVarPath = `/feedbacks/{feedback_id}/status`
+                    .replace(`{${"feedback_id"}}`, encodeURIComponent(String(feedbackId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$3);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$3(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$3(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$3(updateFeedbackStatusParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString$3(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -4576,90 +6288,284 @@
         };
     };
     /**
-     * StripeApi - functional programming interface
+     * FeedbackApi - functional programming interface
      * @export
      */
-    const StripeApiFp = function (configuration) {
-        const localVarAxiosParamCreator = StripeApiAxiosParamCreator(configuration);
+    const FeedbackApiFp = function (configuration) {
+        const localVarAxiosParamCreator = FeedbackApiAxiosParamCreator(configuration);
         return {
             /**
-             * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-             * @summary Stripe連携情報を削除(Delete Stripe Connection)
+             * フィードバックを起票
+             * @param {CreateFeedbackParam} [createFeedbackParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async deleteStripeInfo(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStripeInfo(options);
+            async createFeedback(createFeedbackParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createFeedback(createFeedbackParam, options);
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-             * @summary Stripe連携情報を取得(Get Stripe Connection information)
+             * フィードバックへのコメント
+             * @param {string} feedbackId
+             * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async getStripeInfo(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.getStripeInfo(options);
+            async createFeedbackComment(feedbackId, createFeedbackCommentParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createFeedbackComment(feedbackId, createFeedbackCommentParam, options);
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-             * @summary Stripe連携情報を更新(Update Stripe Connection Info)
-             * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
+             * フィードバックへの投票
+             * @param {string} feedbackId
+             * @param {CreateVoteUserParam} [createVoteUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async updateStripeInfo(updateStripeInfoParam, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.updateStripeInfo(updateStripeInfoParam, options);
+            async createVoteUser(feedbackId, createVoteUserParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createVoteUser(feedbackId, createVoteUserParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックの削除
+             * @param {string} feedbackId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteFeedback(feedbackId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteFeedback(feedbackId, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックへのコメント削除
+             * @param {string} feedbackId
+             * @param {string} commentId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteFeedbackComment(feedbackId, commentId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteFeedbackComment(feedbackId, commentId, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックへの投票の取消
+             * @param {string} feedbackId
+             * @param {string} userId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteVoteForFeedback(feedbackId, userId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteVoteForFeedback(feedbackId, userId, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックの取得
+             * @param {string} feedbackId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getFeedback(feedbackId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getFeedback(feedbackId, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックへのコメント取得
+             * @param {string} feedbackId
+             * @param {string} commentId
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getFeedbackComment(feedbackId, commentId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getFeedbackComment(feedbackId, commentId, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックの一覧を取得
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getFeedbacks(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getFeedbacks(options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックの編集
+             * @param {string} feedbackId
+             * @param {UpdateFeedbackParam} [updateFeedbackParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateFeedback(feedbackId, updateFeedbackParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateFeedback(feedbackId, updateFeedbackParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックへのコメント編集
+             * @param {string} feedbackId
+             * @param {string} commentId
+             * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateFeedbackComment(feedbackId, commentId, updateFeedbackCommentParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateFeedbackComment(feedbackId, commentId, updateFeedbackCommentParam, options);
+                return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
+            },
+            /**
+             * フィードバックのステータス更新
+             * @param {string} feedbackId
+             * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateFeedbackStatus(feedbackId, updateFeedbackStatusParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateFeedbackStatus(feedbackId, updateFeedbackStatusParam, options);
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
         };
     };
     /**
-     * StripeApi - object-oriented interface
+     * FeedbackApi - object-oriented interface
      * @export
-     * @class StripeApi
+     * @class FeedbackApi
      * @extends {BaseAPI}
      */
-    class StripeApi extends BaseAPI$3 {
+    class FeedbackApi extends BaseAPI$3 {
         /**
-         * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-         * @summary Stripe連携情報を削除(Delete Stripe Connection)
+         * フィードバックを起票
+         * @param {CreateFeedbackParam} [createFeedbackParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
-         * @memberof StripeApi
+         * @memberof FeedbackApi
          */
-        deleteStripeInfo(options) {
-            return StripeApiFp(this.configuration).deleteStripeInfo(options).then((request) => request(this.axios, this.basePath));
+        createFeedback(createFeedbackParam, options) {
+            return FeedbackApiFp(this.configuration).createFeedback(createFeedbackParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-         * @summary Stripe連携情報を取得(Get Stripe Connection information)
+         * フィードバックへのコメント
+         * @param {string} feedbackId
+         * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
-         * @memberof StripeApi
+         * @memberof FeedbackApi
          */
-        getStripeInfo(options) {
-            return StripeApiFp(this.configuration).getStripeInfo(options).then((request) => request(this.axios, this.basePath));
+        createFeedbackComment(feedbackId, createFeedbackCommentParam, options) {
+            return FeedbackApiFp(this.configuration).createFeedbackComment(feedbackId, createFeedbackCommentParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-         * @summary Stripe連携情報を更新(Update Stripe Connection Info)
-         * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
+         * フィードバックへの投票
+         * @param {string} feedbackId
+         * @param {CreateVoteUserParam} [createVoteUserParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
-         * @memberof StripeApi
+         * @memberof FeedbackApi
          */
-        updateStripeInfo(updateStripeInfoParam, options) {
-            return StripeApiFp(this.configuration).updateStripeInfo(updateStripeInfoParam, options).then((request) => request(this.axios, this.basePath));
+        createVoteUser(feedbackId, createVoteUserParam, options) {
+            return FeedbackApiFp(this.configuration).createVoteUser(feedbackId, createVoteUserParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックの削除
+         * @param {string} feedbackId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        deleteFeedback(feedbackId, options) {
+            return FeedbackApiFp(this.configuration).deleteFeedback(feedbackId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックへのコメント削除
+         * @param {string} feedbackId
+         * @param {string} commentId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        deleteFeedbackComment(feedbackId, commentId, options) {
+            return FeedbackApiFp(this.configuration).deleteFeedbackComment(feedbackId, commentId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックへの投票の取消
+         * @param {string} feedbackId
+         * @param {string} userId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        deleteVoteForFeedback(feedbackId, userId, options) {
+            return FeedbackApiFp(this.configuration).deleteVoteForFeedback(feedbackId, userId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックの取得
+         * @param {string} feedbackId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        getFeedback(feedbackId, options) {
+            return FeedbackApiFp(this.configuration).getFeedback(feedbackId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックへのコメント取得
+         * @param {string} feedbackId
+         * @param {string} commentId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        getFeedbackComment(feedbackId, commentId, options) {
+            return FeedbackApiFp(this.configuration).getFeedbackComment(feedbackId, commentId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックの一覧を取得
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        getFeedbacks(options) {
+            return FeedbackApiFp(this.configuration).getFeedbacks(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックの編集
+         * @param {string} feedbackId
+         * @param {UpdateFeedbackParam} [updateFeedbackParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        updateFeedback(feedbackId, updateFeedbackParam, options) {
+            return FeedbackApiFp(this.configuration).updateFeedback(feedbackId, updateFeedbackParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックへのコメント編集
+         * @param {string} feedbackId
+         * @param {string} commentId
+         * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        updateFeedbackComment(feedbackId, commentId, updateFeedbackCommentParam, options) {
+            return FeedbackApiFp(this.configuration).updateFeedbackComment(feedbackId, commentId, updateFeedbackCommentParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * フィードバックのステータス更新
+         * @param {string} feedbackId
+         * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof FeedbackApi
+         */
+        updateFeedbackStatus(feedbackId, updateFeedbackStatusParam, options) {
+            return FeedbackApiFp(this.configuration).updateFeedbackStatus(feedbackId, updateFeedbackStatusParam, options).then((request) => request(this.axios, this.basePath));
         }
     }
 
     /* tslint:disable */
     /* eslint-disable */
     /**
-     * SaaSus Billing API Schema
-     * SaaSus Billing API Schema
+     * SaaSus Communication API Schema
+     * SaaSus Communication API Schema
      *
      * The version of the OpenAPI document: 1.0.0
      *
@@ -4694,7 +6600,7 @@
         }
     }
 
-    class BillingClient {
+    class CommunicationClient {
         constructor() {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
@@ -4706,11 +6612,11 @@
             if (this.apiBase == "") {
                 this.apiBase = "https://api.saasus.io";
             }
+            this.instance = getAxiosInstance(this.apiBase + "/v1/communication");
             const config = new Configuration$3({
-                basePath: this.apiBase + "/v1/billing",
+                basePath: this.apiBase + "/v1/communication",
             });
-            this.instance = getAxiosInstance(this.apiBase + "/v1/billing");
-            this.stripeApi = new StripeApi(config, "", this.instance);
+            this.feedbackApi = new FeedbackApi(config, "", this.instance);
         }
     }
 
@@ -4910,6 +6816,50 @@
                 // authentication Bearer required
                 // http bearer authentication required
                 await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+             * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+             * @param {string} tenantId テナントID(tenant id)
+             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * @param {number} [startTimestamp] 開始日時(timestamp)
+             * @param {number} [endTimestamp] 終了日時(timestamp)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod: async (tenantId, meteringUnitName, startTimestamp, endTimestamp, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$1('getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod', 'tenantId', tenantId);
+                // verify required parameter 'meteringUnitName' is not null or undefined
+                assertParamExists$1('getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod', 'meteringUnitName', meteringUnitName);
+                const localVarPath = `/metering/tenants/{tenant_id}/units/{metering_unit_name}/date-period`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)))
+                    .replace(`{${"metering_unit_name"}}`, encodeURIComponent(String(meteringUnitName)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                if (startTimestamp !== undefined) {
+                    localVarQueryParameter['start_timestamp'] = startTimestamp;
+                }
+                if (endTimestamp !== undefined) {
+                    localVarQueryParameter['end_timestamp'] = endTimestamp;
+                }
                 setSearchParams$2(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
@@ -5220,6 +7170,20 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
+             * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+             * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+             * @param {string} tenantId テナントID(tenant id)
+             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * @param {number} [startTimestamp] 開始日時(timestamp)
+             * @param {number} [endTimestamp] 終了日時(timestamp)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId, meteringUnitName, startTimestamp, endTimestamp, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId, meteringUnitName, startTimestamp, endTimestamp, options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
              * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
              * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
              * @param {string} tenantId テナントID(tenant id)
@@ -5341,6 +7305,20 @@
          */
         getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId, meteringUnitName, date, options) {
             return MeteringApiFp(this.configuration).getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId, meteringUnitName, date, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+         * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+         * @param {string} tenantId テナントID(tenant id)
+         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+         * @param {number} [startTimestamp] 開始日時(timestamp)
+         * @param {number} [endTimestamp] 終了日時(timestamp)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof MeteringApi
+         */
+        getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId, meteringUnitName, startTimestamp, endTimestamp, options) {
+            return MeteringApiFp(this.configuration).getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId, meteringUnitName, startTimestamp, endTimestamp, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
@@ -6507,6 +8485,191 @@
             return PricingUnitsApiFp(this.configuration).updatePricingUnit(pricingUnitId, body, options).then((request) => request(this.axios, this.basePath));
         }
     }
+    /**
+     * TaxRateApi - axios parameter creator
+     * @export
+     */
+    const TaxRateApiAxiosParamCreator = function (configuration) {
+        return {
+            /**
+             * 税率を作成します。  Creates a tax rate.
+             * @summary 税率の作成(Create Tax Rate)
+             * @param {TaxRateProps} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            createTaxRate: async (body, options = {}) => {
+                const localVarPath = `/tax-rates`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$2(body, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 税率を取得します。  Get all Tax Rates
+             * @summary 税率を取得します(Get Tax Rates)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getTaxRates: async (options = {}) => {
+                const localVarPath = `/tax-rates`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * 税率を更新します。  Update tax rate.
+             * @summary 税率を更新(Update Tax Rate)
+             * @param {string} taxRateId 税率ID(tax rate ID)
+             * @param {UpdateTaxRateParam} [updateTaxRateParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateTaxRate: async (taxRateId, updateTaxRateParam, options = {}) => {
+                // verify required parameter 'taxRateId' is not null or undefined
+                assertParamExists$1('updateTaxRate', 'taxRateId', taxRateId);
+                const localVarPath = `/tax-rates/{tax_rate_id}`
+                    .replace(`{${"tax_rate_id"}}`, encodeURIComponent(String(taxRateId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$2(updateTaxRateParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+        };
+    };
+    /**
+     * TaxRateApi - functional programming interface
+     * @export
+     */
+    const TaxRateApiFp = function (configuration) {
+        const localVarAxiosParamCreator = TaxRateApiAxiosParamCreator(configuration);
+        return {
+            /**
+             * 税率を作成します。  Creates a tax rate.
+             * @summary 税率の作成(Create Tax Rate)
+             * @param {TaxRateProps} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async createTaxRate(body, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createTaxRate(body, options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
+             * 税率を取得します。  Get all Tax Rates
+             * @summary 税率を取得します(Get Tax Rates)
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getTaxRates(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getTaxRates(options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
+             * 税率を更新します。  Update tax rate.
+             * @summary 税率を更新(Update Tax Rate)
+             * @param {string} taxRateId 税率ID(tax rate ID)
+             * @param {UpdateTaxRateParam} [updateTaxRateParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateTaxRate(taxRateId, updateTaxRateParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateTaxRate(taxRateId, updateTaxRateParam, options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+        };
+    };
+    /**
+     * TaxRateApi - object-oriented interface
+     * @export
+     * @class TaxRateApi
+     * @extends {BaseAPI}
+     */
+    class TaxRateApi extends BaseAPI$2 {
+        /**
+         * 税率を作成します。  Creates a tax rate.
+         * @summary 税率の作成(Create Tax Rate)
+         * @param {TaxRateProps} [body]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TaxRateApi
+         */
+        createTaxRate(body, options) {
+            return TaxRateApiFp(this.configuration).createTaxRate(body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 税率を取得します。  Get all Tax Rates
+         * @summary 税率を取得します(Get Tax Rates)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TaxRateApi
+         */
+        getTaxRates(options) {
+            return TaxRateApiFp(this.configuration).getTaxRates(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * 税率を更新します。  Update tax rate.
+         * @summary 税率を更新(Update Tax Rate)
+         * @param {string} taxRateId 税率ID(tax rate ID)
+         * @param {UpdateTaxRateParam} [updateTaxRateParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TaxRateApi
+         */
+        updateTaxRate(taxRateId, updateTaxRateParam, options) {
+            return TaxRateApiFp(this.configuration).updateTaxRate(taxRateId, updateTaxRateParam, options).then((request) => request(this.axios, this.basePath));
+        }
+    }
 
     /* tslint:disable */
     /* eslint-disable */
@@ -6567,6 +8730,7 @@
             this.pricingMenusApi = new PricingMenusApi(config, "", this.instance);
             this.pricingPlansApi = new PricingPlansApi(config, "", this.instance);
             this.pricingUnitsApi = new PricingUnitsApi(config, "", this.instance);
+            this.taxRateApi = new TaxRateApi(config, "", this.instance);
         }
     }
 
@@ -8033,11 +10197,13 @@
         }
     }
 
+    exports.ApiLogClient = ApiLogClient;
     exports.AuthClient = AuthClient;
     exports.AuthMiddleware = AuthMiddleware;
     exports.AwsMarketplaceClient = AwsMarketplaceClient;
     exports.BillingClient = BillingClient;
     exports.CallbackRouteFunction = CallbackRouteFunction;
+    exports.CommunicationClient = CommunicationClient;
     exports.IntegrationClient = IntegrationClient;
     exports.PricingClient = PricingClient;
     exports.findUpperCountByMeteringUnitName = findUpperCountByMeteringUnitName;

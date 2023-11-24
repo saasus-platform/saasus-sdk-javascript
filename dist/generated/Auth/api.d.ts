@@ -263,6 +263,44 @@ export interface ClientSecret {
 /**
  *
  * @export
+ * @interface ConfirmEmailUpdateParam
+ */
+export interface ConfirmEmailUpdateParam {
+    /**
+     *
+     * @type {string}
+     * @memberof ConfirmEmailUpdateParam
+     */
+    'code': string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConfirmEmailUpdateParam
+     */
+    'access_token': string;
+}
+/**
+ *
+ * @export
+ * @interface ConfirmExternalUserLinkParam
+ */
+export interface ConfirmExternalUserLinkParam {
+    /**
+     *
+     * @type {string}
+     * @memberof ConfirmExternalUserLinkParam
+     */
+    'access_token': string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConfirmExternalUserLinkParam
+     */
+    'code': string;
+}
+/**
+ *
+ * @export
  * @interface ConfirmSignUpWithAwsMarketplaceParam
  */
 export interface ConfirmSignUpWithAwsMarketplaceParam {
@@ -316,6 +354,31 @@ export interface CreateSecretCodeParam {
      * @memberof CreateSecretCodeParam
      */
     'access_token': string;
+}
+/**
+ *
+ * @export
+ * @interface CreateTenantInvitationParam
+ */
+export interface CreateTenantInvitationParam {
+    /**
+     * 招待するユーザーのメールアドレス(email address of the user to be invited)
+     * @type {string}
+     * @memberof CreateTenantInvitationParam
+     */
+    'email': string;
+    /**
+     * 招待を作成するユーザーのアクセストークン(access token of the user who creates an invitation)
+     * @type {string}
+     * @memberof CreateTenantInvitationParam
+     */
+    'access_token': string;
+    /**
+     *
+     * @type {Array<InvitedUserEnvironmentInformationInner>}
+     * @memberof CreateTenantInvitationParam
+     */
+    'envs': Array<InvitedUserEnvironmentInformationInner>;
 }
 /**
  *
@@ -585,6 +648,12 @@ export interface Env {
      * @memberof Env
      */
     'name': string;
+    /**
+     * 環境表示名(env display name)
+     * @type {string}
+     * @memberof Env
+     */
+    'display_name'?: string;
 }
 /**
  * env一覧(env list)
@@ -617,6 +686,18 @@ export interface IdentityProviderConfiguration {
      * @memberof IdentityProviderConfiguration
      */
     'redirect_url': string;
+    /**
+     * 識別子(entity ID)
+     * @type {string}
+     * @memberof IdentityProviderConfiguration
+     */
+    'entity_id': string;
+    /**
+     * 応答URL(reply URL)
+     * @type {string}
+     * @memberof IdentityProviderConfiguration
+     */
+    'reply_url': string;
 }
 /**
  *
@@ -642,6 +723,31 @@ export interface IdentityProviderProps {
      * @memberof IdentityProviderProps
      */
     'approval_scope': string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof IdentityProviderProps
+     */
+    'is_button_hidden'?: boolean;
+}
+/**
+ *
+ * @export
+ * @interface IdentityProviderSaml
+ */
+export interface IdentityProviderSaml {
+    /**
+     *
+     * @type {string}
+     * @memberof IdentityProviderSaml
+     */
+    'metadata_url': string;
+    /**
+     *
+     * @type {string}
+     * @memberof IdentityProviderSaml
+     */
+    'email_attribute': string;
 }
 /**
  *
@@ -655,6 +761,105 @@ export interface IdentityProviders {
      * @memberof IdentityProviders
      */
     'google': IdentityProviderProps;
+}
+/**
+ *
+ * @export
+ * @interface Invitation
+ */
+export interface Invitation {
+    /**
+     *
+     * @type {string}
+     * @memberof Invitation
+     */
+    'id': string;
+    /**
+     * 招待されたユーザーのメールアドレス(email address of the invited user)
+     * @type {string}
+     * @memberof Invitation
+     */
+    'email': string;
+    /**
+     * 招待URL(invitation URL)
+     * @type {string}
+     * @memberof Invitation
+     */
+    'invitation_url': string;
+    /**
+     *
+     * @type {Array<UserAvailableEnv>}
+     * @memberof Invitation
+     */
+    'envs': Array<UserAvailableEnv>;
+    /**
+     * 招待の有効期限(expiration date of the invitation)
+     * @type {number}
+     * @memberof Invitation
+     */
+    'expired_at': number;
+    /**
+     *
+     * @type {InvitationStatus}
+     * @memberof Invitation
+     */
+    'status': InvitationStatus;
+}
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare const InvitationStatus: {
+    readonly Pending: "pending";
+    readonly Accepted: "accepted";
+    readonly Expired: "expired";
+};
+export declare type InvitationStatus = typeof InvitationStatus[keyof typeof InvitationStatus];
+/**
+ * 招待の有効性(invitation validity)
+ * @export
+ * @interface InvitationValidity
+ */
+export interface InvitationValidity {
+    /**
+     * 招待が有効か否か(Whether the validation is valid or not)
+     * @type {boolean}
+     * @memberof InvitationValidity
+     */
+    'is_valid': boolean;
+}
+/**
+ *
+ * @export
+ * @interface Invitations
+ */
+export interface Invitations {
+    /**
+     * 招待一覧(invitation list)
+     * @type {Array<Invitation>}
+     * @memberof Invitations
+     */
+    'invitations': Array<Invitation>;
+}
+/**
+ *
+ * @export
+ * @interface InvitedUserEnvironmentInformationInner
+ */
+export interface InvitedUserEnvironmentInformationInner {
+    /**
+     *
+     * @type {number}
+     * @memberof InvitedUserEnvironmentInformationInner
+     */
+    'id': number;
+    /**
+     * 役割名(role name)
+     * @type {Array<string>}
+     * @memberof InvitedUserEnvironmentInformationInner
+     */
+    'role_names': Array<string>;
 }
 /**
  * 請求書の言語  Language of invoice
@@ -826,6 +1031,18 @@ export interface NotificationMessages {
      * @memberof NotificationMessages
      */
     'authentication_mfa': MessageTemplate;
+    /**
+     *
+     * @type {MessageTemplate}
+     * @memberof NotificationMessages
+     */
+    'invite_tenant_user': MessageTemplate;
+    /**
+     *
+     * @type {MessageTemplate}
+     * @memberof NotificationMessages
+     */
+    'verify_external_user': MessageTemplate;
 }
 /**
  * パスワードポリシー(password policy)
@@ -907,6 +1124,18 @@ export interface PlanHistory {
      * @memberof PlanHistory
      */
     'tax_rate_id'?: string;
+    /**
+     *
+     * @type {ProrationBehavior}
+     * @memberof PlanHistory
+     */
+    'proration_behavior'?: ProrationBehavior;
+    /**
+     * stripe連携している場合で、プラン変更時に従量課金アイテムを削除するか設定できます。 プラン変更した場合に、現在のサブスクリプションに含まれる従量課金アイテムを全て削除して、従量課金アイテムに基づく請求の発生を止めることができます。 即時に記録している使用量がクリアされます。それらは復元できないため、delete_usageをtrueにしたプラン変更予約は取り消しできません。  If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
+     * @type {boolean}
+     * @memberof PlanHistory
+     */
+    'delete_usage'?: boolean;
 }
 /**
  *
@@ -932,7 +1161,30 @@ export interface PlanReservation {
      * @memberof PlanReservation
      */
     'next_plan_tax_rate_id'?: string;
+    /**
+     *
+     * @type {ProrationBehavior}
+     * @memberof PlanReservation
+     */
+    'proration_behavior'?: ProrationBehavior;
+    /**
+     * stripe連携している場合で、プラン変更時に従量課金アイテムを削除するか設定できます。 プラン変更した場合に、現在のサブスクリプションに含まれる従量課金アイテムを全て削除して、従量課金アイテムに基づく請求の発生を止めることができます。 即時に記録している使用量がクリアされます。それらは復元できないため、delete_usageをtrueにしたプラン変更予約は取り消しできません。  If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
+     * @type {boolean}
+     * @memberof PlanReservation
+     */
+    'delete_usage'?: boolean;
 }
+/**
+ * stripe連携している場合で、プラン変更時の比例配分の挙動を設定できます。 プラン変更した場合に、請求金額を日割り計算し次回請求書に反映させるか、日割り計算した請求を即時に発行する、日割り計算をしないを設定できます。  If you have a strine linkage, you can set the behavior of the proportional allocation when changing plans. When a plan is changed, you can set whether to prorate the billing amount and reflect it on the next invoice, to issue a prorated invoice immediately, or not to prorate at all.
+ * @export
+ * @enum {string}
+ */
+export declare const ProrationBehavior: {
+    readonly CreateProrations: "create_prorations";
+    readonly None: "none";
+    readonly AlwaysInvoice: "always_invoice";
+};
+export declare type ProrationBehavior = typeof ProrationBehavior[keyof typeof ProrationBehavior];
 /**
  *
  * @export
@@ -942,6 +1194,15 @@ export declare const ProviderName: {
     readonly Google: "Google";
 };
 export declare type ProviderName = typeof ProviderName[keyof typeof ProviderName];
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare const ProviderType: {
+    readonly Saml: "SAML";
+};
+export declare type ProviderType = typeof ProviderType[keyof typeof ProviderType];
 /**
  * reCAPTCHA認証設定(reCAPTCHA authentication settings) ※ 未提供の機能のため、変更・保存はできません(This function is not yet provided, so it cannot be changed or saved.)
  * @export
@@ -960,6 +1221,38 @@ export interface RecaptchaProps {
      * @memberof RecaptchaProps
      */
     'secret_key': string;
+}
+/**
+ *
+ * @export
+ * @interface RequestEmailUpdateParam
+ */
+export interface RequestEmailUpdateParam {
+    /**
+     * メールアドレス(Email Address)
+     * @type {string}
+     * @memberof RequestEmailUpdateParam
+     */
+    'email': string;
+    /**
+     *
+     * @type {string}
+     * @memberof RequestEmailUpdateParam
+     */
+    'access_token': string;
+}
+/**
+ *
+ * @export
+ * @interface RequestExternalUserLinkParam
+ */
+export interface RequestExternalUserLinkParam {
+    /**
+     *
+     * @type {string}
+     * @memberof RequestExternalUserLinkParam
+     */
+    'access_token': string;
 }
 /**
  *
@@ -1233,6 +1526,18 @@ export interface Tenant {
      */
     'next_plan_tax_rate_id'?: string;
     /**
+     *
+     * @type {ProrationBehavior}
+     * @memberof Tenant
+     */
+    'proration_behavior'?: ProrationBehavior;
+    /**
+     * stripe連携している場合で、プラン変更時に従量課金アイテムを削除するか設定できます。 プラン変更した場合に、現在のサブスクリプションに含まれる従量課金アイテムを全て削除して、従量課金アイテムに基づく請求の発生を止めることができます。 即時に記録している使用量がクリアされます。それらは復元できないため、delete_usageをtrueにしたプラン変更予約は取り消しできません。  If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
+     * @type {boolean}
+     * @memberof Tenant
+     */
+    'delete_usage'?: boolean;
+    /**
      * 料金プラン履歴
      * @type {Array<PlanHistory>}
      * @memberof Tenant
@@ -1276,6 +1581,174 @@ export interface TenantAttributes {
      * @memberof TenantAttributes
      */
     'tenant_attributes': Array<Attribute>;
+}
+/**
+ *
+ * @export
+ * @interface TenantDetail
+ */
+export interface TenantDetail {
+    /**
+     * 現在のプランの開始日時(current plan period start)
+     * @type {number}
+     * @memberof TenantDetail
+     */
+    'current_plan_period_start'?: number;
+    /**
+     * 現在のプランの終了日時(current plan period end)
+     * @type {number}
+     * @memberof TenantDetail
+     */
+    'current_plan_period_end'?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof TenantDetail
+     */
+    'id': string;
+    /**
+     *
+     * @type {string}
+     * @memberof TenantDetail
+     */
+    'plan_id'?: string;
+    /**
+     *
+     * @type {BillingInfo}
+     * @memberof TenantDetail
+     */
+    'billing_info'?: BillingInfo;
+    /**
+     * テナント名(tenant name)
+     * @type {string}
+     * @memberof TenantDetail
+     */
+    'name': string;
+    /**
+     * 属性情報(attribute info)
+     * @type {{ [key: string]: any; }}
+     * @memberof TenantDetail
+     */
+    'attributes': {
+        [key: string]: any;
+    };
+    /**
+     * 事務管理部門スタッフメールアドレス(administrative staff email address)
+     * @type {string}
+     * @memberof TenantDetail
+     */
+    'back_office_staff_email': string;
+    /**
+     *
+     * @type {string}
+     * @memberof TenantDetail
+     */
+    'next_plan_id'?: string;
+    /**
+     * 次回料金プラン開始日時（stripe連携時、当月月初の0時（UTC）を指定すると当月月初開始のサブスクリプションを作成できます。ex. 2023年1月の場合は、1672531200 ） (Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.))
+     * @type {number}
+     * @memberof TenantDetail
+     */
+    'using_next_plan_from'?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof TenantDetail
+     */
+    'next_plan_tax_rate_id'?: string;
+    /**
+     *
+     * @type {ProrationBehavior}
+     * @memberof TenantDetail
+     */
+    'proration_behavior'?: ProrationBehavior;
+    /**
+     * stripe連携している場合で、プラン変更時に従量課金アイテムを削除するか設定できます。 プラン変更した場合に、現在のサブスクリプションに含まれる従量課金アイテムを全て削除して、従量課金アイテムに基づく請求の発生を止めることができます。 即時に記録している使用量がクリアされます。それらは復元できないため、delete_usageをtrueにしたプラン変更予約は取り消しできません。  If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
+     * @type {boolean}
+     * @memberof TenantDetail
+     */
+    'delete_usage'?: boolean;
+    /**
+     * 料金プラン履歴
+     * @type {Array<PlanHistory>}
+     * @memberof TenantDetail
+     */
+    'plan_histories': Array<PlanHistory>;
+}
+/**
+ *
+ * @export
+ * @interface TenantDetailAllOf
+ */
+export interface TenantDetailAllOf {
+    /**
+     * 現在のプランの開始日時(current plan period start)
+     * @type {number}
+     * @memberof TenantDetailAllOf
+     */
+    'current_plan_period_start'?: number;
+    /**
+     * 現在のプランの終了日時(current plan period end)
+     * @type {number}
+     * @memberof TenantDetailAllOf
+     */
+    'current_plan_period_end'?: number;
+}
+/**
+ * @type TenantIdentityProviderProps
+ * @export
+ */
+export declare type TenantIdentityProviderProps = IdentityProviderSaml;
+/**
+ *
+ * @export
+ * @interface TenantIdentityProviders
+ */
+export interface TenantIdentityProviders {
+    /**
+     *
+     * @type {TenantIdentityProvidersSaml}
+     * @memberof TenantIdentityProviders
+     */
+    'saml'?: TenantIdentityProvidersSaml;
+}
+/**
+ *
+ * @export
+ * @interface TenantIdentityProvidersSaml
+ */
+export interface TenantIdentityProvidersSaml {
+    /**
+     *
+     * @type {string}
+     * @memberof TenantIdentityProvidersSaml
+     */
+    'sign_in_url': string;
+    /**
+     *
+     * @type {string}
+     * @memberof TenantIdentityProvidersSaml
+     */
+    'metadata_url': string;
+    /**
+     *
+     * @type {string}
+     * @memberof TenantIdentityProvidersSaml
+     */
+    'email_attribute': string;
+}
+/**
+ *
+ * @export
+ * @interface TenantIdentityProvidersSamlAllOf
+ */
+export interface TenantIdentityProvidersSamlAllOf {
+    /**
+     *
+     * @type {string}
+     * @memberof TenantIdentityProvidersSamlAllOf
+     */
+    'sign_in_url': string;
 }
 /**
  *
@@ -1441,6 +1914,12 @@ export interface UpdateEnvParam {
      * @memberof UpdateEnvParam
      */
     'name': string;
+    /**
+     * 環境表示名(env display name)
+     * @type {string}
+     * @memberof UpdateEnvParam
+     */
+    'display_name'?: string;
 }
 /**
  *
@@ -1509,6 +1988,18 @@ export interface UpdateNotificationMessagesParam {
      * @memberof UpdateNotificationMessagesParam
      */
     'authentication_mfa'?: MessageTemplate;
+    /**
+     *
+     * @type {MessageTemplate}
+     * @memberof UpdateNotificationMessagesParam
+     */
+    'invite_tenant_user'?: MessageTemplate;
+    /**
+     *
+     * @type {MessageTemplate}
+     * @memberof UpdateNotificationMessagesParam
+     */
+    'verify_external_user'?: MessageTemplate;
 }
 /**
  *
@@ -1597,6 +2088,25 @@ export interface UpdateSoftwareTokenParam {
      * @memberof UpdateSoftwareTokenParam
      */
     'verification_code': string;
+}
+/**
+ * identity_provider_propsがnullの場合は、provider_typeで指定された外部IDプロバイダのサインイン情報を無効化します。  If identity_provider_props is null, the sign-in information for the external identity provider specified in provider_type is disabled.
+ * @export
+ * @interface UpdateTenantIdentityProviderParam
+ */
+export interface UpdateTenantIdentityProviderParam {
+    /**
+     *
+     * @type {ProviderType}
+     * @memberof UpdateTenantIdentityProviderParam
+     */
+    'provider_type': ProviderType;
+    /**
+     *
+     * @type {TenantIdentityProviderProps}
+     * @memberof UpdateTenantIdentityProviderParam
+     */
+    'identity_provider_props'?: TenantIdentityProviderProps;
 }
 /**
  *
@@ -1690,6 +2200,12 @@ export interface UserAvailableEnv {
      */
     'name': string;
     /**
+     * 環境表示名(env display name)
+     * @type {string}
+     * @memberof UserAvailableEnv
+     */
+    'display_name'?: string;
+    /**
      * 役割(ロール)情報(role info)
      * @type {Array<Role>}
      * @memberof UserAvailableEnv
@@ -1746,6 +2262,12 @@ export interface UserAvailableTenant {
      * @memberof UserAvailableTenant
      */
     'plan_id'?: string;
+    /**
+     * テナントの支払い状況(tenant payment status)  ※ 現在はストライプ連携時のみ返却されます。Currently, it is returned only when stripe is linked.
+     * @type {boolean}
+     * @memberof UserAvailableTenant
+     */
+    'is_paid'?: boolean;
 }
 /**
  *
@@ -1784,6 +2306,31 @@ export interface Users {
      * @memberof Users
      */
     'users': Array<User>;
+}
+/**
+ * 既存ユーザーの場合はアクセストークン、新規ユーザーの場合はメールアドレスとパスワードが必須です。  Access token is required for existing users, and email and password is required for new users.
+ * @export
+ * @interface ValidateInvitationParam
+ */
+export interface ValidateInvitationParam {
+    /**
+     * 招待されたユーザーのアクセストークン(access token of the invited user)
+     * @type {string}
+     * @memberof ValidateInvitationParam
+     */
+    'access_token'?: string;
+    /**
+     * 招待されたユーザーのメールアドレス(email address of the invited user)
+     * @type {string}
+     * @memberof ValidateInvitationParam
+     */
+    'email'?: string;
+    /**
+     * 招待されたユーザーのパスワード(password of the invited user)
+     * @type {string}
+     * @memberof ValidateInvitationParam
+     */
+    'password'?: string;
 }
 /**
  * AuthInfoApi - axios parameter creator
@@ -2610,6 +3157,246 @@ export declare class ErrorApi extends BaseAPI {
     returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }
 /**
+ * InvitationApi - axios parameter creator
+ * @export
+ */
+export declare const InvitationApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * テナントへの招待を作成します。  Create an invitation to the tenant.
+     * @summary テナントへの招待を作成(Create Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createTenantInvitation: (tenantId: string, createTenantInvitationParam?: CreateTenantInvitationParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * テナントへの招待を削除します。  Delete an invitation to the tenant.
+     * @summary テナントへの招待を削除(Delete Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteTenantInvitation: (tenantId: string, invitationId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+     * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInvitationValidity: (invitationId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+     * @summary テナントの招待情報を取得(Get Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantInvitation: (tenantId: string, invitationId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+     * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantInvitations: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * テナントへの招待を検証します。  Validate an invitation to the tenant.
+     * @summary テナントへの招待を検証(Validate Invitation)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {ValidateInvitationParam} [validateInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    validateInvitation: (invitationId: string, validateInvitationParam?: ValidateInvitationParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+};
+/**
+ * InvitationApi - functional programming interface
+ * @export
+ */
+export declare const InvitationApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * テナントへの招待を作成します。  Create an invitation to the tenant.
+     * @summary テナントへの招待を作成(Create Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createTenantInvitation(tenantId: string, createTenantInvitationParam?: CreateTenantInvitationParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Invitation>>;
+    /**
+     * テナントへの招待を削除します。  Delete an invitation to the tenant.
+     * @summary テナントへの招待を削除(Delete Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+     * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInvitationValidity(invitationId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<InvitationValidity>>;
+    /**
+     * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+     * @summary テナントの招待情報を取得(Get Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Invitation>>;
+    /**
+     * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+     * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantInvitations(tenantId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Invitations>>;
+    /**
+     * テナントへの招待を検証します。  Validate an invitation to the tenant.
+     * @summary テナントへの招待を検証(Validate Invitation)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {ValidateInvitationParam} [validateInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    validateInvitation(invitationId: string, validateInvitationParam?: ValidateInvitationParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+};
+/**
+ * InvitationApi - factory interface
+ * @export
+ */
+export declare const InvitationApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * テナントへの招待を作成します。  Create an invitation to the tenant.
+     * @summary テナントへの招待を作成(Create Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createTenantInvitation(tenantId: string, createTenantInvitationParam?: CreateTenantInvitationParam | undefined, options?: any): AxiosPromise<Invitation>;
+    /**
+     * テナントへの招待を削除します。  Delete an invitation to the tenant.
+     * @summary テナントへの招待を削除(Delete Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteTenantInvitation(tenantId: string, invitationId: string, options?: any): AxiosPromise<void>;
+    /**
+     * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+     * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInvitationValidity(invitationId: string, options?: any): AxiosPromise<InvitationValidity>;
+    /**
+     * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+     * @summary テナントの招待情報を取得(Get Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantInvitation(tenantId: string, invitationId: string, options?: any): AxiosPromise<Invitation>;
+    /**
+     * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+     * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantInvitations(tenantId: string, options?: any): AxiosPromise<Invitations>;
+    /**
+     * テナントへの招待を検証します。  Validate an invitation to the tenant.
+     * @summary テナントへの招待を検証(Validate Invitation)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {ValidateInvitationParam} [validateInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    validateInvitation(invitationId: string, validateInvitationParam?: ValidateInvitationParam | undefined, options?: any): AxiosPromise<void>;
+};
+/**
+ * InvitationApi - object-oriented interface
+ * @export
+ * @class InvitationApi
+ * @extends {BaseAPI}
+ */
+export declare class InvitationApi extends BaseAPI {
+    /**
+     * テナントへの招待を作成します。  Create an invitation to the tenant.
+     * @summary テナントへの招待を作成(Create Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InvitationApi
+     */
+    createTenantInvitation(tenantId: string, createTenantInvitationParam?: CreateTenantInvitationParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitation, any>>;
+    /**
+     * テナントへの招待を削除します。  Delete an invitation to the tenant.
+     * @summary テナントへの招待を削除(Delete Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InvitationApi
+     */
+    deleteTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+     * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InvitationApi
+     */
+    getInvitationValidity(invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<InvitationValidity, any>>;
+    /**
+     * テナントへの招待情報を取得します。  Get invitation information to the tenant.
+     * @summary テナントの招待情報を取得(Get Tenant Invitation)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InvitationApi
+     */
+    getTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitation, any>>;
+    /**
+     * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+     * @summary テナントの招待一覧を取得(Get Tenant Invitations)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InvitationApi
+     */
+    getTenantInvitations(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitations, any>>;
+    /**
+     * テナントへの招待を検証します。  Validate an invitation to the tenant.
+     * @summary テナントへの招待を検証(Validate Invitation)
+     * @param {string} invitationId 招待ID(Invitation ID)
+     * @param {ValidateInvitationParam} [validateInvitationParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InvitationApi
+     */
+    validateInvitation(invitationId: string, validateInvitationParam?: ValidateInvitationParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+}
+/**
  * RoleApi - axios parameter creator
  * @export
  */
@@ -2736,6 +3523,23 @@ export declare class RoleApi extends BaseAPI {
  */
 export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
+     * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+     * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmEmailUpdate: (userId: string, confirmEmailUpdateParam?: ConfirmEmailUpdateParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+     * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+     * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmExternalUserLink: (confirmExternalUserLinkParam?: ConfirmExternalUserLinkParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
      * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
      * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
@@ -2800,6 +3604,23 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     linkAwsMarketplace: (linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestEmailUpdate: (userId: string, requestEmailUpdateParam?: RequestEmailUpdateParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+     * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+     * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestExternalUserLink: (requestExternalUserLinkParam?: RequestExternalUserLinkParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2826,12 +3647,12 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} providerName
      * @param {string} userId ユーザーID(User ID)
-     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    unlinkProvider: (userId: string, providerName: ProviderName, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    unlinkProvider: (providerName: string, userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
@@ -2874,6 +3695,23 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
  * @export
  */
 export declare const SaasUserApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+     * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmEmailUpdate(userId: string, confirmEmailUpdateParam?: ConfirmEmailUpdateParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+     * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+     * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmExternalUserLink(confirmExternalUserLinkParam?: ConfirmExternalUserLinkParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
      * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
@@ -2939,6 +3777,23 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
      */
     linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
+     * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestEmailUpdate(userId: string, requestEmailUpdateParam?: RequestEmailUpdateParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+     * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+     * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestExternalUserLink(requestExternalUserLinkParam?: RequestExternalUserLinkParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -2965,12 +3820,12 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} providerName
      * @param {string} userId ユーザーID(User ID)
-     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    unlinkProvider(userId: string, providerName: ProviderName, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
@@ -3013,6 +3868,23 @@ export declare const SaasUserApiFp: (configuration?: Configuration | undefined) 
  * @export
  */
 export declare const SaasUserApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+     * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmEmailUpdate(userId: string, confirmEmailUpdateParam?: ConfirmEmailUpdateParam | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+     * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+     * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmExternalUserLink(confirmExternalUserLinkParam?: ConfirmExternalUserLinkParam | undefined, options?: any): AxiosPromise<void>;
     /**
      * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
      * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
@@ -3078,6 +3950,23 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
      */
     linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam | undefined, options?: any): AxiosPromise<void>;
     /**
+     * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestEmailUpdate(userId: string, requestEmailUpdateParam?: RequestEmailUpdateParam | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+     * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+     * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestExternalUserLink(requestExternalUserLinkParam?: RequestExternalUserLinkParam | undefined, options?: any): AxiosPromise<void>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -3104,12 +3993,12 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} providerName
      * @param {string} userId ユーザーID(User ID)
-     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    unlinkProvider(userId: string, providerName: ProviderName, options?: any): AxiosPromise<void>;
+    unlinkProvider(providerName: string, userId: string, options?: any): AxiosPromise<void>;
     /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
@@ -3154,6 +4043,25 @@ export declare const SaasUserApiFactory: (configuration?: Configuration | undefi
  * @extends {BaseAPI}
  */
 export declare class SaasUserApi extends BaseAPI {
+    /**
+     * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+     * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    confirmEmailUpdate(userId: string, confirmEmailUpdateParam?: ConfirmEmailUpdateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+     * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+     * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    confirmExternalUserLink(confirmExternalUserLinkParam?: ConfirmExternalUserLinkParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
      * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
@@ -3227,6 +4135,25 @@ export declare class SaasUserApi extends BaseAPI {
      */
     linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
+     * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
+     * @param {string} userId ユーザーID(User ID)
+     * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    requestEmailUpdate(userId: string, requestEmailUpdateParam?: RequestEmailUpdateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+     * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+     * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    requestExternalUserLink(requestExternalUserLinkParam?: RequestExternalUserLinkParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
      * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
      * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
      * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
@@ -3256,13 +4183,13 @@ export declare class SaasUserApi extends BaseAPI {
     /**
      * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
      * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+     * @param {string} providerName
      * @param {string} userId ユーザーID(User ID)
-     * @param {ProviderName} providerName 外部IDプロバイダ名(External Identity Provider Name)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    unlinkProvider(userId: string, providerName: ProviderName, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * ユーザーのメールアドレスを変更します。  Change user\'s email.
      * @summary メールアドレスを変更(Change Email)
@@ -3581,12 +4508,27 @@ export declare const TenantApiAxiosParamCreator: (configuration?: Configuration 
      */
     getTenant: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantIdentityProviders: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
      * @summary テナント一覧取得(Get Tenants)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getTenants: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+     * @summary プランに関わる情報を全削除
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resetPlan: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
      * @summary テナント情報を更新(Update Tenant Details)
@@ -3605,6 +4547,15 @@ export declare const TenantApiAxiosParamCreator: (configuration?: Configuration 
      * @throws {RequiredError}
      */
     updateTenantBillingInfo: (tenantId: string, body?: BillingInfo | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantIdentityProvider: (tenantId: string, updateTenantIdentityProviderParam?: UpdateTenantIdentityProviderParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
      * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
@@ -3657,7 +4608,15 @@ export declare const TenantApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getTenant(tenantId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Tenant>>;
+    getTenant(tenantId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<TenantDetail>>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantIdentityProviders(tenantId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<TenantIdentityProviders>>;
     /**
      * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
      * @summary テナント一覧取得(Get Tenants)
@@ -3665,6 +4624,13 @@ export declare const TenantApiFp: (configuration?: Configuration | undefined) =>
      * @throws {RequiredError}
      */
     getTenants(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Tenants>>;
+    /**
+     * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+     * @summary プランに関わる情報を全削除
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resetPlan(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
      * @summary テナント情報を更新(Update Tenant Details)
@@ -3683,6 +4649,15 @@ export declare const TenantApiFp: (configuration?: Configuration | undefined) =>
      * @throws {RequiredError}
      */
     updateTenantBillingInfo(tenantId: string, body?: BillingInfo | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantIdentityProvider(tenantId: string, updateTenantIdentityProviderParam?: UpdateTenantIdentityProviderParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
      * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
@@ -3735,7 +4710,15 @@ export declare const TenantApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getTenant(tenantId: string, options?: any): AxiosPromise<Tenant>;
+    getTenant(tenantId: string, options?: any): AxiosPromise<TenantDetail>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTenantIdentityProviders(tenantId: string, options?: any): AxiosPromise<TenantIdentityProviders>;
     /**
      * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
      * @summary テナント一覧取得(Get Tenants)
@@ -3743,6 +4726,13 @@ export declare const TenantApiFactory: (configuration?: Configuration | undefine
      * @throws {RequiredError}
      */
     getTenants(options?: any): AxiosPromise<Tenants>;
+    /**
+     * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+     * @summary プランに関わる情報を全削除
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resetPlan(options?: any): AxiosPromise<void>;
     /**
      * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
      * @summary テナント情報を更新(Update Tenant Details)
@@ -3761,6 +4751,15 @@ export declare const TenantApiFactory: (configuration?: Configuration | undefine
      * @throws {RequiredError}
      */
     updateTenantBillingInfo(tenantId: string, body?: BillingInfo | undefined, options?: any): AxiosPromise<void>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTenantIdentityProvider(tenantId: string, updateTenantIdentityProviderParam?: UpdateTenantIdentityProviderParam | undefined, options?: any): AxiosPromise<void>;
     /**
      * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
      * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
@@ -3820,7 +4819,16 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    getTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any>>;
+    getTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantDetail, any>>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    getTenantIdentityProviders(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantIdentityProviders, any>>;
     /**
      * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
      * @summary テナント一覧取得(Get Tenants)
@@ -3829,6 +4837,14 @@ export declare class TenantApi extends BaseAPI {
      * @memberof TenantApi
      */
     getTenants(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenants, any>>;
+    /**
+     * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+     * @summary プランに関わる情報を全削除
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    resetPlan(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
      * @summary テナント情報を更新(Update Tenant Details)
@@ -3849,6 +4865,16 @@ export declare class TenantApi extends BaseAPI {
      * @memberof TenantApi
      */
     updateTenantBillingInfo(tenantId: string, body?: BillingInfo, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+     * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+     * @param {string} tenantId テナントID(Tenant ID)
+     * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    updateTenantIdentityProvider(tenantId: string, updateTenantIdentityProviderParam?: UpdateTenantIdentityProviderParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
      * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
