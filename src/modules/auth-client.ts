@@ -8,7 +8,6 @@ import {
   InvitationApi,
   RoleApi,
   SaasUserApi,
-  SaasusTenantApi,
   TenantApi,
   TenantAttributeApi,
   TenantUserApi,
@@ -27,7 +26,6 @@ export class AuthClient {
   invitationApi: InvitationApi;
   roleApi: RoleApi;
   saasUserApi: SaasUserApi;
-  saasusTenantApi: SaasusTenantApi;
   tenantApi: TenantApi;
   tenantAttributeApi: TenantAttributeApi;
   tenantUserApi: TenantUserApi;
@@ -70,7 +68,6 @@ export class AuthClient {
     this.invitationApi = new InvitationApi(config, "", this.instance);
     this.roleApi = new RoleApi(config, "", this.instance);
     this.saasUserApi = new SaasUserApi(config, "", this.instance);
-    this.saasusTenantApi = new SaasusTenantApi(config, "", this.instance);
     this.tenantApi = new TenantApi(config, "", this.instance);
     this.tenantAttributeApi = new TenantAttributeApi(config, "", this.instance);
     this.tenantUserApi = new TenantUserApi(config, "", this.instance);

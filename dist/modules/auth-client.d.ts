@@ -1,4 +1,4 @@
-import { AuthInfoApi, BasicInfoApi, CredentialApi, EnvApi, InvitationApi, RoleApi, SaasUserApi, SaasusTenantApi, TenantApi, TenantAttributeApi, TenantUserApi, UserAttributeApi, UserInfoApi } from "../generated/Auth";
+import { AuthInfoApi, BasicInfoApi, CredentialApi, EnvApi, InvitationApi, RoleApi, SaasUserApi, TenantApi, TenantAttributeApi, TenantUserApi, UserAttributeApi, UserInfoApi } from "../generated/Auth";
 export declare class AuthClient {
     private instance;
     authInfoApi: AuthInfoApi;
@@ -8,7 +8,6 @@ export declare class AuthClient {
     invitationApi: InvitationApi;
     roleApi: RoleApi;
     saasUserApi: SaasUserApi;
-    saasusTenantApi: SaasusTenantApi;
     tenantApi: TenantApi;
     tenantAttributeApi: TenantAttributeApi;
     tenantUserApi: TenantUserApi;

@@ -2924,7 +2924,7 @@ export declare const EnvApiAxiosParamCreator: (configuration?: Configuration | u
      */
     createEnv: (body?: Env | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 環境情報を削除します。  Delete env info.
+     * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
      * @summary 環境情報を削除(Delete Env Info)
      * @param {number} envId 環境ID(Env ID)
      * @param {*} [options] Override http request option.
@@ -2970,7 +2970,7 @@ export declare const EnvApiFp: (configuration?: Configuration | undefined) => {
      */
     createEnv(body?: Env | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Env>>;
     /**
-     * 環境情報を削除します。  Delete env info.
+     * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
      * @summary 環境情報を削除(Delete Env Info)
      * @param {number} envId 環境ID(Env ID)
      * @param {*} [options] Override http request option.
@@ -3016,7 +3016,7 @@ export declare const EnvApiFactory: (configuration?: Configuration | undefined, 
      */
     createEnv(body?: Env | undefined, options?: any): AxiosPromise<Env>;
     /**
-     * 環境情報を削除します。  Delete env info.
+     * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
      * @summary 環境情報を削除(Delete Env Info)
      * @param {number} envId 環境ID(Env ID)
      * @param {*} [options] Override http request option.
@@ -3065,7 +3065,7 @@ export declare class EnvApi extends BaseAPI {
      */
     createEnv(body?: Env, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Env, any>>;
     /**
-     * 環境情報を削除します。  Delete env info.
+     * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
      * @summary 環境情報を削除(Delete Env Info)
      * @param {number} envId 環境ID(Env ID)
      * @param {*} [options] Override http request option.
@@ -4230,239 +4230,6 @@ export declare class SaasUserApi extends BaseAPI {
      * @memberof SaasUserApi
      */
     updateUserMfaPreference(userId: string, body?: MfaPreference, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-}
-/**
- * SaasusTenantApi - axios parameter creator
- * @export
- */
-export declare const SaasusTenantApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
-    /**
-     * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Generate an API key for the server side. Up to 2 can be generated.
-     * @summary APIキーを作成(Create API Key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    createApiKey: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * サーバサイド用の API キーを削除します。  Delete API Key.
-     * @summary APIキーを削除(Delete API Key)
-     * @param {string} apiKey APIキー(API key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    deleteApiKey: (apiKey: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get API key for the server side. Up to 2 can be generated.
-     * @summary APIキー一覧を取得(Get API Keys)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getApiKeys: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests.
-     * @summary クライアントシークレットを取得(Get Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getClientSecret: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK.
-     * @summary SaasIDを取得(Get SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getSaasId: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If changed on a SaaS application that is already running, it will affect the behavior.
-     * @summary クライアントシークレットを更新(Update Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    updateClientSecret: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If changed on an SaaS application that is already running, it will affect the behavior.
-     * @summary SaasIDを更新(Update SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    updateSaasId: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
-};
-/**
- * SaasusTenantApi - functional programming interface
- * @export
- */
-export declare const SaasusTenantApiFp: (configuration?: Configuration | undefined) => {
-    /**
-     * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Generate an API key for the server side. Up to 2 can be generated.
-     * @summary APIキーを作成(Create API Key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    createApiKey(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
-    /**
-     * サーバサイド用の API キーを削除します。  Delete API Key.
-     * @summary APIキーを削除(Delete API Key)
-     * @param {string} apiKey APIキー(API key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    deleteApiKey(apiKey: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
-    /**
-     * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get API key for the server side. Up to 2 can be generated.
-     * @summary APIキー一覧を取得(Get API Keys)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getApiKeys(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ApiKeys>>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests.
-     * @summary クライアントシークレットを取得(Get Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getClientSecret(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ClientSecret>>;
-    /**
-     * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK.
-     * @summary SaasIDを取得(Get SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getSaasId(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SaasId>>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If changed on a SaaS application that is already running, it will affect the behavior.
-     * @summary クライアントシークレットを更新(Update Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    updateClientSecret(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
-    /**
-     * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If changed on an SaaS application that is already running, it will affect the behavior.
-     * @summary SaasIDを更新(Update SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    updateSaasId(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
-};
-/**
- * SaasusTenantApi - factory interface
- * @export
- */
-export declare const SaasusTenantApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
-    /**
-     * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Generate an API key for the server side. Up to 2 can be generated.
-     * @summary APIキーを作成(Create API Key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    createApiKey(options?: any): AxiosPromise<void>;
-    /**
-     * サーバサイド用の API キーを削除します。  Delete API Key.
-     * @summary APIキーを削除(Delete API Key)
-     * @param {string} apiKey APIキー(API key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    deleteApiKey(apiKey: string, options?: any): AxiosPromise<void>;
-    /**
-     * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get API key for the server side. Up to 2 can be generated.
-     * @summary APIキー一覧を取得(Get API Keys)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getApiKeys(options?: any): AxiosPromise<ApiKeys>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests.
-     * @summary クライアントシークレットを取得(Get Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getClientSecret(options?: any): AxiosPromise<ClientSecret>;
-    /**
-     * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK.
-     * @summary SaasIDを取得(Get SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getSaasId(options?: any): AxiosPromise<SaasId>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If changed on a SaaS application that is already running, it will affect the behavior.
-     * @summary クライアントシークレットを更新(Update Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    updateClientSecret(options?: any): AxiosPromise<void>;
-    /**
-     * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If changed on an SaaS application that is already running, it will affect the behavior.
-     * @summary SaasIDを更新(Update SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    updateSaasId(options?: any): AxiosPromise<void>;
-};
-/**
- * SaasusTenantApi - object-oriented interface
- * @export
- * @class SaasusTenantApi
- * @extends {BaseAPI}
- */
-export declare class SaasusTenantApi extends BaseAPI {
-    /**
-     * サーバサイド用に API キーを発行します。 最大 2 つまで発行できます。  Generate an API key for the server side. Up to 2 can be generated.
-     * @summary APIキーを作成(Create API Key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    createApiKey(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-    /**
-     * サーバサイド用の API キーを削除します。  Delete API Key.
-     * @summary APIキーを削除(Delete API Key)
-     * @param {string} apiKey APIキー(API key)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    deleteApiKey(apiKey: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-    /**
-     * サーバサイド用に API キーを取得します。 最大 2 つまで発行できます。  Get API key for the server side. Up to 2 can be generated.
-     * @summary APIキー一覧を取得(Get API Keys)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    getApiKeys(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiKeys, any>>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を取得します。  Gets the fixed string that the app uses in API requests.
-     * @summary クライアントシークレットを取得(Get Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    getClientSecret(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ClientSecret, any>>;
-    /**
-     * テナントのSaasIDを取得します。 SaaSus API および SaaSus SDK にて利用します。  Get the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK.
-     * @summary SaasIDを取得(Get SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    getSaasId(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasId, any>>;
-    /**
-     * API リクエストでアプリが使用する固定文字列を再発行します。 既に稼働中のSaaSアプリケーションに設定している場合には、動作に影響があります。  Reissue fixed strings that apps use in API requests. If changed on a SaaS application that is already running, it will affect the behavior.
-     * @summary クライアントシークレットを更新(Update Client Secret)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    updateClientSecret(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-    /**
-     * テナントのSaasIDを更新します。 SaaSus API および SaaSus SDK にて利用します。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the tenant\'s SaasID. Used by SaaSus API and SaaSus SDK. If changed on an SaaS application that is already running, it will affect the behavior.
-     * @summary SaasIDを更新(Update SaasID)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SaasusTenantApi
-     */
-    updateSaasId(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }
 /**
  * TenantApi - axios parameter creator
