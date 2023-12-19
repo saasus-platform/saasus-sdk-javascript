@@ -35,6 +35,68 @@ export declare type Currency = typeof Currency[keyof typeof Currency];
 /**
  *
  * @export
+ * @interface MeteringUnit
+ */
+export interface MeteringUnit {
+    /**
+     *
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'id': string;
+    /**
+     * メータリングユニットの使用済み設定(metering unit used settings)
+     * @type {boolean}
+     * @memberof MeteringUnit
+     */
+    'used': boolean;
+    /**
+     * 計測ユニット名(metering unit name)
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof MeteringUnit
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'display_name': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'description': string;
+}
+/**
+ *
+ * @export
+ * @interface MeteringUnitAllOf
+ */
+export interface MeteringUnitAllOf {
+    /**
+     *
+     * @type {string}
+     * @memberof MeteringUnitAllOf
+     */
+    'id': string;
+    /**
+     * メータリングユニットの使用済み設定(metering unit used settings)
+     * @type {boolean}
+     * @memberof MeteringUnitAllOf
+     */
+    'used': boolean;
+}
+/**
+ *
+ * @export
  * @interface MeteringUnitCount
  */
 export interface MeteringUnitCount {
@@ -149,6 +211,37 @@ export interface MeteringUnitMonthCounts {
 /**
  *
  * @export
+ * @interface MeteringUnitProps
+ */
+export interface MeteringUnitProps {
+    /**
+     * 計測ユニット名(metering unit name)
+     * @type {string}
+     * @memberof MeteringUnitProps
+     */
+    'unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof MeteringUnitProps
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof MeteringUnitProps
+     */
+    'display_name': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof MeteringUnitProps
+     */
+    'description': string;
+}
+/**
+ *
+ * @export
  * @interface MeteringUnitTimestampCount
  */
 export interface MeteringUnitTimestampCount {
@@ -170,6 +263,19 @@ export interface MeteringUnitTimestampCount {
      * @memberof MeteringUnitTimestampCount
      */
     'count': number;
+}
+/**
+ *
+ * @export
+ * @interface MeteringUnits
+ */
+export interface MeteringUnits {
+    /**
+     *
+     * @type {Array<MeteringUnit>}
+     * @memberof MeteringUnits
+     */
+    'units': Array<MeteringUnit>;
 }
 /**
  *
@@ -1584,6 +1690,22 @@ export declare class ErrorApi extends BaseAPI {
  */
 export declare const MeteringApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
+     * メータリングユニットを作成します。  Create a metering unit.
+     * @summary メータリングユニットの作成(Create Metering Unit)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createMeteringUnit: (body?: MeteringUnitProps | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * メータリングユニットを削除します。  Delete metering unit.
+     * @summary メータリングユニットを削除(Delete Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteMeteringUnitByID: (meteringUnitId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
@@ -1661,6 +1783,22 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth: (tenantId: string, month: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * 全てのメータリングユニットを取得します。  Get all metering units.
+     * @summary メータリングユニットを取得(Get all metering units)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getMeteringUnits: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * メータリングユニットを更新します。  Update metering unit.
+     * @summary メータリングユニットを更新(Update Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateMeteringUnitByID: (meteringUnitId: string, body?: MeteringUnitProps | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
@@ -1687,6 +1825,22 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
  * @export
  */
 export declare const MeteringApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * メータリングユニットを作成します。  Create a metering unit.
+     * @summary メータリングユニットの作成(Create Metering Unit)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createMeteringUnit(body?: MeteringUnitProps | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnit>>;
+    /**
+     * メータリングユニットを削除します。  Delete metering unit.
+     * @summary メータリングユニットを削除(Delete Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteMeteringUnitByID(meteringUnitId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
     /**
      * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
@@ -1765,6 +1919,22 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitMonthCounts>>;
     /**
+     * 全てのメータリングユニットを取得します。  Get all metering units.
+     * @summary メータリングユニットを取得(Get all metering units)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getMeteringUnits(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnits>>;
+    /**
+     * メータリングユニットを更新します。  Update metering unit.
+     * @summary メータリングユニットを更新(Update Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
      * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
@@ -1791,6 +1961,22 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
  * @export
  */
 export declare const MeteringApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * メータリングユニットを作成します。  Create a metering unit.
+     * @summary メータリングユニットの作成(Create Metering Unit)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createMeteringUnit(body?: MeteringUnitProps | undefined, options?: any): AxiosPromise<MeteringUnit>;
+    /**
+     * メータリングユニットを削除します。  Delete metering unit.
+     * @summary メータリングユニットを削除(Delete Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteMeteringUnitByID(meteringUnitId: string, options?: any): AxiosPromise<void>;
     /**
      * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
@@ -1869,6 +2055,22 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: any): AxiosPromise<MeteringUnitMonthCounts>;
     /**
+     * 全てのメータリングユニットを取得します。  Get all metering units.
+     * @summary メータリングユニットを取得(Get all metering units)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getMeteringUnits(options?: any): AxiosPromise<MeteringUnits>;
+    /**
+     * メータリングユニットを更新します。  Update metering unit.
+     * @summary メータリングユニットを更新(Update Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps | undefined, options?: any): AxiosPromise<void>;
+    /**
      * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
      * @param {string} tenantId テナントID(tenant id)
@@ -1897,6 +2099,24 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
  * @extends {BaseAPI}
  */
 export declare class MeteringApi extends BaseAPI {
+    /**
+     * メータリングユニットを作成します。  Create a metering unit.
+     * @summary メータリングユニットの作成(Create Metering Unit)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    createMeteringUnit(body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnit, any>>;
+    /**
+     * メータリングユニットを削除します。  Delete metering unit.
+     * @summary メータリングユニットを削除(Delete Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    deleteMeteringUnitByID(meteringUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
@@ -1982,6 +2202,24 @@ export declare class MeteringApi extends BaseAPI {
      * @memberof MeteringApi
      */
     getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCounts, any>>;
+    /**
+     * 全てのメータリングユニットを取得します。  Get all metering units.
+     * @summary メータリングユニットを取得(Get all metering units)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    getMeteringUnits(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnits, any>>;
+    /**
+     * メータリングユニットを更新します。  Update metering unit.
+     * @summary メータリングユニットを更新(Update Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {MeteringUnitProps} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
      * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
