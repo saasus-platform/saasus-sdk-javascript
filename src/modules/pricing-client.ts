@@ -5,6 +5,7 @@ import {
   PricingMenusApi,
   PricingPlansApi,
   PricingUnitsApi,
+  TaxRateApi,
 } from "../generated/Pricing";
 import getAxiosInstance from "./interceptor";
 
@@ -15,6 +16,7 @@ export class PricingClient {
   pricingMenusApi: PricingMenusApi;
   pricingPlansApi: PricingPlansApi;
   pricingUnitsApi: PricingUnitsApi;
+  taxRateApi: TaxRateApi;
 
   private secret: string;
   private saasId: string;
@@ -46,5 +48,6 @@ export class PricingClient {
     this.pricingMenusApi = new PricingMenusApi(config, "", this.instance);
     this.pricingPlansApi = new PricingPlansApi(config, "", this.instance);
     this.pricingUnitsApi = new PricingUnitsApi(config, "", this.instance);
+    this.taxRateApi = new TaxRateApi(config, "", this.instance);
   }
 }

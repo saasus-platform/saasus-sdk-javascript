@@ -83,6 +83,14 @@ app.use(
 
   AWS Marketplace 連携設定の参照・更新に利用します。
 
+- [Communication](./src/generated/Communication/README.md)
+
+  フィードバック、コメント、投票などの参照・更新に利用します。
+
+- [ApiLog](./src/generated/ApiLog/README.md)
+
+  API ログの参照に利用します。
+
 ---
 
 ## ユースケースサンプル

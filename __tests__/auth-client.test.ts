@@ -14,6 +14,7 @@ jest.mock("../src/generated/Auth", () => {
       };
     }),
     EnvApi: jest.fn(),
+    InvitationApi: jest.fn(),
     RoleApi: jest.fn(),
     SaasUserApi: jest.fn(),
     SaasusTenantApi: jest.fn(),

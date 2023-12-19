@@ -13,6 +13,16 @@ import { Configuration } from './configuration';
 import { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { RequestArgs, BaseAPI } from './base';
 /**
+ * 使用量の集計方法(aggregate usage) sum: 期間内の使用量の合計(total usage during the period) max: 期間内の使用量の最大値(maximum usage during the period)
+ * @export
+ * @enum {string}
+ */
+export declare const AggregateUsage: {
+    readonly Sum: "sum";
+    readonly Max: "max";
+};
+export declare type AggregateUsage = typeof AggregateUsage[keyof typeof AggregateUsage];
+/**
  * 計測単位の通貨(unit of currency)
  * @export
  * @enum {string}
@@ -22,6 +32,25 @@ export declare const Currency: {
     readonly Usd: "USD";
 };
 export declare type Currency = typeof Currency[keyof typeof Currency];
+/**
+ *
+ * @export
+ * @interface MeteringUnitCount
+ */
+export interface MeteringUnitCount {
+    /**
+     * 日時(timestamp)
+     * @type {number}
+     * @memberof MeteringUnitCount
+     */
+    'timestamp': number;
+    /**
+     * 件数(count)
+     * @type {number}
+     * @memberof MeteringUnitCount
+     */
+    'count': number;
+}
 /**
  *
  * @export
@@ -59,6 +88,25 @@ export interface MeteringUnitDateCounts {
      * @memberof MeteringUnitDateCounts
      */
     'counts': Array<MeteringUnitDateCount>;
+}
+/**
+ *
+ * @export
+ * @interface MeteringUnitDatePeriodCounts
+ */
+export interface MeteringUnitDatePeriodCounts {
+    /**
+     * 計測ユニット名(metering unit name)
+     * @type {string}
+     * @memberof MeteringUnitDatePeriodCounts
+     */
+    'metering_unit_name': string;
+    /**
+     *
+     * @type {Array<MeteringUnitCount>}
+     * @memberof MeteringUnitDatePeriodCounts
+     */
+    'counts': Array<MeteringUnitCount>;
 }
 /**
  *
@@ -625,6 +673,12 @@ export interface PricingTieredUnit {
      */
     'metering_unit_name': string;
     /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUnit
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
      * 名前(name)
      * @type {string}
      * @memberof PricingTieredUnit
@@ -680,6 +734,12 @@ export interface PricingTieredUnitForSave {
      */
     'metering_unit_name': string;
     /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUnitForSave
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
      * 名前(name)
      * @type {string}
      * @memberof PricingTieredUnitForSave
@@ -734,6 +794,12 @@ export interface PricingTieredUnitForSaveAllOf {
      * @memberof PricingTieredUnitForSaveAllOf
      */
     'metering_unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'aggregate_usage'?: AggregateUsage;
 }
 /**
  *
@@ -777,6 +843,12 @@ export interface PricingTieredUsageUnit {
      * @memberof PricingTieredUsageUnit
      */
     'metering_unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUsageUnit
+     */
+    'aggregate_usage'?: AggregateUsage;
     /**
      * 名前(name)
      * @type {string}
@@ -864,6 +936,12 @@ export interface PricingTieredUsageUnitForSave {
      */
     'metering_unit_name': string;
     /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUsageUnitForSave
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
      * 名前(name)
      * @type {string}
      * @memberof PricingTieredUsageUnitForSave
@@ -918,6 +996,12 @@ export interface PricingTieredUsageUnitForSaveAllOf {
      * @memberof PricingTieredUsageUnitForSaveAllOf
      */
     'metering_unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUsageUnitForSaveAllOf
+     */
+    'aggregate_usage'?: AggregateUsage;
 }
 /**
  *
@@ -1041,6 +1125,12 @@ export interface PricingUsageUnit {
      */
     'metering_unit_name': string;
     /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingUsageUnit
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
      * 名前(name)
      * @type {string}
      * @memberof PricingUsageUnit
@@ -1096,6 +1186,12 @@ export interface PricingUsageUnitForSave {
      */
     'metering_unit_name': string;
     /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingUsageUnitForSave
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
      * 名前(name)
      * @type {string}
      * @memberof PricingUsageUnitForSave
@@ -1150,6 +1246,12 @@ export interface PricingUsageUnitForSaveAllOf {
      * @memberof PricingUsageUnitForSaveAllOf
      */
     'metering_unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingUsageUnitForSaveAllOf
+     */
+    'aggregate_usage'?: AggregateUsage;
 }
 /**
  * 繰り返し期間(cycle) month: 月単位(monthly) year: 年単位(yearly)
@@ -1403,6 +1505,25 @@ export interface UpdatePricingPlansUsedParam {
     'plan_ids': Array<string>;
 }
 /**
+ *
+ * @export
+ * @interface UpdateTaxRateParam
+ */
+export interface UpdateTaxRateParam {
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof UpdateTaxRateParam
+     */
+    'display_name': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof UpdateTaxRateParam
+     */
+    'description': string;
+}
+/**
  * ErrorApi - axios parameter creator
  * @export
  */
@@ -1482,6 +1603,17 @@ export declare const MeteringApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate: (tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+     * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+     * @param {string} tenantId テナントID(tenant id)
+     * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+     * @param {number} [startTimestamp] 開始日時(timestamp)
+     * @param {number} [endTimestamp] 終了日時(timestamp)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod: (tenantId: string, meteringUnitName: string, startTimestamp?: number | undefined, endTimestamp?: number | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
      * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
@@ -1576,6 +1708,17 @@ export declare const MeteringApiFp: (configuration?: Configuration | undefined) 
      */
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDateCount>>;
     /**
+     * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+     * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+     * @param {string} tenantId テナントID(tenant id)
+     * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+     * @param {number} [startTimestamp] 開始日時(timestamp)
+     * @param {number} [endTimestamp] 終了日時(timestamp)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId: string, meteringUnitName: string, startTimestamp?: number | undefined, endTimestamp?: number | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<MeteringUnitDatePeriodCounts>>;
+    /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
      * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
      * @param {string} tenantId テナントID(tenant id)
@@ -1668,6 +1811,17 @@ export declare const MeteringApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: any): AxiosPromise<MeteringUnitDateCount>;
+    /**
+     * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+     * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+     * @param {string} tenantId テナントID(tenant id)
+     * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+     * @param {number} [startTimestamp] 開始日時(timestamp)
+     * @param {number} [endTimestamp] 終了日時(timestamp)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId: string, meteringUnitName: string, startTimestamp?: number | undefined, endTimestamp?: number | undefined, options?: any): AxiosPromise<MeteringUnitDatePeriodCounts>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
      * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
@@ -1765,6 +1919,18 @@ export declare class MeteringApi extends BaseAPI {
      * @memberof MeteringApi
      */
     getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
+    /**
+     * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
+     * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
+     * @param {string} tenantId テナントID(tenant id)
+     * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+     * @param {number} [startTimestamp] 開始日時(timestamp)
+     * @param {number} [endTimestamp] 終了日時(timestamp)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId: string, meteringUnitName: string, startTimestamp?: number, endTimestamp?: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDatePeriodCounts, any>>;
     /**
      * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
      * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
@@ -2553,6 +2719,15 @@ export declare const TaxRateApiAxiosParamCreator: (configuration?: Configuration
      * @throws {RequiredError}
      */
     getTaxRates: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * 税率を更新します。  Update tax rate.
+     * @summary 税率を更新(Update Tax Rate)
+     * @param {string} taxRateId 税率ID(tax rate ID)
+     * @param {UpdateTaxRateParam} [updateTaxRateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTaxRate: (taxRateId: string, updateTaxRateParam?: UpdateTaxRateParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * TaxRateApi - functional programming interface
@@ -2574,6 +2749,15 @@ export declare const TaxRateApiFp: (configuration?: Configuration | undefined) =
      * @throws {RequiredError}
      */
     getTaxRates(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<TaxRates>>;
+    /**
+     * 税率を更新します。  Update tax rate.
+     * @summary 税率を更新(Update Tax Rate)
+     * @param {string} taxRateId 税率ID(tax rate ID)
+     * @param {UpdateTaxRateParam} [updateTaxRateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTaxRate(taxRateId: string, updateTaxRateParam?: UpdateTaxRateParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
 };
 /**
  * TaxRateApi - factory interface
@@ -2595,6 +2779,15 @@ export declare const TaxRateApiFactory: (configuration?: Configuration | undefin
      * @throws {RequiredError}
      */
     getTaxRates(options?: any): AxiosPromise<TaxRates>;
+    /**
+     * 税率を更新します。  Update tax rate.
+     * @summary 税率を更新(Update Tax Rate)
+     * @param {string} taxRateId 税率ID(tax rate ID)
+     * @param {UpdateTaxRateParam} [updateTaxRateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTaxRate(taxRateId: string, updateTaxRateParam?: UpdateTaxRateParam | undefined, options?: any): AxiosPromise<void>;
 };
 /**
  * TaxRateApi - object-oriented interface
@@ -2620,4 +2813,14 @@ export declare class TaxRateApi extends BaseAPI {
      * @memberof TaxRateApi
      */
     getTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRates, any>>;
+    /**
+     * 税率を更新します。  Update tax rate.
+     * @summary 税率を更新(Update Tax Rate)
+     * @param {string} taxRateId 税率ID(tax rate ID)
+     * @param {UpdateTaxRateParam} [updateTaxRateParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaxRateApi
+     */
+    updateTaxRate(taxRateId: string, updateTaxRateParam?: UpdateTaxRateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }

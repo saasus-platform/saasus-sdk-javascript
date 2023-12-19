@@ -39,3 +39,10 @@ For details (arguments, return values), [refer to the API document](https://docs
 
 - getMeteringUnitDateCountsByTenantIdAndDate ... Get All Metering Unit Counts for a Specified Date
 - getMeteringUnitMonthCountsByTenantIdAndMonth ... Get All Metering Unit Counts for the Specified Month
+- getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod ... Get Metering Unit Count for Specified Date Period
+
+## 税率
+
+- createTaxRate ... Create Tax Rate
+- getTaxRates ... Get Tax Rates
+- updateTaxRate ... Update Tax Rate

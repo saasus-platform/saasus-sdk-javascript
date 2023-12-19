@@ -39,3 +39,10 @@
 
 - getMeteringUnitDateCountsByTenantIdAndDate ・・・指定日の全メータリングユニットカウントを取得
 - getMeteringUnitMonthCountsByTenantIdAndMonth ・・・指定月の全メータリングユニットカウントを取得
+- getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod・・・指定した日時期間のメータリングユニットカウントを取得
+
+## 税率
+
+- createTaxRate ・・・税率の作成
+- getTaxRates ・・・税率を取得します
+- updateTaxRate ・・・税率を更新

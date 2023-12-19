@@ -41,6 +41,9 @@ For details (arguments, return values), [refer to the API document](https://docs
 
 - updateSaasUserEmail ... Change Email
 
+- requestEmailUpdate ... Request User Email Update
+- confirmEmailUpdate ... Confirm User Email Update
+
 - createSecretCode ... Creates secret code for authentication application registration
 - updateSoftwareToken ... Register Authentication Application
 
@@ -51,6 +54,9 @@ For details (arguments, return values), [refer to the API document](https://docs
 - resendSignUpConfirmationEmail ... Resend Sign Up Confirmation Email
 
 - unlinkProvider ... Unlink external identity providers
+
+- requestExternalUserLink ... Request External User Account Link
+- confirmExternalUserLink ... Confirm External User Account Link
 
 - signUpWithAwsMarketplace ・・・Sign Up with AWS Marketplace
 - confirmSignUpWithAwsMarketplace ・・・Confirm Sign Up with AWS Marketplace
@@ -71,6 +77,15 @@ For details (arguments, return values), [refer to the API document](https://docs
 
 - createTenantUserRoles ... Create Tenant User Role
 - deleteTenantUserRole ... Delete Role From Tenant User
+
+## Tenant Invitation
+
+- createTenantInvitation ... Create Tenant Invitation
+- getTenantInvitations ... Get Tenant Invitations
+- getTenantInvitation ... Get Tenant Invitation
+- deleteTenantInvitation ... Delete Tenant Invitation
+- getInvitationValidity ... Get Invitation Validity
+- validateInvitation ... Validate Invitation
 
 ## Role Info
 

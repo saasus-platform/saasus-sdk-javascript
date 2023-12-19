@@ -83,6 +83,14 @@ app.use(
 
   It is used for referencing/updating information related to AWS Marketplace.
 
+- [Communication](./src/generated/Communication/README_en.md)
+
+  It is used for referencing/updating information related to feedbacks, comments, voting, etc.
+
+- [ApiLog](./src/generated/ApiLog/README_en.md)
+
+  It is used for referencing/updating information related to API logs.
+
 ---
 
 ## Use Case Sample

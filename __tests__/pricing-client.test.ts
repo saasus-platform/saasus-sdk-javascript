@@ -14,6 +14,7 @@ jest.mock("../src/generated/Pricing", () => {
     PricingMenusApi: jest.fn(),
     PricingPlansApi: jest.fn(),
     PricingUnitsApi: jest.fn(),
+    TaxRateApi: jest.fn(),
   };
 });
 

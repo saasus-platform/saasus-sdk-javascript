@@ -14,7 +14,8 @@
     "test": "jest",
     "build": "rollup -c",
     "clean": "rimraf dist",
-    "preinstall": "typesync || :"
+    "preinstall": "typesync || :",
+    "codegen:openapi": "openapi-generator-cli generate -g typescript-axios -i $npm_config_input_dir -o ./src/generated/${npm_config_module}"
   },
   "repository": {
     "type": "git",

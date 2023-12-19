@@ -13,6 +13,7 @@ jest.mock("../src/generated/Auth", () => {
     BasicInfoApi: jest.fn(),
     CredentialApi: jest.fn(),
     EnvApi: jest.fn(),
+    InvitationApi: jest.fn(),
     RoleApi: jest.fn(),
     SaasUserApi: jest.fn(),
     SaasusTenantApi: jest.fn(),
