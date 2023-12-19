@@ -52,6 +52,68 @@ export type Currency = typeof Currency[keyof typeof Currency];
 /**
  * 
  * @export
+ * @interface MeteringUnit
+ */
+export interface MeteringUnit {
+    /**
+     * 
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'id': string;
+    /**
+     * メータリングユニットの使用済み設定(metering unit used settings)
+     * @type {boolean}
+     * @memberof MeteringUnit
+     */
+    'used': boolean;
+    /**
+     * 計測ユニット名(metering unit name)
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'unit_name': string;
+    /**
+     * 
+     * @type {AggregateUsage}
+     * @memberof MeteringUnit
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'display_name': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof MeteringUnit
+     */
+    'description': string;
+}
+/**
+ * 
+ * @export
+ * @interface MeteringUnitAllOf
+ */
+export interface MeteringUnitAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof MeteringUnitAllOf
+     */
+    'id': string;
+    /**
+     * メータリングユニットの使用済み設定(metering unit used settings)
+     * @type {boolean}
+     * @memberof MeteringUnitAllOf
+     */
+    'used': boolean;
+}
+/**
+ * 
+ * @export
  * @interface MeteringUnitCount
  */
 export interface MeteringUnitCount {
@@ -166,6 +228,37 @@ export interface MeteringUnitMonthCounts {
 /**
  * 
  * @export
+ * @interface MeteringUnitProps
+ */
+export interface MeteringUnitProps {
+    /**
+     * 計測ユニット名(metering unit name)
+     * @type {string}
+     * @memberof MeteringUnitProps
+     */
+    'unit_name': string;
+    /**
+     * 
+     * @type {AggregateUsage}
+     * @memberof MeteringUnitProps
+     */
+    'aggregate_usage'?: AggregateUsage;
+    /**
+     * 表示名(display name)
+     * @type {string}
+     * @memberof MeteringUnitProps
+     */
+    'display_name': string;
+    /**
+     * 説明(description)
+     * @type {string}
+     * @memberof MeteringUnitProps
+     */
+    'description': string;
+}
+/**
+ * 
+ * @export
  * @interface MeteringUnitTimestampCount
  */
 export interface MeteringUnitTimestampCount {
@@ -187,6 +280,19 @@ export interface MeteringUnitTimestampCount {
      * @memberof MeteringUnitTimestampCount
      */
     'count': number;
+}
+/**
+ * 
+ * @export
+ * @interface MeteringUnits
+ */
+export interface MeteringUnits {
+    /**
+     * 
+     * @type {Array<MeteringUnit>}
+     * @memberof MeteringUnits
+     */
+    'units': Array<MeteringUnit>;
 }
 /**
  * 
@@ -1664,6 +1770,82 @@ export class ErrorApi extends BaseAPI {
 export const MeteringApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * メータリングユニットを作成します。  Create a metering unit. 
+         * @summary メータリングユニットの作成(Create Metering Unit)
+         * @param {MeteringUnitProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createMeteringUnit: async (body?: MeteringUnitProps, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/metering/units`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * メータリングユニットを削除します。  Delete metering unit. 
+         * @summary メータリングユニットを削除(Delete Metering Unit)
+         * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteMeteringUnitByID: async (meteringUnitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'meteringUnitId' is not null or undefined
+            assertParamExists('deleteMeteringUnitByID', 'meteringUnitId', meteringUnitId)
+            const localVarPath = `/metering/units/{metering_unit_id}`
+                .replace(`{${"metering_unit_id"}}`, encodeURIComponent(String(meteringUnitId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp. 
          * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
          * @param {string} tenantId テナントID(tenant id)
@@ -2022,6 +2204,82 @@ export const MeteringApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * 全てのメータリングユニットを取得します。  Get all metering units. 
+         * @summary メータリングユニットを取得(Get all metering units)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMeteringUnits: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/metering/units`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * メータリングユニットを更新します。  Update metering unit. 
+         * @summary メータリングユニットを更新(Update Metering Unit)
+         * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+         * @param {MeteringUnitProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateMeteringUnitByID: async (meteringUnitId: string, body?: MeteringUnitProps, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'meteringUnitId' is not null or undefined
+            assertParamExists('updateMeteringUnitByID', 'meteringUnitId', meteringUnitId)
+            const localVarPath = `/metering/units/{metering_unit_id}`
+                .replace(`{${"metering_unit_id"}}`, encodeURIComponent(String(meteringUnitId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp. 
          * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
          * @param {string} tenantId テナントID(tenant id)
@@ -2128,6 +2386,28 @@ export const MeteringApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = MeteringApiAxiosParamCreator(configuration)
     return {
         /**
+         * メータリングユニットを作成します。  Create a metering unit. 
+         * @summary メータリングユニットの作成(Create Metering Unit)
+         * @param {MeteringUnitProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createMeteringUnit(body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MeteringUnit>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createMeteringUnit(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * メータリングユニットを削除します。  Delete metering unit. 
+         * @summary メータリングユニットを削除(Delete Metering Unit)
+         * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteMeteringUnitByID(meteringUnitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMeteringUnitByID(meteringUnitId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp. 
          * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
          * @param {string} tenantId テナントID(tenant id)
@@ -2229,6 +2509,28 @@ export const MeteringApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * 全てのメータリングユニットを取得します。  Get all metering units. 
+         * @summary メータリングユニットを取得(Get all metering units)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getMeteringUnits(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MeteringUnits>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMeteringUnits(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * メータリングユニットを更新します。  Update metering unit. 
+         * @summary メータリングユニットを更新(Update Metering Unit)
+         * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+         * @param {MeteringUnitProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateMeteringUnitByID(meteringUnitId, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp. 
          * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
          * @param {string} tenantId テナントID(tenant id)
@@ -2265,6 +2567,26 @@ export const MeteringApiFp = function(configuration?: Configuration) {
 export const MeteringApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = MeteringApiFp(configuration)
     return {
+        /**
+         * メータリングユニットを作成します。  Create a metering unit. 
+         * @summary メータリングユニットの作成(Create Metering Unit)
+         * @param {MeteringUnitProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createMeteringUnit(body?: MeteringUnitProps, options?: any): AxiosPromise<MeteringUnit> {
+            return localVarFp.createMeteringUnit(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * メータリングユニットを削除します。  Delete metering unit. 
+         * @summary メータリングユニットを削除(Delete Metering Unit)
+         * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteMeteringUnitByID(meteringUnitId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.deleteMeteringUnitByID(meteringUnitId, options).then((request) => request(axios, basePath));
+        },
         /**
          * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp. 
          * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
@@ -2359,6 +2681,26 @@ export const MeteringApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId, month, options).then((request) => request(axios, basePath));
         },
         /**
+         * 全てのメータリングユニットを取得します。  Get all metering units. 
+         * @summary メータリングユニットを取得(Get all metering units)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMeteringUnits(options?: any): AxiosPromise<MeteringUnits> {
+            return localVarFp.getMeteringUnits(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * メータリングユニットを更新します。  Update metering unit. 
+         * @summary メータリングユニットを更新(Update Metering Unit)
+         * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+         * @param {MeteringUnitProps} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps, options?: any): AxiosPromise<void> {
+            return localVarFp.updateMeteringUnitByID(meteringUnitId, body, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp. 
          * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
          * @param {string} tenantId テナントID(tenant id)
@@ -2393,6 +2735,30 @@ export const MeteringApiFactory = function (configuration?: Configuration, baseP
  * @extends {BaseAPI}
  */
 export class MeteringApi extends BaseAPI {
+    /**
+     * メータリングユニットを作成します。  Create a metering unit. 
+     * @summary メータリングユニットの作成(Create Metering Unit)
+     * @param {MeteringUnitProps} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    public createMeteringUnit(body?: MeteringUnitProps, options?: AxiosRequestConfig) {
+        return MeteringApiFp(this.configuration).createMeteringUnit(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * メータリングユニットを削除します。  Delete metering unit. 
+     * @summary メータリングユニットを削除(Delete Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    public deleteMeteringUnitByID(meteringUnitId: string, options?: AxiosRequestConfig) {
+        return MeteringApiFp(this.configuration).deleteMeteringUnitByID(meteringUnitId, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp. 
      * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
@@ -2500,6 +2866,30 @@ export class MeteringApi extends BaseAPI {
      */
     public getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig) {
         return MeteringApiFp(this.configuration).getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId, month, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 全てのメータリングユニットを取得します。  Get all metering units. 
+     * @summary メータリングユニットを取得(Get all metering units)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    public getMeteringUnits(options?: AxiosRequestConfig) {
+        return MeteringApiFp(this.configuration).getMeteringUnits(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * メータリングユニットを更新します。  Update metering unit. 
+     * @summary メータリングユニットを更新(Update Metering Unit)
+     * @param {string} meteringUnitId メータリングユニットID(metering unit id)
+     * @param {MeteringUnitProps} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MeteringApi
+     */
+    public updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps, options?: AxiosRequestConfig) {
+        return MeteringApiFp(this.configuration).updateMeteringUnitByID(meteringUnitId, body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
