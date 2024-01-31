@@ -375,8 +375,8 @@ export type VisibilityStatus = typeof VisibilityStatus[keyof typeof VisibilitySt
 export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+         * Create customer information to be linked to AWS Marketplace. 
+         * @summary Create customer information to be linked to AWS Marketplace
          * @param {CreateCustomerParam} [createCustomerParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -413,8 +413,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace. 
-         * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+         * Retrieve the product\'s publication status from AWS Marketplace. 
+         * @summary Obtain product publication status from AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -447,8 +447,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link. 
-         * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+         * Get the CloudFormation Quick Create link. 
+         * @summary Get the link to create the AWS CloudFormation stack
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -481,9 +481,9 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-         * @param {string} customerIdentifier 顧客ID
+         * Get customer information to be linked to AWS Marketplace. 
+         * @summary Get customer information to be linked to AWS Marketplace
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -519,8 +519,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+         * Get a list of customer information to be linked to AWS Marketplace. 
+         * @summary Get a list of customer information to be linked to AWS Marketplace
          * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -558,8 +558,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status. 
-         * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+         * Get AWS Marketplace Listing Status. 
+         * @summary Get AWS Marketplace Listing Status
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -592,9 +592,9 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-         * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-         * @param {string} planName AWS Marketplace連携プラン名
+         * Obtain plan information to link to AWS Marketplace. 
+         * @summary Obtain plan information to link to AWS Marketplace
+         * @param {string} planName AWS Marketplace linked plan name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -630,8 +630,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+         * Obtain plan information to link to AWS Marketplace. 
+         * @summary Obtain plan information to link to AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -664,8 +664,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings. 
-         * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+         * Get AWS Marketplace Settings. 
+         * @summary Get AWS Marketplace Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -698,8 +698,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace. 
-         * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+         * Save plan information to be linked to AWSMarketplace. 
+         * @summary Save plan information to be linked to AWSMarketplace
          * @param {SavePlanParam} [savePlanParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -736,9 +736,9 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus. 
-         * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-         * @param {string} customerIdentifier 顧客ID
+         * Sync AWS Marketplace customer information to SaaSus. 
+         * @summary Sync AWS Marketplace customer information to SaaSus
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -774,8 +774,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status. 
-         * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+         * Update AWS Marketplace Listing Status. 
+         * @summary Update AWS Marketplace Listing Status
          * @param {UpdateListingStatusParam} [updateListingStatusParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -812,8 +812,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings. 
-         * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+         * Update AWS Marketplace Settings. 
+         * @summary Update AWS Marketplace Settings
          * @param {UpdateSettingsParam} [updateSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -850,8 +850,8 @@ export const AwsMarketplaceApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * Registration Tokenを検証します。  Verify Registration Token. 
-         * @summary Registration Tokenを検証(Verify Registration Token)
+         * Verify Registration Token. 
+         * @summary Verify Registration Token
          * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -898,8 +898,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AwsMarketplaceApiAxiosParamCreator(configuration)
     return {
         /**
-         * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+         * Create customer information to be linked to AWS Marketplace. 
+         * @summary Create customer information to be linked to AWS Marketplace
          * @param {CreateCustomerParam} [createCustomerParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -909,8 +909,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace. 
-         * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+         * Retrieve the product\'s publication status from AWS Marketplace. 
+         * @summary Obtain product publication status from AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -919,8 +919,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link. 
-         * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+         * Get the CloudFormation Quick Create link. 
+         * @summary Get the link to create the AWS CloudFormation stack
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -929,9 +929,9 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-         * @param {string} customerIdentifier 顧客ID
+         * Get customer information to be linked to AWS Marketplace. 
+         * @summary Get customer information to be linked to AWS Marketplace
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -940,8 +940,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+         * Get a list of customer information to be linked to AWS Marketplace. 
+         * @summary Get a list of customer information to be linked to AWS Marketplace
          * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -951,8 +951,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status. 
-         * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+         * Get AWS Marketplace Listing Status. 
+         * @summary Get AWS Marketplace Listing Status
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -961,9 +961,9 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-         * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-         * @param {string} planName AWS Marketplace連携プラン名
+         * Obtain plan information to link to AWS Marketplace. 
+         * @summary Obtain plan information to link to AWS Marketplace
+         * @param {string} planName AWS Marketplace linked plan name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -972,8 +972,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+         * Obtain plan information to link to AWS Marketplace. 
+         * @summary Obtain plan information to link to AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -982,8 +982,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings. 
-         * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+         * Get AWS Marketplace Settings. 
+         * @summary Get AWS Marketplace Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -992,8 +992,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace. 
-         * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+         * Save plan information to be linked to AWSMarketplace. 
+         * @summary Save plan information to be linked to AWSMarketplace
          * @param {SavePlanParam} [savePlanParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1003,9 +1003,9 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus. 
-         * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-         * @param {string} customerIdentifier 顧客ID
+         * Sync AWS Marketplace customer information to SaaSus. 
+         * @summary Sync AWS Marketplace customer information to SaaSus
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1014,8 +1014,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status. 
-         * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+         * Update AWS Marketplace Listing Status. 
+         * @summary Update AWS Marketplace Listing Status
          * @param {UpdateListingStatusParam} [updateListingStatusParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1025,8 +1025,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings. 
-         * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+         * Update AWS Marketplace Settings. 
+         * @summary Update AWS Marketplace Settings
          * @param {UpdateSettingsParam} [updateSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1036,8 +1036,8 @@ export const AwsMarketplaceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Registration Tokenを検証します。  Verify Registration Token. 
-         * @summary Registration Tokenを検証(Verify Registration Token)
+         * Verify Registration Token. 
+         * @summary Verify Registration Token
          * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1057,8 +1057,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
     const localVarFp = AwsMarketplaceApiFp(configuration)
     return {
         /**
-         * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+         * Create customer information to be linked to AWS Marketplace. 
+         * @summary Create customer information to be linked to AWS Marketplace
          * @param {CreateCustomerParam} [createCustomerParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1067,8 +1067,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.createCustomer(createCustomerParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace. 
-         * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+         * Retrieve the product\'s publication status from AWS Marketplace. 
+         * @summary Obtain product publication status from AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1076,8 +1076,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getCatalogEntityVisibility(options).then((request) => request(axios, basePath));
         },
         /**
-         * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link. 
-         * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+         * Get the CloudFormation Quick Create link. 
+         * @summary Get the link to create the AWS CloudFormation stack
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1085,9 +1085,9 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getCloudFormationLaunchStackLink(options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-         * @param {string} customerIdentifier 顧客ID
+         * Get customer information to be linked to AWS Marketplace. 
+         * @summary Get customer information to be linked to AWS Marketplace
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1095,8 +1095,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getCustomer(customerIdentifier, options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+         * Get a list of customer information to be linked to AWS Marketplace. 
+         * @summary Get a list of customer information to be linked to AWS Marketplace
          * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1105,8 +1105,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getCustomers(tenantIds, options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status. 
-         * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+         * Get AWS Marketplace Listing Status. 
+         * @summary Get AWS Marketplace Listing Status
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1114,9 +1114,9 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getListingStatus(options).then((request) => request(axios, basePath));
         },
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-         * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-         * @param {string} planName AWS Marketplace連携プラン名
+         * Obtain plan information to link to AWS Marketplace. 
+         * @summary Obtain plan information to link to AWS Marketplace
+         * @param {string} planName AWS Marketplace linked plan name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1124,8 +1124,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getPlanByPlanName(planName, options).then((request) => request(axios, basePath));
         },
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-         * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+         * Obtain plan information to link to AWS Marketplace. 
+         * @summary Obtain plan information to link to AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1133,8 +1133,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getPlans(options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings. 
-         * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+         * Get AWS Marketplace Settings. 
+         * @summary Get AWS Marketplace Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1142,8 +1142,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.getSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace. 
-         * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+         * Save plan information to be linked to AWSMarketplace. 
+         * @summary Save plan information to be linked to AWSMarketplace
          * @param {SavePlanParam} [savePlanParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1152,9 +1152,9 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.savePlan(savePlanParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus. 
-         * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-         * @param {string} customerIdentifier 顧客ID
+         * Sync AWS Marketplace customer information to SaaSus. 
+         * @summary Sync AWS Marketplace customer information to SaaSus
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1162,8 +1162,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.syncCustomer(customerIdentifier, options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status. 
-         * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+         * Update AWS Marketplace Listing Status. 
+         * @summary Update AWS Marketplace Listing Status
          * @param {UpdateListingStatusParam} [updateListingStatusParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1172,8 +1172,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.updateListingStatus(updateListingStatusParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings. 
-         * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+         * Update AWS Marketplace Settings. 
+         * @summary Update AWS Marketplace Settings
          * @param {UpdateSettingsParam} [updateSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1182,8 +1182,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
             return localVarFp.updateSettings(updateSettingsParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * Registration Tokenを検証します。  Verify Registration Token. 
-         * @summary Registration Tokenを検証(Verify Registration Token)
+         * Verify Registration Token. 
+         * @summary Verify Registration Token
          * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1202,8 +1202,8 @@ export const AwsMarketplaceApiFactory = function (configuration?: Configuration,
  */
 export class AwsMarketplaceApi extends BaseAPI {
     /**
-     * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace. 
-     * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+     * Create customer information to be linked to AWS Marketplace. 
+     * @summary Create customer information to be linked to AWS Marketplace
      * @param {CreateCustomerParam} [createCustomerParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1214,8 +1214,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace. 
-     * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+     * Retrieve the product\'s publication status from AWS Marketplace. 
+     * @summary Obtain product publication status from AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1225,8 +1225,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link. 
-     * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+     * Get the CloudFormation Quick Create link. 
+     * @summary Get the link to create the AWS CloudFormation stack
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1236,9 +1236,9 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace. 
-     * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-     * @param {string} customerIdentifier 顧客ID
+     * Get customer information to be linked to AWS Marketplace. 
+     * @summary Get customer information to be linked to AWS Marketplace
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1248,8 +1248,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace. 
-     * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+     * Get a list of customer information to be linked to AWS Marketplace. 
+     * @summary Get a list of customer information to be linked to AWS Marketplace
      * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1260,8 +1260,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status. 
-     * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+     * Get AWS Marketplace Listing Status. 
+     * @summary Get AWS Marketplace Listing Status
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1271,9 +1271,9 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-     * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-     * @param {string} planName AWS Marketplace連携プラン名
+     * Obtain plan information to link to AWS Marketplace. 
+     * @summary Obtain plan information to link to AWS Marketplace
+     * @param {string} planName AWS Marketplace linked plan name
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1283,8 +1283,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace. 
-     * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+     * Obtain plan information to link to AWS Marketplace. 
+     * @summary Obtain plan information to link to AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1294,8 +1294,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings. 
-     * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+     * Get AWS Marketplace Settings. 
+     * @summary Get AWS Marketplace Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1305,8 +1305,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace. 
-     * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+     * Save plan information to be linked to AWSMarketplace. 
+     * @summary Save plan information to be linked to AWSMarketplace
      * @param {SavePlanParam} [savePlanParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1317,9 +1317,9 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus. 
-     * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-     * @param {string} customerIdentifier 顧客ID
+     * Sync AWS Marketplace customer information to SaaSus. 
+     * @summary Sync AWS Marketplace customer information to SaaSus
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
@@ -1329,8 +1329,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status. 
-     * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+     * Update AWS Marketplace Listing Status. 
+     * @summary Update AWS Marketplace Listing Status
      * @param {UpdateListingStatusParam} [updateListingStatusParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1341,8 +1341,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings. 
-     * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+     * Update AWS Marketplace Settings. 
+     * @summary Update AWS Marketplace Settings
      * @param {UpdateSettingsParam} [updateSettingsParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1353,8 +1353,8 @@ export class AwsMarketplaceApi extends BaseAPI {
     }
 
     /**
-     * Registration Tokenを検証します。  Verify Registration Token. 
-     * @summary Registration Tokenを検証(Verify Registration Token)
+     * Verify Registration Token. 
+     * @summary Verify Registration Token
      * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1373,8 +1373,8 @@ export class AwsMarketplaceApi extends BaseAPI {
 export const ErrorApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1417,8 +1417,8 @@ export const ErrorApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ErrorApiAxiosParamCreator(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1437,8 +1437,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
     const localVarFp = ErrorApiFp(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1456,8 +1456,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
  */
 export class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
