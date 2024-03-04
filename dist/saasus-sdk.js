@@ -123,9 +123,9 @@
     const ApiLogApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 指定したIDのAPI実行のログ登録を取得します。
-             * @summary API実行ログ取得
-             * @param {string} apiLogId APIログID(API Log ID)
+             * Retrieve the log of the API execution with the specified ID.
+             * @summary Get API execution log
+             * @param {string} apiLogId API Log ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -155,12 +155,16 @@
                 };
             },
             /**
-             * 全API実行のログ登録を取得します。
-             * @summary API実行ログ取得
+             * Retrieve the log of all API executions.
+             * @summary Get API execution log list
+             * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+             * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+             * @param {number} [limit] Maximum number of logs to retrieve.
+             * @param {string} [cursor] Cursor for cursor pagination.
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            getLogs: async (options = {}) => {
+            getLogs: async (createdDate, createdAt, limit, cursor, options = {}) => {
                 const localVarPath = `/logs`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$6);
@@ -174,6 +178,22 @@
                 // authentication Bearer required
                 // http bearer authentication required
                 await setBearerAuthToObject$6(localVarHeaderParameter, configuration);
+                if (createdDate !== undefined) {
+                    localVarQueryParameter['created_date'] = (createdDate instanceof Date) ?
+                        createdDate.toISOString().substr(0, 10) :
+                        createdDate;
+                }
+                if (createdAt !== undefined) {
+                    localVarQueryParameter['created_at'] = (createdAt instanceof Date) ?
+                        createdAt.toISOString() :
+                        createdAt;
+                }
+                if (limit !== undefined) {
+                    localVarQueryParameter['limit'] = limit;
+                }
+                if (cursor !== undefined) {
+                    localVarQueryParameter['cursor'] = cursor;
+                }
                 setSearchParams$6(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
@@ -192,9 +212,9 @@
         const localVarAxiosParamCreator = ApiLogApiAxiosParamCreator(configuration);
         return {
             /**
-             * 指定したIDのAPI実行のログ登録を取得します。
-             * @summary API実行ログ取得
-             * @param {string} apiLogId APIログID(API Log ID)
+             * Retrieve the log of the API execution with the specified ID.
+             * @summary Get API execution log
+             * @param {string} apiLogId API Log ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -203,13 +223,17 @@
                 return createRequestFunction$6(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$6, configuration);
             },
             /**
-             * 全API実行のログ登録を取得します。
-             * @summary API実行ログ取得
+             * Retrieve the log of all API executions.
+             * @summary Get API execution log list
+             * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+             * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+             * @param {number} [limit] Maximum number of logs to retrieve.
+             * @param {string} [cursor] Cursor for cursor pagination.
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async getLogs(options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(options);
+            async getLogs(createdDate, createdAt, limit, cursor, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(createdDate, createdAt, limit, cursor, options);
                 return createRequestFunction$6(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$6, configuration);
             },
         };
@@ -222,9 +246,9 @@
      */
     class ApiLogApi extends BaseAPI$6 {
         /**
-         * 指定したIDのAPI実行のログ登録を取得します。
-         * @summary API実行ログ取得
-         * @param {string} apiLogId APIログID(API Log ID)
+         * Retrieve the log of the API execution with the specified ID.
+         * @summary Get API execution log
+         * @param {string} apiLogId API Log ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof ApiLogApi
@@ -233,14 +257,18 @@
             return ApiLogApiFp(this.configuration).getLog(apiLogId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 全API実行のログ登録を取得します。
-         * @summary API実行ログ取得
+         * Retrieve the log of all API executions.
+         * @summary Get API execution log list
+         * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+         * @param {number} [limit] Maximum number of logs to retrieve.
+         * @param {string} [cursor] Cursor for cursor pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof ApiLogApi
          */
-        getLogs(options) {
-            return ApiLogApiFp(this.configuration).getLogs(options).then((request) => request(this.axios, this.basePath));
+        getLogs(createdDate, createdAt, limit, cursor, options) {
+            return ApiLogApiFp(this.configuration).getLogs(createdDate, createdAt, limit, cursor, options).then((request) => request(this.axios, this.basePath));
         }
     }
 
@@ -453,8 +481,8 @@
     const AuthInfoApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
-             * @summary 認証情報を取得(Get Authentication Info)
+             * Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
+             * @summary Get Authentication Info
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -481,7 +509,8 @@
                 };
             },
             /**
-             * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito
+             * Get sign-in information via external provider set in cognito.
+             * @summary Get Sign-In Information Via External Provider
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -508,8 +537,8 @@
                 };
             },
             /**
-             * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary パスワード要件を取得(Get Password Requirements)
+             * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+             * @summary Get Password Requirements
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -536,8 +565,8 @@
                 };
             },
             /**
-             * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
-             * @summary 認証情報を更新(Update Authentication Info)
+             * Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
+             * @summary Update Authentication Info
              * @param {AuthInfo} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -567,7 +596,8 @@
                 };
             },
             /**
-             * 外部IDプロバイダのサインイン情報更新
+             * Update the sign-in information for the external ID provider
+             * @summary Update Sign-In Information
              * @param {UpdateIdentityProviderParam} [updateIdentityProviderParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -597,8 +627,8 @@
                 };
             },
             /**
-             * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary パスワード要件を更新(Update Password Requirements)
+             * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+             * @summary Update Password Requirements
              * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -637,8 +667,8 @@
         const localVarAxiosParamCreator = AuthInfoApiAxiosParamCreator(configuration);
         return {
             /**
-             * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
-             * @summary 認証情報を取得(Get Authentication Info)
+             * Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
+             * @summary Get Authentication Info
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -647,7 +677,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito
+             * Get sign-in information via external provider set in cognito.
+             * @summary Get Sign-In Information Via External Provider
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -656,8 +687,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary パスワード要件を取得(Get Password Requirements)
+             * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+             * @summary Get Password Requirements
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -666,8 +697,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
-             * @summary 認証情報を更新(Update Authentication Info)
+             * Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
+             * @summary Update Authentication Info
              * @param {AuthInfo} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -677,7 +708,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 外部IDプロバイダのサインイン情報更新
+             * Update the sign-in information for the external ID provider
+             * @summary Update Sign-In Information
              * @param {UpdateIdentityProviderParam} [updateIdentityProviderParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -687,8 +719,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary パスワード要件を更新(Update Password Requirements)
+             * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+             * @summary Update Password Requirements
              * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -707,8 +739,8 @@
      */
     class AuthInfoApi extends BaseAPI$5 {
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
-         * @summary 認証情報を取得(Get Authentication Info)
+         * Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
+         * @summary Get Authentication Info
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AuthInfoApi
@@ -717,7 +749,8 @@
             return AuthInfoApiFp(this.configuration).getAuthInfo(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito
+         * Get sign-in information via external provider set in cognito.
+         * @summary Get Sign-In Information Via External Provider
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AuthInfoApi
@@ -726,8 +759,8 @@
             return AuthInfoApiFp(this.configuration).getIdentityProviders(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-         * @summary パスワード要件を取得(Get Password Requirements)
+         * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+         * @summary Get Password Requirements
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AuthInfoApi
@@ -736,8 +769,8 @@
             return AuthInfoApiFp(this.configuration).getSignInSettings(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
-         * @summary 認証情報を更新(Update Authentication Info)
+         * Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
+         * @summary Update Authentication Info
          * @param {AuthInfo} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -747,7 +780,8 @@
             return AuthInfoApiFp(this.configuration).updateAuthInfo(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 外部IDプロバイダのサインイン情報更新
+         * Update the sign-in information for the external ID provider
+         * @summary Update Sign-In Information
          * @param {UpdateIdentityProviderParam} [updateIdentityProviderParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -757,8 +791,8 @@
             return AuthInfoApiFp(this.configuration).updateIdentityProvider(updateIdentityProviderParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-         * @summary パスワード要件を更新(Update Password Requirements)
+         * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+         * @summary Update Password Requirements
          * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -775,8 +809,8 @@
     const BasicInfoApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 各種通知メールテンプレートを取得します。  Get notification email templates.
-             * @summary 通知メールテンプレートを取得(Get Notification Email Templates)
+             * Get notification email templates.
+             * @summary Get Notification Email Templates
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -803,8 +837,8 @@
                 };
             },
             /**
-             * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
-             * @summary 基本設定情報の取得(Get Basic Configurations)
+             * Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
+             * @summary Get Basic Configurations
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -831,8 +865,8 @@
                 };
             },
             /**
-             * 認証認可基本情報を取得します。  Get authentication authorization basic information.
-             * @summary 認証認可基本情報取得(Get Authentication Authorization Basic Information)
+             * Get authentication authorization basic information.
+             * @summary Get Authentication Authorization Basic Information
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -859,8 +893,8 @@
                 };
             },
             /**
-             * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Get the authentication screen setting information (new registration, login, password reset, etc.).
-             * @summary 認証系画面設定情報取得(Get Authentication Page Setting)
+             * Get the authentication screen setting information (new registration, login, password reset, etc.).
+             * @summary Get Authentication Page Setting
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -887,8 +921,8 @@
                 };
             },
             /**
-             * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
-             * @summary 基本設定情報の更新(Update Basic Configurations)
+             * Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
+             * @summary Update Basic Configurations
              * @param {UpdateBasicInfoParam} [updateBasicInfoParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -918,8 +952,8 @@
                 };
             },
             /**
-             * 認証認可基本情報を更新します。  Update authentication authorization basic information.
-             * @summary 認証認可基本情報更新(Update Authentication Authorization Basic Information)
+             * Update authentication authorization basic information.
+             * @summary Update Authentication Authorization Basic Information
              * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -949,8 +983,8 @@
                 };
             },
             /**
-             * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication page setting information (new registration, login, password reset, etc.).
-             * @summary 認証系画面設定情報設定(Authentication Page Setting)
+             * Update the authentication page setting information (new registration, login, password reset, etc.).
+             * @summary Authentication Page Setting
              * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -980,8 +1014,8 @@
                 };
             },
             /**
-             * 各種通知メールテンプレート更新します。  Update notification email template.
-             * @summary 通知メールテンプレートを更新(Update Notification Email Template)
+             * Update notification email template.
+             * @summary Update Notification Email Template
              * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1020,8 +1054,8 @@
         const localVarAxiosParamCreator = BasicInfoApiAxiosParamCreator(configuration);
         return {
             /**
-             * 各種通知メールテンプレートを取得します。  Get notification email templates.
-             * @summary 通知メールテンプレートを取得(Get Notification Email Templates)
+             * Get notification email templates.
+             * @summary Get Notification Email Templates
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1030,8 +1064,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
-             * @summary 基本設定情報の取得(Get Basic Configurations)
+             * Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
+             * @summary Get Basic Configurations
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1040,8 +1074,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 認証認可基本情報を取得します。  Get authentication authorization basic information.
-             * @summary 認証認可基本情報取得(Get Authentication Authorization Basic Information)
+             * Get authentication authorization basic information.
+             * @summary Get Authentication Authorization Basic Information
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1050,8 +1084,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Get the authentication screen setting information (new registration, login, password reset, etc.).
-             * @summary 認証系画面設定情報取得(Get Authentication Page Setting)
+             * Get the authentication screen setting information (new registration, login, password reset, etc.).
+             * @summary Get Authentication Page Setting
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1060,8 +1094,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
-             * @summary 基本設定情報の更新(Update Basic Configurations)
+             * Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
+             * @summary Update Basic Configurations
              * @param {UpdateBasicInfoParam} [updateBasicInfoParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1071,8 +1105,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 認証認可基本情報を更新します。  Update authentication authorization basic information.
-             * @summary 認証認可基本情報更新(Update Authentication Authorization Basic Information)
+             * Update authentication authorization basic information.
+             * @summary Update Authentication Authorization Basic Information
              * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1082,8 +1116,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication page setting information (new registration, login, password reset, etc.).
-             * @summary 認証系画面設定情報設定(Authentication Page Setting)
+             * Update the authentication page setting information (new registration, login, password reset, etc.).
+             * @summary Authentication Page Setting
              * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1093,8 +1127,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 各種通知メールテンプレート更新します。  Update notification email template.
-             * @summary 通知メールテンプレートを更新(Update Notification Email Template)
+             * Update notification email template.
+             * @summary Update Notification Email Template
              * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1113,8 +1147,8 @@
      */
     class BasicInfoApi extends BaseAPI$5 {
         /**
-         * 各種通知メールテンプレートを取得します。  Get notification email templates.
-         * @summary 通知メールテンプレートを取得(Get Notification Email Templates)
+         * Get notification email templates.
+         * @summary Get Notification Email Templates
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof BasicInfoApi
@@ -1123,8 +1157,8 @@
             return BasicInfoApiFp(this.configuration).findNotificationMessages(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
-         * @summary 基本設定情報の取得(Get Basic Configurations)
+         * Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
+         * @summary Get Basic Configurations
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof BasicInfoApi
@@ -1133,8 +1167,8 @@
             return BasicInfoApiFp(this.configuration).getBasicInfo(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 認証認可基本情報を取得します。  Get authentication authorization basic information.
-         * @summary 認証認可基本情報取得(Get Authentication Authorization Basic Information)
+         * Get authentication authorization basic information.
+         * @summary Get Authentication Authorization Basic Information
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof BasicInfoApi
@@ -1143,8 +1177,8 @@
             return BasicInfoApiFp(this.configuration).getCustomizePageSettings(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Get the authentication screen setting information (new registration, login, password reset, etc.).
-         * @summary 認証系画面設定情報取得(Get Authentication Page Setting)
+         * Get the authentication screen setting information (new registration, login, password reset, etc.).
+         * @summary Get Authentication Page Setting
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof BasicInfoApi
@@ -1153,8 +1187,8 @@
             return BasicInfoApiFp(this.configuration).getCustomizePages(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
-         * @summary 基本設定情報の更新(Update Basic Configurations)
+         * Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
+         * @summary Update Basic Configurations
          * @param {UpdateBasicInfoParam} [updateBasicInfoParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1164,8 +1198,8 @@
             return BasicInfoApiFp(this.configuration).updateBasicInfo(updateBasicInfoParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 認証認可基本情報を更新します。  Update authentication authorization basic information.
-         * @summary 認証認可基本情報更新(Update Authentication Authorization Basic Information)
+         * Update authentication authorization basic information.
+         * @summary Update Authentication Authorization Basic Information
          * @param {UpdateCustomizePageSettingsParam} [updateCustomizePageSettingsParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1175,8 +1209,8 @@
             return BasicInfoApiFp(this.configuration).updateCustomizePageSettings(updateCustomizePageSettingsParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication page setting information (new registration, login, password reset, etc.).
-         * @summary 認証系画面設定情報設定(Authentication Page Setting)
+         * Update the authentication page setting information (new registration, login, password reset, etc.).
+         * @summary Authentication Page Setting
          * @param {UpdateCustomizePagesParam} [updateCustomizePagesParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1186,8 +1220,8 @@
             return BasicInfoApiFp(this.configuration).updateCustomizePages(updateCustomizePagesParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 各種通知メールテンプレート更新します。  Update notification email template.
-         * @summary 通知メールテンプレートを更新(Update Notification Email Template)
+         * Update notification email template.
+         * @summary Update Notification Email Template
          * @param {UpdateNotificationMessagesParam} [updateNotificationMessagesParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1204,8 +1238,8 @@
     const CredentialApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
-             * @summary 認証・認可情報の保存(Save Authentication/Authorization Information)
+             * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+             * @summary Save Authentication/Authorization Information
              * @param {Credentials} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1235,11 +1269,11 @@
                 };
             },
             /**
-             * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
-             * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-             * @param {string} [code] 一時コード(Temp Code)
-             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
-             * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
+             * Get ID token, access token, and refresh token using a temporary code or a refresh token.
+             * @summary Get Authentication/Authorization Information
+             * @param {string} [code] Temp Code
+             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] Authentication Flow tempCodeAuth: Getting authentication information using a temporary code refreshTokenAuth: Getting authentication information using a refresh token If not specified, it will be tempCodeAuth
+             * @param {string} [refreshToken] Refresh Token
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1284,8 +1318,8 @@
         const localVarAxiosParamCreator = CredentialApiAxiosParamCreator(configuration);
         return {
             /**
-             * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
-             * @summary 認証・認可情報の保存(Save Authentication/Authorization Information)
+             * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+             * @summary Save Authentication/Authorization Information
              * @param {Credentials} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1295,11 +1329,11 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
-             * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-             * @param {string} [code] 一時コード(Temp Code)
-             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
-             * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
+             * Get ID token, access token, and refresh token using a temporary code or a refresh token.
+             * @summary Get Authentication/Authorization Information
+             * @param {string} [code] Temp Code
+             * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] Authentication Flow tempCodeAuth: Getting authentication information using a temporary code refreshTokenAuth: Getting authentication information using a refresh token If not specified, it will be tempCodeAuth
+             * @param {string} [refreshToken] Refresh Token
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1317,8 +1351,8 @@
      */
     class CredentialApi extends BaseAPI$5 {
         /**
-         * 引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
-         * @summary 認証・認可情報の保存(Save Authentication/Authorization Information)
+         * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+         * @summary Save Authentication/Authorization Information
          * @param {Credentials} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1328,11 +1362,11 @@
             return CredentialApiFp(this.configuration).createAuthCredentials(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
-         * @summary 認証・認可情報の取得(Get Authentication/Authorization Information)
-         * @param {string} [code] 一時コード(Temp Code)
-         * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります
-         * @param {string} [refreshToken] リフレッシュトークン(Refresh Token)
+         * Get ID token, access token, and refresh token using a temporary code or a refresh token.
+         * @summary Get Authentication/Authorization Information
+         * @param {string} [code] Temp Code
+         * @param {'tempCodeAuth' | 'refreshTokenAuth'} [authFlow] Authentication Flow tempCodeAuth: Getting authentication information using a temporary code refreshTokenAuth: Getting authentication information using a refresh token If not specified, it will be tempCodeAuth
+         * @param {string} [refreshToken] Refresh Token
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof CredentialApi
@@ -1348,8 +1382,8 @@
     const EnvApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
-             * @summary 環境情報を作成(Create Env Info)
+             * Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+             * @summary Create Env Info
              * @param {Env} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1379,9 +1413,9 @@
                 };
             },
             /**
-             * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
-             * @summary 環境情報を削除(Delete Env Info)
-             * @param {number} envId 環境ID(Env ID)
+             * Delete env info. Env with id 3 cannot be deleted.
+             * @summary Delete Env Info
+             * @param {number} envId Env ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1411,9 +1445,9 @@
                 };
             },
             /**
-             * 環境情報の詳細を取得します。  Get environment details.
-             * @summary 環境情報を取得(Get Env Details)
-             * @param {number} envId 環境ID(Env ID)
+             * Get environment details.
+             * @summary Get Env Details
+             * @param {number} envId Env ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1443,8 +1477,8 @@
                 };
             },
             /**
-             * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
-             * @summary 環境情報一覧を取得(Get Env Info)
+             * Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+             * @summary Get Env Info
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1471,9 +1505,9 @@
                 };
             },
             /**
-             * 環境情報を更新します。  Update env info.
-             * @summary 環境情報を更新(Update Env Info)
-             * @param {number} envId 環境ID(Env ID)
+             * Update env info.
+             * @summary Update Env Info
+             * @param {number} envId Env ID
              * @param {UpdateEnvParam} [updateEnvParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1515,8 +1549,8 @@
         const localVarAxiosParamCreator = EnvApiAxiosParamCreator(configuration);
         return {
             /**
-             * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
-             * @summary 環境情報を作成(Create Env Info)
+             * Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+             * @summary Create Env Info
              * @param {Env} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1526,9 +1560,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
-             * @summary 環境情報を削除(Delete Env Info)
-             * @param {number} envId 環境ID(Env ID)
+             * Delete env info. Env with id 3 cannot be deleted.
+             * @summary Delete Env Info
+             * @param {number} envId Env ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1537,9 +1571,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 環境情報の詳細を取得します。  Get environment details.
-             * @summary 環境情報を取得(Get Env Details)
-             * @param {number} envId 環境ID(Env ID)
+             * Get environment details.
+             * @summary Get Env Details
+             * @param {number} envId Env ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1548,8 +1582,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
-             * @summary 環境情報一覧を取得(Get Env Info)
+             * Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+             * @summary Get Env Info
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1558,9 +1592,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 環境情報を更新します。  Update env info.
-             * @summary 環境情報を更新(Update Env Info)
-             * @param {number} envId 環境ID(Env ID)
+             * Update env info.
+             * @summary Update Env Info
+             * @param {number} envId Env ID
              * @param {UpdateEnvParam} [updateEnvParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1579,8 +1613,8 @@
      */
     class EnvApi extends BaseAPI$5 {
         /**
-         * 環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
-         * @summary 環境情報を作成(Create Env Info)
+         * Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+         * @summary Create Env Info
          * @param {Env} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1590,9 +1624,9 @@
             return EnvApiFp(this.configuration).createEnv(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
-         * @summary 環境情報を削除(Delete Env Info)
-         * @param {number} envId 環境ID(Env ID)
+         * Delete env info. Env with id 3 cannot be deleted.
+         * @summary Delete Env Info
+         * @param {number} envId Env ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof EnvApi
@@ -1601,9 +1635,9 @@
             return EnvApiFp(this.configuration).deleteEnv(envId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 環境情報の詳細を取得します。  Get environment details.
-         * @summary 環境情報を取得(Get Env Details)
-         * @param {number} envId 環境ID(Env ID)
+         * Get environment details.
+         * @summary Get Env Details
+         * @param {number} envId Env ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof EnvApi
@@ -1612,8 +1646,8 @@
             return EnvApiFp(this.configuration).getEnv(envId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
-         * @summary 環境情報一覧を取得(Get Env Info)
+         * Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+         * @summary Get Env Info
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof EnvApi
@@ -1622,9 +1656,9 @@
             return EnvApiFp(this.configuration).getEnvs(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 環境情報を更新します。  Update env info.
-         * @summary 環境情報を更新(Update Env Info)
-         * @param {number} envId 環境ID(Env ID)
+         * Update env info.
+         * @summary Update Env Info
+         * @param {number} envId Env ID
          * @param {UpdateEnvParam} [updateEnvParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1641,9 +1675,9 @@
     const InvitationApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * テナントへの招待を作成します。  Create an invitation to the tenant.
-             * @summary テナントへの招待を作成(Create Tenant Invitation)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Create an invitation to the tenant.
+             * @summary Create Tenant Invitation
+             * @param {string} tenantId Tenant ID
              * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1676,10 +1710,10 @@
                 };
             },
             /**
-             * テナントへの招待を削除します。  Delete an invitation to the tenant.
-             * @summary テナントへの招待を削除(Delete Tenant Invitation)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Delete an invitation for the tenant.
+             * @summary Delete Tenant Invitation
+             * @param {string} tenantId Tenant ID
+             * @param {string} invitationId Invitation ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1712,9 +1746,9 @@
                 };
             },
             /**
-             * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
-             * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Get the validity of an invitation to the tenant.
+             * @summary Get Invitation Validity
+             * @param {string} invitationId Invitation ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1744,10 +1778,10 @@
                 };
             },
             /**
-             * テナントへの招待情報を取得します。  Get invitation information to the tenant.
-             * @summary テナントの招待情報を取得(Get Tenant Invitation)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Get invitation information for the tenant.
+             * @summary Get Tenant Invitation
+             * @param {string} tenantId Tenant ID
+             * @param {string} invitationId Invitation ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1780,9 +1814,9 @@
                 };
             },
             /**
-             * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
-             * @summary テナントの招待一覧を取得(Get Tenant Invitations)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get a list of invitations to the tenant.
+             * @summary Get Tenant Invitations
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1812,9 +1846,9 @@
                 };
             },
             /**
-             * テナントへの招待を検証します。  Validate an invitation to the tenant.
-             * @summary テナントへの招待を検証(Validate Invitation)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Validate an invitation to the tenant.
+             * @summary Validate Invitation
+             * @param {string} invitationId Invitation ID
              * @param {ValidateInvitationParam} [validateInvitationParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1856,9 +1890,9 @@
         const localVarAxiosParamCreator = InvitationApiAxiosParamCreator(configuration);
         return {
             /**
-             * テナントへの招待を作成します。  Create an invitation to the tenant.
-             * @summary テナントへの招待を作成(Create Tenant Invitation)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Create an invitation to the tenant.
+             * @summary Create Tenant Invitation
+             * @param {string} tenantId Tenant ID
              * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1868,10 +1902,10 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントへの招待を削除します。  Delete an invitation to the tenant.
-             * @summary テナントへの招待を削除(Delete Tenant Invitation)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Delete an invitation for the tenant.
+             * @summary Delete Tenant Invitation
+             * @param {string} tenantId Tenant ID
+             * @param {string} invitationId Invitation ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1880,9 +1914,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
-             * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Get the validity of an invitation to the tenant.
+             * @summary Get Invitation Validity
+             * @param {string} invitationId Invitation ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1891,10 +1925,10 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントへの招待情報を取得します。  Get invitation information to the tenant.
-             * @summary テナントの招待情報を取得(Get Tenant Invitation)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Get invitation information for the tenant.
+             * @summary Get Tenant Invitation
+             * @param {string} tenantId Tenant ID
+             * @param {string} invitationId Invitation ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1903,9 +1937,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
-             * @summary テナントの招待一覧を取得(Get Tenant Invitations)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get a list of invitations to the tenant.
+             * @summary Get Tenant Invitations
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -1914,9 +1948,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントへの招待を検証します。  Validate an invitation to the tenant.
-             * @summary テナントへの招待を検証(Validate Invitation)
-             * @param {string} invitationId 招待ID(Invitation ID)
+             * Validate an invitation to the tenant.
+             * @summary Validate Invitation
+             * @param {string} invitationId Invitation ID
              * @param {ValidateInvitationParam} [validateInvitationParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -1935,9 +1969,9 @@
      */
     class InvitationApi extends BaseAPI$5 {
         /**
-         * テナントへの招待を作成します。  Create an invitation to the tenant.
-         * @summary テナントへの招待を作成(Create Tenant Invitation)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Create an invitation to the tenant.
+         * @summary Create Tenant Invitation
+         * @param {string} tenantId Tenant ID
          * @param {CreateTenantInvitationParam} [createTenantInvitationParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1947,10 +1981,10 @@
             return InvitationApiFp(this.configuration).createTenantInvitation(tenantId, createTenantInvitationParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントへの招待を削除します。  Delete an invitation to the tenant.
-         * @summary テナントへの招待を削除(Delete Tenant Invitation)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} invitationId 招待ID(Invitation ID)
+         * Delete an invitation for the tenant.
+         * @summary Delete Tenant Invitation
+         * @param {string} tenantId Tenant ID
+         * @param {string} invitationId Invitation ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof InvitationApi
@@ -1959,9 +1993,9 @@
             return InvitationApiFp(this.configuration).deleteTenantInvitation(tenantId, invitationId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
-         * @summary テナントへの招待の有効性を取得(Get Invitation Validity)
-         * @param {string} invitationId 招待ID(Invitation ID)
+         * Get the validity of an invitation to the tenant.
+         * @summary Get Invitation Validity
+         * @param {string} invitationId Invitation ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof InvitationApi
@@ -1970,10 +2004,10 @@
             return InvitationApiFp(this.configuration).getInvitationValidity(invitationId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントへの招待情報を取得します。  Get invitation information to the tenant.
-         * @summary テナントの招待情報を取得(Get Tenant Invitation)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} invitationId 招待ID(Invitation ID)
+         * Get invitation information for the tenant.
+         * @summary Get Tenant Invitation
+         * @param {string} tenantId Tenant ID
+         * @param {string} invitationId Invitation ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof InvitationApi
@@ -1982,9 +2016,9 @@
             return InvitationApiFp(this.configuration).getTenantInvitation(tenantId, invitationId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
-         * @summary テナントの招待一覧を取得(Get Tenant Invitations)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Get a list of invitations to the tenant.
+         * @summary Get Tenant Invitations
+         * @param {string} tenantId Tenant ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof InvitationApi
@@ -1993,9 +2027,9 @@
             return InvitationApiFp(this.configuration).getTenantInvitations(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントへの招待を検証します。  Validate an invitation to the tenant.
-         * @summary テナントへの招待を検証(Validate Invitation)
-         * @param {string} invitationId 招待ID(Invitation ID)
+         * Validate an invitation to the tenant.
+         * @summary Validate Invitation
+         * @param {string} invitationId Invitation ID
          * @param {ValidateInvitationParam} [validateInvitationParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2012,8 +2046,8 @@
     const RoleApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
-             * @summary 役割(ロール)を作成(Create Role)
+             * Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+             * @summary Create Role
              * @param {Role} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2043,9 +2077,9 @@
                 };
             },
             /**
-             * 役割(ロール)を削除します。  Delete role.
-             * @summary 役割(ロール)を削除(Delete Role)
-             * @param {string} roleName 役割(ロール)名(role name)
+             * Delete role.
+             * @summary Delete Role
+             * @param {string} roleName Role name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2075,8 +2109,8 @@
                 };
             },
             /**
-             * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
-             * @summary 役割(ロール)一覧を取得(Get Roles)
+             * Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+             * @summary Get Roles
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2112,8 +2146,8 @@
         const localVarAxiosParamCreator = RoleApiAxiosParamCreator(configuration);
         return {
             /**
-             * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
-             * @summary 役割(ロール)を作成(Create Role)
+             * Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+             * @summary Create Role
              * @param {Role} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2123,9 +2157,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 役割(ロール)を削除します。  Delete role.
-             * @summary 役割(ロール)を削除(Delete Role)
-             * @param {string} roleName 役割(ロール)名(role name)
+             * Delete role.
+             * @summary Delete Role
+             * @param {string} roleName Role name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2134,8 +2168,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
-             * @summary 役割(ロール)一覧を取得(Get Roles)
+             * Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+             * @summary Get Roles
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2153,8 +2187,8 @@
      */
     class RoleApi extends BaseAPI$5 {
         /**
-         * 役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
-         * @summary 役割(ロール)を作成(Create Role)
+         * Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+         * @summary Create Role
          * @param {Role} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2164,9 +2198,9 @@
             return RoleApiFp(this.configuration).createRole(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 役割(ロール)を削除します。  Delete role.
-         * @summary 役割(ロール)を削除(Delete Role)
-         * @param {string} roleName 役割(ロール)名(role name)
+         * Delete role.
+         * @summary Delete Role
+         * @param {string} roleName Role name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof RoleApi
@@ -2175,8 +2209,8 @@
             return RoleApiFp(this.configuration).deleteRole(roleName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
-         * @summary 役割(ロール)一覧を取得(Get Roles)
+         * Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+         * @summary Get Roles
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof RoleApi
@@ -2192,9 +2226,9 @@
     const SaasUserApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
-             * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
-             * @param {string} userId ユーザーID(User ID)
+             * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+             * @summary Confirm User Email Update
+             * @param {string} userId User ID
              * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2227,8 +2261,8 @@
                 };
             },
             /**
-             * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
-             * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+             * Verify the code for external account user link confirmation.
+             * @summary Confirm External User Account Link
              * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2258,8 +2292,8 @@
                 };
             },
             /**
-             * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+             * Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary Confirm Sign Up with AWS Marketplace
              * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2289,8 +2323,8 @@
                 };
             },
             /**
-             * SaaSにユーザーを作成します。  Create SaaS User.
-             * @summary SaaSにユーザーを作成(Create SaaS User)
+             * Create SaaS User.
+             * @summary Create SaaS User
              * @param {CreateSaasUserParam} [createSaasUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2320,9 +2354,9 @@
                 };
             },
             /**
-             * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authentication application registration.
-             * @summary 認証アプリケーション登録用のシークレットコードを作成(Creates secret code for authentication application registration)
-             * @param {string} userId ユーザーID(User ID)
+             * Create a secret code for authentication application registration.
+             * @summary Create secret code for authentication application registration
+             * @param {string} userId User ID
              * @param {CreateSecretCodeParam} [createSecretCodeParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2355,9 +2389,9 @@
                 };
             },
             /**
-             * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Delete all users with matching user ID from the tenant and SaaS.
-             * @summary ユーザー情報を削除(Delete User)
-             * @param {string} userId ユーザーID(User ID)
+             * Delete all users with matching user ID from the tenant and SaaS.
+             * @summary Delete User
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2387,9 +2421,9 @@
                 };
             },
             /**
-             * ユーザーIDからユーザー情報を取得します。  Get user information based on user ID.
-             * @summary ユーザー情報を取得(Get User)
-             * @param {string} userId ユーザーID(User ID)
+             * Get user information based on user ID.
+             * @summary Get User
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2419,8 +2453,8 @@
                 };
             },
             /**
-             * SaaSのユーザー全件を取得します。  Get all SaaS users.
-             * @summary ユーザー一覧を取得(Get Users)
+             * Get all SaaS users.
+             * @summary Get Users
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2447,9 +2481,9 @@
                 };
             },
             /**
-             * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings.
-             * @summary ユーザーのMFA設定を取得(Get User\'s MFA Settings)
-             * @param {string} userId ユーザーID(User ID)
+             * Get the user\'s MFA settings.
+             * @summary Get User\'s MFA Settings
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2479,8 +2513,8 @@
                 };
             },
             /**
-             * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+             * Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary Link an existing tenant with AWS Marketplace
              * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2510,9 +2544,9 @@
                 };
             },
             /**
-             * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
-             * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
-             * @param {string} userId ユーザーID(User ID)
+             * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+             * @summary Request User Email Update
+             * @param {string} userId User ID
              * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2545,8 +2579,8 @@
                 };
             },
             /**
-             * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
-             * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+             * Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+             * @summary Request External User Account Link
              * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2576,8 +2610,8 @@
                 };
             },
             /**
-             * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
-             * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+             * Resend temporary password for the new registered user.
+             * @summary Resend Sign Up Confirmation Email
              * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2607,8 +2641,8 @@
                 };
             },
             /**
-             * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
-             * @summary 新規登録(Sign Up)
+             * Register a new user. A temporary password will be sent to the registered email.
+             * @summary Sign Up
              * @param {SignUpParam} [signUpParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2638,8 +2672,8 @@
                 };
             },
             /**
-             * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+             * Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+             * @summary Sign Up with AWS Marketplace
              * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2669,10 +2703,10 @@
                 };
             },
             /**
-             * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
-             * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+             * Unlink external identity providers.
+             * @summary Unlink external identity providers
              * @param {string} providerName
-             * @param {string} userId ユーザーID(User ID)
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2705,9 +2739,9 @@
                 };
             },
             /**
-             * ユーザーのメールアドレスを変更します。  Change user\'s email.
-             * @summary メールアドレスを変更(Change Email)
-             * @param {string} userId ユーザーID(User ID)
+             * Change user\'s email.
+             * @summary Change Email
+             * @param {string} userId User ID
              * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2740,9 +2774,9 @@
                 };
             },
             /**
-             * ユーザーのログインパスワードを変更します。  Change user\'s login password.
-             * @summary パスワードを変更(Change Password)
-             * @param {string} userId ユーザーID(User ID)
+             * Change user\'s login password.
+             * @summary Change Password
+             * @param {string} userId User ID
              * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2775,9 +2809,9 @@
                 };
             },
             /**
-             * 認証アプリケーションを登録します。  Register an authentication application.
-             * @summary 認証アプリケーションを登録(Register Authentication Application)
-             * @param {string} userId ユーザーID(User ID)
+             * Register an authentication application.
+             * @summary Register Authentication Application
+             * @param {string} userId User ID
              * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2810,9 +2844,9 @@
                 };
             },
             /**
-             * ユーザーのMFA設定を更新します。  Update user\'s MFA settings.
-             * @summary ユーザーのMFA設定を更新(Update User\'s MFA Settings)
-             * @param {string} userId ユーザーID(User ID)
+             * Update user\'s MFA settings.
+             * @summary Update User\'s MFA Settings
+             * @param {string} userId User ID
              * @param {MfaPreference} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2854,9 +2888,9 @@
         const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration);
         return {
             /**
-             * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
-             * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
-             * @param {string} userId ユーザーID(User ID)
+             * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+             * @summary Confirm User Email Update
+             * @param {string} userId User ID
              * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2866,8 +2900,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
-             * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+             * Verify the code for external account user link confirmation.
+             * @summary Confirm External User Account Link
              * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2877,8 +2911,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+             * Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary Confirm Sign Up with AWS Marketplace
              * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2888,8 +2922,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSにユーザーを作成します。  Create SaaS User.
-             * @summary SaaSにユーザーを作成(Create SaaS User)
+             * Create SaaS User.
+             * @summary Create SaaS User
              * @param {CreateSaasUserParam} [createSaasUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2899,9 +2933,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authentication application registration.
-             * @summary 認証アプリケーション登録用のシークレットコードを作成(Creates secret code for authentication application registration)
-             * @param {string} userId ユーザーID(User ID)
+             * Create a secret code for authentication application registration.
+             * @summary Create secret code for authentication application registration
+             * @param {string} userId User ID
              * @param {CreateSecretCodeParam} [createSecretCodeParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2911,9 +2945,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Delete all users with matching user ID from the tenant and SaaS.
-             * @summary ユーザー情報を削除(Delete User)
-             * @param {string} userId ユーザーID(User ID)
+             * Delete all users with matching user ID from the tenant and SaaS.
+             * @summary Delete User
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2922,9 +2956,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーIDからユーザー情報を取得します。  Get user information based on user ID.
-             * @summary ユーザー情報を取得(Get User)
-             * @param {string} userId ユーザーID(User ID)
+             * Get user information based on user ID.
+             * @summary Get User
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2933,8 +2967,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSのユーザー全件を取得します。  Get all SaaS users.
-             * @summary ユーザー一覧を取得(Get Users)
+             * Get all SaaS users.
+             * @summary Get Users
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2943,9 +2977,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings.
-             * @summary ユーザーのMFA設定を取得(Get User\'s MFA Settings)
-             * @param {string} userId ユーザーID(User ID)
+             * Get the user\'s MFA settings.
+             * @summary Get User\'s MFA Settings
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -2954,8 +2988,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+             * Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+             * @summary Link an existing tenant with AWS Marketplace
              * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2965,9 +2999,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
-             * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
-             * @param {string} userId ユーザーID(User ID)
+             * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+             * @summary Request User Email Update
+             * @param {string} userId User ID
              * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2977,8 +3011,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
-             * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+             * Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+             * @summary Request External User Account Link
              * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2988,8 +3022,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
-             * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+             * Resend temporary password for the new registered user.
+             * @summary Resend Sign Up Confirmation Email
              * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -2999,8 +3033,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
-             * @summary 新規登録(Sign Up)
+             * Register a new user. A temporary password will be sent to the registered email.
+             * @summary Sign Up
              * @param {SignUpParam} [signUpParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3010,8 +3044,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
-             * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+             * Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+             * @summary Sign Up with AWS Marketplace
              * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3021,10 +3055,10 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
-             * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+             * Unlink external identity providers.
+             * @summary Unlink external identity providers
              * @param {string} providerName
-             * @param {string} userId ユーザーID(User ID)
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3033,9 +3067,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーのメールアドレスを変更します。  Change user\'s email.
-             * @summary メールアドレスを変更(Change Email)
-             * @param {string} userId ユーザーID(User ID)
+             * Change user\'s email.
+             * @summary Change Email
+             * @param {string} userId User ID
              * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3045,9 +3079,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーのログインパスワードを変更します。  Change user\'s login password.
-             * @summary パスワードを変更(Change Password)
-             * @param {string} userId ユーザーID(User ID)
+             * Change user\'s login password.
+             * @summary Change Password
+             * @param {string} userId User ID
              * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3057,9 +3091,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 認証アプリケーションを登録します。  Register an authentication application.
-             * @summary 認証アプリケーションを登録(Register Authentication Application)
-             * @param {string} userId ユーザーID(User ID)
+             * Register an authentication application.
+             * @summary Register Authentication Application
+             * @param {string} userId User ID
              * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3069,9 +3103,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーのMFA設定を更新します。  Update user\'s MFA settings.
-             * @summary ユーザーのMFA設定を更新(Update User\'s MFA Settings)
-             * @param {string} userId ユーザーID(User ID)
+             * Update user\'s MFA settings.
+             * @summary Update User\'s MFA Settings
+             * @param {string} userId User ID
              * @param {MfaPreference} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3090,9 +3124,9 @@
      */
     class SaasUserApi extends BaseAPI$5 {
         /**
-         * ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
-         * @summary ユーザーのメールアドレス変更確認(Confirm User Email Update)
-         * @param {string} userId ユーザーID(User ID)
+         * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+         * @summary Confirm User Email Update
+         * @param {string} userId User ID
          * @param {ConfirmEmailUpdateParam} [confirmEmailUpdateParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3102,8 +3136,8 @@
             return SaasUserApiFp(this.configuration).confirmEmailUpdate(userId, confirmEmailUpdateParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
-         * @summary 外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+         * Verify the code for external account user link confirmation.
+         * @summary Confirm External User Account Link
          * @param {ConfirmExternalUserLinkParam} [confirmExternalUserLinkParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3113,8 +3147,8 @@
             return SaasUserApiFp(this.configuration).confirmExternalUserLink(confirmExternalUserLinkParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
-         * @summary AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+         * Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+         * @summary Confirm Sign Up with AWS Marketplace
          * @param {ConfirmSignUpWithAwsMarketplaceParam} [confirmSignUpWithAwsMarketplaceParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3124,8 +3158,8 @@
             return SaasUserApiFp(this.configuration).confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSにユーザーを作成します。  Create SaaS User.
-         * @summary SaaSにユーザーを作成(Create SaaS User)
+         * Create SaaS User.
+         * @summary Create SaaS User
          * @param {CreateSaasUserParam} [createSaasUserParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3135,9 +3169,9 @@
             return SaasUserApiFp(this.configuration).createSaasUser(createSaasUserParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authentication application registration.
-         * @summary 認証アプリケーション登録用のシークレットコードを作成(Creates secret code for authentication application registration)
-         * @param {string} userId ユーザーID(User ID)
+         * Create a secret code for authentication application registration.
+         * @summary Create secret code for authentication application registration
+         * @param {string} userId User ID
          * @param {CreateSecretCodeParam} [createSecretCodeParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3147,9 +3181,9 @@
             return SaasUserApiFp(this.configuration).createSecretCode(userId, createSecretCodeParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Delete all users with matching user ID from the tenant and SaaS.
-         * @summary ユーザー情報を削除(Delete User)
-         * @param {string} userId ユーザーID(User ID)
+         * Delete all users with matching user ID from the tenant and SaaS.
+         * @summary Delete User
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof SaasUserApi
@@ -3158,9 +3192,9 @@
             return SaasUserApiFp(this.configuration).deleteSaasUser(userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーIDからユーザー情報を取得します。  Get user information based on user ID.
-         * @summary ユーザー情報を取得(Get User)
-         * @param {string} userId ユーザーID(User ID)
+         * Get user information based on user ID.
+         * @summary Get User
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof SaasUserApi
@@ -3169,8 +3203,8 @@
             return SaasUserApiFp(this.configuration).getSaasUser(userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSのユーザー全件を取得します。  Get all SaaS users.
-         * @summary ユーザー一覧を取得(Get Users)
+         * Get all SaaS users.
+         * @summary Get Users
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof SaasUserApi
@@ -3179,9 +3213,9 @@
             return SaasUserApiFp(this.configuration).getSaasUsers(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーのMFA設定を取得します。  Get the user\'s MFA settings.
-         * @summary ユーザーのMFA設定を取得(Get User\'s MFA Settings)
-         * @param {string} userId ユーザーID(User ID)
+         * Get the user\'s MFA settings.
+         * @summary Get User\'s MFA Settings
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof SaasUserApi
@@ -3190,8 +3224,8 @@
             return SaasUserApiFp(this.configuration).getUserMfaPreference(userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
-         * @summary AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+         * Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+         * @summary Link an existing tenant with AWS Marketplace
          * @param {LinkAwsMarketplaceParam} [linkAwsMarketplaceParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3201,9 +3235,9 @@
             return SaasUserApiFp(this.configuration).linkAwsMarketplace(linkAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
-         * @summary ユーザーのメールアドレス変更要求(Request User Email Update)
-         * @param {string} userId ユーザーID(User ID)
+         * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+         * @summary Request User Email Update
+         * @param {string} userId User ID
          * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3213,8 +3247,8 @@
             return SaasUserApiFp(this.configuration).requestEmailUpdate(userId, requestEmailUpdateParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
-         * @summary 外部アカウントのユーザー連携要求(Request External User Account Link)
+         * Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+         * @summary Request External User Account Link
          * @param {RequestExternalUserLinkParam} [requestExternalUserLinkParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3224,8 +3258,8 @@
             return SaasUserApiFp(this.configuration).requestExternalUserLink(requestExternalUserLinkParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
-         * @summary 新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+         * Resend temporary password for the new registered user.
+         * @summary Resend Sign Up Confirmation Email
          * @param {ResendSignUpConfirmationEmailParam} [resendSignUpConfirmationEmailParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3235,8 +3269,8 @@
             return SaasUserApiFp(this.configuration).resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
-         * @summary 新規登録(Sign Up)
+         * Register a new user. A temporary password will be sent to the registered email.
+         * @summary Sign Up
          * @param {SignUpParam} [signUpParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3246,8 +3280,8 @@
             return SaasUserApiFp(this.configuration).signUp(signUpParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
-         * @summary AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+         * Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+         * @summary Sign Up with AWS Marketplace
          * @param {SignUpWithAwsMarketplaceParam} [signUpWithAwsMarketplaceParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3257,10 +3291,10 @@
             return SaasUserApiFp(this.configuration).signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 外部IDプロバイダの連携を解除します。  Unlink external identity providers.
-         * @summary 外部IDプロバイダの連携解除(Unlink external identity providers)
+         * Unlink external identity providers.
+         * @summary Unlink external identity providers
          * @param {string} providerName
-         * @param {string} userId ユーザーID(User ID)
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof SaasUserApi
@@ -3269,9 +3303,9 @@
             return SaasUserApiFp(this.configuration).unlinkProvider(providerName, userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーのメールアドレスを変更します。  Change user\'s email.
-         * @summary メールアドレスを変更(Change Email)
-         * @param {string} userId ユーザーID(User ID)
+         * Change user\'s email.
+         * @summary Change Email
+         * @param {string} userId User ID
          * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3281,9 +3315,9 @@
             return SaasUserApiFp(this.configuration).updateSaasUserEmail(userId, updateSaasUserEmailParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーのログインパスワードを変更します。  Change user\'s login password.
-         * @summary パスワードを変更(Change Password)
-         * @param {string} userId ユーザーID(User ID)
+         * Change user\'s login password.
+         * @summary Change Password
+         * @param {string} userId User ID
          * @param {UpdateSaasUserPasswordParam} [updateSaasUserPasswordParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3293,9 +3327,9 @@
             return SaasUserApiFp(this.configuration).updateSaasUserPassword(userId, updateSaasUserPasswordParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 認証アプリケーションを登録します。  Register an authentication application.
-         * @summary 認証アプリケーションを登録(Register Authentication Application)
-         * @param {string} userId ユーザーID(User ID)
+         * Register an authentication application.
+         * @summary Register Authentication Application
+         * @param {string} userId User ID
          * @param {UpdateSoftwareTokenParam} [updateSoftwareTokenParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3305,9 +3339,9 @@
             return SaasUserApiFp(this.configuration).updateSoftwareToken(userId, updateSoftwareTokenParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーのMFA設定を更新します。  Update user\'s MFA settings.
-         * @summary ユーザーのMFA設定を更新(Update User\'s MFA Settings)
-         * @param {string} userId ユーザーID(User ID)
+         * Update user\'s MFA settings.
+         * @summary Update User\'s MFA Settings
+         * @param {string} userId User ID
          * @param {MfaPreference} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3324,8 +3358,8 @@
     const TenantApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * SaaSus Platform で管理する、テナント情報を作成します。  Create a tenant managed by the SaaSus Platform.
-             * @summary テナントを作成(Create Tenant)
+             * Create a tenant managed by the SaaSus Platform.
+             * @summary Create Tenant
              * @param {TenantProps} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3355,8 +3389,8 @@
                 };
             },
             /**
-             * billing経由でstripeへ初期情報を設定  Set Stripe initial information via billing
-             * @summary stripe初期設定(Stripe Initial Setting)
+             * Set Stripe initial information via billing
+             * @summary Stripe Initial Setting
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3383,8 +3417,8 @@
                 };
             },
             /**
-             * stripe上の顧客情報・商品情報を削除します  Delete customer and product from Stripe.
-             * @summary stripe上の顧客情報・商品情報の削除(Delete Customer and Product From Stripe)
+             * Delete customer and product from Stripe.
+             * @summary Delete Customer and Product From Stripe
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3411,9 +3445,9 @@
                 };
             },
             /**
-             * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete SaaSus Platform tenant.
-             * @summary テナント情報を削除(Delete Tenant)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Delete SaaSus Platform tenant.
+             * @summary Delete Tenant
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3443,9 +3477,9 @@
                 };
             },
             /**
-             * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get the details of tenant managed on the SaaSus Platform.
-             * @summary テナント情報を取得(Get Tenant Details)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get the details of tenant managed on the SaaSus Platform.
+             * @summary Get Tenant Details
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3475,9 +3509,9 @@
                 };
             },
             /**
-             * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
-             * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get sign-in information via external identity provider per tenant.
+             * @summary Get identity provider per tenant
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3507,8 +3541,8 @@
                 };
             },
             /**
-             * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
-             * @summary テナント一覧取得(Get Tenants)
+             * Get tenants managed by SaaSus Platform.
+             * @summary Get Tenants
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3535,8 +3569,8 @@
                 };
             },
             /**
-             * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
-             * @summary プランに関わる情報を全削除
+             * Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+             * @summary Delete all information related to rate plans
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3563,9 +3597,9 @@
                 };
             },
             /**
-             * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
-             * @summary テナント情報を更新(Update Tenant Details)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update SaaSus Platform tenant details.
+             * @summary Update Tenant Details
+             * @param {string} tenantId Tenant ID
              * @param {TenantProps} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3598,9 +3632,9 @@
                 };
             },
             /**
-             * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
-             * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update SaaSus Platform tenant billing information.
+             * @summary Update Tenant Billing Information
+             * @param {string} tenantId Tenant ID
              * @param {BillingInfo} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3633,9 +3667,9 @@
                 };
             },
             /**
-             * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
-             * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update sign-in information via external identity provider per tenant.
+             * @summary Update identity provider per tenant
+             * @param {string} tenantId Tenant ID
              * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3668,9 +3702,9 @@
                 };
             },
             /**
-             * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
-             * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update SaaSus Platform tenant plan information.
+             * @summary Update Tenant Plan Information
+             * @param {string} tenantId Tenant ID
              * @param {PlanReservation} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3712,8 +3746,8 @@
         const localVarAxiosParamCreator = TenantApiAxiosParamCreator(configuration);
         return {
             /**
-             * SaaSus Platform で管理する、テナント情報を作成します。  Create a tenant managed by the SaaSus Platform.
-             * @summary テナントを作成(Create Tenant)
+             * Create a tenant managed by the SaaSus Platform.
+             * @summary Create Tenant
              * @param {TenantProps} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3723,8 +3757,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * billing経由でstripeへ初期情報を設定  Set Stripe initial information via billing
-             * @summary stripe初期設定(Stripe Initial Setting)
+             * Set Stripe initial information via billing
+             * @summary Stripe Initial Setting
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3733,8 +3767,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * stripe上の顧客情報・商品情報を削除します  Delete customer and product from Stripe.
-             * @summary stripe上の顧客情報・商品情報の削除(Delete Customer and Product From Stripe)
+             * Delete customer and product from Stripe.
+             * @summary Delete Customer and Product From Stripe
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3743,9 +3777,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete SaaSus Platform tenant.
-             * @summary テナント情報を削除(Delete Tenant)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Delete SaaSus Platform tenant.
+             * @summary Delete Tenant
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3754,9 +3788,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get the details of tenant managed on the SaaSus Platform.
-             * @summary テナント情報を取得(Get Tenant Details)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get the details of tenant managed on the SaaSus Platform.
+             * @summary Get Tenant Details
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3765,9 +3799,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
-             * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get sign-in information via external identity provider per tenant.
+             * @summary Get identity provider per tenant
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3776,8 +3810,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
-             * @summary テナント一覧取得(Get Tenants)
+             * Get tenants managed by SaaSus Platform.
+             * @summary Get Tenants
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3786,8 +3820,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
-             * @summary プランに関わる情報を全削除
+             * Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+             * @summary Delete all information related to rate plans
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -3796,9 +3830,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
-             * @summary テナント情報を更新(Update Tenant Details)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update SaaSus Platform tenant details.
+             * @summary Update Tenant Details
+             * @param {string} tenantId Tenant ID
              * @param {TenantProps} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3808,9 +3842,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
-             * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update SaaSus Platform tenant billing information.
+             * @summary Update Tenant Billing Information
+             * @param {string} tenantId Tenant ID
              * @param {BillingInfo} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3820,9 +3854,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
-             * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update sign-in information via external identity provider per tenant.
+             * @summary Update identity provider per tenant
+             * @param {string} tenantId Tenant ID
              * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3832,9 +3866,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
-             * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Update SaaSus Platform tenant plan information.
+             * @summary Update Tenant Plan Information
+             * @param {string} tenantId Tenant ID
              * @param {PlanReservation} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -3853,8 +3887,8 @@
      */
     class TenantApi extends BaseAPI$5 {
         /**
-         * SaaSus Platform で管理する、テナント情報を作成します。  Create a tenant managed by the SaaSus Platform.
-         * @summary テナントを作成(Create Tenant)
+         * Create a tenant managed by the SaaSus Platform.
+         * @summary Create Tenant
          * @param {TenantProps} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3864,8 +3898,8 @@
             return TenantApiFp(this.configuration).createTenant(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * billing経由でstripeへ初期情報を設定  Set Stripe initial information via billing
-         * @summary stripe初期設定(Stripe Initial Setting)
+         * Set Stripe initial information via billing
+         * @summary Stripe Initial Setting
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3874,8 +3908,8 @@
             return TenantApiFp(this.configuration).createTenantAndPricing(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * stripe上の顧客情報・商品情報を削除します  Delete customer and product from Stripe.
-         * @summary stripe上の顧客情報・商品情報の削除(Delete Customer and Product From Stripe)
+         * Delete customer and product from Stripe.
+         * @summary Delete Customer and Product From Stripe
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3884,9 +3918,9 @@
             return TenantApiFp(this.configuration).deleteStripeTenantAndPricing(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete SaaSus Platform tenant.
-         * @summary テナント情報を削除(Delete Tenant)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Delete SaaSus Platform tenant.
+         * @summary Delete Tenant
+         * @param {string} tenantId Tenant ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3895,9 +3929,9 @@
             return TenantApiFp(this.configuration).deleteTenant(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get the details of tenant managed on the SaaSus Platform.
-         * @summary テナント情報を取得(Get Tenant Details)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Get the details of tenant managed on the SaaSus Platform.
+         * @summary Get Tenant Details
+         * @param {string} tenantId Tenant ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3906,9 +3940,9 @@
             return TenantApiFp(this.configuration).getTenant(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
-         * @summary テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Get sign-in information via external identity provider per tenant.
+         * @summary Get identity provider per tenant
+         * @param {string} tenantId Tenant ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3917,8 +3951,8 @@
             return TenantApiFp(this.configuration).getTenantIdentityProviders(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
-         * @summary テナント一覧取得(Get Tenants)
+         * Get tenants managed by SaaSus Platform.
+         * @summary Get Tenants
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3927,8 +3961,8 @@
             return TenantApiFp(this.configuration).getTenants(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
-         * @summary プランに関わる情報を全削除
+         * Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+         * @summary Delete all information related to rate plans
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantApi
@@ -3937,9 +3971,9 @@
             return TenantApiFp(this.configuration).resetPlan(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
-         * @summary テナント情報を更新(Update Tenant Details)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Update SaaSus Platform tenant details.
+         * @summary Update Tenant Details
+         * @param {string} tenantId Tenant ID
          * @param {TenantProps} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3949,9 +3983,9 @@
             return TenantApiFp(this.configuration).updateTenant(tenantId, body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
-         * @summary テナントの請求先情報を更新(Update Tenant Billing Information)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Update SaaSus Platform tenant billing information.
+         * @summary Update Tenant Billing Information
+         * @param {string} tenantId Tenant ID
          * @param {BillingInfo} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3961,9 +3995,9 @@
             return TenantApiFp(this.configuration).updateTenantBillingInfo(tenantId, body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
-         * @summary テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Update sign-in information via external identity provider per tenant.
+         * @summary Update identity provider per tenant
+         * @param {string} tenantId Tenant ID
          * @param {UpdateTenantIdentityProviderParam} [updateTenantIdentityProviderParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3973,9 +4007,9 @@
             return TenantApiFp(this.configuration).updateTenantIdentityProvider(tenantId, updateTenantIdentityProviderParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
-         * @summary テナントのプラン情報を更新(Update Tenant Plan Information)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Update SaaSus Platform tenant plan information.
+         * @summary Update Tenant Plan Information
+         * @param {string} tenantId Tenant ID
          * @param {PlanReservation} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3992,8 +4026,8 @@
     const TenantAttributeApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
-             * @summary テナント属性の作成(Create Tenant Attribute)
+             * Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+             * @summary Create Tenant Attribute
              * @param {Attribute} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4023,9 +4057,9 @@
                 };
             },
             /**
-             * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes tenant attributes managed by SaaSus Platform.
-             * @summary テナント属性の削除(Delete Tenant Attribute)
-             * @param {string} attributeName 属性名(Attribute Name)
+             * Deletes tenant attributes managed by SaaSus Platform.
+             * @summary Delete Tenant Attribute
+             * @param {string} attributeName Attribute Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4055,8 +4089,8 @@
                 };
             },
             /**
-             * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
-             * @summary テナント属性の一覧を取得(Get Tenant Attributes)
+             * Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+             * @summary Get Tenant Attributes
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4092,8 +4126,8 @@
         const localVarAxiosParamCreator = TenantAttributeApiAxiosParamCreator(configuration);
         return {
             /**
-             * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
-             * @summary テナント属性の作成(Create Tenant Attribute)
+             * Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+             * @summary Create Tenant Attribute
              * @param {Attribute} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4103,9 +4137,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes tenant attributes managed by SaaSus Platform.
-             * @summary テナント属性の削除(Delete Tenant Attribute)
-             * @param {string} attributeName 属性名(Attribute Name)
+             * Deletes tenant attributes managed by SaaSus Platform.
+             * @summary Delete Tenant Attribute
+             * @param {string} attributeName Attribute Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4114,8 +4148,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
-             * @summary テナント属性の一覧を取得(Get Tenant Attributes)
+             * Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+             * @summary Get Tenant Attributes
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4133,8 +4167,8 @@
      */
     class TenantAttributeApi extends BaseAPI$5 {
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
-         * @summary テナント属性の作成(Create Tenant Attribute)
+         * Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+         * @summary Create Tenant Attribute
          * @param {Attribute} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4144,9 +4178,9 @@
             return TenantAttributeApiFp(this.configuration).createTenantAttribute(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes tenant attributes managed by SaaSus Platform.
-         * @summary テナント属性の削除(Delete Tenant Attribute)
-         * @param {string} attributeName 属性名(Attribute Name)
+         * Deletes tenant attributes managed by SaaSus Platform.
+         * @summary Delete Tenant Attribute
+         * @param {string} attributeName Attribute Name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantAttributeApi
@@ -4155,8 +4189,8 @@
             return TenantAttributeApiFp(this.configuration).deleteTenantAttribute(attributeName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
-         * @summary テナント属性の一覧を取得(Get Tenant Attributes)
+         * Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+         * @summary Get Tenant Attributes
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantAttributeApi
@@ -4172,9 +4206,9 @@
     const TenantUserApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a tenant user. If attributes is empty, the additional attributes will be created empty.
-             * @summary テナントにユーザーを作成(Create Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Create a tenant user. If attributes is empty, the additional attributes will be created empty.
+             * @summary Create Tenant User
+             * @param {string} tenantId Tenant ID
              * @param {CreateTenantUserParam} [createTenantUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4207,11 +4241,11 @@
                 };
             },
             /**
-             * テナントのユーザーに役割(ロール)を作成します。  Create roles on tenant users.
-             * @summary テナントのユーザー情報に役割(ロール)を作成(Create Tenant User Role)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
-             * @param {number} envId 環境ID(Env ID)
+             * Create roles on tenant users.
+             * @summary Create Tenant User Role
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
+             * @param {number} envId Env ID
              * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4250,10 +4284,10 @@
                 };
             },
             /**
-             * テナントからユーザーを削除します。  Delete a user from your tenant.
-             * @summary テナントのユーザー情報を削除(Delete Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
+             * Delete a user from the tenant.
+             * @summary Delete Tenant User
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4286,12 +4320,12 @@
                 };
             },
             /**
-             * テナントのユーザーから役割(ロール)を削除します。  Remove a role from a tenant user.
-             * @summary テナントのユーザーから役割(ロール)を削除(Remove Role From Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
-             * @param {number} envId 環境ID(Env ID)
-             * @param {string} roleName 役割(ロール)名(role name)
+             * Remove a role from a tenant user.
+             * @summary Remove Role From Tenant User
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
+             * @param {number} envId Env ID
+             * @param {string} roleName Role name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4330,9 +4364,9 @@
                 };
             },
             /**
-             * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
-             * @summary ユーザー情報を取得(Get User Info)
-             * @param {string} userId ユーザーID(User ID)
+             * Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
+             * @summary Get User Info
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4362,8 +4396,8 @@
                 };
             },
             /**
-             * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
-             * @summary ユーザー一覧を取得(Get Users)
+             * Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
+             * @summary Get Users
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4390,10 +4424,10 @@
                 };
             },
             /**
-             * テナントのユーザーをIDから一件取得します。  Get one tenant user by specific ID.
-             * @summary テナントのユーザー情報を取得(Get Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
+             * Get one tenant user by specific ID.
+             * @summary Get Tenant User
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4426,9 +4460,9 @@
                 };
             },
             /**
-             * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all the users belonging to the tenant. Id is unique.
-             * @summary テナントのユーザー一覧を取得(Get Tenant Users)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get all the users belonging to the tenant. Id is unique.
+             * @summary Get Tenant Users
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4458,10 +4492,10 @@
                 };
             },
             /**
-             * テナントのユーザー属性情報を更新します。  Update tenant user attributes.
-             * @summary テナントのユーザー属性情報を更新(Update Tenant User Attribute)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
+             * Update tenant user attributes.
+             * @summary Update Tenant User Attribute
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
              * @param {UpdateTenantUserParam} [updateTenantUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4506,9 +4540,9 @@
         const localVarAxiosParamCreator = TenantUserApiAxiosParamCreator(configuration);
         return {
             /**
-             * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a tenant user. If attributes is empty, the additional attributes will be created empty.
-             * @summary テナントにユーザーを作成(Create Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Create a tenant user. If attributes is empty, the additional attributes will be created empty.
+             * @summary Create Tenant User
+             * @param {string} tenantId Tenant ID
              * @param {CreateTenantUserParam} [createTenantUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4518,11 +4552,11 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントのユーザーに役割(ロール)を作成します。  Create roles on tenant users.
-             * @summary テナントのユーザー情報に役割(ロール)を作成(Create Tenant User Role)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
-             * @param {number} envId 環境ID(Env ID)
+             * Create roles on tenant users.
+             * @summary Create Tenant User Role
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
+             * @param {number} envId Env ID
              * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4532,10 +4566,10 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントからユーザーを削除します。  Delete a user from your tenant.
-             * @summary テナントのユーザー情報を削除(Delete Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
+             * Delete a user from the tenant.
+             * @summary Delete Tenant User
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4544,12 +4578,12 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントのユーザーから役割(ロール)を削除します。  Remove a role from a tenant user.
-             * @summary テナントのユーザーから役割(ロール)を削除(Remove Role From Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
-             * @param {number} envId 環境ID(Env ID)
-             * @param {string} roleName 役割(ロール)名(role name)
+             * Remove a role from a tenant user.
+             * @summary Remove Role From Tenant User
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
+             * @param {number} envId Env ID
+             * @param {string} roleName Role name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4558,9 +4592,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
-             * @summary ユーザー情報を取得(Get User Info)
-             * @param {string} userId ユーザーID(User ID)
+             * Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
+             * @summary Get User Info
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4569,8 +4603,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
-             * @summary ユーザー一覧を取得(Get Users)
+             * Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
+             * @summary Get Users
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4579,10 +4613,10 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントのユーザーをIDから一件取得します。  Get one tenant user by specific ID.
-             * @summary テナントのユーザー情報を取得(Get Tenant User)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
+             * Get one tenant user by specific ID.
+             * @summary Get Tenant User
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4591,9 +4625,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all the users belonging to the tenant. Id is unique.
-             * @summary テナントのユーザー一覧を取得(Get Tenant Users)
-             * @param {string} tenantId テナントID(Tenant ID)
+             * Get all the users belonging to the tenant. Id is unique.
+             * @summary Get Tenant Users
+             * @param {string} tenantId Tenant ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4602,10 +4636,10 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * テナントのユーザー属性情報を更新します。  Update tenant user attributes.
-             * @summary テナントのユーザー属性情報を更新(Update Tenant User Attribute)
-             * @param {string} tenantId テナントID(Tenant ID)
-             * @param {string} userId ユーザーID(User ID)
+             * Update tenant user attributes.
+             * @summary Update Tenant User Attribute
+             * @param {string} tenantId Tenant ID
+             * @param {string} userId User ID
              * @param {UpdateTenantUserParam} [updateTenantUserParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4624,9 +4658,9 @@
      */
     class TenantUserApi extends BaseAPI$5 {
         /**
-         * テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a tenant user. If attributes is empty, the additional attributes will be created empty.
-         * @summary テナントにユーザーを作成(Create Tenant User)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Create a tenant user. If attributes is empty, the additional attributes will be created empty.
+         * @summary Create Tenant User
+         * @param {string} tenantId Tenant ID
          * @param {CreateTenantUserParam} [createTenantUserParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4636,11 +4670,11 @@
             return TenantUserApiFp(this.configuration).createTenantUser(tenantId, createTenantUserParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントのユーザーに役割(ロール)を作成します。  Create roles on tenant users.
-         * @summary テナントのユーザー情報に役割(ロール)を作成(Create Tenant User Role)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} userId ユーザーID(User ID)
-         * @param {number} envId 環境ID(Env ID)
+         * Create roles on tenant users.
+         * @summary Create Tenant User Role
+         * @param {string} tenantId Tenant ID
+         * @param {string} userId User ID
+         * @param {number} envId Env ID
          * @param {CreateTenantUserRolesParam} [createTenantUserRolesParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4650,10 +4684,10 @@
             return TenantUserApiFp(this.configuration).createTenantUserRoles(tenantId, userId, envId, createTenantUserRolesParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントからユーザーを削除します。  Delete a user from your tenant.
-         * @summary テナントのユーザー情報を削除(Delete Tenant User)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} userId ユーザーID(User ID)
+         * Delete a user from the tenant.
+         * @summary Delete Tenant User
+         * @param {string} tenantId Tenant ID
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
@@ -4662,12 +4696,12 @@
             return TenantUserApiFp(this.configuration).deleteTenantUser(tenantId, userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントのユーザーから役割(ロール)を削除します。  Remove a role from a tenant user.
-         * @summary テナントのユーザーから役割(ロール)を削除(Remove Role From Tenant User)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} userId ユーザーID(User ID)
-         * @param {number} envId 環境ID(Env ID)
-         * @param {string} roleName 役割(ロール)名(role name)
+         * Remove a role from a tenant user.
+         * @summary Remove Role From Tenant User
+         * @param {string} tenantId Tenant ID
+         * @param {string} userId User ID
+         * @param {number} envId Env ID
+         * @param {string} roleName Role name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
@@ -4676,9 +4710,9 @@
             return TenantUserApiFp(this.configuration).deleteTenantUserRole(tenantId, userId, envId, roleName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
-         * @summary ユーザー情報を取得(Get User Info)
-         * @param {string} userId ユーザーID(User ID)
+         * Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
+         * @summary Get User Info
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
@@ -4687,8 +4721,8 @@
             return TenantUserApiFp(this.configuration).getAllTenantUser(userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
-         * @summary ユーザー一覧を取得(Get Users)
+         * Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
+         * @summary Get Users
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
@@ -4697,10 +4731,10 @@
             return TenantUserApiFp(this.configuration).getAllTenantUsers(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントのユーザーをIDから一件取得します。  Get one tenant user by specific ID.
-         * @summary テナントのユーザー情報を取得(Get Tenant User)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} userId ユーザーID(User ID)
+         * Get one tenant user by specific ID.
+         * @summary Get Tenant User
+         * @param {string} tenantId Tenant ID
+         * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
@@ -4709,9 +4743,9 @@
             return TenantUserApiFp(this.configuration).getTenantUser(tenantId, userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントに所属するユーザーを全件取得します。 idは一意です。  Get all the users belonging to the tenant. Id is unique.
-         * @summary テナントのユーザー一覧を取得(Get Tenant Users)
-         * @param {string} tenantId テナントID(Tenant ID)
+         * Get all the users belonging to the tenant. Id is unique.
+         * @summary Get Tenant Users
+         * @param {string} tenantId Tenant ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
@@ -4720,10 +4754,10 @@
             return TenantUserApiFp(this.configuration).getTenantUsers(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * テナントのユーザー属性情報を更新します。  Update tenant user attributes.
-         * @summary テナントのユーザー属性情報を更新(Update Tenant User Attribute)
-         * @param {string} tenantId テナントID(Tenant ID)
-         * @param {string} userId ユーザーID(User ID)
+         * Update tenant user attributes.
+         * @summary Update Tenant User Attribute
+         * @param {string} tenantId Tenant ID
+         * @param {string} userId User ID
          * @param {UpdateTenantUserParam} [updateTenantUserParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4740,8 +4774,8 @@
     const UserAttributeApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
-             * @summary ユーザー属性の作成(Create User Attributes)
+             * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+             * @summary Create User Attributes
              * @param {Attribute} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4771,9 +4805,9 @@
                 };
             },
             /**
-             * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete user attributes kept on the SaaSus Platform.
-             * @summary ユーザー属性の削除(Delete User Attribute)
-             * @param {string} attributeName 属性名(Attribute Name)
+             * Delete user attributes kept on the SaaSus Platform.
+             * @summary Delete User Attribute
+             * @param {string} attributeName Attribute Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4803,8 +4837,8 @@
                 };
             },
             /**
-             * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
-             * @summary ユーザー属性の一覧を取得(Get User Attributes)
+             * Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+             * @summary Get User Attributes
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4840,8 +4874,8 @@
         const localVarAxiosParamCreator = UserAttributeApiAxiosParamCreator(configuration);
         return {
             /**
-             * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
-             * @summary ユーザー属性の作成(Create User Attributes)
+             * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+             * @summary Create User Attributes
              * @param {Attribute} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -4851,9 +4885,9 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete user attributes kept on the SaaSus Platform.
-             * @summary ユーザー属性の削除(Delete User Attribute)
-             * @param {string} attributeName 属性名(Attribute Name)
+             * Delete user attributes kept on the SaaSus Platform.
+             * @summary Delete User Attribute
+             * @param {string} attributeName Attribute Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4862,8 +4896,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
-             * @summary ユーザー属性の一覧を取得(Get User Attributes)
+             * Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+             * @summary Get User Attributes
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4881,8 +4915,8 @@
      */
     class UserAttributeApi extends BaseAPI$5 {
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
-         * @summary ユーザー属性の作成(Create User Attributes)
+         * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+         * @summary Create User Attributes
          * @param {Attribute} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4892,9 +4926,9 @@
             return UserAttributeApiFp(this.configuration).createUserAttribute(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete user attributes kept on the SaaSus Platform.
-         * @summary ユーザー属性の削除(Delete User Attribute)
-         * @param {string} attributeName 属性名(Attribute Name)
+         * Delete user attributes kept on the SaaSus Platform.
+         * @summary Delete User Attribute
+         * @param {string} attributeName Attribute Name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof UserAttributeApi
@@ -4903,8 +4937,8 @@
             return UserAttributeApiFp(this.configuration).deleteUserAttribute(attributeName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
-         * @summary ユーザー属性の一覧を取得(Get User Attributes)
+         * Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+         * @summary Get User Attributes
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof UserAttributeApi
@@ -4920,9 +4954,9 @@
     const UserInfoApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
-             * @summary ユーザー情報取得(Get User Info)
-             * @param {string} token IDトークン(ID Token)
+             * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
+             * @summary Get User Info
+             * @param {string} token ID Token
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4963,9 +4997,9 @@
         const localVarAxiosParamCreator = UserInfoApiAxiosParamCreator(configuration);
         return {
             /**
-             * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
-             * @summary ユーザー情報取得(Get User Info)
-             * @param {string} token IDトークン(ID Token)
+             * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
+             * @summary Get User Info
+             * @param {string} token ID Token
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -4983,9 +5017,9 @@
      */
     class UserInfoApi extends BaseAPI$5 {
         /**
-         * SaaS利用ユーザ(登録ユーザ)のIDトークンを元に、ユーザ情報を取得します。 IDトークンは、SaaSus Platform生成のログイン画面からログイン時にCallback URLに渡されます。 サーバ側でそのURLからIDトークンを取得し、このAPIを呼ぶことにより、該当ユーザの情報が取得できます。 取得した上には、所属テナントや役割(ロール)、料金プランなどが含まれているため、それを元に認可の実装を行うことが可能です。  User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
-         * @summary ユーザー情報取得(Get User Info)
-         * @param {string} token IDトークン(ID Token)
+         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
+         * @summary Get User Info
+         * @param {string} token ID Token
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof UserInfoApi
@@ -4999,7 +5033,7 @@
     /* eslint-disable */
     /**
      * SaaSus Auth API Schema
-     * スキーマ
+     * Schema
      *
      * The version of the OpenAPI document: 1.0.0
      *
@@ -5168,8 +5202,8 @@
     const StripeApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-             * @summary Stripe連携情報を削除(Delete Stripe Connection)
+             * Delete connection with external billing SaaS
+             * @summary Delete Stripe Connection
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -5196,8 +5230,8 @@
                 };
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-             * @summary Stripe連携情報を取得(Get Stripe Connection information)
+             * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+             * @summary Get Stripe Connection information
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -5224,8 +5258,8 @@
                 };
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-             * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+             * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+             * @summary Update Stripe Connection Info
              * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5264,8 +5298,8 @@
         const localVarAxiosParamCreator = StripeApiAxiosParamCreator(configuration);
         return {
             /**
-             * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-             * @summary Stripe連携情報を削除(Delete Stripe Connection)
+             * Delete connection with external billing SaaS
+             * @summary Delete Stripe Connection
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -5274,8 +5308,8 @@
                 return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-             * @summary Stripe連携情報を取得(Get Stripe Connection information)
+             * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+             * @summary Get Stripe Connection information
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -5284,8 +5318,8 @@
                 return createRequestFunction$4(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$4, configuration);
             },
             /**
-             * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-             * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+             * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+             * @summary Update Stripe Connection Info
              * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5304,8 +5338,8 @@
      */
     class StripeApi extends BaseAPI$4 {
         /**
-         * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-         * @summary Stripe連携情報を削除(Delete Stripe Connection)
+         * Delete connection with external billing SaaS
+         * @summary Delete Stripe Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof StripeApi
@@ -5314,8 +5348,8 @@
             return StripeApiFp(this.configuration).deleteStripeInfo(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-         * @summary Stripe連携情報を取得(Get Stripe Connection information)
+         * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+         * @summary Get Stripe Connection information
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof StripeApi
@@ -5324,8 +5358,8 @@
             return StripeApiFp(this.configuration).getStripeInfo(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-         * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+         * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+         * @summary Update Stripe Connection Info
          * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5520,7 +5554,8 @@
     const FeedbackApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * フィードバックを起票
+             * Create Feedback.
+             * @summary Create Feedback
              * @param {CreateFeedbackParam} [createFeedbackParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5550,7 +5585,8 @@
                 };
             },
             /**
-             * フィードバックへのコメント
+             * Post comment to feedback.
+             * @summary Create Feedback Comment
              * @param {string} feedbackId
              * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
              * @param {*} [options] Override http request option.
@@ -5584,7 +5620,8 @@
                 };
             },
             /**
-             * フィードバックへの投票
+             * Vote for feedback.
+             * @summary Create Vote User
              * @param {string} feedbackId
              * @param {CreateVoteUserParam} [createVoteUserParam]
              * @param {*} [options] Override http request option.
@@ -5618,7 +5655,8 @@
                 };
             },
             /**
-             * フィードバックの削除
+             * Delete Feedback.
+             * @summary Delete Feedback
              * @param {string} feedbackId
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5649,7 +5687,8 @@
                 };
             },
             /**
-             * フィードバックへのコメント削除
+             * Delete comment for feedback.
+             * @summary Delete Feedback Comment
              * @param {string} feedbackId
              * @param {string} commentId
              * @param {*} [options] Override http request option.
@@ -5684,7 +5723,8 @@
                 };
             },
             /**
-             * フィードバックへの投票の取消
+             * Cancel vote for feedback.
+             * @summary Delete Vote For Feedback
              * @param {string} feedbackId
              * @param {string} userId
              * @param {*} [options] Override http request option.
@@ -5719,7 +5759,8 @@
                 };
             },
             /**
-             * フィードバックの取得
+             * Retrieve feedback.
+             * @summary Get Feedback
              * @param {string} feedbackId
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5750,7 +5791,8 @@
                 };
             },
             /**
-             * フィードバックへのコメント取得
+             * Retrieve comment from feedback.
+             * @summary Get Feedback Comment
              * @param {string} feedbackId
              * @param {string} commentId
              * @param {*} [options] Override http request option.
@@ -5785,7 +5827,8 @@
                 };
             },
             /**
-             * フィードバックの一覧を取得
+             * Get the list of feedbacks.
+             * @summary Get Feedbacks
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -5812,7 +5855,8 @@
                 };
             },
             /**
-             * フィードバックの編集
+             * Edit feedback.
+             * @summary Update Feedback
              * @param {string} feedbackId
              * @param {UpdateFeedbackParam} [updateFeedbackParam]
              * @param {*} [options] Override http request option.
@@ -5846,7 +5890,8 @@
                 };
             },
             /**
-             * フィードバックへのコメント編集
+             * Edit comment for feedback.
+             * @summary Update Feedback Comment
              * @param {string} feedbackId
              * @param {string} commentId
              * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
@@ -5884,7 +5929,8 @@
                 };
             },
             /**
-             * フィードバックのステータス更新
+             * Update Feedback Status.
+             * @summary Update Feedback Status
              * @param {string} feedbackId
              * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
              * @param {*} [options] Override http request option.
@@ -5927,7 +5973,8 @@
         const localVarAxiosParamCreator = FeedbackApiAxiosParamCreator(configuration);
         return {
             /**
-             * フィードバックを起票
+             * Create Feedback.
+             * @summary Create Feedback
              * @param {CreateFeedbackParam} [createFeedbackParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5937,7 +5984,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックへのコメント
+             * Post comment to feedback.
+             * @summary Create Feedback Comment
              * @param {string} feedbackId
              * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
              * @param {*} [options] Override http request option.
@@ -5948,7 +5996,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックへの投票
+             * Vote for feedback.
+             * @summary Create Vote User
              * @param {string} feedbackId
              * @param {CreateVoteUserParam} [createVoteUserParam]
              * @param {*} [options] Override http request option.
@@ -5959,7 +6008,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックの削除
+             * Delete Feedback.
+             * @summary Delete Feedback
              * @param {string} feedbackId
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5969,7 +6019,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックへのコメント削除
+             * Delete comment for feedback.
+             * @summary Delete Feedback Comment
              * @param {string} feedbackId
              * @param {string} commentId
              * @param {*} [options] Override http request option.
@@ -5980,7 +6031,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックへの投票の取消
+             * Cancel vote for feedback.
+             * @summary Delete Vote For Feedback
              * @param {string} feedbackId
              * @param {string} userId
              * @param {*} [options] Override http request option.
@@ -5991,7 +6043,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックの取得
+             * Retrieve feedback.
+             * @summary Get Feedback
              * @param {string} feedbackId
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -6001,7 +6054,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックへのコメント取得
+             * Retrieve comment from feedback.
+             * @summary Get Feedback Comment
              * @param {string} feedbackId
              * @param {string} commentId
              * @param {*} [options] Override http request option.
@@ -6012,7 +6066,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックの一覧を取得
+             * Get the list of feedbacks.
+             * @summary Get Feedbacks
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6021,7 +6076,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックの編集
+             * Edit feedback.
+             * @summary Update Feedback
              * @param {string} feedbackId
              * @param {UpdateFeedbackParam} [updateFeedbackParam]
              * @param {*} [options] Override http request option.
@@ -6032,7 +6088,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックへのコメント編集
+             * Edit comment for feedback.
+             * @summary Update Feedback Comment
              * @param {string} feedbackId
              * @param {string} commentId
              * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
@@ -6044,7 +6101,8 @@
                 return createRequestFunction$3(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$3, configuration);
             },
             /**
-             * フィードバックのステータス更新
+             * Update Feedback Status.
+             * @summary Update Feedback Status
              * @param {string} feedbackId
              * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
              * @param {*} [options] Override http request option.
@@ -6064,7 +6122,8 @@
      */
     class FeedbackApi extends BaseAPI$3 {
         /**
-         * フィードバックを起票
+         * Create Feedback.
+         * @summary Create Feedback
          * @param {CreateFeedbackParam} [createFeedbackParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6074,7 +6133,8 @@
             return FeedbackApiFp(this.configuration).createFeedback(createFeedbackParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックへのコメント
+         * Post comment to feedback.
+         * @summary Create Feedback Comment
          * @param {string} feedbackId
          * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
          * @param {*} [options] Override http request option.
@@ -6085,7 +6145,8 @@
             return FeedbackApiFp(this.configuration).createFeedbackComment(feedbackId, createFeedbackCommentParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックへの投票
+         * Vote for feedback.
+         * @summary Create Vote User
          * @param {string} feedbackId
          * @param {CreateVoteUserParam} [createVoteUserParam]
          * @param {*} [options] Override http request option.
@@ -6096,7 +6157,8 @@
             return FeedbackApiFp(this.configuration).createVoteUser(feedbackId, createVoteUserParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックの削除
+         * Delete Feedback.
+         * @summary Delete Feedback
          * @param {string} feedbackId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6106,7 +6168,8 @@
             return FeedbackApiFp(this.configuration).deleteFeedback(feedbackId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックへのコメント削除
+         * Delete comment for feedback.
+         * @summary Delete Feedback Comment
          * @param {string} feedbackId
          * @param {string} commentId
          * @param {*} [options] Override http request option.
@@ -6117,7 +6180,8 @@
             return FeedbackApiFp(this.configuration).deleteFeedbackComment(feedbackId, commentId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックへの投票の取消
+         * Cancel vote for feedback.
+         * @summary Delete Vote For Feedback
          * @param {string} feedbackId
          * @param {string} userId
          * @param {*} [options] Override http request option.
@@ -6128,7 +6192,8 @@
             return FeedbackApiFp(this.configuration).deleteVoteForFeedback(feedbackId, userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックの取得
+         * Retrieve feedback.
+         * @summary Get Feedback
          * @param {string} feedbackId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6138,7 +6203,8 @@
             return FeedbackApiFp(this.configuration).getFeedback(feedbackId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックへのコメント取得
+         * Retrieve comment from feedback.
+         * @summary Get Feedback Comment
          * @param {string} feedbackId
          * @param {string} commentId
          * @param {*} [options] Override http request option.
@@ -6149,7 +6215,8 @@
             return FeedbackApiFp(this.configuration).getFeedbackComment(feedbackId, commentId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックの一覧を取得
+         * Get the list of feedbacks.
+         * @summary Get Feedbacks
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof FeedbackApi
@@ -6158,7 +6225,8 @@
             return FeedbackApiFp(this.configuration).getFeedbacks(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックの編集
+         * Edit feedback.
+         * @summary Update Feedback
          * @param {string} feedbackId
          * @param {UpdateFeedbackParam} [updateFeedbackParam]
          * @param {*} [options] Override http request option.
@@ -6169,7 +6237,8 @@
             return FeedbackApiFp(this.configuration).updateFeedback(feedbackId, updateFeedbackParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックへのコメント編集
+         * Edit comment for feedback.
+         * @summary Update Feedback Comment
          * @param {string} feedbackId
          * @param {string} commentId
          * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
@@ -6181,7 +6250,8 @@
             return FeedbackApiFp(this.configuration).updateFeedbackComment(feedbackId, commentId, updateFeedbackCommentParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * フィードバックのステータス更新
+         * Update Feedback Status.
+         * @summary Update Feedback Status
          * @param {string} feedbackId
          * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
          * @param {*} [options] Override http request option.
@@ -6377,11 +6447,74 @@
     const MeteringApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
-             * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {number} timestamp タイムスタンプ(timestamp)
+             * Create a metering unit.
+             * @summary Create Metering Unit
+             * @param {MeteringUnitProps} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            createMeteringUnit: async (body, options = {}) => {
+                const localVarPath = `/metering/units`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$2(body, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Delete metering unit.
+             * @summary Delete Metering Unit
+             * @param {string} meteringUnitId Metering Unit ID
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            deleteMeteringUnitByID: async (meteringUnitId, options = {}) => {
+                // verify required parameter 'meteringUnitId' is not null or undefined
+                assertParamExists$1('deleteMeteringUnitByID', 'meteringUnitId', meteringUnitId);
+                const localVarPath = `/metering/units/{metering_unit_id}`
+                    .replace(`{${"metering_unit_id"}}`, encodeURIComponent(String(meteringUnitId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Deletes metering unit count for the specified timestamp.
+             * @summary Delete Metering Unit Count for Specified Timestamp
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {number} timestamp Timestamp
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6417,11 +6550,11 @@
                 };
             },
             /**
-             * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
-             * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {string} date 日(date)
+             * Gets the metering unit count for a specific date.
+             * @summary Get Metering Unit Count for Specific Date
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {string} date Date
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6457,12 +6590,12 @@
                 };
             },
             /**
-             * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
-             * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {number} [startTimestamp] 開始日時(timestamp)
-             * @param {number} [endTimestamp] 終了日時(timestamp)
+             * Obtain metering unit counts for a specified date/time period.
+             * @summary Obtain metering unit counts for a specified date/time period
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {number} [startTimestamp] Start Date-Time
+             * @param {number} [endTimestamp] End Date-Time
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6501,10 +6634,10 @@
                 };
             },
             /**
-             * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-             * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * Get the metering unit count for the current day.
+             * @summary Get Metering Unit Count for the Current Day
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6537,10 +6670,10 @@
                 };
             },
             /**
-             * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-             * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} date 日(date)
+             * Gets the total metering unit count for the specified date.
+             * @summary Get All Metering Unit Counts for a Specified Date
+             * @param {string} tenantId Tenant ID
+             * @param {string} date Date
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6573,11 +6706,11 @@
                 };
             },
             /**
-             * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-             * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {string} month 月(month)
+             * Gets the metering unit count for the specified month.
+             * @summary Get the Metering Unit Count for the Specified Month
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {string} month Month
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6613,10 +6746,10 @@
                 };
             },
             /**
-             * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-             * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * Get the metering unit count for the current month.
+             * @summary Get Metering Unit Count for the Current Month
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6649,10 +6782,10 @@
                 };
             },
             /**
-             * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-             * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} month 月(month)
+             * Gets all metering unit counts for the specified month.
+             * @summary Get All Metering Unit Counts for the Specified Month
+             * @param {string} tenantId Tenant ID
+             * @param {string} month Month
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6685,11 +6818,74 @@
                 };
             },
             /**
-             * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
-             * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {number} timestamp タイムスタンプ(timestamp)
+             * Get all metering units.
+             * @summary Get all metering units
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getMeteringUnits: async (options = {}) => {
+                const localVarPath = `/metering/units`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Update metering unit.
+             * @summary Update Metering Unit
+             * @param {string} meteringUnitId Metering Unit ID
+             * @param {MeteringUnitProps} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateMeteringUnitByID: async (meteringUnitId, body, options = {}) => {
+                // verify required parameter 'meteringUnitId' is not null or undefined
+                assertParamExists$1('updateMeteringUnitByID', 'meteringUnitId', meteringUnitId);
+                const localVarPath = `/metering/units/{metering_unit_id}`
+                    .replace(`{${"metering_unit_id"}}`, encodeURIComponent(String(meteringUnitId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$2);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$2(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$2(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$2(body, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$2(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Update metering unit count for the specified timestamp.
+             * @summary Update Metering Unit Count for Specified Timestamp
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {number} timestamp Timestamp
              * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -6728,10 +6924,10 @@
                 };
             },
             /**
-             * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-             * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * Update the metering unit count for the current time.
+             * @summary Update Metering Unit Count for Current Time
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
              * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -6776,11 +6972,33 @@
         const localVarAxiosParamCreator = MeteringApiAxiosParamCreator(configuration);
         return {
             /**
-             * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
-             * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {number} timestamp タイムスタンプ(timestamp)
+             * Create a metering unit.
+             * @summary Create Metering Unit
+             * @param {MeteringUnitProps} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async createMeteringUnit(body, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createMeteringUnit(body, options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
+             * Delete metering unit.
+             * @summary Delete Metering Unit
+             * @param {string} meteringUnitId Metering Unit ID
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async deleteMeteringUnitByID(meteringUnitId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMeteringUnitByID(meteringUnitId, options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
+             * Deletes metering unit count for the specified timestamp.
+             * @summary Delete Metering Unit Count for Specified Timestamp
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {number} timestamp Timestamp
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6789,11 +7007,11 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
-             * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {string} date 日(date)
+             * Gets the metering unit count for a specific date.
+             * @summary Get Metering Unit Count for Specific Date
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {string} date Date
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6802,12 +7020,12 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
-             * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {number} [startTimestamp] 開始日時(timestamp)
-             * @param {number} [endTimestamp] 終了日時(timestamp)
+             * Obtain metering unit counts for a specified date/time period.
+             * @summary Obtain metering unit counts for a specified date/time period
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {number} [startTimestamp] Start Date-Time
+             * @param {number} [endTimestamp] End Date-Time
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6816,10 +7034,10 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-             * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * Get the metering unit count for the current day.
+             * @summary Get Metering Unit Count for the Current Day
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6828,10 +7046,10 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-             * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} date 日(date)
+             * Gets the total metering unit count for the specified date.
+             * @summary Get All Metering Unit Counts for a Specified Date
+             * @param {string} tenantId Tenant ID
+             * @param {string} date Date
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6840,11 +7058,11 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-             * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {string} month 月(month)
+             * Gets the metering unit count for the specified month.
+             * @summary Get the Metering Unit Count for the Specified Month
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {string} month Month
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6853,10 +7071,10 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-             * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * Get the metering unit count for the current month.
+             * @summary Get Metering Unit Count for the Current Month
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6865,10 +7083,10 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-             * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} month 月(month)
+             * Gets all metering unit counts for the specified month.
+             * @summary Get All Metering Unit Counts for the Specified Month
+             * @param {string} tenantId Tenant ID
+             * @param {string} month Month
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -6877,11 +7095,33 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
-             * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-             * @param {number} timestamp タイムスタンプ(timestamp)
+             * Get all metering units.
+             * @summary Get all metering units
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getMeteringUnits(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getMeteringUnits(options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
+             * Update metering unit.
+             * @summary Update Metering Unit
+             * @param {string} meteringUnitId Metering Unit ID
+             * @param {MeteringUnitProps} [body]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateMeteringUnitByID(meteringUnitId, body, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateMeteringUnitByID(meteringUnitId, body, options);
+                return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
+            },
+            /**
+             * Update metering unit count for the specified timestamp.
+             * @summary Update Metering Unit Count for Specified Timestamp
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
+             * @param {number} timestamp Timestamp
              * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -6891,10 +7131,10 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-             * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
-             * @param {string} tenantId テナントID(tenant id)
-             * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+             * Update the metering unit count for the current time.
+             * @summary Update Metering Unit Count for Current Time
+             * @param {string} tenantId Tenant ID
+             * @param {string} meteringUnitName Metering Unit Name
              * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -6913,11 +7153,33 @@
      */
     class MeteringApi extends BaseAPI$2 {
         /**
-         * 指定したタイムスタンプのメータリングユニットカウントを削除します。  Deletes metering unit count for the specified timestamp.
-         * @summary 指定したタイムスタンプのメータリングユニットカウントを削除(Delete Metering Uunit Count for Specified Timestamp)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-         * @param {number} timestamp タイムスタンプ(timestamp)
+         * Create a metering unit.
+         * @summary Create Metering Unit
+         * @param {MeteringUnitProps} [body]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof MeteringApi
+         */
+        createMeteringUnit(body, options) {
+            return MeteringApiFp(this.configuration).createMeteringUnit(body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Delete metering unit.
+         * @summary Delete Metering Unit
+         * @param {string} meteringUnitId Metering Unit ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof MeteringApi
+         */
+        deleteMeteringUnitByID(meteringUnitId, options) {
+            return MeteringApiFp(this.configuration).deleteMeteringUnitByID(meteringUnitId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Deletes metering unit count for the specified timestamp.
+         * @summary Delete Metering Unit Count for Specified Timestamp
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
+         * @param {number} timestamp Timestamp
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -6926,11 +7188,11 @@
             return MeteringApiFp(this.configuration).deleteMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定した日付のメータリングユニットカウントを取得します。  Gets the metering unit count for specific date.
-         * @summary 指定した日付のメータリングユニットカウントを取得(Get Metering Unit Count for Specific Date)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-         * @param {string} date 日(date)
+         * Gets the metering unit count for a specific date.
+         * @summary Get Metering Unit Count for Specific Date
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
+         * @param {string} date Date
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -6939,12 +7201,12 @@
             return MeteringApiFp(this.configuration).getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId, meteringUnitName, date, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定した日時期間のメータリングユニットカウントを取得します。  Obtain metering unit counts for a specified date/time period.
-         * @summary 指定した日時期間のメータリングユニットカウントを取得(Obtain metering unit counts for a specified date/time period)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-         * @param {number} [startTimestamp] 開始日時(timestamp)
-         * @param {number} [endTimestamp] 終了日時(timestamp)
+         * Obtain metering unit counts for a specified date/time period.
+         * @summary Obtain metering unit counts for a specified date/time period
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
+         * @param {number} [startTimestamp] Start Date-Time
+         * @param {number} [endTimestamp] End Date-Time
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -6953,10 +7215,10 @@
             return MeteringApiFp(this.configuration).getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId, meteringUnitName, startTimestamp, endTimestamp, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 当日のメータリングユニットカウントを取得します。  Get the metering unit count for the current day.
-         * @summary 当日のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Day)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+         * Get the metering unit count for the current day.
+         * @summary Get Metering Unit Count for the Current Day
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -6965,10 +7227,10 @@
             return MeteringApiFp(this.configuration).getMeteringUnitDateCountByTenantIdAndUnitNameToday(tenantId, meteringUnitName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定した日の全メータリングユニットカウントを取得します。  Gets the total metering unit count for the specified date.
-         * @summary 指定日の全メータリングユニットカウントを取得(Get All Metering Unit Counts for a Specified Date)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} date 日(date)
+         * Gets the total metering unit count for the specified date.
+         * @summary Get All Metering Unit Counts for a Specified Date
+         * @param {string} tenantId Tenant ID
+         * @param {string} date Date
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -6977,11 +7239,11 @@
             return MeteringApiFp(this.configuration).getMeteringUnitDateCountsByTenantIdAndDate(tenantId, date, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定した月のメータリングユニットカウントを取得します。  Gets the metering unit count for the specified month.
-         * @summary 指定月のメータリングユニットカウントを取得(Get the Metering Unit Count for the Specified Month)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-         * @param {string} month 月(month)
+         * Gets the metering unit count for the specified month.
+         * @summary Get the Metering Unit Count for the Specified Month
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
+         * @param {string} month Month
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -6990,10 +7252,10 @@
             return MeteringApiFp(this.configuration).getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth(tenantId, meteringUnitName, month, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 当月のメータリングユニットカウントを取得します。  Get the metering unit count for the current month.
-         * @summary 当月のメータリングユニットカウントを取得(Get Metering Unit Count for the Current Month)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+         * Get the metering unit count for the current month.
+         * @summary Get Metering Unit Count for the Current Month
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -7002,10 +7264,10 @@
             return MeteringApiFp(this.configuration).getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth(tenantId, meteringUnitName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定した月の全メータリングユニットカウントを取得します。  Gets all metering unit counts for the specified month.
-         * @summary 指定月の全メータリングユニットカウントを取得(Get All Metering Unit Counts for the Specified Month)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} month 月(month)
+         * Gets all metering unit counts for the specified month.
+         * @summary Get All Metering Unit Counts for the Specified Month
+         * @param {string} tenantId Tenant ID
+         * @param {string} month Month
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof MeteringApi
@@ -7014,11 +7276,33 @@
             return MeteringApiFp(this.configuration).getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId, month, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 指定したタイムスタンプのメータリングユニットカウントを更新します。  Update metering unit count for the specified timestamp.
-         * @summary 指定したタイムスタンプのメータリングユニットカウントを更新(Update Metering Unit Count for Specified Timestamp)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
-         * @param {number} timestamp タイムスタンプ(timestamp)
+         * Get all metering units.
+         * @summary Get all metering units
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof MeteringApi
+         */
+        getMeteringUnits(options) {
+            return MeteringApiFp(this.configuration).getMeteringUnits(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Update metering unit.
+         * @summary Update Metering Unit
+         * @param {string} meteringUnitId Metering Unit ID
+         * @param {MeteringUnitProps} [body]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof MeteringApi
+         */
+        updateMeteringUnitByID(meteringUnitId, body, options) {
+            return MeteringApiFp(this.configuration).updateMeteringUnitByID(meteringUnitId, body, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Update metering unit count for the specified timestamp.
+         * @summary Update Metering Unit Count for Specified Timestamp
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
+         * @param {number} timestamp Timestamp
          * @param {UpdateMeteringUnitTimestampCountParam} [updateMeteringUnitTimestampCountParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7028,10 +7312,10 @@
             return MeteringApiFp(this.configuration).updateMeteringUnitTimestampCount(tenantId, meteringUnitName, timestamp, updateMeteringUnitTimestampCountParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 現在時刻のメータリングユニットカウントを更新します。  Update the metering unit count for the current time.
-         * @summary 現在時刻のメータリングユニットカウントを更新(Update Metering Unit Count for Current Time)
-         * @param {string} tenantId テナントID(tenant id)
-         * @param {string} meteringUnitName 計測ユニット名(metering unit name)
+         * Update the metering unit count for the current time.
+         * @summary Update Metering Unit Count for Current Time
+         * @param {string} tenantId Tenant ID
+         * @param {string} meteringUnitName Metering Unit Name
          * @param {UpdateMeteringUnitTimestampCountNowParam} [updateMeteringUnitTimestampCountNowParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7048,8 +7332,8 @@
     const PricingMenusApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * プライシング機能メニューを作成します。  Create a pricing feature menu.
-             * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
+             * Create a pricing feature menu.
+             * @summary Create a Pricing Feature Menu
              * @param {SavePricingMenuParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7079,9 +7363,9 @@
                 };
             },
             /**
-             * プライシング機能メニューを削除します。  Delete pricing feature menu.
-             * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
-             * @param {string} menuId メニューID(menu ID)
+             * Delete pricing feature menu.
+             * @summary Delete Pricing Feature Menu
+             * @param {string} menuId Menu ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7111,9 +7395,9 @@
                 };
             },
             /**
-             * プライシング機能メニューを取得します。  Get a pricing feature menu.
-             * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
-             * @param {string} menuId メニューID(menu ID)
+             * Get a pricing feature menu.
+             * @summary Get Pricing Feature Menu
+             * @param {string} menuId Menu ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7143,8 +7427,8 @@
                 };
             },
             /**
-             * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
-             * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
+             * Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+             * @summary Get Pricing Feature Menus
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7171,9 +7455,9 @@
                 };
             },
             /**
-             * プライシング機能メニューを更新します。  Update pricing feature menu.
-             * @summary プライシング機能メニューを更新(Updated pricing feature menu)
-             * @param {string} menuId メニューID(menu ID)
+             * Update pricing feature menu.
+             * @summary Update Pricing Feature Menu
+             * @param {string} menuId Menu ID
              * @param {SavePricingMenuParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7215,8 +7499,8 @@
         const localVarAxiosParamCreator = PricingMenusApiAxiosParamCreator(configuration);
         return {
             /**
-             * プライシング機能メニューを作成します。  Create a pricing feature menu.
-             * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
+             * Create a pricing feature menu.
+             * @summary Create a Pricing Feature Menu
              * @param {SavePricingMenuParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7226,9 +7510,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * プライシング機能メニューを削除します。  Delete pricing feature menu.
-             * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
-             * @param {string} menuId メニューID(menu ID)
+             * Delete pricing feature menu.
+             * @summary Delete Pricing Feature Menu
+             * @param {string} menuId Menu ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7237,9 +7521,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * プライシング機能メニューを取得します。  Get a pricing feature menu.
-             * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
-             * @param {string} menuId メニューID(menu ID)
+             * Get a pricing feature menu.
+             * @summary Get Pricing Feature Menu
+             * @param {string} menuId Menu ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7248,8 +7532,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
-             * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
+             * Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+             * @summary Get Pricing Feature Menus
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7258,9 +7542,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * プライシング機能メニューを更新します。  Update pricing feature menu.
-             * @summary プライシング機能メニューを更新(Updated pricing feature menu)
-             * @param {string} menuId メニューID(menu ID)
+             * Update pricing feature menu.
+             * @summary Update Pricing Feature Menu
+             * @param {string} menuId Menu ID
              * @param {SavePricingMenuParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7279,8 +7563,8 @@
      */
     class PricingMenusApi extends BaseAPI$2 {
         /**
-         * プライシング機能メニューを作成します。  Create a pricing feature menu.
-         * @summary プライシング機能メニューを作成(Create a Pricing Feature Menu)
+         * Create a pricing feature menu.
+         * @summary Create a Pricing Feature Menu
          * @param {SavePricingMenuParam} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7290,9 +7574,9 @@
             return PricingMenusApiFp(this.configuration).createPricingMenu(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * プライシング機能メニューを削除します。  Delete pricing feature menu.
-         * @summary プライシング機能メニューを削除(Delete Pricing Feature Menu)
-         * @param {string} menuId メニューID(menu ID)
+         * Delete pricing feature menu.
+         * @summary Delete Pricing Feature Menu
+         * @param {string} menuId Menu ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingMenusApi
@@ -7301,9 +7585,9 @@
             return PricingMenusApiFp(this.configuration).deletePricingMenu(menuId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * プライシング機能メニューを取得します。  Get a pricing feature menu.
-         * @summary プライシング機能メニューを取得(Get Pricing Feature Menu)
-         * @param {string} menuId メニューID(menu ID)
+         * Get a pricing feature menu.
+         * @summary Get Pricing Feature Menu
+         * @param {string} menuId Menu ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingMenusApi
@@ -7312,8 +7596,8 @@
             return PricingMenusApiFp(this.configuration).getPricingMenu(menuId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
-         * @summary プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
+         * Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+         * @summary Get Pricing Feature Menus
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingMenusApi
@@ -7322,9 +7606,9 @@
             return PricingMenusApiFp(this.configuration).getPricingMenus(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * プライシング機能メニューを更新します。  Update pricing feature menu.
-         * @summary プライシング機能メニューを更新(Updated pricing feature menu)
-         * @param {string} menuId メニューID(menu ID)
+         * Update pricing feature menu.
+         * @summary Update Pricing Feature Menu
+         * @param {string} menuId Menu ID
          * @param {SavePricingMenuParam} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7341,8 +7625,8 @@
     const PricingPlansApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 料金プランを作成します。  Create pricing plan.
-             * @summary 料金プランを作成(Create Pricing Plan)
+             * Create a pricing plan.
+             * @summary Create Pricing Plan
              * @param {SavePricingPlanParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7372,8 +7656,8 @@
                 };
             },
             /**
-             * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
-             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+             * Unconditionally remove all rate plans, menus, units, meters and tax rates.
+             * @summary Delete all Plans, Menus, Units, Meters and Tax Rates
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7400,9 +7684,9 @@
                 };
             },
             /**
-             * 料金プランを削除します。  Delete pricing plan.
-             * @summary 料金プランを削除(Delete Pricing Plan)
-             * @param {string} planId 料金プランID(price plan ID)
+             * Delete a pricing plan.
+             * @summary Delete Pricing Plan
+             * @param {string} planId Pricing Plan ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7432,8 +7716,8 @@
                 };
             },
             /**
-             * stripe上の商品情報を削除します。  Delete product data from Stripe.
-             * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+             * Delete product data from Stripe.
+             * @summary Delete Product Data from Stripe
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7460,9 +7744,9 @@
                 };
             },
             /**
-             * 料金プランを取得します。  Get pricing plan.
-             * @summary 料金プランを取得(Get Pricing Plan)
-             * @param {string} planId 料金プランID(price plan ID)
+             * Get a pricing plan.
+             * @summary Get Pricing Plan
+             * @param {string} planId Pricing Plan ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7492,8 +7776,8 @@
                 };
             },
             /**
-             * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
-             * @summary 料金プラン一覧を取得(Get pricing plan list)
+             * Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
+             * @summary Get Pricing Plans
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7520,8 +7804,8 @@
                 };
             },
             /**
-             * stripeへ情報を連携します。  Connect information to Stripe.
-             * @summary stripe連携(Connect to Stripe)
+             * Connect information to Stripe.
+             * @summary Connect to Stripe
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7548,9 +7832,9 @@
                 };
             },
             /**
-             * 料金プランを更新します。  Update pricing plan.
-             * @summary 料金プランを更新(Update Pricing Plan)
-             * @param {string} planId 料金プランID(price plan ID)
+             * Update a pricing plan.
+             * @summary Update Pricing Plan
+             * @param {string} planId Pricing Plan ID
              * @param {SavePricingPlanParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7583,8 +7867,8 @@
                 };
             },
             /**
-             * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
-             * @summary 使用済みフラグ更新(Update Used Flag)
+             * Update price plan and feature menu/pricing unit to used.
+             * @summary Update Used Flag
              * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7623,8 +7907,8 @@
         const localVarAxiosParamCreator = PricingPlansApiAxiosParamCreator(configuration);
         return {
             /**
-             * 料金プランを作成します。  Create pricing plan.
-             * @summary 料金プランを作成(Create Pricing Plan)
+             * Create a pricing plan.
+             * @summary Create Pricing Plan
              * @param {SavePricingPlanParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7634,8 +7918,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
-             * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+             * Unconditionally remove all rate plans, menus, units, meters and tax rates.
+             * @summary Delete all Plans, Menus, Units, Meters and Tax Rates
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7644,9 +7928,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 料金プランを削除します。  Delete pricing plan.
-             * @summary 料金プランを削除(Delete Pricing Plan)
-             * @param {string} planId 料金プランID(price plan ID)
+             * Delete a pricing plan.
+             * @summary Delete Pricing Plan
+             * @param {string} planId Pricing Plan ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7655,8 +7939,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * stripe上の商品情報を削除します。  Delete product data from Stripe.
-             * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+             * Delete product data from Stripe.
+             * @summary Delete Product Data from Stripe
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7665,9 +7949,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 料金プランを取得します。  Get pricing plan.
-             * @summary 料金プランを取得(Get Pricing Plan)
-             * @param {string} planId 料金プランID(price plan ID)
+             * Get a pricing plan.
+             * @summary Get Pricing Plan
+             * @param {string} planId Pricing Plan ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7676,8 +7960,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
-             * @summary 料金プラン一覧を取得(Get pricing plan list)
+             * Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
+             * @summary Get Pricing Plans
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7686,8 +7970,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * stripeへ情報を連携します。  Connect information to Stripe.
-             * @summary stripe連携(Connect to Stripe)
+             * Connect information to Stripe.
+             * @summary Connect to Stripe
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7696,9 +7980,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 料金プランを更新します。  Update pricing plan.
-             * @summary 料金プランを更新(Update Pricing Plan)
-             * @param {string} planId 料金プランID(price plan ID)
+             * Update a pricing plan.
+             * @summary Update Pricing Plan
+             * @param {string} planId Pricing Plan ID
              * @param {SavePricingPlanParam} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7708,8 +7992,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
-             * @summary 使用済みフラグ更新(Update Used Flag)
+             * Update price plan and feature menu/pricing unit to used.
+             * @summary Update Used Flag
              * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7728,8 +8012,8 @@
      */
     class PricingPlansApi extends BaseAPI$2 {
         /**
-         * 料金プランを作成します。  Create pricing plan.
-         * @summary 料金プランを作成(Create Pricing Plan)
+         * Create a pricing plan.
+         * @summary Create Pricing Plan
          * @param {SavePricingPlanParam} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7739,8 +8023,8 @@
             return PricingPlansApiFp(this.configuration).createPricingPlan(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
-         * @summary 全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+         * Unconditionally remove all rate plans, menus, units, meters and tax rates.
+         * @summary Delete all Plans, Menus, Units, Meters and Tax Rates
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
@@ -7749,9 +8033,9 @@
             return PricingPlansApiFp(this.configuration).deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金プランを削除します。  Delete pricing plan.
-         * @summary 料金プランを削除(Delete Pricing Plan)
-         * @param {string} planId 料金プランID(price plan ID)
+         * Delete a pricing plan.
+         * @summary Delete Pricing Plan
+         * @param {string} planId Pricing Plan ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
@@ -7760,8 +8044,8 @@
             return PricingPlansApiFp(this.configuration).deletePricingPlan(planId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * stripe上の商品情報を削除します。  Delete product data from Stripe.
-         * @summary stripe上の商品情報を削除(Delete Product Data from Stripe)
+         * Delete product data from Stripe.
+         * @summary Delete Product Data from Stripe
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
@@ -7770,9 +8054,9 @@
             return PricingPlansApiFp(this.configuration).deleteStripePlan(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金プランを取得します。  Get pricing plan.
-         * @summary 料金プランを取得(Get Pricing Plan)
-         * @param {string} planId 料金プランID(price plan ID)
+         * Get a pricing plan.
+         * @summary Get Pricing Plan
+         * @param {string} planId Pricing Plan ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
@@ -7781,8 +8065,8 @@
             return PricingPlansApiFp(this.configuration).getPricingPlan(planId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
-         * @summary 料金プラン一覧を取得(Get pricing plan list)
+         * Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
+         * @summary Get Pricing Plans
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
@@ -7791,8 +8075,8 @@
             return PricingPlansApiFp(this.configuration).getPricingPlans(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * stripeへ情報を連携します。  Connect information to Stripe.
-         * @summary stripe連携(Connect to Stripe)
+         * Connect information to Stripe.
+         * @summary Connect to Stripe
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingPlansApi
@@ -7801,9 +8085,9 @@
             return PricingPlansApiFp(this.configuration).linkPlanToStripe(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金プランを更新します。  Update pricing plan.
-         * @summary 料金プランを更新(Update Pricing Plan)
-         * @param {string} planId 料金プランID(price plan ID)
+         * Update a pricing plan.
+         * @summary Update Pricing Plan
+         * @param {string} planId Pricing Plan ID
          * @param {SavePricingPlanParam} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7813,8 +8097,8 @@
             return PricingPlansApiFp(this.configuration).updatePricingPlan(planId, body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
-         * @summary 使用済みフラグ更新(Update Used Flag)
+         * Update price plan and feature menu/pricing unit to used.
+         * @summary Update Used Flag
          * @param {UpdatePricingPlansUsedParam} [updatePricingPlansUsedParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -7831,8 +8115,8 @@
     const PricingUnitsApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * プライシングユニットを作成します。  Create a pricing unit.
-             * @summary プライシングユニットを作成(Create Pricing Unit)
+             * Create a pricing unit.
+             * @summary Create Pricing Unit
              * @param {PricingUnitForSave} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7862,9 +8146,9 @@
                 };
             },
             /**
-             * プライシングユニットを削除します。  Delete a pricing unit.
-             * @summary プライシングユニットを削除(Delete Pricing Unit)
-             * @param {string} pricingUnitId ユニットID(unit id)
+             * Delete a pricing unit.
+             * @summary Delete Pricing Unit
+             * @param {string} pricingUnitId Unit ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7894,9 +8178,9 @@
                 };
             },
             /**
-             * プライシングユニットを取得します。  Get a pricing unit.
-             * @summary プライシングユニットを取得(Get Pricing Unit)
-             * @param {string} pricingUnitId ユニットID(unit id)
+             * Get a pricing unit.
+             * @summary Get Pricing Unit
+             * @param {string} pricingUnitId Unit ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7926,8 +8210,8 @@
                 };
             },
             /**
-             * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
-             * @summary プライシングユニットの一覧を取得(Get Pricing Units)
+             * Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type=tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+             * @summary Get Pricing Units
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -7954,9 +8238,9 @@
                 };
             },
             /**
-             * プライシングユニット情報を更新します。  Update pricing unit.
-             * @summary プライシングユニットを更新(Update Pricing Unit)
-             * @param {string} pricingUnitId ユニットID(unit id)
+             * Update pricing unit.
+             * @summary Update Pricing Unit
+             * @param {string} pricingUnitId Unit ID
              * @param {PricingUnitForSave} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -7998,8 +8282,8 @@
         const localVarAxiosParamCreator = PricingUnitsApiAxiosParamCreator(configuration);
         return {
             /**
-             * プライシングユニットを作成します。  Create a pricing unit.
-             * @summary プライシングユニットを作成(Create Pricing Unit)
+             * Create a pricing unit.
+             * @summary Create Pricing Unit
              * @param {PricingUnitForSave} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8009,9 +8293,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * プライシングユニットを削除します。  Delete a pricing unit.
-             * @summary プライシングユニットを削除(Delete Pricing Unit)
-             * @param {string} pricingUnitId ユニットID(unit id)
+             * Delete a pricing unit.
+             * @summary Delete Pricing Unit
+             * @param {string} pricingUnitId Unit ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8020,9 +8304,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * プライシングユニットを取得します。  Get a pricing unit.
-             * @summary プライシングユニットを取得(Get Pricing Unit)
-             * @param {string} pricingUnitId ユニットID(unit id)
+             * Get a pricing unit.
+             * @summary Get Pricing Unit
+             * @param {string} pricingUnitId Unit ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8031,8 +8315,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
-             * @summary プライシングユニットの一覧を取得(Get Pricing Units)
+             * Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type=tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+             * @summary Get Pricing Units
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8041,9 +8325,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * プライシングユニット情報を更新します。  Update pricing unit.
-             * @summary プライシングユニットを更新(Update Pricing Unit)
-             * @param {string} pricingUnitId ユニットID(unit id)
+             * Update pricing unit.
+             * @summary Update Pricing Unit
+             * @param {string} pricingUnitId Unit ID
              * @param {PricingUnitForSave} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8062,8 +8346,8 @@
      */
     class PricingUnitsApi extends BaseAPI$2 {
         /**
-         * プライシングユニットを作成します。  Create a pricing unit.
-         * @summary プライシングユニットを作成(Create Pricing Unit)
+         * Create a pricing unit.
+         * @summary Create Pricing Unit
          * @param {PricingUnitForSave} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -8073,9 +8357,9 @@
             return PricingUnitsApiFp(this.configuration).createPricingUnit(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * プライシングユニットを削除します。  Delete a pricing unit.
-         * @summary プライシングユニットを削除(Delete Pricing Unit)
-         * @param {string} pricingUnitId ユニットID(unit id)
+         * Delete a pricing unit.
+         * @summary Delete Pricing Unit
+         * @param {string} pricingUnitId Unit ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingUnitsApi
@@ -8084,9 +8368,9 @@
             return PricingUnitsApiFp(this.configuration).deletePricingUnit(pricingUnitId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * プライシングユニットを取得します。  Get a pricing unit.
-         * @summary プライシングユニットを取得(Get Pricing Unit)
-         * @param {string} pricingUnitId ユニットID(unit id)
+         * Get a pricing unit.
+         * @summary Get Pricing Unit
+         * @param {string} pricingUnitId Unit ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingUnitsApi
@@ -8095,8 +8379,8 @@
             return PricingUnitsApiFp(this.configuration).getPricingUnit(pricingUnitId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
-         * @summary プライシングユニットの一覧を取得(Get Pricing Units)
+         * Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type=tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+         * @summary Get Pricing Units
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof PricingUnitsApi
@@ -8105,9 +8389,9 @@
             return PricingUnitsApiFp(this.configuration).getPricingUnits(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * プライシングユニット情報を更新します。  Update pricing unit.
-         * @summary プライシングユニットを更新(Update Pricing Unit)
-         * @param {string} pricingUnitId ユニットID(unit id)
+         * Update pricing unit.
+         * @summary Update Pricing Unit
+         * @param {string} pricingUnitId Unit ID
          * @param {PricingUnitForSave} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -8124,8 +8408,8 @@
     const TaxRateApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * 税率を作成します。  Creates a tax rate.
-             * @summary 税率の作成(Create Tax Rate)
+             * Creates a tax rate.
+             * @summary Create Tax Rate
              * @param {TaxRateProps} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8155,8 +8439,8 @@
                 };
             },
             /**
-             * 税率を取得します。  Get all Tax Rates
-             * @summary 税率を取得します(Get Tax Rates)
+             * Get all Tax Rates
+             * @summary Get Tax Rates
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8183,9 +8467,9 @@
                 };
             },
             /**
-             * 税率を更新します。  Update tax rate.
-             * @summary 税率を更新(Update Tax Rate)
-             * @param {string} taxRateId 税率ID(tax rate ID)
+             * Update tax rate.
+             * @summary Update Tax Rate
+             * @param {string} taxRateId Tax Rate ID
              * @param {UpdateTaxRateParam} [updateTaxRateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8227,8 +8511,8 @@
         const localVarAxiosParamCreator = TaxRateApiAxiosParamCreator(configuration);
         return {
             /**
-             * 税率を作成します。  Creates a tax rate.
-             * @summary 税率の作成(Create Tax Rate)
+             * Creates a tax rate.
+             * @summary Create Tax Rate
              * @param {TaxRateProps} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8238,8 +8522,8 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 税率を取得します。  Get all Tax Rates
-             * @summary 税率を取得します(Get Tax Rates)
+             * Get all Tax Rates
+             * @summary Get Tax Rates
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8248,9 +8532,9 @@
                 return createRequestFunction$2(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$2, configuration);
             },
             /**
-             * 税率を更新します。  Update tax rate.
-             * @summary 税率を更新(Update Tax Rate)
-             * @param {string} taxRateId 税率ID(tax rate ID)
+             * Update tax rate.
+             * @summary Update Tax Rate
+             * @param {string} taxRateId Tax Rate ID
              * @param {UpdateTaxRateParam} [updateTaxRateParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8269,8 +8553,8 @@
      */
     class TaxRateApi extends BaseAPI$2 {
         /**
-         * 税率を作成します。  Creates a tax rate.
-         * @summary 税率の作成(Create Tax Rate)
+         * Creates a tax rate.
+         * @summary Create Tax Rate
          * @param {TaxRateProps} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -8280,8 +8564,8 @@
             return TaxRateApiFp(this.configuration).createTaxRate(body, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 税率を取得します。  Get all Tax Rates
-         * @summary 税率を取得します(Get Tax Rates)
+         * Get all Tax Rates
+         * @summary Get Tax Rates
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TaxRateApi
@@ -8290,9 +8574,9 @@
             return TaxRateApiFp(this.configuration).getTaxRates(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 税率を更新します。  Update tax rate.
-         * @summary 税率を更新(Update Tax Rate)
-         * @param {string} taxRateId 税率ID(tax rate ID)
+         * Update tax rate.
+         * @summary Update Tax Rate
+         * @param {string} taxRateId Tax Rate ID
          * @param {UpdateTaxRateParam} [updateTaxRateParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -8468,8 +8752,8 @@
     const EventBridgeApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge.
-             * @summary イベント連携の送信(Send Events)
+             * Send events to Amazon EventBridge.
+             * @summary Send Events
              * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8499,8 +8783,8 @@
                 };
             },
             /**
-             * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge.
-             * @summary イベント連携のテスト送信(Test EventBridge Connection)
+             * Send events to test the connection with Amazon EventBridge.
+             * @summary Test EventBridge Connection
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8527,8 +8811,8 @@
                 };
             },
             /**
-             * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge.
-             * @summary イベント連携設定を削除(Delete EventBridge Settings)
+             * Delete settings used to provide host state via Amazon EventBridge.
+             * @summary Delete EventBridge Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8555,8 +8839,8 @@
                 };
             },
             /**
-             * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
-             * @summary イベント連携設定を取得(Get EventBridge Settings)
+             * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
+             * @summary Get EventBridge Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8583,8 +8867,8 @@
                 };
             },
             /**
-             * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge.
-             * @summary イベント連携設定を更新(Update EventBridge Settings)
+             * Update configuration used to provide the host state via Amazon EventBridge.
+             * @summary Update EventBridge Settings
              * @param {EventBridgeSettings} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8623,8 +8907,8 @@
         const localVarAxiosParamCreator = EventBridgeApiAxiosParamCreator(configuration);
         return {
             /**
-             * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge.
-             * @summary イベント連携の送信(Send Events)
+             * Send events to Amazon EventBridge.
+             * @summary Send Events
              * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8634,8 +8918,8 @@
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
-             * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge.
-             * @summary イベント連携のテスト送信(Test EventBridge Connection)
+             * Send events to test the connection with Amazon EventBridge.
+             * @summary Test EventBridge Connection
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8644,8 +8928,8 @@
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
-             * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge.
-             * @summary イベント連携設定を削除(Delete EventBridge Settings)
+             * Delete settings used to provide host state via Amazon EventBridge.
+             * @summary Delete EventBridge Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8654,8 +8938,8 @@
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
-             * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
-             * @summary イベント連携設定を取得(Get EventBridge Settings)
+             * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
+             * @summary Get EventBridge Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8664,8 +8948,8 @@
                 return createRequestFunction$1(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$1, configuration);
             },
             /**
-             * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge.
-             * @summary イベント連携設定を更新(Update EventBridge Settings)
+             * Update configuration used to provide the host state via Amazon EventBridge.
+             * @summary Update EventBridge Settings
              * @param {EventBridgeSettings} [body]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8684,8 +8968,8 @@
      */
     class EventBridgeApi extends BaseAPI$1 {
         /**
-         * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge.
-         * @summary イベント連携の送信(Send Events)
+         * Send events to Amazon EventBridge.
+         * @summary Send Events
          * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -8695,8 +8979,8 @@
             return EventBridgeApiFp(this.configuration).createEventBridgeEvent(createEventBridgeEventParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge.
-         * @summary イベント連携のテスト送信(Test EventBridge Connection)
+         * Send events to test the connection with Amazon EventBridge.
+         * @summary Test EventBridge Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof EventBridgeApi
@@ -8705,8 +8989,8 @@
             return EventBridgeApiFp(this.configuration).createEventBridgeTestEvent(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge.
-         * @summary イベント連携設定を削除(Delete EventBridge Settings)
+         * Delete settings used to provide host state via Amazon EventBridge.
+         * @summary Delete EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof EventBridgeApi
@@ -8715,8 +8999,8 @@
             return EventBridgeApiFp(this.configuration).deleteEventBridgeSettings(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
-         * @summary イベント連携設定を取得(Get EventBridge Settings)
+         * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
+         * @summary Get EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof EventBridgeApi
@@ -8725,8 +9009,8 @@
             return EventBridgeApiFp(this.configuration).getEventBridgeSettings(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge.
-         * @summary イベント連携設定を更新(Update EventBridge Settings)
+         * Update configuration used to provide the host state via Amazon EventBridge.
+         * @summary Update EventBridge Settings
          * @param {EventBridgeSettings} [body]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -8921,8 +9205,8 @@
     const AwsMarketplaceApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-             * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+             * Create customer information to be linked to AWS Marketplace.
+             * @summary Create customer information to be linked to AWS Marketplace
              * @param {CreateCustomerParam} [createCustomerParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -8952,8 +9236,8 @@
                 };
             },
             /**
-             * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-             * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+             * Retrieve the product\'s publication status from AWS Marketplace.
+             * @summary Obtain product publication status from AWS Marketplace
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -8980,8 +9264,8 @@
                 };
             },
             /**
-             * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-             * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+             * Get the CloudFormation Quick Create link.
+             * @summary Get the link to create the AWS CloudFormation stack
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9008,9 +9292,9 @@
                 };
             },
             /**
-             * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-             * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-             * @param {string} customerIdentifier 顧客ID
+             * Get customer information to be linked to AWS Marketplace.
+             * @summary Get customer information to be linked to AWS Marketplace
+             * @param {string} customerIdentifier Customer ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9040,8 +9324,8 @@
                 };
             },
             /**
-             * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-             * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+             * Get a list of customer information to be linked to AWS Marketplace.
+             * @summary Get a list of customer information to be linked to AWS Marketplace
              * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9072,8 +9356,8 @@
                 };
             },
             /**
-             * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-             * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+             * Get AWS Marketplace Listing Status.
+             * @summary Get AWS Marketplace Listing Status
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9100,9 +9384,9 @@
                 };
             },
             /**
-             * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-             * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-             * @param {string} planName AWS Marketplace連携プラン名
+             * Obtain plan information to link to AWS Marketplace.
+             * @summary Obtain plan information to link to AWS Marketplace
+             * @param {string} planName AWS Marketplace linked plan name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9132,8 +9416,8 @@
                 };
             },
             /**
-             * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-             * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+             * Obtain plan information to link to AWS Marketplace.
+             * @summary Obtain plan information to link to AWS Marketplace
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9160,8 +9444,8 @@
                 };
             },
             /**
-             * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-             * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+             * Get AWS Marketplace Settings.
+             * @summary Get AWS Marketplace Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9188,8 +9472,8 @@
                 };
             },
             /**
-             * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-             * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+             * Save plan information to be linked to AWSMarketplace.
+             * @summary Save plan information to be linked to AWSMarketplace
              * @param {SavePlanParam} [savePlanParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9219,9 +9503,9 @@
                 };
             },
             /**
-             * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-             * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-             * @param {string} customerIdentifier 顧客ID
+             * Sync AWS Marketplace customer information to SaaSus.
+             * @summary Sync AWS Marketplace customer information to SaaSus
+             * @param {string} customerIdentifier Customer ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9251,8 +9535,8 @@
                 };
             },
             /**
-             * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-             * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+             * Update AWS Marketplace Listing Status.
+             * @summary Update AWS Marketplace Listing Status
              * @param {UpdateListingStatusParam} [updateListingStatusParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9282,8 +9566,8 @@
                 };
             },
             /**
-             * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-             * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+             * Update AWS Marketplace Settings.
+             * @summary Update AWS Marketplace Settings
              * @param {UpdateSettingsParam} [updateSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9313,8 +9597,8 @@
                 };
             },
             /**
-             * Registration Tokenを検証します。  Verify Registration Token.
-             * @summary Registration Tokenを検証(Verify Registration Token)
+             * Verify Registration Token.
+             * @summary Verify Registration Token
              * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9353,8 +9637,8 @@
         const localVarAxiosParamCreator = AwsMarketplaceApiAxiosParamCreator(configuration);
         return {
             /**
-             * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-             * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+             * Create customer information to be linked to AWS Marketplace.
+             * @summary Create customer information to be linked to AWS Marketplace
              * @param {CreateCustomerParam} [createCustomerParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9364,8 +9648,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-             * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+             * Retrieve the product\'s publication status from AWS Marketplace.
+             * @summary Obtain product publication status from AWS Marketplace
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9374,8 +9658,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-             * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+             * Get the CloudFormation Quick Create link.
+             * @summary Get the link to create the AWS CloudFormation stack
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9384,9 +9668,9 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-             * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-             * @param {string} customerIdentifier 顧客ID
+             * Get customer information to be linked to AWS Marketplace.
+             * @summary Get customer information to be linked to AWS Marketplace
+             * @param {string} customerIdentifier Customer ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9395,8 +9679,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-             * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+             * Get a list of customer information to be linked to AWS Marketplace.
+             * @summary Get a list of customer information to be linked to AWS Marketplace
              * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9406,8 +9690,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-             * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+             * Get AWS Marketplace Listing Status.
+             * @summary Get AWS Marketplace Listing Status
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9416,9 +9700,9 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-             * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-             * @param {string} planName AWS Marketplace連携プラン名
+             * Obtain plan information to link to AWS Marketplace.
+             * @summary Obtain plan information to link to AWS Marketplace
+             * @param {string} planName AWS Marketplace linked plan name
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9427,8 +9711,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-             * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+             * Obtain plan information to link to AWS Marketplace.
+             * @summary Obtain plan information to link to AWS Marketplace
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9437,8 +9721,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-             * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+             * Get AWS Marketplace Settings.
+             * @summary Get AWS Marketplace Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9447,8 +9731,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-             * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+             * Save plan information to be linked to AWSMarketplace.
+             * @summary Save plan information to be linked to AWSMarketplace
              * @param {SavePlanParam} [savePlanParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9458,9 +9742,9 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-             * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-             * @param {string} customerIdentifier 顧客ID
+             * Sync AWS Marketplace customer information to SaaSus.
+             * @summary Sync AWS Marketplace customer information to SaaSus
+             * @param {string} customerIdentifier Customer ID
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -9469,8 +9753,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-             * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+             * Update AWS Marketplace Listing Status.
+             * @summary Update AWS Marketplace Listing Status
              * @param {UpdateListingStatusParam} [updateListingStatusParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9480,8 +9764,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-             * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+             * Update AWS Marketplace Settings.
+             * @summary Update AWS Marketplace Settings
              * @param {UpdateSettingsParam} [updateSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9491,8 +9775,8 @@
                 return createRequestFunction(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH, configuration);
             },
             /**
-             * Registration Tokenを検証します。  Verify Registration Token.
-             * @summary Registration Tokenを検証(Verify Registration Token)
+             * Verify Registration Token.
+             * @summary Verify Registration Token
              * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -9511,8 +9795,8 @@
      */
     class AwsMarketplaceApi extends BaseAPI {
         /**
-         * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-         * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+         * Create customer information to be linked to AWS Marketplace.
+         * @summary Create customer information to be linked to AWS Marketplace
          * @param {CreateCustomerParam} [createCustomerParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9522,8 +9806,8 @@
             return AwsMarketplaceApiFp(this.configuration).createCustomer(createCustomerParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-         * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+         * Retrieve the product\'s publication status from AWS Marketplace.
+         * @summary Obtain product publication status from AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9532,8 +9816,8 @@
             return AwsMarketplaceApiFp(this.configuration).getCatalogEntityVisibility(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-         * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+         * Get the CloudFormation Quick Create link.
+         * @summary Get the link to create the AWS CloudFormation stack
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9542,9 +9826,9 @@
             return AwsMarketplaceApiFp(this.configuration).getCloudFormationLaunchStackLink(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-         * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-         * @param {string} customerIdentifier 顧客ID
+         * Get customer information to be linked to AWS Marketplace.
+         * @summary Get customer information to be linked to AWS Marketplace
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9553,8 +9837,8 @@
             return AwsMarketplaceApiFp(this.configuration).getCustomer(customerIdentifier, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-         * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+         * Get a list of customer information to be linked to AWS Marketplace.
+         * @summary Get a list of customer information to be linked to AWS Marketplace
          * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9564,8 +9848,8 @@
             return AwsMarketplaceApiFp(this.configuration).getCustomers(tenantIds, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-         * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+         * Get AWS Marketplace Listing Status.
+         * @summary Get AWS Marketplace Listing Status
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9574,9 +9858,9 @@
             return AwsMarketplaceApiFp(this.configuration).getListingStatus(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-         * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-         * @param {string} planName AWS Marketplace連携プラン名
+         * Obtain plan information to link to AWS Marketplace.
+         * @summary Obtain plan information to link to AWS Marketplace
+         * @param {string} planName AWS Marketplace linked plan name
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9585,8 +9869,8 @@
             return AwsMarketplaceApiFp(this.configuration).getPlanByPlanName(planName, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-         * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+         * Obtain plan information to link to AWS Marketplace.
+         * @summary Obtain plan information to link to AWS Marketplace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9595,8 +9879,8 @@
             return AwsMarketplaceApiFp(this.configuration).getPlans(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-         * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+         * Get AWS Marketplace Settings.
+         * @summary Get AWS Marketplace Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9605,8 +9889,8 @@
             return AwsMarketplaceApiFp(this.configuration).getSettings(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-         * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+         * Save plan information to be linked to AWSMarketplace.
+         * @summary Save plan information to be linked to AWSMarketplace
          * @param {SavePlanParam} [savePlanParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9616,9 +9900,9 @@
             return AwsMarketplaceApiFp(this.configuration).savePlan(savePlanParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-         * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-         * @param {string} customerIdentifier 顧客ID
+         * Sync AWS Marketplace customer information to SaaSus.
+         * @summary Sync AWS Marketplace customer information to SaaSus
+         * @param {string} customerIdentifier Customer ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AwsMarketplaceApi
@@ -9627,8 +9911,8 @@
             return AwsMarketplaceApiFp(this.configuration).syncCustomer(customerIdentifier, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-         * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+         * Update AWS Marketplace Listing Status.
+         * @summary Update AWS Marketplace Listing Status
          * @param {UpdateListingStatusParam} [updateListingStatusParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9638,8 +9922,8 @@
             return AwsMarketplaceApiFp(this.configuration).updateListingStatus(updateListingStatusParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-         * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+         * Update AWS Marketplace Settings.
+         * @summary Update AWS Marketplace Settings
          * @param {UpdateSettingsParam} [updateSettingsParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9649,8 +9933,8 @@
             return AwsMarketplaceApiFp(this.configuration).updateSettings(updateSettingsParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Registration Tokenを検証します。  Verify Registration Token.
-         * @summary Registration Tokenを検証(Verify Registration Token)
+         * Verify Registration Token.
+         * @summary Verify Registration Token
          * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
