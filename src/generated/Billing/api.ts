@@ -60,7 +60,7 @@ export interface StripeInfo {
  */
 export interface UpdateStripeInfoParam {
     /**
-     * シークレットキー(secret key)
+     * secret key
      * @type {string}
      * @memberof UpdateStripeInfoParam
      */
@@ -74,8 +74,8 @@ export interface UpdateStripeInfoParam {
 export const ErrorApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -118,8 +118,8 @@ export const ErrorApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ErrorApiAxiosParamCreator(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -138,8 +138,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
     const localVarFp = ErrorApiFp(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -157,8 +157,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
  */
 export class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
@@ -176,8 +176,8 @@ export class ErrorApi extends BaseAPI {
 export const StripeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS 
-         * @summary Stripe連携情報を削除(Delete Stripe Connection)
+         * Delete connection with external billing SaaS 
+         * @summary Delete Stripe Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -210,8 +210,8 @@ export const StripeApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
-         * @summary Stripe連携情報を取得(Get Stripe Connection information)
+         * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
+         * @summary Get Stripe Connection information
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -244,8 +244,8 @@ export const StripeApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
-         * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+         * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
+         * @summary Update Stripe Connection Info
          * @param {UpdateStripeInfoParam} [updateStripeInfoParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -292,8 +292,8 @@ export const StripeApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = StripeApiAxiosParamCreator(configuration)
     return {
         /**
-         * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS 
-         * @summary Stripe連携情報を削除(Delete Stripe Connection)
+         * Delete connection with external billing SaaS 
+         * @summary Delete Stripe Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -302,8 +302,8 @@ export const StripeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
-         * @summary Stripe連携情報を取得(Get Stripe Connection information)
+         * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
+         * @summary Get Stripe Connection information
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -312,8 +312,8 @@ export const StripeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
-         * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+         * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
+         * @summary Update Stripe Connection Info
          * @param {UpdateStripeInfoParam} [updateStripeInfoParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -333,8 +333,8 @@ export const StripeApiFactory = function (configuration?: Configuration, basePat
     const localVarFp = StripeApiFp(configuration)
     return {
         /**
-         * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS 
-         * @summary Stripe連携情報を削除(Delete Stripe Connection)
+         * Delete connection with external billing SaaS 
+         * @summary Delete Stripe Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -342,8 +342,8 @@ export const StripeApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.deleteStripeInfo(options).then((request) => request(axios, basePath));
         },
         /**
-         * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
-         * @summary Stripe連携情報を取得(Get Stripe Connection information)
+         * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
+         * @summary Get Stripe Connection information
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -351,8 +351,8 @@ export const StripeApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.getStripeInfo(options).then((request) => request(axios, basePath));
         },
         /**
-         * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
-         * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+         * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
+         * @summary Update Stripe Connection Info
          * @param {UpdateStripeInfoParam} [updateStripeInfoParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -371,8 +371,8 @@ export const StripeApiFactory = function (configuration?: Configuration, basePat
  */
 export class StripeApi extends BaseAPI {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS 
-     * @summary Stripe連携情報を削除(Delete Stripe Connection)
+     * Delete connection with external billing SaaS 
+     * @summary Delete Stripe Connection
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof StripeApi
@@ -382,8 +382,8 @@ export class StripeApi extends BaseAPI {
     }
 
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
-     * @summary Stripe連携情報を取得(Get Stripe Connection information)
+     * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API. 
+     * @summary Get Stripe Connection information
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof StripeApi
@@ -393,8 +393,8 @@ export class StripeApi extends BaseAPI {
     }
 
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
-     * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+     * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe. 
+     * @summary Update Stripe Connection Info
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
