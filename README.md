@@ -63,31 +63,31 @@ app.use(
 
 ## JavaScript SDK
 
-- [Auth](./src/generated/Auth/README.md)
+- [Auth](./docs/modules/Auth.md)
 
   ユーザ情報、基本情報、認証情報、テナント情報、役割(ロール)情報などに参照・更新に利用します。
 
-- [Pricing](./src/generated/Pricing/README.md)
+- [Pricing](./docs/modules/Pricing.md)
 
   プライシングユニット、機能メニュー、料金プラン、メータリングユニットカウントなど料金に関連する情報の参照・更新に利用します。
 
-- [Billing](./src/generated/Billing/README.md)
+- [Billing](./docs/modules/Billing.md)
 
   請求業務で使う外部 SaaS との連携情報の参照・更新に利用します。
 
-- [Integration](./src/generated/Integration/README.md)
+- [Integration](./docs/modules/Integration.md)
 
   EventBridge 連携設定の参照・更新に利用します。
 
-- [AwsMarketplace](./src/generated/AwsMarketplace/README.md)
+- [AwsMarketplace](./docs/modules/AwsMarketplace.md)
 
   AWS Marketplace 連携設定の参照・更新に利用します。
 
-- [Communication](./src/generated/Communication/README.md)
+- [Communication](./docs/modules/Communication.md)
 
   フィードバック、コメント、投票などの参照・更新に利用します。
 
-- [ApiLog](./src/generated/ApiLog/README.md)
+- [ApiLog](./docs/modules/ApiLog.md)
 
   API ログの参照に利用します。
 

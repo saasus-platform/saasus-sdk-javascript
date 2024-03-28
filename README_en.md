@@ -63,31 +63,31 @@ app.use(
 
 ## JavaScript SDK
 
-- [Auth](./src/generated/Auth/README_en.md)
+- [Auth](./docs/modules/Auth.md)
 
   It is used for referencing/updating user information, basic information, authentication information, tenant information, role information, etc.
 
-- [Pricing](./src/generated/Pricing/README_en.md)
+- [Pricing](./docs/modules/Pricing.md)
 
   It is used to refer to and update information related to charges, such as pricing units, function menus, charge plans, and metering unit counts.
 
-- [Billing](./src/generated/Billing/README_en.md)
+- [Billing](./docs/modules/Billing.md)
 
   It is used for referencing/updating information related to external SaaS used in billing operations.
 
-- [Integration](./src/generated/Integration/README_en.md)
+- [Integration](./docs/modules/Integration.md)
 
   It is used for referencing/updating information related to Amazon EventBridge.
 
-- [AwsMarketplace](./src/generated/AwsMarketplace/README_en.md)
+- [AwsMarketplace](./docs/modules/AwsMarketplace.md)
 
   It is used for referencing/updating information related to AWS Marketplace.
 
-- [Communication](./src/generated/Communication/README_en.md)
+- [Communication](./docs/modules/Communication.md)
 
   It is used for referencing/updating information related to feedbacks, comments, voting, etc.
 
-- [ApiLog](./src/generated/ApiLog/README_en.md)
+- [ApiLog](./docs/modules/ApiLog.md)
 
   It is used for referencing/updating information related to API logs.
 
