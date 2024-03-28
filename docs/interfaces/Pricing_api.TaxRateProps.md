@@ -25,7 +25,7 @@ TaxRateProps
 
 • **country**: `string`
 
-ISO 3166-1 alpha-2 の国コード(Country code of ISO 3166-1 alpha-2)
+Country code of ISO 3166-1 alpha-2
 
 **`Memberof`**
 
@@ -33,7 +33,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1435](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1435)
+[src/generated/Pricing/api.ts:1547](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1547)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **description**: `string`
 
-説明(description)
+Description
 
 **`Memberof`**
 
@@ -49,7 +49,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1441](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1441)
+[src/generated/Pricing/api.ts:1553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1553)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **display\_name**: `string`
 
-表示名(display name)
+Display name
 
 **`Memberof`**
 
@@ -65,7 +65,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1417](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1417)
+[src/generated/Pricing/api.ts:1529](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1529)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **inclusive**: `boolean`
 
-内税かどうか(inclusive or not)
+Inclusive or not
 
 **`Memberof`**
 
@@ -81,7 +81,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1429](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1429)
+[src/generated/Pricing/api.ts:1541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1541)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **name**: `string`
 
-税率の名前(name of tax rate)
+Name of tax rate
 
 **`Memberof`**
 
@@ -97,7 +97,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1411](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1411)
+[src/generated/Pricing/api.ts:1523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1523)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **percentage**: `number`
 
-税率(percentage)
+Percentage
 
 **`Memberof`**
 
@@ -113,4 +113,4 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1423](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1423)
+[src/generated/Pricing/api.ts:1535](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1535)

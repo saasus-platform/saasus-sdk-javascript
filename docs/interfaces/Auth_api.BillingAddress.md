@@ -25,7 +25,7 @@ BillingAddress
 
 • `Optional` **additional\_address\_info**: `string`
 
-建物名・部屋番号などの住所に関する追加情報  Additional information about the address, such as a building name, floor, or department name.
+Additional information about the address, such as a building name, floor, or department name.
 
 **`Memberof`**
 
@@ -33,7 +33,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L234)
+[src/generated/Auth/api.ts:234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L234)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **city**: `string`
 
-住所の市区町村  City, district, suburb, town, or village.
+City, district, suburb, town, or village.
 
 **`Memberof`**
 
@@ -49,7 +49,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:216](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L216)
+[src/generated/Auth/api.ts:216](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L216)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **country**: `string`
 
-住所の国を ISO 3166-1 alpha-2 コードで指定します。  Country of the address using ISO 3166-1 alpha-2 code.
+Country of the address using ISO 3166-1 alpha-2 code.
 
 **`Memberof`**
 
@@ -65,7 +65,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:228](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L228)
+[src/generated/Auth/api.ts:228](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L228)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **postal\_code**: `string`
 
-郵便番号  ZIP or postal code.
+ZIP or postal code.
 
 **`Memberof`**
 
@@ -81,7 +81,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:240](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L240)
+[src/generated/Auth/api.ts:240](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L240)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **state**: `string`
 
-住所の都道府県または州  State name or abbreviation.
+State name or abbreviation.
 
 **`Memberof`**
 
@@ -97,7 +97,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:222](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L222)
+[src/generated/Auth/api.ts:222](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L222)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **street**: `string`
 
-住所の通りの名前や番地を含めた部分  Street address, apartment or suite number.
+Street address, apartment or suite number.
 
 **`Memberof`**
 
@@ -113,4 +113,4 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:210](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L210)
+[src/generated/Auth/api.ts:210](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L210)

@@ -27,7 +27,7 @@ PricingFixedUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:356](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L356)
+[src/generated/Pricing/api.ts:462](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L462)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **unit\_amount**: `number`
 
-料金(price)
+Price
 
 **`Memberof`**
 
@@ -43,4 +43,4 @@ PricingFixedUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L350)
+[src/generated/Pricing/api.ts:456](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L456)

@@ -60,7 +60,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **createEnv**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
 
-環境情報を作成します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
 
 #### Parameters
 
@@ -125,7 +125,7 @@ ___
 
 **`Summary`**
 
-環境情報を作成(Create Env Info)
+Create Env Info
 
 **`Throws`**
 
@@ -135,7 +135,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3919](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3919)
+[src/generated/Auth/api.ts:3927](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3927)
 
 ___
 
@@ -143,13 +143,13 @@ ___
 
 ▸ **deleteEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-環境情報を削除します。idが3の環境は削除できません。  Delete env info. Env with id 3 cannot be deleted.
+Delete env info. Env with id 3 cannot be deleted.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `envId` | `number` | 環境ID(Env ID) |
+| `envId` | `number` | Env ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -158,7 +158,7 @@ ___
 
 **`Summary`**
 
-環境情報を削除(Delete Env Info)
+Delete Env Info
 
 **`Throws`**
 
@@ -168,7 +168,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3931](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3931)
+[src/generated/Auth/api.ts:3939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3939)
 
 ___
 
@@ -176,13 +176,13 @@ ___
 
 ▸ **getEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
 
-環境情報の詳細を取得します。  Get environment details.
+Get environment details.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `envId` | `number` | 環境ID(Env ID) |
+| `envId` | `number` | Env ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -191,7 +191,7 @@ ___
 
 **`Summary`**
 
-環境情報を取得(Get Env Details)
+Get Env Details
 
 **`Throws`**
 
@@ -201,7 +201,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3943](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3943)
+[src/generated/Auth/api.ts:3951](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3951)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **getEnvs**(`options?`): `Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`\>\>
 
-登録されている環境情報を取得します。 連携のテストや開発用環境や実際の運用で利用する環境など複数の環境を定義することができます。  Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
+Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
 
 #### Parameters
 
@@ -223,7 +223,7 @@ ___
 
 **`Summary`**
 
-環境情報一覧を取得(Get Env Info)
+Get Env Info
 
 **`Throws`**
 
@@ -233,7 +233,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3954](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3954)
+[src/generated/Auth/api.ts:3962](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3962)
 
 ___
 
@@ -241,13 +241,13 @@ ___
 
 ▸ **updateEnv**(`envId`, `updateEnvParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-環境情報を更新します。  Update env info.
+Update env info.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `envId` | `number` | 環境ID(Env ID) |
+| `envId` | `number` | Env ID |
 | `updateEnvParam?` | [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -257,7 +257,7 @@ ___
 
 **`Summary`**
 
-環境情報を更新(Update Env Info)
+Update Env Info
 
 **`Throws`**
 
@@ -267,4 +267,4 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3967](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3967)
+[src/generated/Auth/api.ts:3975](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3975)

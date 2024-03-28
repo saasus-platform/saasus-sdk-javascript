@@ -23,13 +23,15 @@ PricingTieredUsageUnitAllOf
 
 • **id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingTieredUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:917](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L917)
+[src/generated/Pricing/api.ts:998](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L998)
 
 ___
 
@@ -37,13 +39,15 @@ ___
 
 • **metering\_unit\_id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingTieredUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:923](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L923)
+[src/generated/Pricing/api.ts:1004](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1004)
 
 ___
 
@@ -57,7 +61,7 @@ PricingTieredUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:929](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L929)
+[src/generated/Pricing/api.ts:1010](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1010)
 
 ___
 
@@ -65,10 +69,12 @@ ___
 
 • **used**: `boolean`
 
+Indicates if the unit is used
+
 **`Memberof`**
 
 PricingTieredUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:935](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L935)
+[src/generated/Pricing/api.ts:1016](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1016)

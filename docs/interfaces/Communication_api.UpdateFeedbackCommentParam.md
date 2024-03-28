@@ -26,4 +26,4 @@ UpdateFeedbackCommentParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:323](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L323)
+[src/generated/Communication/api.ts:305](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L305)
