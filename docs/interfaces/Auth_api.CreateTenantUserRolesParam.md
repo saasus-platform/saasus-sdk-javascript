@@ -20,7 +20,7 @@ CreateTenantUserRolesParam
 
 • **role\_names**: `string`[]
 
-役割(ロール)情報(Role Info)
+Role Info
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ CreateTenantUserRolesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:430](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L430)
+[src/generated/Auth/api.ts:430](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L430)

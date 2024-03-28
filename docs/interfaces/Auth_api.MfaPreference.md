@@ -21,7 +21,7 @@ MfaPreference
 
 • **enabled**: `boolean`
 
-MFAを有効にするか否か(enable MFA)
+enable MFA
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ MfaPreference
 
 #### Defined in
 
-[src/generated/Auth/api.ts:979](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L979)
+[src/generated/Auth/api.ts:979](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L979)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **method**: ``"softwareToken"``
 
-MFAの方法(enabledがtrueの場合は必須)(MFA method (required if enabled is true))
+MFA method (required if enabled is true)
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ MfaPreference
 
 #### Defined in
 
-[src/generated/Auth/api.ts:985](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L985)
+[src/generated/Auth/api.ts:985](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L985)
