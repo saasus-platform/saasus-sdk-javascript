@@ -126,7 +126,7 @@ export declare const ListingStatus: {
     readonly Restricted: "restricted";
     readonly Public: "public";
 };
-export declare type ListingStatus = typeof ListingStatus[keyof typeof ListingStatus];
+export type ListingStatus = typeof ListingStatus[keyof typeof ListingStatus];
 /**
  *
  * @export
@@ -349,345 +349,345 @@ export declare const VisibilityStatus: {
     readonly Limited: "Limited";
     readonly Restricted: "Restricted";
 };
-export declare type VisibilityStatus = typeof VisibilityStatus[keyof typeof VisibilityStatus];
+export type VisibilityStatus = typeof VisibilityStatus[keyof typeof VisibilityStatus];
 /**
  * AwsMarketplaceApi - axios parameter creator
  * @export
  */
-export declare const AwsMarketplaceApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const AwsMarketplaceApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+     * Create customer information to be linked to AWS Marketplace.
+     * @summary Create customer information to be linked to AWS Marketplace
      * @param {CreateCustomerParam} [createCustomerParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createCustomer: (createCustomerParam?: CreateCustomerParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    createCustomer: (createCustomerParam?: CreateCustomerParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-     * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+     * Retrieve the product\'s publication status from AWS Marketplace.
+     * @summary Obtain product publication status from AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCatalogEntityVisibility: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-     * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+     * Get the CloudFormation Quick Create link.
+     * @summary Get the link to create the AWS CloudFormation stack
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCloudFormationLaunchStackLink: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-     * @param {string} customerIdentifier 顧客ID
+     * Get customer information to be linked to AWS Marketplace.
+     * @summary Get customer information to be linked to AWS Marketplace
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCustomer: (customerIdentifier: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+     * Get a list of customer information to be linked to AWS Marketplace.
+     * @summary Get a list of customer information to be linked to AWS Marketplace
      * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getCustomers: (tenantIds?: string[] | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    getCustomers: (tenantIds?: Array<string>, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+     * Get AWS Marketplace Listing Status.
+     * @summary Get AWS Marketplace Listing Status
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getListingStatus: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-     * @param {string} planName AWS Marketplace連携プラン名
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
+     * @param {string} planName AWS Marketplace linked plan name
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPlanByPlanName: (planName: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPlans: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+     * Get AWS Marketplace Settings.
+     * @summary Get AWS Marketplace Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getSettings: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+     * Save plan information to be linked to AWSMarketplace.
+     * @summary Save plan information to be linked to AWSMarketplace
      * @param {SavePlanParam} [savePlanParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savePlan: (savePlanParam?: SavePlanParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    savePlan: (savePlanParam?: SavePlanParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-     * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-     * @param {string} customerIdentifier 顧客ID
+     * Sync AWS Marketplace customer information to SaaSus.
+     * @summary Sync AWS Marketplace customer information to SaaSus
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     syncCustomer: (customerIdentifier: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+     * Update AWS Marketplace Listing Status.
+     * @summary Update AWS Marketplace Listing Status
      * @param {UpdateListingStatusParam} [updateListingStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateListingStatus: (updateListingStatusParam?: UpdateListingStatusParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateListingStatus: (updateListingStatusParam?: UpdateListingStatusParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+     * Update AWS Marketplace Settings.
+     * @summary Update AWS Marketplace Settings
      * @param {UpdateSettingsParam} [updateSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateSettings: (updateSettingsParam?: UpdateSettingsParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateSettings: (updateSettingsParam?: UpdateSettingsParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Registration Tokenを検証します。  Verify Registration Token.
-     * @summary Registration Tokenを検証(Verify Registration Token)
+     * Verify Registration Token.
+     * @summary Verify Registration Token
      * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    verifyRegistrationToken: (verifyRegistrationTokenParam?: VerifyRegistrationTokenParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    verifyRegistrationToken: (verifyRegistrationTokenParam?: VerifyRegistrationTokenParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * AwsMarketplaceApi - functional programming interface
  * @export
  */
-export declare const AwsMarketplaceApiFp: (configuration?: Configuration | undefined) => {
+export declare const AwsMarketplaceApiFp: (configuration?: Configuration) => {
     /**
-     * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+     * Create customer information to be linked to AWS Marketplace.
+     * @summary Create customer information to be linked to AWS Marketplace
      * @param {CreateCustomerParam} [createCustomerParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createCustomer(createCustomerParam?: CreateCustomerParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Customer>>;
+    createCustomer(createCustomerParam?: CreateCustomerParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Customer>>;
     /**
-     * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-     * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+     * Retrieve the product\'s publication status from AWS Marketplace.
+     * @summary Obtain product publication status from AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getCatalogEntityVisibility(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CatalogEntityVisibility>>;
+    getCatalogEntityVisibility(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CatalogEntityVisibility>>;
     /**
-     * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-     * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+     * Get the CloudFormation Quick Create link.
+     * @summary Get the link to create the AWS CloudFormation stack
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getCloudFormationLaunchStackLink(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CloudFormationLaunchStackLink>>;
+    getCloudFormationLaunchStackLink(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CloudFormationLaunchStackLink>>;
     /**
-     * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-     * @param {string} customerIdentifier 顧客ID
+     * Get customer information to be linked to AWS Marketplace.
+     * @summary Get customer information to be linked to AWS Marketplace
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getCustomer(customerIdentifier: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Customer>>;
+    getCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Customer>>;
     /**
-     * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+     * Get a list of customer information to be linked to AWS Marketplace.
+     * @summary Get a list of customer information to be linked to AWS Marketplace
      * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getCustomers(tenantIds?: string[] | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Customers>>;
+    getCustomers(tenantIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Customers>>;
     /**
-     * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+     * Get AWS Marketplace Listing Status.
+     * @summary Get AWS Marketplace Listing Status
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getListingStatus(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<GetListingStatusResult>>;
+    getListingStatus(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetListingStatusResult>>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-     * @param {string} planName AWS Marketplace連携プラン名
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
+     * @param {string} planName AWS Marketplace linked plan name
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getPlanByPlanName(planName: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Plan>>;
+    getPlanByPlanName(planName: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Plan>>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getPlans(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Plans>>;
+    getPlans(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Plans>>;
     /**
-     * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+     * Get AWS Marketplace Settings.
+     * @summary Get AWS Marketplace Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSettings(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Settings>>;
+    getSettings(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Settings>>;
     /**
-     * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+     * Save plan information to be linked to AWSMarketplace.
+     * @summary Save plan information to be linked to AWSMarketplace
      * @param {SavePlanParam} [savePlanParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savePlan(savePlanParam?: SavePlanParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    savePlan(savePlanParam?: SavePlanParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-     * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-     * @param {string} customerIdentifier 顧客ID
+     * Sync AWS Marketplace customer information to SaaSus.
+     * @summary Sync AWS Marketplace customer information to SaaSus
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    syncCustomer(customerIdentifier: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    syncCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+     * Update AWS Marketplace Listing Status.
+     * @summary Update AWS Marketplace Listing Status
      * @param {UpdateListingStatusParam} [updateListingStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+     * Update AWS Marketplace Settings.
+     * @summary Update AWS Marketplace Settings
      * @param {UpdateSettingsParam} [updateSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateSettings(updateSettingsParam?: UpdateSettingsParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    updateSettings(updateSettingsParam?: UpdateSettingsParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * Registration Tokenを検証します。  Verify Registration Token.
-     * @summary Registration Tokenを検証(Verify Registration Token)
+     * Verify Registration Token.
+     * @summary Verify Registration Token
      * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    verifyRegistrationToken(verifyRegistrationTokenParam?: VerifyRegistrationTokenParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    verifyRegistrationToken(verifyRegistrationTokenParam?: VerifyRegistrationTokenParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * AwsMarketplaceApi - factory interface
  * @export
  */
-export declare const AwsMarketplaceApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const AwsMarketplaceApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+     * Create customer information to be linked to AWS Marketplace.
+     * @summary Create customer information to be linked to AWS Marketplace
      * @param {CreateCustomerParam} [createCustomerParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createCustomer(createCustomerParam?: CreateCustomerParam | undefined, options?: any): AxiosPromise<Customer>;
+    createCustomer(createCustomerParam?: CreateCustomerParam, options?: any): AxiosPromise<Customer>;
     /**
-     * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-     * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+     * Retrieve the product\'s publication status from AWS Marketplace.
+     * @summary Obtain product publication status from AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCatalogEntityVisibility(options?: any): AxiosPromise<CatalogEntityVisibility>;
     /**
-     * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-     * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+     * Get the CloudFormation Quick Create link.
+     * @summary Get the link to create the AWS CloudFormation stack
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCloudFormationLaunchStackLink(options?: any): AxiosPromise<CloudFormationLaunchStackLink>;
     /**
-     * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-     * @param {string} customerIdentifier 顧客ID
+     * Get customer information to be linked to AWS Marketplace.
+     * @summary Get customer information to be linked to AWS Marketplace
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCustomer(customerIdentifier: string, options?: any): AxiosPromise<Customer>;
     /**
-     * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+     * Get a list of customer information to be linked to AWS Marketplace.
+     * @summary Get a list of customer information to be linked to AWS Marketplace
      * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getCustomers(tenantIds?: string[] | undefined, options?: any): AxiosPromise<Customers>;
+    getCustomers(tenantIds?: Array<string>, options?: any): AxiosPromise<Customers>;
     /**
-     * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+     * Get AWS Marketplace Listing Status.
+     * @summary Get AWS Marketplace Listing Status
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getListingStatus(options?: any): AxiosPromise<GetListingStatusResult>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-     * @param {string} planName AWS Marketplace連携プラン名
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
+     * @param {string} planName AWS Marketplace linked plan name
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPlanByPlanName(planName: string, options?: any): AxiosPromise<Plan>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getPlans(options?: any): AxiosPromise<Plans>;
     /**
-     * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+     * Get AWS Marketplace Settings.
+     * @summary Get AWS Marketplace Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getSettings(options?: any): AxiosPromise<Settings>;
     /**
-     * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+     * Save plan information to be linked to AWSMarketplace.
+     * @summary Save plan information to be linked to AWSMarketplace
      * @param {SavePlanParam} [savePlanParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    savePlan(savePlanParam?: SavePlanParam | undefined, options?: any): AxiosPromise<void>;
+    savePlan(savePlanParam?: SavePlanParam, options?: any): AxiosPromise<void>;
     /**
-     * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-     * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-     * @param {string} customerIdentifier 顧客ID
+     * Sync AWS Marketplace customer information to SaaSus.
+     * @summary Sync AWS Marketplace customer information to SaaSus
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     syncCustomer(customerIdentifier: string, options?: any): AxiosPromise<void>;
     /**
-     * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+     * Update AWS Marketplace Listing Status.
+     * @summary Update AWS Marketplace Listing Status
      * @param {UpdateListingStatusParam} [updateListingStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam | undefined, options?: any): AxiosPromise<void>;
+    updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam, options?: any): AxiosPromise<void>;
     /**
-     * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+     * Update AWS Marketplace Settings.
+     * @summary Update AWS Marketplace Settings
      * @param {UpdateSettingsParam} [updateSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateSettings(updateSettingsParam?: UpdateSettingsParam | undefined, options?: any): AxiosPromise<void>;
+    updateSettings(updateSettingsParam?: UpdateSettingsParam, options?: any): AxiosPromise<void>;
     /**
-     * Registration Tokenを検証します。  Verify Registration Token.
-     * @summary Registration Tokenを検証(Verify Registration Token)
+     * Verify Registration Token.
+     * @summary Verify Registration Token
      * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    verifyRegistrationToken(verifyRegistrationTokenParam?: VerifyRegistrationTokenParam | undefined, options?: any): AxiosPromise<void>;
+    verifyRegistrationToken(verifyRegistrationTokenParam?: VerifyRegistrationTokenParam, options?: any): AxiosPromise<void>;
 };
 /**
  * AwsMarketplaceApi - object-oriented interface
@@ -697,8 +697,8 @@ export declare const AwsMarketplaceApiFactory: (configuration?: Configuration | 
  */
 export declare class AwsMarketplaceApi extends BaseAPI {
     /**
-     * AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+     * Create customer information to be linked to AWS Marketplace.
+     * @summary Create customer information to be linked to AWS Marketplace
      * @param {CreateCustomerParam} [createCustomerParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -706,33 +706,33 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      */
     createCustomer(createCustomerParam?: CreateCustomerParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customer, any>>;
     /**
-     * AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
-     * @summary AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+     * Retrieve the product\'s publication status from AWS Marketplace.
+     * @summary Obtain product publication status from AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getCatalogEntityVisibility(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CatalogEntityVisibility, any>>;
     /**
-     * CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
-     * @summary AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+     * Get the CloudFormation Quick Create link.
+     * @summary Get the link to create the AWS CloudFormation stack
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getCloudFormationLaunchStackLink(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CloudFormationLaunchStackLink, any>>;
     /**
-     * AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
-     * @param {string} customerIdentifier 顧客ID
+     * Get customer information to be linked to AWS Marketplace.
+     * @summary Get customer information to be linked to AWS Marketplace
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customer, any>>;
     /**
-     * AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
-     * @summary AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+     * Get a list of customer information to be linked to AWS Marketplace.
+     * @summary Get a list of customer information to be linked to AWS Marketplace
      * @param {Array<string>} [tenantIds] 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -740,41 +740,41 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      */
     getCustomers(tenantIds?: Array<string>, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customers, any>>;
     /**
-     * AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+     * Get AWS Marketplace Listing Status.
+     * @summary Get AWS Marketplace Listing Status
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getListingStatus(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<GetListingStatusResult, any>>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
-     * @param {string} planName AWS Marketplace連携プラン名
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
+     * @param {string} planName AWS Marketplace linked plan name
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getPlanByPlanName(planName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Plan, any>>;
     /**
-     * Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+     * Obtain plan information to link to AWS Marketplace.
+     * @summary Obtain plan information to link to AWS Marketplace
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getPlans(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Plans, any>>;
     /**
-     * AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+     * Get AWS Marketplace Settings.
+     * @summary Get AWS Marketplace Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     getSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Settings, any>>;
     /**
-     * AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
-     * @summary AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+     * Save plan information to be linked to AWSMarketplace.
+     * @summary Save plan information to be linked to AWSMarketplace
      * @param {SavePlanParam} [savePlanParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -782,17 +782,17 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      */
     savePlan(savePlanParam?: SavePlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
-     * @summary AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
-     * @param {string} customerIdentifier 顧客ID
+     * Sync AWS Marketplace customer information to SaaSus.
+     * @summary Sync AWS Marketplace customer information to SaaSus
+     * @param {string} customerIdentifier Customer ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
     syncCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
-     * @summary AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+     * Update AWS Marketplace Listing Status.
+     * @summary Update AWS Marketplace Listing Status
      * @param {UpdateListingStatusParam} [updateListingStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -800,8 +800,8 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      */
     updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
-     * @summary AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+     * Update AWS Marketplace Settings.
+     * @summary Update AWS Marketplace Settings
      * @param {UpdateSettingsParam} [updateSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -809,8 +809,8 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      */
     updateSettings(updateSettingsParam?: UpdateSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * Registration Tokenを検証します。  Verify Registration Token.
-     * @summary Registration Tokenを検証(Verify Registration Token)
+     * Verify Registration Token.
+     * @summary Verify Registration Token
      * @param {VerifyRegistrationTokenParam} [verifyRegistrationTokenParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -822,10 +822,10 @@ export declare class AwsMarketplaceApi extends BaseAPI {
  * ErrorApi - axios parameter creator
  * @export
  */
-export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -835,23 +835,23 @@ export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration |
  * ErrorApi - functional programming interface
  * @export
  */
-export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiFp: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * ErrorApi - factory interface
  * @export
  */
-export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const ErrorApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -865,8 +865,8 @@ export declare const ErrorApiFactory: (configuration?: Configuration | undefined
  */
 export declare class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi

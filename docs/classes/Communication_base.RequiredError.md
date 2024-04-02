@@ -56,7 +56,7 @@ Error.constructor
 
 #### Defined in
 
-[src/generated/Communication/base.ts:68](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L68)
+[src/generated/Communication/base.ts:68](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/base.ts#L68)
 
 ## Properties
 
@@ -66,7 +66,7 @@ Error.constructor
 
 #### Defined in
 
-[src/generated/Communication/base.ts:68](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L68)
+[src/generated/Communication/base.ts:68](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/base.ts#L68)
 
 ___
 
@@ -94,7 +94,7 @@ Error.name
 
 #### Defined in
 
-[src/generated/Communication/base.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L67)
+[src/generated/Communication/base.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/base.ts#L67)
 
 ___
 

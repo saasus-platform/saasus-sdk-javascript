@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
 /**
- * 中国の寧夏、北京を除く全てのAWSリージョンが選択可能です。  All AWS regions except Ningxia and Beijing in China can be selected. 
+ * All AWS regions except Ningxia and Beijing in China can be selected. 
  * @export
  * @enum {string}
  */
@@ -62,7 +62,7 @@ export type AwsRegion = typeof AwsRegion[keyof typeof AwsRegion];
  */
 export interface CreateEventBridgeEventParam {
     /**
-     * イベントメッセージ(event message)
+     * event message
      * @type {Array<EventMessage>}
      * @memberof CreateEventBridgeEventParam
      */
@@ -75,7 +75,7 @@ export interface CreateEventBridgeEventParam {
  */
 export interface EventBridgeSettings {
     /**
-     * AWSアカウントID(AWS Account ID)
+     * AWS Account ID
      * @type {string}
      * @memberof EventBridgeSettings
      */
@@ -94,19 +94,19 @@ export interface EventBridgeSettings {
  */
 export interface EventMessage {
     /**
-     * イベントタイプ(event type)
+     * event type
      * @type {string}
      * @memberof EventMessage
      */
     'event_type': string;
     /**
-     * 詳細イベントタイプ(detailed event type)
+     * detailed event type
      * @type {string}
      * @memberof EventMessage
      */
     'event_detail_type': string;
     /**
-     * イベントメッセージ(event message)
+     * event message
      * @type {string}
      * @memberof EventMessage
      */
@@ -139,8 +139,8 @@ export interface ModelError {
 export const ErrorApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -183,8 +183,8 @@ export const ErrorApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ErrorApiAxiosParamCreator(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -203,8 +203,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
     const localVarFp = ErrorApiFp(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -222,8 +222,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
  */
 export class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
@@ -241,8 +241,8 @@ export class ErrorApi extends BaseAPI {
 export const EventBridgeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge. 
-         * @summary イベント連携の送信(Send Events)
+         * Send events to Amazon EventBridge. 
+         * @summary Send Events
          * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -279,8 +279,8 @@ export const EventBridgeApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge. 
-         * @summary イベント連携のテスト送信(Test EventBridge Connection)
+         * Send events to test the connection with Amazon EventBridge. 
+         * @summary Test EventBridge Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -313,8 +313,8 @@ export const EventBridgeApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge. 
-         * @summary イベント連携設定を削除(Delete EventBridge Settings)
+         * Delete settings used to provide host state via Amazon EventBridge. 
+         * @summary Delete EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -347,8 +347,8 @@ export const EventBridgeApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
-         * @summary イベント連携設定を取得(Get EventBridge Settings)
+         * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
+         * @summary Get EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -381,8 +381,8 @@ export const EventBridgeApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge. 
-         * @summary イベント連携設定を更新(Update EventBridge Settings)
+         * Update configuration used to provide the host state via Amazon EventBridge. 
+         * @summary Update EventBridge Settings
          * @param {EventBridgeSettings} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -429,8 +429,8 @@ export const EventBridgeApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = EventBridgeApiAxiosParamCreator(configuration)
     return {
         /**
-         * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge. 
-         * @summary イベント連携の送信(Send Events)
+         * Send events to Amazon EventBridge. 
+         * @summary Send Events
          * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -440,8 +440,8 @@ export const EventBridgeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge. 
-         * @summary イベント連携のテスト送信(Test EventBridge Connection)
+         * Send events to test the connection with Amazon EventBridge. 
+         * @summary Test EventBridge Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -450,8 +450,8 @@ export const EventBridgeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge. 
-         * @summary イベント連携設定を削除(Delete EventBridge Settings)
+         * Delete settings used to provide host state via Amazon EventBridge. 
+         * @summary Delete EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -460,8 +460,8 @@ export const EventBridgeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
-         * @summary イベント連携設定を取得(Get EventBridge Settings)
+         * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
+         * @summary Get EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -470,8 +470,8 @@ export const EventBridgeApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge. 
-         * @summary イベント連携設定を更新(Update EventBridge Settings)
+         * Update configuration used to provide the host state via Amazon EventBridge. 
+         * @summary Update EventBridge Settings
          * @param {EventBridgeSettings} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -491,8 +491,8 @@ export const EventBridgeApiFactory = function (configuration?: Configuration, ba
     const localVarFp = EventBridgeApiFp(configuration)
     return {
         /**
-         * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge. 
-         * @summary イベント連携の送信(Send Events)
+         * Send events to Amazon EventBridge. 
+         * @summary Send Events
          * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -501,8 +501,8 @@ export const EventBridgeApiFactory = function (configuration?: Configuration, ba
             return localVarFp.createEventBridgeEvent(createEventBridgeEventParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge. 
-         * @summary イベント連携のテスト送信(Test EventBridge Connection)
+         * Send events to test the connection with Amazon EventBridge. 
+         * @summary Test EventBridge Connection
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -510,8 +510,8 @@ export const EventBridgeApiFactory = function (configuration?: Configuration, ba
             return localVarFp.createEventBridgeTestEvent(options).then((request) => request(axios, basePath));
         },
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge. 
-         * @summary イベント連携設定を削除(Delete EventBridge Settings)
+         * Delete settings used to provide host state via Amazon EventBridge. 
+         * @summary Delete EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -519,8 +519,8 @@ export const EventBridgeApiFactory = function (configuration?: Configuration, ba
             return localVarFp.deleteEventBridgeSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
-         * @summary イベント連携設定を取得(Get EventBridge Settings)
+         * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
+         * @summary Get EventBridge Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -528,8 +528,8 @@ export const EventBridgeApiFactory = function (configuration?: Configuration, ba
             return localVarFp.getEventBridgeSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge. 
-         * @summary イベント連携設定を更新(Update EventBridge Settings)
+         * Update configuration used to provide the host state via Amazon EventBridge. 
+         * @summary Update EventBridge Settings
          * @param {EventBridgeSettings} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -548,8 +548,8 @@ export const EventBridgeApiFactory = function (configuration?: Configuration, ba
  */
 export class EventBridgeApi extends BaseAPI {
     /**
-     * Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge. 
-     * @summary イベント連携の送信(Send Events)
+     * Send events to Amazon EventBridge. 
+     * @summary Send Events
      * @param {CreateEventBridgeEventParam} [createEventBridgeEventParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -560,8 +560,8 @@ export class EventBridgeApi extends BaseAPI {
     }
 
     /**
-     * Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge. 
-     * @summary イベント連携のテスト送信(Test EventBridge Connection)
+     * Send events to test the connection with Amazon EventBridge. 
+     * @summary Test EventBridge Connection
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EventBridgeApi
@@ -571,8 +571,8 @@ export class EventBridgeApi extends BaseAPI {
     }
 
     /**
-     * ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge. 
-     * @summary イベント連携設定を削除(Delete EventBridge Settings)
+     * Delete settings used to provide host state via Amazon EventBridge. 
+     * @summary Delete EventBridge Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EventBridgeApi
@@ -582,8 +582,8 @@ export class EventBridgeApi extends BaseAPI {
     }
 
     /**
-     * 監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
-     * @summary イベント連携設定を取得(Get EventBridge Settings)
+     * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge. 
+     * @summary Get EventBridge Settings
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EventBridgeApi
@@ -593,8 +593,8 @@ export class EventBridgeApi extends BaseAPI {
     }
 
     /**
-     * ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge. 
-     * @summary イベント連携設定を更新(Update EventBridge Settings)
+     * Update configuration used to provide the host state via Amazon EventBridge. 
+     * @summary Update EventBridge Settings
      * @param {EventBridgeSettings} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
