@@ -4,7 +4,7 @@
 
 [Pricing/api](../modules/Pricing_api.md).AggregateUsage
 
-使用量の集計方法(aggregate usage) sum: 期間内の使用量の合計(total usage during the period) max: 期間内の使用量の最大値(maximum usage during the period)
+Aggregate usage sum: Total usage during the period max: Maximum usage during the period
 
 **`Export`**
 
@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L32)
+[src/generated/Pricing/api.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L32)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L31)
+[src/generated/Pricing/api.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L31)

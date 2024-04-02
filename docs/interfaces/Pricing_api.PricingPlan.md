@@ -25,7 +25,7 @@ PricingPlan
 
 • **description**: `string`
 
-料金プラン説明(pricing plan description)
+Pricing plan description
 
 **`Memberof`**
 
@@ -33,7 +33,7 @@ PricingPlan
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:524](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L524)
+[src/generated/Pricing/api.ts:630](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L630)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **display\_name**: `string`
 
-料金プラン表示名(pricing plan display name)
+Pricing plan display name
 
 **`Memberof`**
 
@@ -49,7 +49,7 @@ PricingPlan
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L518)
+[src/generated/Pricing/api.ts:624](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L624)
 
 ___
 
@@ -57,13 +57,15 @@ ___
 
 • **id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingPlan
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:506](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L506)
+[src/generated/Pricing/api.ts:612](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L612)
 
 ___
 
@@ -71,7 +73,7 @@ ___
 
 • **name**: `string`
 
-料金プラン名(pricing plan name)
+Pricing plan name
 
 **`Memberof`**
 
@@ -79,7 +81,7 @@ PricingPlan
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:512](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L512)
+[src/generated/Pricing/api.ts:618](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L618)
 
 ___
 
@@ -93,7 +95,7 @@ PricingPlan
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:536](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L536)
+[src/generated/Pricing/api.ts:642](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L642)
 
 ___
 
@@ -101,7 +103,7 @@ ___
 
 • **used**: `boolean`
 
-料金プランの使用済み設定(pricing plan used settings)
+Pricing plan used settings
 
 **`Memberof`**
 
@@ -109,4 +111,4 @@ PricingPlan
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:530](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L530)
+[src/generated/Pricing/api.ts:636](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L636)

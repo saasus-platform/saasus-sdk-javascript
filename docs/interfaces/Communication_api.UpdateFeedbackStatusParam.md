@@ -26,4 +26,4 @@ UpdateFeedbackStatusParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L355)
+[src/generated/Communication/api.ts:337](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L337)

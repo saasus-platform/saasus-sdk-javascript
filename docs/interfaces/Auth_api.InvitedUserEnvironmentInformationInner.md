@@ -27,7 +27,7 @@ InvitedUserEnvironmentInformationInner
 
 #### Defined in
 
-[src/generated/Auth/api.ts:881](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L881)
+[src/generated/Auth/api.ts:881](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L881)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **role\_names**: `string`[]
 
-役割名(role name)
+Role name
 
 **`Memberof`**
 
@@ -43,4 +43,4 @@ InvitedUserEnvironmentInformationInner
 
 #### Defined in
 
-[src/generated/Auth/api.ts:887](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L887)
+[src/generated/Auth/api.ts:887](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L887)

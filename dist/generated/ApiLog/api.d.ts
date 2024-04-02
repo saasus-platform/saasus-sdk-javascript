@@ -19,7 +19,7 @@ import { RequestArgs, BaseAPI } from './base';
  */
 export interface ApiLog {
     /**
-     * トレースID
+     * Trace ID
      * @type {string}
      * @memberof ApiLog
      */
@@ -31,25 +31,25 @@ export interface ApiLog {
      */
     'api_log_id': string;
     /**
-     * APIログ登録日時のエポック秒
+     * Epoch second of API log registration timestamp
      * @type {number}
      * @memberof ApiLog
      */
     'created_at': number;
     /**
-     * APIログ登録日
+     * API log registration date
      * @type {string}
      * @memberof ApiLog
      */
     'created_date': string;
     /**
-     * APIログ削除予定エポック秒
+     * Epoch second of planned API log deletion
      * @type {number}
      * @memberof ApiLog
      */
     'ttl': number;
     /**
-     * リクエストメソッド
+     * Request method
      * @type {string}
      * @memberof ApiLog
      */
@@ -61,43 +61,43 @@ export interface ApiLog {
      */
     'saas_id': string;
     /**
-     * APIキー
+     * API Key
      * @type {string}
      * @memberof ApiLog
      */
     'api_key': string;
     /**
-     * レスポンスステータス
+     * Response status
      * @type {string}
      * @memberof ApiLog
      */
     'response_status': string;
     /**
-     * リクエストURI
+     * Request URI
      * @type {string}
      * @memberof ApiLog
      */
     'request_uri': string;
     /**
-     * クライアントIPアドレス
+     * Client IP Address
      * @type {string}
      * @memberof ApiLog
      */
     'remote_address': string;
     /**
-     * リクエストリファラー
+     * The referrer of the request
      * @type {string}
      * @memberof ApiLog
      */
     'referer': string;
     /**
-     * リクエストボディー
+     * The body of the request
      * @type {string}
      * @memberof ApiLog
      */
     'request_body': string;
     /**
-     * レスポンスボディー
+     * The body of the response
      * @type {string}
      * @memberof ApiLog
      */
@@ -110,7 +110,7 @@ export interface ApiLog {
  */
 export interface ApiLogAllOf {
     /**
-     * トレースID
+     * Trace ID
      * @type {string}
      * @memberof ApiLogAllOf
      */
@@ -122,25 +122,25 @@ export interface ApiLogAllOf {
      */
     'api_log_id': string;
     /**
-     * APIログ登録日時のエポック秒
+     * Epoch second of API log registration timestamp
      * @type {number}
      * @memberof ApiLogAllOf
      */
     'created_at': number;
     /**
-     * APIログ登録日
+     * API log registration date
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'created_date': string;
     /**
-     * APIログ削除予定エポック秒
+     * Epoch second of planned API log deletion
      * @type {number}
      * @memberof ApiLogAllOf
      */
     'ttl': number;
     /**
-     * リクエストメソッド
+     * Request method
      * @type {string}
      * @memberof ApiLogAllOf
      */
@@ -152,43 +152,43 @@ export interface ApiLogAllOf {
      */
     'saas_id': string;
     /**
-     * APIキー
+     * API Key
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'api_key': string;
     /**
-     * レスポンスステータス
+     * Response status
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'response_status': string;
     /**
-     * リクエストURI
+     * Request URI
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'request_uri': string;
     /**
-     * クライアントIPアドレス
+     * Client IP Address
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'remote_address': string;
     /**
-     * リクエストリファラー
+     * The referrer of the request
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'referer': string;
     /**
-     * リクエストボディー
+     * The body of the request
      * @type {string}
      * @memberof ApiLogAllOf
      */
     'request_body': string;
     /**
-     * レスポンスボディー
+     * The body of the response
      * @type {string}
      * @memberof ApiLogAllOf
      */
@@ -206,6 +206,12 @@ export interface ApiLogs {
      * @memberof ApiLogs
      */
     'api_logs': Array<ApiLog>;
+    /**
+     * Cursor for cursor pagination
+     * @type {string}
+     * @memberof ApiLogs
+     */
+    'cursor'?: string;
 }
 /**
  *
@@ -230,64 +236,76 @@ export interface ModelError {
  * ApiLogApi - axios parameter creator
  * @export
  */
-export declare const ApiLogApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const ApiLogApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * 指定したIDのAPI実行のログ登録を取得します。
-     * @summary API実行ログ取得
-     * @param {string} apiLogId APIログID(API Log ID)
+     * Retrieve the log of the API execution with the specified ID.
+     * @summary Get API execution log
+     * @param {string} apiLogId API Log ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getLog: (apiLogId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 全API実行のログ登録を取得します。
-     * @summary API実行ログ取得
+     * Retrieve the log of all API executions.
+     * @summary Get API execution log list
+     * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLogs: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    getLogs: (createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * ApiLogApi - functional programming interface
  * @export
  */
-export declare const ApiLogApiFp: (configuration?: Configuration | undefined) => {
+export declare const ApiLogApiFp: (configuration?: Configuration) => {
     /**
-     * 指定したIDのAPI実行のログ登録を取得します。
-     * @summary API実行ログ取得
-     * @param {string} apiLogId APIログID(API Log ID)
+     * Retrieve the log of the API execution with the specified ID.
+     * @summary Get API execution log
+     * @param {string} apiLogId API Log ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLog(apiLogId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ApiLog>>;
+    getLog(apiLogId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiLog>>;
     /**
-     * 全API実行のログ登録を取得します。
-     * @summary API実行ログ取得
+     * Retrieve the log of all API executions.
+     * @summary Get API execution log list
+     * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLogs(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ApiLogs>>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiLogs>>;
 };
 /**
  * ApiLogApi - factory interface
  * @export
  */
-export declare const ApiLogApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const ApiLogApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * 指定したIDのAPI実行のログ登録を取得します。
-     * @summary API実行ログ取得
-     * @param {string} apiLogId APIログID(API Log ID)
+     * Retrieve the log of the API execution with the specified ID.
+     * @summary Get API execution log
+     * @param {string} apiLogId API Log ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getLog(apiLogId: string, options?: any): AxiosPromise<ApiLog>;
     /**
-     * 全API実行のログ登録を取得します。
-     * @summary API実行ログ取得
+     * Retrieve the log of all API executions.
+     * @summary Get API execution log list
+     * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLogs(options?: any): AxiosPromise<ApiLogs>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<ApiLogs>;
 };
 /**
  * ApiLogApi - object-oriented interface
@@ -297,31 +315,35 @@ export declare const ApiLogApiFactory: (configuration?: Configuration | undefine
  */
 export declare class ApiLogApi extends BaseAPI {
     /**
-     * 指定したIDのAPI実行のログ登録を取得します。
-     * @summary API実行ログ取得
-     * @param {string} apiLogId APIログID(API Log ID)
+     * Retrieve the log of the API execution with the specified ID.
+     * @summary Get API execution log
+     * @param {string} apiLogId API Log ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
     getLog(apiLogId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLog, any>>;
     /**
-     * 全API実行のログ登録を取得します。
-     * @summary API実行ログ取得
+     * Retrieve the log of all API executions.
+     * @summary Get API execution log list
+     * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
-    getLogs(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLogs, any>>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLogs, any>>;
 }
 /**
  * ErrorApi - axios parameter creator
  * @export
  */
-export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Returns a server error with status code 500
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -331,23 +353,23 @@ export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration |
  * ErrorApi - functional programming interface
  * @export
  */
-export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiFp: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Returns a server error with status code 500
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * ErrorApi - factory interface
  * @export
  */
-export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const ErrorApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Returns a server error with status code 500
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -361,8 +383,8 @@ export declare const ErrorApiFactory: (configuration?: Configuration | undefined
  */
 export declare class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Returns a server error with status code 500
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
