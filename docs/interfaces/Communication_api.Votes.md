@@ -27,7 +27,7 @@ Votes
 
 #### Defined in
 
-[src/generated/Communication/api.ts:394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L394)
+[src/generated/Communication/api.ts:376](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L376)
 
 ___
 
@@ -41,4 +41,4 @@ Votes
 
 #### Defined in
 
-[src/generated/Communication/api.ts:400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L400)
+[src/generated/Communication/api.ts:382](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L382)

@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).PasswordPolicy
 
-パスワードポリシー(password policy)
+Password Policy
 
 **`Export`**
 
@@ -27,7 +27,7 @@ PasswordPolicy
 
 • **is\_require\_lowercase**: `boolean`
 
-一文字以上の小文字を含むが設定されているか(contains one or more lowercase characters)
+Contains one or more lowercase characters
 
 **`Memberof`**
 
@@ -35,7 +35,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1097](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1097)
+[src/generated/Auth/api.ts:1097](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1097)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **is\_require\_numbers**: `boolean`
 
-一文字以上の数字を含むが設定されているか(contains one or more numeric characters)
+Contains one or more numeric characters
 
 **`Memberof`**
 
@@ -51,7 +51,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1103](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1103)
+[src/generated/Auth/api.ts:1103](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1103)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **is\_require\_symbols**: `boolean`
 
-一文字以上の特殊文字を含むが設定されているか(contains one or more special characters)
+Contains one or more special characters
 
 **`Memberof`**
 
@@ -67,7 +67,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1109](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1109)
+[src/generated/Auth/api.ts:1109](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1109)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **is\_require\_uppercase**: `boolean`
 
-一文字以上の大文字を含むが設定されているか(contains one or more uppercase letters)
+Contains one or more uppercase letters
 
 **`Memberof`**
 
@@ -83,7 +83,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1115](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1115)
+[src/generated/Auth/api.ts:1115](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1115)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • **minimum\_length**: `number`
 
-最小文字数(minimum number of characters)
+Minimum number of characters
 
 **`Memberof`**
 
@@ -99,7 +99,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1091](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1091)
+[src/generated/Auth/api.ts:1091](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1091)
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 • **temporary\_password\_validity\_days**: `number`
 
-仮パスワードの有効期限(temporary password expiration date)
+Temporary password expiration date
 
 **`Memberof`**
 
@@ -115,4 +115,4 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1121)
+[src/generated/Auth/api.ts:1121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1121)

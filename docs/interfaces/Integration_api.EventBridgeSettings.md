@@ -21,7 +21,7 @@ EventBridgeSettings
 
 • **aws\_account\_id**: `string`
 
-AWSアカウントID(AWS Account ID)
+AWS Account ID
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ EventBridgeSettings
 
 #### Defined in
 
-[src/generated/Integration/api.ts:82](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L82)
+[src/generated/Integration/api.ts:82](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L82)
 
 ___
 
@@ -43,4 +43,4 @@ EventBridgeSettings
 
 #### Defined in
 
-[src/generated/Integration/api.ts:88](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L88)
+[src/generated/Integration/api.ts:88](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L88)

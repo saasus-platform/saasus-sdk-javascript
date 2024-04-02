@@ -79,7 +79,7 @@ AwsMarketplaceApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L375)
+[src/generated/AwsMarketplace/api.ts:375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L375)
 
 ___
 
@@ -122,7 +122,7 @@ AwsMarketplaceApi - factory interface
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1056](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1056)
+[src/generated/AwsMarketplace/api.ts:1056](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L1056)
 
 ___
 
@@ -163,7 +163,7 @@ AwsMarketplaceApi - functional programming interface
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L897)
+[src/generated/AwsMarketplace/api.ts:897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L897)
 
 ___
 
@@ -191,7 +191,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1373)
+[src/generated/AwsMarketplace/api.ts:1373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L1373)
 
 ___
 
@@ -221,7 +221,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1436](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1436)
+[src/generated/AwsMarketplace/api.ts:1436](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L1436)
 
 ___
 
@@ -249,4 +249,4 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1416)
+[src/generated/AwsMarketplace/api.ts:1416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L1416)

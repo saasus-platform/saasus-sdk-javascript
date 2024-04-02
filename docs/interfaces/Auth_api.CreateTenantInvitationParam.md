@@ -22,7 +22,7 @@ CreateTenantInvitationParam
 
 • **access\_token**: `string`
 
-招待を作成するユーザーのアクセストークン(access token of the user who creates an invitation)
+Access token of the user who creates an invitation
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ CreateTenantInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:392](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L392)
+[src/generated/Auth/api.ts:392](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L392)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **email**: `string`
 
-招待するユーザーのメールアドレス(email address of the user to be invited)
+Email address of the user to be invited
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ CreateTenantInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:386](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L386)
+[src/generated/Auth/api.ts:386](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L386)
 
 ___
 
@@ -60,4 +60,4 @@ CreateTenantInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:398](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L398)
+[src/generated/Auth/api.ts:398](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L398)

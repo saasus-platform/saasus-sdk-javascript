@@ -20,7 +20,7 @@ UpdateStripeInfoParam
 
 • **secret\_key**: `string`
 
-シークレットキー(secret key)
+secret key
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ UpdateStripeInfoParam
 
 #### Defined in
 
-[src/generated/Billing/api.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L67)
+[src/generated/Billing/api.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Billing/api.ts#L67)
