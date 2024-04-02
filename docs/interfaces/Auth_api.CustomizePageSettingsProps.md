@@ -23,7 +23,7 @@ CustomizePageSettingsProps
 
 • **google\_tag\_manager\_container\_id**: `string`
 
-Google Tag Manager コンテナ ID(Google Tag Manager container ID)
+Google Tag Manager container ID
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:573](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L573)
+[src/generated/Auth/api.ts:573](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L573)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **privacy\_policy\_url**: `string`
 
-プライバシーポリシーURL(privacy policy URL)
+privacy policy URL
 
 **`Memberof`**
 
@@ -47,7 +47,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:567](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L567)
+[src/generated/Auth/api.ts:567](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L567)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **terms\_of\_service\_url**: `string`
 
-利用規約URL(terms of service URL)
+terms of service URL
 
 **`Memberof`**
 
@@ -63,7 +63,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:561](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L561)
+[src/generated/Auth/api.ts:561](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L561)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **title**: `string`
 
-サービス名(service name)
+service name
 
 **`Memberof`**
 
@@ -79,4 +79,4 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:555](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L555)
+[src/generated/Auth/api.ts:555](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L555)

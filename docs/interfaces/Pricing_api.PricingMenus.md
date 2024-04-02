@@ -26,4 +26,4 @@ PricingMenus
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:493](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L493)
+[src/generated/Pricing/api.ts:599](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L599)

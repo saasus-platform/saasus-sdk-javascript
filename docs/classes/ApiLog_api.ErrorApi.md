@@ -56,7 +56,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +70,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L50)
+[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L50)
 
 ## Methods
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
+This endpoint is used for testing purposes. Returns a server error with status code 500.
 
 #### Parameters
 
@@ -120,7 +120,7 @@ ___
 
 **`Summary`**
 
-ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+Returns a server error with status code 500
 
 **`Throws`**
 
@@ -130,4 +130,4 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:508](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L508)
+[src/generated/ApiLog/api.ts:550](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/api.ts#L550)

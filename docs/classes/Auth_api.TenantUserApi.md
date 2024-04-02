@@ -64,7 +64,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -78,7 +78,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -114,13 +114,13 @@ ___
 
 ▸ **createTenantUser**(`tenantId`, `createTenantUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`\>\>
 
-テナントにユーザーを作成します。 attributesを空のオブジェクトにした場合、追加属性は空で作成されます。  Create a tenant user. If attributes is empty, the additional attributes will be created empty.
+Create a tenant user. If attributes is empty, the additional attributes will be created empty.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `createTenantUserParam?` | [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -130,7 +130,7 @@ ___
 
 **`Summary`**
 
-テナントにユーザーを作成(Create Tenant User)
+Create Tenant User
 
 **`Throws`**
 
@@ -140,7 +140,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8088](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8088)
+[src/generated/Auth/api.ts:8096](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8096)
 
 ___
 
@@ -148,15 +148,15 @@ ___
 
 ▸ **createTenantUserRoles**(`tenantId`, `userId`, `envId`, `createTenantUserRolesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナントのユーザーに役割(ロール)を作成します。  Create roles on tenant users.
+Create roles on tenant users.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `userId` | `string` | ユーザーID(User ID) |
-| `envId` | `number` | 環境ID(Env ID) |
+| `tenantId` | `string` | Tenant ID |
+| `userId` | `string` | User ID |
+| `envId` | `number` | Env ID |
 | `createTenantUserRolesParam?` | [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -166,7 +166,7 @@ ___
 
 **`Summary`**
 
-テナントのユーザー情報に役割(ロール)を作成(Create Tenant User Role)
+Create Tenant User Role
 
 **`Throws`**
 
@@ -176,7 +176,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8103](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8103)
+[src/generated/Auth/api.ts:8111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8111)
 
 ___
 
@@ -184,14 +184,14 @@ ___
 
 ▸ **deleteTenantUser**(`tenantId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナントからユーザーを削除します。  Delete a user from your tenant.
+Delete a user from the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `userId` | `string` | ユーザーID(User ID) |
+| `tenantId` | `string` | Tenant ID |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -200,7 +200,7 @@ ___
 
 **`Summary`**
 
-テナントのユーザー情報を削除(Delete Tenant User)
+Delete Tenant User
 
 **`Throws`**
 
@@ -210,7 +210,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8116](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8116)
+[src/generated/Auth/api.ts:8124](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8124)
 
 ___
 
@@ -218,16 +218,16 @@ ___
 
 ▸ **deleteTenantUserRole**(`tenantId`, `userId`, `envId`, `roleName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナントのユーザーから役割(ロール)を削除します。  Remove a role from a tenant user.
+Remove a role from a tenant user.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `userId` | `string` | ユーザーID(User ID) |
-| `envId` | `number` | 環境ID(Env ID) |
-| `roleName` | `string` | 役割(ロール)名(role name) |
+| `tenantId` | `string` | Tenant ID |
+| `userId` | `string` | User ID |
+| `envId` | `number` | Env ID |
+| `roleName` | `string` | Role name |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -236,7 +236,7 @@ ___
 
 **`Summary`**
 
-テナントのユーザーから役割(ロール)を削除(Remove Role From Tenant User)
+Remove Role From Tenant User
 
 **`Throws`**
 
@@ -246,7 +246,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8131](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8131)
+[src/generated/Auth/api.ts:8139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8139)
 
 ___
 
@@ -254,13 +254,13 @@ ___
 
 ▸ **getAllTenantUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
 
-ユーザーIDからテナントに所属しているユーザー情報を取得します。 複数テナントに所属している場合は別のオブジェクトとして返却されます。  Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
+Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -269,7 +269,7 @@ ___
 
 **`Summary`**
 
-ユーザー情報を取得(Get User Info)
+Get User Info
 
 **`Throws`**
 
@@ -279,7 +279,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8143](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8143)
+[src/generated/Auth/api.ts:8151](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8151)
 
 ___
 
@@ -287,7 +287,7 @@ ___
 
 ▸ **getAllTenantUsers**(`options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
 
-テナントに所属しているユーザー全件を取得します。 複数テナントに所属する同一ユーザーは別のオブジェクトとして返却されます。 idは一意ではありません。  Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
+Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
 
 #### Parameters
 
@@ -301,7 +301,7 @@ ___
 
 **`Summary`**
 
-ユーザー一覧を取得(Get Users)
+Get Users
 
 **`Throws`**
 
@@ -311,7 +311,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8154](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8154)
+[src/generated/Auth/api.ts:8162](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8162)
 
 ___
 
@@ -319,14 +319,14 @@ ___
 
 ▸ **getTenantUser**(`tenantId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`\>\>
 
-テナントのユーザーをIDから一件取得します。  Get one tenant user by specific ID.
+Get one tenant user by specific ID.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `userId` | `string` | ユーザーID(User ID) |
+| `tenantId` | `string` | Tenant ID |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -335,7 +335,7 @@ ___
 
 **`Summary`**
 
-テナントのユーザー情報を取得(Get Tenant User)
+Get Tenant User
 
 **`Throws`**
 
@@ -345,7 +345,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8167)
+[src/generated/Auth/api.ts:8175](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8175)
 
 ___
 
@@ -353,13 +353,13 @@ ___
 
 ▸ **getTenantUsers**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
 
-テナントに所属するユーザーを全件取得します。 idは一意です。  Get all the users belonging to the tenant. Id is unique.
+Get all the users belonging to the tenant. Id is unique.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -368,7 +368,7 @@ ___
 
 **`Summary`**
 
-テナントのユーザー一覧を取得(Get Tenant Users)
+Get Tenant Users
 
 **`Throws`**
 
@@ -378,7 +378,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8179)
+[src/generated/Auth/api.ts:8187](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8187)
 
 ___
 
@@ -386,14 +386,14 @@ ___
 
 ▸ **updateTenantUser**(`tenantId`, `userId`, `updateTenantUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナントのユーザー属性情報を更新します。  Update tenant user attributes.
+Update tenant user attributes.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `userId` | `string` | ユーザーID(User ID) |
+| `tenantId` | `string` | Tenant ID |
+| `userId` | `string` | User ID |
 | `updateTenantUserParam?` | [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -403,7 +403,7 @@ ___
 
 **`Summary`**
 
-テナントのユーザー属性情報を更新(Update Tenant User Attribute)
+Update Tenant User Attribute
 
 **`Throws`**
 
@@ -413,4 +413,4 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8193](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8193)
+[src/generated/Auth/api.ts:8201](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8201)

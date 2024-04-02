@@ -60,7 +60,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/base.ts#L50)
+[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/base.ts#L50)
 
 ## Methods
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **createEventBridgeEvent**(`createEventBridgeEventParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-Amazon EventBridge へイベントを送信します。  Send events to Amazon EventBridge.
+Send events to Amazon EventBridge.
 
 #### Parameters
 
@@ -125,7 +125,7 @@ Amazon EventBridge へイベントを送信します。  Send events to Amazon E
 
 **`Summary`**
 
-イベント連携の送信(Send Events)
+Send Events
 
 **`Throws`**
 
@@ -135,7 +135,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L558)
+[src/generated/Integration/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L558)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **createEventBridgeTestEvent**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-Amazon EventBridge との連携をテストする為のイベントを送信します。  Send events to test the connection with Amazon EventBridge.
+Send events to test the connection with Amazon EventBridge.
 
 #### Parameters
 
@@ -157,7 +157,7 @@ Amazon EventBridge との連携をテストする為のイベントを送信し�
 
 **`Summary`**
 
-イベント連携のテスト送信(Test EventBridge Connection)
+Test EventBridge Connection
 
 **`Throws`**
 
@@ -167,7 +167,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L569)
+[src/generated/Integration/api.ts:569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L569)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 ▸ **deleteEventBridgeSettings**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ホストの状態を Amazon EventBridge 経由で提供するための設定を解除します。  Delete settings used to provide host state via Amazon EventBridge.
+Delete settings used to provide host state via Amazon EventBridge.
 
 #### Parameters
 
@@ -189,7 +189,7 @@ ___
 
 **`Summary`**
 
-イベント連携設定を削除(Delete EventBridge Settings)
+Delete EventBridge Settings
 
 **`Throws`**
 
@@ -199,7 +199,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:580](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L580)
+[src/generated/Integration/api.ts:580](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L580)
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 ▸ **getEventBridgeSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`\>\>
 
-監視対象となっている全ホストの状態をリアルタイムにAmazon EventBridge 経由で提供するための設定を取得します。  Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
+Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
 
 #### Parameters
 
@@ -221,7 +221,7 @@ ___
 
 **`Summary`**
 
-イベント連携設定を取得(Get EventBridge Settings)
+Get EventBridge Settings
 
 **`Throws`**
 
@@ -231,7 +231,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L591)
+[src/generated/Integration/api.ts:591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L591)
 
 ___
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **saveEventBridgeSettings**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ホストの状態を Amazon EventBridge 経由で提供するための設定を更新します。  Update configuration used to provide the host state via Amazon EventBridge.
+Update configuration used to provide the host state via Amazon EventBridge.
 
 #### Parameters
 
@@ -254,7 +254,7 @@ ___
 
 **`Summary`**
 
-イベント連携設定を更新(Update EventBridge Settings)
+Update EventBridge Settings
 
 **`Throws`**
 
@@ -264,4 +264,4 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L603)
+[src/generated/Integration/api.ts:603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L603)
