@@ -23,7 +23,7 @@ RequestArgs
 
 #### Defined in
 
-[src/generated/Communication/base.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L41)
+[src/generated/Communication/base.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/base.ts#L41)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:40](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L40)
+[src/generated/Communication/base.ts:40](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/base.ts#L40)

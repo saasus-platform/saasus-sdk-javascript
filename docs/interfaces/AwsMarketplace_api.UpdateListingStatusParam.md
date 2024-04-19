@@ -26,4 +26,4 @@ UpdateListingStatusParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:285](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L285)
+[src/generated/AwsMarketplace/api.ts:285](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/api.ts#L285)

@@ -21,7 +21,7 @@ CreateSaasUserParam
 
 • **email**: `string`
 
-メールアドレス(E-mail)
+E-mail
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ CreateSaasUserParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:354](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L354)
+[src/generated/Auth/api.ts:354](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L354)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **password**: `string`
 
-パスワード(Password)
+Password
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ CreateSaasUserParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:360](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L360)
+[src/generated/Auth/api.ts:360](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L360)
