@@ -30,7 +30,7 @@ PricingUnitBaseProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1077](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1077)
+[src/generated/Pricing/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1158)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **description**: `string`
 
-説明(description)
+Description
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ PricingUnitBaseProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1065](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1065)
+[src/generated/Pricing/api.ts:1146](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1146)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **display\_name**: `string`
 
-表示名(display name)
+Display Name
 
 **`Memberof`**
 
@@ -62,7 +62,7 @@ PricingUnitBaseProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1059](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1059)
+[src/generated/Pricing/api.ts:1140](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1140)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **name**: `string`
 
-名前(name)
+Name
 
 **`Memberof`**
 
@@ -78,7 +78,7 @@ PricingUnitBaseProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1053](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1053)
+[src/generated/Pricing/api.ts:1134](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1134)
 
 ___
 
@@ -92,4 +92,4 @@ PricingUnitBaseProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1071](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1071)
+[src/generated/Pricing/api.ts:1152](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1152)

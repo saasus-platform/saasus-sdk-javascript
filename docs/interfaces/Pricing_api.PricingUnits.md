@@ -26,4 +26,4 @@ PricingUnits
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1096](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1096)
+[src/generated/Pricing/api.ts:1177](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L1177)

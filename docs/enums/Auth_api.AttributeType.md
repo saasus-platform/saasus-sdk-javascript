@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).AttributeType
 
-型（dateはYYYY-MM-DDの形式で使用する事ができます。） (Type (date can be set to YYYY-MM-DD format.))
+Type (date can be set to YYYY-MM-DD format.)
 
 **`Export`**
 
@@ -25,7 +25,7 @@
 
 #### Defined in
 
-[src/generated/Auth/api.ts:105](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L105)
+[src/generated/Auth/api.ts:105](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L105)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:106](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L106)
+[src/generated/Auth/api.ts:106](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L106)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:104](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L104)
+[src/generated/Auth/api.ts:104](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L104)
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:103](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L103)
+[src/generated/Auth/api.ts:103](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L103)

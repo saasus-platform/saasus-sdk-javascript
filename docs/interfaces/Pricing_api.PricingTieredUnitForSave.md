@@ -34,7 +34,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:758](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L758)
+[src/generated/Pricing/api.ts:864](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L864)
 
 ___
 
@@ -48,7 +48,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:788](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L788)
+[src/generated/Pricing/api.ts:894](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L894)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **description**: `string`
 
-説明(description)
+Description
 
 **`Memberof`**
 
@@ -64,7 +64,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:776](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L776)
+[src/generated/Pricing/api.ts:882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L882)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **display\_name**: `string`
 
-表示名(display name)
+Display Name
 
 **`Memberof`**
 
@@ -80,7 +80,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:770](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L770)
+[src/generated/Pricing/api.ts:876](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L876)
 
 ___
 
@@ -88,13 +88,15 @@ ___
 
 • **metering\_unit\_name**: `string`
 
+Metering unit name
+
 **`Memberof`**
 
 PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:752](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L752)
+[src/generated/Pricing/api.ts:858](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L858)
 
 ___
 
@@ -102,7 +104,7 @@ ___
 
 • **name**: `string`
 
-名前(name)
+Name
 
 **`Memberof`**
 
@@ -110,7 +112,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:764](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L764)
+[src/generated/Pricing/api.ts:870](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L870)
 
 ___
 
@@ -124,7 +126,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:794](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L794)
+[src/generated/Pricing/api.ts:900](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L900)
 
 ___
 
@@ -138,7 +140,7 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:782](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L782)
+[src/generated/Pricing/api.ts:888](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L888)
 
 ___
 
@@ -146,7 +148,7 @@ ___
 
 • **upper\_count**: `number`
 
-上限値(upper limit)
+Upper limit
 
 **`Memberof`**
 
@@ -154,4 +156,4 @@ PricingTieredUnitForSave
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:746](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L746)
+[src/generated/Pricing/api.ts:852](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L852)
