@@ -27,7 +27,7 @@ MeteringUnitDatePeriodCounts
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:126](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L126)
+[src/generated/Pricing/api.ts:188](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L188)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **metering\_unit\_name**: `string`
 
-計測ユニット名(metering unit name)
+Metering unit name
 
 **`Memberof`**
 
@@ -43,4 +43,4 @@ MeteringUnitDatePeriodCounts
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:120](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L120)
+[src/generated/Pricing/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L182)

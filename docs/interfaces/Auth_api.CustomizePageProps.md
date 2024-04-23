@@ -22,7 +22,7 @@ CustomizePageProps
 
 • **html\_contents**: `string`
 
-画面のHTMLを編集できます ※ 未提供の機能のため、変更・保存はできません  Edit page HTML ※ This function is not yet provided, so it cannot be changed or saved.
+Edit page HTML ※ This function is not yet provided, so it cannot be changed or saved.
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ CustomizePageProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:468](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L468)
+[src/generated/Auth/api.ts:481](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L481)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **is\_privacy\_policy**: `boolean`
 
-プライバシーポリシーチェックボックスを表示するが設定されているか(show the privacy policy checkbox)
+show the privacy policy checkbox
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ CustomizePageProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:480](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L480)
+[src/generated/Auth/api.ts:493](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L493)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **is\_terms\_of\_service**: `boolean`
 
-利用規約の同意チェックボックスを表示するが設定されているか(display the terms of use agreement check box)
+display the terms of use agreement check box
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ CustomizePageProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:474](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L474)
+[src/generated/Auth/api.ts:487](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L487)
