@@ -33,7 +33,7 @@ TenantDetail
 
 • **attributes**: `Object`
 
-属性情報(attribute info)
+attribute info
 
 **`Memberof`**
 
@@ -45,7 +45,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1675](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1675)
+[src/generated/Auth/api.ts:1719](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1719)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **back\_office\_staff\_email**: `string`
 
-事務管理部門スタッフメールアドレス(administrative staff email address)
+administrative staff email address
 
 **`Memberof`**
 
@@ -61,7 +61,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1681](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1681)
+[src/generated/Auth/api.ts:1725](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1725)
 
 ___
 
@@ -75,7 +75,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1663)
+[src/generated/Auth/api.ts:1707](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1707)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • `Optional` **current\_plan\_period\_end**: `number`
 
-現在のプランの終了日時(current plan period end)
+current plan period end
 
 **`Memberof`**
 
@@ -91,7 +91,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1645](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1645)
+[src/generated/Auth/api.ts:1689](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1689)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • `Optional` **current\_plan\_period\_start**: `number`
 
-現在のプランの開始日時(current plan period start)
+current plan period start
 
 **`Memberof`**
 
@@ -107,7 +107,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1639](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1639)
+[src/generated/Auth/api.ts:1683](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1683)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **delete\_usage**: `boolean`
 
-stripe連携している場合で、プラン変更時に従量課金アイテムを削除するか設定できます。 プラン変更した場合に、現在のサブスクリプションに含まれる従量課金アイテムを全て削除して、従量課金アイテムに基づく請求の発生を止めることができます。 即時に記録している使用量がクリアされます。それらは復元できないため、delete_usageをtrueにしたプラン変更予約は取り消しできません。  If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
+If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
 
 **`Memberof`**
 
@@ -123,7 +123,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1711](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1711)
+[src/generated/Auth/api.ts:1755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1755)
 
 ___
 
@@ -137,7 +137,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1651](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1651)
+[src/generated/Auth/api.ts:1695](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1695)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 • **name**: `string`
 
-テナント名(tenant name)
+tenant name
 
 **`Memberof`**
 
@@ -153,7 +153,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1669)
+[src/generated/Auth/api.ts:1713](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1713)
 
 ___
 
@@ -167,7 +167,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1687](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1687)
+[src/generated/Auth/api.ts:1731](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1731)
 
 ___
 
@@ -181,7 +181,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1699](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1699)
+[src/generated/Auth/api.ts:1743](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1743)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 • **plan\_histories**: [`PlanHistory`](Auth_api.PlanHistory.md)[]
 
-料金プラン履歴
+Plan History
 
 **`Memberof`**
 
@@ -197,7 +197,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1717](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1717)
+[src/generated/Auth/api.ts:1761](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1761)
 
 ___
 
@@ -211,7 +211,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1657](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1657)
+[src/generated/Auth/api.ts:1701](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1701)
 
 ___
 
@@ -225,7 +225,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1705](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1705)
+[src/generated/Auth/api.ts:1749](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1749)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 • `Optional` **using\_next\_plan\_from**: `number`
 
-次回料金プラン開始日時（stripe連携時、当月月初の0時（UTC）を指定すると当月月初開始のサブスクリプションを作成できます。ex. 2023年1月の場合は、1672531200 ） (Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.))
+Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.)
 
 **`Memberof`**
 
@@ -241,4 +241,4 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1693](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1693)
+[src/generated/Auth/api.ts:1737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1737)

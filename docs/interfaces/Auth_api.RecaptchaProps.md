@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).RecaptchaProps
 
-reCAPTCHA認証設定(reCAPTCHA authentication settings) ※ 未提供の機能のため、変更・保存はできません(This function is not yet provided, so it cannot be changed or saved.)
+reCAPTCHA authentication settings ※ This function is not yet provided, so it cannot be changed or saved.
 
 **`Export`**
 
@@ -23,7 +23,7 @@ RecaptchaProps
 
 • **secret\_key**: `string`
 
-シークレットキー(secret key)
+secret key
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ RecaptchaProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1268](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1268)
+[src/generated/Auth/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1281)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **site\_key**: `string`
 
-サイトキー(site key)
+site key
 
 **`Memberof`**
 
@@ -47,4 +47,4 @@ RecaptchaProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1262](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1262)
+[src/generated/Auth/api.ts:1275](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1275)
