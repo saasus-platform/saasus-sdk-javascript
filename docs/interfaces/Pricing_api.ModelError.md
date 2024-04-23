@@ -29,7 +29,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:208](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L208)
+[src/generated/Pricing/api.ts:314](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L314)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **type**: `string`
 
-permission_denied
+Error type
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:202](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L202)
+[src/generated/Pricing/api.ts:308](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L308)

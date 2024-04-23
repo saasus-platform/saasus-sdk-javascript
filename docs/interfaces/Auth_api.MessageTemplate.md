@@ -21,7 +21,7 @@ MessageTemplate
 
 • **message**: `string`
 
-メッセージ(message)
+Message
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ MessageTemplate
 
 #### Defined in
 
-[src/generated/Auth/api.ts:945](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L945)
+[src/generated/Auth/api.ts:958](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L958)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **subject**: `string`
 
-タイトル(title)
+Title
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ MessageTemplate
 
 #### Defined in
 
-[src/generated/Auth/api.ts:939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L939)
+[src/generated/Auth/api.ts:952](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L952)

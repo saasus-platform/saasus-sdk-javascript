@@ -61,7 +61,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -75,7 +75,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **getAuthInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`\>\>
 
-ログイン後に認証情報を渡す SaaS の URL を取得します。 ここで取得した URL へ認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
+Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
 
 #### Parameters
 
@@ -125,7 +125,7 @@ ___
 
 **`Summary`**
 
-認証情報を取得(Get Authentication Info)
+Get Authentication Info
 
 **`Throws`**
 
@@ -135,7 +135,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2743](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2743)
+[src/generated/Auth/api.ts:2824](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2824)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **getIdentityProviders**(`options?`): `Promise`\<`AxiosResponse`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`\>\>
 
-cognitoに設定している外部プロバイダ経由のサインイン情報取得  Get sign-in information via external provider set in cognito
+Get sign-in information via external provider set in cognito.
 
 #### Parameters
 
@@ -155,6 +155,10 @@ cognitoに設定している外部プロバイダ経由のサインイン情報�
 
 `Promise`\<`AxiosResponse`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`\>\>
 
+**`Summary`**
+
+Get Sign-In Information Via External Provider
+
 **`Throws`**
 
 **`Memberof`**
@@ -163,7 +167,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2753](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2753)
+[src/generated/Auth/api.ts:2835](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2835)
 
 ___
 
@@ -171,7 +175,7 @@ ___
 
 ▸ **getSignInSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`\>\>
 
-ユーザーパスワードの要件設定を取得します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
 
 #### Parameters
 
@@ -185,7 +189,7 @@ ___
 
 **`Summary`**
 
-パスワード要件を取得(Get Password Requirements)
+Get Password Requirements
 
 **`Throws`**
 
@@ -195,7 +199,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2764](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2764)
+[src/generated/Auth/api.ts:2846](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2846)
 
 ___
 
@@ -203,7 +207,7 @@ ___
 
 ▸ **updateAuthInfo**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ログイン後に認証情報を渡す SaaS の URL を登録します。 ここで登録した URL に認証情報を渡し、SaaSus SDK を利用してこの Callback の実装をすることが可能となります。  Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
+Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
 
 #### Parameters
 
@@ -218,7 +222,7 @@ ___
 
 **`Summary`**
 
-認証情報を更新(Update Authentication Info)
+Update Authentication Info
 
 **`Throws`**
 
@@ -228,7 +232,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2776](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2776)
+[src/generated/Auth/api.ts:2858](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2858)
 
 ___
 
@@ -236,7 +240,7 @@ ___
 
 ▸ **updateIdentityProvider**(`updateIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-外部IDプロバイダのサインイン情報更新
+Update the sign-in information for the external ID provider
 
 #### Parameters
 
@@ -249,6 +253,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Update Sign-In Information
+
 **`Throws`**
 
 **`Memberof`**
@@ -257,7 +265,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2787](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2787)
+[src/generated/Auth/api.ts:2870](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2870)
 
 ___
 
@@ -265,7 +273,7 @@ ___
 
 ▸ **updateSignInSettings**(`updateSignInSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーパスワードの要件設定を更新します。 アルファベット、数字、記号の組み合わせで、桁数を長くすれば解読されづらい安全なパスワードを設定することが可能となります。  Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
+Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
 
 #### Parameters
 
@@ -280,7 +288,7 @@ ___
 
 **`Summary`**
 
-パスワード要件を更新(Update Password Requirements)
+Update Password Requirements
 
 **`Throws`**
 
@@ -290,4 +298,4 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2799](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2799)
+[src/generated/Auth/api.ts:2882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2882)

@@ -21,7 +21,7 @@ UpdateEnvParam
 
 • `Optional` **display\_name**: `string`
 
-環境表示名(env display name)
+env display name
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ UpdateEnvParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1962](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1962)
+[src/generated/Auth/api.ts:2006](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2006)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **name**: `string`
 
-環境名(env name)
+env name
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ UpdateEnvParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1956](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1956)
+[src/generated/Auth/api.ts:2000](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2000)

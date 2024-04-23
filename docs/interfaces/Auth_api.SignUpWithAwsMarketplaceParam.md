@@ -21,7 +21,7 @@ SignUpWithAwsMarketplaceParam
 
 • **email**: `string`
 
-メールアドレス(Email Address)
+Email Address
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ SignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1490](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1490)
+[src/generated/Auth/api.ts:1503](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1503)
 
 ___
 
@@ -45,4 +45,4 @@ SignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1496](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1496)
+[src/generated/Auth/api.ts:1509](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1509)
