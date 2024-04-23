@@ -28,7 +28,7 @@ CreateFeedbackParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:141](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L141)
+[src/generated/Communication/api.ts:123](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L123)
 
 ___
 
@@ -42,7 +42,7 @@ CreateFeedbackParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L135)
+[src/generated/Communication/api.ts:117](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L117)
 
 ___
 
@@ -56,4 +56,4 @@ CreateFeedbackParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:129](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L129)
+[src/generated/Communication/api.ts:111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L111)
