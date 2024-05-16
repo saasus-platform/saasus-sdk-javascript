@@ -23,7 +23,7 @@ UserAvailableEnv
 
 • `Optional` **display\_name**: `string`
 
-環境表示名(env display name)
+env display name
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2243](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2243)
+[src/generated/Auth/api.ts:2318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2318)
 
 ___
 
@@ -45,7 +45,7 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2231](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2231)
+[src/generated/Auth/api.ts:2306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2306)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **name**: `string`
 
-環境名(env name)
+env name
 
 **`Memberof`**
 
@@ -61,7 +61,7 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2237](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2237)
+[src/generated/Auth/api.ts:2312](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2312)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **roles**: [`Role`](Auth_api.Role.md)[]
 
-役割(ロール)情報(role info)
+role info
 
 **`Memberof`**
 
@@ -77,4 +77,4 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2249)
+[src/generated/Auth/api.ts:2324](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2324)

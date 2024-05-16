@@ -51,7 +51,7 @@ export interface StripeInfo {
  */
 export interface UpdateStripeInfoParam {
     /**
-     * シークレットキー(secret key)
+     * secret key
      * @type {string}
      * @memberof UpdateStripeInfoParam
      */
@@ -61,10 +61,10 @@ export interface UpdateStripeInfoParam {
  * ErrorApi - axios parameter creator
  * @export
  */
-export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -74,23 +74,23 @@ export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration |
  * ErrorApi - functional programming interface
  * @export
  */
-export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiFp: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * ErrorApi - factory interface
  * @export
  */
-export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const ErrorApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -104,8 +104,8 @@ export declare const ErrorApiFactory: (configuration?: Configuration | undefined
  */
 export declare class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
@@ -116,85 +116,85 @@ export declare class ErrorApi extends BaseAPI {
  * StripeApi - axios parameter creator
  * @export
  */
-export declare const StripeApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const StripeApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-     * @summary Stripe連携情報を削除(Delete Stripe Connection)
+     * Delete connection with external billing SaaS
+     * @summary Delete Stripe Connection
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteStripeInfo: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-     * @summary Stripe連携情報を取得(Get Stripe Connection information)
+     * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+     * @summary Get Stripe Connection information
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getStripeInfo: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-     * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+     * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+     * @summary Update Stripe Connection Info
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateStripeInfo: (updateStripeInfoParam?: UpdateStripeInfoParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateStripeInfo: (updateStripeInfoParam?: UpdateStripeInfoParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * StripeApi - functional programming interface
  * @export
  */
-export declare const StripeApiFp: (configuration?: Configuration | undefined) => {
+export declare const StripeApiFp: (configuration?: Configuration) => {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-     * @summary Stripe連携情報を削除(Delete Stripe Connection)
+     * Delete connection with external billing SaaS
+     * @summary Delete Stripe Connection
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteStripeInfo(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteStripeInfo(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-     * @summary Stripe連携情報を取得(Get Stripe Connection information)
+     * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+     * @summary Get Stripe Connection information
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getStripeInfo(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<StripeInfo>>;
+    getStripeInfo(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StripeInfo>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-     * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+     * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+     * @summary Update Stripe Connection Info
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateStripeInfo(updateStripeInfoParam?: UpdateStripeInfoParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    updateStripeInfo(updateStripeInfoParam?: UpdateStripeInfoParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * StripeApi - factory interface
  * @export
  */
-export declare const StripeApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const StripeApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-     * @summary Stripe連携情報を削除(Delete Stripe Connection)
+     * Delete connection with external billing SaaS
+     * @summary Delete Stripe Connection
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteStripeInfo(options?: any): AxiosPromise<void>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-     * @summary Stripe連携情報を取得(Get Stripe Connection information)
+     * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+     * @summary Get Stripe Connection information
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getStripeInfo(options?: any): AxiosPromise<StripeInfo>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-     * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+     * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+     * @summary Update Stripe Connection Info
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateStripeInfo(updateStripeInfoParam?: UpdateStripeInfoParam | undefined, options?: any): AxiosPromise<void>;
+    updateStripeInfo(updateStripeInfoParam?: UpdateStripeInfoParam, options?: any): AxiosPromise<void>;
 };
 /**
  * StripeApi - object-oriented interface
@@ -204,24 +204,24 @@ export declare const StripeApiFactory: (configuration?: Configuration | undefine
  */
 export declare class StripeApi extends BaseAPI {
     /**
-     * 請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
-     * @summary Stripe連携情報を削除(Delete Stripe Connection)
+     * Delete connection with external billing SaaS
+     * @summary Delete Stripe Connection
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof StripeApi
      */
     deleteStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
-     * @summary Stripe連携情報を取得(Get Stripe Connection information)
+     * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+     * @summary Get Stripe Connection information
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof StripeApi
      */
     getStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeInfo, any>>;
     /**
-     * 請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
-     * @summary Stripe連携情報を更新(Update Stripe Connection Info)
+     * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+     * @summary Update Stripe Connection Info
      * @param {UpdateStripeInfoParam} [updateStripeInfoParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
