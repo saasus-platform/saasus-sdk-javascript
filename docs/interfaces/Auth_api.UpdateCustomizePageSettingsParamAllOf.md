@@ -21,7 +21,7 @@ UpdateCustomizePageSettingsParamAllOf
 
 • **favicon**: `string`
 
-ファビコン(favicon)
+favicon
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ UpdateCustomizePageSettingsParamAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1918](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1918)
+[src/generated/Auth/api.ts:1962](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1962)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **icon**: `string`
 
-サービスアイコン(service icon)
+service icon
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ UpdateCustomizePageSettingsParamAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1912](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1912)
+[src/generated/Auth/api.ts:1956](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1956)

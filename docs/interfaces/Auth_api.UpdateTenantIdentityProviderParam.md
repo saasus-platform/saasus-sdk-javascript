@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).UpdateTenantIdentityProviderParam
 
-identity_provider_propsがnullの場合は、provider_typeで指定された外部IDプロバイダのサインイン情報を無効化します。  If identity_provider_props is null, the sign-in information for the external identity provider specified in provider_type is disabled.
+If identity_provider_props is null, the sign-in information for the external identity provider specified in provider_type is disabled.
 
 **`Export`**
 
@@ -29,7 +29,7 @@ UpdateTenantIdentityProviderParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2149)
+[src/generated/Auth/api.ts:2224](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2224)
 
 ___
 
@@ -43,4 +43,4 @@ UpdateTenantIdentityProviderParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2143](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2143)
+[src/generated/Auth/api.ts:2218](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2218)

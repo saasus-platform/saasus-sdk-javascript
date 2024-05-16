@@ -21,7 +21,7 @@ MeteringUnitCount
 
 • **count**: `number`
 
-件数(count)
+Count
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ MeteringUnitCount
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L69)
+[src/generated/Pricing/api.ts:131](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L131)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **timestamp**: `number`
 
-日時(timestamp)
+Timestamp
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ MeteringUnitCount
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:63](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L63)
+[src/generated/Pricing/api.ts:125](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L125)

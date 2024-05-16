@@ -26,4 +26,4 @@ CreateFeedbackParamAllOf
 
 #### Defined in
 
-[src/generated/Communication/api.ts:154](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L154)
+[src/generated/Communication/api.ts:136](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L136)

@@ -27,7 +27,7 @@ UpdateFeedbackParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:342](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L342)
+[src/generated/Communication/api.ts:324](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L324)
 
 ___
 
@@ -41,4 +41,4 @@ UpdateFeedbackParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:336](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L336)
+[src/generated/Communication/api.ts:318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L318)

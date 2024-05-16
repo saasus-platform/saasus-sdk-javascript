@@ -67,7 +67,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -81,7 +81,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **createTenant**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
 
-SaaSus Platform で管理する、テナント情報を作成します。  Create a tenant managed by the SaaSus Platform.
+Create a tenant managed by the SaaSus Platform.
 
 #### Parameters
 
@@ -132,7 +132,7 @@ SaaSus Platform で管理する、テナント情報を作成します。  Creat
 
 **`Summary`**
 
-テナントを作成(Create Tenant)
+Create Tenant
 
 **`Throws`**
 
@@ -142,7 +142,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7070](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7070)
+[src/generated/Auth/api.ts:7390](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7390)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **createTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-billing経由でstripeへ初期情報を設定  Set Stripe initial information via billing
+Set Stripe initial information via billing
 
 #### Parameters
 
@@ -164,7 +164,7 @@ billing経由でstripeへ初期情報を設定  Set Stripe initial information v
 
 **`Summary`**
 
-stripe初期設定(Stripe Initial Setting)
+Stripe Initial Setting
 
 **`Throws`**
 
@@ -174,7 +174,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7081](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7081)
+[src/generated/Auth/api.ts:7401](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7401)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **deleteStripeTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-stripe上の顧客情報・商品情報を削除します  Delete customer and product from Stripe.
+Delete customer and product from Stripe.
 
 #### Parameters
 
@@ -196,7 +196,7 @@ stripe上の顧客情報・商品情報を削除します  Delete customer and p
 
 **`Summary`**
 
-stripe上の顧客情報・商品情報の削除(Delete Customer and Product From Stripe)
+Delete Customer and Product From Stripe
 
 **`Throws`**
 
@@ -206,7 +206,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7092](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7092)
+[src/generated/Auth/api.ts:7412](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7412)
 
 ___
 
@@ -214,13 +214,13 @@ ___
 
 ▸ **deleteTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaSus Platform で管理する、テナントの詳細情報を削除します。  Delete SaaSus Platform tenant.
+Delete SaaSus Platform tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -229,7 +229,7 @@ SaaSus Platform で管理する、テナントの詳細情報を削除します�
 
 **`Summary`**
 
-テナント情報を削除(Delete Tenant)
+Delete Tenant
 
 **`Throws`**
 
@@ -239,7 +239,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7104](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7104)
+[src/generated/Auth/api.ts:7424](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7424)
 
 ___
 
@@ -247,13 +247,13 @@ ___
 
 ▸ **getTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`\>\>
 
-SaaSus Platform で管理する、テナントの詳細情報を取得します。  Get the details of tenant managed on the SaaSus Platform.
+Get the details of tenant managed on the SaaSus Platform.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -262,7 +262,7 @@ SaaSus Platform で管理する、テナントの詳細情報を取得します�
 
 **`Summary`**
 
-テナント情報を取得(Get Tenant Details)
+Get Tenant Details
 
 **`Throws`**
 
@@ -272,7 +272,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7116](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7116)
+[src/generated/Auth/api.ts:7436](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7436)
 
 ___
 
@@ -280,13 +280,13 @@ ___
 
 ▸ **getTenantIdentityProviders**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`\>\>
 
-テナント毎の外部IDプロバイダ経由のサインイン情報を取得します。  Get sign-in information via external identity provider per tenant.
+Get sign-in information via external identity provider per tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -295,7 +295,7 @@ ___
 
 **`Summary`**
 
-テナント毎の外部IDプロバイダ取得(Get identity provider per tenant)
+Get identity provider per tenant
 
 **`Throws`**
 
@@ -305,7 +305,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7128](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7128)
+[src/generated/Auth/api.ts:7448](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7448)
 
 ___
 
@@ -313,7 +313,7 @@ ___
 
 ▸ **getTenants**(`options?`): `Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`\>\>
 
-SaaSus Platform で管理する、テナント情報の取得を行います。  Get tenants managed by SaaSus Platform.
+Get tenants managed by SaaSus Platform.
 
 #### Parameters
 
@@ -327,7 +327,7 @@ SaaSus Platform で管理する、テナント情報の取得を行います。 
 
 **`Summary`**
 
-テナント一覧取得(Get Tenants)
+Get Tenants
 
 **`Throws`**
 
@@ -337,7 +337,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7139)
+[src/generated/Auth/api.ts:7459](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7459)
 
 ___
 
@@ -345,7 +345,7 @@ ___
 
 ▸ **resetPlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-料金プランに関わる情報を全削除します。 テナントに連携されたプランとプラン定義を削除します。 Stripe連携している場合、連携が解除されます。  Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
+Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
 
 #### Parameters
 
@@ -359,7 +359,7 @@ ___
 
 **`Summary`**
 
-プランに関わる情報を全削除
+Delete all information related to rate plans
 
 **`Throws`**
 
@@ -369,7 +369,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7150](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7150)
+[src/generated/Auth/api.ts:7470](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7470)
 
 ___
 
@@ -377,13 +377,13 @@ ___
 
 ▸ **updateTenant**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaSus Platform で管理する、テナントの詳細情報を更新します。  Update SaaSus Platform tenant details.
+Update SaaSus Platform tenant details.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `body?` | [`TenantProps`](../interfaces/Auth_api.TenantProps.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -393,7 +393,7 @@ SaaSus Platform で管理する、テナントの詳細情報を更新します�
 
 **`Summary`**
 
-テナント情報を更新(Update Tenant Details)
+Update Tenant Details
 
 **`Throws`**
 
@@ -403,7 +403,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7163](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7163)
+[src/generated/Auth/api.ts:7483](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7483)
 
 ___
 
@@ -411,13 +411,13 @@ ___
 
 ▸ **updateTenantBillingInfo**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaSus Platform で管理しているテナントの請求先情報を更新します。  Update SaaSus Platform tenant billing information.
+Update SaaSus Platform tenant billing information.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `body?` | [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -427,7 +427,7 @@ SaaSus Platform で管理しているテナントの請求先情報を更新し�
 
 **`Summary`**
 
-テナントの請求先情報を更新(Update Tenant Billing Information)
+Update Tenant Billing Information
 
 **`Throws`**
 
@@ -437,7 +437,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7176](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7176)
+[src/generated/Auth/api.ts:7496](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7496)
 
 ___
 
@@ -445,13 +445,13 @@ ___
 
 ▸ **updateTenantIdentityProvider**(`tenantId`, `updateTenantIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナント毎の外部IDプロバイダ経由のサインイン情報を更新します。  Update sign-in information via external identity provider per tenant.
+Update sign-in information via external identity provider per tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `updateTenantIdentityProviderParam?` | [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -461,7 +461,7 @@ ___
 
 **`Summary`**
 
-テナント毎の外部IDプロバイダ更新(Update identity provider per tenant)
+Update identity provider per tenant
 
 **`Throws`**
 
@@ -471,7 +471,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7189](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7189)
+[src/generated/Auth/api.ts:7509](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7509)
 
 ___
 
@@ -479,13 +479,13 @@ ___
 
 ▸ **updateTenantPlan**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaSus Platform で管理しているテナントのプラン情報を更新します。  Update SaaSus Platform tenant plan information.
+Update SaaSus Platform tenant plan information.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `body?` | [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -495,7 +495,7 @@ SaaSus Platform で管理しているテナントのプラン情報を更新し�
 
 **`Summary`**
 
-テナントのプラン情報を更新(Update Tenant Plan Information)
+Update Tenant Plan Information
 
 **`Throws`**
 
@@ -505,4 +505,4 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7202](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7202)
+[src/generated/Auth/api.ts:7522](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7522)
