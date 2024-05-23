@@ -20,7 +20,7 @@ UpdateSaasUserPasswordParam
 
 • **password**: `string`
 
-パスワード(password)
+Password
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ UpdateSaasUserPasswordParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2068](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2068)
+[src/generated/Auth/api.ts:2118](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2118)

@@ -26,4 +26,4 @@ RequestExternalUserLinkParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1300)
+[src/generated/Auth/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1313)

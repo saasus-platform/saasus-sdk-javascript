@@ -22,7 +22,7 @@ UpdateBasicInfoParam
 
 • **domain\_name**: `string`
 
-ドメイン名(Domain Name)
+Domain Name
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1844)
+[src/generated/Auth/api.ts:1894](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1894)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **from\_email\_address**: `string`
 
-認証メールの送信元メールアドレス(Sender email of authentication email)
+Sender email of authentication email
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1850](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1850)
+[src/generated/Auth/api.ts:1900](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1900)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **reply\_email\_address**: `string`
 
-認証メールの返信元メールアドレス(Reply-from email address of authentication email)
+Reply-from email address of authentication email
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1856](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1856)
+[src/generated/Auth/api.ts:1906](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1906)

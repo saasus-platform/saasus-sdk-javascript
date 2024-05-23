@@ -21,7 +21,7 @@ UpdateSoftwareTokenParam
 
 • **access\_token**: `string`
 
-アクセストークン(access token)
+access token
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ UpdateSoftwareTokenParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2124](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2124)
+[src/generated/Auth/api.ts:2211](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2211)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **verification\_code**: `string`
 
-検証コード(verification code)
+verification code
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ UpdateSoftwareTokenParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2130](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2130)
+[src/generated/Auth/api.ts:2217](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2217)
