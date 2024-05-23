@@ -55,7 +55,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Integration/api.ts:139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L139)
+[src/generated/Integration/api.ts:139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L139)
 
 ___
 
@@ -85,7 +85,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/Integration/api.ts:202](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L202)
+[src/generated/Integration/api.ts:202](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L202)
 
 ___
 
@@ -113,7 +113,7 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Integration/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L182)
+[src/generated/Integration/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L182)
 
 ___
 
@@ -145,7 +145,7 @@ EventBridgeApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Integration/api.ts:241](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L241)
+[src/generated/Integration/api.ts:241](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L241)
 
 ___
 
@@ -179,7 +179,7 @@ EventBridgeApi - factory interface
 
 #### Defined in
 
-[src/generated/Integration/api.ts:490](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L490)
+[src/generated/Integration/api.ts:490](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L490)
 
 ___
 
@@ -211,4 +211,4 @@ EventBridgeApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Integration/api.ts:428](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L428)
+[src/generated/Integration/api.ts:428](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Integration/api.ts#L428)

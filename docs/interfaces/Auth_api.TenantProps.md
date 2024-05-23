@@ -22,7 +22,7 @@ TenantProps
 
 • **attributes**: `Object`
 
-属性情報(attribute info)
+attribute info
 
 **`Memberof`**
 
@@ -34,7 +34,7 @@ TenantProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1812](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1812)
+[src/generated/Auth/api.ts:1862](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1862)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **back\_office\_staff\_email**: `string`
 
-事務管理部門スタッフメールアドレス(administrative staff email address)
+administrative staff email address
 
 **`Memberof`**
 
@@ -50,7 +50,7 @@ TenantProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1818](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1818)
+[src/generated/Auth/api.ts:1868](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1868)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **name**: `string`
 
-テナント名(tenant name)
+tenant name
 
 **`Memberof`**
 
@@ -66,4 +66,4 @@ TenantProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1806](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1806)
+[src/generated/Auth/api.ts:1856](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1856)

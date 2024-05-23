@@ -60,7 +60,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **createPricingMenu**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
 
-プライシング機能メニューを作成します。  Create a pricing feature menu.
+Create a pricing feature menu.
 
 #### Parameters
 
@@ -125,7 +125,7 @@ ___
 
 **`Summary`**
 
-プライシング機能メニューを作成(Create a Pricing Feature Menu)
+Create a Pricing Feature Menu
 
 **`Throws`**
 
@@ -135,7 +135,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2875](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2875)
+[src/generated/Pricing/api.ts:3271](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L3271)
 
 ___
 
@@ -143,13 +143,13 @@ ___
 
 ▸ **deletePricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-プライシング機能メニューを削除します。  Delete pricing feature menu.
+Delete pricing feature menu.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `menuId` | `string` | メニューID(menu ID) |
+| `menuId` | `string` | Menu ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -158,7 +158,7 @@ ___
 
 **`Summary`**
 
-プライシング機能メニューを削除(Delete Pricing Feature Menu)
+Delete Pricing Feature Menu
 
 **`Throws`**
 
@@ -168,7 +168,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2887](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2887)
+[src/generated/Pricing/api.ts:3283](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L3283)
 
 ___
 
@@ -176,13 +176,13 @@ ___
 
 ▸ **getPricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
 
-プライシング機能メニューを取得します。  Get a pricing feature menu.
+Get a pricing feature menu.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `menuId` | `string` | メニューID(menu ID) |
+| `menuId` | `string` | Menu ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -191,7 +191,7 @@ ___
 
 **`Summary`**
 
-プライシング機能メニューを取得(Get Pricing Feature Menu)
+Get Pricing Feature Menu
 
 **`Throws`**
 
@@ -201,7 +201,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2899](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2899)
+[src/generated/Pricing/api.ts:3295](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L3295)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **getPricingMenus**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`\>\>
 
-機能メニュー一覧を取得します。 計測単位を複数まとめて、１つの機能メニューとして定義します。 ここで定義した機能メニューを複数合わせ１つの料金プランとします。  Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
+Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
 
 #### Parameters
 
@@ -223,7 +223,7 @@ ___
 
 **`Summary`**
 
-プライシング機能メニュー一覧を取得(Get Pricing Feature Menus)
+Get Pricing Feature Menus
 
 **`Throws`**
 
@@ -233,7 +233,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2910](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2910)
+[src/generated/Pricing/api.ts:3306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L3306)
 
 ___
 
@@ -241,13 +241,13 @@ ___
 
 ▸ **updatePricingMenu**(`menuId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-プライシング機能メニューを更新します。  Update pricing feature menu.
+Update pricing feature menu.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `menuId` | `string` | メニューID(menu ID) |
+| `menuId` | `string` | Menu ID |
 | `body?` | [`SavePricingMenuParam`](../interfaces/Pricing_api.SavePricingMenuParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -257,7 +257,7 @@ ___
 
 **`Summary`**
 
-プライシング機能メニューを更新(Updated pricing feature menu)
+Update Pricing Feature Menu
 
 **`Throws`**
 
@@ -267,4 +267,4 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2923](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2923)
+[src/generated/Pricing/api.ts:3319](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L3319)

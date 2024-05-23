@@ -57,7 +57,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -71,7 +71,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **createAuthCredentials**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`\>\>
 
-引数のIDトークン・アクセストークン・リフレッシュトークンを一時保存し取得用の一時コードを返却する。 一時コードの有効期間は発行から10秒です。  Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
 
 #### Parameters
 
@@ -122,7 +122,7 @@ ___
 
 **`Summary`**
 
-認証・認可情報の保存(Save Authentication/Authorization Information)
+Save Authentication/Authorization Information
 
 **`Throws`**
 
@@ -132,7 +132,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3560](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3560)
+[src/generated/Auth/api.ts:3655](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3655)
 
 ___
 
@@ -140,15 +140,15 @@ ___
 
 ▸ **getAuthCredentials**(`code?`, `authFlow?`, `refreshToken?`, `options?`): `Promise`\<`AxiosResponse`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`\>\>
 
-一時コードまたはリフレッシュトークンを利用してIDトークン・アクセストークン・リフレッシュトークンを取得する。  Get ID token, access token, and refresh token using a temporary code or a refresh token.
+Get ID token, access token, and refresh token using a temporary code or a refresh token.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `code?` | `string` | 一時コード(Temp Code) |
-| `authFlow?` | ``"tempCodeAuth"`` \| ``"refreshTokenAuth"`` | 認証フロー（Authentication Flow） tempCodeAuth: 一時コードを利用した認証情報の取得 refreshTokenAuth: リフレッシュトークンを利用した認証情報の取得 指定されていない場合は tempCodeAuth になります |
-| `refreshToken?` | `string` | リフレッシュトークン(Refresh Token) |
+| `code?` | `string` | Temp Code |
+| `authFlow?` | ``"tempCodeAuth"`` \| ``"refreshTokenAuth"`` | Authentication Flow tempCodeAuth: Getting authentication information using a temporary code refreshTokenAuth: Getting authentication information using a refresh token If not specified, it will be tempCodeAuth |
+| `refreshToken?` | `string` | Refresh Token |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -157,7 +157,7 @@ ___
 
 **`Summary`**
 
-認証・認可情報の取得(Get Authentication/Authorization Information)
+Get Authentication/Authorization Information
 
 **`Throws`**
 
@@ -167,4 +167,4 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3574](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3574)
+[src/generated/Auth/api.ts:3669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L3669)

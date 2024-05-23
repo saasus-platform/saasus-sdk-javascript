@@ -27,7 +27,7 @@ FeedbackSaveProps
 
 #### Defined in
 
-[src/generated/Communication/api.ts:278](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L278)
+[src/generated/Communication/api.ts:260](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L260)
 
 ___
 
@@ -41,4 +41,4 @@ FeedbackSaveProps
 
 #### Defined in
 
-[src/generated/Communication/api.ts:272](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L272)
+[src/generated/Communication/api.ts:254](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Communication/api.ts#L254)

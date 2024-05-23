@@ -58,7 +58,7 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **createRole**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Role`](../interfaces/Auth_api.Role.md), `any`\>\>
 
-役割(ロール)を作成します。 ここで作成した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
 
 #### Parameters
 
@@ -123,7 +123,7 @@ ___
 
 **`Summary`**
 
-役割(ロール)を作成(Create Role)
+Create Role
 
 **`Throws`**
 
@@ -133,7 +133,7 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4782](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4782)
+[src/generated/Auth/api.ts:4877](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4877)
 
 ___
 
@@ -141,13 +141,13 @@ ___
 
 ▸ **deleteRole**(`roleName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-役割(ロール)を削除します。  Delete role.
+Delete role.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `roleName` | `string` | 役割(ロール)名(role name) |
+| `roleName` | `string` | Role name |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -156,7 +156,7 @@ ___
 
 **`Summary`**
 
-役割(ロール)を削除(Delete Role)
+Delete Role
 
 **`Throws`**
 
@@ -166,7 +166,7 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4794](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4794)
+[src/generated/Auth/api.ts:4889](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4889)
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **getRoles**(`options?`): `Promise`\<`AxiosResponse`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`\>\>
 
-登録されている役割(ロール)を一覧として取得します。 ここで定義した役割をユーザーに付与することによって、SaaS側で役割ベースの認可を実装することが用意になります。 また、同じユーザーでも、属するテナント・環境ごとに持っている役割を変えることが可能です。  Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
+Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
 
 #### Parameters
 
@@ -188,7 +188,7 @@ ___
 
 **`Summary`**
 
-役割(ロール)一覧を取得(Get Roles)
+Get Roles
 
 **`Throws`**
 
@@ -198,4 +198,4 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4805](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4805)
+[src/generated/Auth/api.ts:4900](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4900)

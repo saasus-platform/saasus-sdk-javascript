@@ -61,7 +61,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -75,7 +75,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -111,13 +111,13 @@ ___
 
 ▸ **createTenantInvitation**(`tenantId`, `createTenantInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
 
-テナントへの招待を作成します。  Create an invitation to the tenant.
+Create an invitation to the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `createTenantInvitationParam?` | [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -127,7 +127,7 @@ ___
 
 **`Summary`**
 
-テナントへの招待を作成(Create Tenant Invitation)
+Create Tenant Invitation
 
 **`Throws`**
 
@@ -137,7 +137,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4498](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4498)
+[src/generated/Auth/api.ts:4593](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4593)
 
 ___
 
@@ -145,14 +145,14 @@ ___
 
 ▸ **deleteTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナントへの招待を削除します。  Delete an invitation to the tenant.
+Delete an invitation for the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `invitationId` | `string` | 招待ID(Invitation ID) |
+| `tenantId` | `string` | Tenant ID |
+| `invitationId` | `string` | Invitation ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -161,7 +161,7 @@ ___
 
 **`Summary`**
 
-テナントへの招待を削除(Delete Tenant Invitation)
+Delete Tenant Invitation
 
 **`Throws`**
 
@@ -171,7 +171,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4511](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4511)
+[src/generated/Auth/api.ts:4606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4606)
 
 ___
 
@@ -179,13 +179,13 @@ ___
 
 ▸ **getInvitationValidity**(`invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`\>\>
 
-テナントへの招待の有効性を取得します。  Get the validity of an invitation to the tenant.
+Get the validity of an invitation to the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `invitationId` | `string` | 招待ID(Invitation ID) |
+| `invitationId` | `string` | Invitation ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -194,7 +194,7 @@ ___
 
 **`Summary`**
 
-テナントへの招待の有効性を取得(Get Invitation Validity)
+Get Invitation Validity
 
 **`Throws`**
 
@@ -204,7 +204,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4523)
+[src/generated/Auth/api.ts:4618](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4618)
 
 ___
 
@@ -212,14 +212,14 @@ ___
 
 ▸ **getTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
 
-テナントへの招待情報を取得します。  Get invitation information to the tenant.
+Get invitation information for the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
-| `invitationId` | `string` | 招待ID(Invitation ID) |
+| `tenantId` | `string` | Tenant ID |
+| `invitationId` | `string` | Invitation ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -228,7 +228,7 @@ ___
 
 **`Summary`**
 
-テナントの招待情報を取得(Get Tenant Invitation)
+Get Tenant Invitation
 
 **`Throws`**
 
@@ -238,7 +238,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4536](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4536)
+[src/generated/Auth/api.ts:4631](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4631)
 
 ___
 
@@ -246,13 +246,13 @@ ___
 
 ▸ **getTenantInvitations**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`\>\>
 
-テナントへの招待一覧を取得します。  Get a list of invitations to the tenant.
+Get a list of invitations to the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tenantId` | `string` | テナントID(Tenant ID) |
+| `tenantId` | `string` | Tenant ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -261,7 +261,7 @@ ___
 
 **`Summary`**
 
-テナントの招待一覧を取得(Get Tenant Invitations)
+Get Tenant Invitations
 
 **`Throws`**
 
@@ -271,7 +271,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4548](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4548)
+[src/generated/Auth/api.ts:4643](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4643)
 
 ___
 
@@ -279,13 +279,13 @@ ___
 
 ▸ **validateInvitation**(`invitationId`, `validateInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-テナントへの招待を検証します。  Validate an invitation to the tenant.
+Validate an invitation to the tenant.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `invitationId` | `string` | 招待ID(Invitation ID) |
+| `invitationId` | `string` | Invitation ID |
 | `validateInvitationParam?` | [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -295,7 +295,7 @@ ___
 
 **`Summary`**
 
-テナントへの招待を検証(Validate Invitation)
+Validate Invitation
 
 **`Throws`**
 
@@ -305,4 +305,4 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4561](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L4561)
+[src/generated/Auth/api.ts:4656](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L4656)
