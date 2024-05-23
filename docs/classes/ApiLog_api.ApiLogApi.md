@@ -57,7 +57,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L52)
 
 ## Properties
 
@@ -71,7 +71,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/base.ts#L50)
+[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/base.ts#L50)
 
 ## Methods
 
@@ -107,13 +107,13 @@ ___
 
 ▸ **getLog**(`apiLogId`, `options?`): `Promise`\<`AxiosResponse`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md), `any`\>\>
 
-指定したIDのAPI実行のログ登録を取得します。
+Retrieve the log of the API execution with the specified ID.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `apiLogId` | `string` | APIログID(API Log ID) |
+| `apiLogId` | `string` | API Log ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -122,7 +122,7 @@ ___
 
 **`Summary`**
 
-API実行ログ取得
+Get API execution log
 
 **`Throws`**
 
@@ -132,20 +132,24 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L395)
+[src/generated/ApiLog/api.ts:433](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/api.ts#L433)
 
 ___
 
 ### getLogs
 
-▸ **getLogs**(`options?`): `Promise`\<`AxiosResponse`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md), `any`\>\>
+▸ **getLogs**(`createdDate?`, `createdAt?`, `limit?`, `cursor?`, `options?`): `Promise`\<`AxiosResponse`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md), `any`\>\>
 
-全API実行のログ登録を取得します。
+Retrieve the log of all API executions.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `createdDate?` | `string` | The date, in format of YYYY-MM-DD, to retrieve the log. |
+| `createdAt?` | `string` | The datetime, in ISO 8601 format, to retrieve the log. |
+| `limit?` | `number` | Maximum number of logs to retrieve. |
+| `cursor?` | `string` | Cursor for cursor pagination. |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -154,7 +158,7 @@ ___
 
 **`Summary`**
 
-API実行ログ取得
+Get API execution log list
 
 **`Throws`**
 
@@ -164,4 +168,4 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:406](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L406)
+[src/generated/ApiLog/api.ts:448](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/ApiLog/api.ts#L448)
