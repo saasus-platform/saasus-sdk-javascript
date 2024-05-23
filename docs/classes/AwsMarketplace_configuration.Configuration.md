@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L77)
+[src/generated/AwsMarketplace/configuration.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L77)
 
 ## Properties
 
@@ -66,7 +66,7 @@ Configuration
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:53](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L53)
+[src/generated/AwsMarketplace/configuration.ts:53](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L53)
 
 ___
 
@@ -86,7 +86,7 @@ Configuration
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L32)
+[src/generated/AwsMarketplace/configuration.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L32)
 
 ___
 
@@ -102,7 +102,7 @@ Configuration
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L67)
+[src/generated/AwsMarketplace/configuration.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L67)
 
 ___
 
@@ -118,7 +118,7 @@ Configuration
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:60](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L60)
+[src/generated/AwsMarketplace/configuration.ts:60](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L60)
 
 ___
 
@@ -140,7 +140,7 @@ do not support the FormData class can still run the generated client.
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:75](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L75)
+[src/generated/AwsMarketplace/configuration.ts:75](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L75)
 
 ___
 
@@ -156,7 +156,7 @@ Configuration
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L46)
+[src/generated/AwsMarketplace/configuration.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L46)
 
 ___
 
@@ -172,7 +172,7 @@ Configuration
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:39](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L39)
+[src/generated/AwsMarketplace/configuration.ts:39](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L39)
 
 ## Methods
 
@@ -201,4 +201,4 @@ True if the given MIME is JSON, false otherwise.
 
 #### Defined in
 
-[src/generated/AwsMarketplace/configuration.ts:97](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/configuration.ts#L97)
+[src/generated/AwsMarketplace/configuration.ts:97](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/AwsMarketplace/configuration.ts#L97)

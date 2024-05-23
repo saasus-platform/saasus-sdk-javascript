@@ -58,7 +58,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **createUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
 
-SaaSus Platform にて保持するユーザーの追加属性を登録します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
 
 #### Parameters
 
@@ -123,7 +123,7 @@ SaaSus Platform にて保持するユーザーの追加属性を登録します�
 
 **`Summary`**
 
-ユーザー属性の作成(Create User Attributes)
+Create User Attributes
 
 **`Throws`**
 
@@ -133,7 +133,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8414](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8414)
+[src/generated/Auth/api.ts:8746](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8746)
 
 ___
 
@@ -141,13 +141,13 @@ ___
 
 ▸ **deleteUserAttribute**(`attributeName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaSus Platform にて保持するユーザーの追加属性を削除します。  Delete user attributes kept on the SaaSus Platform.
+Delete user attributes kept on the SaaSus Platform.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `attributeName` | `string` | 属性名(Attribute Name) |
+| `attributeName` | `string` | Attribute Name |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -156,7 +156,7 @@ SaaSus Platform にて保持するユーザーの追加属性を削除します�
 
 **`Summary`**
 
-ユーザー属性の削除(Delete User Attribute)
+Delete User Attribute
 
 **`Throws`**
 
@@ -166,7 +166,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8426](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8426)
+[src/generated/Auth/api.ts:8758](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8758)
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **getUserAttributes**(`options?`): `Promise`\<`AxiosResponse`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`\>\>
 
-SaaSus Platform にて保持するユーザーの追加属性を取得します。 例えば、ユーザー名を持たせる、誕生日を持たせるなど、ユーザーに紐付いた項目の定義を行うことができます。 一方で、個人情報を SaaSus Platform 側に持たせたくない場合は、このユーザー属性定義を行わずに SaaS 側で個人情報を持つことを検討してください。  Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
 
 #### Parameters
 
@@ -188,7 +188,7 @@ SaaSus Platform にて保持するユーザーの追加属性を取得します�
 
 **`Summary`**
 
-ユーザー属性の一覧を取得(Get User Attributes)
+Get User Attributes
 
 **`Throws`**
 
@@ -198,4 +198,4 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8437](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L8437)
+[src/generated/Auth/api.ts:8769](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L8769)

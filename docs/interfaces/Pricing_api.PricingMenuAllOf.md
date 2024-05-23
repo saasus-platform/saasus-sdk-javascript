@@ -20,10 +20,12 @@ PricingMenuAllOf
 
 • **id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingMenuAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:412](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L412)
+[src/generated/Pricing/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L518)

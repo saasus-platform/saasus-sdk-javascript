@@ -75,7 +75,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -89,7 +89,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -125,13 +125,13 @@ ___
 
 ▸ **confirmEmailUpdate**(`userId`, `confirmEmailUpdateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーのメールアドレス変更確認のためにコードを検証します。 ユーザーのアクセストークンが必要です。  Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
+Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `confirmEmailUpdateParam?` | [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -141,7 +141,7 @@ ___
 
 **`Summary`**
 
-ユーザーのメールアドレス変更確認(Confirm User Email Update)
+Confirm User Email Update
 
 **`Throws`**
 
@@ -151,7 +151,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6078](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6078)
+[src/generated/Auth/api.ts:6173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6173)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **confirmExternalUserLink**(`confirmExternalUserLinkParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-外部アカウントのユーザー連携確認のためにコードを検証します。  Verify the code for external account user link confirmation.
+Verify the code for external account user link confirmation.
 
 #### Parameters
 
@@ -174,7 +174,7 @@ ___
 
 **`Summary`**
 
-外部アカウントのユーザーの連携確認(Confirm External User Account Link)
+Confirm External User Account Link
 
 **`Throws`**
 
@@ -184,7 +184,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6090](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6090)
+[src/generated/Auth/api.ts:6185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6185)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **confirmSignUpWithAwsMarketplace**(`confirmSignUpWithAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
 
-AWS Marketplaceと連携したユーザー新規登録を確定します。AWS Marketplaceと連携したテナントを新規作成します。 Registration Tokenが有効でない場合はエラーを返却します。  Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
+Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
 
 #### Parameters
 
@@ -207,7 +207,7 @@ AWS Marketplaceと連携したユーザー新規登録を確定します。AWS M
 
 **`Summary`**
 
-AWS Marketplaceによるユーザー新規登録の確定(Confirm Sign Up with AWS Marketplace)
+Confirm Sign Up with AWS Marketplace
 
 **`Throws`**
 
@@ -217,7 +217,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6102](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6102)
+[src/generated/Auth/api.ts:6197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6197)
 
 ___
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **createSaasUser**(`createSaasUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
 
-SaaSにユーザーを作成します。  Create SaaS User.
+Create SaaS User.
 
 #### Parameters
 
@@ -240,7 +240,7 @@ SaaSにユーザーを作成します。  Create SaaS User.
 
 **`Summary`**
 
-SaaSにユーザーを作成(Create SaaS User)
+Create SaaS User
 
 **`Throws`**
 
@@ -250,7 +250,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6114](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6114)
+[src/generated/Auth/api.ts:6209](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6209)
 
 ___
 
@@ -258,13 +258,13 @@ ___
 
 ▸ **createSecretCode**(`userId`, `createSecretCodeParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`\>\>
 
-認証アプリケーション登録用のシークレットコードを作成します。  Create a secret code for authentication application registration.
+Create a secret code for authentication application registration.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `createSecretCodeParam?` | [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -274,7 +274,7 @@ ___
 
 **`Summary`**
 
-認証アプリケーション登録用のシークレットコードを作成(Creates secret code for authentication application registration)
+Create secret code for authentication application registration
 
 **`Throws`**
 
@@ -284,7 +284,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6127](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6127)
+[src/generated/Auth/api.ts:6222](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6222)
 
 ___
 
@@ -292,13 +292,13 @@ ___
 
 ▸ **deleteSaasUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーIDを元に一致するユーザーをテナントからすべて削除し、SaaSからも削除します。  Delete all users with matching user ID from the tenant and SaaS.
+Delete all users with matching user ID from the tenant and SaaS.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -307,7 +307,7 @@ ___
 
 **`Summary`**
 
-ユーザー情報を削除(Delete User)
+Delete User
 
 **`Throws`**
 
@@ -317,7 +317,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6139)
+[src/generated/Auth/api.ts:6234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6234)
 
 ___
 
@@ -325,13 +325,13 @@ ___
 
 ▸ **getSaasUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
 
-ユーザーIDからユーザー情報を取得します。  Get user information based on user ID.
+Get user information based on user ID.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -340,7 +340,7 @@ ___
 
 **`Summary`**
 
-ユーザー情報を取得(Get User)
+Get User
 
 **`Throws`**
 
@@ -350,7 +350,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6151](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6151)
+[src/generated/Auth/api.ts:6246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6246)
 
 ___
 
@@ -358,7 +358,7 @@ ___
 
 ▸ **getSaasUsers**(`options?`): `Promise`\<`AxiosResponse`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`\>\>
 
-SaaSのユーザー全件を取得します。  Get all SaaS users.
+Get all SaaS users.
 
 #### Parameters
 
@@ -372,7 +372,7 @@ SaaSのユーザー全件を取得します。  Get all SaaS users.
 
 **`Summary`**
 
-ユーザー一覧を取得(Get Users)
+Get Users
 
 **`Throws`**
 
@@ -382,7 +382,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6162](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6162)
+[src/generated/Auth/api.ts:6257](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6257)
 
 ___
 
@@ -390,13 +390,13 @@ ___
 
 ▸ **getUserMfaPreference**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`\>\>
 
-ユーザーのMFA設定を取得します。  Get the user\'s MFA settings.
+Get the user\'s MFA settings.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -405,7 +405,7 @@ ___
 
 **`Summary`**
 
-ユーザーのMFA設定を取得(Get User\'s MFA Settings)
+Get User\'s MFA Settings
 
 **`Throws`**
 
@@ -415,7 +415,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6174](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6174)
+[src/generated/Auth/api.ts:6269](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6269)
 
 ___
 
@@ -423,7 +423,7 @@ ___
 
 ▸ **linkAwsMarketplace**(`linkAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-AWS Marketplaceと既存のテナントを連携します。 Registration Tokenが有効でない場合はエラーを返却します。  Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
+Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
 
 #### Parameters
 
@@ -438,7 +438,7 @@ AWS Marketplaceと既存のテナントを連携します。 Registration Token�
 
 **`Summary`**
 
-AWS Marketplaceと既存のテナントの連携(Link an existing tenant with AWS Marketplace)
+Link an existing tenant with AWS Marketplace
 
 **`Throws`**
 
@@ -448,7 +448,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6186](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6186)
+[src/generated/Auth/api.ts:6281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6281)
 
 ___
 
@@ -456,13 +456,13 @@ ___
 
 ▸ **requestEmailUpdate**(`userId`, `requestEmailUpdateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーのメールアドレス変更を要求します。 要求されたメールアドレスに対して検証コードを送信します。 ユーザーのアクセストークンが必要です。 検証コードの有効期限は24時間です。  Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `requestEmailUpdateParam?` | [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -472,7 +472,7 @@ ___
 
 **`Summary`**
 
-ユーザーのメールアドレス変更要求(Request User Email Update)
+Request User Email Update
 
 **`Throws`**
 
@@ -482,7 +482,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6199](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6199)
+[src/generated/Auth/api.ts:6294](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6294)
 
 ___
 
@@ -490,7 +490,7 @@ ___
 
 ▸ **requestExternalUserLink**(`requestExternalUserLinkParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-外部アカウントのユーザー連携を要求します。 アクセストークンから連携するユーザーのメールアドレスを取得し、そのメールアドレスに対して検証コードを送信します。 検証コードの有効期限は24時間です。  Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
+Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
 
 #### Parameters
 
@@ -505,7 +505,7 @@ ___
 
 **`Summary`**
 
-外部アカウントのユーザー連携要求(Request External User Account Link)
+Request External User Account Link
 
 **`Throws`**
 
@@ -515,7 +515,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6211](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6211)
+[src/generated/Auth/api.ts:6306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6306)
 
 ___
 
@@ -523,7 +523,7 @@ ___
 
 ▸ **resendSignUpConfirmationEmail**(`resendSignUpConfirmationEmailParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-新規登録時の仮パスワードを再送信します。  Resend temporary password for the new registered user.
+Resend temporary password for the new registered user.
 
 #### Parameters
 
@@ -538,7 +538,7 @@ ___
 
 **`Summary`**
 
-新規登録時の確認メール再送信(Resend Sign Up Confirmation Email)
+Resend Sign Up Confirmation Email
 
 **`Throws`**
 
@@ -548,7 +548,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6223)
+[src/generated/Auth/api.ts:6318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6318)
 
 ___
 
@@ -556,7 +556,7 @@ ___
 
 ▸ **signUp**(`signUpParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
 
-ユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。  Register a new user. A temporary password will be sent to the registered email.
+Register a new user. A temporary password will be sent to the registered email.
 
 #### Parameters
 
@@ -571,7 +571,7 @@ ___
 
 **`Summary`**
 
-新規登録(Sign Up)
+Sign Up
 
 **`Throws`**
 
@@ -581,7 +581,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6235](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6235)
+[src/generated/Auth/api.ts:6330](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6330)
 
 ___
 
@@ -589,7 +589,7 @@ ___
 
 ▸ **signUpWithAwsMarketplace**(`signUpWithAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
 
-AWS Marketplaceと連携したユーザーを新規登録します。登録されたメールアドレスに対して仮パスワードを送信します。 Registration Tokenが有効でない場合はエラーを返却します。  Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
+Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
 
 #### Parameters
 
@@ -604,7 +604,7 @@ AWS Marketplaceと連携したユーザーを新規登録します。登録さ�
 
 **`Summary`**
 
-AWS Marketplaceによるユーザー新規登録(Sign Up with AWS Marketplace)
+Sign Up with AWS Marketplace
 
 **`Throws`**
 
@@ -614,7 +614,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6247](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6247)
+[src/generated/Auth/api.ts:6342](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6342)
 
 ___
 
@@ -622,14 +622,14 @@ ___
 
 ▸ **unlinkProvider**(`providerName`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-外部IDプロバイダの連携を解除します。  Unlink external identity providers.
+Unlink external identity providers.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `providerName` | `string` |  |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -638,7 +638,7 @@ ___
 
 **`Summary`**
 
-外部IDプロバイダの連携解除(Unlink external identity providers)
+Unlink external identity providers
 
 **`Throws`**
 
@@ -648,7 +648,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6260](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6260)
+[src/generated/Auth/api.ts:6355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6355)
 
 ___
 
@@ -656,13 +656,13 @@ ___
 
 ▸ **updateSaasUserEmail**(`userId`, `updateSaasUserEmailParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーのメールアドレスを変更します。  Change user\'s email.
+Change user\'s email.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `updateSaasUserEmailParam?` | [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -672,7 +672,7 @@ ___
 
 **`Summary`**
 
-メールアドレスを変更(Change Email)
+Change Email
 
 **`Throws`**
 
@@ -682,7 +682,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6273](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6273)
+[src/generated/Auth/api.ts:6368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6368)
 
 ___
 
@@ -690,13 +690,13 @@ ___
 
 ▸ **updateSaasUserPassword**(`userId`, `updateSaasUserPasswordParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーのログインパスワードを変更します。  Change user\'s login password.
+Change user\'s login password.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `updateSaasUserPasswordParam?` | [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -706,7 +706,7 @@ ___
 
 **`Summary`**
 
-パスワードを変更(Change Password)
+Change Password
 
 **`Throws`**
 
@@ -716,7 +716,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6286](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6286)
+[src/generated/Auth/api.ts:6381](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6381)
 
 ___
 
@@ -724,13 +724,13 @@ ___
 
 ▸ **updateSoftwareToken**(`userId`, `updateSoftwareTokenParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-認証アプリケーションを登録します。  Register an authentication application.
+Register an authentication application.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `updateSoftwareTokenParam?` | [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -740,7 +740,7 @@ ___
 
 **`Summary`**
 
-認証アプリケーションを登録(Register Authentication Application)
+Register Authentication Application
 
 **`Throws`**
 
@@ -750,7 +750,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6299](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6299)
+[src/generated/Auth/api.ts:6394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6394)
 
 ___
 
@@ -758,13 +758,13 @@ ___
 
 ▸ **updateUserMfaPreference**(`userId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-ユーザーのMFA設定を更新します。  Update user\'s MFA settings.
+Update user\'s MFA settings.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `userId` | `string` | ユーザーID(User ID) |
+| `userId` | `string` | User ID |
 | `body?` | [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -774,7 +774,7 @@ ___
 
 **`Summary`**
 
-ユーザーのMFA設定を更新(Update User\'s MFA Settings)
+Update User\'s MFA Settings
 
 **`Throws`**
 
@@ -784,4 +784,4 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6312](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L6312)
+[src/generated/Auth/api.ts:6407](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L6407)

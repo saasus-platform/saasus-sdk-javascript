@@ -22,7 +22,7 @@ Attribute
 
 • **attribute\_name**: `string`
 
-属性名(attribute name)
+Attribute Name
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ Attribute
 
 #### Defined in
 
-[src/generated/Auth/api.ts:82](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L82)
+[src/generated/Auth/api.ts:82](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L82)
 
 ___
 
@@ -44,7 +44,7 @@ Attribute
 
 #### Defined in
 
-[src/generated/Auth/api.ts:94](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L94)
+[src/generated/Auth/api.ts:94](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L94)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **display\_name**: `string`
 
-表示名(display name)
+Display Name
 
 **`Memberof`**
 
@@ -60,4 +60,4 @@ Attribute
 
 #### Defined in
 
-[src/generated/Auth/api.ts:88](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L88)
+[src/generated/Auth/api.ts:88](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L88)
