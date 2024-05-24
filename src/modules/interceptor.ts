@@ -5,7 +5,8 @@ import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
 
 export default function getAxiosInstance(
   baseURL: string,
-  referer?: string
+  referer?: string,
+  xSaaSusReferer?: string
 ): AxiosInstance {
   const requestConfig: AxiosRequestConfig = {
     baseURL: baseURL,
@@ -31,6 +32,9 @@ export default function getAxiosInstance(
       config.headers!["Authorization"] = header;
       if (referer) {
         config.headers!["Referer"] = referer;
+      }
+      if (xSaaSusReferer) {
+        config.headers!["X-SaaSus-Referer"] = xSaaSusReferer;
       }
       return config;
     },
