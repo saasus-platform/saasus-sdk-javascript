@@ -58,7 +58,7 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **createTenantAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
 
-SaaSus Platform で管理する、テナントの追加属性の登録を行います。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
 
 #### Parameters
 
@@ -123,7 +123,7 @@ SaaSus Platform で管理する、テナントの追加属性の登録を行い�
 
 **`Summary`**
 
-テナント属性の作成(Create Tenant Attribute)
+Create Tenant Attribute
 
 **`Throws`**
 
@@ -133,7 +133,7 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7423](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7423)
+[src/generated/Auth/api.ts:7755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7755)
 
 ___
 
@@ -141,13 +141,13 @@ ___
 
 ▸ **deleteTenantAttribute**(`attributeName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaSus Platform で管理する、テナントの追加属性の削除を行います。  Deletes tenant attributes managed by SaaSus Platform.
+Deletes tenant attributes managed by SaaSus Platform.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `attributeName` | `string` | 属性名(Attribute Name) |
+| `attributeName` | `string` | Attribute Name |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -156,7 +156,7 @@ SaaSus Platform で管理する、テナントの追加属性の削除を行い�
 
 **`Summary`**
 
-テナント属性の削除(Delete Tenant Attribute)
+Delete Tenant Attribute
 
 **`Throws`**
 
@@ -166,7 +166,7 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7435](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7435)
+[src/generated/Auth/api.ts:7767](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7767)
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **getTenantAttributes**(`options?`): `Promise`\<`AxiosResponse`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`\>\>
 
-SaaSus Platform で管理する、テナントの追加属性の定義を取得します。 例えばテナントの呼び名やメモなどをを持たせることができ、SaaSからSaaSus SDK/APIを利用して取得することができます。  Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
+Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
 
 #### Parameters
 
@@ -188,7 +188,7 @@ SaaSus Platform で管理する、テナントの追加属性の定義を取得�
 
 **`Summary`**
 
-テナント属性の一覧を取得(Get Tenant Attributes)
+Get Tenant Attributes
 
 **`Throws`**
 
@@ -198,4 +198,4 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7446](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L7446)
+[src/generated/Auth/api.ts:7778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L7778)

@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).ValidateInvitationParam
 
-既存ユーザーの場合はアクセストークン、新規ユーザーの場合はメールアドレスとパスワードが必須です。  Access token is required for existing users, and email and password is required for new users.
+Access token is required for existing users, and email and password is required for new users.
 
 **`Export`**
 
@@ -24,7 +24,7 @@ ValidateInvitationParam
 
 • `Optional` **access\_token**: `string`
 
-招待されたユーザーのアクセストークン(access token of the invited user)
+Access token of the invited user
 
 **`Memberof`**
 
@@ -32,7 +32,7 @@ ValidateInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2355)
+[src/generated/Auth/api.ts:2442](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2442)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **email**: `string`
 
-招待されたユーザーのメールアドレス(email address of the invited user)
+Email address of the invited user
 
 **`Memberof`**
 
@@ -48,7 +48,7 @@ ValidateInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2361](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2361)
+[src/generated/Auth/api.ts:2448](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2448)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **password**: `string`
 
-招待されたユーザーのパスワード(password of the invited user)
+Password of the invited user
 
 **`Memberof`**
 
@@ -64,4 +64,4 @@ ValidateInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2367](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2367)
+[src/generated/Auth/api.ts:2454](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2454)
