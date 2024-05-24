@@ -22,7 +22,7 @@ UserInfo
 
 • **email**: `string`
 
-メールアドレス(E-mail)
+E-mail
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2323](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2323)
+[src/generated/Auth/api.ts:2410](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2410)
 
 ___
 
@@ -44,7 +44,7 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2317](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2317)
+[src/generated/Auth/api.ts:2404](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2404)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **tenants**: [`UserAvailableTenant`](Auth_api.UserAvailableTenant.md)[]
 
-テナント情報(Tenant Info)
+Tenant Info
 
 **`Memberof`**
 
@@ -60,4 +60,4 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2329)
+[src/generated/Auth/api.ts:2416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2416)

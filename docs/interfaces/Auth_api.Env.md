@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).Env
 
-環境情報(env info)
+env info
 
 **`Export`**
 
@@ -24,7 +24,7 @@ Env
 
 • `Optional` **display\_name**: `string`
 
-環境表示名(env display name)
+env display name
 
 **`Memberof`**
 
@@ -32,7 +32,7 @@ Env
 
 #### Defined in
 
-[src/generated/Auth/api.ts:677](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L677)
+[src/generated/Auth/api.ts:690](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L690)
 
 ___
 
@@ -46,7 +46,7 @@ Env
 
 #### Defined in
 
-[src/generated/Auth/api.ts:665](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L665)
+[src/generated/Auth/api.ts:678](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L678)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **name**: `string`
 
-環境名(env name)
+env name
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ Env
 
 #### Defined in
 
-[src/generated/Auth/api.ts:671](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L671)
+[src/generated/Auth/api.ts:684](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L684)

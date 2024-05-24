@@ -34,7 +34,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2030](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2030)
+[src/generated/Auth/api.ts:2080](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2080)
 
 ___
 
@@ -48,7 +48,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2000](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2000)
+[src/generated/Auth/api.ts:2050](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2050)
 
 ___
 
@@ -62,7 +62,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2012](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2012)
+[src/generated/Auth/api.ts:2062](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2062)
 
 ___
 
@@ -76,7 +76,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2036](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2036)
+[src/generated/Auth/api.ts:2086](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2086)
 
 ___
 
@@ -90,7 +90,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2006](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2006)
+[src/generated/Auth/api.ts:2056](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2056)
 
 ___
 
@@ -104,7 +104,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1994](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1994)
+[src/generated/Auth/api.ts:2044](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2044)
 
 ___
 
@@ -118,7 +118,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2018](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2018)
+[src/generated/Auth/api.ts:2068](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2068)
 
 ___
 
@@ -132,7 +132,7 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2042](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2042)
+[src/generated/Auth/api.ts:2092](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2092)
 
 ___
 
@@ -146,4 +146,4 @@ UpdateNotificationMessagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2024](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2024)
+[src/generated/Auth/api.ts:2074](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L2074)

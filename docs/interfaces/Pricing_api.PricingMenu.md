@@ -25,7 +25,7 @@ PricingMenu
 
 • **description**: `string`
 
-メニュー説明(menu description)
+Menu description
 
 **`Memberof`**
 
@@ -33,7 +33,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:387](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L387)
+[src/generated/Pricing/api.ts:493](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L493)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **display\_name**: `string`
 
-メニュー表示名(menu display name)
+Menu display name
 
 **`Memberof`**
 
@@ -49,7 +49,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:381](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L381)
+[src/generated/Pricing/api.ts:487](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L487)
 
 ___
 
@@ -57,13 +57,15 @@ ___
 
 • **id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:369](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L369)
+[src/generated/Pricing/api.ts:475](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L475)
 
 ___
 
@@ -71,7 +73,7 @@ ___
 
 • **name**: `string`
 
-メニュー名(menu name)
+Menu name
 
 **`Memberof`**
 
@@ -79,7 +81,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L375)
+[src/generated/Pricing/api.ts:481](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L481)
 
 ___
 
@@ -93,7 +95,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:399](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L399)
+[src/generated/Pricing/api.ts:505](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L505)
 
 ___
 
@@ -101,7 +103,7 @@ ___
 
 • **used**: `boolean`
 
-メニューの使用済み設定(menu used settings)
+Menu used settings
 
 **`Memberof`**
 
@@ -109,4 +111,4 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:393](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L393)
+[src/generated/Pricing/api.ts:499](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L499)

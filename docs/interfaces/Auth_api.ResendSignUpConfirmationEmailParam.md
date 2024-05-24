@@ -20,7 +20,7 @@ ResendSignUpConfirmationEmailParam
 
 • **email**: `string`
 
-メールアドレス(Email Address)
+Email Address
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ ResendSignUpConfirmationEmailParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1313)
+[src/generated/Auth/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L1326)

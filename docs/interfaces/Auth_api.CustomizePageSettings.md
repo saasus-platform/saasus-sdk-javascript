@@ -25,7 +25,7 @@ CustomizePageSettings
 
 • **favicon**: `string`
 
-ファビコン(favicon)
+favicon
 
 **`Memberof`**
 
@@ -33,7 +33,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:499](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L499)
+[src/generated/Auth/api.ts:512](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L512)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **google\_tag\_manager\_container\_id**: `string`
 
-Google Tag Manager コンテナ ID(Google Tag Manager container ID)
+Google Tag Manager container ID
 
 **`Memberof`**
 
@@ -49,7 +49,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L523)
+[src/generated/Auth/api.ts:536](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L536)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **icon**: `string`
 
-サービスアイコン(service icon)
+service icon
 
 **`Memberof`**
 
@@ -65,7 +65,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:493](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L493)
+[src/generated/Auth/api.ts:506](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L506)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **privacy\_policy\_url**: `string`
 
-プライバシーポリシーURL(privacy policy URL)
+privacy policy URL
 
 **`Memberof`**
 
@@ -81,7 +81,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:517](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L517)
+[src/generated/Auth/api.ts:530](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L530)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **terms\_of\_service\_url**: `string`
 
-利用規約URL(terms of service URL)
+terms of service URL
 
 **`Memberof`**
 
@@ -97,7 +97,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:511](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L511)
+[src/generated/Auth/api.ts:524](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L524)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **title**: `string`
 
-サービス名(service name)
+service name
 
 **`Memberof`**
 
@@ -113,4 +113,4 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:505](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L505)
+[src/generated/Auth/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Auth/api.ts#L518)

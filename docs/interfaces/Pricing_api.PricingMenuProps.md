@@ -24,7 +24,7 @@ PricingMenuProps
 
 • **description**: `string`
 
-メニュー説明(menu description)
+Menu description
 
 **`Memberof`**
 
@@ -32,7 +32,7 @@ PricingMenuProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:437](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L437)
+[src/generated/Pricing/api.ts:543](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L543)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **display\_name**: `string`
 
-メニュー表示名(menu display name)
+Menu display name
 
 **`Memberof`**
 
@@ -48,7 +48,7 @@ PricingMenuProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:431](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L431)
+[src/generated/Pricing/api.ts:537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L537)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **name**: `string`
 
-メニュー名(menu name)
+Menu name
 
 **`Memberof`**
 
@@ -64,7 +64,7 @@ PricingMenuProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:425](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L425)
+[src/generated/Pricing/api.ts:531](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L531)
 
 ___
 
@@ -78,7 +78,7 @@ PricingMenuProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L449)
+[src/generated/Pricing/api.ts:555](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L555)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **used**: `boolean`
 
-メニューの使用済み設定(menu used settings)
+Menu used settings
 
 **`Memberof`**
 
@@ -94,4 +94,4 @@ PricingMenuProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:443](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L443)
+[src/generated/Pricing/api.ts:549](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c67ac22/src/generated/Pricing/api.ts#L549)
