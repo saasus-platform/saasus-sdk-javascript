@@ -11,8 +11,10 @@ export class CommunicationClient {
   private saasId: string;
   private apiKey: string;
   private apiBase: string;
+  private referer: string;
+  private xSaaSusReferer: string;
 
-  constructor() {
+  constructor(referer = "", xSaaSusReferer = "") {
     this.secret = process.env.SAASUS_SECRET_KEY || "";
     this.saasId = process.env.SAASUS_SAAS_ID || "";
     this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -27,7 +29,10 @@ export class CommunicationClient {
       this.apiBase = "https://api.saasus.io";
     }
 
-    this.instance = getAxiosInstance(this.apiBase + "/v1/communication");
+    this.referer = referer;
+    this.xSaaSusReferer = xSaaSusReferer;
+
+    this.instance = getAxiosInstance(this.apiBase + "/v1/communication", this.referer, this.xSaaSusReferer);
 
     const config = new Configuration({
       basePath: this.apiBase + "/v1/communication",
