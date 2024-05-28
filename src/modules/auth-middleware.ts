@@ -32,8 +32,12 @@ export async function AuthMiddleware(
   if (req.headers["referer"]) {
     referer = req.headers["referer"];
   }
+  let xSaaSusReferer = "";
+  if (req.headers["x-saasus-referer"]) {
+    xSaaSusReferer = req.headers["x-saasus-referer"] as string;
+  }
   try {
-    const apiClient = new AuthClient(referer);
+    const apiClient = new AuthClient(referer, xSaaSusReferer);
     const { data } = await apiClient.userInfoApi.getUserInfo(
       isAPI()
         ? req.headers["authorization"]!.split("Bearer ")[1]

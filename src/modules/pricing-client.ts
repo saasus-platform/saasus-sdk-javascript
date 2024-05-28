@@ -22,8 +22,10 @@ export class PricingClient {
   private saasId: string;
   private apiKey: string;
   private apiBase: string;
+  private referer: string;
+  private xSaaSusReferer: string;
 
-  constructor() {
+  constructor(referer = "", xSaaSusReferer = "") {
     this.secret = process.env.SAASUS_SECRET_KEY || "";
     this.saasId = process.env.SAASUS_SAAS_ID || "";
     this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -42,7 +44,10 @@ export class PricingClient {
       basePath: this.apiBase + "/v1/pricing",
     });
 
-    this.instance = getAxiosInstance(this.apiBase + "/v1/pricing");
+    this.referer = referer;
+    this.xSaaSusReferer = xSaaSusReferer;
+
+    this.instance = getAxiosInstance(this.apiBase + "/v1/pricing", this.referer, this.xSaaSusReferer);
 
     this.meteringApi = new MeteringApi(config, "", this.instance);
     this.pricingMenusApi = new PricingMenusApi(config, "", this.instance);

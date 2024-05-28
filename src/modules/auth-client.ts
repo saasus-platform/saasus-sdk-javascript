@@ -37,8 +37,9 @@ export class AuthClient {
   private apiKey: string;
   private apiBase: string;
   private referer: string;
+  private xSaaSusReferer: string;
 
-  constructor(referer = "") {
+  constructor(referer = "", xSaaSusReferer = "") {
     this.secret = process.env.SAASUS_SECRET_KEY || "";
     this.saasId = process.env.SAASUS_SAAS_ID || "";
     this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -54,8 +55,9 @@ export class AuthClient {
     }
 
     this.referer = referer;
+    this.xSaaSusReferer = xSaaSusReferer;
 
-    this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer);
+    this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer, this.xSaaSusReferer);
 
     const config = new Configuration({
       basePath: this.apiBase + "/v1/auth",
