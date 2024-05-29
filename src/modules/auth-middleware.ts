@@ -29,12 +29,12 @@ export async function AuthMiddleware(
     return res.redirect(process.env.SAASUS_LOGIN_URL || "");
   }
   let referer = "";
-  if (req.headers["referer"]) {
-    referer = req.headers["referer"];
+  if (req.headers["Referer"]) {
+    referer = req.headers["Referer"] as string;
   }
   let xSaaSusReferer = "";
-  if (req.headers["x-saasus-referer"]) {
-    xSaaSusReferer = req.headers["x-saasus-referer"] as string;
+  if (req.headers["X-SaaSus-Referer"]) {
+    xSaaSusReferer = req.headers["X-SaaSus-Referer"] as string;
   }
   try {
     const apiClient = new AuthClient(referer, xSaaSusReferer);
