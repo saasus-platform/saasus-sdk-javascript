@@ -22,7 +22,7 @@ DnsRecord
 
 • **name**: `string`
 
-レコード名(Record Name)
+Record Name
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ DnsRecord
 
 #### Defined in
 
-[src/generated/Auth/api.ts:639](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L639)
+[src/generated/Auth/api.ts:652](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L652)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **type**: ``"CNAME"``
 
-CNAMEリソースレコード(CNAME Resource Record)
+CNAME Resource Record
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ DnsRecord
 
 #### Defined in
 
-[src/generated/Auth/api.ts:633](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L633)
+[src/generated/Auth/api.ts:646](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L646)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **value**: `string`
 
-値(Value)
+Value
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ DnsRecord
 
 #### Defined in
 
-[src/generated/Auth/api.ts:645](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L645)
+[src/generated/Auth/api.ts:658](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L658)

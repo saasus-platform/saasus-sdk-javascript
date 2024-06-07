@@ -35,12 +35,6 @@ export interface Comment {
     'id': string;
     /**
      * 
-     * @type {string}
-     * @memberof Comment
-     */
-    'user_id': string;
-    /**
-     * 
      * @type {number}
      * @memberof Comment
      */
@@ -64,12 +58,6 @@ export interface CommentAllOf {
      * @memberof CommentAllOf
      */
     'id': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CommentAllOf
-     */
-    'user_id': string;
     /**
      * 
      * @type {number}
@@ -102,12 +90,6 @@ export interface Comments {
  * @interface CreateFeedbackCommentParam
  */
 export interface CreateFeedbackCommentParam {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateFeedbackCommentParam
-     */
-    'user_id': string;
     /**
      * 
      * @type {string}
@@ -420,8 +402,8 @@ export interface VotesAllOf {
 export const ErrorApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -464,8 +446,8 @@ export const ErrorApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ErrorApiAxiosParamCreator(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -484,8 +466,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
     const localVarFp = ErrorApiFp(configuration)
     return {
         /**
-         * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-         * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+         * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+         * @summary Return Internal Server Error
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -503,8 +485,8 @@ export const ErrorApiFactory = function (configuration?: Configuration, basePath
  */
 export class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500. 
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500. 
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
@@ -522,7 +504,8 @@ export class ErrorApi extends BaseAPI {
 export const FeedbackApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * フィードバックを起票
+         * Create Feedback.
+         * @summary Create Feedback
          * @param {CreateFeedbackParam} [createFeedbackParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -559,7 +542,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックへのコメント
+         * Post comment to feedback.
+         * @summary Create Feedback Comment
          * @param {string} feedbackId 
          * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam] 
          * @param {*} [options] Override http request option.
@@ -600,7 +584,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックへの投票
+         * Vote for feedback.
+         * @summary Create Vote User
          * @param {string} feedbackId 
          * @param {CreateVoteUserParam} [createVoteUserParam] 
          * @param {*} [options] Override http request option.
@@ -641,7 +626,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックの削除
+         * Delete Feedback.
+         * @summary Delete Feedback
          * @param {string} feedbackId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -678,7 +664,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックへのコメント削除
+         * Delete comment for feedback.
+         * @summary Delete Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {*} [options] Override http request option.
@@ -719,7 +706,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックへの投票の取消
+         * Cancel vote for feedback.
+         * @summary Delete Vote For Feedback
          * @param {string} feedbackId 
          * @param {string} userId 
          * @param {*} [options] Override http request option.
@@ -760,7 +748,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックの取得
+         * Retrieve feedback.
+         * @summary Get Feedback
          * @param {string} feedbackId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -797,7 +786,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックへのコメント取得
+         * Retrieve comment from feedback.
+         * @summary Get Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {*} [options] Override http request option.
@@ -838,7 +828,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックの一覧を取得
+         * Get the list of feedbacks.
+         * @summary Get Feedbacks
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -871,7 +862,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックの編集
+         * Edit feedback.
+         * @summary Update Feedback
          * @param {string} feedbackId 
          * @param {UpdateFeedbackParam} [updateFeedbackParam] 
          * @param {*} [options] Override http request option.
@@ -912,7 +904,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックへのコメント編集
+         * Edit comment for feedback.
+         * @summary Update Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam] 
@@ -957,7 +950,8 @@ export const FeedbackApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * フィードバックのステータス更新
+         * Update Feedback Status.
+         * @summary Update Feedback Status
          * @param {string} feedbackId 
          * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam] 
          * @param {*} [options] Override http request option.
@@ -1008,7 +1002,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FeedbackApiAxiosParamCreator(configuration)
     return {
         /**
-         * フィードバックを起票
+         * Create Feedback.
+         * @summary Create Feedback
          * @param {CreateFeedbackParam} [createFeedbackParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1018,7 +1013,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックへのコメント
+         * Post comment to feedback.
+         * @summary Create Feedback Comment
          * @param {string} feedbackId 
          * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam] 
          * @param {*} [options] Override http request option.
@@ -1029,7 +1025,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックへの投票
+         * Vote for feedback.
+         * @summary Create Vote User
          * @param {string} feedbackId 
          * @param {CreateVoteUserParam} [createVoteUserParam] 
          * @param {*} [options] Override http request option.
@@ -1040,7 +1037,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックの削除
+         * Delete Feedback.
+         * @summary Delete Feedback
          * @param {string} feedbackId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1050,7 +1048,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックへのコメント削除
+         * Delete comment for feedback.
+         * @summary Delete Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {*} [options] Override http request option.
@@ -1061,7 +1060,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックへの投票の取消
+         * Cancel vote for feedback.
+         * @summary Delete Vote For Feedback
          * @param {string} feedbackId 
          * @param {string} userId 
          * @param {*} [options] Override http request option.
@@ -1072,7 +1072,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックの取得
+         * Retrieve feedback.
+         * @summary Get Feedback
          * @param {string} feedbackId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1082,7 +1083,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックへのコメント取得
+         * Retrieve comment from feedback.
+         * @summary Get Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {*} [options] Override http request option.
@@ -1093,7 +1095,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックの一覧を取得
+         * Get the list of feedbacks.
+         * @summary Get Feedbacks
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1102,7 +1105,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックの編集
+         * Edit feedback.
+         * @summary Update Feedback
          * @param {string} feedbackId 
          * @param {UpdateFeedbackParam} [updateFeedbackParam] 
          * @param {*} [options] Override http request option.
@@ -1113,7 +1117,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックへのコメント編集
+         * Edit comment for feedback.
+         * @summary Update Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam] 
@@ -1125,7 +1130,8 @@ export const FeedbackApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * フィードバックのステータス更新
+         * Update Feedback Status.
+         * @summary Update Feedback Status
          * @param {string} feedbackId 
          * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam] 
          * @param {*} [options] Override http request option.
@@ -1146,7 +1152,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = FeedbackApiFp(configuration)
     return {
         /**
-         * フィードバックを起票
+         * Create Feedback.
+         * @summary Create Feedback
          * @param {CreateFeedbackParam} [createFeedbackParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1155,7 +1162,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createFeedback(createFeedbackParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックへのコメント
+         * Post comment to feedback.
+         * @summary Create Feedback Comment
          * @param {string} feedbackId 
          * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam] 
          * @param {*} [options] Override http request option.
@@ -1165,7 +1173,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createFeedbackComment(feedbackId, createFeedbackCommentParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックへの投票
+         * Vote for feedback.
+         * @summary Create Vote User
          * @param {string} feedbackId 
          * @param {CreateVoteUserParam} [createVoteUserParam] 
          * @param {*} [options] Override http request option.
@@ -1175,7 +1184,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createVoteUser(feedbackId, createVoteUserParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックの削除
+         * Delete Feedback.
+         * @summary Delete Feedback
          * @param {string} feedbackId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1184,7 +1194,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.deleteFeedback(feedbackId, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックへのコメント削除
+         * Delete comment for feedback.
+         * @summary Delete Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {*} [options] Override http request option.
@@ -1194,7 +1205,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.deleteFeedbackComment(feedbackId, commentId, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックへの投票の取消
+         * Cancel vote for feedback.
+         * @summary Delete Vote For Feedback
          * @param {string} feedbackId 
          * @param {string} userId 
          * @param {*} [options] Override http request option.
@@ -1204,7 +1216,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.deleteVoteForFeedback(feedbackId, userId, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックの取得
+         * Retrieve feedback.
+         * @summary Get Feedback
          * @param {string} feedbackId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1213,7 +1226,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getFeedback(feedbackId, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックへのコメント取得
+         * Retrieve comment from feedback.
+         * @summary Get Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {*} [options] Override http request option.
@@ -1223,7 +1237,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getFeedbackComment(feedbackId, commentId, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックの一覧を取得
+         * Get the list of feedbacks.
+         * @summary Get Feedbacks
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1231,7 +1246,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getFeedbacks(options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックの編集
+         * Edit feedback.
+         * @summary Update Feedback
          * @param {string} feedbackId 
          * @param {UpdateFeedbackParam} [updateFeedbackParam] 
          * @param {*} [options] Override http request option.
@@ -1241,7 +1257,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.updateFeedback(feedbackId, updateFeedbackParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックへのコメント編集
+         * Edit comment for feedback.
+         * @summary Update Feedback Comment
          * @param {string} feedbackId 
          * @param {string} commentId 
          * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam] 
@@ -1252,7 +1269,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.updateFeedbackComment(feedbackId, commentId, updateFeedbackCommentParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * フィードバックのステータス更新
+         * Update Feedback Status.
+         * @summary Update Feedback Status
          * @param {string} feedbackId 
          * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam] 
          * @param {*} [options] Override http request option.
@@ -1272,7 +1290,8 @@ export const FeedbackApiFactory = function (configuration?: Configuration, baseP
  */
 export class FeedbackApi extends BaseAPI {
     /**
-     * フィードバックを起票
+     * Create Feedback.
+     * @summary Create Feedback
      * @param {CreateFeedbackParam} [createFeedbackParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1283,7 +1302,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックへのコメント
+     * Post comment to feedback.
+     * @summary Create Feedback Comment
      * @param {string} feedbackId 
      * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam] 
      * @param {*} [options] Override http request option.
@@ -1295,7 +1315,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックへの投票
+     * Vote for feedback.
+     * @summary Create Vote User
      * @param {string} feedbackId 
      * @param {CreateVoteUserParam} [createVoteUserParam] 
      * @param {*} [options] Override http request option.
@@ -1307,7 +1328,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックの削除
+     * Delete Feedback.
+     * @summary Delete Feedback
      * @param {string} feedbackId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1318,7 +1340,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックへのコメント削除
+     * Delete comment for feedback.
+     * @summary Delete Feedback Comment
      * @param {string} feedbackId 
      * @param {string} commentId 
      * @param {*} [options] Override http request option.
@@ -1330,7 +1353,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックへの投票の取消
+     * Cancel vote for feedback.
+     * @summary Delete Vote For Feedback
      * @param {string} feedbackId 
      * @param {string} userId 
      * @param {*} [options] Override http request option.
@@ -1342,7 +1366,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックの取得
+     * Retrieve feedback.
+     * @summary Get Feedback
      * @param {string} feedbackId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1353,7 +1378,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックへのコメント取得
+     * Retrieve comment from feedback.
+     * @summary Get Feedback Comment
      * @param {string} feedbackId 
      * @param {string} commentId 
      * @param {*} [options] Override http request option.
@@ -1365,7 +1391,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックの一覧を取得
+     * Get the list of feedbacks.
+     * @summary Get Feedbacks
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FeedbackApi
@@ -1375,7 +1402,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックの編集
+     * Edit feedback.
+     * @summary Update Feedback
      * @param {string} feedbackId 
      * @param {UpdateFeedbackParam} [updateFeedbackParam] 
      * @param {*} [options] Override http request option.
@@ -1387,7 +1415,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックへのコメント編集
+     * Edit comment for feedback.
+     * @summary Update Feedback Comment
      * @param {string} feedbackId 
      * @param {string} commentId 
      * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam] 
@@ -1400,7 +1429,8 @@ export class FeedbackApi extends BaseAPI {
     }
 
     /**
-     * フィードバックのステータス更新
+     * Update Feedback Status.
+     * @summary Update Feedback Status
      * @param {string} feedbackId 
      * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam] 
      * @param {*} [options] Override http request option.

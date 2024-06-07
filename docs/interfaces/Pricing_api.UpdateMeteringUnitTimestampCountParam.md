@@ -21,7 +21,7 @@ UpdateMeteringUnitTimestampCountParam
 
 • **count**: `number`
 
-件数(count)
+Count
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ UpdateMeteringUnitTimestampCountParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1523)
+[src/generated/Pricing/api.ts:1635](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1635)
 
 ___
 
@@ -43,4 +43,4 @@ UpdateMeteringUnitTimestampCountParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1517](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1517)
+[src/generated/Pricing/api.ts:1629](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1629)
