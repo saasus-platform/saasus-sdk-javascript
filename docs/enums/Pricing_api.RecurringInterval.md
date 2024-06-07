@@ -4,7 +4,7 @@
 
 [Pricing/api](../modules/Pricing_api.md).RecurringInterval
 
-繰り返し期間(cycle) month: 月単位(monthly) year: 年単位(yearly)
+Cycle month: Monthly year: Yearly
 
 **`Export`**
 
@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1282)
+[src/generated/Pricing/api.ts:1394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1394)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1283](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1283)
+[src/generated/Pricing/api.ts:1395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1395)
