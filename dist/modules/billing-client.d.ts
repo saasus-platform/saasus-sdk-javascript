@@ -6,5 +6,7 @@ export declare class BillingClient {
     private saasId;
     private apiKey;
     private apiBase;
-    constructor();
+    private referer;
+    private xSaaSusReferer;
+    constructor(referer?: string, xSaaSusReferer?: string);
 }
