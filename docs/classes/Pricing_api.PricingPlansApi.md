@@ -64,7 +64,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -78,7 +78,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **createPricingPlan**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`\>\>
 
-料金プランを作成します。  Create pricing plan.
+Create a pricing plan.
 
 #### Parameters
 
@@ -129,7 +129,7 @@ ___
 
 **`Summary`**
 
-料金プランを作成(Create Pricing Plan)
+Create Pricing Plan
 
 **`Throws`**
 
@@ -139,7 +139,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3486](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3486)
+[src/generated/Pricing/api.ts:3882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3882)
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 ▸ **deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-無条件に全料金プラン、メニュー、ユニット、メーター、税率を削除します。  Unconditionally remove all rate plans, menus, units, meters and tax rates.
+Unconditionally remove all rate plans, menus, units, meters and tax rates.
 
 #### Parameters
 
@@ -161,7 +161,7 @@ ___
 
 **`Summary`**
 
-全てのPlans,Menus,Units,Metersの削除(Delete all Plans, Menus, Units, Meters and Tax Rates)
+Delete all Plans, Menus, Units, Meters and Tax Rates
 
 **`Throws`**
 
@@ -171,7 +171,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3497](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3497)
+[src/generated/Pricing/api.ts:3893](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3893)
 
 ___
 
@@ -179,13 +179,13 @@ ___
 
 ▸ **deletePricingPlan**(`planId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-料金プランを削除します。  Delete pricing plan.
+Delete a pricing plan.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `planId` | `string` | 料金プランID(price plan ID) |
+| `planId` | `string` | Pricing Plan ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -194,7 +194,7 @@ ___
 
 **`Summary`**
 
-料金プランを削除(Delete Pricing Plan)
+Delete Pricing Plan
 
 **`Throws`**
 
@@ -204,7 +204,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3509](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3509)
+[src/generated/Pricing/api.ts:3905](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3905)
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **deleteStripePlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-stripe上の商品情報を削除します。  Delete product data from Stripe.
+Delete product data from Stripe.
 
 #### Parameters
 
@@ -226,7 +226,7 @@ stripe上の商品情報を削除します。  Delete product data from Stripe.
 
 **`Summary`**
 
-stripe上の商品情報を削除(Delete Product Data from Stripe)
+Delete Product Data from Stripe
 
 **`Throws`**
 
@@ -236,7 +236,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3520](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3520)
+[src/generated/Pricing/api.ts:3916](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3916)
 
 ___
 
@@ -244,13 +244,13 @@ ___
 
 ▸ **getPricingPlan**(`planId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`\>\>
 
-料金プランを取得します。  Get pricing plan.
+Get a pricing plan.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `planId` | `string` | 料金プランID(price plan ID) |
+| `planId` | `string` | Pricing Plan ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -259,7 +259,7 @@ ___
 
 **`Summary`**
 
-料金プランを取得(Get Pricing Plan)
+Get Pricing Plan
 
 **`Throws`**
 
@@ -269,7 +269,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3532](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3532)
+[src/generated/Pricing/api.ts:3928](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3928)
 
 ___
 
@@ -277,7 +277,7 @@ ___
 
 ▸ **getPricingPlans**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingPlans`](../interfaces/Pricing_api.PricingPlans.md), `any`\>\>
 
-料金プラン一覧を取得します。 機能メニューを複数まとめて、１つの料金プランとして定義します。 ここで定義した料金プランを各テナントは選ぶことができます。 もし特定テナント特有の料金（プライベートプライシング）がある場合は、そのテナント専用の料金プランを作成して結びつけます。  Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
+Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
 
 #### Parameters
 
@@ -291,7 +291,7 @@ ___
 
 **`Summary`**
 
-料金プラン一覧を取得(Get pricing plan list)
+Get Pricing Plans
 
 **`Throws`**
 
@@ -301,7 +301,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3543](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3543)
+[src/generated/Pricing/api.ts:3939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3939)
 
 ___
 
@@ -309,7 +309,7 @@ ___
 
 ▸ **linkPlanToStripe**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-stripeへ情報を連携します。  Connect information to Stripe.
+Connect information to Stripe.
 
 #### Parameters
 
@@ -323,7 +323,7 @@ stripeへ情報を連携します。  Connect information to Stripe.
 
 **`Summary`**
 
-stripe連携(Connect to Stripe)
+Connect to Stripe
 
 **`Throws`**
 
@@ -333,7 +333,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3554](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3554)
+[src/generated/Pricing/api.ts:3950](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3950)
 
 ___
 
@@ -341,13 +341,13 @@ ___
 
 ▸ **updatePricingPlan**(`planId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-料金プランを更新します。  Update pricing plan.
+Update a pricing plan.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `planId` | `string` | 料金プランID(price plan ID) |
+| `planId` | `string` | Pricing Plan ID |
 | `body?` | [`SavePricingPlanParam`](../interfaces/Pricing_api.SavePricingPlanParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -357,7 +357,7 @@ ___
 
 **`Summary`**
 
-料金プランを更新(Update Pricing Plan)
+Update Pricing Plan
 
 **`Throws`**
 
@@ -367,7 +367,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3567](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3567)
+[src/generated/Pricing/api.ts:3963](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3963)
 
 ___
 
@@ -375,7 +375,7 @@ ___
 
 ▸ **updatePricingPlansUsed**(`updatePricingPlansUsedParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-料金プランと配下のメニュー・ユニットを使用済みに更新します。  Update price plan and feature menu/pricing unit to used.
+Update price plan and feature menu/pricing unit to used.
 
 #### Parameters
 
@@ -390,7 +390,7 @@ ___
 
 **`Summary`**
 
-使用済みフラグ更新(Update Used Flag)
+Update Used Flag
 
 **`Throws`**
 
@@ -400,4 +400,4 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3579](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3579)
+[src/generated/Pricing/api.ts:3975](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3975)
