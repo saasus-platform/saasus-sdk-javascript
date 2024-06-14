@@ -4,7 +4,7 @@
 
 [Pricing/api](../modules/Pricing_api.md).UnitType
 
-計測単位の種別(unit of measurement type) fixed: 固定ユニット(fixed unit) usage: 使用量ユニット(usage unit) tiered: 段階ユニット(tiered unit) tiered_usage: 段階的使用量ユニット(tiered usage unit)
+Unit of measurement type fixed: Fixed unit usage: Usage unit tiered: Tiered unit tiered_usage: Tiered usage unit
 
 **`Export`**
 
@@ -25,7 +25,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1463](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1463)
+[src/generated/Pricing/api.ts:1575](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1575)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1465)
+[src/generated/Pricing/api.ts:1577](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1577)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1466](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1466)
+[src/generated/Pricing/api.ts:1578](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1578)
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1464](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1464)
+[src/generated/Pricing/api.ts:1576](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1576)

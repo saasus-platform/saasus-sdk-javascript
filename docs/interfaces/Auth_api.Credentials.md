@@ -22,7 +22,7 @@ Credentials
 
 • **access\_token**: `string`
 
-アクセストークン(access token)
+Access token
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ Credentials
 
 #### Defined in
 
-[src/generated/Auth/api.ts:449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L449)
+[src/generated/Auth/api.ts:462](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L462)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **id\_token**: `string`
 
-IDトークン(ID token)
+ID token
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ Credentials
 
 #### Defined in
 
-[src/generated/Auth/api.ts:443](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L443)
+[src/generated/Auth/api.ts:456](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L456)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **refresh\_token**: `string`
 
-リフレッシュトークン(refresh token)
+Refresh token
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ Credentials
 
 #### Defined in
 
-[src/generated/Auth/api.ts:455](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L455)
+[src/generated/Auth/api.ts:468](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L468)

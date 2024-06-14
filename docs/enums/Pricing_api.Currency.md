@@ -4,7 +4,7 @@
 
 [Pricing/api](../modules/Pricing_api.md).Currency
 
-計測単位の通貨(unit of currency)
+Unit of currency
 
 **`Export`**
 
@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:45](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L45)
+[src/generated/Pricing/api.ts:45](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L45)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L46)
+[src/generated/Pricing/api.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L46)

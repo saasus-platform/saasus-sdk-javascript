@@ -26,12 +26,6 @@ export interface Comment {
     'id': string;
     /**
      *
-     * @type {string}
-     * @memberof Comment
-     */
-    'user_id': string;
-    /**
-     *
      * @type {number}
      * @memberof Comment
      */
@@ -55,12 +49,6 @@ export interface CommentAllOf {
      * @memberof CommentAllOf
      */
     'id': string;
-    /**
-     *
-     * @type {string}
-     * @memberof CommentAllOf
-     */
-    'user_id': string;
     /**
      *
      * @type {number}
@@ -93,12 +81,6 @@ export interface Comments {
  * @interface CreateFeedbackCommentParam
  */
 export interface CreateFeedbackCommentParam {
-    /**
-     *
-     * @type {string}
-     * @memberof CreateFeedbackCommentParam
-     */
-    'user_id': string;
     /**
      *
      * @type {string}
@@ -407,10 +389,10 @@ export interface VotesAllOf {
  * ErrorApi - axios parameter creator
  * @export
  */
-export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -420,23 +402,23 @@ export declare const ErrorApiAxiosParamCreator: (configuration?: Configuration |
  * ErrorApi - functional programming interface
  * @export
  */
-export declare const ErrorApiFp: (configuration?: Configuration | undefined) => {
+export declare const ErrorApiFp: (configuration?: Configuration) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    returnInternalServerError(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * ErrorApi - factory interface
  * @export
  */
-export declare const ErrorApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const ErrorApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -450,8 +432,8 @@ export declare const ErrorApiFactory: (configuration?: Configuration | undefined
  */
 export declare class ErrorApi extends BaseAPI {
     /**
-     * テスト用途で使用するエンドポイントです。ステータスコード500でサーバーエラーを返却します。  This endpoint is used for testing purposes. Returns a server error with status code 500.
-     * @summary ステータスコード500でサーバーエラーを返却(Return Internal Server Error)
+     * This endpoint is used for testing purposes. Returns a server error with status code 500.
+     * @summary Return Internal Server Error
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ErrorApi
@@ -462,39 +444,44 @@ export declare class ErrorApi extends BaseAPI {
  * FeedbackApi - axios parameter creator
  * @export
  */
-export declare const FeedbackApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+export declare const FeedbackApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * フィードバックを起票
+     * Create Feedback.
+     * @summary Create Feedback
      * @param {CreateFeedbackParam} [createFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createFeedback: (createFeedbackParam?: CreateFeedbackParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    createFeedback: (createFeedbackParam?: CreateFeedbackParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックへのコメント
+     * Post comment to feedback.
+     * @summary Create Feedback Comment
      * @param {string} feedbackId
      * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createFeedbackComment: (feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    createFeedbackComment: (feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックへの投票
+     * Vote for feedback.
+     * @summary Create Vote User
      * @param {string} feedbackId
      * @param {CreateVoteUserParam} [createVoteUserParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createVoteUser: (feedbackId: string, createVoteUserParam?: CreateVoteUserParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    createVoteUser: (feedbackId: string, createVoteUserParam?: CreateVoteUserParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックの削除
+     * Delete Feedback.
+     * @summary Delete Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteFeedback: (feedbackId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックへのコメント削除
+     * Delete comment for feedback.
+     * @summary Delete Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
@@ -502,7 +489,8 @@ export declare const FeedbackApiAxiosParamCreator: (configuration?: Configuratio
      */
     deleteFeedbackComment: (feedbackId: string, commentId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックへの投票の取消
+     * Cancel vote for feedback.
+     * @summary Delete Vote For Feedback
      * @param {string} feedbackId
      * @param {string} userId
      * @param {*} [options] Override http request option.
@@ -510,14 +498,16 @@ export declare const FeedbackApiAxiosParamCreator: (configuration?: Configuratio
      */
     deleteVoteForFeedback: (feedbackId: string, userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックの取得
+     * Retrieve feedback.
+     * @summary Get Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getFeedback: (feedbackId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックへのコメント取得
+     * Retrieve comment from feedback.
+     * @summary Get Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
@@ -525,172 +515,193 @@ export declare const FeedbackApiAxiosParamCreator: (configuration?: Configuratio
      */
     getFeedbackComment: (feedbackId: string, commentId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックの一覧を取得
+     * Get the list of feedbacks.
+     * @summary Get Feedbacks
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getFeedbacks: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックの編集
+     * Edit feedback.
+     * @summary Update Feedback
      * @param {string} feedbackId
      * @param {UpdateFeedbackParam} [updateFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedback: (feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateFeedback: (feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックへのコメント編集
+     * Edit comment for feedback.
+     * @summary Update Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedbackComment: (feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateFeedbackComment: (feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * フィードバックのステータス更新
+     * Update Feedback Status.
+     * @summary Update Feedback Status
      * @param {string} feedbackId
      * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedbackStatus: (feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    updateFeedbackStatus: (feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * FeedbackApi - functional programming interface
  * @export
  */
-export declare const FeedbackApiFp: (configuration?: Configuration | undefined) => {
+export declare const FeedbackApiFp: (configuration?: Configuration) => {
     /**
-     * フィードバックを起票
+     * Create Feedback.
+     * @summary Create Feedback
      * @param {CreateFeedbackParam} [createFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createFeedback(createFeedbackParam?: CreateFeedbackParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Feedback>>;
+    createFeedback(createFeedbackParam?: CreateFeedbackParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Feedback>>;
     /**
-     * フィードバックへのコメント
+     * Post comment to feedback.
+     * @summary Create Feedback Comment
      * @param {string} feedbackId
      * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Comment>>;
+    createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Comment>>;
     /**
-     * フィードバックへの投票
+     * Vote for feedback.
+     * @summary Create Vote User
      * @param {string} feedbackId
      * @param {CreateVoteUserParam} [createVoteUserParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Votes>>;
+    createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Votes>>;
     /**
-     * フィードバックの削除
+     * Delete Feedback.
+     * @summary Delete Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteFeedback(feedbackId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * フィードバックへのコメント削除
+     * Delete comment for feedback.
+     * @summary Delete Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * フィードバックへの投票の取消
+     * Cancel vote for feedback.
+     * @summary Delete Vote For Feedback
      * @param {string} feedbackId
      * @param {string} userId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteVoteForFeedback(feedbackId: string, userId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    deleteVoteForFeedback(feedbackId: string, userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * フィードバックの取得
+     * Retrieve feedback.
+     * @summary Get Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getFeedback(feedbackId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Feedback>>;
+    getFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Feedback>>;
     /**
-     * フィードバックへのコメント取得
+     * Retrieve comment from feedback.
+     * @summary Get Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Comment>>;
+    getFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Comment>>;
     /**
-     * フィードバックの一覧を取得
+     * Get the list of feedbacks.
+     * @summary Get Feedbacks
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getFeedbacks(options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Feedbacks>>;
+    getFeedbacks(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Feedbacks>>;
     /**
-     * フィードバックの編集
+     * Edit feedback.
+     * @summary Update Feedback
      * @param {string} feedbackId
      * @param {UpdateFeedbackParam} [updateFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * フィードバックへのコメント編集
+     * Edit comment for feedback.
+     * @summary Update Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * フィードバックのステータス更新
+     * Update Feedback Status.
+     * @summary Update Feedback Status
      * @param {string} feedbackId
      * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedbackStatus(feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    updateFeedbackStatus(feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * FeedbackApi - factory interface
  * @export
  */
-export declare const FeedbackApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+export declare const FeedbackApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * フィードバックを起票
+     * Create Feedback.
+     * @summary Create Feedback
      * @param {CreateFeedbackParam} [createFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createFeedback(createFeedbackParam?: CreateFeedbackParam | undefined, options?: any): AxiosPromise<Feedback>;
+    createFeedback(createFeedbackParam?: CreateFeedbackParam, options?: any): AxiosPromise<Feedback>;
     /**
-     * フィードバックへのコメント
+     * Post comment to feedback.
+     * @summary Create Feedback Comment
      * @param {string} feedbackId
      * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam | undefined, options?: any): AxiosPromise<Comment>;
+    createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam, options?: any): AxiosPromise<Comment>;
     /**
-     * フィードバックへの投票
+     * Vote for feedback.
+     * @summary Create Vote User
      * @param {string} feedbackId
      * @param {CreateVoteUserParam} [createVoteUserParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam | undefined, options?: any): AxiosPromise<Votes>;
+    createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam, options?: any): AxiosPromise<Votes>;
     /**
-     * フィードバックの削除
+     * Delete Feedback.
+     * @summary Delete Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     deleteFeedback(feedbackId: string, options?: any): AxiosPromise<void>;
     /**
-     * フィードバックへのコメント削除
+     * Delete comment for feedback.
+     * @summary Delete Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
@@ -698,7 +709,8 @@ export declare const FeedbackApiFactory: (configuration?: Configuration | undefi
      */
     deleteFeedbackComment(feedbackId: string, commentId: string, options?: any): AxiosPromise<void>;
     /**
-     * フィードバックへの投票の取消
+     * Cancel vote for feedback.
+     * @summary Delete Vote For Feedback
      * @param {string} feedbackId
      * @param {string} userId
      * @param {*} [options] Override http request option.
@@ -706,14 +718,16 @@ export declare const FeedbackApiFactory: (configuration?: Configuration | undefi
      */
     deleteVoteForFeedback(feedbackId: string, userId: string, options?: any): AxiosPromise<void>;
     /**
-     * フィードバックの取得
+     * Retrieve feedback.
+     * @summary Get Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getFeedback(feedbackId: string, options?: any): AxiosPromise<Feedback>;
     /**
-     * フィードバックへのコメント取得
+     * Retrieve comment from feedback.
+     * @summary Get Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
@@ -721,36 +735,40 @@ export declare const FeedbackApiFactory: (configuration?: Configuration | undefi
      */
     getFeedbackComment(feedbackId: string, commentId: string, options?: any): AxiosPromise<Comment>;
     /**
-     * フィードバックの一覧を取得
+     * Get the list of feedbacks.
+     * @summary Get Feedbacks
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getFeedbacks(options?: any): AxiosPromise<Feedbacks>;
     /**
-     * フィードバックの編集
+     * Edit feedback.
+     * @summary Update Feedback
      * @param {string} feedbackId
      * @param {UpdateFeedbackParam} [updateFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam | undefined, options?: any): AxiosPromise<void>;
+    updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam, options?: any): AxiosPromise<void>;
     /**
-     * フィードバックへのコメント編集
+     * Edit comment for feedback.
+     * @summary Update Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam | undefined, options?: any): AxiosPromise<void>;
+    updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam, options?: any): AxiosPromise<void>;
     /**
-     * フィードバックのステータス更新
+     * Update Feedback Status.
+     * @summary Update Feedback Status
      * @param {string} feedbackId
      * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateFeedbackStatus(feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam | undefined, options?: any): AxiosPromise<void>;
+    updateFeedbackStatus(feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam, options?: any): AxiosPromise<void>;
 };
 /**
  * FeedbackApi - object-oriented interface
@@ -760,7 +778,8 @@ export declare const FeedbackApiFactory: (configuration?: Configuration | undefi
  */
 export declare class FeedbackApi extends BaseAPI {
     /**
-     * フィードバックを起票
+     * Create Feedback.
+     * @summary Create Feedback
      * @param {CreateFeedbackParam} [createFeedbackParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -768,7 +787,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     createFeedback(createFeedbackParam?: CreateFeedbackParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedback, any>>;
     /**
-     * フィードバックへのコメント
+     * Post comment to feedback.
+     * @summary Create Feedback Comment
      * @param {string} feedbackId
      * @param {CreateFeedbackCommentParam} [createFeedbackCommentParam]
      * @param {*} [options] Override http request option.
@@ -777,7 +797,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Comment, any>>;
     /**
-     * フィードバックへの投票
+     * Vote for feedback.
+     * @summary Create Vote User
      * @param {string} feedbackId
      * @param {CreateVoteUserParam} [createVoteUserParam]
      * @param {*} [options] Override http request option.
@@ -786,7 +807,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Votes, any>>;
     /**
-     * フィードバックの削除
+     * Delete Feedback.
+     * @summary Delete Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -794,7 +816,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     deleteFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * フィードバックへのコメント削除
+     * Delete comment for feedback.
+     * @summary Delete Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
@@ -803,7 +826,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     deleteFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * フィードバックへの投票の取消
+     * Cancel vote for feedback.
+     * @summary Delete Vote For Feedback
      * @param {string} feedbackId
      * @param {string} userId
      * @param {*} [options] Override http request option.
@@ -812,7 +836,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     deleteVoteForFeedback(feedbackId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * フィードバックの取得
+     * Retrieve feedback.
+     * @summary Get Feedback
      * @param {string} feedbackId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -820,7 +845,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     getFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedback, any>>;
     /**
-     * フィードバックへのコメント取得
+     * Retrieve comment from feedback.
+     * @summary Get Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {*} [options] Override http request option.
@@ -829,14 +855,16 @@ export declare class FeedbackApi extends BaseAPI {
      */
     getFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Comment, any>>;
     /**
-     * フィードバックの一覧を取得
+     * Get the list of feedbacks.
+     * @summary Get Feedbacks
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
     getFeedbacks(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedbacks, any>>;
     /**
-     * フィードバックの編集
+     * Edit feedback.
+     * @summary Update Feedback
      * @param {string} feedbackId
      * @param {UpdateFeedbackParam} [updateFeedbackParam]
      * @param {*} [options] Override http request option.
@@ -845,7 +873,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * フィードバックへのコメント編集
+     * Edit comment for feedback.
+     * @summary Update Feedback Comment
      * @param {string} feedbackId
      * @param {string} commentId
      * @param {UpdateFeedbackCommentParam} [updateFeedbackCommentParam]
@@ -855,7 +884,8 @@ export declare class FeedbackApi extends BaseAPI {
      */
     updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * フィードバックのステータス更新
+     * Update Feedback Status.
+     * @summary Update Feedback Status
      * @param {string} feedbackId
      * @param {UpdateFeedbackStatusParam} [updateFeedbackStatusParam]
      * @param {*} [options] Override http request option.
