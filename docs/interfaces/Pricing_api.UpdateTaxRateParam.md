@@ -21,7 +21,7 @@ UpdateTaxRateParam
 
 • **description**: `string`
 
-説明(description)
+Description
 
 **`Memberof`**
 
@@ -29,7 +29,7 @@ UpdateTaxRateParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1555](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1555)
+[src/generated/Pricing/api.ts:1667](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1667)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **display\_name**: `string`
 
-表示名(display name)
+Display name
 
 **`Memberof`**
 
@@ -45,4 +45,4 @@ UpdateTaxRateParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1549](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1549)
+[src/generated/Pricing/api.ts:1661](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1661)
