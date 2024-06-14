@@ -20,7 +20,7 @@ PlanHistories
 
 • **plan\_histories**: [`PlanHistory`](Auth_api.PlanHistory.md)[]
 
-料金プラン履歴
+Plan History
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ PlanHistories
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1134](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1134)
+[src/generated/Auth/api.ts:1147](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1147)
