@@ -27,7 +27,7 @@ ConfirmEmailUpdateParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:297](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L297)
+[src/generated/Auth/api.ts:310](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L310)
 
 ___
 
@@ -41,4 +41,4 @@ ConfirmEmailUpdateParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L291)
+[src/generated/Auth/api.ts:304](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L304)
