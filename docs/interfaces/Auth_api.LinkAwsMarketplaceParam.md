@@ -22,7 +22,7 @@ LinkAwsMarketplaceParam
 
 • **access\_token**: `string`
 
-アクセストークン(access token)
+Access token
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ LinkAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:920](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L920)
+[src/generated/Auth/api.ts:933](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L933)
 
 ___
 
@@ -46,7 +46,7 @@ LinkAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:926](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L926)
+[src/generated/Auth/api.ts:939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L939)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **tenant\_id**: `string`
 
-テナントID(tenant ID)
+Tenant ID
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ LinkAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:914](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L914)
+[src/generated/Auth/api.ts:927](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L927)
