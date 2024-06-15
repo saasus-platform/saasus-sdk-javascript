@@ -23,13 +23,17 @@
 
 ### Interfaces
 
+- [MeteringUnit](../interfaces/Pricing_api.MeteringUnit.md)
+- [MeteringUnitAllOf](../interfaces/Pricing_api.MeteringUnitAllOf.md)
 - [MeteringUnitCount](../interfaces/Pricing_api.MeteringUnitCount.md)
 - [MeteringUnitDateCount](../interfaces/Pricing_api.MeteringUnitDateCount.md)
 - [MeteringUnitDateCounts](../interfaces/Pricing_api.MeteringUnitDateCounts.md)
 - [MeteringUnitDatePeriodCounts](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md)
 - [MeteringUnitMonthCount](../interfaces/Pricing_api.MeteringUnitMonthCount.md)
 - [MeteringUnitMonthCounts](../interfaces/Pricing_api.MeteringUnitMonthCounts.md)
+- [MeteringUnitProps](../interfaces/Pricing_api.MeteringUnitProps.md)
 - [MeteringUnitTimestampCount](../interfaces/Pricing_api.MeteringUnitTimestampCount.md)
+- [MeteringUnits](../interfaces/Pricing_api.MeteringUnits.md)
 - [ModelError](../interfaces/Pricing_api.ModelError.md)
 - [PricingFixedUnit](../interfaces/Pricing_api.PricingFixedUnit.md)
 - [PricingFixedUnitAllOf](../interfaces/Pricing_api.PricingFixedUnitAllOf.md)
@@ -47,7 +51,6 @@
 - [PricingTier](../interfaces/Pricing_api.PricingTier.md)
 - [PricingTieredUnit](../interfaces/Pricing_api.PricingTieredUnit.md)
 - [PricingTieredUnitForSave](../interfaces/Pricing_api.PricingTieredUnitForSave.md)
-- [PricingTieredUnitForSaveAllOf](../interfaces/Pricing_api.PricingTieredUnitForSaveAllOf.md)
 - [PricingTieredUsageUnit](../interfaces/Pricing_api.PricingTieredUsageUnit.md)
 - [PricingTieredUsageUnitAllOf](../interfaces/Pricing_api.PricingTieredUsageUnitAllOf.md)
 - [PricingTieredUsageUnitForSave](../interfaces/Pricing_api.PricingTieredUsageUnitForSave.md)
@@ -56,6 +59,7 @@
 - [PricingUnitBaseProps](../interfaces/Pricing_api.PricingUnitBaseProps.md)
 - [PricingUnits](../interfaces/Pricing_api.PricingUnits.md)
 - [PricingUsageUnit](../interfaces/Pricing_api.PricingUsageUnit.md)
+- [PricingUsageUnitAllOf](../interfaces/Pricing_api.PricingUsageUnitAllOf.md)
 - [PricingUsageUnitForSave](../interfaces/Pricing_api.PricingUsageUnitForSave.md)
 - [PricingUsageUnitForSaveAllOf](../interfaces/Pricing_api.PricingUsageUnitForSaveAllOf.md)
 - [SavePricingMenuParam](../interfaces/Pricing_api.SavePricingMenuParam.md)
@@ -98,25 +102,25 @@
 
 ### PricingUnit
 
-Ƭ **PricingUnit**: [`PricingFixedUnit`](../interfaces/Pricing_api.PricingFixedUnit.md) \| [`PricingTieredUnit`](../interfaces/Pricing_api.PricingTieredUnit.md) \| [`PricingTieredUsageUnit`](../interfaces/Pricing_api.PricingTieredUsageUnit.md) \| [`PricingUsageUnit`](../interfaces/Pricing_api.PricingUsageUnit.md)
+Ƭ **PricingUnit**: \{ `type`: ``"fixed"``  } & [`PricingFixedUnit`](../interfaces/Pricing_api.PricingFixedUnit.md) \| \{ `type`: ``"tiered"``  } & [`PricingTieredUnit`](../interfaces/Pricing_api.PricingTieredUnit.md) \| \{ `type`: ``"tiered_usage"``  } & [`PricingTieredUsageUnit`](../interfaces/Pricing_api.PricingTieredUsageUnit.md) \| \{ `type`: ``"usage"``  } & [`PricingUsageUnit`](../interfaces/Pricing_api.PricingUsageUnit.md)
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1040](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1040)
+[src/generated/Pricing/api.ts:1121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1121)
 
 ___
 
 ### PricingUnitForSave
 
-Ƭ **PricingUnitForSave**: [`PricingFixedUnitForSave`](../interfaces/Pricing_api.PricingFixedUnitForSave.md) \| [`PricingTieredUnitForSave`](../interfaces/Pricing_api.PricingTieredUnitForSave.md) \| [`PricingTieredUsageUnitForSave`](../interfaces/Pricing_api.PricingTieredUsageUnitForSave.md) \| [`PricingUsageUnitForSave`](../interfaces/Pricing_api.PricingUsageUnitForSave.md)
+Ƭ **PricingUnitForSave**: \{ `type`: ``"fixed"``  } & [`PricingFixedUnitForSave`](../interfaces/Pricing_api.PricingFixedUnitForSave.md) \| \{ `type`: ``"tiered"``  } & [`PricingTieredUnitForSave`](../interfaces/Pricing_api.PricingTieredUnitForSave.md) \| \{ `type`: ``"tiered_usage"``  } & [`PricingTieredUsageUnitForSave`](../interfaces/Pricing_api.PricingTieredUsageUnitForSave.md) \| \{ `type`: ``"usage"``  } & [`PricingUsageUnitForSave`](../interfaces/Pricing_api.PricingUsageUnitForSave.md)
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1083](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1083)
+[src/generated/Pricing/api.ts:1164](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1164)
 
 ## Functions
 
@@ -144,7 +148,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1562](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1562)
+[src/generated/Pricing/api.ts:1674](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1674)
 
 ___
 
@@ -174,7 +178,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1625](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1625)
+[src/generated/Pricing/api.ts:1737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1737)
 
 ___
 
@@ -202,7 +206,7 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1605](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1605)
+[src/generated/Pricing/api.ts:1717](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1717)
 
 ___
 
@@ -224,6 +228,8 @@ MeteringApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `createMeteringUnit` | (`body?`: [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
+| `deleteMeteringUnitByID` | (`meteringUnitId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `deleteMeteringUnitTimestampCount` | (`tenantId`: `string`, `meteringUnitName`: `string`, `timestamp`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `getMeteringUnitDateCountByTenantIdAndUnitNameAndDate` | (`tenantId`: `string`, `meteringUnitName`: `string`, `date`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod` | (`tenantId`: `string`, `meteringUnitName`: `string`, `startTimestamp?`: `number`, `endTimestamp?`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
@@ -232,6 +238,8 @@ MeteringApi - axios parameter creator
 | `getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth` | (`tenantId`: `string`, `meteringUnitName`: `string`, `month`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth` | (`tenantId`: `string`, `meteringUnitName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `getMeteringUnitMonthCountsByTenantIdAndMonth` | (`tenantId`: `string`, `month`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
+| `getMeteringUnits` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
+| `updateMeteringUnitByID` | (`meteringUnitId`: `string`, `body?`: [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `updateMeteringUnitTimestampCount` | (`tenantId`: `string`, `meteringUnitName`: `string`, `timestamp`: `number`, `updateMeteringUnitTimestampCountParam?`: [`UpdateMeteringUnitTimestampCountParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 | `updateMeteringUnitTimestampCountNow` | (`tenantId`: `string`, `meteringUnitName`: `string`, `updateMeteringUnitTimestampCountNowParam?`: [`UpdateMeteringUnitTimestampCountNowParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountNowParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Pricing_base.RequestArgs.md)\> | - |
 
@@ -239,7 +247,7 @@ MeteringApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1664](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1664)
+[src/generated/Pricing/api.ts:1776](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1776)
 
 ___
 
@@ -263,6 +271,8 @@ MeteringApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
+| `createMeteringUnit` | (`body?`: [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md), `options?`: `any`) => `AxiosPromise`\<[`MeteringUnit`](../interfaces/Pricing_api.MeteringUnit.md)\> |
+| `deleteMeteringUnitByID` | (`meteringUnitId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
 | `deleteMeteringUnitTimestampCount` | (`tenantId`: `string`, `meteringUnitName`: `string`, `timestamp`: `number`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
 | `getMeteringUnitDateCountByTenantIdAndUnitNameAndDate` | (`tenantId`: `string`, `meteringUnitName`: `string`, `date`: `string`, `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md)\> |
 | `getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod` | (`tenantId`: `string`, `meteringUnitName`: `string`, `startTimestamp?`: `number`, `endTimestamp?`: `number`, `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitDatePeriodCounts`](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md)\> |
@@ -271,6 +281,8 @@ MeteringApi - factory interface
 | `getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth` | (`tenantId`: `string`, `meteringUnitName`: `string`, `month`: `string`, `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md)\> |
 | `getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth` | (`tenantId`: `string`, `meteringUnitName`: `string`, `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md)\> |
 | `getMeteringUnitMonthCountsByTenantIdAndMonth` | (`tenantId`: `string`, `month`: `string`, `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitMonthCounts`](../interfaces/Pricing_api.MeteringUnitMonthCounts.md)\> |
+| `getMeteringUnits` | (`options?`: `any`) => `AxiosPromise`\<[`MeteringUnits`](../interfaces/Pricing_api.MeteringUnits.md)\> |
+| `updateMeteringUnitByID` | (`meteringUnitId`: `string`, `body?`: [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
 | `updateMeteringUnitTimestampCount` | (`tenantId`: `string`, `meteringUnitName`: `string`, `timestamp`: `number`, `updateMeteringUnitTimestampCountParam?`: [`UpdateMeteringUnitTimestampCountParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountParam.md), `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md)\> |
 | `updateMeteringUnitTimestampCountNow` | (`tenantId`: `string`, `meteringUnitName`: `string`, `updateMeteringUnitTimestampCountNowParam?`: [`UpdateMeteringUnitTimestampCountNowParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountNowParam.md), `options?`: `any`) => `AxiosPromise`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md)\> |
 
@@ -278,7 +290,7 @@ MeteringApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2265](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2265)
+[src/generated/Pricing/api.ts:2573](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L2573)
 
 ___
 
@@ -300,6 +312,8 @@ MeteringApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
+| `createMeteringUnit` | (`body?`: [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnit`](../interfaces/Pricing_api.MeteringUnit.md)\>\> |
+| `deleteMeteringUnitByID` | (`meteringUnitId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
 | `deleteMeteringUnitTimestampCount` | (`tenantId`: `string`, `meteringUnitName`: `string`, `timestamp`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
 | `getMeteringUnitDateCountByTenantIdAndUnitNameAndDate` | (`tenantId`: `string`, `meteringUnitName`: `string`, `date`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md)\>\> |
 | `getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod` | (`tenantId`: `string`, `meteringUnitName`: `string`, `startTimestamp?`: `number`, `endTimestamp?`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitDatePeriodCounts`](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md)\>\> |
@@ -308,6 +322,8 @@ MeteringApi - functional programming interface
 | `getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth` | (`tenantId`: `string`, `meteringUnitName`: `string`, `month`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md)\>\> |
 | `getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth` | (`tenantId`: `string`, `meteringUnitName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md)\>\> |
 | `getMeteringUnitMonthCountsByTenantIdAndMonth` | (`tenantId`: `string`, `month`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitMonthCounts`](../interfaces/Pricing_api.MeteringUnitMonthCounts.md)\>\> |
+| `getMeteringUnits` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnits`](../interfaces/Pricing_api.MeteringUnits.md)\>\> |
+| `updateMeteringUnitByID` | (`meteringUnitId`: `string`, `body?`: [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
 | `updateMeteringUnitTimestampCount` | (`tenantId`: `string`, `meteringUnitName`: `string`, `timestamp`: `number`, `updateMeteringUnitTimestampCountParam?`: [`UpdateMeteringUnitTimestampCountParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md)\>\> |
 | `updateMeteringUnitTimestampCountNow` | (`tenantId`: `string`, `meteringUnitName`: `string`, `updateMeteringUnitTimestampCountNowParam?`: [`UpdateMeteringUnitTimestampCountNowParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountNowParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md)\>\> |
 
@@ -315,7 +331,7 @@ MeteringApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2127](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2127)
+[src/generated/Pricing/api.ts:2391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L2391)
 
 ___
 
@@ -347,7 +363,7 @@ PricingMenusApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2540](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2540)
+[src/generated/Pricing/api.ts:2936](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L2936)
 
 ___
 
@@ -381,7 +397,7 @@ PricingMenusApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2804](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2804)
+[src/generated/Pricing/api.ts:3200](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3200)
 
 ___
 
@@ -413,7 +429,7 @@ PricingMenusApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2739](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2739)
+[src/generated/Pricing/api.ts:3135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3135)
 
 ___
 
@@ -449,7 +465,7 @@ PricingPlansApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2933](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L2933)
+[src/generated/Pricing/api.ts:3329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3329)
 
 ___
 
@@ -487,7 +503,7 @@ PricingPlansApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3378](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3378)
+[src/generated/Pricing/api.ts:3774](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3774)
 
 ___
 
@@ -523,7 +539,7 @@ PricingPlansApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3272](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3272)
+[src/generated/Pricing/api.ts:3668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3668)
 
 ___
 
@@ -555,7 +571,7 @@ PricingUnitsApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3589](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3589)
+[src/generated/Pricing/api.ts:3985](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L3985)
 
 ___
 
@@ -589,7 +605,7 @@ PricingUnitsApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3853](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3853)
+[src/generated/Pricing/api.ts:4249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4249)
 
 ___
 
@@ -621,7 +637,7 @@ PricingUnitsApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3788](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3788)
+[src/generated/Pricing/api.ts:4184](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4184)
 
 ___
 
@@ -651,7 +667,7 @@ TaxRateApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3982](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3982)
+[src/generated/Pricing/api.ts:4378](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4378)
 
 ___
 
@@ -683,7 +699,7 @@ TaxRateApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4148](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L4148)
+[src/generated/Pricing/api.ts:4544](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4544)
 
 ___
 
@@ -713,4 +729,4 @@ TaxRateApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4105](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L4105)
+[src/generated/Pricing/api.ts:4501](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4501)

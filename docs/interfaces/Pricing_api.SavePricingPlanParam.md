@@ -23,7 +23,7 @@ SavePricingPlanParam
 
 • **description**: `string`
 
-料金プラン説明(pricing plan description)
+Pricing plan description
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1343](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1343)
+[src/generated/Pricing/api.ts:1455](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1455)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **display\_name**: `string`
 
-料金プラン表示名(pricing plan display name)
+Pricing plan display name
 
 **`Memberof`**
 
@@ -47,7 +47,7 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1337](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1337)
+[src/generated/Pricing/api.ts:1449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1449)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **menu\_ids**: `string`[]
 
-メニューID（料金プランに追加するメニューIDを設定） Menu ID (menu ID to be added to the pricing plan)
+Menu ID to be added to the pricing plan
 
 **`Memberof`**
 
@@ -63,7 +63,7 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1349](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1349)
+[src/generated/Pricing/api.ts:1461](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1461)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **name**: `string`
 
-料金プラン名(pricing plan name)
+Pricing plan name
 
 **`Memberof`**
 
@@ -79,4 +79,4 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1331](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1331)
+[src/generated/Pricing/api.ts:1443](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1443)

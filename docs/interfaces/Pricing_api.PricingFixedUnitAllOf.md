@@ -21,13 +21,15 @@ PricingFixedUnitAllOf
 
 • **id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingFixedUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L282)
+[src/generated/Pricing/api.ts:388](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L388)
 
 ___
 
@@ -41,4 +43,4 @@ PricingFixedUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:288](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L288)
+[src/generated/Pricing/api.ts:394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L394)

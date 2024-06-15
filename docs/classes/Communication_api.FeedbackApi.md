@@ -67,7 +67,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/base.ts#L52)
 
 ## Properties
 
@@ -81,7 +81,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/base.ts#L52)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/base.ts#L52)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/base.ts#L50)
+[src/generated/Communication/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/base.ts#L50)
 
 ## Methods
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **createFeedback**(`createFeedbackParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
 
-フィードバックを起票
+Create Feedback.
 
 #### Parameters
 
@@ -130,6 +130,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
 
+**`Summary`**
+
+Create Feedback
+
 **`Throws`**
 
 **`Memberof`**
@@ -138,7 +142,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1281)
+[src/generated/Communication/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1300)
 
 ___
 
@@ -146,7 +150,7 @@ ___
 
 ▸ **createFeedbackComment**(`feedbackId`, `createFeedbackCommentParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
 
-フィードバックへのコメント
+Post comment to feedback.
 
 #### Parameters
 
@@ -160,6 +164,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
 
+**`Summary`**
+
+Create Feedback Comment
+
 **`Throws`**
 
 **`Memberof`**
@@ -168,7 +176,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1293](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1293)
+[src/generated/Communication/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1313)
 
 ___
 
@@ -176,7 +184,7 @@ ___
 
 ▸ **createVoteUser**(`feedbackId`, `createVoteUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Votes`](../interfaces/Communication_api.Votes.md), `any`\>\>
 
-フィードバックへの投票
+Vote for feedback.
 
 #### Parameters
 
@@ -190,6 +198,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<[`Votes`](../interfaces/Communication_api.Votes.md), `any`\>\>
 
+**`Summary`**
+
+Create Vote User
+
 **`Throws`**
 
 **`Memberof`**
@@ -198,7 +210,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1305](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1305)
+[src/generated/Communication/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1326)
 
 ___
 
@@ -206,7 +218,7 @@ ___
 
 ▸ **deleteFeedback**(`feedbackId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-フィードバックの削除
+Delete Feedback.
 
 #### Parameters
 
@@ -219,6 +231,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Delete Feedback
+
 **`Throws`**
 
 **`Memberof`**
@@ -227,7 +243,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1316](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1316)
+[src/generated/Communication/api.ts:1338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1338)
 
 ___
 
@@ -235,7 +251,7 @@ ___
 
 ▸ **deleteFeedbackComment**(`feedbackId`, `commentId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-フィードバックへのコメント削除
+Delete comment for feedback.
 
 #### Parameters
 
@@ -249,6 +265,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Delete Feedback Comment
+
 **`Throws`**
 
 **`Memberof`**
@@ -257,7 +277,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1328](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1328)
+[src/generated/Communication/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1351)
 
 ___
 
@@ -265,7 +285,7 @@ ___
 
 ▸ **deleteVoteForFeedback**(`feedbackId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-フィードバックへの投票の取消
+Cancel vote for feedback.
 
 #### Parameters
 
@@ -279,6 +299,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Delete Vote For Feedback
+
 **`Throws`**
 
 **`Memberof`**
@@ -287,7 +311,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1340](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1340)
+[src/generated/Communication/api.ts:1364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1364)
 
 ___
 
@@ -295,7 +319,7 @@ ___
 
 ▸ **getFeedback**(`feedbackId`, `options?`): `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
 
-フィードバックの取得
+Retrieve feedback.
 
 #### Parameters
 
@@ -308,6 +332,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
 
+**`Summary`**
+
+Get Feedback
+
 **`Throws`**
 
 **`Memberof`**
@@ -316,7 +344,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1351)
+[src/generated/Communication/api.ts:1376](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1376)
 
 ___
 
@@ -324,7 +352,7 @@ ___
 
 ▸ **getFeedbackComment**(`feedbackId`, `commentId`, `options?`): `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
 
-フィードバックへのコメント取得
+Retrieve comment from feedback.
 
 #### Parameters
 
@@ -338,6 +366,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
 
+**`Summary`**
+
+Get Feedback Comment
+
 **`Throws`**
 
 **`Memberof`**
@@ -346,7 +378,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1363)
+[src/generated/Communication/api.ts:1389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1389)
 
 ___
 
@@ -354,7 +386,7 @@ ___
 
 ▸ **getFeedbacks**(`options?`): `Promise`\<`AxiosResponse`\<[`Feedbacks`](../interfaces/Communication_api.Feedbacks.md), `any`\>\>
 
-フィードバックの一覧を取得
+Get the list of feedbacks.
 
 #### Parameters
 
@@ -366,6 +398,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<[`Feedbacks`](../interfaces/Communication_api.Feedbacks.md), `any`\>\>
 
+**`Summary`**
+
+Get Feedbacks
+
 **`Throws`**
 
 **`Memberof`**
@@ -374,7 +410,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1373)
+[src/generated/Communication/api.ts:1400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1400)
 
 ___
 
@@ -382,7 +418,7 @@ ___
 
 ▸ **updateFeedback**(`feedbackId`, `updateFeedbackParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-フィードバックの編集
+Edit feedback.
 
 #### Parameters
 
@@ -396,6 +432,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Update Feedback
+
 **`Throws`**
 
 **`Memberof`**
@@ -404,7 +444,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1385](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1385)
+[src/generated/Communication/api.ts:1413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1413)
 
 ___
 
@@ -412,7 +452,7 @@ ___
 
 ▸ **updateFeedbackComment**(`feedbackId`, `commentId`, `updateFeedbackCommentParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-フィードバックへのコメント編集
+Edit comment for feedback.
 
 #### Parameters
 
@@ -427,6 +467,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Update Feedback Comment
+
 **`Throws`**
 
 **`Memberof`**
@@ -435,7 +479,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1398](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1398)
+[src/generated/Communication/api.ts:1427](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1427)
 
 ___
 
@@ -443,7 +487,7 @@ ___
 
 ▸ **updateFeedbackStatus**(`feedbackId`, `updateFeedbackStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-フィードバックのステータス更新
+Update Feedback Status.
 
 #### Parameters
 
@@ -457,6 +501,10 @@ ___
 
 `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
+**`Summary`**
+
+Update Feedback Status
+
 **`Throws`**
 
 **`Memberof`**
@@ -465,4 +513,4 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1410](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L1410)
+[src/generated/Communication/api.ts:1440](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L1440)
