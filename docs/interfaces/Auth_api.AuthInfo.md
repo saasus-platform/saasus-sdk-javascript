@@ -20,7 +20,7 @@ AuthInfo
 
 • **callback\_url**: `string`
 
-認証後遷移先(Redirect After Authentication)
+Redirect After Authentication
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ AuthInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:123](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L123)
+[src/generated/Auth/api.ts:123](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L123)

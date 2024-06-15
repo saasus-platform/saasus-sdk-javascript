@@ -18,5 +18,6 @@ export declare class AuthClient {
     private apiKey;
     private apiBase;
     private referer;
-    constructor(referer?: string);
+    private xSaaSusReferer;
+    constructor(referer?: string, xSaaSusReferer?: string);
 }

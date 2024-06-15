@@ -4,7 +4,7 @@
 
 [Pricing/api](../modules/Pricing_api.md).UpdateMeteringUnitTimestampCountMethod
 
-更新方法(update method) add: 加算(addition) sub: 減算(subtraction) direct: 上書き(overwrite)
+Update method add: Addition sub: Subtraction direct: Overwrite
 
 **`Export`**
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1479](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1479)
+[src/generated/Pricing/api.ts:1591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1591)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1481](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1481)
+[src/generated/Pricing/api.ts:1593](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1593)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1480](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1480)
+[src/generated/Pricing/api.ts:1592](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1592)
