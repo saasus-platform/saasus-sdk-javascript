@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).Role
 
-役割(ロール)情報(role info)
+role info
 
 **`Export`**
 
@@ -23,7 +23,7 @@ Role
 
 • **display\_name**: `string`
 
-役割(ロール)表示名(role display name)
+role display name
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ Role
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1332)
+[src/generated/Auth/api.ts:1345](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1345)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **role\_name**: `string`
 
-役割(ロール)名(role name)
+role name
 
 **`Memberof`**
 
@@ -47,4 +47,4 @@ Role
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1326)
+[src/generated/Auth/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1339)
