@@ -20,7 +20,7 @@ UpdateSaasUserEmailParam
 
 • **email**: `string`
 
-メールアドレス(e-mail)
+E-mail
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ UpdateSaasUserEmailParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2055](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2055)
+[src/generated/Auth/api.ts:2105](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2105)

@@ -60,7 +60,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **createPricingUnit**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`\>\>
 
-プライシングユニットを作成します。  Create a pricing unit.
+Create a pricing unit.
 
 #### Parameters
 
@@ -125,7 +125,7 @@ ___
 
 **`Summary`**
 
-プライシングユニットを作成(Create Pricing Unit)
+Create Pricing Unit
 
 **`Throws`**
 
@@ -135,7 +135,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3924](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3924)
+[src/generated/Pricing/api.ts:4320](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4320)
 
 ___
 
@@ -143,13 +143,13 @@ ___
 
 ▸ **deletePricingUnit**(`pricingUnitId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-プライシングユニットを削除します。  Delete a pricing unit.
+Delete a pricing unit.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `pricingUnitId` | `string` | ユニットID(unit id) |
+| `pricingUnitId` | `string` | Unit ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -158,7 +158,7 @@ ___
 
 **`Summary`**
 
-プライシングユニットを削除(Delete Pricing Unit)
+Delete Pricing Unit
 
 **`Throws`**
 
@@ -168,7 +168,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3936](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3936)
+[src/generated/Pricing/api.ts:4332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4332)
 
 ___
 
@@ -176,13 +176,13 @@ ___
 
 ▸ **getPricingUnit**(`pricingUnitId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`\>\>
 
-プライシングユニットを取得します。  Get a pricing unit.
+Get a pricing unit.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `pricingUnitId` | `string` | ユニットID(unit id) |
+| `pricingUnitId` | `string` | Unit ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -191,7 +191,7 @@ ___
 
 **`Summary`**
 
-プライシングユニットを取得(Get Pricing Unit)
+Get Pricing Unit
 
 **`Throws`**
 
@@ -201,7 +201,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3948](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3948)
+[src/generated/Pricing/api.ts:4344](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4344)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **getPricingUnits**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingUnits`](../interfaces/Pricing_api.PricingUnits.md), `any`\>\>
 
-料金のベースとなる最小の計測単位を取得します。 「固定ユニット」(type=fixed)は基本料金などの月額固定料金の単位、 「使用量ユニット」(type=usage)はユーザ数課金などの１単位あたりごとに料金が発生する単位、 「段階ユニット」(type=tiered)は携帯電話の段階的パケット料金のように利用量の段階ごとに一定の料金の単位、 「段階的使用量ユニット」(type=tiered_usage)はボリュームディスカウントのように利用量に応じて１単位あたりの料金が変化していく単位、となります。  Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type = tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
+Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type=tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
 
 #### Parameters
 
@@ -223,7 +223,7 @@ ___
 
 **`Summary`**
 
-プライシングユニットの一覧を取得(Get Pricing Units)
+Get Pricing Units
 
 **`Throws`**
 
@@ -233,7 +233,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3959](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3959)
+[src/generated/Pricing/api.ts:4355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4355)
 
 ___
 
@@ -241,13 +241,13 @@ ___
 
 ▸ **updatePricingUnit**(`pricingUnitId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-プライシングユニット情報を更新します。  Update pricing unit.
+Update pricing unit.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `pricingUnitId` | `string` | ユニットID(unit id) |
+| `pricingUnitId` | `string` | Unit ID |
 | `body?` | [`PricingUnitForSave`](../modules/Pricing_api.md#pricingunitforsave) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -257,7 +257,7 @@ ___
 
 **`Summary`**
 
-プライシングユニットを更新(Update Pricing Unit)
+Update Pricing Unit
 
 **`Throws`**
 
@@ -267,4 +267,4 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3972](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L3972)
+[src/generated/Pricing/api.ts:4368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4368)

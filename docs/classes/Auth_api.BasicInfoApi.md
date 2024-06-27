@@ -63,7 +63,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -77,7 +77,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **findNotificationMessages**(`options?`): `Promise`\<`AxiosResponse`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`\>\>
 
-各種通知メールテンプレートを取得します。  Get notification email templates.
+Get notification email templates.
 
 #### Parameters
 
@@ -127,7 +127,7 @@ ___
 
 **`Summary`**
 
-通知メールテンプレートを取得(Get Notification Email Templates)
+Get Notification Email Templates
 
 **`Throws`**
 
@@ -137,7 +137,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3296](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3296)
+[src/generated/Auth/api.ts:3391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3391)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 ▸ **getBasicInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`\>\>
 
-SaaS ID を元に設定されているドメイン名と CNAME レコードを取得します。 取得した CNAME レコードを DNS に設定することで、ログイン画面を生成します。  Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
+Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
 
 #### Parameters
 
@@ -159,7 +159,7 @@ SaaS ID を元に設定されているドメイン名と CNAME レコードを�
 
 **`Summary`**
 
-基本設定情報の取得(Get Basic Configurations)
+Get Basic Configurations
 
 **`Throws`**
 
@@ -169,7 +169,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3307](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3307)
+[src/generated/Auth/api.ts:3402](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3402)
 
 ___
 
@@ -177,7 +177,7 @@ ___
 
 ▸ **getCustomizePageSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`\>\>
 
-認証認可基本情報を取得します。  Get authentication authorization basic information.
+Get authentication authorization basic information.
 
 #### Parameters
 
@@ -191,7 +191,7 @@ ___
 
 **`Summary`**
 
-認証認可基本情報取得(Get Authentication Authorization Basic Information)
+Get Authentication Authorization Basic Information
 
 **`Throws`**
 
@@ -201,7 +201,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3318)
+[src/generated/Auth/api.ts:3413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3413)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **getCustomizePages**(`options?`): `Promise`\<`AxiosResponse`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`\>\>
 
-認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を取得します。  Get the authentication screen setting information (new registration, login, password reset, etc.).
+Get the authentication screen setting information (new registration, login, password reset, etc.).
 
 #### Parameters
 
@@ -223,7 +223,7 @@ ___
 
 **`Summary`**
 
-認証系画面設定情報取得(Get Authentication Page Setting)
+Get Authentication Page Setting
 
 **`Throws`**
 
@@ -233,7 +233,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3329)
+[src/generated/Auth/api.ts:3424](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3424)
 
 ___
 
@@ -241,7 +241,7 @@ ___
 
 ▸ **updateBasicInfo**(`updateBasicInfoParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-SaaS ID を元にパラメータとして設定したドメイン名を設定更新します。 CNAME レコードが生成されますので、 DNS に設定して下さい。 既に稼働中の SaaS アプリケーションに設定している場合には、動作に影響があります。  Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
+Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
 
 #### Parameters
 
@@ -256,7 +256,7 @@ SaaS ID を元にパラメータとして設定したドメイン名を設定更
 
 **`Summary`**
 
-基本設定情報の更新(Update Basic Configurations)
+Update Basic Configurations
 
 **`Throws`**
 
@@ -266,7 +266,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3341](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3341)
+[src/generated/Auth/api.ts:3436](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3436)
 
 ___
 
@@ -274,7 +274,7 @@ ___
 
 ▸ **updateCustomizePageSettings**(`updateCustomizePageSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-認証認可基本情報を更新します。  Update authentication authorization basic information.
+Update authentication authorization basic information.
 
 #### Parameters
 
@@ -289,7 +289,7 @@ ___
 
 **`Summary`**
 
-認証認可基本情報更新(Update Authentication Authorization Basic Information)
+Update Authentication Authorization Basic Information
 
 **`Throws`**
 
@@ -299,7 +299,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3353](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3353)
+[src/generated/Auth/api.ts:3448](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3448)
 
 ___
 
@@ -307,7 +307,7 @@ ___
 
 ▸ **updateCustomizePages**(`updateCustomizePagesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-認証系画面設定情報（新規登録・ログイン・パスワードリセット等）を更新します。  Update the authentication page setting information (new registration, login, password reset, etc.).
+Update the authentication page setting information (new registration, login, password reset, etc.).
 
 #### Parameters
 
@@ -322,7 +322,7 @@ ___
 
 **`Summary`**
 
-認証系画面設定情報設定(Authentication Page Setting)
+Authentication Page Setting
 
 **`Throws`**
 
@@ -332,7 +332,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3365](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3365)
+[src/generated/Auth/api.ts:3460](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3460)
 
 ___
 
@@ -340,7 +340,7 @@ ___
 
 ▸ **updateNotificationMessages**(`updateNotificationMessagesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-各種通知メールテンプレート更新します。  Update notification email template.
+Update notification email template.
 
 #### Parameters
 
@@ -355,7 +355,7 @@ ___
 
 **`Summary`**
 
-通知メールテンプレートを更新(Update Notification Email Template)
+Update Notification Email Template
 
 **`Throws`**
 
@@ -365,4 +365,4 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3377](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L3377)
+[src/generated/Auth/api.ts:3472](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L3472)
