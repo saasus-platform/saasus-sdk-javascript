@@ -50,7 +50,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Billing/api.ts:74](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L74)
+[src/generated/Billing/api.ts:74](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L74)
 
 ___
 
@@ -80,7 +80,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/Billing/api.ts:137](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L137)
+[src/generated/Billing/api.ts:137](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L137)
 
 ___
 
@@ -108,7 +108,7 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Billing/api.ts:117](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L117)
+[src/generated/Billing/api.ts:117](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L117)
 
 ___
 
@@ -138,7 +138,7 @@ StripeApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Billing/api.ts:176](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L176)
+[src/generated/Billing/api.ts:176](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L176)
 
 ___
 
@@ -170,7 +170,7 @@ StripeApi - factory interface
 
 #### Defined in
 
-[src/generated/Billing/api.ts:332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L332)
+[src/generated/Billing/api.ts:332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L332)
 
 ___
 
@@ -200,4 +200,4 @@ StripeApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Billing/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L291)
+[src/generated/Billing/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L291)

@@ -28,7 +28,7 @@ BillingInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:259](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L259)
+[src/generated/Auth/api.ts:259](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L259)
 
 ___
 
@@ -42,7 +42,7 @@ BillingInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:265](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L265)
+[src/generated/Auth/api.ts:265](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L265)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **name**: `string`
 
-請求用のテナント名  Tenant name for billing
+Tenant name for billing
 
 **`Memberof`**
 
@@ -58,4 +58,4 @@ BillingInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:253](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L253)
+[src/generated/Auth/api.ts:253](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L253)
