@@ -22,7 +22,7 @@ EventMessage
 
 • **event\_detail\_type**: `string`
 
-詳細イベントタイプ(detailed event type)
+detailed event type
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ EventMessage
 
 #### Defined in
 
-[src/generated/Integration/api.ts:107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L107)
+[src/generated/Integration/api.ts:107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Integration/api.ts#L107)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **event\_type**: `string`
 
-イベントタイプ(event type)
+event type
 
 **`Memberof`**
 
@@ -46,7 +46,7 @@ EventMessage
 
 #### Defined in
 
-[src/generated/Integration/api.ts:101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L101)
+[src/generated/Integration/api.ts:101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Integration/api.ts#L101)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **message**: `string`
 
-イベントメッセージ(event message)
+event message
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ EventMessage
 
 #### Defined in
 
-[src/generated/Integration/api.ts:113](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L113)
+[src/generated/Integration/api.ts:113](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Integration/api.ts#L113)

@@ -69,7 +69,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/base.ts#L52)
 
 ## Properties
 
@@ -83,7 +83,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/base.ts#L52)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/base.ts#L52)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/base.ts#L50)
+[src/generated/AwsMarketplace/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/base.ts#L50)
 
 ## Methods
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **createCustomer**(`createCustomerParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`\>\>
 
-AWS Marketplaceに連携する顧客情報を新規作成します。  Create customer information to be linked to AWS Marketplace.
+Create customer information to be linked to AWS Marketplace.
 
 #### Parameters
 
@@ -134,7 +134,7 @@ AWS Marketplaceに連携する顧客情報を新規作成します。  Create cu
 
 **`Summary`**
 
-AWS Marketplaceに連携する顧客情報を新規作成(Create customer information to be linked to AWS Marketplace)
+Create customer information to be linked to AWS Marketplace
 
 **`Throws`**
 
@@ -144,7 +144,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1212)
+[src/generated/AwsMarketplace/api.ts:1212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1212)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **getCatalogEntityVisibility**(`options?`): `Promise`\<`AxiosResponse`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`\>\>
 
-AWS Marketplaceから商品の公開状況を取得します。  Retrieve the product\'s publication status from AWS Marketplace.
+Retrieve the product\'s publication status from AWS Marketplace.
 
 #### Parameters
 
@@ -166,7 +166,7 @@ AWS Marketplaceから商品の公開状況を取得します。  Retrieve the pr
 
 **`Summary`**
 
-AWS Marketplaceから商品の公開状況を取得(Obtain product publication status from AWS Marketplace)
+Obtain product publication status from AWS Marketplace
 
 **`Throws`**
 
@@ -176,7 +176,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1223)
+[src/generated/AwsMarketplace/api.ts:1223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1223)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **getCloudFormationLaunchStackLink**(`options?`): `Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`\>\>
 
-CloudFormationのクイック作成リンクを取得します。  Get the CloudFormation Quick Create link.
+Get the CloudFormation Quick Create link.
 
 #### Parameters
 
@@ -198,7 +198,7 @@ CloudFormationのクイック作成リンクを取得します。  Get the Cloud
 
 **`Summary`**
 
-AWS CloudFormationのスタック作成リンクを取得(Get the link to create the AWS CloudFormation stack)
+Get the link to create the AWS CloudFormation stack
 
 **`Throws`**
 
@@ -208,7 +208,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1234)
+[src/generated/AwsMarketplace/api.ts:1234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1234)
 
 ___
 
@@ -216,13 +216,13 @@ ___
 
 ▸ **getCustomer**(`customerIdentifier`, `options?`): `Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`\>\>
 
-AWS Marketplaceに連携する顧客情報を取得します。  Get customer information to be linked to AWS Marketplace.
+Get customer information to be linked to AWS Marketplace.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `customerIdentifier` | `string` | 顧客ID |
+| `customerIdentifier` | `string` | Customer ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -231,7 +231,7 @@ AWS Marketplaceに連携する顧客情報を取得します。  Get customer in
 
 **`Summary`**
 
-AWS Marketplaceに連携する顧客情報を取得(Get customer information to be linked to AWS Marketplace)
+Get customer information to be linked to AWS Marketplace
 
 **`Throws`**
 
@@ -241,7 +241,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1246)
+[src/generated/AwsMarketplace/api.ts:1246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1246)
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **getCustomers**(`tenantIds?`, `options?`): `Promise`\<`AxiosResponse`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`\>\>
 
-AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a list of customer information to be linked to AWS Marketplace.
+Get a list of customer information to be linked to AWS Marketplace.
 
 #### Parameters
 
@@ -264,7 +264,7 @@ AWS Marketplaceに連携する顧客情報の一覧を取得します。  Get a 
 
 **`Summary`**
 
-AWS Marketplaceに連携する顧客情報の一覧を取得(Get a list of customer information to be linked to AWS Marketplace)
+Get a list of customer information to be linked to AWS Marketplace
 
 **`Throws`**
 
@@ -274,7 +274,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1258](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1258)
+[src/generated/AwsMarketplace/api.ts:1258](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1258)
 
 ___
 
@@ -282,7 +282,7 @@ ___
 
 ▸ **getListingStatus**(`options?`): `Promise`\<`AxiosResponse`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`\>\>
 
-AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing Status.
+Get AWS Marketplace Listing Status.
 
 #### Parameters
 
@@ -296,7 +296,7 @@ AWS Marketplaceの出品状況を取得します。  Get AWS Marketplace Listing
 
 **`Summary`**
 
-AWS Marketplaceの出品状況を取得(Get AWS Marketplace Listing Status)
+Get AWS Marketplace Listing Status
 
 **`Throws`**
 
@@ -306,7 +306,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1269](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1269)
+[src/generated/AwsMarketplace/api.ts:1269](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1269)
 
 ___
 
@@ -314,13 +314,13 @@ ___
 
 ▸ **getPlanByPlanName**(`planName`, `options?`): `Promise`\<`AxiosResponse`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`\>\>
 
-Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
+Obtain plan information to link to AWS Marketplace.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `planName` | `string` | AWS Marketplace連携プラン名 |
+| `planName` | `string` | AWS Marketplace linked plan name |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -329,7 +329,7 @@ Marketplaceと連携するプラン情報を取得します。  Obtain plan info
 
 **`Summary`**
 
-AWSMarketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+Obtain plan information to link to AWS Marketplace
 
 **`Throws`**
 
@@ -339,7 +339,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1281)
+[src/generated/AwsMarketplace/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1281)
 
 ___
 
@@ -347,7 +347,7 @@ ___
 
 ▸ **getPlans**(`options?`): `Promise`\<`AxiosResponse`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`\>\>
 
-Marketplaceと連携するプラン情報を取得します。  Obtain plan information to link to AWS Marketplace.
+Obtain plan information to link to AWS Marketplace.
 
 #### Parameters
 
@@ -361,7 +361,7 @@ Marketplaceと連携するプラン情報を取得します。  Obtain plan info
 
 **`Summary`**
 
-AWS Marketplaceに連携するプラン情報を取得(Obtain plan information to link to AWS Marketplace)
+Obtain plan information to link to AWS Marketplace
 
 **`Throws`**
 
@@ -371,7 +371,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1292)
+[src/generated/AwsMarketplace/api.ts:1292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1292)
 
 ___
 
@@ -379,7 +379,7 @@ ___
 
 ▸ **getSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`\>\>
 
-AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
+Get AWS Marketplace Settings.
 
 #### Parameters
 
@@ -393,7 +393,7 @@ AWS Marketplaceの設定を取得します。  Get AWS Marketplace Settings.
 
 **`Summary`**
 
-AWS Marketplaceの設定を取得(Get AWS Marketplace Settings)
+Get AWS Marketplace Settings
 
 **`Throws`**
 
@@ -403,7 +403,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1303](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1303)
+[src/generated/AwsMarketplace/api.ts:1303](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1303)
 
 ___
 
@@ -411,7 +411,7 @@ ___
 
 ▸ **savePlan**(`savePlanParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-AWSMarketplaceに連携するプラン情報を登録します。  Save plan information to be linked to AWSMarketplace.
+Save plan information to be linked to AWSMarketplace.
 
 #### Parameters
 
@@ -426,7 +426,7 @@ AWSMarketplaceに連携するプラン情報を登録します。  Save plan inf
 
 **`Summary`**
 
-AWS Marketplaceに連携するプラン情報を登録(Save plan information to be linked to AWSMarketplace)
+Save plan information to be linked to AWSMarketplace
 
 **`Throws`**
 
@@ -436,7 +436,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1315)
+[src/generated/AwsMarketplace/api.ts:1315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1315)
 
 ___
 
@@ -444,13 +444,13 @@ ___
 
 ▸ **syncCustomer**(`customerIdentifier`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketplace customer information to SaaSus.
+Sync AWS Marketplace customer information to SaaSus.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `customerIdentifier` | `string` | 顧客ID |
+| `customerIdentifier` | `string` | Customer ID |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
@@ -459,7 +459,7 @@ AWS Marketplaceの顧客情報をSaaSusに同期します。  Sync AWS Marketpla
 
 **`Summary`**
 
-AWS Marketplaceの顧客情報をSaaSusに同期します(Sync AWS Marketplace customer information to SaaSus)
+Sync AWS Marketplace customer information to SaaSus
 
 **`Throws`**
 
@@ -469,7 +469,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1327](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1327)
+[src/generated/AwsMarketplace/api.ts:1327](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1327)
 
 ___
 
@@ -477,7 +477,7 @@ ___
 
 ▸ **updateListingStatus**(`updateListingStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace Listing Status.
+Update AWS Marketplace Listing Status.
 
 #### Parameters
 
@@ -492,7 +492,7 @@ AWS Marketplaceの出品状況を更新します。  Update AWS Marketplace List
 
 **`Summary`**
 
-AWS Marketplaceの出品状況を更新(Update AWS Marketplace Listing Status)
+Update AWS Marketplace Listing Status
 
 **`Throws`**
 
@@ -502,7 +502,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1339)
+[src/generated/AwsMarketplace/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1339)
 
 ___
 
@@ -510,7 +510,7 @@ ___
 
 ▸ **updateSettings**(`updateSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
+Update AWS Marketplace Settings.
 
 #### Parameters
 
@@ -525,7 +525,7 @@ AWS Marketplaceの設定を更新します。  Update AWS Marketplace Settings.
 
 **`Summary`**
 
-AWS Marketplaceの設定を更新(Update AWS Marketplace Settings)
+Update AWS Marketplace Settings
 
 **`Throws`**
 
@@ -535,7 +535,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1351)
+[src/generated/AwsMarketplace/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1351)
 
 ___
 
@@ -543,7 +543,7 @@ ___
 
 ▸ **verifyRegistrationToken**(`verifyRegistrationTokenParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-Registration Tokenを検証します。  Verify Registration Token.
+Verify Registration Token.
 
 #### Parameters
 
@@ -558,7 +558,7 @@ Registration Tokenを検証します。  Verify Registration Token.
 
 **`Summary`**
 
-Registration Tokenを検証(Verify Registration Token)
+Verify Registration Token
 
 **`Throws`**
 
@@ -568,4 +568,4 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L1363)
+[src/generated/AwsMarketplace/api.ts:1363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L1363)

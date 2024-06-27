@@ -34,7 +34,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:161](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L161)
+[src/generated/Auth/api.ts:161](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L161)
 
 ___
 
@@ -48,7 +48,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L167)
+[src/generated/Auth/api.ts:167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L167)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **default\_domain\_name**: `string`
 
-デフォルトドメイン名(Default Domain Name)
+Default Domain Name
 
 **`Memberof`**
 
@@ -64,7 +64,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L179)
+[src/generated/Auth/api.ts:179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L179)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **dkim\_dns\_records**: [`DnsRecord`](Auth_api.DnsRecord.md)[]
 
-DKIM DNS レコード(DKIM DNS Records)
+DKIM DNS Records
 
 **`Memberof`**
 
@@ -80,7 +80,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L173)
+[src/generated/Auth/api.ts:173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L173)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **domain\_name**: `string`
 
-ドメイン名(Domain Name)
+Domain Name
 
 **`Memberof`**
 
@@ -96,7 +96,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L149)
+[src/generated/Auth/api.ts:149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L149)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **from\_email\_address**: `string`
 
-認証メールの送信元メールアドレス(Sender Email for Authentication Email)
+Sender Email for Authentication Email
 
 **`Memberof`**
 
@@ -112,7 +112,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L185)
+[src/generated/Auth/api.ts:185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L185)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **is\_dns\_validated**: `boolean`
 
-DNSレコードの検証結果(DNS Record Verification Results)
+DNS Record Verification Results
 
 **`Memberof`**
 
@@ -128,7 +128,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:155](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L155)
+[src/generated/Auth/api.ts:155](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L155)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 • **is\_ses\_sandbox\_granted**: `boolean`
 
-SESのサンドボックス解除及びCognitoのSES設定結果(SES sandbox release and Cognito SES configuration results)
+SES sandbox release and Cognito SES configuration results
 
 **`Memberof`**
 
@@ -144,7 +144,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L197)
+[src/generated/Auth/api.ts:197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L197)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 • **reply\_email\_address**: `string`
 
-認証メールの返信元メールアドレス(Reply-from email address of authentication email)
+Reply-from email address of authentication email
 
 **`Memberof`**
 
@@ -160,4 +160,4 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:191](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L191)
+[src/generated/Auth/api.ts:191](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L191)

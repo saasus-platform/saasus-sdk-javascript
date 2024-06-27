@@ -4,7 +4,7 @@
 
 [Auth/api](../modules/Auth_api.md).Tenants
 
-テナント情報(Tenant Info)
+Tenant Info
 
 **`Export`**
 
@@ -28,4 +28,4 @@ Tenants
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1831](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1831)
+[src/generated/Auth/api.ts:1881](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1881)
