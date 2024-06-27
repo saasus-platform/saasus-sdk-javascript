@@ -34,7 +34,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:269](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L269)
+[src/generated/Pricing/api.ts:375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L375)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **description**: `string`
 
-説明(description)
+Description
 
 **`Memberof`**
 
@@ -50,7 +50,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:257](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L257)
+[src/generated/Pricing/api.ts:363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L363)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **display\_name**: `string`
 
-表示名(display name)
+Display Name
 
 **`Memberof`**
 
@@ -66,7 +66,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:251](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L251)
+[src/generated/Pricing/api.ts:357](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L357)
 
 ___
 
@@ -74,13 +74,15 @@ ___
 
 • **id**: `string`
 
+Universally Unique Identifier
+
 **`Memberof`**
 
 PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:221](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L221)
+[src/generated/Pricing/api.ts:327](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L327)
 
 ___
 
@@ -88,7 +90,7 @@ ___
 
 • **name**: `string`
 
-名前(name)
+Name
 
 **`Memberof`**
 
@@ -96,7 +98,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:245](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L245)
+[src/generated/Pricing/api.ts:351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L351)
 
 ___
 
@@ -110,7 +112,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:239](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L239)
+[src/generated/Pricing/api.ts:345](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L345)
 
 ___
 
@@ -124,7 +126,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:263](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L263)
+[src/generated/Pricing/api.ts:369](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L369)
 
 ___
 
@@ -132,7 +134,7 @@ ___
 
 • **unit\_amount**: `number`
 
-料金(price)
+Price
 
 **`Memberof`**
 
@@ -140,7 +142,7 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:233](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L233)
+[src/generated/Pricing/api.ts:339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L339)
 
 ___
 
@@ -154,4 +156,4 @@ PricingFixedUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:227](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L227)
+[src/generated/Pricing/api.ts:333](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L333)
