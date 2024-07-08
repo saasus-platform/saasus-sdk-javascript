@@ -20,7 +20,7 @@ CreateEventBridgeEventParam
 
 • **event\_messages**: [`EventMessage`](Integration_api.EventMessage.md)[]
 
-イベントメッセージ(event message)
+event message
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ CreateEventBridgeEventParam
 
 #### Defined in
 
-[src/generated/Integration/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Integration/api.ts#L69)
+[src/generated/Integration/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Integration/api.ts#L69)
