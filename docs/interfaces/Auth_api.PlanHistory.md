@@ -24,7 +24,7 @@ PlanHistory
 
 • `Optional` **delete\_usage**: `boolean`
 
-stripe連携している場合で、プラン変更時に従量課金アイテムを削除するか設定できます。 プラン変更した場合に、現在のサブスクリプションに含まれる従量課金アイテムを全て削除して、従量課金アイテムに基づく請求の発生を止めることができます。 即時に記録している使用量がクリアされます。それらは復元できないため、delete_usageをtrueにしたプラン変更予約は取り消しできません。  If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
+If you have a stripe linkage,  you can set whether to delete pay-as-you-go items when changing plans. When you change plan, you can remove all pay-as-you-go items included in your current subscription to stop being billed based on pay-as-you-go items. The recorded usage is cleared immediately. Since it cannot be restored, please note that plan change reservations with delete_usage set to true cannot be canceled.
 
 **`Memberof`**
 
@@ -32,7 +32,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1171](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1171)
+[src/generated/Auth/api.ts:1184](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1184)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **plan\_applied\_at**: `number`
 
-登録日時
+Registration date
 
 **`Memberof`**
 
@@ -48,7 +48,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1153)
+[src/generated/Auth/api.ts:1166](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1166)
 
 ___
 
@@ -62,7 +62,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1147](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1147)
+[src/generated/Auth/api.ts:1160](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1160)
 
 ___
 
@@ -76,7 +76,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1165](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1165)
+[src/generated/Auth/api.ts:1178](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1178)
 
 ___
 
@@ -90,4 +90,4 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1159](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1159)
+[src/generated/Auth/api.ts:1172](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1172)

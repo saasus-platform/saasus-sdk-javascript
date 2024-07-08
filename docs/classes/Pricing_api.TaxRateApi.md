@@ -58,7 +58,7 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **createTaxRate**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`TaxRate`](../interfaces/Pricing_api.TaxRate.md), `any`\>\>
 
-税率を作成します。  Creates a tax rate.
+Creates a tax rate.
 
 #### Parameters
 
@@ -123,7 +123,7 @@ ___
 
 **`Summary`**
 
-税率の作成(Create Tax Rate)
+Create Tax Rate
 
 **`Throws`**
 
@@ -133,7 +133,7 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4199](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L4199)
+[src/generated/Pricing/api.ts:4595](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4595)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **getTaxRates**(`options?`): `Promise`\<`AxiosResponse`\<[`TaxRates`](../interfaces/Pricing_api.TaxRates.md), `any`\>\>
 
-税率を取得します。  Get all Tax Rates
+Get all Tax Rates
 
 #### Parameters
 
@@ -155,7 +155,7 @@ ___
 
 **`Summary`**
 
-税率を取得します(Get Tax Rates)
+Get Tax Rates
 
 **`Throws`**
 
@@ -165,7 +165,7 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4210](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L4210)
+[src/generated/Pricing/api.ts:4606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4606)
 
 ___
 
@@ -173,13 +173,13 @@ ___
 
 ▸ **updateTaxRate**(`taxRateId`, `updateTaxRateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-税率を更新します。  Update tax rate.
+Update tax rate.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `taxRateId` | `string` | 税率ID(tax rate ID) |
+| `taxRateId` | `string` | Tax Rate ID |
 | `updateTaxRateParam?` | [`UpdateTaxRateParam`](../interfaces/Pricing_api.UpdateTaxRateParam.md) |  |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
@@ -189,7 +189,7 @@ ___
 
 **`Summary`**
 
-税率を更新(Update Tax Rate)
+Update Tax Rate
 
 **`Throws`**
 
@@ -199,4 +199,4 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L4223)
+[src/generated/Pricing/api.ts:4619](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L4619)

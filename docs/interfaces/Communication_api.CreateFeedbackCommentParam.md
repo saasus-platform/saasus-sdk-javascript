@@ -13,7 +13,6 @@ CreateFeedbackCommentParam
 ### Properties
 
 - [body](Communication_api.CreateFeedbackCommentParam.md#body)
-- [user\_id](Communication_api.CreateFeedbackCommentParam.md#user_id)
 
 ## Properties
 
@@ -27,18 +26,4 @@ CreateFeedbackCommentParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:116](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L116)
-
-___
-
-### user\_id
-
-• **user\_id**: `string`
-
-**`Memberof`**
-
-CreateFeedbackCommentParam
-
-#### Defined in
-
-[src/generated/Communication/api.ts:110](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L110)
+[src/generated/Communication/api.ts:98](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L98)
