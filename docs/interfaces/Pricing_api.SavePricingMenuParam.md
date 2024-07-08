@@ -23,7 +23,7 @@ SavePricingMenuParam
 
 • **description**: `string`
 
-メニュー説明(menu description)
+Menu description
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ SavePricingMenuParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1312](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1312)
+[src/generated/Pricing/api.ts:1424](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1424)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **display\_name**: `string`
 
-メニュー表示名(menu display name)
+Menu display name
 
 **`Memberof`**
 
@@ -47,7 +47,7 @@ SavePricingMenuParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1306)
+[src/generated/Pricing/api.ts:1418](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1418)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **name**: `string`
 
-メニュー名(menu name)
+Menu name
 
 **`Memberof`**
 
@@ -63,7 +63,7 @@ SavePricingMenuParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1300)
+[src/generated/Pricing/api.ts:1412](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1412)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **unit\_ids**: `string`[]
 
-追加するユニットID(unit id to add)
+Unit IDs to add
 
 **`Memberof`**
 
@@ -79,4 +79,4 @@ SavePricingMenuParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1318)
+[src/generated/Pricing/api.ts:1430](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1430)

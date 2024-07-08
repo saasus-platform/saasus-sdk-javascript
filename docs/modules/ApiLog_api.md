@@ -46,13 +46,13 @@ ApiLogApi - axios parameter creator
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `getLog` | (`apiLogId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/ApiLog_base.RequestArgs.md)\> | - |
-| `getLogs` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/ApiLog_base.RequestArgs.md)\> | - |
+| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/ApiLog_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:243](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L243)
+[src/generated/ApiLog/api.ts:249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L249)
 
 ___
 
@@ -77,13 +77,13 @@ ApiLogApi - factory interface
 | Name | Type |
 | :------ | :------ |
 | `getLog` | (`apiLogId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md)\> |
-| `getLogs` | (`options?`: `any`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\> |
+| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L355)
+[src/generated/ApiLog/api.ts:389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L389)
 
 ___
 
@@ -106,13 +106,13 @@ ApiLogApi - functional programming interface
 | Name | Type |
 | :------ | :------ |
 | `getLog` | (`apiLogId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md)\>\> |
-| `getLogs` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\>\> |
+| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:324](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L324)
+[src/generated/ApiLog/api.ts:354](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L354)
 
 ___
 
@@ -140,7 +140,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L416)
+[src/generated/ApiLog/api.ts:458](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L458)
 
 ___
 
@@ -170,7 +170,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:479](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L479)
+[src/generated/ApiLog/api.ts:521](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L521)
 
 ___
 
@@ -198,4 +198,4 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:459](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L459)
+[src/generated/ApiLog/api.ts:501](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L501)
