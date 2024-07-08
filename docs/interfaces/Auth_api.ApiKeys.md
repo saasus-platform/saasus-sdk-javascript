@@ -20,7 +20,7 @@ ApiKeys
 
 • **api\_keys**: `string`[]
 
-APIキー(API Key)
+API Key
 
 **`Memberof`**
 
@@ -28,4 +28,4 @@ ApiKeys
 
 #### Defined in
 
-[src/generated/Auth/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L69)
+[src/generated/Auth/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L69)

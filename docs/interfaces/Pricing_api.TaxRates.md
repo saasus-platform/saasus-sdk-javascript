@@ -26,4 +26,4 @@ TaxRates
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1454](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L1454)
+[src/generated/Pricing/api.ts:1566](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1566)
