@@ -28,7 +28,7 @@ TenantAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1613](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1613)
+[src/generated/Auth/api.ts:1663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1663)
 
 ___
 
@@ -42,7 +42,7 @@ TenantAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1601](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1601)
+[src/generated/Auth/api.ts:1651](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1651)
 
 ___
 
@@ -56,4 +56,4 @@ TenantAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1607](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L1607)
+[src/generated/Auth/api.ts:1657](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1657)

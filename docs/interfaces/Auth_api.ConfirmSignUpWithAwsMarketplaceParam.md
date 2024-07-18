@@ -22,7 +22,7 @@ ConfirmSignUpWithAwsMarketplaceParam
 
 • **access\_token**: `string`
 
-アクセストークン(access token)
+Access token
 
 **`Memberof`**
 
@@ -30,7 +30,7 @@ ConfirmSignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:335](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L335)
+[src/generated/Auth/api.ts:348](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L348)
 
 ___
 
@@ -46,7 +46,7 @@ ConfirmSignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:341](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L341)
+[src/generated/Auth/api.ts:354](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L354)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **tenant\_name**: `string`
 
-テナント名(tenant name)
+Tenant name
 
 **`Memberof`**
 
@@ -62,4 +62,4 @@ ConfirmSignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L329)
+[src/generated/Auth/api.ts:342](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L342)

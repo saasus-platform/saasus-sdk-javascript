@@ -15,7 +15,6 @@ Comment
 - [body](Communication_api.Comment.md#body)
 - [created\_at](Communication_api.Comment.md#created_at)
 - [id](Communication_api.Comment.md#id)
-- [user\_id](Communication_api.Comment.md#user_id)
 
 ## Properties
 
@@ -29,7 +28,7 @@ Comment
 
 #### Defined in
 
-[src/generated/Communication/api.ts:53](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L53)
+[src/generated/Communication/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L47)
 
 ___
 
@@ -43,7 +42,7 @@ Comment
 
 #### Defined in
 
-[src/generated/Communication/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L47)
+[src/generated/Communication/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L41)
 
 ___
 
@@ -57,18 +56,4 @@ Comment
 
 #### Defined in
 
-[src/generated/Communication/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L35)
-
-___
-
-### user\_id
-
-• **user\_id**: `string`
-
-**`Memberof`**
-
-Comment
-
-#### Defined in
-
-[src/generated/Communication/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Communication/api.ts#L41)
+[src/generated/Communication/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L35)
