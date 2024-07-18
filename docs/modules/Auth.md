@@ -26,6 +26,7 @@
 - [BillingAddress](Auth.md#billingaddress)
 - [BillingInfo](Auth.md#billinginfo)
 - [ClientSecret](Auth.md#clientsecret)
+- [CloudFormationLaunchStackLink](Auth.md#cloudformationlaunchstacklink)
 - [Configuration](Auth.md#configuration)
 - [ConfigurationParameters](Auth.md#configurationparameters)
 - [ConfirmEmailUpdateParam](Auth.md#confirmemailupdateparam)
@@ -110,6 +111,11 @@
 - [SignInSettings](Auth.md#signinsettings)
 - [SignUpParam](Auth.md#signupparam)
 - [SignUpWithAwsMarketplaceParam](Auth.md#signupwithawsmarketplaceparam)
+- [SingleTenantApi](Auth.md#singletenantapi)
+- [SingleTenantApiAxiosParamCreator](Auth.md#singletenantapiaxiosparamcreator)
+- [SingleTenantApiFactory](Auth.md#singletenantapifactory)
+- [SingleTenantApiFp](Auth.md#singletenantapifp)
+- [SingleTenantSettings](Auth.md#singletenantsettings)
 - [SoftwareTokenSecretCode](Auth.md#softwaretokensecretcode)
 - [Tenant](Auth.md#tenant)
 - [TenantAllOf](Auth.md#tenantallof)
@@ -144,6 +150,7 @@
 - [UpdateSaasUserEmailParam](Auth.md#updatesaasuseremailparam)
 - [UpdateSaasUserPasswordParam](Auth.md#updatesaasuserpasswordparam)
 - [UpdateSignInSettingsParam](Auth.md#updatesigninsettingsparam)
+- [UpdateSingleTenantSettingsParam](Auth.md#updatesingletenantsettingsparam)
 - [UpdateSoftwareTokenParam](Auth.md#updatesoftwaretokenparam)
 - [UpdateTenantIdentityProviderParam](Auth.md#updatetenantidentityproviderparam)
 - [UpdateTenantUserParam](Auth.md#updatetenantuserparam)
@@ -282,6 +289,12 @@ ___
 ### ClientSecret
 
 Re-exports [ClientSecret](../interfaces/Auth_api.ClientSecret.md)
+
+___
+
+### CloudFormationLaunchStackLink
+
+Re-exports [CloudFormationLaunchStackLink](../interfaces/Auth_api.CloudFormationLaunchStackLink.md)
 
 ___
 
@@ -789,6 +802,36 @@ Re-exports [SignUpWithAwsMarketplaceParam](../interfaces/Auth_api.SignUpWithAwsM
 
 ___
 
+### SingleTenantApi
+
+Re-exports [SingleTenantApi](../classes/Auth_api.SingleTenantApi.md)
+
+___
+
+### SingleTenantApiAxiosParamCreator
+
+Re-exports [SingleTenantApiAxiosParamCreator](Auth_api.md#singletenantapiaxiosparamcreator)
+
+___
+
+### SingleTenantApiFactory
+
+Re-exports [SingleTenantApiFactory](Auth_api.md#singletenantapifactory)
+
+___
+
+### SingleTenantApiFp
+
+Re-exports [SingleTenantApiFp](Auth_api.md#singletenantapifp)
+
+___
+
+### SingleTenantSettings
+
+Re-exports [SingleTenantSettings](../interfaces/Auth_api.SingleTenantSettings.md)
+
+___
+
 ### SoftwareTokenSecretCode
 
 Re-exports [SoftwareTokenSecretCode](../interfaces/Auth_api.SoftwareTokenSecretCode.md)
@@ -990,6 +1033,12 @@ ___
 ### UpdateSignInSettingsParam
 
 Re-exports [UpdateSignInSettingsParam](../interfaces/Auth_api.UpdateSignInSettingsParam.md)
+
+___
+
+### UpdateSingleTenantSettingsParam
+
+Re-exports [UpdateSingleTenantSettingsParam](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md)
 
 ___
 

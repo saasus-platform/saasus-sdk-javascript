@@ -27,7 +27,7 @@ UserAvailableTenant
 
 • **back\_office\_staff\_email**: `string`
 
-バックオフィス担当者のメール(back office contact email)
+back office contact email
 
 **`Memberof`**
 
@@ -35,7 +35,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2292)
+[src/generated/Auth/api.ts:2379](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2379)
 
 ___
 
@@ -49,7 +49,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2274](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2274)
+[src/generated/Auth/api.ts:2361](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2361)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **envs**: [`UserAvailableEnv`](Auth_api.UserAvailableEnv.md)[]
 
-環境情報、役割(ロール)情報(environmental info, role info)
+environmental info, role info
 
 **`Memberof`**
 
@@ -65,7 +65,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2280](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2280)
+[src/generated/Auth/api.ts:2367](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2367)
 
 ___
 
@@ -79,7 +79,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2262](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2262)
+[src/generated/Auth/api.ts:2349](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2349)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **is\_paid**: `boolean`
 
-テナントの支払い状況(tenant payment status)  ※ 現在はストライプ連携時のみ返却されます。Currently, it is returned only when stripe is linked.
+tenant payment status ※ Currently, it is returned only when stripe is linked.
 
 **`Memberof`**
 
@@ -95,7 +95,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2304](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2304)
+[src/generated/Auth/api.ts:2391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2391)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **name**: `string`
 
-テナント名(tenant name)
+Tenant Name
 
 **`Memberof`**
 
@@ -111,7 +111,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2268](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2268)
+[src/generated/Auth/api.ts:2355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2355)
 
 ___
 
@@ -125,7 +125,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2298](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2298)
+[src/generated/Auth/api.ts:2385](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2385)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 • **user\_attribute**: `Object`
 
-ユーザー追加属性(user additional attributes)
+user additional attributes
 
 **`Memberof`**
 
@@ -145,4 +145,4 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2286](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2286)
+[src/generated/Auth/api.ts:2373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2373)

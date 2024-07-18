@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:21](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L21)
+[src/generated/Pricing/base.ts:21](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L21)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:27](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/base.ts#L27)
+[src/generated/Pricing/base.ts:27](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/base.ts#L27)
