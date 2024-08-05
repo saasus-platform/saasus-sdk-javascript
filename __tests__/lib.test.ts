@@ -2,6 +2,8 @@ import {
   PricingFixedUnit,
   PricingPlan,
   PricingTieredUnit,
+  PricingUnit,
+  UnitType
 } from "../src/generated/Pricing";
 import { findUpperCountByMeteringUnitName, isAPI } from "../src/main";
 
@@ -31,10 +33,10 @@ describe("lib", () => {
               name: "name",
               display_name: "display_name",
               description: "description",
-              type: "tiered",
+              type: "tiered_usage" as "tiered_usage",
               currency: "USD",
               tiers: [],
-            } as PricingTieredUnit,
+            } as PricingTieredUnit as PricingUnit,
           ],
         },
       ],
@@ -62,9 +64,9 @@ describe("lib", () => {
               name: "name",
               display_name: "display_name",
               description: "description",
-              type: "tiered",
+              type: "fixed" as "fixed",
               currency: "USD",
-            } as PricingFixedUnit,
+            } as PricingFixedUnit as PricingUnit,
           ],
         },
       ],
