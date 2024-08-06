@@ -23,7 +23,7 @@ PricingTier
 
 • **flat\_amount**: `number`
 
-固定金額(fixed Amount)
+Fixed amount
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ PricingTier
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:642](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L642)
+[src/generated/Pricing/api.ts:748](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L748)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **inf**: `boolean`
 
-inf
+Indefinite
 
 **`Memberof`**
 
@@ -47,7 +47,7 @@ PricingTier
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:648](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L648)
+[src/generated/Pricing/api.ts:754](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L754)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **unit\_amount**: `number`
 
-単位金額(amount per unit)
+Amount per unit
 
 **`Memberof`**
 
@@ -63,7 +63,7 @@ PricingTier
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:636](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L636)
+[src/generated/Pricing/api.ts:742](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L742)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **up\_to**: `number`
 
-上限(upper limit)
+Upper limit
 
 **`Memberof`**
 
@@ -79,4 +79,4 @@ PricingTier
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:630](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Pricing/api.ts#L630)
+[src/generated/Pricing/api.ts:736](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L736)

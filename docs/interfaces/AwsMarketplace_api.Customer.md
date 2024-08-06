@@ -28,7 +28,7 @@ Customer
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:86](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L86)
+[src/generated/AwsMarketplace/api.ts:86](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L86)
 
 ___
 
@@ -42,7 +42,7 @@ Customer
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:80](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L80)
+[src/generated/AwsMarketplace/api.ts:80](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L80)
 
 ___
 
@@ -56,4 +56,4 @@ Customer
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:92](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/AwsMarketplace/api.ts#L92)
+[src/generated/AwsMarketplace/api.ts:92](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L92)

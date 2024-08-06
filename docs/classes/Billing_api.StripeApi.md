@@ -58,7 +58,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/base.ts#L50)
+[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L50)
 
 ## Methods
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **deleteStripeInfo**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-請求業務で使う外部SaaSとの連携情報を削除します。  Delete connection with external billing SaaS
+Delete connection with external billing SaaS
 
 #### Parameters
 
@@ -122,7 +122,7 @@ ___
 
 **`Summary`**
 
-Stripe連携情報を削除(Delete Stripe Connection)
+Delete Stripe Connection
 
 **`Throws`**
 
@@ -132,7 +132,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L380)
+[src/generated/Billing/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L380)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **getStripeInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`\>\>
 
-請求業務で使う外部SaaSとの連携情報を取得します。 現在は Stripe と連携が可能です。 連携を行わない場合は、 SaaSus SDK/API を利用して請求処理を実装する必要があります。  Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
+Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
 
 #### Parameters
 
@@ -154,7 +154,7 @@ ___
 
 **`Summary`**
 
-Stripe連携情報を取得(Get Stripe Connection information)
+Get Stripe Connection information
 
 **`Throws`**
 
@@ -164,7 +164,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L391)
+[src/generated/Billing/api.ts:391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L391)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **updateStripeInfo**(`updateStripeInfoParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
 
-請求業務で使う外部SaaSとの連携情報を更新します。 現在は Stripe と連携が可能です。  Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
+Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
 
 #### Parameters
 
@@ -187,7 +187,7 @@ ___
 
 **`Summary`**
 
-Stripe連携情報を更新(Update Stripe Connection Info)
+Update Stripe Connection Info
 
 **`Throws`**
 
@@ -197,4 +197,4 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Billing/api.ts#L403)
+[src/generated/Billing/api.ts:403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L403)

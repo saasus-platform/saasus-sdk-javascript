@@ -25,7 +25,7 @@ User
 
 • **attributes**: `Object`
 
-属性情報（SaaS 開発コンソールでユーザー属性定義を行い設定された情報を取得します）  Attribute information (Get information set by defining user attributes in the SaaS development console)
+Attribute information (Get information set by defining user attributes in the SaaS development console)
 
 **`Memberof`**
 
@@ -37,7 +37,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2199](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2199)
+[src/generated/Auth/api.ts:2286](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2286)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **email**: `string`
 
-メールアドレス(E-mail)
+E-mail
 
 **`Memberof`**
 
@@ -53,7 +53,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2193](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2193)
+[src/generated/Auth/api.ts:2280](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2280)
 
 ___
 
@@ -67,7 +67,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2205](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2205)
+[src/generated/Auth/api.ts:2292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2292)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **id**: `string`
 
-ユーザーID(User ID)
+User ID
 
 **`Memberof`**
 
@@ -83,7 +83,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2175](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2175)
+[src/generated/Auth/api.ts:2262](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2262)
 
 ___
 
@@ -97,7 +97,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2181](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2181)
+[src/generated/Auth/api.ts:2268](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2268)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **tenant\_name**: `string`
 
-テナント名(Tenant Name)
+Tenant Name
 
 **`Memberof`**
 
@@ -113,4 +113,4 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2187](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/Auth/api.ts#L2187)
+[src/generated/Auth/api.ts:2274](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2274)

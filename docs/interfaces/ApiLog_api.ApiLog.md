@@ -33,7 +33,7 @@ ApiLog
 
 • **api\_key**: `string`
 
-APIキー
+API Key
 
 **`Memberof`**
 
@@ -41,7 +41,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L77)
+[src/generated/ApiLog/api.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L77)
 
 ___
 
@@ -55,7 +55,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L41)
+[src/generated/ApiLog/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L41)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **created\_at**: `number`
 
-APIログ登録日時のエポック秒
+Epoch second of API log registration timestamp
 
 **`Memberof`**
 
@@ -71,7 +71,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L47)
+[src/generated/ApiLog/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L47)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **created\_date**: `string`
 
-APIログ登録日
+API log registration date
 
 **`Memberof`**
 
@@ -87,7 +87,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:53](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L53)
+[src/generated/ApiLog/api.ts:53](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L53)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **referer**: `string`
 
-リクエストリファラー
+The referrer of the request
 
 **`Memberof`**
 
@@ -103,7 +103,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L101)
+[src/generated/ApiLog/api.ts:101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L101)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **remote\_address**: `string`
 
-クライアントIPアドレス
+Client IP Address
 
 **`Memberof`**
 
@@ -119,7 +119,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:95](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L95)
+[src/generated/ApiLog/api.ts:95](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L95)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 • **request\_body**: `string`
 
-リクエストボディー
+The body of the request
 
 **`Memberof`**
 
@@ -135,7 +135,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L107)
+[src/generated/ApiLog/api.ts:107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L107)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 • **request\_method**: `string`
 
-リクエストメソッド
+Request method
 
 **`Memberof`**
 
@@ -151,7 +151,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:65](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L65)
+[src/generated/ApiLog/api.ts:65](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L65)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 • **request\_uri**: `string`
 
-リクエストURI
+Request URI
 
 **`Memberof`**
 
@@ -167,7 +167,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:89](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L89)
+[src/generated/ApiLog/api.ts:89](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L89)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 • **response\_body**: `string`
 
-レスポンスボディー
+The body of the response
 
 **`Memberof`**
 
@@ -183,7 +183,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:113](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L113)
+[src/generated/ApiLog/api.ts:113](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L113)
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 • **response\_status**: `string`
 
-レスポンスステータス
+Response status
 
 **`Memberof`**
 
@@ -199,7 +199,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:83](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L83)
+[src/generated/ApiLog/api.ts:83](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L83)
 
 ___
 
@@ -213,7 +213,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:71](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L71)
+[src/generated/ApiLog/api.ts:71](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L71)
 
 ___
 
@@ -221,7 +221,7 @@ ___
 
 • **trace\_id**: `string`
 
-トレースID
+Trace ID
 
 **`Memberof`**
 
@@ -229,7 +229,7 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L35)
+[src/generated/ApiLog/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L35)
 
 ___
 
@@ -237,7 +237,7 @@ ___
 
 • **ttl**: `number`
 
-APIログ削除予定エポック秒
+Epoch second of planned API log deletion
 
 **`Memberof`**
 
@@ -245,4 +245,4 @@ ApiLog
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:59](https://github.com/saasus-platform/saasus-sdk-javascript/blob/55abc15/src/generated/ApiLog/api.ts#L59)
+[src/generated/ApiLog/api.ts:59](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/ApiLog/api.ts#L59)
