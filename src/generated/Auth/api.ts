@@ -2094,6 +2094,19 @@ export interface UpdateNotificationMessagesParam {
 /**
  * 
  * @export
+ * @interface UpdateSaasUserAttributesParam
+ */
+export interface UpdateSaasUserAttributesParam {
+    /**
+     * Attribute information 
+     * @type {{ [key: string]: any; }}
+     * @memberof UpdateSaasUserAttributesParam
+     */
+    'attributes': { [key: string]: any; };
+}
+/**
+ * 
+ * @export
  * @interface UpdateSaasUserEmailParam
  */
 export interface UpdateSaasUserEmailParam {
@@ -2408,6 +2421,12 @@ export interface UserInfo {
      * @memberof UserInfo
      */
     'email': string;
+    /**
+     * user additional attributes
+     * @type {{ [key: string]: any; }}
+     * @memberof UserInfo
+     */
+    'user_attribute': { [key: string]: any; };
     /**
      * Tenant Info
      * @type {Array<UserAvailableTenant>}
@@ -5530,6 +5549,48 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * Update the additional attributes of the SaaS user. 
+         * @summary Update SaaS User Attributes
+         * @param {string} userId User ID
+         * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSaasUserAttributes: async (userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'userId' is not null or undefined
+            assertParamExists('updateSaasUserAttributes', 'userId', userId)
+            const localVarPath = `/users/{user_id}/attributes`
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(updateSaasUserAttributesParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Change user\'s email. 
          * @summary Change Email
          * @param {string} userId User ID
@@ -5887,6 +5948,18 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Update the additional attributes of the SaaS user. 
+         * @summary Update SaaS User Attributes
+         * @param {string} userId User ID
+         * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasUserAttributes(userId, updateSaasUserAttributesParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Change user\'s email. 
          * @summary Change Email
          * @param {string} userId User ID
@@ -6106,6 +6179,17 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
          */
         unlinkProvider(providerName: string, userId: string, options?: any): AxiosPromise<void> {
             return localVarFp.unlinkProvider(providerName, userId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update the additional attributes of the SaaS user. 
+         * @summary Update SaaS User Attributes
+         * @param {string} userId User ID
+         * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: any): AxiosPromise<void> {
+            return localVarFp.updateSaasUserAttributes(userId, updateSaasUserAttributesParam, options).then((request) => request(axios, basePath));
         },
         /**
          * Change user\'s email. 
@@ -6354,6 +6438,19 @@ export class SaasUserApi extends BaseAPI {
      */
     public unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig) {
         return SaasUserApiFp(this.configuration).unlinkProvider(providerName, userId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update the additional attributes of the SaaS user. 
+     * @summary Update SaaS User Attributes
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).updateSaasUserAttributes(userId, updateSaasUserAttributesParam, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8535,7 +8632,45 @@ export class TenantUserApi extends BaseAPI {
 export const UserAttributeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
+         * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants. 
+         * @summary Create SaaS User Attributes
+         * @param {Attribute} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createSaasUserAttribute: async (body?: Attribute, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/saas-user-attributes`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
          * @summary Create User Attributes
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
@@ -8655,7 +8790,18 @@ export const UserAttributeApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UserAttributeApiAxiosParamCreator(configuration)
     return {
         /**
-         * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
+         * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants. 
+         * @summary Create SaaS User Attributes
+         * @param {Attribute} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createSaasUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Attribute>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createSaasUserAttribute(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
          * @summary Create User Attributes
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
@@ -8697,7 +8843,17 @@ export const UserAttributeApiFactory = function (configuration?: Configuration, 
     const localVarFp = UserAttributeApiFp(configuration)
     return {
         /**
-         * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
+         * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants. 
+         * @summary Create SaaS User Attributes
+         * @param {Attribute} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createSaasUserAttribute(body?: Attribute, options?: any): AxiosPromise<Attribute> {
+            return localVarFp.createSaasUserAttribute(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
          * @summary Create User Attributes
          * @param {Attribute} [body] 
          * @param {*} [options] Override http request option.
@@ -8736,7 +8892,19 @@ export const UserAttributeApiFactory = function (configuration?: Configuration, 
  */
 export class UserAttributeApi extends BaseAPI {
     /**
-     * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
+     * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants. 
+     * @summary Create SaaS User Attributes
+     * @param {Attribute} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserAttributeApi
+     */
+    public createSaasUserAttribute(body?: Attribute, options?: AxiosRequestConfig) {
+        return UserAttributeApiFp(this.configuration).createSaasUserAttribute(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition. 
      * @summary Create User Attributes
      * @param {Attribute} [body] 
      * @param {*} [options] Override http request option.

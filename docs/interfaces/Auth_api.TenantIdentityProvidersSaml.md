@@ -28,7 +28,7 @@ TenantIdentityProvidersSaml
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1830](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1830)
+[src/generated/Auth/api.ts:1830](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1830)
 
 ___
 
@@ -42,7 +42,7 @@ TenantIdentityProvidersSaml
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1824](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1824)
+[src/generated/Auth/api.ts:1824](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1824)
 
 ___
 
@@ -56,4 +56,4 @@ TenantIdentityProvidersSaml
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1818](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1818)
+[src/generated/Auth/api.ts:1818](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1818)

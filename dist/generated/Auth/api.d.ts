@@ -2054,6 +2054,21 @@ export interface UpdateNotificationMessagesParam {
 /**
  *
  * @export
+ * @interface UpdateSaasUserAttributesParam
+ */
+export interface UpdateSaasUserAttributesParam {
+    /**
+     * Attribute information
+     * @type {{ [key: string]: any; }}
+     * @memberof UpdateSaasUserAttributesParam
+     */
+    'attributes': {
+        [key: string]: any;
+    };
+}
+/**
+ *
+ * @export
  * @interface UpdateSaasUserEmailParam
  */
 export interface UpdateSaasUserEmailParam {
@@ -2374,6 +2389,14 @@ export interface UserInfo {
      * @memberof UserInfo
      */
     'email': string;
+    /**
+     * user additional attributes
+     * @type {{ [key: string]: any; }}
+     * @memberof UserInfo
+     */
+    'user_attribute': {
+        [key: string]: any;
+    };
     /**
      * Tenant Info
      * @type {Array<UserAvailableTenant>}
@@ -3749,6 +3772,15 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     unlinkProvider: (providerName: string, userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Update the additional attributes of the SaaS user.
+     * @summary Update SaaS User Attributes
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateSaasUserAttributes: (userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Change user\'s email.
      * @summary Change Email
      * @param {string} userId User ID
@@ -3922,6 +3954,15 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
+     * Update the additional attributes of the SaaS user.
+     * @summary Update SaaS User Attributes
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    /**
      * Change user\'s email.
      * @summary Change Email
      * @param {string} userId User ID
@@ -4094,6 +4135,15 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     unlinkProvider(providerName: string, userId: string, options?: any): AxiosPromise<void>;
+    /**
+     * Update the additional attributes of the SaaS user.
+     * @summary Update SaaS User Attributes
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: any): AxiosPromise<void>;
     /**
      * Change user\'s email.
      * @summary Change Email
@@ -4285,6 +4335,16 @@ export declare class SaasUserApi extends BaseAPI {
      * @memberof SaasUserApi
      */
     unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * Update the additional attributes of the SaaS user.
+     * @summary Update SaaS User Attributes
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserAttributesParam} [updateSaasUserAttributesParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * Change user\'s email.
      * @summary Change Email
@@ -5355,7 +5415,15 @@ export declare class TenantUserApi extends BaseAPI {
  */
 export declare const UserAttributeApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+     * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants.
+     * @summary Create SaaS User Attributes
+     * @param {Attribute} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createSaasUserAttribute: (body?: Attribute, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
      * @summary Create User Attributes
      * @param {Attribute} [body]
      * @param {*} [options] Override http request option.
@@ -5384,7 +5452,15 @@ export declare const UserAttributeApiAxiosParamCreator: (configuration?: Configu
  */
 export declare const UserAttributeApiFp: (configuration?: Configuration) => {
     /**
-     * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+     * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants.
+     * @summary Create SaaS User Attributes
+     * @param {Attribute} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createSaasUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Attribute>>;
+    /**
+     * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
      * @summary Create User Attributes
      * @param {Attribute} [body]
      * @param {*} [options] Override http request option.
@@ -5413,7 +5489,15 @@ export declare const UserAttributeApiFp: (configuration?: Configuration) => {
  */
 export declare const UserAttributeApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+     * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants.
+     * @summary Create SaaS User Attributes
+     * @param {Attribute} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createSaasUserAttribute(body?: Attribute, options?: any): AxiosPromise<Attribute>;
+    /**
+     * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
      * @summary Create User Attributes
      * @param {Attribute} [body]
      * @param {*} [options] Override http request option.
@@ -5444,7 +5528,16 @@ export declare const UserAttributeApiFactory: (configuration?: Configuration, ba
  */
 export declare class UserAttributeApi extends BaseAPI {
     /**
-     * Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+     * Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants.
+     * @summary Create SaaS User Attributes
+     * @param {Attribute} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserAttributeApi
+     */
+    createSaasUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any>>;
+    /**
+     * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
      * @summary Create User Attributes
      * @param {Attribute} [body]
      * @param {*} [options] Override http request option.
