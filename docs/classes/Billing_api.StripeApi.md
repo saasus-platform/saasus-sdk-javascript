@@ -58,7 +58,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/base.ts#L50)
+[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/base.ts#L50)
 
 ## Methods
 
@@ -132,7 +132,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L380)
+[src/generated/Billing/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/api.ts#L380)
 
 ___
 
@@ -164,7 +164,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L391)
+[src/generated/Billing/api.ts:391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/api.ts#L391)
 
 ___
 
@@ -197,4 +197,4 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Billing/api.ts#L403)
+[src/generated/Billing/api.ts:403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Billing/api.ts#L403)
