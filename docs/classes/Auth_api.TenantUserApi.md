@@ -64,7 +64,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -78,7 +78,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -140,7 +140,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8420](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8420)
+[src/generated/Auth/api.ts:8517](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8517)
 
 ___
 
@@ -176,7 +176,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8435](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8435)
+[src/generated/Auth/api.ts:8532](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8532)
 
 ___
 
@@ -210,7 +210,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8448](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8448)
+[src/generated/Auth/api.ts:8545](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8545)
 
 ___
 
@@ -246,7 +246,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8463](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8463)
+[src/generated/Auth/api.ts:8560](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8560)
 
 ___
 
@@ -279,7 +279,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8475](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8475)
+[src/generated/Auth/api.ts:8572](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8572)
 
 ___
 
@@ -311,7 +311,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8486](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8486)
+[src/generated/Auth/api.ts:8583](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8583)
 
 ___
 
@@ -345,7 +345,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8499](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8499)
+[src/generated/Auth/api.ts:8596](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8596)
 
 ___
 
@@ -378,7 +378,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8511](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8511)
+[src/generated/Auth/api.ts:8608](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8608)
 
 ___
 
@@ -413,4 +413,4 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8525](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8525)
+[src/generated/Auth/api.ts:8622](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8622)
