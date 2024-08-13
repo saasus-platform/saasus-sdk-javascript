@@ -28,4 +28,4 @@ UserAttributes
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2305](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2305)
+[src/generated/Auth/api.ts:2318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2318)
