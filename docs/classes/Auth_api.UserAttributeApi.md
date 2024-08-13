@@ -30,6 +30,7 @@ UserAttributeApi
 
 ### Methods
 
+- [createSaasUserAttribute](Auth_api.UserAttributeApi.md#createsaasuserattribute)
 - [createUserAttribute](Auth_api.UserAttributeApi.md#createuserattribute)
 - [deleteUserAttribute](Auth_api.UserAttributeApi.md#deleteuserattribute)
 - [getUserAttributes](Auth_api.UserAttributeApi.md#getuserattributes)
@@ -58,7 +59,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +73,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -86,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -100,15 +101,48 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/base.ts#L50)
 
 ## Methods
+
+### createSaasUserAttribute
+
+▸ **createSaasUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+
+Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `body?` | [`Attribute`](../interfaces/Auth_api.Attribute.md) |  |
+| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+
+**`Summary`**
+
+Create SaaS User Attributes
+
+**`Throws`**
+
+**`Memberof`**
+
+UserAttributeApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:8902](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8902)
+
+___
 
 ### createUserAttribute
 
 ▸ **createUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
 
-Create additional user attributes to be kept on the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
+Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
 
 #### Parameters
 
@@ -133,7 +167,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8746](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8746)
+[src/generated/Auth/api.ts:8914](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8914)
 
 ___
 
@@ -166,7 +200,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8758](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8758)
+[src/generated/Auth/api.ts:8926](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8926)
 
 ___
 
@@ -198,4 +232,4 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8769](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L8769)
+[src/generated/Auth/api.ts:8937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L8937)
