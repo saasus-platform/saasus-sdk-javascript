@@ -26,4 +26,4 @@ CreateFeedbackCommentParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:98](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L98)
+[src/generated/Communication/api.ts:98](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L98)

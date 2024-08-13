@@ -26,4 +26,4 @@ Customers
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:105](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L105)
+[src/generated/AwsMarketplace/api.ts:105](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L105)
