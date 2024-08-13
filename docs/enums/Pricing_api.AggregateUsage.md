@@ -23,7 +23,7 @@ Aggregate usage sum: Total usage during the period max: Maximum usage during the
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L32)
+[src/generated/Pricing/api.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L32)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L31)
+[src/generated/Pricing/api.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L31)
