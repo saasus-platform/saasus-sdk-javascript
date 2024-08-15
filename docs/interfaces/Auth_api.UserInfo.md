@@ -15,6 +15,7 @@ UserInfo
 - [email](Auth_api.UserInfo.md#email)
 - [id](Auth_api.UserInfo.md#id)
 - [tenants](Auth_api.UserInfo.md#tenants)
+- [user\_attribute](Auth_api.UserInfo.md#user_attribute)
 
 ## Properties
 
@@ -30,7 +31,7 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2410](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2410)
+[src/generated/Auth/api.ts:2429](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2429)
 
 ___
 
@@ -44,7 +45,7 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2404](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2404)
+[src/generated/Auth/api.ts:2423](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2423)
 
 ___
 
@@ -60,4 +61,24 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L2416)
+[src/generated/Auth/api.ts:2441](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2441)
+
+___
+
+### user\_attribute
+
+• **user\_attribute**: `Object`
+
+user additional attributes
+
+**`Memberof`**
+
+UserInfo
+
+#### Index signature
+
+▪ [key: `string`]: `any`
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2435](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2435)
