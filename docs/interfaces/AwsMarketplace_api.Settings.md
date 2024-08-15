@@ -34,7 +34,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:248](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L248)
+[src/generated/AwsMarketplace/api.ts:248](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L248)
 
 ___
 
@@ -48,7 +48,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:254](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L254)
+[src/generated/AwsMarketplace/api.ts:254](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L254)
 
 ___
 
@@ -62,7 +62,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:224](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L224)
+[src/generated/AwsMarketplace/api.ts:224](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L224)
 
 ___
 
@@ -76,7 +76,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:266](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L266)
+[src/generated/AwsMarketplace/api.ts:266](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L266)
 
 ___
 
@@ -90,7 +90,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:230](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L230)
+[src/generated/AwsMarketplace/api.ts:230](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L230)
 
 ___
 
@@ -104,7 +104,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:236](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L236)
+[src/generated/AwsMarketplace/api.ts:236](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L236)
 
 ___
 
@@ -118,7 +118,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:260](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L260)
+[src/generated/AwsMarketplace/api.ts:260](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L260)
 
 ___
 
@@ -132,7 +132,7 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:242](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L242)
+[src/generated/AwsMarketplace/api.ts:242](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L242)
 
 ___
 
@@ -146,4 +146,4 @@ Settings
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:272](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/AwsMarketplace/api.ts#L272)
+[src/generated/AwsMarketplace/api.ts:272](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L272)
