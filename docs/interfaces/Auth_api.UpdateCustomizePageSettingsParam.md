@@ -33,7 +33,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1925](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1925)
+[src/generated/Auth/api.ts:1931](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1931)
 
 ___
 
@@ -49,7 +49,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1949](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1949)
+[src/generated/Auth/api.ts:1955](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1955)
 
 ___
 
@@ -65,7 +65,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1919](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1919)
+[src/generated/Auth/api.ts:1925](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1925)
 
 ___
 
@@ -81,7 +81,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1943](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1943)
+[src/generated/Auth/api.ts:1949](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1949)
 
 ___
 
@@ -97,7 +97,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1937)
+[src/generated/Auth/api.ts:1943](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1943)
 
 ___
 
@@ -113,4 +113,4 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1931](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1931)
+[src/generated/Auth/api.ts:1937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1937)
