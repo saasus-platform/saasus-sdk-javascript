@@ -34,7 +34,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1079](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1079)
+[src/generated/Auth/api.ts:1079](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1079)
 
 ___
 
@@ -48,7 +48,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1049](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1049)
+[src/generated/Auth/api.ts:1049](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1049)
 
 ___
 
@@ -62,7 +62,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1061](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1061)
+[src/generated/Auth/api.ts:1061](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1061)
 
 ___
 
@@ -76,7 +76,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1085](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1085)
+[src/generated/Auth/api.ts:1085](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1085)
 
 ___
 
@@ -90,7 +90,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1055](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1055)
+[src/generated/Auth/api.ts:1055](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1055)
 
 ___
 
@@ -104,7 +104,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1043](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1043)
+[src/generated/Auth/api.ts:1043](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1043)
 
 ___
 
@@ -118,7 +118,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1067](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1067)
+[src/generated/Auth/api.ts:1067](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1067)
 
 ___
 
@@ -132,7 +132,7 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1091](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1091)
+[src/generated/Auth/api.ts:1091](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1091)
 
 ___
 
@@ -146,4 +146,4 @@ NotificationMessages
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1073](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1073)
+[src/generated/Auth/api.ts:1073](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1073)
