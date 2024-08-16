@@ -26,4 +26,4 @@ AuthorizationTempCode
 
 #### Defined in
 
-[src/generated/Auth/api.ts:136](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L136)
+[src/generated/Auth/api.ts:136](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L136)

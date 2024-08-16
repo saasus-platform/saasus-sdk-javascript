@@ -33,7 +33,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1547](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1547)
+[src/generated/Pricing/api.ts:1547](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1547)
 
 ___
 
@@ -49,7 +49,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1553)
+[src/generated/Pricing/api.ts:1553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1553)
 
 ___
 
@@ -65,7 +65,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1529](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1529)
+[src/generated/Pricing/api.ts:1529](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1529)
 
 ___
 
@@ -81,7 +81,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1541)
+[src/generated/Pricing/api.ts:1541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1541)
 
 ___
 
@@ -97,7 +97,7 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1523)
+[src/generated/Pricing/api.ts:1523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1523)
 
 ___
 
@@ -113,4 +113,4 @@ TaxRateProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1535](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Pricing/api.ts#L1535)
+[src/generated/Pricing/api.ts:1535](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1535)

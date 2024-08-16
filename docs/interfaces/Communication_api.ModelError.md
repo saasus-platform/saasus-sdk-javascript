@@ -29,7 +29,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/Communication/api.ts:292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L292)
+[src/generated/Communication/api.ts:292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L292)
 
 ___
 
@@ -45,4 +45,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/Communication/api.ts:286](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Communication/api.ts#L286)
+[src/generated/Communication/api.ts:286](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L286)
