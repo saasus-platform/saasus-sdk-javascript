@@ -28,7 +28,7 @@ UpdateCustomizePagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1993](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1993)
+[src/generated/Auth/api.ts:1999](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1999)
 
 ___
 
@@ -42,7 +42,7 @@ UpdateCustomizePagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1987](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1987)
+[src/generated/Auth/api.ts:1993](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1993)
 
 ___
 
@@ -56,4 +56,4 @@ UpdateCustomizePagesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1981](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L1981)
+[src/generated/Auth/api.ts:1987](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1987)
