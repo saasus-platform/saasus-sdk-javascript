@@ -147,6 +147,7 @@
 - [UpdateEnvParam](Auth.md#updateenvparam)
 - [UpdateIdentityProviderParam](Auth.md#updateidentityproviderparam)
 - [UpdateNotificationMessagesParam](Auth.md#updatenotificationmessagesparam)
+- [UpdateSaasUserAttributesParam](Auth.md#updatesaasuserattributesparam)
 - [UpdateSaasUserEmailParam](Auth.md#updatesaasuseremailparam)
 - [UpdateSaasUserPasswordParam](Auth.md#updatesaasuserpasswordparam)
 - [UpdateSignInSettingsParam](Auth.md#updatesigninsettingsparam)
@@ -1015,6 +1016,12 @@ ___
 ### UpdateNotificationMessagesParam
 
 Re-exports [UpdateNotificationMessagesParam](../interfaces/Auth_api.UpdateNotificationMessagesParam.md)
+
+___
+
+### UpdateSaasUserAttributesParam
+
+Re-exports [UpdateSaasUserAttributesParam](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md)
 
 ___
 
