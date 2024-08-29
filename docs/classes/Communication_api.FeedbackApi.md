@@ -67,7 +67,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/base.ts#L52)
 
 ## Properties
 
@@ -81,7 +81,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/base.ts#L52)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/base.ts#L52)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/base.ts#L50)
+[src/generated/Communication/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/base.ts#L50)
 
 ## Methods
 
@@ -142,7 +142,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1300)
+[src/generated/Communication/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1300)
 
 ___
 
@@ -176,7 +176,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1313)
+[src/generated/Communication/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1313)
 
 ___
 
@@ -210,7 +210,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1326)
+[src/generated/Communication/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1326)
 
 ___
 
@@ -243,7 +243,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1338)
+[src/generated/Communication/api.ts:1338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1338)
 
 ___
 
@@ -277,7 +277,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1351)
+[src/generated/Communication/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1351)
 
 ___
 
@@ -311,7 +311,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1364)
+[src/generated/Communication/api.ts:1364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1364)
 
 ___
 
@@ -344,7 +344,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1376](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1376)
+[src/generated/Communication/api.ts:1376](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1376)
 
 ___
 
@@ -378,7 +378,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1389)
+[src/generated/Communication/api.ts:1389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1389)
 
 ___
 
@@ -410,7 +410,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1400)
+[src/generated/Communication/api.ts:1400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1400)
 
 ___
 
@@ -444,7 +444,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1413)
+[src/generated/Communication/api.ts:1413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1413)
 
 ___
 
@@ -479,7 +479,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1427](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1427)
+[src/generated/Communication/api.ts:1427](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1427)
 
 ___
 
@@ -513,4 +513,4 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1440](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Communication/api.ts#L1440)
+[src/generated/Communication/api.ts:1440](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1440)

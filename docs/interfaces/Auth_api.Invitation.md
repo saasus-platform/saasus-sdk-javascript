@@ -33,7 +33,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:816](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L816)
+[src/generated/Auth/api.ts:816](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L816)
 
 ___
 
@@ -47,7 +47,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:828](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L828)
+[src/generated/Auth/api.ts:828](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L828)
 
 ___
 
@@ -63,7 +63,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:834](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L834)
+[src/generated/Auth/api.ts:834](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L834)
 
 ___
 
@@ -77,7 +77,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:810](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L810)
+[src/generated/Auth/api.ts:810](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L810)
 
 ___
 
@@ -93,7 +93,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:822](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L822)
+[src/generated/Auth/api.ts:822](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L822)
 
 ___
 
@@ -107,4 +107,4 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L840)
+[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L840)

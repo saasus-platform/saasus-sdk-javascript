@@ -32,4 +32,4 @@ UpdateSaasUserAttributesParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2111)
+[src/generated/Auth/api.ts:2111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L2111)
