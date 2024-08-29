@@ -32,7 +32,7 @@ ValidateInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2467](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2467)
+[src/generated/Auth/api.ts:2467](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L2467)
 
 ___
 
@@ -48,7 +48,7 @@ ValidateInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2473](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2473)
+[src/generated/Auth/api.ts:2473](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L2473)
 
 ___
 
@@ -64,4 +64,4 @@ ValidateInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2479](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L2479)
+[src/generated/Auth/api.ts:2479](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L2479)

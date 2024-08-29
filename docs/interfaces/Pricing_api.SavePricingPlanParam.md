@@ -31,7 +31,7 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1455](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1455)
+[src/generated/Pricing/api.ts:1455](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1455)
 
 ___
 
@@ -47,7 +47,7 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1449)
+[src/generated/Pricing/api.ts:1449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1449)
 
 ___
 
@@ -63,7 +63,7 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1461](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1461)
+[src/generated/Pricing/api.ts:1461](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1461)
 
 ___
 
@@ -79,4 +79,4 @@ SavePricingPlanParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1443](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1443)
+[src/generated/Pricing/api.ts:1443](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1443)
