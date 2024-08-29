@@ -26,4 +26,4 @@ CloudFormationLaunchStackLink
 
 #### Defined in
 
-[src/generated/Auth/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/09ef427/src/generated/Auth/api.ts#L291)
+[src/generated/Auth/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L291)
