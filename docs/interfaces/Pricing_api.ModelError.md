@@ -29,7 +29,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:314](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L314)
+[src/generated/Pricing/api.ts:314](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L314)
 
 ___
 
@@ -45,4 +45,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:308](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L308)
+[src/generated/Pricing/api.ts:308](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L308)
