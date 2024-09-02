@@ -30,7 +30,7 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1900](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1900)
+[src/generated/Auth/api.ts:1900](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1900)
 
 ___
 
@@ -46,7 +46,7 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1906](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1906)
+[src/generated/Auth/api.ts:1906](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1906)
 
 ___
 
@@ -62,4 +62,4 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1912](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L1912)
+[src/generated/Auth/api.ts:1912](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1912)
