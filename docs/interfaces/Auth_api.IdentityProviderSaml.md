@@ -27,7 +27,7 @@ IdentityProviderSaml
 
 #### Defined in
 
-[src/generated/Auth/api.ts:784](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L784)
+[src/generated/Auth/api.ts:784](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L784)
 
 ___
 
@@ -41,4 +41,4 @@ IdentityProviderSaml
 
 #### Defined in
 
-[src/generated/Auth/api.ts:778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L778)
+[src/generated/Auth/api.ts:778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L778)

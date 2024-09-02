@@ -60,7 +60,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/base.ts#L50)
+[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/base.ts#L50)
 
 ## Methods
 
@@ -135,7 +135,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L558)
+[src/generated/Integration/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L558)
 
 ___
 
@@ -167,7 +167,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L569)
+[src/generated/Integration/api.ts:569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L569)
 
 ___
 
@@ -199,7 +199,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:580](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L580)
+[src/generated/Integration/api.ts:580](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L580)
 
 ___
 
@@ -231,7 +231,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L591)
+[src/generated/Integration/api.ts:591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L591)
 
 ___
 
@@ -264,4 +264,4 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L603)
+[src/generated/Integration/api.ts:603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L603)
