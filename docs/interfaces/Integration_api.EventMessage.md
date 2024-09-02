@@ -30,7 +30,7 @@ EventMessage
 
 #### Defined in
 
-[src/generated/Integration/api.ts:107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L107)
+[src/generated/Integration/api.ts:107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L107)
 
 ___
 
@@ -46,7 +46,7 @@ EventMessage
 
 #### Defined in
 
-[src/generated/Integration/api.ts:101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L101)
+[src/generated/Integration/api.ts:101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L101)
 
 ___
 
@@ -62,4 +62,4 @@ EventMessage
 
 #### Defined in
 
-[src/generated/Integration/api.ts:113](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L113)
+[src/generated/Integration/api.ts:113](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L113)
