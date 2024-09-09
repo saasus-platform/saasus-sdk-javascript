@@ -29,13 +29,13 @@ CreateSaasUserParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:367](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L367)
+[src/generated/Auth/api.ts:367](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L367)
 
 ___
 
 ### password
 
-• **password**: `string`
+• `Optional` **password**: `string`
 
 Password
 
@@ -45,4 +45,4 @@ CreateSaasUserParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Auth/api.ts#L373)
+[src/generated/Auth/api.ts:373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L373)

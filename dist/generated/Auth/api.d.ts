@@ -353,7 +353,7 @@ export interface CreateSaasUserParam {
      * @type {string}
      * @memberof CreateSaasUserParam
      */
-    'password': string;
+    'password'?: string;
 }
 /**
  *
@@ -3674,7 +3674,7 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     confirmSignUpWithAwsMarketplace: (confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Create SaaS User.
+     * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
      * @summary Create SaaS User
      * @param {CreateSaasUserParam} [createSaasUserParam]
      * @param {*} [options] Override http request option.
@@ -3856,7 +3856,7 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tenant>>;
     /**
-     * Create SaaS User.
+     * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
      * @summary Create SaaS User
      * @param {CreateSaasUserParam} [createSaasUserParam]
      * @param {*} [options] Override http request option.
@@ -4038,7 +4038,7 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      */
     confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: any): AxiosPromise<Tenant>;
     /**
-     * Create SaaS User.
+     * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
      * @summary Create SaaS User
      * @param {CreateSaasUserParam} [createSaasUserParam]
      * @param {*} [options] Override http request option.
@@ -4225,7 +4225,7 @@ export declare class SaasUserApi extends BaseAPI {
      */
     confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any>>;
     /**
-     * Create SaaS User.
+     * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
      * @summary Create SaaS User
      * @param {CreateSaasUserParam} [createSaasUserParam]
      * @param {*} [options] Override http request option.

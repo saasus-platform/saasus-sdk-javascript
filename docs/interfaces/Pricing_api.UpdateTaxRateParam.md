@@ -29,7 +29,7 @@ UpdateTaxRateParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1667](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1667)
+[src/generated/Pricing/api.ts:1667](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1667)
 
 ___
 
@@ -45,4 +45,4 @@ UpdateTaxRateParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1661](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1661)
+[src/generated/Pricing/api.ts:1661](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1661)

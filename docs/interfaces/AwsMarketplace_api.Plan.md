@@ -27,7 +27,7 @@ Plan
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L173)
+[src/generated/AwsMarketplace/api.ts:173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L173)
 
 ___
 
@@ -41,4 +41,4 @@ Plan
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L179)
+[src/generated/AwsMarketplace/api.ts:179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L179)
