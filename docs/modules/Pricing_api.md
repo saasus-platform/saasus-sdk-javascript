@@ -108,7 +108,7 @@
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1121)
+[src/generated/Pricing/api.ts:1121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1121)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1164](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1164)
+[src/generated/Pricing/api.ts:1164](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1164)
 
 ## Functions
 
@@ -148,7 +148,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1674](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1674)
+[src/generated/Pricing/api.ts:1674](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1674)
 
 ___
 
@@ -178,7 +178,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1737)
+[src/generated/Pricing/api.ts:1737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1737)
 
 ___
 
@@ -206,7 +206,7 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1717](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1717)
+[src/generated/Pricing/api.ts:1717](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1717)
 
 ___
 
@@ -247,7 +247,7 @@ MeteringApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1776](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1776)
+[src/generated/Pricing/api.ts:1776](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1776)
 
 ___
 
@@ -290,7 +290,7 @@ MeteringApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2573](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L2573)
+[src/generated/Pricing/api.ts:2573](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L2573)
 
 ___
 
@@ -331,7 +331,7 @@ MeteringApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L2391)
+[src/generated/Pricing/api.ts:2391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L2391)
 
 ___
 
@@ -363,7 +363,7 @@ PricingMenusApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2936](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L2936)
+[src/generated/Pricing/api.ts:2936](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L2936)
 
 ___
 
@@ -397,7 +397,7 @@ PricingMenusApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3200](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L3200)
+[src/generated/Pricing/api.ts:3200](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L3200)
 
 ___
 
@@ -429,7 +429,7 @@ PricingMenusApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L3135)
+[src/generated/Pricing/api.ts:3135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L3135)
 
 ___
 
@@ -465,7 +465,7 @@ PricingPlansApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L3329)
+[src/generated/Pricing/api.ts:3329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L3329)
 
 ___
 
@@ -503,7 +503,7 @@ PricingPlansApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3774](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L3774)
+[src/generated/Pricing/api.ts:3774](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L3774)
 
 ___
 
@@ -539,7 +539,7 @@ PricingPlansApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L3668)
+[src/generated/Pricing/api.ts:3668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L3668)
 
 ___
 
@@ -571,7 +571,7 @@ PricingUnitsApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3985](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L3985)
+[src/generated/Pricing/api.ts:3985](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L3985)
 
 ___
 
@@ -605,7 +605,7 @@ PricingUnitsApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L4249)
+[src/generated/Pricing/api.ts:4249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L4249)
 
 ___
 
@@ -637,7 +637,7 @@ PricingUnitsApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4184](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L4184)
+[src/generated/Pricing/api.ts:4184](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L4184)
 
 ___
 
@@ -667,7 +667,7 @@ TaxRateApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4378](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L4378)
+[src/generated/Pricing/api.ts:4378](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L4378)
 
 ___
 
@@ -699,7 +699,7 @@ TaxRateApi - factory interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4544](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L4544)
+[src/generated/Pricing/api.ts:4544](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L4544)
 
 ___
 
@@ -729,4 +729,4 @@ TaxRateApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4501](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L4501)
+[src/generated/Pricing/api.ts:4501](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L4501)

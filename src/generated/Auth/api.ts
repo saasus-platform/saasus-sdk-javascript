@@ -370,7 +370,7 @@ export interface CreateSaasUserParam {
      * @type {string}
      * @memberof CreateSaasUserParam
      */
-    'password': string;
+    'password'?: string;
 }
 /**
  * 
@@ -5053,7 +5053,7 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Create SaaS User. 
+         * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email. 
          * @summary Create SaaS User
          * @param {CreateSaasUserParam} [createSaasUserParam] 
          * @param {*} [options] Override http request option.
@@ -5809,7 +5809,7 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Create SaaS User. 
+         * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email. 
          * @summary Create SaaS User
          * @param {CreateSaasUserParam} [createSaasUserParam] 
          * @param {*} [options] Override http request option.
@@ -6055,7 +6055,7 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create SaaS User. 
+         * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email. 
          * @summary Create SaaS User
          * @param {CreateSaasUserParam} [createSaasUserParam] 
          * @param {*} [options] Override http request option.
@@ -6289,7 +6289,7 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * Create SaaS User. 
+     * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email. 
      * @summary Create SaaS User
      * @param {CreateSaasUserParam} [createSaasUserParam] 
      * @param {*} [options] Override http request option.

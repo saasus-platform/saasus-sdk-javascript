@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:24](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L24)
+[src/generated/AwsMarketplace/common.ts:24](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L24)
 
 ## Functions
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L31)
+[src/generated/AwsMarketplace/common.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L31)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:143](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L143)
+[src/generated/AwsMarketplace/common.ts:143](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L143)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L121)
+[src/generated/AwsMarketplace/common.ts:121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L121)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L41)
+[src/generated/AwsMarketplace/common.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L41)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:54](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L54)
+[src/generated/AwsMarketplace/common.ts:54](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L54)
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:64](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L64)
+[src/generated/AwsMarketplace/common.ts:64](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L64)
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L77)
+[src/generated/AwsMarketplace/common.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L77)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L111)
+[src/generated/AwsMarketplace/common.ts:111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L111)
 
 ___
 
@@ -265,4 +265,4 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/common.ts:135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/common.ts#L135)
+[src/generated/AwsMarketplace/common.ts:135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/common.ts#L135)

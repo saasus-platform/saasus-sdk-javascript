@@ -29,7 +29,7 @@ MeteringUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:106](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L106)
+[src/generated/Pricing/api.ts:106](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L106)
 
 ___
 
@@ -45,4 +45,4 @@ MeteringUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:112](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L112)
+[src/generated/Pricing/api.ts:112](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L112)
