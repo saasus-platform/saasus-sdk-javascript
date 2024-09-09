@@ -43,7 +43,7 @@ All AWS regions except Ningxia and Beijing in China can be selected.
 
 #### Defined in
 
-[src/generated/Integration/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L35)
+[src/generated/Integration/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L35)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:36](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L36)
+[src/generated/Integration/api.ts:36](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L36)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:38](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L38)
+[src/generated/Integration/api.ts:38](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L38)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:39](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L39)
+[src/generated/Integration/api.ts:39](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L39)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:40](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L40)
+[src/generated/Integration/api.ts:40](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L40)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:37](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L37)
+[src/generated/Integration/api.ts:37](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L37)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L41)
+[src/generated/Integration/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L41)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:42](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L42)
+[src/generated/Integration/api.ts:42](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L42)
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:43](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L43)
+[src/generated/Integration/api.ts:43](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L43)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L44)
+[src/generated/Integration/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L44)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:45](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L45)
+[src/generated/Integration/api.ts:45](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L45)
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L46)
+[src/generated/Integration/api.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L46)
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L47)
+[src/generated/Integration/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L47)
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:48](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L48)
+[src/generated/Integration/api.ts:48](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L48)
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L49)
+[src/generated/Integration/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L49)
 
 ___
 
@@ -193,7 +193,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L50)
+[src/generated/Integration/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L50)
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:51](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L51)
+[src/generated/Integration/api.ts:51](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L51)
 
 ___
 
@@ -213,7 +213,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L52)
+[src/generated/Integration/api.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L52)
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L31)
+[src/generated/Integration/api.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L31)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L32)
+[src/generated/Integration/api.ts:32](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L32)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:33](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L33)
+[src/generated/Integration/api.ts:33](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L33)
 
 ___
 
@@ -253,4 +253,4 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/api.ts:34](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Integration/api.ts#L34)
+[src/generated/Integration/api.ts:34](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/api.ts#L34)

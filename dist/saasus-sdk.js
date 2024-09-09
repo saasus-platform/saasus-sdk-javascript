@@ -2328,7 +2328,7 @@
                 };
             },
             /**
-             * Create SaaS User.
+             * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
              * @summary Create SaaS User
              * @param {CreateSaasUserParam} [createSaasUserParam]
              * @param {*} [options] Override http request option.
@@ -2962,7 +2962,7 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Create SaaS User.
+             * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
              * @summary Create SaaS User
              * @param {CreateSaasUserParam} [createSaasUserParam]
              * @param {*} [options] Override http request option.
@@ -3210,7 +3210,7 @@
             return SaasUserApiFp(this.configuration).confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Create SaaS User.
+         * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
          * @summary Create SaaS User
          * @param {CreateSaasUserParam} [createSaasUserParam]
          * @param {*} [options] Override http request option.

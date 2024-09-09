@@ -27,7 +27,7 @@ ApiLogs
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:217](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/ApiLog/api.ts#L217)
+[src/generated/ApiLog/api.ts:217](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/ApiLog/api.ts#L217)
 
 ___
 
@@ -43,4 +43,4 @@ ApiLogs
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/ApiLog/api.ts#L223)
+[src/generated/ApiLog/api.ts:223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/ApiLog/api.ts#L223)

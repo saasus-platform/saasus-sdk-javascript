@@ -23,7 +23,7 @@ Cycle month: Monthly year: Yearly
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1394)
+[src/generated/Pricing/api.ts:1394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1394)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/Pricing/api.ts#L1395)
+[src/generated/Pricing/api.ts:1395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1395)

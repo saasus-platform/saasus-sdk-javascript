@@ -56,7 +56,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +70,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/base.ts#L52)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/base.ts#L52)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/base.ts#L50)
+[src/generated/AwsMarketplace/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/base.ts#L50)
 
 ## Methods
 
@@ -130,4 +130,4 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/997c544/src/generated/AwsMarketplace/api.ts#L1465)
+[src/generated/AwsMarketplace/api.ts:1465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L1465)
