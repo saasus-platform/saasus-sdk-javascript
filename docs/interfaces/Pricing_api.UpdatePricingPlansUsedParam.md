@@ -26,4 +26,4 @@ UpdatePricingPlansUsedParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1648](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L1648)
+[src/generated/Pricing/api.ts:1648](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L1648)

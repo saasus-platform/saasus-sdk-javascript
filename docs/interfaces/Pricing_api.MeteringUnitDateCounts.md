@@ -26,4 +26,4 @@ MeteringUnitDateCounts
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:169](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L169)
+[src/generated/Pricing/api.ts:169](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L169)

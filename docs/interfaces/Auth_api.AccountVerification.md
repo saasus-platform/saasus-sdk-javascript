@@ -31,7 +31,7 @@ AccountVerification
 
 #### Defined in
 
-[src/generated/Auth/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L41)
+[src/generated/Auth/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L41)
 
 ___
 
@@ -47,4 +47,4 @@ AccountVerification
 
 #### Defined in
 
-[src/generated/Auth/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L35)
+[src/generated/Auth/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L35)

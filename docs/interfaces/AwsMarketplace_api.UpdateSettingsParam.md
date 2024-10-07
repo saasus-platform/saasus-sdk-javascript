@@ -33,7 +33,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:322](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L322)
+[src/generated/AwsMarketplace/api.ts:322](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L322)
 
 ___
 
@@ -47,7 +47,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:328](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L328)
+[src/generated/AwsMarketplace/api.ts:328](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L328)
 
 ___
 
@@ -61,7 +61,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:298](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L298)
+[src/generated/AwsMarketplace/api.ts:298](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L298)
 
 ___
 
@@ -75,7 +75,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:304](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L304)
+[src/generated/AwsMarketplace/api.ts:304](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L304)
 
 ___
 
@@ -89,7 +89,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:310](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L310)
+[src/generated/AwsMarketplace/api.ts:310](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L310)
 
 ___
 
@@ -103,7 +103,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:334](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L334)
+[src/generated/AwsMarketplace/api.ts:334](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L334)
 
 ___
 
@@ -117,7 +117,7 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:316](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L316)
+[src/generated/AwsMarketplace/api.ts:316](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L316)
 
 ___
 
@@ -131,4 +131,4 @@ UpdateSettingsParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:340](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L340)
+[src/generated/AwsMarketplace/api.ts:340](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L340)

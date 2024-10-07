@@ -31,7 +31,7 @@ MeteringUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:81](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L81)
+[src/generated/Pricing/api.ts:81](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L81)
 
 ___
 
@@ -47,7 +47,7 @@ MeteringUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:93](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L93)
+[src/generated/Pricing/api.ts:93](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L93)
 
 ___
 
@@ -63,7 +63,7 @@ MeteringUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:87](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L87)
+[src/generated/Pricing/api.ts:87](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L87)
 
 ___
 
@@ -79,7 +79,7 @@ MeteringUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:63](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L63)
+[src/generated/Pricing/api.ts:63](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L63)
 
 ___
 
@@ -95,7 +95,7 @@ MeteringUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:75](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L75)
+[src/generated/Pricing/api.ts:75](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L75)
 
 ___
 
@@ -111,4 +111,4 @@ MeteringUnit
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L69)
+[src/generated/Pricing/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L69)

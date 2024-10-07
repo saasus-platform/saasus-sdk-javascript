@@ -26,4 +26,4 @@ CatalogEntityVisibility
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L35)
+[src/generated/AwsMarketplace/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/AwsMarketplace/api.ts#L35)
