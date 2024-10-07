@@ -26,4 +26,4 @@ CreateVoteUserParam
 
 #### Defined in
 
-[src/generated/Communication/api.ts:149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L149)
+[src/generated/Communication/api.ts:149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Communication/api.ts#L149)

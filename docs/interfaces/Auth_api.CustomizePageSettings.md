@@ -33,7 +33,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:512](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L512)
+[src/generated/Auth/api.ts:512](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L512)
 
 ___
 
@@ -49,7 +49,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:536](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L536)
+[src/generated/Auth/api.ts:536](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L536)
 
 ___
 
@@ -65,7 +65,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:506](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L506)
+[src/generated/Auth/api.ts:506](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L506)
 
 ___
 
@@ -81,7 +81,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:530](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L530)
+[src/generated/Auth/api.ts:530](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L530)
 
 ___
 
@@ -97,7 +97,7 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:524](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L524)
+[src/generated/Auth/api.ts:524](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L524)
 
 ___
 
@@ -113,4 +113,4 @@ CustomizePageSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L518)
+[src/generated/Auth/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L518)

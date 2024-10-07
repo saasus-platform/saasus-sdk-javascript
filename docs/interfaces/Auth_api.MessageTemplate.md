@@ -29,7 +29,7 @@ MessageTemplate
 
 #### Defined in
 
-[src/generated/Auth/api.ts:958](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L958)
+[src/generated/Auth/api.ts:958](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L958)
 
 ___
 
@@ -45,4 +45,4 @@ MessageTemplate
 
 #### Defined in
 
-[src/generated/Auth/api.ts:952](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L952)
+[src/generated/Auth/api.ts:952](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L952)

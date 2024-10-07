@@ -26,4 +26,4 @@ VotesAllOf
 
 #### Defined in
 
-[src/generated/Communication/api.ts:395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L395)
+[src/generated/Communication/api.ts:395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Communication/api.ts#L395)

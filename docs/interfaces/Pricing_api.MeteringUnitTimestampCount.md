@@ -30,7 +30,7 @@ MeteringUnitTimestampCount
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L282)
+[src/generated/Pricing/api.ts:282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L282)
 
 ___
 
@@ -46,7 +46,7 @@ MeteringUnitTimestampCount
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:270](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L270)
+[src/generated/Pricing/api.ts:270](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L270)
 
 ___
 
@@ -62,4 +62,4 @@ MeteringUnitTimestampCount
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:276](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L276)
+[src/generated/Pricing/api.ts:276](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Pricing/api.ts#L276)

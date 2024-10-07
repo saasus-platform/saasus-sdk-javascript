@@ -29,7 +29,7 @@ UpdateCustomizePageSettingsParamAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1974](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1974)
+[src/generated/Auth/api.ts:1993](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L1993)
 
 ___
 
@@ -45,4 +45,4 @@ UpdateCustomizePageSettingsParamAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1968](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1968)
+[src/generated/Auth/api.ts:1987](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/Auth/api.ts#L1987)

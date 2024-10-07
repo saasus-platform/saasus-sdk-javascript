@@ -29,7 +29,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:242](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/ApiLog/api.ts#L242)
+[src/generated/ApiLog/api.ts:242](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/ApiLog/api.ts#L242)
 
 ___
 
@@ -45,4 +45,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:236](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/ApiLog/api.ts#L236)
+[src/generated/ApiLog/api.ts:236](https://github.com/saasus-platform/saasus-sdk-javascript/blob/c6c266c/src/generated/ApiLog/api.ts#L236)
