@@ -29,7 +29,7 @@ UpdateTenantIdentityProviderParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2255](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L2255)
+[src/generated/Auth/api.ts:2274](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L2274)
 
 ___
 
@@ -43,4 +43,4 @@ UpdateTenantIdentityProviderParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L2249)
+[src/generated/Auth/api.ts:2268](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L2268)

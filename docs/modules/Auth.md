@@ -117,6 +117,7 @@
 - [SingleTenantApiFp](Auth.md#singletenantapifp)
 - [SingleTenantSettings](Auth.md#singletenantsettings)
 - [SoftwareTokenSecretCode](Auth.md#softwaretokensecretcode)
+- [StripeCustomer](Auth.md#stripecustomer)
 - [Tenant](Auth.md#tenant)
 - [TenantAllOf](Auth.md#tenantallof)
 - [TenantApi](Auth.md#tenantapi)
@@ -836,6 +837,12 @@ ___
 ### SoftwareTokenSecretCode
 
 Re-exports [SoftwareTokenSecretCode](../interfaces/Auth_api.SoftwareTokenSecretCode.md)
+
+___
+
+### StripeCustomer
+
+Re-exports [StripeCustomer](../interfaces/Auth_api.StripeCustomer.md)
 
 ___
 
