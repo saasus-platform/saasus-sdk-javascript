@@ -66,7 +66,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Communication/api.ts:402](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L402)
+[src/generated/Communication/api.ts:402](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L402)
 
 ___
 
@@ -96,7 +96,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/Communication/api.ts:465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L465)
+[src/generated/Communication/api.ts:465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L465)
 
 ___
 
@@ -124,7 +124,7 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Communication/api.ts:445](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L445)
+[src/generated/Communication/api.ts:445](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L445)
 
 ___
 
@@ -163,7 +163,7 @@ FeedbackApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Communication/api.ts:504](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L504)
+[src/generated/Communication/api.ts:504](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L504)
 
 ___
 
@@ -204,7 +204,7 @@ FeedbackApi - factory interface
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1151](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1151)
+[src/generated/Communication/api.ts:1151](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L1151)
 
 ___
 
@@ -243,4 +243,4 @@ FeedbackApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1001](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L1001)
+[src/generated/Communication/api.ts:1001](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L1001)
