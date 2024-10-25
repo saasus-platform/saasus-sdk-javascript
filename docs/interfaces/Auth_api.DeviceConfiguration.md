@@ -30,4 +30,4 @@ DeviceConfiguration
 
 #### Defined in
 
-[src/generated/Auth/api.ts:624](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L624)
+[src/generated/Auth/api.ts:624](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L624)

@@ -27,7 +27,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:160](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L160)
+[src/generated/AwsMarketplace/api.ts:160](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/AwsMarketplace/api.ts#L160)
 
 ___
 
@@ -41,4 +41,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:154](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L154)
+[src/generated/AwsMarketplace/api.ts:154](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/AwsMarketplace/api.ts#L154)

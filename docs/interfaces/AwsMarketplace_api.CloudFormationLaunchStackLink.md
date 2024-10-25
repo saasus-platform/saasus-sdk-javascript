@@ -26,4 +26,4 @@ CloudFormationLaunchStackLink
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:48](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/AwsMarketplace/api.ts#L48)
+[src/generated/AwsMarketplace/api.ts:48](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/AwsMarketplace/api.ts#L48)
