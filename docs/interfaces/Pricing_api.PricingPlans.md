@@ -26,4 +26,4 @@ PricingPlans
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:723](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L723)
+[src/generated/Pricing/api.ts:723](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Pricing/api.ts#L723)
