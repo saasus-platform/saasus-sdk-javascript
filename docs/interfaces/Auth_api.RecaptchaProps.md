@@ -31,7 +31,7 @@ RecaptchaProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1281)
+[src/generated/Auth/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1281)
 
 ___
 
@@ -47,4 +47,4 @@ RecaptchaProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1275](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L1275)
+[src/generated/Auth/api.ts:1275](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1275)

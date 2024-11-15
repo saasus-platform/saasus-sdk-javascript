@@ -28,4 +28,4 @@ UpdateStripeInfoParam
 
 #### Defined in
 
-[src/generated/Billing/api.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Billing/api.ts#L67)
+[src/generated/Billing/api.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Billing/api.ts#L67)
