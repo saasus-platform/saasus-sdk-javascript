@@ -1524,6 +1524,25 @@ export interface SoftwareTokenSecretCode {
 /**
  *
  * @export
+ * @interface StripeCustomer
+ */
+export interface StripeCustomer {
+    /**
+     * stripe Customer ID
+     * @type {string}
+     * @memberof StripeCustomer
+     */
+    'customer_id': string;
+    /**
+     * stripe Subscription Schedule ID
+     * @type {string}
+     * @memberof StripeCustomer
+     */
+    'subscription_schedule_id': string;
+}
+/**
+ *
+ * @export
  * @interface Tenant
  */
 export interface Tenant {
@@ -4547,6 +4566,14 @@ export declare const TenantApiAxiosParamCreator: (configuration?: Configuration)
      */
     deleteTenant: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getStripeCustomer: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
      * @param {string} tenantId Tenant ID
@@ -4649,6 +4676,14 @@ export declare const TenantApiFp: (configuration?: Configuration) => {
      */
     deleteTenant(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StripeCustomer>>;
+    /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
      * @param {string} tenantId Tenant ID
@@ -4750,6 +4785,14 @@ export declare const TenantApiFactory: (configuration?: Configuration, basePath?
      * @throws {RequiredError}
      */
     deleteTenant(tenantId: string, options?: any): AxiosPromise<void>;
+    /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getStripeCustomer(tenantId: string, options?: any): AxiosPromise<StripeCustomer>;
     /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
@@ -4858,6 +4901,15 @@ export declare class TenantApi extends BaseAPI {
      * @memberof TenantApi
      */
     deleteTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeCustomer, any>>;
     /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details

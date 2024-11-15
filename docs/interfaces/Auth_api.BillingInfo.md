@@ -28,7 +28,7 @@ BillingInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:259](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L259)
+[src/generated/Auth/api.ts:259](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L259)
 
 ___
 
@@ -42,7 +42,7 @@ BillingInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:265](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L265)
+[src/generated/Auth/api.ts:265](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L265)
 
 ___
 
@@ -58,4 +58,4 @@ BillingInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:253](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L253)
+[src/generated/Auth/api.ts:253](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L253)
