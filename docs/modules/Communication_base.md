@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/generated/Communication/base.ts:21](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/base.ts#L21)
+[src/generated/Communication/base.ts:21](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/base.ts#L21)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:27](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/base.ts#L27)
+[src/generated/Communication/base.ts:27](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/base.ts#L27)

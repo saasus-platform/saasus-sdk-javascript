@@ -31,6 +31,7 @@ UserInfoApi
 ### Methods
 
 - [getUserInfo](Auth_api.UserInfoApi.md#getuserinfo)
+- [getUserInfoByEmail](Auth_api.UserInfoApi.md#getuserinfobyemail)
 
 ## Constructors
 
@@ -56,7 +57,7 @@ UserInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +71,7 @@ UserInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -84,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -98,7 +99,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -131,4 +132,37 @@ UserInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9055](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Auth/api.ts#L9055)
+[src/generated/Auth/api.ts:9207](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L9207)
+
+___
+
+### getUserInfoByEmail
+
+▸ **getUserInfoByEmail**(`email`, `options?`): `Promise`\<`AxiosResponse`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`\>\>
+
+Get user information by email address.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `email` | `string` | Email |
+| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`\>\>
+
+**`Summary`**
+
+Get User Info by Email
+
+**`Throws`**
+
+**`Memberof`**
+
+UserInfoApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:9219](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L9219)

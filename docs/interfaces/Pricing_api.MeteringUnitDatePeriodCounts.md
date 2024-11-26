@@ -27,7 +27,7 @@ MeteringUnitDatePeriodCounts
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:188](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L188)
+[src/generated/Pricing/api.ts:188](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Pricing/api.ts#L188)
 
 ___
 
@@ -43,4 +43,4 @@ MeteringUnitDatePeriodCounts
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Pricing/api.ts#L182)
+[src/generated/Pricing/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Pricing/api.ts#L182)
