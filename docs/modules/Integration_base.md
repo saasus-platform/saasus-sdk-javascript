@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/generated/Integration/base.ts:21](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/base.ts#L21)
+[src/generated/Integration/base.ts:21](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Integration/base.ts#L21)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:27](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Integration/base.ts#L27)
+[src/generated/Integration/base.ts:27](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Integration/base.ts#L27)

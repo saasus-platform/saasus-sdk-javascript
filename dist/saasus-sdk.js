@@ -3541,6 +3541,38 @@
                 };
             },
             /**
+             * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+             * @summary Get Stripe Customer
+             * @param {string} tenantId Tenant ID
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getStripeCustomer: async (tenantId, options = {}) => {
+                // verify required parameter 'tenantId' is not null or undefined
+                assertParamExists$3('getStripeCustomer', 'tenantId', tenantId);
+                const localVarPath = `/tenants/{tenant_id}/stripe-customer`
+                    .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Get the details of tenant managed on the SaaSus Platform.
              * @summary Get Tenant Details
              * @param {string} tenantId Tenant ID
@@ -3852,6 +3884,17 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+             * @summary Get Stripe Customer
+             * @param {string} tenantId Tenant ID
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getStripeCustomer(tenantId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getStripeCustomer(tenantId, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Get the details of tenant managed on the SaaSus Platform.
              * @summary Get Tenant Details
              * @param {string} tenantId Tenant ID
@@ -3991,6 +4034,17 @@
          */
         deleteTenant(tenantId, options) {
             return TenantApiFp(this.configuration).deleteTenant(tenantId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+         * @summary Get Stripe Customer
+         * @param {string} tenantId Tenant ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantApi
+         */
+        getStripeCustomer(tenantId, options) {
+            return TenantApiFp(this.configuration).getStripeCustomer(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Get the details of tenant managed on the SaaSus Platform.
@@ -5104,6 +5158,40 @@
                     options: localVarRequestOptions,
                 };
             },
+            /**
+             * Get user information by email address.
+             * @summary Get User Info by Email
+             * @param {string} email Email
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getUserInfoByEmail: async (email, options = {}) => {
+                // verify required parameter 'email' is not null or undefined
+                assertParamExists$3('getUserInfoByEmail', 'email', email);
+                const localVarPath = `/userinfo/search/email`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                if (email !== undefined) {
+                    localVarQueryParameter['email'] = email;
+                }
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
         };
     };
     /**
@@ -5122,6 +5210,17 @@
              */
             async getUserInfo(token, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfo(token, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Get user information by email address.
+             * @summary Get User Info by Email
+             * @param {string} email Email
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getUserInfoByEmail(email, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfoByEmail(email, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
@@ -5143,6 +5242,17 @@
          */
         getUserInfo(token, options) {
             return UserInfoApiFp(this.configuration).getUserInfo(token, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Get user information by email address.
+         * @summary Get User Info by Email
+         * @param {string} email Email
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof UserInfoApi
+         */
+        getUserInfoByEmail(email, options) {
+            return UserInfoApiFp(this.configuration).getUserInfoByEmail(email, options).then((request) => request(this.axios, this.basePath));
         }
     }
 

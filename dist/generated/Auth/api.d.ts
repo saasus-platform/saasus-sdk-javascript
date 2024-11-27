@@ -1524,6 +1524,25 @@ export interface SoftwareTokenSecretCode {
 /**
  *
  * @export
+ * @interface StripeCustomer
+ */
+export interface StripeCustomer {
+    /**
+     * stripe Customer ID
+     * @type {string}
+     * @memberof StripeCustomer
+     */
+    'customer_id': string;
+    /**
+     * stripe Subscription Schedule ID
+     * @type {string}
+     * @memberof StripeCustomer
+     */
+    'subscription_schedule_id': string;
+}
+/**
+ *
+ * @export
  * @interface Tenant
  */
 export interface Tenant {
@@ -4547,6 +4566,14 @@ export declare const TenantApiAxiosParamCreator: (configuration?: Configuration)
      */
     deleteTenant: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getStripeCustomer: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
      * @param {string} tenantId Tenant ID
@@ -4649,6 +4676,14 @@ export declare const TenantApiFp: (configuration?: Configuration) => {
      */
     deleteTenant(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StripeCustomer>>;
+    /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
      * @param {string} tenantId Tenant ID
@@ -4750,6 +4785,14 @@ export declare const TenantApiFactory: (configuration?: Configuration, basePath?
      * @throws {RequiredError}
      */
     deleteTenant(tenantId: string, options?: any): AxiosPromise<void>;
+    /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getStripeCustomer(tenantId: string, options?: any): AxiosPromise<StripeCustomer>;
     /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
@@ -4858,6 +4901,15 @@ export declare class TenantApi extends BaseAPI {
      * @memberof TenantApi
      */
     deleteTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions.
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeCustomer, any>>;
     /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
@@ -5584,6 +5636,14 @@ export declare const UserInfoApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     getUserInfo: (token: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Get user information by email address.
+     * @summary Get User Info by Email
+     * @param {string} email Email
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getUserInfoByEmail: (email: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * UserInfoApi - functional programming interface
@@ -5598,6 +5658,14 @@ export declare const UserInfoApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     getUserInfo(token: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>>;
+    /**
+     * Get user information by email address.
+     * @summary Get User Info by Email
+     * @param {string} email Email
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>>;
 };
 /**
  * UserInfoApi - factory interface
@@ -5612,6 +5680,14 @@ export declare const UserInfoApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     getUserInfo(token: string, options?: any): AxiosPromise<UserInfo>;
+    /**
+     * Get user information by email address.
+     * @summary Get User Info by Email
+     * @param {string} email Email
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getUserInfoByEmail(email: string, options?: any): AxiosPromise<UserInfo>;
 };
 /**
  * UserInfoApi - object-oriented interface
@@ -5629,4 +5705,13 @@ export declare class UserInfoApi extends BaseAPI {
      * @memberof UserInfoApi
      */
     getUserInfo(token: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
+    /**
+     * Get user information by email address.
+     * @summary Get User Info by Email
+     * @param {string} email Email
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserInfoApi
+     */
+    getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
 }

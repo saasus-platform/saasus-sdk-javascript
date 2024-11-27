@@ -1567,6 +1567,25 @@ export interface SoftwareTokenSecretCode {
 /**
  * 
  * @export
+ * @interface StripeCustomer
+ */
+export interface StripeCustomer {
+    /**
+     * stripe Customer ID
+     * @type {string}
+     * @memberof StripeCustomer
+     */
+    'customer_id': string;
+    /**
+     * stripe Subscription Schedule ID
+     * @type {string}
+     * @memberof StripeCustomer
+     */
+    'subscription_schedule_id': string;
+}
+/**
+ * 
+ * @export
  * @interface Tenant
  */
 export interface Tenant {
@@ -6901,6 +6920,44 @@ export const TenantApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
+         * Get the Stripe Customer information associated with the tenant, including their subscriptions. 
+         * @summary Get Stripe Customer
+         * @param {string} tenantId Tenant ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStripeCustomer: async (tenantId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'tenantId' is not null or undefined
+            assertParamExists('getStripeCustomer', 'tenantId', tenantId)
+            const localVarPath = `/tenants/{tenant_id}/stripe-customer`
+                .replace(`{${"tenant_id"}}`, encodeURIComponent(String(tenantId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get the details of tenant managed on the SaaSus Platform. 
          * @summary Get Tenant Details
          * @param {string} tenantId Tenant ID
@@ -7265,6 +7322,17 @@ export const TenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Get the Stripe Customer information associated with the tenant, including their subscriptions. 
+         * @summary Get Stripe Customer
+         * @param {string} tenantId Tenant ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StripeCustomer>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStripeCustomer(tenantId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Get the details of tenant managed on the SaaSus Platform. 
          * @summary Get Tenant Details
          * @param {string} tenantId Tenant ID
@@ -7403,6 +7471,16 @@ export const TenantApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.deleteTenant(tenantId, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get the Stripe Customer information associated with the tenant, including their subscriptions. 
+         * @summary Get Stripe Customer
+         * @param {string} tenantId Tenant ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getStripeCustomer(tenantId: string, options?: any): AxiosPromise<StripeCustomer> {
+            return localVarFp.getStripeCustomer(tenantId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the details of tenant managed on the SaaSus Platform. 
          * @summary Get Tenant Details
          * @param {string} tenantId Tenant ID
@@ -7538,6 +7616,18 @@ export class TenantApi extends BaseAPI {
      */
     public deleteTenant(tenantId: string, options?: AxiosRequestConfig) {
         return TenantApiFp(this.configuration).deleteTenant(tenantId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the Stripe Customer information associated with the tenant, including their subscriptions. 
+     * @summary Get Stripe Customer
+     * @param {string} tenantId Tenant ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantApi
+     */
+    public getStripeCustomer(tenantId: string, options?: AxiosRequestConfig) {
+        return TenantApiFp(this.configuration).getStripeCustomer(tenantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8993,6 +9083,47 @@ export const UserInfoApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Get user information by email address. 
+         * @summary Get User Info by Email
+         * @param {string} email Email
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getUserInfoByEmail: async (email: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'email' is not null or undefined
+            assertParamExists('getUserInfoByEmail', 'email', email)
+            const localVarPath = `/userinfo/search/email`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (email !== undefined) {
+                localVarQueryParameter['email'] = email;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -9012,6 +9143,17 @@ export const UserInfoApiFp = function(configuration?: Configuration) {
          */
         async getUserInfo(token: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfo(token, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get user information by email address. 
+         * @summary Get User Info by Email
+         * @param {string} email Email
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfoByEmail(email, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -9034,6 +9176,16 @@ export const UserInfoApiFactory = function (configuration?: Configuration, baseP
         getUserInfo(token: string, options?: any): AxiosPromise<UserInfo> {
             return localVarFp.getUserInfo(token, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Get user information by email address. 
+         * @summary Get User Info by Email
+         * @param {string} email Email
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getUserInfoByEmail(email: string, options?: any): AxiosPromise<UserInfo> {
+            return localVarFp.getUserInfoByEmail(email, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -9054,6 +9206,18 @@ export class UserInfoApi extends BaseAPI {
      */
     public getUserInfo(token: string, options?: AxiosRequestConfig) {
         return UserInfoApiFp(this.configuration).getUserInfo(token, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get user information by email address. 
+     * @summary Get User Info by Email
+     * @param {string} email Email
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserInfoApi
+     */
+    public getUserInfoByEmail(email: string, options?: AxiosRequestConfig) {
+        return UserInfoApiFp(this.configuration).getUserInfoByEmail(email, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

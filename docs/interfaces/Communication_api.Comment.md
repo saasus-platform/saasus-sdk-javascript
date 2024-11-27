@@ -28,7 +28,7 @@ Comment
 
 #### Defined in
 
-[src/generated/Communication/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L47)
+[src/generated/Communication/api.ts:47](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L47)
 
 ___
 
@@ -42,7 +42,7 @@ Comment
 
 #### Defined in
 
-[src/generated/Communication/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L41)
+[src/generated/Communication/api.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L41)
 
 ___
 
@@ -56,4 +56,4 @@ Comment
 
 #### Defined in
 
-[src/generated/Communication/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/6b95732/src/generated/Communication/api.ts#L35)
+[src/generated/Communication/api.ts:35](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Communication/api.ts#L35)
