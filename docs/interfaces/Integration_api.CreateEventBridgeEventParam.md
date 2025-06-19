@@ -28,4 +28,4 @@ CreateEventBridgeEventParam
 
 #### Defined in
 
-[src/generated/Integration/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Integration/api.ts#L69)
+[src/generated/Integration/api.ts:69](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/api.ts#L69)
