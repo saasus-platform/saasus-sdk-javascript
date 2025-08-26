@@ -1478,7 +1478,7 @@ export interface SignUpWithAwsMarketplaceParam {
  */
 export interface SingleTenantSettings {
     /**
-     * enable Single Tenant settings or not
+     * enable SaaS Infrastructure Management settings or not
      * @type {boolean}
      * @memberof SingleTenantSettings
      */
@@ -2169,7 +2169,7 @@ export interface UpdateSignInSettingsParam {
  */
 export interface UpdateSingleTenantSettingsParam {
     /**
-     * enable Single Tenant settings or not
+     * enable SaaS Infrastructure Management settings or not
      * @type {boolean}
      * @memberof UpdateSingleTenantSettingsParam
      */
@@ -4419,22 +4419,22 @@ export declare class SaasUserApi extends BaseAPI {
  */
 export declare const SingleTenantApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * Get the CloudFormation stack activation link for Single Tenant.
-     * @summary Get CloudFormation Stack Launch Link For Single Tenant
+     * Get the CloudFormation stack activation link for SaaS Infrastructure Management.
+     * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCloudFormationLaunchStackLinkForSingleTenant: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      *
-     * @summary Retrieve the settings of the single tenant.
+     * @summary Retrieve the settings of the SaaS Infrastructure Management.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getSingleTenantSettings: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled.
-     * @summary Update configuration information for single-tenant functionality
+     * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled.
+     * @summary Update configuration information for SaaS Infrastructure Management
      * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4447,22 +4447,22 @@ export declare const SingleTenantApiAxiosParamCreator: (configuration?: Configur
  */
 export declare const SingleTenantApiFp: (configuration?: Configuration) => {
     /**
-     * Get the CloudFormation stack activation link for Single Tenant.
-     * @summary Get CloudFormation Stack Launch Link For Single Tenant
+     * Get the CloudFormation stack activation link for SaaS Infrastructure Management.
+     * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCloudFormationLaunchStackLinkForSingleTenant(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CloudFormationLaunchStackLink>>;
     /**
      *
-     * @summary Retrieve the settings of the single tenant.
+     * @summary Retrieve the settings of the SaaS Infrastructure Management.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getSingleTenantSettings(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SingleTenantSettings>>;
     /**
-     * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled.
-     * @summary Update configuration information for single-tenant functionality
+     * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled.
+     * @summary Update configuration information for SaaS Infrastructure Management
      * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4475,22 +4475,22 @@ export declare const SingleTenantApiFp: (configuration?: Configuration) => {
  */
 export declare const SingleTenantApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
-     * Get the CloudFormation stack activation link for Single Tenant.
-     * @summary Get CloudFormation Stack Launch Link For Single Tenant
+     * Get the CloudFormation stack activation link for SaaS Infrastructure Management.
+     * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getCloudFormationLaunchStackLinkForSingleTenant(options?: any): AxiosPromise<CloudFormationLaunchStackLink>;
     /**
      *
-     * @summary Retrieve the settings of the single tenant.
+     * @summary Retrieve the settings of the SaaS Infrastructure Management.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     getSingleTenantSettings(options?: any): AxiosPromise<SingleTenantSettings>;
     /**
-     * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled.
-     * @summary Update configuration information for single-tenant functionality
+     * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled.
+     * @summary Update configuration information for SaaS Infrastructure Management
      * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -4505,8 +4505,8 @@ export declare const SingleTenantApiFactory: (configuration?: Configuration, bas
  */
 export declare class SingleTenantApi extends BaseAPI {
     /**
-     * Get the CloudFormation stack activation link for Single Tenant.
-     * @summary Get CloudFormation Stack Launch Link For Single Tenant
+     * Get the CloudFormation stack activation link for SaaS Infrastructure Management.
+     * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SingleTenantApi
@@ -4514,15 +4514,15 @@ export declare class SingleTenantApi extends BaseAPI {
     getCloudFormationLaunchStackLinkForSingleTenant(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CloudFormationLaunchStackLink, any>>;
     /**
      *
-     * @summary Retrieve the settings of the single tenant.
+     * @summary Retrieve the settings of the SaaS Infrastructure Management.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SingleTenantApi
      */
     getSingleTenantSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SingleTenantSettings, any>>;
     /**
-     * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled.
-     * @summary Update configuration information for single-tenant functionality
+     * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled.
+     * @summary Update configuration information for SaaS Infrastructure Management
      * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
