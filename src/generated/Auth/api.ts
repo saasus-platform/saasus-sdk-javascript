@@ -1521,7 +1521,7 @@ export interface SignUpWithAwsMarketplaceParam {
  */
 export interface SingleTenantSettings {
     /**
-     * enable Single Tenant settings or not
+     * enable SaaS Infrastructure Management settings or not
      * @type {boolean}
      * @memberof SingleTenantSettings
      */
@@ -2205,7 +2205,7 @@ export interface UpdateSignInSettingsParam {
  */
 export interface UpdateSingleTenantSettingsParam {
     /**
-     * enable Single Tenant settings or not
+     * enable SaaS Infrastructure Management settings or not
      * @type {boolean}
      * @memberof UpdateSingleTenantSettingsParam
      */
@@ -6539,8 +6539,8 @@ export class SaasUserApi extends BaseAPI {
 export const SingleTenantApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Get the CloudFormation stack activation link for Single Tenant. 
-         * @summary Get CloudFormation Stack Launch Link For Single Tenant
+         * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+         * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6574,7 +6574,7 @@ export const SingleTenantApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Retrieve the settings of the single tenant.
+         * @summary Retrieve the settings of the SaaS Infrastructure Management.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6607,8 +6607,8 @@ export const SingleTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-         * @summary Update configuration information for single-tenant functionality
+         * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+         * @summary Update configuration information for SaaS Infrastructure Management
          * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6655,8 +6655,8 @@ export const SingleTenantApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SingleTenantApiAxiosParamCreator(configuration)
     return {
         /**
-         * Get the CloudFormation stack activation link for Single Tenant. 
-         * @summary Get CloudFormation Stack Launch Link For Single Tenant
+         * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+         * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6666,7 +6666,7 @@ export const SingleTenantApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve the settings of the single tenant.
+         * @summary Retrieve the settings of the SaaS Infrastructure Management.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6675,8 +6675,8 @@ export const SingleTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-         * @summary Update configuration information for single-tenant functionality
+         * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+         * @summary Update configuration information for SaaS Infrastructure Management
          * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6696,8 +6696,8 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
     const localVarFp = SingleTenantApiFp(configuration)
     return {
         /**
-         * Get the CloudFormation stack activation link for Single Tenant. 
-         * @summary Get CloudFormation Stack Launch Link For Single Tenant
+         * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+         * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6706,7 +6706,7 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
-         * @summary Retrieve the settings of the single tenant.
+         * @summary Retrieve the settings of the SaaS Infrastructure Management.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6714,8 +6714,8 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.getSingleTenantSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-         * @summary Update configuration information for single-tenant functionality
+         * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+         * @summary Update configuration information for SaaS Infrastructure Management
          * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6734,8 +6734,8 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
  */
 export class SingleTenantApi extends BaseAPI {
     /**
-     * Get the CloudFormation stack activation link for Single Tenant. 
-     * @summary Get CloudFormation Stack Launch Link For Single Tenant
+     * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+     * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SingleTenantApi
@@ -6746,7 +6746,7 @@ export class SingleTenantApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve the settings of the single tenant.
+     * @summary Retrieve the settings of the SaaS Infrastructure Management.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SingleTenantApi
@@ -6756,8 +6756,8 @@ export class SingleTenantApi extends BaseAPI {
     }
 
     /**
-     * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-     * @summary Update configuration information for single-tenant functionality
+     * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+     * @summary Update configuration information for SaaS Infrastructure Management
      * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
