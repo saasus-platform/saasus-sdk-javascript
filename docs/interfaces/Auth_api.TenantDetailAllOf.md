@@ -29,7 +29,7 @@ TenantDetailAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1811](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1811)
+[src/generated/Auth/api.ts:1946](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1946)
 
 ___
 
@@ -45,4 +45,4 @@ TenantDetailAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1805](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1805)
+[src/generated/Auth/api.ts:1940](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1940)

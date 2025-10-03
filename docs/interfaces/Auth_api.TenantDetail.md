@@ -45,7 +45,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1750](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1750)
+[src/generated/Auth/api.ts:1885](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1885)
 
 ___
 
@@ -61,7 +61,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1756](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1756)
+[src/generated/Auth/api.ts:1891](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1891)
 
 ___
 
@@ -75,7 +75,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1738](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1738)
+[src/generated/Auth/api.ts:1873](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1873)
 
 ___
 
@@ -91,7 +91,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1720](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1720)
+[src/generated/Auth/api.ts:1855](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1855)
 
 ___
 
@@ -107,7 +107,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1714](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1714)
+[src/generated/Auth/api.ts:1849](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1849)
 
 ___
 
@@ -123,7 +123,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1786](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1786)
+[src/generated/Auth/api.ts:1921](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1921)
 
 ___
 
@@ -137,7 +137,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1726](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1726)
+[src/generated/Auth/api.ts:1861](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1861)
 
 ___
 
@@ -153,7 +153,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1744](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1744)
+[src/generated/Auth/api.ts:1879](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1879)
 
 ___
 
@@ -167,7 +167,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1762](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1762)
+[src/generated/Auth/api.ts:1897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1897)
 
 ___
 
@@ -181,7 +181,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1774](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1774)
+[src/generated/Auth/api.ts:1909](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1909)
 
 ___
 
@@ -197,7 +197,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1792](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1792)
+[src/generated/Auth/api.ts:1927](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1927)
 
 ___
 
@@ -211,7 +211,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1732](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1732)
+[src/generated/Auth/api.ts:1867](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1867)
 
 ___
 
@@ -225,7 +225,7 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1780](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1780)
+[src/generated/Auth/api.ts:1915](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1915)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 • `Optional` **using\_next\_plan\_from**: `number`
 
-Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.)
+This parameter is set when reserving a pricing plan change for a future date and time. It is not required for immediate application. When specifying the next pricing plan start date and time, please specify a date and time at least 5 minutes after the current time. Note for Stripe integration: By specifying the beginning of the current month (00:00 UTC) as the start date and time, you can create a subscription that starts from the first day of that month. (Example: To specify January 1, 2023 00:00 UTC → 1672531200)
 
 **`Memberof`**
 
@@ -241,4 +241,4 @@ TenantDetail
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1768](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1768)
+[src/generated/Auth/api.ts:1903](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1903)
