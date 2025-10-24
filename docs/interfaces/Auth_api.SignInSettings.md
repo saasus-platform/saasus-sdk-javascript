@@ -32,7 +32,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1471](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1471)
+[src/generated/Auth/api.ts:1606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1606)
 
 ___
 
@@ -46,7 +46,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1453](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1453)
+[src/generated/Auth/api.ts:1588](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1588)
 
 ___
 
@@ -60,7 +60,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1483](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1483)
+[src/generated/Auth/api.ts:1618](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1618)
 
 ___
 
@@ -74,7 +74,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1459](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1459)
+[src/generated/Auth/api.ts:1594](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1594)
 
 ___
 
@@ -88,7 +88,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1447](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1447)
+[src/generated/Auth/api.ts:1582](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1582)
 
 ___
 
@@ -102,7 +102,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1465)
+[src/generated/Auth/api.ts:1600](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1600)
 
 ___
 
@@ -116,4 +116,4 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1477](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1477)
+[src/generated/Auth/api.ts:1612](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1612)

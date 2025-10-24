@@ -28,4 +28,4 @@ Envs
 
 #### Defined in
 
-[src/generated/Auth/api.ts:703](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L703)
+[src/generated/Auth/api.ts:731](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L731)
