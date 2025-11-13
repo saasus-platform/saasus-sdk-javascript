@@ -265,6 +265,34 @@ export interface BillingInfo {
     'invoice_language': InvoiceLanguage;
 }
 /**
+ * Challenge name
+ * @export
+ * @enum {string}
+ */
+
+export const ChallengeName = {
+    SmsMfa: 'SMS_MFA',
+    EmailOtp: 'EMAIL_OTP',
+    SoftwareTokenMfa: 'SOFTWARE_TOKEN_MFA',
+    SelectMfaType: 'SELECT_MFA_TYPE',
+    MfaSetup: 'MFA_SETUP',
+    PasswordVerifier: 'PASSWORD_VERIFIER',
+    CustomChallenge: 'CUSTOM_CHALLENGE',
+    SelectChallenge: 'SELECT_CHALLENGE',
+    DeviceSrpAuth: 'DEVICE_SRP_AUTH',
+    DevicePasswordVerifier: 'DEVICE_PASSWORD_VERIFIER',
+    AdminNoSrpAuth: 'ADMIN_NO_SRP_AUTH',
+    NewPasswordRequired: 'NEW_PASSWORD_REQUIRED',
+    SmsOtp: 'SMS_OTP',
+    Password: 'PASSWORD',
+    WebAuthn: 'WEB_AUTHN',
+    PasswordSrp: 'PASSWORD_SRP'
+} as const;
+
+export type ChallengeName = typeof ChallengeName[keyof typeof ChallengeName];
+
+
+/**
  * 
  * @export
  * @interface ClientSecret
@@ -1196,7 +1224,7 @@ export interface PlanReservation {
      */
     'next_plan_id'?: string;
     /**
-     * Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.) 
+     * This parameter is set when reserving a pricing plan change for a future date and time. It is not required for immediate application. When specifying the next pricing plan start date and time, please specify a date and time at least 5 minutes after the current time. Note for Stripe integration: By specifying the beginning of the current month (00:00 UTC) as the start date and time, you can create a subscription that starts from the first day of that month. (Example: To specify January 1, 2023 00:00 UTC → 1672531200) 
      * @type {number}
      * @memberof PlanReservation
      */
@@ -1326,6 +1354,62 @@ export interface ResendSignUpConfirmationEmailParam {
     'email': string;
 }
 /**
+ * Parameters required to respond to a sign-in challenge 
+ * @export
+ * @interface RespondToSignInChallengeParam
+ */
+export interface RespondToSignInChallengeParam {
+    /**
+     * 
+     * @type {ChallengeName}
+     * @memberof RespondToSignInChallengeParam
+     */
+    'challenge_name': ChallengeName;
+    /**
+     * Responses to the challenge. The required responses vary depending on the challenge_name. 
+     * @type {{ [key: string]: string; }}
+     * @memberof RespondToSignInChallengeParam
+     */
+    'challenge_responses'?: { [key: string]: string; };
+    /**
+     * Session identifier for the challenge. 
+     * @type {string}
+     * @memberof RespondToSignInChallengeParam
+     */
+    'session'?: string;
+}
+/**
+ * Result returned after responding to a sign-in challenge 
+ * @export
+ * @interface RespondToSignInChallengeResult
+ */
+export interface RespondToSignInChallengeResult {
+    /**
+     * 
+     * @type {Credentials}
+     * @memberof RespondToSignInChallengeResult
+     */
+    'credentials'?: Credentials;
+    /**
+     * 
+     * @type {ChallengeName}
+     * @memberof RespondToSignInChallengeResult
+     */
+    'challenge_name'?: ChallengeName;
+    /**
+     * Parameters required for the next challenge. 
+     * @type {{ [key: string]: string; }}
+     * @memberof RespondToSignInChallengeResult
+     */
+    'challenge_parameters'?: { [key: string]: string; };
+    /**
+     * Session identifier for the challenge. This session should be passed to the next call to RespondToSignInChallenge if another challenge is required. 
+     * @type {string}
+     * @memberof RespondToSignInChallengeResult
+     */
+    'session'?: string;
+}
+/**
  * role info
  * @export
  * @interface Role
@@ -1434,6 +1518,57 @@ export interface SelfRegist {
     'enable': boolean;
 }
 /**
+ * Parameters required for user sign-in The required parameters vary depending on the sign_in_flow. 
+ * @export
+ * @interface SignInParam
+ */
+export interface SignInParam {
+    /**
+     * The sign-in flow to use for authentication. Currently, only USER_SRP_AUTH is supported. 
+     * @type {string}
+     * @memberof SignInParam
+     */
+    'sign_in_flow': SignInParamSignInFlowEnum;
+    /**
+     * The required parameters vary depending on the sign_in_flow. USER_SRP_AUTH:   USERNAME: email address   SRP_A: SRP A value 
+     * @type {{ [key: string]: string; }}
+     * @memberof SignInParam
+     */
+    'sign_in_parameters'?: { [key: string]: string; };
+}
+
+export const SignInParamSignInFlowEnum = {
+    UserSrpAuth: 'USER_SRP_AUTH'
+} as const;
+
+export type SignInParamSignInFlowEnum = typeof SignInParamSignInFlowEnum[keyof typeof SignInParamSignInFlowEnum];
+
+/**
+ * Result returned after a sign-in attempt 
+ * @export
+ * @interface SignInResult
+ */
+export interface SignInResult {
+    /**
+     * 
+     * @type {ChallengeName}
+     * @memberof SignInResult
+     */
+    'challenge_name'?: ChallengeName;
+    /**
+     * Parameters required to complete the challenge 
+     * @type {{ [key: string]: string; }}
+     * @memberof SignInResult
+     */
+    'challenge_parameters'?: { [key: string]: string; };
+    /**
+     * Session identifier for the challenge. This session should be passed to the next call to RespondToSignInChallenge if another challenge is required. 
+     * @type {string}
+     * @memberof SignInResult
+     */
+    'session'?: string;
+}
+/**
  * 
  * @export
  * @interface SignInSettings
@@ -1521,7 +1656,7 @@ export interface SignUpWithAwsMarketplaceParam {
  */
 export interface SingleTenantSettings {
     /**
-     * enable Single Tenant settings or not
+     * enable SaaS Infrastructure Management settings or not
      * @type {boolean}
      * @memberof SingleTenantSettings
      */
@@ -1632,7 +1767,7 @@ export interface Tenant {
      */
     'next_plan_id'?: string;
     /**
-     * Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.) 
+     * This parameter is set when reserving a pricing plan change for a future date and time. It is not required for immediate application. When specifying the next pricing plan start date and time, please specify a date and time at least 5 minutes after the current time. Note for Stripe integration: By specifying the beginning of the current month (00:00 UTC) as the start date and time, you can create a subscription that starts from the first day of that month. (Example: To specify January 1, 2023 00:00 UTC → 1672531200) 
      * @type {number}
      * @memberof Tenant
      */
@@ -1761,7 +1896,7 @@ export interface TenantDetail {
      */
     'next_plan_id'?: string;
     /**
-     * Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.) 
+     * This parameter is set when reserving a pricing plan change for a future date and time. It is not required for immediate application. When specifying the next pricing plan start date and time, please specify a date and time at least 5 minutes after the current time. Note for Stripe integration: By specifying the beginning of the current month (00:00 UTC) as the start date and time, you can create a subscription that starts from the first day of that month. (Example: To specify January 1, 2023 00:00 UTC → 1672531200) 
      * @type {number}
      * @memberof TenantDetail
      */
@@ -2154,6 +2289,12 @@ export interface UpdateSaasUserPasswordParam {
      * @memberof UpdateSaasUserPasswordParam
      */
     'password': string;
+    /**
+     * Set to true to mark the new password as a temporary password (user must change on next sign-in)
+     * @type {boolean}
+     * @memberof UpdateSaasUserPasswordParam
+     */
+    'temporary'?: boolean;
 }
 /**
  * 
@@ -2205,7 +2346,7 @@ export interface UpdateSignInSettingsParam {
  */
 export interface UpdateSingleTenantSettingsParam {
     /**
-     * enable Single Tenant settings or not
+     * enable SaaS Infrastructure Management settings or not
      * @type {boolean}
      * @memberof UpdateSingleTenantSettingsParam
      */
@@ -5456,6 +5597,82 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * Respond to a sign-in challenge. 
+         * @summary Respond to Sign In Challenge
+         * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        respondToSignInChallenge: async (respondToSignInChallengeParam?: RespondToSignInChallengeParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/sign-in/challenge`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(respondToSignInChallengeParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * A user attempts to sign in. 
+         * @summary Sign In
+         * @param {SignInParam} [signInParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signIn: async (signInParam?: SignInParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/sign-in`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(signInParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Register a new user. A temporary password will be sent to the registered email. 
          * @summary Sign Up
          * @param {SignUpParam} [signUpParam] 
@@ -5939,6 +6156,28 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Respond to a sign-in challenge. 
+         * @summary Respond to Sign In Challenge
+         * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RespondToSignInChallengeResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.respondToSignInChallenge(respondToSignInChallengeParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * A user attempts to sign in. 
+         * @summary Sign In
+         * @param {SignInParam} [signInParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async signIn(signInParam?: SignInParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignInResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.signIn(signInParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Register a new user. A temporary password will be sent to the registered email. 
          * @summary Sign Up
          * @param {SignUpParam} [signUpParam] 
@@ -6173,6 +6412,26 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
          */
         resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: any): AxiosPromise<void> {
             return localVarFp.resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Respond to a sign-in challenge. 
+         * @summary Respond to Sign In Challenge
+         * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: any): AxiosPromise<RespondToSignInChallengeResult> {
+            return localVarFp.respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * A user attempts to sign in. 
+         * @summary Sign In
+         * @param {SignInParam} [signInParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signIn(signInParam?: SignInParam, options?: any): AxiosPromise<SignInResult> {
+            return localVarFp.signIn(signInParam, options).then((request) => request(axios, basePath));
         },
         /**
          * Register a new user. A temporary password will be sent to the registered email. 
@@ -6429,6 +6688,30 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
+     * Respond to a sign-in challenge. 
+     * @summary Respond to Sign In Challenge
+     * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * A user attempts to sign in. 
+     * @summary Sign In
+     * @param {SignInParam} [signInParam] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public signIn(signInParam?: SignInParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).signIn(signInParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Register a new user. A temporary password will be sent to the registered email. 
      * @summary Sign Up
      * @param {SignUpParam} [signUpParam] 
@@ -6539,8 +6822,8 @@ export class SaasUserApi extends BaseAPI {
 export const SingleTenantApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Get the CloudFormation stack activation link for Single Tenant. 
-         * @summary Get CloudFormation Stack Launch Link For Single Tenant
+         * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+         * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6574,7 +6857,7 @@ export const SingleTenantApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Retrieve the settings of the single tenant.
+         * @summary Retrieve the settings of the SaaS Infrastructure Management.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6607,8 +6890,8 @@ export const SingleTenantApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-         * @summary Update configuration information for single-tenant functionality
+         * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+         * @summary Update configuration information for SaaS Infrastructure Management
          * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6655,8 +6938,8 @@ export const SingleTenantApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SingleTenantApiAxiosParamCreator(configuration)
     return {
         /**
-         * Get the CloudFormation stack activation link for Single Tenant. 
-         * @summary Get CloudFormation Stack Launch Link For Single Tenant
+         * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+         * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6666,7 +6949,7 @@ export const SingleTenantApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve the settings of the single tenant.
+         * @summary Retrieve the settings of the SaaS Infrastructure Management.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6675,8 +6958,8 @@ export const SingleTenantApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-         * @summary Update configuration information for single-tenant functionality
+         * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+         * @summary Update configuration information for SaaS Infrastructure Management
          * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6696,8 +6979,8 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
     const localVarFp = SingleTenantApiFp(configuration)
     return {
         /**
-         * Get the CloudFormation stack activation link for Single Tenant. 
-         * @summary Get CloudFormation Stack Launch Link For Single Tenant
+         * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+         * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6706,7 +6989,7 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
-         * @summary Retrieve the settings of the single tenant.
+         * @summary Retrieve the settings of the SaaS Infrastructure Management.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -6714,8 +6997,8 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
             return localVarFp.getSingleTenantSettings(options).then((request) => request(axios, basePath));
         },
         /**
-         * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-         * @summary Update configuration information for single-tenant functionality
+         * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+         * @summary Update configuration information for SaaS Infrastructure Management
          * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6734,8 +7017,8 @@ export const SingleTenantApiFactory = function (configuration?: Configuration, b
  */
 export class SingleTenantApi extends BaseAPI {
     /**
-     * Get the CloudFormation stack activation link for Single Tenant. 
-     * @summary Get CloudFormation Stack Launch Link For Single Tenant
+     * Get the CloudFormation stack activation link for SaaS Infrastructure Management. 
+     * @summary Get CloudFormation Stack Launch Link For SaaS Infrastructure Management
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SingleTenantApi
@@ -6746,7 +7029,7 @@ export class SingleTenantApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve the settings of the single tenant.
+     * @summary Retrieve the settings of the SaaS Infrastructure Management.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SingleTenantApi
@@ -6756,8 +7039,8 @@ export class SingleTenantApi extends BaseAPI {
     }
 
     /**
-     * Updates configuration information for single-tenant functionality Returns error if single tenant feature cannot be enabled. 
-     * @summary Update configuration information for single-tenant functionality
+     * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled. 
+     * @summary Update configuration information for SaaS Infrastructure Management
      * @param {UpdateSingleTenantSettingsParam} [updateSingleTenantSettingsParam] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
