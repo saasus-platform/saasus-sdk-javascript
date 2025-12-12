@@ -25,6 +25,7 @@
 - [BasicInfoApiFp](Auth.md#basicinfoapifp)
 - [BillingAddress](Auth.md#billingaddress)
 - [BillingInfo](Auth.md#billinginfo)
+- [ChallengeName](Auth.md#challengename)
 - [ClientSecret](Auth.md#clientsecret)
 - [CloudFormationLaunchStackLink](Auth.md#cloudformationlaunchstacklink)
 - [Configuration](Auth.md#configuration)
@@ -94,6 +95,8 @@
 - [RequestEmailUpdateParam](Auth.md#requestemailupdateparam)
 - [RequestExternalUserLinkParam](Auth.md#requestexternaluserlinkparam)
 - [ResendSignUpConfirmationEmailParam](Auth.md#resendsignupconfirmationemailparam)
+- [RespondToSignInChallengeParam](Auth.md#respondtosigninchallengeparam)
+- [RespondToSignInChallengeResult](Auth.md#respondtosigninchallengeresult)
 - [Role](Auth.md#role)
 - [RoleApi](Auth.md#roleapi)
 - [RoleApiAxiosParamCreator](Auth.md#roleapiaxiosparamcreator)
@@ -108,6 +111,9 @@
 - [SaasUserApiFp](Auth.md#saasuserapifp)
 - [SaasUsers](Auth.md#saasusers)
 - [SelfRegist](Auth.md#selfregist)
+- [SignInParam](Auth.md#signinparam)
+- [SignInParamSignInFlowEnum](Auth.md#signinparamsigninflowenum)
+- [SignInResult](Auth.md#signinresult)
 - [SignInSettings](Auth.md#signinsettings)
 - [SignUpParam](Auth.md#signupparam)
 - [SignUpWithAwsMarketplaceParam](Auth.md#signupwithawsmarketplaceparam)
@@ -148,6 +154,7 @@
 - [UpdateEnvParam](Auth.md#updateenvparam)
 - [UpdateIdentityProviderParam](Auth.md#updateidentityproviderparam)
 - [UpdateNotificationMessagesParam](Auth.md#updatenotificationmessagesparam)
+- [UpdateRoleParam](Auth.md#updateroleparam)
 - [UpdateSaasUserAttributesParam](Auth.md#updatesaasuserattributesparam)
 - [UpdateSaasUserEmailParam](Auth.md#updatesaasuseremailparam)
 - [UpdateSaasUserPasswordParam](Auth.md#updatesaasuserpasswordparam)
@@ -285,6 +292,12 @@ ___
 ### BillingInfo
 
 Re-exports [BillingInfo](../interfaces/Auth_api.BillingInfo.md)
+
+___
+
+### ChallengeName
+
+Re-exports [ChallengeName](../enums/Auth_api.ChallengeName.md)
 
 ___
 
@@ -702,6 +715,18 @@ Re-exports [ResendSignUpConfirmationEmailParam](../interfaces/Auth_api.ResendSig
 
 ___
 
+### RespondToSignInChallengeParam
+
+Re-exports [RespondToSignInChallengeParam](../interfaces/Auth_api.RespondToSignInChallengeParam.md)
+
+___
+
+### RespondToSignInChallengeResult
+
+Re-exports [RespondToSignInChallengeResult](../interfaces/Auth_api.RespondToSignInChallengeResult.md)
+
+___
+
 ### Role
 
 Re-exports [Role](../interfaces/Auth_api.Role.md)
@@ -783,6 +808,24 @@ ___
 ### SelfRegist
 
 Re-exports [SelfRegist](../interfaces/Auth_api.SelfRegist.md)
+
+___
+
+### SignInParam
+
+Re-exports [SignInParam](../interfaces/Auth_api.SignInParam.md)
+
+___
+
+### SignInParamSignInFlowEnum
+
+Re-exports [SignInParamSignInFlowEnum](Auth_api.md#signinparamsigninflowenum-1)
+
+___
+
+### SignInResult
+
+Re-exports [SignInResult](../interfaces/Auth_api.SignInResult.md)
 
 ___
 
@@ -1023,6 +1066,12 @@ ___
 ### UpdateNotificationMessagesParam
 
 Re-exports [UpdateNotificationMessagesParam](../interfaces/Auth_api.UpdateNotificationMessagesParam.md)
+
+___
+
+### UpdateRoleParam
+
+Re-exports [UpdateRoleParam](../interfaces/Auth_api.UpdateRoleParam.md)
 
 ___
 

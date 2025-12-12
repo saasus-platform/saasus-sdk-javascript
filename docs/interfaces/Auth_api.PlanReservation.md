@@ -32,7 +32,7 @@ PlanReservation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1221](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1221)
+[src/generated/Auth/api.ts:1249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1249)
 
 ___
 
@@ -46,7 +46,7 @@ PlanReservation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1197)
+[src/generated/Auth/api.ts:1225](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1225)
 
 ___
 
@@ -60,7 +60,7 @@ PlanReservation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1209](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1209)
+[src/generated/Auth/api.ts:1237](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1237)
 
 ___
 
@@ -74,7 +74,7 @@ PlanReservation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1215](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1215)
+[src/generated/Auth/api.ts:1243](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1243)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **using\_next\_plan\_from**: `number`
 
-Next billing plan start time (When using stripe, you can create a subscription that starts at the beginning of the current month by specifying 00:00 (UTC) at the beginning of the current month. Ex. 1672531200 for January 2023.)
+This parameter is set when reserving a pricing plan change for a future date and time. It is not required for immediate application. When specifying the next pricing plan start date and time, please specify a date and time at least 5 minutes after the current time. Note for Stripe integration: By specifying the beginning of the current month (00:00 UTC) as the start date and time, you can create a subscription that starts from the first day of that month. (Example: To specify January 1, 2023 00:00 UTC → 1672531200)
 
 **`Memberof`**
 
@@ -90,4 +90,4 @@ PlanReservation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1203](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1203)
+[src/generated/Auth/api.ts:1231](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1231)

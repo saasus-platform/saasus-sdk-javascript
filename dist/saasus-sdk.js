@@ -2141,6 +2141,41 @@
                     options: localVarRequestOptions,
                 };
             },
+            /**
+             * Update role display name.
+             * @summary Update Role
+             * @param {string} roleName Role name
+             * @param {UpdateRoleParam} [updateRoleParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateRole: async (roleName, updateRoleParam, options = {}) => {
+                // verify required parameter 'roleName' is not null or undefined
+                assertParamExists$3('updateRole', 'roleName', roleName);
+                const localVarPath = `/roles/{role_name}`
+                    .replace(`{${"role_name"}}`, encodeURIComponent(String(roleName)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateRoleParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
         };
     };
     /**
@@ -2180,6 +2215,18 @@
              */
             async getRoles(options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getRoles(options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Update role display name.
+             * @summary Update Role
+             * @param {string} roleName Role name
+             * @param {UpdateRoleParam} [updateRoleParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateRole(roleName, updateRoleParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateRole(roleName, updateRoleParam, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
@@ -2222,6 +2269,18 @@
          */
         getRoles(options) {
             return RoleApiFp(this.configuration).getRoles(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Update role display name.
+         * @summary Update Role
+         * @param {string} roleName Role name
+         * @param {UpdateRoleParam} [updateRoleParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof RoleApi
+         */
+        updateRole(roleName, updateRoleParam, options) {
+            return RoleApiFp(this.configuration).updateRole(roleName, updateRoleParam, options).then((request) => request(this.axios, this.basePath));
         }
     }
     /**
@@ -2640,6 +2699,68 @@
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 localVarRequestOptions.data = serializeDataIfNeeded$5(resendSignUpConfirmationEmailParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Respond to a sign-in challenge.
+             * @summary Respond to Sign In Challenge
+             * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            respondToSignInChallenge: async (respondToSignInChallengeParam, options = {}) => {
+                const localVarPath = `/sign-in/challenge`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(respondToSignInChallengeParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * A user attempts to sign in.
+             * @summary Sign In
+             * @param {SignInParam} [signInParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            signIn: async (signInParam, options = {}) => {
+                const localVarPath = `/sign-in`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(signInParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -3073,6 +3194,28 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Respond to a sign-in challenge.
+             * @summary Respond to Sign In Challenge
+             * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async respondToSignInChallenge(respondToSignInChallengeParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.respondToSignInChallenge(respondToSignInChallengeParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * A user attempts to sign in.
+             * @summary Sign In
+             * @param {SignInParam} [signInParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async signIn(signInParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.signIn(signInParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Register a new user. A temporary password will be sent to the registered email.
              * @summary Sign Up
              * @param {SignUpParam} [signUpParam]
@@ -3319,6 +3462,28 @@
          */
         resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options) {
             return SaasUserApiFp(this.configuration).resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Respond to a sign-in challenge.
+         * @summary Respond to Sign In Challenge
+         * @param {RespondToSignInChallengeParam} [respondToSignInChallengeParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        respondToSignInChallenge(respondToSignInChallengeParam, options) {
+            return SaasUserApiFp(this.configuration).respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * A user attempts to sign in.
+         * @summary Sign In
+         * @param {SignInParam} [signInParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        signIn(signInParam, options) {
+            return SaasUserApiFp(this.configuration).signIn(signInParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Register a new user. A temporary password will be sent to the registered email.
