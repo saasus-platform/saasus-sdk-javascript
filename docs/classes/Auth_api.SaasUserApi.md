@@ -43,6 +43,8 @@ SaasUserApi
 - [requestEmailUpdate](Auth_api.SaasUserApi.md#requestemailupdate)
 - [requestExternalUserLink](Auth_api.SaasUserApi.md#requestexternaluserlink)
 - [resendSignUpConfirmationEmail](Auth_api.SaasUserApi.md#resendsignupconfirmationemail)
+- [respondToSignInChallenge](Auth_api.SaasUserApi.md#respondtosigninchallenge)
+- [signIn](Auth_api.SaasUserApi.md#signin)
 - [signUp](Auth_api.SaasUserApi.md#signup)
 - [signUpWithAwsMarketplace](Auth_api.SaasUserApi.md#signupwithawsmarketplace)
 - [unlinkProvider](Auth_api.SaasUserApi.md#unlinkprovider)
@@ -76,7 +78,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -90,7 +92,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -104,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -118,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -152,7 +154,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6282)
+[src/generated/Auth/api.ts:6632](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6632)
 
 ___
 
@@ -185,7 +187,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6294](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6294)
+[src/generated/Auth/api.ts:6644](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6644)
 
 ___
 
@@ -218,7 +220,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6306)
+[src/generated/Auth/api.ts:6656](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6656)
 
 ___
 
@@ -251,7 +253,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6318)
+[src/generated/Auth/api.ts:6668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6668)
 
 ___
 
@@ -285,7 +287,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6331](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6331)
+[src/generated/Auth/api.ts:6681](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6681)
 
 ___
 
@@ -318,7 +320,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6343](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6343)
+[src/generated/Auth/api.ts:6693](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6693)
 
 ___
 
@@ -351,7 +353,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6355)
+[src/generated/Auth/api.ts:6705](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6705)
 
 ___
 
@@ -383,7 +385,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6366](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6366)
+[src/generated/Auth/api.ts:6716](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6716)
 
 ___
 
@@ -416,7 +418,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6378](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6378)
+[src/generated/Auth/api.ts:6728](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6728)
 
 ___
 
@@ -449,7 +451,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6390](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6390)
+[src/generated/Auth/api.ts:6740](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6740)
 
 ___
 
@@ -483,7 +485,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6403)
+[src/generated/Auth/api.ts:6753](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6753)
 
 ___
 
@@ -516,7 +518,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6415](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6415)
+[src/generated/Auth/api.ts:6765](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6765)
 
 ___
 
@@ -549,7 +551,73 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6427](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6427)
+[src/generated/Auth/api.ts:6777](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6777)
+
+___
+
+### respondToSignInChallenge
+
+▸ **respondToSignInChallenge**(`respondToSignInChallengeParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`\>\>
+
+Respond to a sign-in challenge.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `respondToSignInChallengeParam?` | [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md) |  |
+| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`\>\>
+
+**`Summary`**
+
+Respond to Sign In Challenge
+
+**`Throws`**
+
+**`Memberof`**
+
+SaasUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:6789](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6789)
+
+___
+
+### signIn
+
+▸ **signIn**(`signInParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`\>\>
+
+A user attempts to sign in.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `signInParam?` | [`SignInParam`](../interfaces/Auth_api.SignInParam.md) |  |
+| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`\>\>
+
+**`Summary`**
+
+Sign In
+
+**`Throws`**
+
+**`Memberof`**
+
+SaasUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:6801](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6801)
 
 ___
 
@@ -582,7 +650,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6439](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6439)
+[src/generated/Auth/api.ts:6813](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6813)
 
 ___
 
@@ -615,7 +683,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6451](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6451)
+[src/generated/Auth/api.ts:6825](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6825)
 
 ___
 
@@ -649,7 +717,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6464](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6464)
+[src/generated/Auth/api.ts:6838](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6838)
 
 ___
 
@@ -683,7 +751,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6477](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6477)
+[src/generated/Auth/api.ts:6851](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6851)
 
 ___
 
@@ -717,7 +785,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6490](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6490)
+[src/generated/Auth/api.ts:6864](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6864)
 
 ___
 
@@ -751,7 +819,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6503](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6503)
+[src/generated/Auth/api.ts:6877](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6877)
 
 ___
 
@@ -785,7 +853,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6516](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6516)
+[src/generated/Auth/api.ts:6890](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6890)
 
 ___
 
@@ -819,4 +887,4 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6529](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L6529)
+[src/generated/Auth/api.ts:6903](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L6903)

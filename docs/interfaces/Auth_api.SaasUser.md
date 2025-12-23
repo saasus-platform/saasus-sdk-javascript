@@ -34,7 +34,7 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1408](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1408)
+[src/generated/Auth/api.ts:1492](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1492)
 
 ___
 
@@ -50,7 +50,7 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1402](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1402)
+[src/generated/Auth/api.ts:1486](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1486)
 
 ___
 
@@ -64,4 +64,4 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1396](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1396)
+[src/generated/Auth/api.ts:1480](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1480)

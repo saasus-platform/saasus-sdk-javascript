@@ -13,6 +13,7 @@ UpdateSaasUserPasswordParam
 ### Properties
 
 - [password](Auth_api.UpdateSaasUserPasswordParam.md#password)
+- [temporary](Auth_api.UpdateSaasUserPasswordParam.md#temporary)
 
 ## Properties
 
@@ -28,4 +29,20 @@ UpdateSaasUserPasswordParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2156](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L2156)
+[src/generated/Auth/api.ts:2304](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2304)
+
+___
+
+### temporary
+
+• `Optional` **temporary**: `boolean`
+
+Set to true to mark the new password as a temporary password (user must change on next sign-in)
+
+**`Memberof`**
+
+UpdateSaasUserPasswordParam
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2310](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2310)

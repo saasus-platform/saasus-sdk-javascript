@@ -29,7 +29,7 @@ StripeCustomer
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1578](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1578)
+[src/generated/Auth/api.ts:1713](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1713)
 
 ___
 
@@ -45,4 +45,4 @@ StripeCustomer
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1584](https://github.com/saasus-platform/saasus-sdk-javascript/blob/2c78b0a/src/generated/Auth/api.ts#L1584)
+[src/generated/Auth/api.ts:1719](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1719)
