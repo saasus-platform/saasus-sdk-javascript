@@ -33,7 +33,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L844)
+[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L844)
 
 ___
 
@@ -47,7 +47,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:856](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L856)
+[src/generated/Auth/api.ts:856](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L856)
 
 ___
 
@@ -63,7 +63,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:862](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L862)
+[src/generated/Auth/api.ts:862](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L862)
 
 ___
 
@@ -77,7 +77,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:838](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L838)
+[src/generated/Auth/api.ts:838](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L838)
 
 ___
 
@@ -93,7 +93,7 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:850](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L850)
+[src/generated/Auth/api.ts:850](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L850)
 
 ___
 
@@ -107,4 +107,4 @@ Invitation
 
 #### Defined in
 
-[src/generated/Auth/api.ts:868](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L868)
+[src/generated/Auth/api.ts:868](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L868)
