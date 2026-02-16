@@ -15,6 +15,7 @@ SaasUser
 - [attributes](Auth_api.SaasUser.md#attributes)
 - [email](Auth_api.SaasUser.md#email)
 - [id](Auth_api.SaasUser.md#id)
+- [sign\_in\_id](Auth_api.SaasUser.md#sign_in_id)
 
 ## Properties
 
@@ -34,7 +35,7 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1492](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1492)
+[src/generated/Auth/api.ts:1560](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1560)
 
 ___
 
@@ -42,7 +43,7 @@ ___
 
 • **email**: `string`
 
-E-mail
+E-mail. For sign-in ID authentication users, this field is not set.
 
 **`Memberof`**
 
@@ -50,7 +51,7 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1486](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1486)
+[src/generated/Auth/api.ts:1548](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1548)
 
 ___
 
@@ -64,4 +65,20 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1480](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1480)
+[src/generated/Auth/api.ts:1542](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1542)
+
+___
+
+### sign\_in\_id
+
+• **sign\_in\_id**: `string`
+
+Sign-in ID. For email authentication users, this field is not set.
+
+**`Memberof`**
+
+SaasUser
+
+#### Defined in
+
+[src/generated/Auth/api.ts:1554](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1554)

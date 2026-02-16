@@ -30,7 +30,7 @@ CustomizePageProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:509](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L509)
+[src/generated/Auth/api.ts:571](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L571)
 
 ___
 
@@ -46,7 +46,7 @@ CustomizePageProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:521](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L521)
+[src/generated/Auth/api.ts:583](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L583)
 
 ___
 
@@ -62,4 +62,4 @@ CustomizePageProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:515](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L515)
+[src/generated/Auth/api.ts:577](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L577)

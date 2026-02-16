@@ -2453,7 +2453,7 @@
                 };
             },
             /**
-             * Delete all users with matching user ID from the tenant and SaaS.
+             * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
              * @summary Delete User
              * @param {string} userId User ID
              * @param {*} [options] Override http request option.
@@ -3106,7 +3106,7 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Delete all users with matching user ID from the tenant and SaaS.
+             * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
              * @summary Delete User
              * @param {string} userId User ID
              * @param {*} [options] Override http request option.
@@ -3376,7 +3376,7 @@
             return SaasUserApiFp(this.configuration).createSecretCode(userId, createSecretCodeParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Delete all users with matching user ID from the tenant and SaaS.
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.

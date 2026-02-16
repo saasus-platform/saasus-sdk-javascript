@@ -382,7 +382,7 @@ export interface ConfirmSignUpWithAwsMarketplaceParam {
     'registration_token': string;
 }
 /**
- * 
+ * Either email or sign_in_id must be specified, but not both. - If email is specified: Email authentication user will be created.   When password is not specified, a temporary password will be sent by email. - If sign_in_id is specified: Sign-in ID authentication user will be created.   When password is not specified, it will be auto-generated and returned in the response. 
  * @export
  * @interface CreateSaasUserParam
  */
@@ -392,9 +392,15 @@ export interface CreateSaasUserParam {
      * @type {string}
      * @memberof CreateSaasUserParam
      */
-    'email': string;
+    'email'?: string;
     /**
-     * Password
+     * Sign-in ID (alphanumeric and symbols -_ only, max 50 characters) 
+     * @type {string}
+     * @memberof CreateSaasUserParam
+     */
+    'sign_in_id'?: string;
+    /**
+     * Password. For email authentication, if not specified, a temporary password will be sent by email. For sign-in ID authentication, if not specified, password will be auto-generated and returned. 
      * @type {string}
      * @memberof CreateSaasUserParam
      */
@@ -439,7 +445,7 @@ export interface CreateTenantInvitationParam {
     'envs': Array<InvitedUserEnvironmentInformationInner>;
 }
 /**
- * 
+ * Either email or sign_in_id must be specified, but not both. 
  * @export
  * @interface CreateTenantUserParam
  */
@@ -449,7 +455,13 @@ export interface CreateTenantUserParam {
      * @type {string}
      * @memberof CreateTenantUserParam
      */
-    'email': string;
+    'email'?: string;
+    /**
+     * Sign-in ID (alphanumeric and symbols -_ only, max 50 characters) 
+     * @type {string}
+     * @memberof CreateTenantUserParam
+     */
+    'sign_in_id'?: string;
     /**
      * Attribute information (Get information set by defining user attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
@@ -469,6 +481,56 @@ export interface CreateTenantUserRolesParam {
      * @memberof CreateTenantUserRolesParam
      */
     'role_names': Array<string>;
+}
+/**
+ * 
+ * @export
+ * @interface CreatedSaasUser
+ */
+export interface CreatedSaasUser {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'id': string;
+    /**
+     * E-mail. For sign-in ID authentication users, this field is not set. 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is not set. 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'sign_in_id': string;
+    /**
+     * Attribute information 
+     * @type {{ [key: string]: any; }}
+     * @memberof CreatedSaasUser
+     */
+    'attributes': { [key: string]: any; };
+    /**
+     * Auto-generated password (only when sign_in_id authentication and password not specified) 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'password'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CreatedSaasUserAllOf
+ */
+export interface CreatedSaasUserAllOf {
+    /**
+     * Auto-generated password (only when sign_in_id authentication and password not specified) 
+     * @type {string}
+     * @memberof CreatedSaasUserAllOf
+     */
+    'password'?: string;
 }
 /**
  * 
@@ -1479,11 +1541,17 @@ export interface SaasUser {
      */
     'id': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is not set. 
      * @type {string}
      * @memberof SaasUser
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is not set. 
+     * @type {string}
+     * @memberof SaasUser
+     */
+    'sign_in_id': string;
     /**
      * Attribute information 
      * @type {{ [key: string]: any; }}
@@ -2465,11 +2533,17 @@ export interface User {
      */
     'tenant_name': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is not set. 
      * @type {string}
      * @memberof User
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is not set. 
+     * @type {string}
+     * @memberof User
+     */
+    'sign_in_id': string;
     /**
      * Attribute information (Get information set by defining user attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
@@ -5384,7 +5458,7 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Delete all users with matching user ID from the tenant and SaaS. 
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
@@ -6142,7 +6216,7 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>> {
+        async createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreatedSaasUser>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSaasUser(createSaasUserParam, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -6159,13 +6233,13 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Delete all users with matching user ID from the tenant and SaaS. 
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSaasUser(userId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -6410,7 +6484,7 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<SaasUser> {
+        createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<CreatedSaasUser> {
             return localVarFp.createSaasUser(createSaasUserParam, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6425,13 +6499,13 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createSecretCode(userId, createSecretCodeParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * Delete all users with matching user ID from the tenant and SaaS. 
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSaasUser(userId: string, options?: any): AxiosPromise<void> {
+        deleteSaasUser(userId: string, options?: any): AxiosPromise<UserInfo> {
             return localVarFp.deleteSaasUser(userId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6683,7 +6757,7 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * Delete all users with matching user ID from the tenant and SaaS. 
+     * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
      * @summary Delete User
      * @param {string} userId User ID
      * @param {*} [options] Override http request option.

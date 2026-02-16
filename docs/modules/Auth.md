@@ -38,6 +38,8 @@
 - [CreateTenantInvitationParam](Auth.md#createtenantinvitationparam)
 - [CreateTenantUserParam](Auth.md#createtenantuserparam)
 - [CreateTenantUserRolesParam](Auth.md#createtenantuserrolesparam)
+- [CreatedSaasUser](Auth.md#createdsaasuser)
+- [CreatedSaasUserAllOf](Auth.md#createdsaasuserallof)
 - [CredentialApi](Auth.md#credentialapi)
 - [CredentialApiAxiosParamCreator](Auth.md#credentialapiaxiosparamcreator)
 - [CredentialApiFactory](Auth.md#credentialapifactory)
@@ -370,6 +372,18 @@ ___
 ### CreateTenantUserRolesParam
 
 Re-exports [CreateTenantUserRolesParam](../interfaces/Auth_api.CreateTenantUserRolesParam.md)
+
+___
+
+### CreatedSaasUser
+
+Re-exports [CreatedSaasUser](../interfaces/Auth_api.CreatedSaasUser.md)
+
+___
+
+### CreatedSaasUserAllOf
+
+Re-exports [CreatedSaasUserAllOf](../interfaces/Auth_api.CreatedSaasUserAllOf.md)
 
 ___
 

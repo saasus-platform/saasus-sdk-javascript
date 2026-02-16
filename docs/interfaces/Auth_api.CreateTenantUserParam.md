@@ -4,6 +4,8 @@
 
 [Auth/api](../modules/Auth_api.md).CreateTenantUserParam
 
+Either email or sign_in_id must be specified, but not both.
+
 **`Export`**
 
 CreateTenantUserParam
@@ -14,6 +16,7 @@ CreateTenantUserParam
 
 - [attributes](Auth_api.CreateTenantUserParam.md#attributes)
 - [email](Auth_api.CreateTenantUserParam.md#email)
+- [sign\_in\_id](Auth_api.CreateTenantUserParam.md#sign_in_id)
 
 ## Properties
 
@@ -33,13 +36,13 @@ CreateTenantUserParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:458](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L458)
+[src/generated/Auth/api.ts:470](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L470)
 
 ___
 
 ### email
 
-• **email**: `string`
+• `Optional` **email**: `string`
 
 E-mail
 
@@ -49,4 +52,20 @@ CreateTenantUserParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:452](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L452)
+[src/generated/Auth/api.ts:458](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L458)
+
+___
+
+### sign\_in\_id
+
+• `Optional` **sign\_in\_id**: `string`
+
+Sign-in ID (alphanumeric and symbols -_ only, max 50 characters)
+
+**`Memberof`**
+
+CreateTenantUserParam
+
+#### Defined in
+
+[src/generated/Auth/api.ts:464](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L464)

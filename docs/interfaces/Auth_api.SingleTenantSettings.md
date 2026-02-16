@@ -32,7 +32,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1675](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1675)
+[src/generated/Auth/api.ts:1743](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1743)
 
 ___
 
@@ -48,7 +48,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1681](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1681)
+[src/generated/Auth/api.ts:1749](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1749)
 
 ___
 
@@ -64,7 +64,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1663)
+[src/generated/Auth/api.ts:1731](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1731)
 
 ___
 
@@ -80,7 +80,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1669)
+[src/generated/Auth/api.ts:1737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1737)
 
 ___
 
@@ -96,4 +96,4 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1687](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1687)
+[src/generated/Auth/api.ts:1755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1755)
