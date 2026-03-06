@@ -26,4 +26,4 @@ Plans
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:192](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/AwsMarketplace/api.ts#L192)
+[src/generated/AwsMarketplace/api.ts:192](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L192)

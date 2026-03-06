@@ -31,7 +31,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2347](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2347)
+[src/generated/Auth/api.ts:2543](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2543)
 
 ___
 
@@ -45,7 +45,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2329](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2329)
+[src/generated/Auth/api.ts:2525](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2525)
 
 ___
 
@@ -59,7 +59,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2335](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2335)
+[src/generated/Auth/api.ts:2531](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2531)
 
 ___
 
@@ -73,7 +73,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2323](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2323)
+[src/generated/Auth/api.ts:2519](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2519)
 
 ___
 
@@ -87,7 +87,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2341](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2341)
+[src/generated/Auth/api.ts:2537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2537)
 
 ___
 
@@ -101,4 +101,4 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2353](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2353)
+[src/generated/Auth/api.ts:2549](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2549)

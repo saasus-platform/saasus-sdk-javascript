@@ -35,7 +35,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1138](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1138)
+[src/generated/Auth/api.ts:1297](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1297)
 
 ___
 
@@ -51,7 +51,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1144](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1144)
+[src/generated/Auth/api.ts:1303](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1303)
 
 ___
 
@@ -67,7 +67,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1150](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1150)
+[src/generated/Auth/api.ts:1309](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1309)
 
 ___
 
@@ -83,7 +83,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1156](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1156)
+[src/generated/Auth/api.ts:1315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1315)
 
 ___
 
@@ -99,7 +99,7 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1132](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1132)
+[src/generated/Auth/api.ts:1291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1291)
 
 ___
 
@@ -115,4 +115,4 @@ PasswordPolicy
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1162](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1162)
+[src/generated/Auth/api.ts:1321](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1321)

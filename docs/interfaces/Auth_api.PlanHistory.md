@@ -32,7 +32,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1212)
+[src/generated/Auth/api.ts:1371](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1371)
 
 ___
 
@@ -48,7 +48,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1194](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1194)
+[src/generated/Auth/api.ts:1353](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1353)
 
 ___
 
@@ -62,7 +62,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1188](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1188)
+[src/generated/Auth/api.ts:1347](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1347)
 
 ___
 
@@ -76,7 +76,7 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1206](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1206)
+[src/generated/Auth/api.ts:1365](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1365)
 
 ___
 
@@ -90,4 +90,4 @@ PlanHistory
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1200](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1200)
+[src/generated/Auth/api.ts:1359](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1359)

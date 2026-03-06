@@ -31,7 +31,7 @@ Role
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1429](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1429)
+[src/generated/Auth/api.ts:1594](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1594)
 
 ___
 
@@ -47,4 +47,4 @@ Role
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1423](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1423)
+[src/generated/Auth/api.ts:1588](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1588)

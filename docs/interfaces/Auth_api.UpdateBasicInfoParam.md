@@ -30,7 +30,7 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2054](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2054)
+[src/generated/Auth/api.ts:2225](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2225)
 
 ___
 
@@ -46,7 +46,7 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2060](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2060)
+[src/generated/Auth/api.ts:2231](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2231)
 
 ___
 
@@ -62,4 +62,4 @@ UpdateBasicInfoParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2066](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2066)
+[src/generated/Auth/api.ts:2237](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2237)

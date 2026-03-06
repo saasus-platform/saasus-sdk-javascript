@@ -319,6 +319,50 @@ export interface CloudFormationLaunchStackLink {
     'link': string;
 }
 /**
+ * Parameters required to confirm a device. 
+ * @export
+ * @interface ConfirmDeviceParam
+ */
+export interface ConfirmDeviceParam {
+    /**
+     * A valid access token.
+     * @type {string}
+     * @memberof ConfirmDeviceParam
+     */
+    'access_token': string;
+    /**
+     * The unique identifier of the device.
+     * @type {string}
+     * @memberof ConfirmDeviceParam
+     */
+    'device_key': string;
+    /**
+     * A friendly name for the device.
+     * @type {string}
+     * @memberof ConfirmDeviceParam
+     */
+    'device_name'?: string;
+    /**
+     * 
+     * @type {DeviceSecretVerifierConfig}
+     * @memberof ConfirmDeviceParam
+     */
+    'device_secret_verifier_config'?: DeviceSecretVerifierConfig;
+}
+/**
+ * Result returned after confirming a device. 
+ * @export
+ * @interface ConfirmDeviceResult
+ */
+export interface ConfirmDeviceResult {
+    /**
+     * When true, the user must confirm that they want to remember the device. When false, the device is immediately set as remembered. 
+     * @type {boolean}
+     * @memberof ConfirmDeviceResult
+     */
+    'user_confirmation_necessary': boolean;
+}
+/**
  * 
  * @export
  * @interface ConfirmEmailUpdateParam
@@ -382,7 +426,7 @@ export interface ConfirmSignUpWithAwsMarketplaceParam {
     'registration_token': string;
 }
 /**
- * 
+ * Either email or sign_in_id must be specified, but not both. - If email is specified: Email authentication user will be created.   When password is not specified, a temporary password will be sent by email. - If sign_in_id is specified: Sign-in ID authentication user will be created.   When password is not specified, it will be auto-generated and returned in the response. 
  * @export
  * @interface CreateSaasUserParam
  */
@@ -392,9 +436,15 @@ export interface CreateSaasUserParam {
      * @type {string}
      * @memberof CreateSaasUserParam
      */
-    'email': string;
+    'email'?: string;
     /**
-     * Password
+     * Sign-in ID (alphanumeric and symbols -_ only, max 50 characters) 
+     * @type {string}
+     * @memberof CreateSaasUserParam
+     */
+    'sign_in_id'?: string;
+    /**
+     * Password. For email authentication, if not specified, a temporary password will be sent by email. For sign-in ID authentication, if not specified, password will be auto-generated and returned. 
      * @type {string}
      * @memberof CreateSaasUserParam
      */
@@ -439,7 +489,7 @@ export interface CreateTenantInvitationParam {
     'envs': Array<InvitedUserEnvironmentInformationInner>;
 }
 /**
- * 
+ * Either email or sign_in_id must be specified, but not both. 
  * @export
  * @interface CreateTenantUserParam
  */
@@ -449,7 +499,13 @@ export interface CreateTenantUserParam {
      * @type {string}
      * @memberof CreateTenantUserParam
      */
-    'email': string;
+    'email'?: string;
+    /**
+     * Sign-in ID (alphanumeric and symbols -_ only, max 50 characters) 
+     * @type {string}
+     * @memberof CreateTenantUserParam
+     */
+    'sign_in_id'?: string;
     /**
      * Attribute information (Get information set by defining user attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
@@ -469,6 +525,56 @@ export interface CreateTenantUserRolesParam {
      * @memberof CreateTenantUserRolesParam
      */
     'role_names': Array<string>;
+}
+/**
+ * 
+ * @export
+ * @interface CreatedSaasUser
+ */
+export interface CreatedSaasUser {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'id': string;
+    /**
+     * E-mail. For sign-in ID authentication users, this field is not set. 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is not set. 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'sign_in_id': string;
+    /**
+     * Attribute information 
+     * @type {{ [key: string]: any; }}
+     * @memberof CreatedSaasUser
+     */
+    'attributes': { [key: string]: any; };
+    /**
+     * Auto-generated password (only when sign_in_id authentication and password not specified) 
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'password'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CreatedSaasUserAllOf
+ */
+export interface CreatedSaasUserAllOf {
+    /**
+     * Auto-generated password (only when sign_in_id authentication and password not specified) 
+     * @type {string}
+     * @memberof CreatedSaasUserAllOf
+     */
+    'password'?: string;
 }
 /**
  * 
@@ -660,6 +766,39 @@ export const DeviceConfigurationDeviceRememberingEnum = {
 
 export type DeviceConfigurationDeviceRememberingEnum = typeof DeviceConfigurationDeviceRememberingEnum[keyof typeof DeviceConfigurationDeviceRememberingEnum];
 
+/**
+ * The status of whether a device is remembered. \"remembered\" enables device authentication, \"not_remembered\" disables it. 
+ * @export
+ * @enum {string}
+ */
+
+export const DeviceRememberedStatus = {
+    Remembered: 'remembered',
+    NotRemembered: 'not_remembered'
+} as const;
+
+export type DeviceRememberedStatus = typeof DeviceRememberedStatus[keyof typeof DeviceRememberedStatus];
+
+
+/**
+ * The configuration of the device secret verifier. 
+ * @export
+ * @interface DeviceSecretVerifierConfig
+ */
+export interface DeviceSecretVerifierConfig {
+    /**
+     * A password verifier for a user\'s device. Used in SRP authentication.
+     * @type {string}
+     * @memberof DeviceSecretVerifierConfig
+     */
+    'password_verifier'?: string;
+    /**
+     * The salt for SRP authentication with the user\'s device.
+     * @type {string}
+     * @memberof DeviceSecretVerifierConfig
+     */
+    'salt'?: string;
+}
 /**
  * 
  * @export
@@ -1027,7 +1166,8 @@ export interface MfaPreference {
 }
 
 export const MfaPreferenceMethodEnum = {
-    SoftwareToken: 'softwareToken'
+    SoftwareToken: 'softwareToken',
+    Email: 'email'
 } as const;
 
 export type MfaPreferenceMethodEnum = typeof MfaPreferenceMethodEnum[keyof typeof MfaPreferenceMethodEnum];
@@ -1056,6 +1196,25 @@ export interface ModelError {
      * @memberof ModelError
      */
     'data'?: { [key: string]: any; };
+}
+/**
+ * Metadata for a new device registered during authentication. 
+ * @export
+ * @interface NewDeviceMetadata
+ */
+export interface NewDeviceMetadata {
+    /**
+     * Device key identifier
+     * @type {string}
+     * @memberof NewDeviceMetadata
+     */
+    'device_key'?: string;
+    /**
+     * Device group key identifier
+     * @type {string}
+     * @memberof NewDeviceMetadata
+     */
+    'device_group_key'?: string;
 }
 /**
  * 
@@ -1408,6 +1567,12 @@ export interface RespondToSignInChallengeResult {
      * @memberof RespondToSignInChallengeResult
      */
     'session'?: string;
+    /**
+     * 
+     * @type {NewDeviceMetadata}
+     * @memberof RespondToSignInChallengeResult
+     */
+    'new_device_metadata'?: NewDeviceMetadata;
 }
 /**
  * role info
@@ -1479,11 +1644,17 @@ export interface SaasUser {
      */
     'id': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is not set. 
      * @type {string}
      * @memberof SaasUser
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is not set. 
+     * @type {string}
+     * @memberof SaasUser
+     */
+    'sign_in_id': string;
     /**
      * Attribute information 
      * @type {{ [key: string]: any; }}
@@ -2153,6 +2324,31 @@ export interface UpdateCustomizePagesParam {
     'password_reset_page'?: CustomizePageProps;
 }
 /**
+ * Parameters required to update a device status. 
+ * @export
+ * @interface UpdateDeviceStatusParam
+ */
+export interface UpdateDeviceStatusParam {
+    /**
+     * A valid access token.
+     * @type {string}
+     * @memberof UpdateDeviceStatusParam
+     */
+    'access_token': string;
+    /**
+     * The unique identifier of the device.
+     * @type {string}
+     * @memberof UpdateDeviceStatusParam
+     */
+    'device_key': string;
+    /**
+     * 
+     * @type {DeviceRememberedStatus}
+     * @memberof UpdateDeviceStatusParam
+     */
+    'device_remembered_status': DeviceRememberedStatus;
+}
+/**
  * 
  * @export
  * @interface UpdateEnvParam
@@ -2465,11 +2661,17 @@ export interface User {
      */
     'tenant_name': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is not set. 
      * @type {string}
      * @memberof User
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is not set. 
+     * @type {string}
+     * @memberof User
+     */
+    'sign_in_id': string;
     /**
      * Attribute information (Get information set by defining user attributes in the SaaS development console) 
      * @type {{ [key: string]: any; }}
@@ -5186,6 +5388,44 @@ export class RoleApi extends BaseAPI {
 export const SaasUserApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * Confirms a device for remembering. 
+         * @summary Confirm Device
+         * @param {ConfirmDeviceParam} [confirmDeviceParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        confirmDevice: async (confirmDeviceParam?: ConfirmDeviceParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/device/confirm`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(confirmDeviceParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Verify the code to confirm the user\'s email address update. Requires the user\'s access token. 
          * @summary Confirm User Email Update
          * @param {string} userId User ID
@@ -5384,7 +5624,7 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Delete all users with matching user ID from the tenant and SaaS. 
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
@@ -5882,6 +6122,44 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * Updates the device status. 
+         * @summary Update Device Status
+         * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDeviceStatus: async (updateDeviceStatusParam?: UpdateDeviceStatusParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/device/status`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(updateDeviceStatusParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Update the additional attributes of the SaaS user. 
          * @summary Update SaaS User Attributes
          * @param {string} userId User ID
@@ -6102,6 +6380,17 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration)
     return {
         /**
+         * Confirms a device for remembering. 
+         * @summary Confirm Device
+         * @param {ConfirmDeviceParam} [confirmDeviceParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmDeviceResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.confirmDevice(confirmDeviceParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Verify the code to confirm the user\'s email address update. Requires the user\'s access token. 
          * @summary Confirm User Email Update
          * @param {string} userId User ID
@@ -6142,7 +6431,7 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>> {
+        async createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreatedSaasUser>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSaasUser(createSaasUserParam, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -6159,13 +6448,13 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Delete all users with matching user ID from the tenant and SaaS. 
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSaasUser(userId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -6303,6 +6592,17 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Updates the device status. 
+         * @summary Update Device Status
+         * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDeviceStatus(updateDeviceStatusParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Update the additional attributes of the SaaS user. 
          * @summary Update SaaS User Attributes
          * @param {string} userId User ID
@@ -6373,6 +6673,16 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = SaasUserApiFp(configuration)
     return {
         /**
+         * Confirms a device for remembering. 
+         * @summary Confirm Device
+         * @param {ConfirmDeviceParam} [confirmDeviceParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: any): AxiosPromise<ConfirmDeviceResult> {
+            return localVarFp.confirmDevice(confirmDeviceParam, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Verify the code to confirm the user\'s email address update. Requires the user\'s access token. 
          * @summary Confirm User Email Update
          * @param {string} userId User ID
@@ -6410,7 +6720,7 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<SaasUser> {
+        createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<CreatedSaasUser> {
             return localVarFp.createSaasUser(createSaasUserParam, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6425,13 +6735,13 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createSecretCode(userId, createSecretCodeParam, options).then((request) => request(axios, basePath));
         },
         /**
-         * Delete all users with matching user ID from the tenant and SaaS. 
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSaasUser(userId: string, options?: any): AxiosPromise<void> {
+        deleteSaasUser(userId: string, options?: any): AxiosPromise<UserInfo> {
             return localVarFp.deleteSaasUser(userId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6556,6 +6866,16 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.unlinkProvider(providerName, userId, options).then((request) => request(axios, basePath));
         },
         /**
+         * Updates the device status. 
+         * @summary Update Device Status
+         * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: any): AxiosPromise<void> {
+            return localVarFp.updateDeviceStatus(updateDeviceStatusParam, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Update the additional attributes of the SaaS user. 
          * @summary Update SaaS User Attributes
          * @param {string} userId User ID
@@ -6621,6 +6941,18 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
  */
 export class SaasUserApi extends BaseAPI {
     /**
+     * Confirms a device for remembering. 
+     * @summary Confirm Device
+     * @param {ConfirmDeviceParam} [confirmDeviceParam] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).confirmDevice(confirmDeviceParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Verify the code to confirm the user\'s email address update. Requires the user\'s access token. 
      * @summary Confirm User Email Update
      * @param {string} userId User ID
@@ -6683,7 +7015,7 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
-     * Delete all users with matching user ID from the tenant and SaaS. 
+     * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion. 
      * @summary Delete User
      * @param {string} userId User ID
      * @param {*} [options] Override http request option.
@@ -6837,6 +7169,18 @@ export class SaasUserApi extends BaseAPI {
      */
     public unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig) {
         return SaasUserApiFp(this.configuration).unlinkProvider(providerName, userId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Updates the device status. 
+     * @summary Update Device Status
+     * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).updateDeviceStatus(updateDeviceStatusParam, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

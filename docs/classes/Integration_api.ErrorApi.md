@@ -56,7 +56,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +70,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/base.ts#L50)
+[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L50)
 
 ## Methods
 
@@ -130,4 +130,4 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:231](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/api.ts#L231)
+[src/generated/Integration/api.ts:231](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L231)

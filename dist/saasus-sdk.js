@@ -2290,6 +2290,37 @@
     const SaasUserApiAxiosParamCreator = function (configuration) {
         return {
             /**
+             * Confirms a device for remembering.
+             * @summary Confirm Device
+             * @param {ConfirmDeviceParam} [confirmDeviceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            confirmDevice: async (confirmDeviceParam, options = {}) => {
+                const localVarPath = `/device/confirm`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(confirmDeviceParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
              * @summary Confirm User Email Update
              * @param {string} userId User ID
@@ -2453,7 +2484,7 @@
                 };
             },
             /**
-             * Delete all users with matching user ID from the tenant and SaaS.
+             * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
              * @summary Delete User
              * @param {string} userId User ID
              * @param {*} [options] Override http request option.
@@ -2865,6 +2896,37 @@
                 };
             },
             /**
+             * Updates the device status.
+             * @summary Update Device Status
+             * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateDeviceStatus: async (updateDeviceStatusParam, options = {}) => {
+                const localVarPath = `/device/status`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateDeviceStatusParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Update the additional attributes of the SaaS user.
              * @summary Update SaaS User Attributes
              * @param {string} userId User ID
@@ -3049,6 +3111,17 @@
         const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration);
         return {
             /**
+             * Confirms a device for remembering.
+             * @summary Confirm Device
+             * @param {ConfirmDeviceParam} [confirmDeviceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async confirmDevice(confirmDeviceParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.confirmDevice(confirmDeviceParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
              * @summary Confirm User Email Update
              * @param {string} userId User ID
@@ -3106,7 +3179,7 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Delete all users with matching user ID from the tenant and SaaS.
+             * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
              * @summary Delete User
              * @param {string} userId User ID
              * @param {*} [options] Override http request option.
@@ -3250,6 +3323,17 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Updates the device status.
+             * @summary Update Device Status
+             * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateDeviceStatus(updateDeviceStatusParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateDeviceStatus(updateDeviceStatusParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Update the additional attributes of the SaaS user.
              * @summary Update SaaS User Attributes
              * @param {string} userId User ID
@@ -3319,6 +3403,17 @@
      */
     class SaasUserApi extends BaseAPI$5 {
         /**
+         * Confirms a device for remembering.
+         * @summary Confirm Device
+         * @param {ConfirmDeviceParam} [confirmDeviceParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        confirmDevice(confirmDeviceParam, options) {
+            return SaasUserApiFp(this.configuration).confirmDevice(confirmDeviceParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
          * @summary Confirm User Email Update
          * @param {string} userId User ID
@@ -3376,7 +3471,7 @@
             return SaasUserApiFp(this.configuration).createSecretCode(userId, createSecretCodeParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Delete all users with matching user ID from the tenant and SaaS.
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
@@ -3518,6 +3613,17 @@
          */
         unlinkProvider(providerName, userId, options) {
             return SaasUserApiFp(this.configuration).unlinkProvider(providerName, userId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Updates the device status.
+         * @summary Update Device Status
+         * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        updateDeviceStatus(updateDeviceStatusParam, options) {
+            return SaasUserApiFp(this.configuration).updateDeviceStatus(updateDeviceStatusParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Update the additional attributes of the SaaS user.

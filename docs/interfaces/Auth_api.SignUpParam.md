@@ -28,4 +28,4 @@ SignUpParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1631](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1631)
+[src/generated/Auth/api.ts:1802](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1802)
