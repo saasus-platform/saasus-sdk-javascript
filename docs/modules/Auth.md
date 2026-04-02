@@ -30,6 +30,8 @@
 - [CloudFormationLaunchStackLink](Auth.md#cloudformationlaunchstacklink)
 - [Configuration](Auth.md#configuration)
 - [ConfigurationParameters](Auth.md#configurationparameters)
+- [ConfirmDeviceParam](Auth.md#confirmdeviceparam)
+- [ConfirmDeviceResult](Auth.md#confirmdeviceresult)
 - [ConfirmEmailUpdateParam](Auth.md#confirmemailupdateparam)
 - [ConfirmExternalUserLinkParam](Auth.md#confirmexternaluserlinkparam)
 - [ConfirmSignUpWithAwsMarketplaceParam](Auth.md#confirmsignupwithawsmarketplaceparam)
@@ -38,6 +40,8 @@
 - [CreateTenantInvitationParam](Auth.md#createtenantinvitationparam)
 - [CreateTenantUserParam](Auth.md#createtenantuserparam)
 - [CreateTenantUserRolesParam](Auth.md#createtenantuserrolesparam)
+- [CreatedSaasUser](Auth.md#createdsaasuser)
+- [CreatedSaasUserAllOf](Auth.md#createdsaasuserallof)
 - [CredentialApi](Auth.md#credentialapi)
 - [CredentialApiAxiosParamCreator](Auth.md#credentialapiaxiosparamcreator)
 - [CredentialApiFactory](Auth.md#credentialapifactory)
@@ -50,6 +54,8 @@
 - [CustomizePages](Auth.md#customizepages)
 - [DeviceConfiguration](Auth.md#deviceconfiguration)
 - [DeviceConfigurationDeviceRememberingEnum](Auth.md#deviceconfigurationdevicerememberingenum)
+- [DeviceRememberedStatus](Auth.md#devicerememberedstatus)
+- [DeviceSecretVerifierConfig](Auth.md#devicesecretverifierconfig)
 - [DnsRecord](Auth.md#dnsrecord)
 - [DnsRecordTypeEnum](Auth.md#dnsrecordtypeenum)
 - [Env](Auth.md#env)
@@ -83,6 +89,7 @@
 - [MfaPreference](Auth.md#mfapreference)
 - [MfaPreferenceMethodEnum](Auth.md#mfapreferencemethodenum)
 - [ModelError](Auth.md#modelerror)
+- [NewDeviceMetadata](Auth.md#newdevicemetadata)
 - [NotificationMessages](Auth.md#notificationmessages)
 - [PasswordPolicy](Auth.md#passwordpolicy)
 - [PlanHistories](Auth.md#planhistories)
@@ -109,6 +116,7 @@
 - [SaasUserApiAxiosParamCreator](Auth.md#saasuserapiaxiosparamcreator)
 - [SaasUserApiFactory](Auth.md#saasuserapifactory)
 - [SaasUserApiFp](Auth.md#saasuserapifp)
+- [SaasUserResetPasswordResult](Auth.md#saasuserresetpasswordresult)
 - [SaasUsers](Auth.md#saasusers)
 - [SelfRegist](Auth.md#selfregist)
 - [SignInParam](Auth.md#signinparam)
@@ -151,6 +159,7 @@
 - [UpdateCustomizePageSettingsParam](Auth.md#updatecustomizepagesettingsparam)
 - [UpdateCustomizePageSettingsParamAllOf](Auth.md#updatecustomizepagesettingsparamallof)
 - [UpdateCustomizePagesParam](Auth.md#updatecustomizepagesparam)
+- [UpdateDeviceStatusParam](Auth.md#updatedevicestatusparam)
 - [UpdateEnvParam](Auth.md#updateenvparam)
 - [UpdateIdentityProviderParam](Auth.md#updateidentityproviderparam)
 - [UpdateNotificationMessagesParam](Auth.md#updatenotificationmessagesparam)
@@ -158,6 +167,7 @@
 - [UpdateSaasUserAttributesParam](Auth.md#updatesaasuserattributesparam)
 - [UpdateSaasUserEmailParam](Auth.md#updatesaasuseremailparam)
 - [UpdateSaasUserPasswordParam](Auth.md#updatesaasuserpasswordparam)
+- [UpdateSaasUserSignInIdParam](Auth.md#updatesaasusersigninidparam)
 - [UpdateSignInSettingsParam](Auth.md#updatesigninsettingsparam)
 - [UpdateSingleTenantSettingsParam](Auth.md#updatesingletenantsettingsparam)
 - [UpdateSoftwareTokenParam](Auth.md#updatesoftwaretokenparam)
@@ -325,6 +335,18 @@ Re-exports [ConfigurationParameters](../interfaces/Auth_configuration.Configurat
 
 ___
 
+### ConfirmDeviceParam
+
+Re-exports [ConfirmDeviceParam](../interfaces/Auth_api.ConfirmDeviceParam.md)
+
+___
+
+### ConfirmDeviceResult
+
+Re-exports [ConfirmDeviceResult](../interfaces/Auth_api.ConfirmDeviceResult.md)
+
+___
+
 ### ConfirmEmailUpdateParam
 
 Re-exports [ConfirmEmailUpdateParam](../interfaces/Auth_api.ConfirmEmailUpdateParam.md)
@@ -370,6 +392,18 @@ ___
 ### CreateTenantUserRolesParam
 
 Re-exports [CreateTenantUserRolesParam](../interfaces/Auth_api.CreateTenantUserRolesParam.md)
+
+___
+
+### CreatedSaasUser
+
+Re-exports [CreatedSaasUser](../interfaces/Auth_api.CreatedSaasUser.md)
+
+___
+
+### CreatedSaasUserAllOf
+
+Re-exports [CreatedSaasUserAllOf](../interfaces/Auth_api.CreatedSaasUserAllOf.md)
 
 ___
 
@@ -442,6 +476,18 @@ ___
 ### DeviceConfigurationDeviceRememberingEnum
 
 Re-exports [DeviceConfigurationDeviceRememberingEnum](Auth_api.md#deviceconfigurationdevicerememberingenum-1)
+
+___
+
+### DeviceRememberedStatus
+
+Re-exports [DeviceRememberedStatus](../enums/Auth_api.DeviceRememberedStatus.md)
+
+___
+
+### DeviceSecretVerifierConfig
+
+Re-exports [DeviceSecretVerifierConfig](../interfaces/Auth_api.DeviceSecretVerifierConfig.md)
 
 ___
 
@@ -643,6 +689,12 @@ Re-exports [ModelError](../interfaces/Auth_api.ModelError.md)
 
 ___
 
+### NewDeviceMetadata
+
+Re-exports [NewDeviceMetadata](../interfaces/Auth_api.NewDeviceMetadata.md)
+
+___
+
 ### NotificationMessages
 
 Re-exports [NotificationMessages](../interfaces/Auth_api.NotificationMessages.md)
@@ -796,6 +848,12 @@ ___
 ### SaasUserApiFp
 
 Re-exports [SaasUserApiFp](Auth_api.md#saasuserapifp)
+
+___
+
+### SaasUserResetPasswordResult
+
+Re-exports [SaasUserResetPasswordResult](../interfaces/Auth_api.SaasUserResetPasswordResult.md)
 
 ___
 
@@ -1051,6 +1109,12 @@ Re-exports [UpdateCustomizePagesParam](../interfaces/Auth_api.UpdateCustomizePag
 
 ___
 
+### UpdateDeviceStatusParam
+
+Re-exports [UpdateDeviceStatusParam](../interfaces/Auth_api.UpdateDeviceStatusParam.md)
+
+___
+
 ### UpdateEnvParam
 
 Re-exports [UpdateEnvParam](../interfaces/Auth_api.UpdateEnvParam.md)
@@ -1090,6 +1154,12 @@ ___
 ### UpdateSaasUserPasswordParam
 
 Re-exports [UpdateSaasUserPasswordParam](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md)
+
+___
+
+### UpdateSaasUserSignInIdParam
+
+Re-exports [UpdateSaasUserSignInIdParam](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md)
 
 ___
 

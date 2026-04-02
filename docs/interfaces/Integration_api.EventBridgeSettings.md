@@ -29,7 +29,7 @@ EventBridgeSettings
 
 #### Defined in
 
-[src/generated/Integration/api.ts:82](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/api.ts#L82)
+[src/generated/Integration/api.ts:82](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L82)
 
 ___
 
@@ -43,4 +43,4 @@ EventBridgeSettings
 
 #### Defined in
 
-[src/generated/Integration/api.ts:88](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Integration/api.ts#L88)
+[src/generated/Integration/api.ts:88](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L88)

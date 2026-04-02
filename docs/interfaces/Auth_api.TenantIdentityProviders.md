@@ -26,4 +26,4 @@ TenantIdentityProviders
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1965](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1965)
+[src/generated/Auth/api.ts:2161](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2161)

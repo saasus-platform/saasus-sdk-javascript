@@ -15,6 +15,7 @@ UpdateCustomizePageSettingsParam
 - [favicon](Auth_api.UpdateCustomizePageSettingsParam.md#favicon)
 - [google\_tag\_manager\_container\_id](Auth_api.UpdateCustomizePageSettingsParam.md#google_tag_manager_container_id)
 - [icon](Auth_api.UpdateCustomizePageSettingsParam.md#icon)
+- [is\_sign\_in\_id\_enabled](Auth_api.UpdateCustomizePageSettingsParam.md#is_sign_in_id_enabled)
 - [privacy\_policy\_url](Auth_api.UpdateCustomizePageSettingsParam.md#privacy_policy_url)
 - [terms\_of\_service\_url](Auth_api.UpdateCustomizePageSettingsParam.md#terms_of_service_url)
 - [title](Auth_api.UpdateCustomizePageSettingsParam.md#title)
@@ -33,7 +34,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2085](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2085)
+[src/generated/Auth/api.ts:2281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2281)
 
 ___
 
@@ -49,7 +50,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2109](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2109)
+[src/generated/Auth/api.ts:2305](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2305)
 
 ___
 
@@ -65,7 +66,23 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2079](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2079)
+[src/generated/Auth/api.ts:2275](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2275)
+
+___
+
+### is\_sign\_in\_id\_enabled
+
+• `Optional` **is\_sign\_in\_id\_enabled**: `boolean`
+
+display setting for sign-in ID on the sign-in screen
+
+**`Memberof`**
+
+UpdateCustomizePageSettingsParam
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2311](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2311)
 
 ___
 
@@ -81,7 +98,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2103](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2103)
+[src/generated/Auth/api.ts:2299](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2299)
 
 ___
 
@@ -97,7 +114,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2097](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2097)
+[src/generated/Auth/api.ts:2293](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2293)
 
 ___
 
@@ -113,4 +130,4 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2091](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2091)
+[src/generated/Auth/api.ts:2287](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2287)

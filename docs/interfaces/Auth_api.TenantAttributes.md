@@ -28,4 +28,4 @@ TenantAttributes
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1836](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1836)
+[src/generated/Auth/api.ts:2032](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2032)

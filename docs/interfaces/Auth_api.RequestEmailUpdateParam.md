@@ -27,7 +27,7 @@ RequestEmailUpdateParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1328](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1328)
+[src/generated/Auth/api.ts:1499](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1499)
 
 ___
 
@@ -43,4 +43,4 @@ RequestEmailUpdateParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1322](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1322)
+[src/generated/Auth/api.ts:1493](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1493)

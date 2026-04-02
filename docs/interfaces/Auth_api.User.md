@@ -16,6 +16,7 @@ User
 - [email](Auth_api.User.md#email)
 - [envs](Auth_api.User.md#envs)
 - [id](Auth_api.User.md#id)
+- [sign\_in\_id](Auth_api.User.md#sign_in_id)
 - [tenant\_id](Auth_api.User.md#tenant_id)
 - [tenant\_name](Auth_api.User.md#tenant_name)
 
@@ -37,7 +38,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2478](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2478)
+[src/generated/Auth/api.ts:2724](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2724)
 
 ___
 
@@ -45,7 +46,7 @@ ___
 
 • **email**: `string`
 
-E-mail
+E-mail. For sign-in ID authentication users, this field is an empty string.
 
 **`Memberof`**
 
@@ -53,7 +54,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2472](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2472)
+[src/generated/Auth/api.ts:2712](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2712)
 
 ___
 
@@ -67,7 +68,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2484](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2484)
+[src/generated/Auth/api.ts:2730](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2730)
 
 ___
 
@@ -83,7 +84,23 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2454](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2454)
+[src/generated/Auth/api.ts:2694](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2694)
+
+___
+
+### sign\_in\_id
+
+• **sign\_in\_id**: `string`
+
+Sign-in ID. For email authentication users, this field is an empty string.
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2718](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2718)
 
 ___
 
@@ -97,7 +114,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2460](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2460)
+[src/generated/Auth/api.ts:2700](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2700)
 
 ___
 
@@ -113,4 +130,4 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2466](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2466)
+[src/generated/Auth/api.ts:2706](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2706)

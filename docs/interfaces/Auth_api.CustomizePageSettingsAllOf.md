@@ -29,7 +29,7 @@ CustomizePageSettingsAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:583](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L583)
+[src/generated/Auth/api.ts:695](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L695)
 
 ___
 
@@ -45,4 +45,4 @@ CustomizePageSettingsAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:577](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L577)
+[src/generated/Auth/api.ts:689](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L689)

@@ -29,7 +29,7 @@ UpdateEnvParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2172](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2172)
+[src/generated/Auth/api.ts:2399](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2399)
 
 ___
 
@@ -45,4 +45,4 @@ UpdateEnvParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2166](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2166)
+[src/generated/Auth/api.ts:2393](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2393)
