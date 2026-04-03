@@ -26,4 +26,4 @@ Users
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2627](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2627)
+[src/generated/Auth/api.ts:2879](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2879)
