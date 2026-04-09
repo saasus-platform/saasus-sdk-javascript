@@ -2290,6 +2290,37 @@
     const SaasUserApiAxiosParamCreator = function (configuration) {
         return {
             /**
+             * Confirms a device for remembering.
+             * @summary Confirm Device
+             * @param {ConfirmDeviceParam} [confirmDeviceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            confirmDevice: async (confirmDeviceParam, options = {}) => {
+                const localVarPath = `/device/confirm`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(confirmDeviceParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
              * @summary Confirm User Email Update
              * @param {string} userId User ID
@@ -2453,7 +2484,7 @@
                 };
             },
             /**
-             * Delete all users with matching user ID from the tenant and SaaS.
+             * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
              * @summary Delete User
              * @param {string} userId User ID
              * @param {*} [options] Override http request option.
@@ -2608,7 +2639,7 @@
                 };
             },
             /**
-             * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+             * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
              * @summary Request User Email Update
              * @param {string} userId User ID
              * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -2699,6 +2730,38 @@
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 localVarRequestOptions.data = serializeDataIfNeeded$5(resendSignUpConfirmationEmailParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+             * @summary Reset Password
+             * @param {string} userId User ID
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            resetSaasUserPassword: async (userId, options = {}) => {
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$3('resetSaasUserPassword', 'userId', userId);
+                const localVarPath = `/users/{user_id}/password/reset`
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
                     url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -2865,6 +2928,37 @@
                 };
             },
             /**
+             * Updates the device status.
+             * @summary Update Device Status
+             * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateDeviceStatus: async (updateDeviceStatusParam, options = {}) => {
+                const localVarPath = `/device/status`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateDeviceStatusParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Update the additional attributes of the SaaS user.
              * @summary Update SaaS User Attributes
              * @param {string} userId User ID
@@ -2900,7 +2994,7 @@
                 };
             },
             /**
-             * Change user\'s email.
+             * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
              * @summary Change Email
              * @param {string} userId User ID
              * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -2964,6 +3058,41 @@
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 localVarRequestOptions.data = serializeDataIfNeeded$5(updateSaasUserPasswordParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Change user\'s sign-in ID.
+             * @summary Change Sign-in ID
+             * @param {string} userId User ID
+             * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            updateSaasUserSignInId: async (userId, updateSaasUserSignInIdParam, options = {}) => {
+                // verify required parameter 'userId' is not null or undefined
+                assertParamExists$3('updateSaasUserSignInId', 'userId', userId);
+                const localVarPath = `/users/{user_id}/sign-in-id`
+                    .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(updateSaasUserSignInIdParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -3049,6 +3178,17 @@
         const localVarAxiosParamCreator = SaasUserApiAxiosParamCreator(configuration);
         return {
             /**
+             * Confirms a device for remembering.
+             * @summary Confirm Device
+             * @param {ConfirmDeviceParam} [confirmDeviceParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async confirmDevice(confirmDeviceParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.confirmDevice(confirmDeviceParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
              * @summary Confirm User Email Update
              * @param {string} userId User ID
@@ -3106,7 +3246,7 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Delete all users with matching user ID from the tenant and SaaS.
+             * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
              * @summary Delete User
              * @param {string} userId User ID
              * @param {*} [options] Override http request option.
@@ -3160,7 +3300,7 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+             * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
              * @summary Request User Email Update
              * @param {string} userId User ID
              * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -3191,6 +3331,17 @@
              */
             async resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+             * @summary Reset Password
+             * @param {string} userId User ID
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async resetSaasUserPassword(userId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.resetSaasUserPassword(userId, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
@@ -3250,6 +3401,17 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Updates the device status.
+             * @summary Update Device Status
+             * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateDeviceStatus(updateDeviceStatusParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateDeviceStatus(updateDeviceStatusParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Update the additional attributes of the SaaS user.
              * @summary Update SaaS User Attributes
              * @param {string} userId User ID
@@ -3262,7 +3424,7 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Change user\'s email.
+             * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
              * @summary Change Email
              * @param {string} userId User ID
              * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -3283,6 +3445,18 @@
              */
             async updateSaasUserPassword(userId, updateSaasUserPasswordParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasUserPassword(userId, updateSaasUserPasswordParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Change user\'s sign-in ID.
+             * @summary Change Sign-in ID
+             * @param {string} userId User ID
+             * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async updateSaasUserSignInId(userId, updateSaasUserSignInIdParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.updateSaasUserSignInId(userId, updateSaasUserSignInIdParam, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
@@ -3318,6 +3492,17 @@
      * @extends {BaseAPI}
      */
     class SaasUserApi extends BaseAPI$5 {
+        /**
+         * Confirms a device for remembering.
+         * @summary Confirm Device
+         * @param {ConfirmDeviceParam} [confirmDeviceParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        confirmDevice(confirmDeviceParam, options) {
+            return SaasUserApiFp(this.configuration).confirmDevice(confirmDeviceParam, options).then((request) => request(this.axios, this.basePath));
+        }
         /**
          * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
          * @summary Confirm User Email Update
@@ -3376,7 +3561,7 @@
             return SaasUserApiFp(this.configuration).createSecretCode(userId, createSecretCodeParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Delete all users with matching user ID from the tenant and SaaS.
+         * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
          * @summary Delete User
          * @param {string} userId User ID
          * @param {*} [options] Override http request option.
@@ -3430,7 +3615,7 @@
             return SaasUserApiFp(this.configuration).linkAwsMarketplace(linkAwsMarketplaceParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+         * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
          * @summary Request User Email Update
          * @param {string} userId User ID
          * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -3462,6 +3647,17 @@
          */
         resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options) {
             return SaasUserApiFp(this.configuration).resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+         * @summary Reset Password
+         * @param {string} userId User ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        resetSaasUserPassword(userId, options) {
+            return SaasUserApiFp(this.configuration).resetSaasUserPassword(userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Respond to a sign-in challenge.
@@ -3520,6 +3716,17 @@
             return SaasUserApiFp(this.configuration).unlinkProvider(providerName, userId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * Updates the device status.
+         * @summary Update Device Status
+         * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        updateDeviceStatus(updateDeviceStatusParam, options) {
+            return SaasUserApiFp(this.configuration).updateDeviceStatus(updateDeviceStatusParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * Update the additional attributes of the SaaS user.
          * @summary Update SaaS User Attributes
          * @param {string} userId User ID
@@ -3532,7 +3739,7 @@
             return SaasUserApiFp(this.configuration).updateSaasUserAttributes(userId, updateSaasUserAttributesParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Change user\'s email.
+         * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
          * @summary Change Email
          * @param {string} userId User ID
          * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -3554,6 +3761,18 @@
          */
         updateSaasUserPassword(userId, updateSaasUserPasswordParam, options) {
             return SaasUserApiFp(this.configuration).updateSaasUserPassword(userId, updateSaasUserPasswordParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Change user\'s sign-in ID.
+         * @summary Change Sign-in ID
+         * @param {string} userId User ID
+         * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        updateSaasUserSignInId(userId, updateSaasUserSignInIdParam, options) {
+            return SaasUserApiFp(this.configuration).updateSaasUserSignInId(userId, updateSaasUserSignInIdParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Register an authentication application.
@@ -4775,6 +4994,66 @@
                 };
             },
             /**
+             * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+             * @summary Search Tenant Users
+             * @param {string} [tenantId] Tenant ID
+             * @param {string} [id] User ID
+             * @param {string} [email] Email prefix
+             * @param {string} [signInId] Sign-in ID prefix
+             * @param {number} [envId] Environment ID
+             * @param {string} [roleId] Role ID
+             * @param {number} [limit] Maximum number of users to retrieve
+             * @param {string} [cursor] Cursor for cursor pagination
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            searchTenantUsers: async (tenantId, id, email, signInId, envId, roleId, limit, cursor, options = {}) => {
+                const localVarPath = `/tenants/all/users/search`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                if (tenantId !== undefined) {
+                    localVarQueryParameter['tenant_id'] = tenantId;
+                }
+                if (id !== undefined) {
+                    localVarQueryParameter['id'] = id;
+                }
+                if (email !== undefined) {
+                    localVarQueryParameter['email'] = email;
+                }
+                if (signInId !== undefined) {
+                    localVarQueryParameter['sign_in_id'] = signInId;
+                }
+                if (envId !== undefined) {
+                    localVarQueryParameter['env_id'] = envId;
+                }
+                if (roleId !== undefined) {
+                    localVarQueryParameter['role_id'] = roleId;
+                }
+                if (limit !== undefined) {
+                    localVarQueryParameter['limit'] = limit;
+                }
+                if (cursor !== undefined) {
+                    localVarQueryParameter['cursor'] = cursor;
+                }
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Update tenant user attributes.
              * @summary Update Tenant User Attribute
              * @param {string} tenantId Tenant ID
@@ -4919,6 +5198,24 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+             * @summary Search Tenant Users
+             * @param {string} [tenantId] Tenant ID
+             * @param {string} [id] User ID
+             * @param {string} [email] Email prefix
+             * @param {string} [signInId] Sign-in ID prefix
+             * @param {number} [envId] Environment ID
+             * @param {string} [roleId] Role ID
+             * @param {number} [limit] Maximum number of users to retrieve
+             * @param {string} [cursor] Cursor for cursor pagination
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Update tenant user attributes.
              * @summary Update Tenant User Attribute
              * @param {string} tenantId Tenant ID
@@ -5035,6 +5332,24 @@
          */
         getTenantUsers(tenantId, options) {
             return TenantUserApiFp(this.configuration).getTenantUsers(tenantId, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+         * @summary Search Tenant Users
+         * @param {string} [tenantId] Tenant ID
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [envId] Environment ID
+         * @param {string} [roleId] Role ID
+         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantUserApi
+         */
+        searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options) {
+            return TenantUserApiFp(this.configuration).searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Update tenant user attributes.
@@ -5357,6 +5672,40 @@
                     options: localVarRequestOptions,
                 };
             },
+            /**
+             * Get user information by sign-in ID.
+             * @summary Get User Info by Sign-in ID
+             * @param {string} signInId Sign-in ID.
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getUserInfoBySignInId: async (signInId, options = {}) => {
+                // verify required parameter 'signInId' is not null or undefined
+                assertParamExists$3('getUserInfoBySignInId', 'signInId', signInId);
+                const localVarPath = `/userinfo/search/sign-in-id`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                if (signInId !== undefined) {
+                    localVarQueryParameter['sign_in_id'] = signInId;
+                }
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
         };
     };
     /**
@@ -5386,6 +5735,17 @@
              */
             async getUserInfoByEmail(email, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfoByEmail(email, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Get user information by sign-in ID.
+             * @summary Get User Info by Sign-in ID
+             * @param {string} signInId Sign-in ID.
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getUserInfoBySignInId(signInId, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getUserInfoBySignInId(signInId, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
         };
@@ -5418,6 +5778,17 @@
          */
         getUserInfoByEmail(email, options) {
             return UserInfoApiFp(this.configuration).getUserInfoByEmail(email, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Get user information by sign-in ID.
+         * @summary Get User Info by Sign-in ID
+         * @param {string} signInId Sign-in ID.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof UserInfoApi
+         */
+        getUserInfoBySignInId(signInId, options) {
+            return UserInfoApiFp(this.configuration).getUserInfoBySignInId(signInId, options).then((request) => request(this.axios, this.basePath));
         }
     }
 

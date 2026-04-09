@@ -30,7 +30,7 @@ SignInResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1557](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1557)
+[src/generated/Auth/api.ts:1772](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1772)
 
 ___
 
@@ -50,7 +50,7 @@ SignInResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1563](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1563)
+[src/generated/Auth/api.ts:1778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1778)
 
 ___
 
@@ -66,4 +66,4 @@ SignInResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1569)
+[src/generated/Auth/api.ts:1784](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1784)

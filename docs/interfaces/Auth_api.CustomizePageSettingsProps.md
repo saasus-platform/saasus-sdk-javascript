@@ -13,6 +13,7 @@ CustomizePageSettingsProps
 ### Properties
 
 - [google\_tag\_manager\_container\_id](Auth_api.CustomizePageSettingsProps.md#google_tag_manager_container_id)
+- [is\_sign\_in\_id\_enabled](Auth_api.CustomizePageSettingsProps.md#is_sign_in_id_enabled)
 - [privacy\_policy\_url](Auth_api.CustomizePageSettingsProps.md#privacy_policy_url)
 - [terms\_of\_service\_url](Auth_api.CustomizePageSettingsProps.md#terms_of_service_url)
 - [title](Auth_api.CustomizePageSettingsProps.md#title)
@@ -31,7 +32,23 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:614](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L614)
+[src/generated/Auth/api.ts:726](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L726)
+
+___
+
+### is\_sign\_in\_id\_enabled
+
+• `Optional` **is\_sign\_in\_id\_enabled**: `boolean`
+
+display setting for sign-in ID on the sign-in screen
+
+**`Memberof`**
+
+CustomizePageSettingsProps
+
+#### Defined in
+
+[src/generated/Auth/api.ts:732](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L732)
 
 ___
 
@@ -47,7 +64,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:608](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L608)
+[src/generated/Auth/api.ts:720](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L720)
 
 ___
 
@@ -63,7 +80,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:602](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L602)
+[src/generated/Auth/api.ts:714](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L714)
 
 ___
 
@@ -79,4 +96,4 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:596](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L596)
+[src/generated/Auth/api.ts:708](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L708)
