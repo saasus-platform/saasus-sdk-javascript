@@ -27,7 +27,7 @@ CreateCustomerParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/AwsMarketplace/api.ts#L67)
+[src/generated/AwsMarketplace/api.ts:67](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L67)
 
 ___
 
@@ -41,4 +41,4 @@ CreateCustomerParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:61](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/AwsMarketplace/api.ts#L61)
+[src/generated/AwsMarketplace/api.ts:61](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L61)

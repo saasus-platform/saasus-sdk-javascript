@@ -298,6 +298,50 @@ export interface CloudFormationLaunchStackLink {
     'link': string;
 }
 /**
+ * Parameters required to confirm a device.
+ * @export
+ * @interface ConfirmDeviceParam
+ */
+export interface ConfirmDeviceParam {
+    /**
+     * A valid access token.
+     * @type {string}
+     * @memberof ConfirmDeviceParam
+     */
+    'access_token': string;
+    /**
+     * The unique identifier of the device.
+     * @type {string}
+     * @memberof ConfirmDeviceParam
+     */
+    'device_key': string;
+    /**
+     * A friendly name for the device.
+     * @type {string}
+     * @memberof ConfirmDeviceParam
+     */
+    'device_name'?: string;
+    /**
+     *
+     * @type {DeviceSecretVerifierConfig}
+     * @memberof ConfirmDeviceParam
+     */
+    'device_secret_verifier_config'?: DeviceSecretVerifierConfig;
+}
+/**
+ * Result returned after confirming a device.
+ * @export
+ * @interface ConfirmDeviceResult
+ */
+export interface ConfirmDeviceResult {
+    /**
+     * When true, the user must confirm that they want to remember the device. When false, the device is immediately set as remembered.
+     * @type {boolean}
+     * @memberof ConfirmDeviceResult
+     */
+    'user_confirmation_necessary': boolean;
+}
+/**
  *
  * @export
  * @interface ConfirmEmailUpdateParam
@@ -361,7 +405,7 @@ export interface ConfirmSignUpWithAwsMarketplaceParam {
     'registration_token': string;
 }
 /**
- *
+ * Either email or sign_in_id must be specified, but not both. - If email is specified: Email authentication user will be created.   When password is not specified, a temporary password will be sent by email. - If sign_in_id is specified: Sign-in ID authentication user will be created.   When password is not specified, it will be auto-generated and returned in the response.
  * @export
  * @interface CreateSaasUserParam
  */
@@ -371,9 +415,15 @@ export interface CreateSaasUserParam {
      * @type {string}
      * @memberof CreateSaasUserParam
      */
-    'email': string;
+    'email'?: string;
     /**
-     * Password
+     * Sign-in ID (alphanumeric and symbols -_ only, max 50 characters)
+     * @type {string}
+     * @memberof CreateSaasUserParam
+     */
+    'sign_in_id'?: string;
+    /**
+     * Password. For email authentication, if not specified, a temporary password will be sent by email. For sign-in ID authentication, if not specified, password will be auto-generated and returned.
      * @type {string}
      * @memberof CreateSaasUserParam
      */
@@ -418,7 +468,7 @@ export interface CreateTenantInvitationParam {
     'envs': Array<InvitedUserEnvironmentInformationInner>;
 }
 /**
- *
+ * Either email or sign_in_id must be specified, but not both.
  * @export
  * @interface CreateTenantUserParam
  */
@@ -428,7 +478,13 @@ export interface CreateTenantUserParam {
      * @type {string}
      * @memberof CreateTenantUserParam
      */
-    'email': string;
+    'email'?: string;
+    /**
+     * Sign-in ID (alphanumeric and symbols -_ only, max 50 characters)
+     * @type {string}
+     * @memberof CreateTenantUserParam
+     */
+    'sign_in_id'?: string;
     /**
      * Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
@@ -450,6 +506,58 @@ export interface CreateTenantUserRolesParam {
      * @memberof CreateTenantUserRolesParam
      */
     'role_names': Array<string>;
+}
+/**
+ *
+ * @export
+ * @interface CreatedSaasUser
+ */
+export interface CreatedSaasUser {
+    /**
+     *
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'id': string;
+    /**
+     * E-mail. For sign-in ID authentication users, this field is an empty string.
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is an empty string.
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'sign_in_id': string;
+    /**
+     * Attribute information
+     * @type {{ [key: string]: any; }}
+     * @memberof CreatedSaasUser
+     */
+    'attributes': {
+        [key: string]: any;
+    };
+    /**
+     * Auto-generated password (only when sign_in_id authentication and password not specified)
+     * @type {string}
+     * @memberof CreatedSaasUser
+     */
+    'password'?: string;
+}
+/**
+ *
+ * @export
+ * @interface CreatedSaasUserAllOf
+ */
+export interface CreatedSaasUserAllOf {
+    /**
+     * Auto-generated password (only when sign_in_id authentication and password not specified)
+     * @type {string}
+     * @memberof CreatedSaasUserAllOf
+     */
+    'password'?: string;
 }
 /**
  *
@@ -543,6 +651,12 @@ export interface CustomizePageSettings {
      * @memberof CustomizePageSettings
      */
     'google_tag_manager_container_id': string;
+    /**
+     * display setting for sign-in ID on the sign-in screen
+     * @type {boolean}
+     * @memberof CustomizePageSettings
+     */
+    'is_sign_in_id_enabled'?: boolean;
 }
 /**
  *
@@ -593,6 +707,12 @@ export interface CustomizePageSettingsProps {
      * @memberof CustomizePageSettingsProps
      */
     'google_tag_manager_container_id': string;
+    /**
+     * display setting for sign-in ID on the sign-in screen
+     * @type {boolean}
+     * @memberof CustomizePageSettingsProps
+     */
+    'is_sign_in_id_enabled'?: boolean;
 }
 /**
  *
@@ -638,6 +758,35 @@ export declare const DeviceConfigurationDeviceRememberingEnum: {
     readonly No: "no";
 };
 export type DeviceConfigurationDeviceRememberingEnum = typeof DeviceConfigurationDeviceRememberingEnum[keyof typeof DeviceConfigurationDeviceRememberingEnum];
+/**
+ * The status of whether a device is remembered. \"remembered\" enables device authentication, \"not_remembered\" disables it.
+ * @export
+ * @enum {string}
+ */
+export declare const DeviceRememberedStatus: {
+    readonly Remembered: "remembered";
+    readonly NotRemembered: "not_remembered";
+};
+export type DeviceRememberedStatus = typeof DeviceRememberedStatus[keyof typeof DeviceRememberedStatus];
+/**
+ * The configuration of the device secret verifier.
+ * @export
+ * @interface DeviceSecretVerifierConfig
+ */
+export interface DeviceSecretVerifierConfig {
+    /**
+     * A password verifier for a user\'s device. Used in SRP authentication.
+     * @type {string}
+     * @memberof DeviceSecretVerifierConfig
+     */
+    'password_verifier'?: string;
+    /**
+     * The salt for SRP authentication with the user\'s device.
+     * @type {string}
+     * @memberof DeviceSecretVerifierConfig
+     */
+    'salt'?: string;
+}
 /**
  *
  * @export
@@ -991,6 +1140,7 @@ export interface MfaPreference {
 }
 export declare const MfaPreferenceMethodEnum: {
     readonly SoftwareToken: "softwareToken";
+    readonly Email: "email";
 };
 export type MfaPreferenceMethodEnum = typeof MfaPreferenceMethodEnum[keyof typeof MfaPreferenceMethodEnum];
 /**
@@ -1019,6 +1169,25 @@ export interface ModelError {
     'data'?: {
         [key: string]: any;
     };
+}
+/**
+ * Metadata for a new device registered during authentication.
+ * @export
+ * @interface NewDeviceMetadata
+ */
+export interface NewDeviceMetadata {
+    /**
+     * Device key identifier
+     * @type {string}
+     * @memberof NewDeviceMetadata
+     */
+    'device_key'?: string;
+    /**
+     * Device group key identifier
+     * @type {string}
+     * @memberof NewDeviceMetadata
+     */
+    'device_group_key'?: string;
 }
 /**
  *
@@ -1363,6 +1532,12 @@ export interface RespondToSignInChallengeResult {
      * @memberof RespondToSignInChallengeResult
      */
     'session'?: string;
+    /**
+     *
+     * @type {NewDeviceMetadata}
+     * @memberof RespondToSignInChallengeResult
+     */
+    'new_device_metadata'?: NewDeviceMetadata;
 }
 /**
  * role info
@@ -1434,11 +1609,17 @@ export interface SaasUser {
      */
     'id': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is an empty string.
      * @type {string}
      * @memberof SaasUser
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is an empty string.
+     * @type {string}
+     * @memberof SaasUser
+     */
+    'sign_in_id': string;
     /**
      * Attribute information
      * @type {{ [key: string]: any; }}
@@ -1447,6 +1628,19 @@ export interface SaasUser {
     'attributes': {
         [key: string]: any;
     };
+}
+/**
+ *
+ * @export
+ * @interface SaasUserResetPasswordResult
+ */
+export interface SaasUserResetPasswordResult {
+    /**
+     * Auto-generated temporary password
+     * @type {string}
+     * @memberof SaasUserResetPasswordResult
+     */
+    'password'?: string;
 }
 /**
  *
@@ -1460,6 +1654,25 @@ export interface SaasUsers {
      * @memberof SaasUsers
      */
     'users': Array<SaasUser>;
+}
+/**
+ *
+ * @export
+ * @interface SearchTenantUsersResult
+ */
+export interface SearchTenantUsersResult {
+    /**
+     *
+     * @type {Array<User>}
+     * @memberof SearchTenantUsersResult
+     */
+    'users': Array<User>;
+    /**
+     * Pagination cursor for the next page
+     * @type {string}
+     * @memberof SearchTenantUsersResult
+     */
+    'cursor'?: string;
 }
 /**
  * self sign-up permission
@@ -2070,6 +2283,12 @@ export interface UpdateCustomizePageSettingsParam {
      * @memberof UpdateCustomizePageSettingsParam
      */
     'google_tag_manager_container_id': string;
+    /**
+     * display setting for sign-in ID on the sign-in screen
+     * @type {boolean}
+     * @memberof UpdateCustomizePageSettingsParam
+     */
+    'is_sign_in_id_enabled'?: boolean;
 }
 /**
  *
@@ -2114,6 +2333,31 @@ export interface UpdateCustomizePagesParam {
      * @memberof UpdateCustomizePagesParam
      */
     'password_reset_page'?: CustomizePageProps;
+}
+/**
+ * Parameters required to update a device status.
+ * @export
+ * @interface UpdateDeviceStatusParam
+ */
+export interface UpdateDeviceStatusParam {
+    /**
+     * A valid access token.
+     * @type {string}
+     * @memberof UpdateDeviceStatusParam
+     */
+    'access_token': string;
+    /**
+     * The unique identifier of the device.
+     * @type {string}
+     * @memberof UpdateDeviceStatusParam
+     */
+    'device_key': string;
+    /**
+     *
+     * @type {DeviceRememberedStatus}
+     * @memberof UpdateDeviceStatusParam
+     */
+    'device_remembered_status': DeviceRememberedStatus;
 }
 /**
  *
@@ -2277,6 +2521,19 @@ export interface UpdateSaasUserPasswordParam {
 /**
  *
  * @export
+ * @interface UpdateSaasUserSignInIdParam
+ */
+export interface UpdateSaasUserSignInIdParam {
+    /**
+     * Sign-in ID
+     * @type {string}
+     * @memberof UpdateSaasUserSignInIdParam
+     */
+    'sign_in_id': string;
+}
+/**
+ *
+ * @export
  * @interface UpdateSignInSettingsParam
  */
 export interface UpdateSignInSettingsParam {
@@ -2432,11 +2689,17 @@ export interface User {
      */
     'tenant_name': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is an empty string.
      * @type {string}
      * @memberof User
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is an empty string.
+     * @type {string}
+     * @memberof User
+     */
+    'sign_in_id': string;
     /**
      * Attribute information (Get information set by defining user attributes in the SaaS development console)
      * @type {{ [key: string]: any; }}
@@ -2566,11 +2829,17 @@ export interface UserInfo {
      */
     'id': string;
     /**
-     * E-mail
+     * E-mail. For sign-in ID authentication users, this field is an empty string.
      * @type {string}
      * @memberof UserInfo
      */
     'email': string;
+    /**
+     * Sign-in ID. For email authentication users, this field is an empty string.
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'sign_in_id': string;
     /**
      * user additional attributes
      * @type {{ [key: string]: any; }}
@@ -3860,6 +4129,14 @@ export declare class RoleApi extends BaseAPI {
  */
 export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
+     * Confirms a device for remembering.
+     * @summary Confirm Device
+     * @param {ConfirmDeviceParam} [confirmDeviceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmDevice: (confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
      * @summary Confirm User Email Update
      * @param {string} userId User ID
@@ -3902,7 +4179,7 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     createSecretCode: (userId: string, createSecretCodeParam?: CreateSecretCodeParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Delete all users with matching user ID from the tenant and SaaS.
+     * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
      * @summary Delete User
      * @param {string} userId User ID
      * @param {*} [options] Override http request option.
@@ -3941,7 +4218,7 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     linkAwsMarketplace: (linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
      * @summary Request User Email Update
      * @param {string} userId User ID
      * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -3965,6 +4242,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     resendSignUpConfirmationEmail: (resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+     * @summary Reset Password
+     * @param {string} userId User ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resetSaasUserPassword: (userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * Respond to a sign-in challenge.
      * @summary Respond to Sign In Challenge
@@ -4007,6 +4292,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     unlinkProvider: (providerName: string, userId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Updates the device status.
+     * @summary Update Device Status
+     * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateDeviceStatus: (updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Update the additional attributes of the SaaS user.
      * @summary Update SaaS User Attributes
      * @param {string} userId User ID
@@ -4016,7 +4309,7 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     updateSaasUserAttributes: (userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Change user\'s email.
+     * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
      * @summary Change Email
      * @param {string} userId User ID
      * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -4033,6 +4326,15 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     updateSaasUserPassword: (userId: string, updateSaasUserPasswordParam?: UpdateSaasUserPasswordParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Change user\'s sign-in ID.
+     * @summary Change Sign-in ID
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateSaasUserSignInId: (userId: string, updateSaasUserSignInIdParam?: UpdateSaasUserSignInIdParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * Register an authentication application.
      * @summary Register Authentication Application
@@ -4057,6 +4359,14 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
  * @export
  */
 export declare const SaasUserApiFp: (configuration?: Configuration) => {
+    /**
+     * Confirms a device for remembering.
+     * @summary Confirm Device
+     * @param {ConfirmDeviceParam} [confirmDeviceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmDeviceResult>>;
     /**
      * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
      * @summary Confirm User Email Update
@@ -4089,7 +4399,7 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUser>>;
+    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreatedSaasUser>>;
     /**
      * Create a secret code for authentication application registration.
      * @summary Create secret code for authentication application registration
@@ -4100,13 +4410,13 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     createSecretCode(userId: string, createSecretCodeParam?: CreateSecretCodeParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SoftwareTokenSecretCode>>;
     /**
-     * Delete all users with matching user ID from the tenant and SaaS.
+     * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
      * @summary Delete User
      * @param {string} userId User ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>>;
     /**
      * Get user information based on user ID.
      * @summary Get User
@@ -4139,7 +4449,7 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
      * @summary Request User Email Update
      * @param {string} userId User ID
      * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -4163,6 +4473,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    /**
+     * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+     * @summary Reset Password
+     * @param {string} userId User ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resetSaasUserPassword(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUserResetPasswordResult>>;
     /**
      * Respond to a sign-in challenge.
      * @summary Respond to Sign In Challenge
@@ -4205,6 +4523,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
+     * Updates the device status.
+     * @summary Update Device Status
+     * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    /**
      * Update the additional attributes of the SaaS user.
      * @summary Update SaaS User Attributes
      * @param {string} userId User ID
@@ -4214,7 +4540,7 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
-     * Change user\'s email.
+     * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
      * @summary Change Email
      * @param {string} userId User ID
      * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -4231,6 +4557,15 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     updateSaasUserPassword(userId: string, updateSaasUserPasswordParam?: UpdateSaasUserPasswordParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    /**
+     * Change user\'s sign-in ID.
+     * @summary Change Sign-in ID
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateSaasUserSignInId(userId: string, updateSaasUserSignInIdParam?: UpdateSaasUserSignInIdParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
     /**
      * Register an authentication application.
      * @summary Register Authentication Application
@@ -4255,6 +4590,14 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
  * @export
  */
 export declare const SaasUserApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
+    /**
+     * Confirms a device for remembering.
+     * @summary Confirm Device
+     * @param {ConfirmDeviceParam} [confirmDeviceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: any): AxiosPromise<ConfirmDeviceResult>;
     /**
      * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
      * @summary Confirm User Email Update
@@ -4287,7 +4630,7 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<SaasUser>;
+    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: any): AxiosPromise<CreatedSaasUser>;
     /**
      * Create a secret code for authentication application registration.
      * @summary Create secret code for authentication application registration
@@ -4298,13 +4641,13 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      */
     createSecretCode(userId: string, createSecretCodeParam?: CreateSecretCodeParam, options?: any): AxiosPromise<SoftwareTokenSecretCode>;
     /**
-     * Delete all users with matching user ID from the tenant and SaaS.
+     * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
      * @summary Delete User
      * @param {string} userId User ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    deleteSaasUser(userId: string, options?: any): AxiosPromise<void>;
+    deleteSaasUser(userId: string, options?: any): AxiosPromise<UserInfo>;
     /**
      * Get user information based on user ID.
      * @summary Get User
@@ -4337,7 +4680,7 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      */
     linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: any): AxiosPromise<void>;
     /**
-     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
      * @summary Request User Email Update
      * @param {string} userId User ID
      * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -4361,6 +4704,14 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: any): AxiosPromise<void>;
+    /**
+     * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+     * @summary Reset Password
+     * @param {string} userId User ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    resetSaasUserPassword(userId: string, options?: any): AxiosPromise<SaasUserResetPasswordResult>;
     /**
      * Respond to a sign-in challenge.
      * @summary Respond to Sign In Challenge
@@ -4403,6 +4754,14 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      */
     unlinkProvider(providerName: string, userId: string, options?: any): AxiosPromise<void>;
     /**
+     * Updates the device status.
+     * @summary Update Device Status
+     * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: any): AxiosPromise<void>;
+    /**
      * Update the additional attributes of the SaaS user.
      * @summary Update SaaS User Attributes
      * @param {string} userId User ID
@@ -4412,7 +4771,7 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      */
     updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: any): AxiosPromise<void>;
     /**
-     * Change user\'s email.
+     * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
      * @summary Change Email
      * @param {string} userId User ID
      * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -4429,6 +4788,15 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     updateSaasUserPassword(userId: string, updateSaasUserPasswordParam?: UpdateSaasUserPasswordParam, options?: any): AxiosPromise<void>;
+    /**
+     * Change user\'s sign-in ID.
+     * @summary Change Sign-in ID
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateSaasUserSignInId(userId: string, updateSaasUserSignInIdParam?: UpdateSaasUserSignInIdParam, options?: any): AxiosPromise<void>;
     /**
      * Register an authentication application.
      * @summary Register Authentication Application
@@ -4455,6 +4823,15 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
  * @extends {BaseAPI}
  */
 export declare class SaasUserApi extends BaseAPI {
+    /**
+     * Confirms a device for remembering.
+     * @summary Confirm Device
+     * @param {ConfirmDeviceParam} [confirmDeviceParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ConfirmDeviceResult, any>>;
     /**
      * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
      * @summary Confirm User Email Update
@@ -4491,7 +4868,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CreatedSaasUser, any>>;
     /**
      * Create a secret code for authentication application registration.
      * @summary Create secret code for authentication application registration
@@ -4503,14 +4880,14 @@ export declare class SaasUserApi extends BaseAPI {
      */
     createSecretCode(userId: string, createSecretCodeParam?: CreateSecretCodeParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SoftwareTokenSecretCode, any>>;
     /**
-     * Delete all users with matching user ID from the tenant and SaaS.
+     * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
      * @summary Delete User
      * @param {string} userId User ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
     /**
      * Get user information based on user ID.
      * @summary Get User
@@ -4547,7 +4924,7 @@ export declare class SaasUserApi extends BaseAPI {
      */
     linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours.
+     * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
      * @summary Request User Email Update
      * @param {string} userId User ID
      * @param {RequestEmailUpdateParam} [requestEmailUpdateParam]
@@ -4574,6 +4951,15 @@ export declare class SaasUserApi extends BaseAPI {
      * @memberof SaasUserApi
      */
     resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
+     * @summary Reset Password
+     * @param {string} userId User ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    resetSaasUserPassword(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUserResetPasswordResult, any>>;
     /**
      * Respond to a sign-in challenge.
      * @summary Respond to Sign In Challenge
@@ -4621,6 +5007,15 @@ export declare class SaasUserApi extends BaseAPI {
      */
     unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
+     * Updates the device status.
+     * @summary Update Device Status
+     * @param {UpdateDeviceStatusParam} [updateDeviceStatusParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
      * Update the additional attributes of the SaaS user.
      * @summary Update SaaS User Attributes
      * @param {string} userId User ID
@@ -4631,7 +5026,7 @@ export declare class SaasUserApi extends BaseAPI {
      */
     updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
-     * Change user\'s email.
+     * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
      * @summary Change Email
      * @param {string} userId User ID
      * @param {UpdateSaasUserEmailParam} [updateSaasUserEmailParam]
@@ -4650,6 +5045,16 @@ export declare class SaasUserApi extends BaseAPI {
      * @memberof SaasUserApi
      */
     updateSaasUserPassword(userId: string, updateSaasUserPasswordParam?: UpdateSaasUserPasswordParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    /**
+     * Change user\'s sign-in ID.
+     * @summary Change Sign-in ID
+     * @param {string} userId User ID
+     * @param {UpdateSaasUserSignInIdParam} [updateSaasUserSignInIdParam]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    updateSaasUserSignInId(userId: string, updateSaasUserSignInIdParam?: UpdateSaasUserSignInIdParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
     /**
      * Register an authentication application.
      * @summary Register Authentication Application
@@ -5442,6 +5847,21 @@ export declare const TenantUserApiAxiosParamCreator: (configuration?: Configurat
      */
     getTenantUsers: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+     * @summary Search Tenant Users
+     * @param {string} [tenantId] Tenant ID
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [envId] Environment ID
+     * @param {string} [roleId] Role ID
+     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchTenantUsers: (tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
      * @param {string} tenantId Tenant ID
@@ -5530,6 +5950,21 @@ export declare const TenantUserApiFp: (configuration?: Configuration) => {
      */
     getTenantUsers(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Users>>;
     /**
+     * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+     * @summary Search Tenant Users
+     * @param {string} [tenantId] Tenant ID
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [envId] Environment ID
+     * @param {string} [roleId] Role ID
+     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchTenantUsersResult>>;
+    /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
      * @param {string} tenantId Tenant ID
@@ -5617,6 +6052,21 @@ export declare const TenantUserApiFactory: (configuration?: Configuration, baseP
      * @throws {RequiredError}
      */
     getTenantUsers(tenantId: string, options?: any): AxiosPromise<Users>;
+    /**
+     * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+     * @summary Search Tenant Users
+     * @param {string} [tenantId] Tenant ID
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [envId] Environment ID
+     * @param {string} [roleId] Role ID
+     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchTenantUsersResult>;
     /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
@@ -5715,6 +6165,22 @@ export declare class TenantUserApi extends BaseAPI {
      * @memberof TenantUserApi
      */
     getTenantUsers(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any>>;
+    /**
+     * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
+     * @summary Search Tenant Users
+     * @param {string} [tenantId] Tenant ID
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [envId] Environment ID
+     * @param {string} [roleId] Role ID
+     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantUserApi
+     */
+    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SearchTenantUsersResult, any>>;
     /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
@@ -5902,6 +6368,14 @@ export declare const UserInfoApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     getUserInfoByEmail: (email: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Get user information by sign-in ID.
+     * @summary Get User Info by Sign-in ID
+     * @param {string} signInId Sign-in ID.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getUserInfoBySignInId: (signInId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * UserInfoApi - functional programming interface
@@ -5924,6 +6398,14 @@ export declare const UserInfoApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>>;
+    /**
+     * Get user information by sign-in ID.
+     * @summary Get User Info by Sign-in ID
+     * @param {string} signInId Sign-in ID.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getUserInfoBySignInId(signInId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserInfo>>;
 };
 /**
  * UserInfoApi - factory interface
@@ -5946,6 +6428,14 @@ export declare const UserInfoApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     getUserInfoByEmail(email: string, options?: any): AxiosPromise<UserInfo>;
+    /**
+     * Get user information by sign-in ID.
+     * @summary Get User Info by Sign-in ID
+     * @param {string} signInId Sign-in ID.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getUserInfoBySignInId(signInId: string, options?: any): AxiosPromise<UserInfo>;
 };
 /**
  * UserInfoApi - object-oriented interface
@@ -5972,4 +6462,13 @@ export declare class UserInfoApi extends BaseAPI {
      * @memberof UserInfoApi
      */
     getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
+    /**
+     * Get user information by sign-in ID.
+     * @summary Get User Info by Sign-in ID
+     * @param {string} signInId Sign-in ID.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserInfoApi
+     */
+    getUserInfoBySignInId(signInId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
 }

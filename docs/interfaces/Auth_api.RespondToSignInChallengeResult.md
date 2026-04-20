@@ -17,6 +17,7 @@ RespondToSignInChallengeResult
 - [challenge\_name](Auth_api.RespondToSignInChallengeResult.md#challenge_name)
 - [challenge\_parameters](Auth_api.RespondToSignInChallengeResult.md#challenge_parameters)
 - [credentials](Auth_api.RespondToSignInChallengeResult.md#credentials)
+- [new\_device\_metadata](Auth_api.RespondToSignInChallengeResult.md#new_device_metadata)
 - [session](Auth_api.RespondToSignInChallengeResult.md#session)
 
 ## Properties
@@ -31,7 +32,7 @@ RespondToSignInChallengeResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1398](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1398)
+[src/generated/Auth/api.ts:1569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1569)
 
 ___
 
@@ -51,7 +52,7 @@ RespondToSignInChallengeResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1404](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1404)
+[src/generated/Auth/api.ts:1575](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1575)
 
 ___
 
@@ -65,7 +66,21 @@ RespondToSignInChallengeResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1392](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1392)
+[src/generated/Auth/api.ts:1563](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1563)
+
+___
+
+### new\_device\_metadata
+
+• `Optional` **new\_device\_metadata**: [`NewDeviceMetadata`](Auth_api.NewDeviceMetadata.md)
+
+**`Memberof`**
+
+RespondToSignInChallengeResult
+
+#### Defined in
+
+[src/generated/Auth/api.ts:1587](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1587)
 
 ___
 
@@ -81,4 +96,4 @@ RespondToSignInChallengeResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1410](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1410)
+[src/generated/Auth/api.ts:1581](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1581)

@@ -1,5 +1,6 @@
 import { createRequest, RequestOptions } from "node-mocks-http";
 import getAxiosInstance from "../src/modules/interceptor";
+import { InternalAxiosRequestConfig } from "axios";
 import hmacSHA256 from "crypto-js/hmac-sha256";
 import Hex from "crypto-js/enc-hex";
 import date from "date-and-time";
@@ -31,9 +32,8 @@ describe("getAxiosInstance", () => {
 
     const instance = getAxiosInstance("https://api.dev.saasus.io/v1/auth");
 
-    const fulfilledReq: Request =
-      // @ts-expect-error handlersでdoesn't exist エラーが出るため
-      instance.interceptors.request.handlers[0].fulfilled(request);
+    // @ts-expect-error handlersでdoesn't exist エラーが出るため
+    const fulfilledReq: InternalAxiosRequestConfig = instance.interceptors.request.handlers[0].fulfilled(request);
 
     const now = date.format(new Date(), "YYYYMMDDHHmm", true);
     const secret = process.env.SAASUS_SECRET_KEY || "";

@@ -14,6 +14,7 @@ UserInfo
 
 - [email](Auth_api.UserInfo.md#email)
 - [id](Auth_api.UserInfo.md#id)
+- [sign\_in\_id](Auth_api.UserInfo.md#sign_in_id)
 - [tenants](Auth_api.UserInfo.md#tenants)
 - [user\_attribute](Auth_api.UserInfo.md#user_attribute)
 
@@ -23,7 +24,7 @@ UserInfo
 
 • **email**: `string`
 
-E-mail
+E-mail. For sign-in ID authentication users, this field is an empty string.
 
 **`Memberof`**
 
@@ -31,7 +32,7 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2602](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2602)
+[src/generated/Auth/api.ts:2867](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2867)
 
 ___
 
@@ -45,7 +46,23 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2596](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2596)
+[src/generated/Auth/api.ts:2861](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2861)
+
+___
+
+### sign\_in\_id
+
+• **sign\_in\_id**: `string`
+
+Sign-in ID. For email authentication users, this field is an empty string.
+
+**`Memberof`**
+
+UserInfo
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2873](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2873)
 
 ___
 
@@ -61,7 +78,7 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2614](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2614)
+[src/generated/Auth/api.ts:2885](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2885)
 
 ___
 
@@ -81,4 +98,4 @@ UserInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2608](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L2608)
+[src/generated/Auth/api.ts:2879](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2879)

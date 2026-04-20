@@ -31,7 +31,7 @@ SignInParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1531](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1531)
+[src/generated/Auth/api.ts:1746](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1746)
 
 ___
 
@@ -51,4 +51,4 @@ SignInParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/ea545cb/src/generated/Auth/api.ts#L1537)
+[src/generated/Auth/api.ts:1752](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1752)
