@@ -1,7 +1,7 @@
 import hmacSHA256 from "crypto-js/hmac-sha256";
 import Hex from "crypto-js/enc-hex";
 import date from "date-and-time";
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, InternalAxiosRequestConfig } from "axios";
 
 export default function getAxiosInstance(
   baseURL: string,
@@ -16,7 +16,7 @@ export default function getAxiosInstance(
   };
   const instance = axios.create(requestConfig);
   instance.interceptors.request.use(
-    (config: AxiosRequestConfig) => {
+    (config: InternalAxiosRequestConfig) => {
       const now = date.format(new Date(), "YYYYMMDDHHmm", true);
       const secret = process.env.SAASUS_SECRET_KEY || "";
       const apiKey = process.env.SAASUS_API_KEY || "";
