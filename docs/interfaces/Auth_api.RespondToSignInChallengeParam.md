@@ -30,7 +30,7 @@ RespondToSignInChallengeParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1538](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1538)
+[src/generated/Auth/api.ts:1538](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1538)
 
 ___
 
@@ -50,7 +50,7 @@ RespondToSignInChallengeParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1544](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1544)
+[src/generated/Auth/api.ts:1544](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1544)
 
 ___
 
@@ -66,4 +66,4 @@ RespondToSignInChallengeParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1550](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1550)
+[src/generated/Auth/api.ts:1550](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1550)

@@ -68,7 +68,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -82,7 +82,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -110,13 +110,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createTenant
 
-▸ **createTenant**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
+▸ **createTenant**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, {}\>\>
 
 Create a tenant managed by the SaaSus Platform.
 
@@ -129,7 +129,7 @@ Create a tenant managed by the SaaSus Platform.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -143,13 +143,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8519](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8519)
+[src/generated/Auth/api.ts:8642](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8642)
 
 ___
 
 ### createTenantAndPricing
 
-▸ **createTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **createTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Set Stripe initial information via billing
 
@@ -161,7 +161,7 @@ Set Stripe initial information via billing
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -175,13 +175,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8530](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8530)
+[src/generated/Auth/api.ts:8653](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8653)
 
 ___
 
 ### deleteStripeTenantAndPricing
 
-▸ **deleteStripeTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteStripeTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete customer and product from Stripe.
 
@@ -193,7 +193,7 @@ Delete customer and product from Stripe.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -207,13 +207,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8541)
+[src/generated/Auth/api.ts:8664](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8664)
 
 ___
 
 ### deleteTenant
 
-▸ **deleteTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete SaaSus Platform tenant.
 
@@ -226,7 +226,7 @@ Delete SaaSus Platform tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -240,13 +240,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8553)
+[src/generated/Auth/api.ts:8676](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8676)
 
 ___
 
 ### getStripeCustomer
 
-▸ **getStripeCustomer**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`\>\>
+▸ **getStripeCustomer**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`, {}\>\>
 
 Get the Stripe Customer information associated with the tenant, including their subscriptions.
 
@@ -259,7 +259,7 @@ Get the Stripe Customer information associated with the tenant, including their 
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -273,13 +273,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8565](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8565)
+[src/generated/Auth/api.ts:8688](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8688)
 
 ___
 
 ### getTenant
 
-▸ **getTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`\>\>
+▸ **getTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`, {}\>\>
 
 Get the details of tenant managed on the SaaSus Platform.
 
@@ -292,7 +292,7 @@ Get the details of tenant managed on the SaaSus Platform.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -306,13 +306,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8577](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8577)
+[src/generated/Auth/api.ts:8700](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8700)
 
 ___
 
 ### getTenantIdentityProviders
 
-▸ **getTenantIdentityProviders**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`\>\>
+▸ **getTenantIdentityProviders**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`, {}\>\>
 
 Get sign-in information via external identity provider per tenant.
 
@@ -325,7 +325,7 @@ Get sign-in information via external identity provider per tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -339,13 +339,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8589](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8589)
+[src/generated/Auth/api.ts:8712](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8712)
 
 ___
 
 ### getTenants
 
-▸ **getTenants**(`options?`): `Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`\>\>
+▸ **getTenants**(`options?`): `Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`, {}\>\>
 
 Get tenants managed by SaaSus Platform.
 
@@ -357,7 +357,7 @@ Get tenants managed by SaaSus Platform.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -371,13 +371,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8600](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8600)
+[src/generated/Auth/api.ts:8723](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8723)
 
 ___
 
 ### resetPlan
 
-▸ **resetPlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **resetPlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
 
@@ -389,7 +389,7 @@ Delete all information related to rate plans. Delete plans linked to tenants and
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -403,13 +403,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8611](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8611)
+[src/generated/Auth/api.ts:8734](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8734)
 
 ___
 
 ### updateTenant
 
-▸ **updateTenant**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenant**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update SaaSus Platform tenant details.
 
@@ -423,7 +423,7 @@ Update SaaSus Platform tenant details.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -437,13 +437,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8624](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8624)
+[src/generated/Auth/api.ts:8747](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8747)
 
 ___
 
 ### updateTenantBillingInfo
 
-▸ **updateTenantBillingInfo**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantBillingInfo**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update SaaSus Platform tenant billing information.
 
@@ -457,7 +457,7 @@ Update SaaSus Platform tenant billing information.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -471,13 +471,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8637](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8637)
+[src/generated/Auth/api.ts:8760](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8760)
 
 ___
 
 ### updateTenantIdentityProvider
 
-▸ **updateTenantIdentityProvider**(`tenantId`, `updateTenantIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantIdentityProvider**(`tenantId`, `updateTenantIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update sign-in information via external identity provider per tenant.
 
@@ -491,7 +491,7 @@ Update sign-in information via external identity provider per tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -505,13 +505,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8650](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8650)
+[src/generated/Auth/api.ts:8773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8773)
 
 ___
 
 ### updateTenantPlan
 
-▸ **updateTenantPlan**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantPlan**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update SaaSus Platform tenant plan information.
 
@@ -525,7 +525,7 @@ Update SaaSus Platform tenant plan information.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -539,4 +539,4 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8663)
+[src/generated/Auth/api.ts:8786](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8786)

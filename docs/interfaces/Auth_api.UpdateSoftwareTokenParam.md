@@ -29,7 +29,7 @@ UpdateSoftwareTokenParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2662](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2662)
+[src/generated/Auth/api.ts:2681](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2681)
 
 ___
 
@@ -45,4 +45,4 @@ UpdateSoftwareTokenParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2668)
+[src/generated/Auth/api.ts:2687](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2687)

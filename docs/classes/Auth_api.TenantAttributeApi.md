@@ -58,7 +58,7 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -100,13 +100,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createTenantAttribute
 
-▸ **createTenantAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+▸ **createTenantAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, {}\>\>
 
 Register additional tenant attributes to be managed by SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
 
@@ -119,7 +119,7 @@ Register additional tenant attributes to be managed by SaaSus Platform. For exam
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -133,13 +133,13 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8884)
+[src/generated/Auth/api.ts:9007](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9007)
 
 ___
 
 ### deleteTenantAttribute
 
-▸ **deleteTenantAttribute**(`attributeName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenantAttribute**(`attributeName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Deletes tenant attributes managed by SaaSus Platform.
 
@@ -152,7 +152,7 @@ Deletes tenant attributes managed by SaaSus Platform.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -166,13 +166,13 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8896](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8896)
+[src/generated/Auth/api.ts:9019](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9019)
 
 ___
 
 ### getTenantAttributes
 
-▸ **getTenantAttributes**(`options?`): `Promise`\<`AxiosResponse`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`\>\>
+▸ **getTenantAttributes**(`options?`): `Promise`\<`AxiosResponse`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`, {}\>\>
 
 Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
 
@@ -184,7 +184,7 @@ Get definitions for additional tenant attributes managed by the SaaSus Platform.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -198,4 +198,4 @@ TenantAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8907](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8907)
+[src/generated/Auth/api.ts:9030](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9030)

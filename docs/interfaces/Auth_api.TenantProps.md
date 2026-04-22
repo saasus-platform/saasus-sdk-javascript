@@ -34,7 +34,7 @@ TenantProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2237](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2237)
+[src/generated/Auth/api.ts:2256](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2256)
 
 ___
 
@@ -50,7 +50,7 @@ TenantProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2243](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2243)
+[src/generated/Auth/api.ts:2262](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2262)
 
 ___
 
@@ -66,4 +66,4 @@ TenantProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2231](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2231)
+[src/generated/Auth/api.ts:2250](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2250)

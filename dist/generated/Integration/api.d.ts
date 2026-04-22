@@ -171,7 +171,7 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * EventBridgeApi - axios parameter creator
@@ -317,7 +317,7 @@ export declare class EventBridgeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EventBridgeApi
      */
-    createEventBridgeEvent(createEventBridgeEventParam?: CreateEventBridgeEventParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    createEventBridgeEvent(createEventBridgeEventParam?: CreateEventBridgeEventParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Send events to test the connection with Amazon EventBridge.
      * @summary Test EventBridge Connection
@@ -325,7 +325,7 @@ export declare class EventBridgeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EventBridgeApi
      */
-    createEventBridgeTestEvent(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    createEventBridgeTestEvent(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Delete settings used to provide host state via Amazon EventBridge.
      * @summary Delete EventBridge Settings
@@ -333,7 +333,7 @@ export declare class EventBridgeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EventBridgeApi
      */
-    deleteEventBridgeSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteEventBridgeSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
      * @summary Get EventBridge Settings
@@ -341,7 +341,7 @@ export declare class EventBridgeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EventBridgeApi
      */
-    getEventBridgeSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<EventBridgeSettings, any>>;
+    getEventBridgeSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<EventBridgeSettings, any, {}>>;
     /**
      * Update configuration used to provide the host state via Amazon EventBridge.
      * @summary Update EventBridge Settings
@@ -350,5 +350,5 @@ export declare class EventBridgeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EventBridgeApi
      */
-    saveEventBridgeSettings(body?: EventBridgeSettings, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    saveEventBridgeSettings(body?: EventBridgeSettings, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }

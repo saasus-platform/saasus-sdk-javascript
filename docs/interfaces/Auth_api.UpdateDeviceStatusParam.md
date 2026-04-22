@@ -32,7 +32,7 @@ UpdateDeviceStatusParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2387](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2387)
+[src/generated/Auth/api.ts:2406](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2406)
 
 ___
 
@@ -48,7 +48,7 @@ UpdateDeviceStatusParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2393](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2393)
+[src/generated/Auth/api.ts:2412](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2412)
 
 ___
 
@@ -62,4 +62,4 @@ UpdateDeviceStatusParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2399](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2399)
+[src/generated/Auth/api.ts:2418](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2418)
