@@ -58,7 +58,7 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -100,13 +100,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### createTaxRate
 
-▸ **createTaxRate**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`TaxRate`](../interfaces/Pricing_api.TaxRate.md), `any`\>\>
+▸ **createTaxRate**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`TaxRate`](../interfaces/Pricing_api.TaxRate.md), `any`, {}\>\>
 
 Creates a tax rate.
 
@@ -119,7 +119,7 @@ Creates a tax rate.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TaxRate`](../interfaces/Pricing_api.TaxRate.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TaxRate`](../interfaces/Pricing_api.TaxRate.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -133,13 +133,13 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4595](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4595)
+[src/generated/Pricing/api.ts:4595](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4595)
 
 ___
 
 ### getTaxRates
 
-▸ **getTaxRates**(`options?`): `Promise`\<`AxiosResponse`\<[`TaxRates`](../interfaces/Pricing_api.TaxRates.md), `any`\>\>
+▸ **getTaxRates**(`options?`): `Promise`\<`AxiosResponse`\<[`TaxRates`](../interfaces/Pricing_api.TaxRates.md), `any`, {}\>\>
 
 Get all Tax Rates
 
@@ -151,7 +151,7 @@ Get all Tax Rates
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TaxRates`](../interfaces/Pricing_api.TaxRates.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TaxRates`](../interfaces/Pricing_api.TaxRates.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -165,13 +165,13 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4606)
+[src/generated/Pricing/api.ts:4606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4606)
 
 ___
 
 ### updateTaxRate
 
-▸ **updateTaxRate**(`taxRateId`, `updateTaxRateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTaxRate**(`taxRateId`, `updateTaxRateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update tax rate.
 
@@ -185,7 +185,7 @@ Update tax rate.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -199,4 +199,4 @@ TaxRateApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4619](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4619)
+[src/generated/Pricing/api.ts:4619](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4619)

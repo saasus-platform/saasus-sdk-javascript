@@ -60,7 +60,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### createPricingUnit
 
-▸ **createPricingUnit**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`\>\>
+▸ **createPricingUnit**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`, {}\>\>
 
 Create a pricing unit.
 
@@ -121,7 +121,7 @@ Create a pricing unit.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`, {}\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4320](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4320)
+[src/generated/Pricing/api.ts:4320](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4320)
 
 ___
 
 ### deletePricingUnit
 
-▸ **deletePricingUnit**(`pricingUnitId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deletePricingUnit**(`pricingUnitId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete a pricing unit.
 
@@ -154,7 +154,7 @@ Delete a pricing unit.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -168,13 +168,13 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4332)
+[src/generated/Pricing/api.ts:4332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4332)
 
 ___
 
 ### getPricingUnit
 
-▸ **getPricingUnit**(`pricingUnitId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`\>\>
+▸ **getPricingUnit**(`pricingUnitId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`, {}\>\>
 
 Get a pricing unit.
 
@@ -187,7 +187,7 @@ Get a pricing unit.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingUnit`](../modules/Pricing_api.md#pricingunit), `any`, {}\>\>
 
 **`Summary`**
 
@@ -201,13 +201,13 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4344](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4344)
+[src/generated/Pricing/api.ts:4344](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4344)
 
 ___
 
 ### getPricingUnits
 
-▸ **getPricingUnits**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingUnits`](../interfaces/Pricing_api.PricingUnits.md), `any`\>\>
+▸ **getPricingUnits**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingUnits`](../interfaces/Pricing_api.PricingUnits.md), `any`, {}\>\>
 
 Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type=tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
 
@@ -219,7 +219,7 @@ Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\"
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingUnits`](../interfaces/Pricing_api.PricingUnits.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingUnits`](../interfaces/Pricing_api.PricingUnits.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -233,13 +233,13 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4355)
+[src/generated/Pricing/api.ts:4355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4355)
 
 ___
 
 ### updatePricingUnit
 
-▸ **updatePricingUnit**(`pricingUnitId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updatePricingUnit**(`pricingUnitId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update pricing unit.
 
@@ -253,7 +253,7 @@ Update pricing unit.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -267,4 +267,4 @@ PricingUnitsApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:4368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L4368)
+[src/generated/Pricing/api.ts:4368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L4368)

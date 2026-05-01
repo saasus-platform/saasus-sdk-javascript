@@ -29,7 +29,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/Integration/api.ts:132](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L132)
+[src/generated/Integration/api.ts:132](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L132)
 
 ___
 
@@ -45,4 +45,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/Integration/api.ts:126](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L126)
+[src/generated/Integration/api.ts:126](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L126)

@@ -2799,6 +2799,54 @@
                 };
             },
             /**
+             * Search SaaS users by user ID, email, or sign-in ID.
+             * @summary Search SaaS Users
+             * @param {string} [id] User ID
+             * @param {string} [email] Email prefix
+             * @param {string} [signInId] Sign-in ID prefix
+             * @param {number} [limit] Maximum number of items to retrieve
+             * @param {string} [cursor] Cursor for cursor pagination
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            searchSaasUsers: async (id, email, signInId, limit, cursor, options = {}) => {
+                const localVarPath = `/users/search`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                if (id !== undefined) {
+                    localVarQueryParameter['id'] = id;
+                }
+                if (email !== undefined) {
+                    localVarQueryParameter['email'] = email;
+                }
+                if (signInId !== undefined) {
+                    localVarQueryParameter['sign_in_id'] = signInId;
+                }
+                if (limit !== undefined) {
+                    localVarQueryParameter['limit'] = limit;
+                }
+                if (cursor !== undefined) {
+                    localVarQueryParameter['cursor'] = cursor;
+                }
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * A user attempts to sign in.
              * @summary Sign In
              * @param {SignInParam} [signInParam]
@@ -3356,6 +3404,21 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Search SaaS users by user ID, email, or sign-in ID.
+             * @summary Search SaaS Users
+             * @param {string} [id] User ID
+             * @param {string} [email] Email prefix
+             * @param {string} [signInId] Sign-in ID prefix
+             * @param {number} [limit] Maximum number of items to retrieve
+             * @param {string} [cursor] Cursor for cursor pagination
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async searchSaasUsers(id, email, signInId, limit, cursor, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.searchSaasUsers(id, email, signInId, limit, cursor, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * A user attempts to sign in.
              * @summary Sign In
              * @param {SignInParam} [signInParam]
@@ -3669,6 +3732,21 @@
          */
         respondToSignInChallenge(respondToSignInChallengeParam, options) {
             return SaasUserApiFp(this.configuration).respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Search SaaS users by user ID, email, or sign-in ID.
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        searchSaasUsers(id, email, signInId, limit, cursor, options) {
+            return SaasUserApiFp(this.configuration).searchSaasUsers(id, email, signInId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * A user attempts to sign in.
@@ -5002,7 +5080,7 @@
              * @param {string} [signInId] Sign-in ID prefix
              * @param {number} [envId] Environment ID
              * @param {string} [roleId] Role ID
-             * @param {number} [limit] Maximum number of users to retrieve
+             * @param {number} [limit] Maximum number of items to retrieve
              * @param {string} [cursor] Cursor for cursor pagination
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5206,7 +5284,7 @@
              * @param {string} [signInId] Sign-in ID prefix
              * @param {number} [envId] Environment ID
              * @param {string} [roleId] Role ID
-             * @param {number} [limit] Maximum number of users to retrieve
+             * @param {number} [limit] Maximum number of items to retrieve
              * @param {string} [cursor] Cursor for cursor pagination
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -5342,7 +5420,7 @@
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
          * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}

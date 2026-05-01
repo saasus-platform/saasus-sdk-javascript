@@ -60,7 +60,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### createPricingMenu
 
-▸ **createPricingMenu**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+▸ **createPricingMenu**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}\>\>
 
 Create a pricing feature menu.
 
@@ -121,7 +121,7 @@ Create a pricing feature menu.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3271](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3271)
+[src/generated/Pricing/api.ts:3271](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L3271)
 
 ___
 
 ### deletePricingMenu
 
-▸ **deletePricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deletePricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete pricing feature menu.
 
@@ -154,7 +154,7 @@ Delete pricing feature menu.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -168,13 +168,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3283](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3283)
+[src/generated/Pricing/api.ts:3283](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L3283)
 
 ___
 
 ### getPricingMenu
 
-▸ **getPricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+▸ **getPricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}\>\>
 
 Get a pricing feature menu.
 
@@ -187,7 +187,7 @@ Get a pricing feature menu.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -201,13 +201,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3295](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3295)
+[src/generated/Pricing/api.ts:3295](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L3295)
 
 ___
 
 ### getPricingMenus
 
-▸ **getPricingMenus**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`\>\>
+▸ **getPricingMenus**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`, {}\>\>
 
 Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
 
@@ -219,7 +219,7 @@ Get the feature menu list. Multiple measurement units are grouped together and d
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -233,13 +233,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3306)
+[src/generated/Pricing/api.ts:3306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L3306)
 
 ___
 
 ### updatePricingMenu
 
-▸ **updatePricingMenu**(`menuId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updatePricingMenu**(`menuId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update pricing feature menu.
 
@@ -253,7 +253,7 @@ Update pricing feature menu.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -267,4 +267,4 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3319](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3319)
+[src/generated/Pricing/api.ts:3319](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L3319)
