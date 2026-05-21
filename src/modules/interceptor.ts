@@ -6,7 +6,8 @@ import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, InternalAxiosRequ
 export default function getAxiosInstance(
   baseURL: string,
   referer?: string,
-  xSaaSusReferer?: string
+  xSaaSusReferer?: string,
+  xSaaSusTraceId?: string
 ): AxiosInstance {
   const requestConfig: AxiosRequestConfig = {
     baseURL: baseURL,
@@ -35,6 +36,9 @@ export default function getAxiosInstance(
       }
       if (xSaaSusReferer) {
         config.headers!["X-SaaSus-Referer"] = xSaaSusReferer;
+      }
+      if (xSaaSusTraceId) {
+        config.headers!["X-SaaSus-Trace-Id"] = xSaaSusTraceId;
       }
       return config;
     },

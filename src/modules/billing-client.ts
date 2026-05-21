@@ -13,8 +13,9 @@ export class BillingClient {
   private apiBase: string;
   private referer: string;
   private xSaaSusReferer: string;
+  private xSaaSusTraceId: string;
 
-  constructor(referer = "", xSaaSusReferer = "") {
+  constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
     this.secret = process.env.SAASUS_SECRET_KEY || "";
     this.saasId = process.env.SAASUS_SAAS_ID || "";
     this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -31,12 +32,13 @@ export class BillingClient {
 
     this.referer = referer;
     this.xSaaSusReferer = xSaaSusReferer;
+    this.xSaaSusTraceId = xSaaSusTraceId;
 
     const config = new Configuration({
       basePath: this.apiBase + "/v1/billing",
     });
 
-    this.instance = getAxiosInstance(this.apiBase + "/v1/billing", this.referer, this.xSaaSusReferer);
+    this.instance = getAxiosInstance(this.apiBase + "/v1/billing", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
 
     this.stripeApi = new StripeApi(config, "", this.instance);
   }
