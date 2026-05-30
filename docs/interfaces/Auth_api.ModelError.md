@@ -32,7 +32,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1210](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1210)
+[src/generated/Auth/api.ts:1216](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1216)
 
 ___
 
@@ -48,7 +48,7 @@ ModelError
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1204](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1204)
+[src/generated/Auth/api.ts:1210](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1210)
 
 ___
 
@@ -64,4 +64,4 @@ ModelError
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1198](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1198)
+[src/generated/Auth/api.ts:1204](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1204)

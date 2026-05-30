@@ -704,7 +704,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    createCustomer(createCustomerParam?: CreateCustomerParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customer, any>>;
+    createCustomer(createCustomerParam?: CreateCustomerParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customer, any, {}>>;
     /**
      * Retrieve the product\'s publication status from AWS Marketplace.
      * @summary Obtain product publication status from AWS Marketplace
@@ -712,7 +712,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getCatalogEntityVisibility(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CatalogEntityVisibility, any>>;
+    getCatalogEntityVisibility(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CatalogEntityVisibility, any, {}>>;
     /**
      * Get the CloudFormation Quick Create link.
      * @summary Get the link to create the AWS CloudFormation stack
@@ -720,7 +720,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getCloudFormationLaunchStackLink(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CloudFormationLaunchStackLink, any>>;
+    getCloudFormationLaunchStackLink(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CloudFormationLaunchStackLink, any, {}>>;
     /**
      * Get customer information to be linked to AWS Marketplace.
      * @summary Get customer information to be linked to AWS Marketplace
@@ -729,7 +729,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customer, any>>;
+    getCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customer, any, {}>>;
     /**
      * Get a list of customer information to be linked to AWS Marketplace.
      * @summary Get a list of customer information to be linked to AWS Marketplace
@@ -738,7 +738,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getCustomers(tenantIds?: Array<string>, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customers, any>>;
+    getCustomers(tenantIds?: Array<string>, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Customers, any, {}>>;
     /**
      * Get AWS Marketplace Listing Status.
      * @summary Get AWS Marketplace Listing Status
@@ -746,7 +746,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getListingStatus(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<GetListingStatusResult, any>>;
+    getListingStatus(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<GetListingStatusResult, any, {}>>;
     /**
      * Obtain plan information to link to AWS Marketplace.
      * @summary Obtain plan information to link to AWS Marketplace
@@ -755,7 +755,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getPlanByPlanName(planName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Plan, any>>;
+    getPlanByPlanName(planName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Plan, any, {}>>;
     /**
      * Obtain plan information to link to AWS Marketplace.
      * @summary Obtain plan information to link to AWS Marketplace
@@ -763,7 +763,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getPlans(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Plans, any>>;
+    getPlans(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Plans, any, {}>>;
     /**
      * Get AWS Marketplace Settings.
      * @summary Get AWS Marketplace Settings
@@ -771,7 +771,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    getSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Settings, any>>;
+    getSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Settings, any, {}>>;
     /**
      * Save plan information to be linked to AWSMarketplace.
      * @summary Save plan information to be linked to AWSMarketplace
@@ -780,7 +780,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    savePlan(savePlanParam?: SavePlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    savePlan(savePlanParam?: SavePlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Sync AWS Marketplace customer information to SaaSus.
      * @summary Sync AWS Marketplace customer information to SaaSus
@@ -789,7 +789,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    syncCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    syncCustomer(customerIdentifier: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update AWS Marketplace Listing Status.
      * @summary Update AWS Marketplace Listing Status
@@ -798,7 +798,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateListingStatus(updateListingStatusParam?: UpdateListingStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update AWS Marketplace Settings.
      * @summary Update AWS Marketplace Settings
@@ -807,7 +807,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    updateSettings(updateSettingsParam?: UpdateSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSettings(updateSettingsParam?: UpdateSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Verify Registration Token.
      * @summary Verify Registration Token
@@ -816,7 +816,7 @@ export declare class AwsMarketplaceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AwsMarketplaceApi
      */
-    verifyRegistrationToken(verifyRegistrationTokenParam?: VerifyRegistrationTokenParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    verifyRegistrationToken(verifyRegistrationTokenParam?: VerifyRegistrationTokenParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * ErrorApi - axios parameter creator
@@ -871,5 +871,5 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }

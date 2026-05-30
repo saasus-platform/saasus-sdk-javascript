@@ -57,7 +57,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -71,7 +71,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -99,13 +99,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createAuthCredentials
 
-▸ **createAuthCredentials**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`\>\>
+▸ **createAuthCredentials**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`, {}\>\>
 
 Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
 
@@ -118,7 +118,7 @@ Temporarily save the parameter for the ID token, access token, and refresh token
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -132,13 +132,13 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4124](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4124)
+[src/generated/Auth/api.ts:4257](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4257)
 
 ___
 
 ### getAuthCredentials
 
-▸ **getAuthCredentials**(`code?`, `authFlow?`, `refreshToken?`, `options?`): `Promise`\<`AxiosResponse`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`\>\>
+▸ **getAuthCredentials**(`code?`, `authFlow?`, `refreshToken?`, `options?`): `Promise`\<`AxiosResponse`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`, {}\>\>
 
 Get ID token, access token, and refresh token using a temporary code or a refresh token.
 
@@ -153,7 +153,7 @@ Get ID token, access token, and refresh token using a temporary code or a refres
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -167,4 +167,4 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4138](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4138)
+[src/generated/Auth/api.ts:4271](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4271)

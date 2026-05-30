@@ -15,6 +15,7 @@ SaasUser
 - [attributes](Auth_api.SaasUser.md#attributes)
 - [email](Auth_api.SaasUser.md#email)
 - [id](Auth_api.SaasUser.md#id)
+- [last\_login\_at](Auth_api.SaasUser.md#last_login_at)
 - [sign\_in\_id](Auth_api.SaasUser.md#sign_in_id)
 
 ## Properties
@@ -35,7 +36,7 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1675](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1675)
+[src/generated/Auth/api.ts:1681](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1681)
 
 ___
 
@@ -51,7 +52,7 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1663)
+[src/generated/Auth/api.ts:1669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1669)
 
 ___
 
@@ -65,7 +66,23 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1657](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1657)
+[src/generated/Auth/api.ts:1663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1663)
+
+___
+
+### last\_login\_at
+
+• `Optional` **last\_login\_at**: ``null`` \| `number`
+
+Last login date and time (unix timestamp). Null if the user has never logged in.
+
+**`Memberof`**
+
+SaasUser
+
+#### Defined in
+
+[src/generated/Auth/api.ts:1687](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1687)
 
 ___
 
@@ -81,4 +98,4 @@ SaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1669)
+[src/generated/Auth/api.ts:1675](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1675)

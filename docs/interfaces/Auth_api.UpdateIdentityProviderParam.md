@@ -27,7 +27,7 @@ UpdateIdentityProviderParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2437](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2437)
+[src/generated/Auth/api.ts:2570](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2570)
 
 ___
 
@@ -41,4 +41,4 @@ UpdateIdentityProviderParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2431](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2431)
+[src/generated/Auth/api.ts:2564](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2564)

@@ -30,7 +30,7 @@ SignInResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1772](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1772)
+[src/generated/Auth/api.ts:1867](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1867)
 
 ___
 
@@ -50,7 +50,7 @@ SignInResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1778)
+[src/generated/Auth/api.ts:1873](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1873)
 
 ___
 
@@ -66,4 +66,4 @@ SignInResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1784](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1784)
+[src/generated/Auth/api.ts:1879](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1879)

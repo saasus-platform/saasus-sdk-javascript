@@ -32,7 +32,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1890](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1890)
+[src/generated/Auth/api.ts:1985](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1985)
 
 ___
 
@@ -48,7 +48,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1896](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1896)
+[src/generated/Auth/api.ts:1991](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1991)
 
 ___
 
@@ -64,7 +64,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1878](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1878)
+[src/generated/Auth/api.ts:1973](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1973)
 
 ___
 
@@ -80,7 +80,7 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1884)
+[src/generated/Auth/api.ts:1979](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1979)
 
 ___
 
@@ -96,4 +96,4 @@ SingleTenantSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1902](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1902)
+[src/generated/Auth/api.ts:1997](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1997)

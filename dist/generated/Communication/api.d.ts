@@ -438,7 +438,7 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * FeedbackApi - axios parameter creator
@@ -785,7 +785,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    createFeedback(createFeedbackParam?: CreateFeedbackParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedback, any>>;
+    createFeedback(createFeedbackParam?: CreateFeedbackParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedback, any, {}>>;
     /**
      * Post comment to feedback.
      * @summary Create Feedback Comment
@@ -795,7 +795,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Comment, any>>;
+    createFeedbackComment(feedbackId: string, createFeedbackCommentParam?: CreateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Comment, any, {}>>;
     /**
      * Vote for feedback.
      * @summary Create Vote User
@@ -805,7 +805,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Votes, any>>;
+    createVoteUser(feedbackId: string, createVoteUserParam?: CreateVoteUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Votes, any, {}>>;
     /**
      * Delete Feedback.
      * @summary Delete Feedback
@@ -814,7 +814,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    deleteFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Delete comment for feedback.
      * @summary Delete Feedback Comment
@@ -824,7 +824,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    deleteFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Cancel vote for feedback.
      * @summary Delete Vote For Feedback
@@ -834,7 +834,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    deleteVoteForFeedback(feedbackId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteVoteForFeedback(feedbackId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Retrieve feedback.
      * @summary Get Feedback
@@ -843,7 +843,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    getFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedback, any>>;
+    getFeedback(feedbackId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedback, any, {}>>;
     /**
      * Retrieve comment from feedback.
      * @summary Get Feedback Comment
@@ -853,7 +853,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    getFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Comment, any>>;
+    getFeedbackComment(feedbackId: string, commentId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Comment, any, {}>>;
     /**
      * Get the list of feedbacks.
      * @summary Get Feedbacks
@@ -861,7 +861,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    getFeedbacks(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedbacks, any>>;
+    getFeedbacks(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Feedbacks, any, {}>>;
     /**
      * Edit feedback.
      * @summary Update Feedback
@@ -871,7 +871,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateFeedback(feedbackId: string, updateFeedbackParam?: UpdateFeedbackParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Edit comment for feedback.
      * @summary Update Feedback Comment
@@ -882,7 +882,7 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateFeedbackComment(feedbackId: string, commentId: string, updateFeedbackCommentParam?: UpdateFeedbackCommentParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update Feedback Status.
      * @summary Update Feedback Status
@@ -892,5 +892,5 @@ export declare class FeedbackApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedbackApi
      */
-    updateFeedbackStatus(feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateFeedbackStatus(feedbackId: string, updateFeedbackStatusParam?: UpdateFeedbackStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
