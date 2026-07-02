@@ -26,4 +26,4 @@ TenantIdentityProvidersSamlAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2218](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2218)
+[src/generated/Auth/api.ts:2313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2313)

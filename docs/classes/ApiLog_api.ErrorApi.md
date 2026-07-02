@@ -56,7 +56,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +70,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -98,13 +98,13 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L50)
+[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L50)
 
 ## Methods
 
 ### returnInternalServerError
 
-▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 This endpoint is used for testing purposes. Returns a server error with status code 500.
 
@@ -116,7 +116,7 @@ This endpoint is used for testing purposes. Returns a server error with status c
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -130,4 +130,4 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:550](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L550)
+[src/generated/ApiLog/api.ts:566](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L566)

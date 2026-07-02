@@ -30,7 +30,7 @@ Credentials
 
 #### Defined in
 
-[src/generated/Auth/api.ts:596](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L596)
+[src/generated/Auth/api.ts:602](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L602)
 
 ___
 
@@ -46,7 +46,7 @@ Credentials
 
 #### Defined in
 
-[src/generated/Auth/api.ts:590](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L590)
+[src/generated/Auth/api.ts:596](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L596)
 
 ___
 
@@ -62,4 +62,4 @@ Credentials
 
 #### Defined in
 
-[src/generated/Auth/api.ts:602](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L602)
+[src/generated/Auth/api.ts:608](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L608)

@@ -557,6 +557,12 @@ export interface CreatedSaasUser {
      */
     'attributes': { [key: string]: any; };
     /**
+     * Last login date and time (unix timestamp). Null if the user has never logged in. 
+     * @type {number}
+     * @memberof CreatedSaasUser
+     */
+    'last_login_at'?: number | null;
+    /**
      * Auto-generated password (only when sign_in_id authentication and password not specified) 
      * @type {string}
      * @memberof CreatedSaasUser
@@ -1673,6 +1679,12 @@ export interface SaasUser {
      * @memberof SaasUser
      */
     'attributes': { [key: string]: any; };
+    /**
+     * Last login date and time (unix timestamp). Null if the user has never logged in. 
+     * @type {number}
+     * @memberof SaasUser
+     */
+    'last_login_at'?: number | null;
 }
 /**
  * 
@@ -1699,6 +1711,89 @@ export interface SaasUsers {
      * @memberof SaasUsers
      */
     'users': Array<SaasUser>;
+}
+/**
+ * 
+ * @export
+ * @interface SaasUsersCount
+ */
+export interface SaasUsersCount {
+    /**
+     * Count of SaaS users
+     * @type {number}
+     * @memberof SaasUsersCount
+     */
+    'count': number;
+    /**
+     * Unix timestamp (seconds) of the last update
+     * @type {number}
+     * @memberof SaasUsersCount
+     */
+    'updated_at': number;
+}
+/**
+ * 
+ * @export
+ * @interface SaveSaasUsersCountParam
+ */
+export interface SaveSaasUsersCountParam {
+    /**
+     * Count of SaaS users
+     * @type {number}
+     * @memberof SaveSaasUsersCountParam
+     */
+    'count': number;
+}
+/**
+ * 
+ * @export
+ * @interface SaveTenantUserCountParam
+ */
+export interface SaveTenantUserCountParam {
+    /**
+     * 
+     * @type {string}
+     * @memberof SaveTenantUserCountParam
+     */
+    'tenant_id': string;
+    /**
+     * Count of tenant users
+     * @type {number}
+     * @memberof SaveTenantUserCountParam
+     */
+    'count': number;
+}
+/**
+ * 
+ * @export
+ * @interface SaveTenantUsersCountsParam
+ */
+export interface SaveTenantUsersCountsParam {
+    /**
+     * 
+     * @type {Array<SaveTenantUserCountParam>}
+     * @memberof SaveTenantUsersCountsParam
+     */
+    'tenant_user_counts': Array<SaveTenantUserCountParam>;
+}
+/**
+ * 
+ * @export
+ * @interface SearchSaasUsersResult
+ */
+export interface SearchSaasUsersResult {
+    /**
+     * 
+     * @type {Array<SaasUser>}
+     * @memberof SearchSaasUsersResult
+     */
+    'users': Array<SaasUser>;
+    /**
+     * Pagination cursor for the next page
+     * @type {string}
+     * @memberof SearchSaasUsersResult
+     */
+    'cursor'?: string;
 }
 /**
  * 
@@ -2241,6 +2336,44 @@ export interface TenantProps {
      * @memberof TenantProps
      */
     'back_office_staff_email': string;
+}
+/**
+ * 
+ * @export
+ * @interface TenantUserCount
+ */
+export interface TenantUserCount {
+    /**
+     * 
+     * @type {string}
+     * @memberof TenantUserCount
+     */
+    'tenant_id': string;
+    /**
+     * Count of tenant users
+     * @type {number}
+     * @memberof TenantUserCount
+     */
+    'count': number;
+    /**
+     * Unix timestamp (seconds) of the last update
+     * @type {number}
+     * @memberof TenantUserCount
+     */
+    'updated_at': number;
+}
+/**
+ * 
+ * @export
+ * @interface TenantUsersCounts
+ */
+export interface TenantUsersCounts {
+    /**
+     * 
+     * @type {Array<TenantUserCount>}
+     * @memberof TenantUsersCounts
+     */
+    'tenant_user_counts': Array<TenantUserCount>;
 }
 /**
  * Tenant Info
@@ -5803,6 +5936,40 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * Get the count of SaaS users. 
+         * @summary Get SaaS Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSaasUsersCount: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/users/count`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get the user\'s MFA settings. 
          * @summary Get User\'s MFA Settings
          * @param {string} userId User ID
@@ -6066,6 +6233,105 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(respondToSignInChallengeParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Save the count of SaaS users. 
+         * @summary Save SaaS Users Count
+         * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        saveSaasUsersCount: async (saveSaasUsersCountParam: SaveSaasUsersCountParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'saveSaasUsersCountParam' is not null or undefined
+            assertParamExists('saveSaasUsersCount', 'saveSaasUsersCountParam', saveSaasUsersCountParam)
+            const localVarPath = `/users/count`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(saveSaasUsersCountParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Search SaaS users by user ID, email, or sign-in ID. 
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchSaasUsers: async (id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/users/search`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+            if (email !== undefined) {
+                localVarQueryParameter['email'] = email;
+            }
+
+            if (signInId !== undefined) {
+                localVarQueryParameter['sign_in_id'] = signInId;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (cursor !== undefined) {
+                localVarQueryParameter['cursor'] = cursor;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -6629,6 +6895,16 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Get the count of SaaS users. 
+         * @summary Get SaaS Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getSaasUsersCount(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUsersCount>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasUsersCount(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Get the user\'s MFA settings. 
          * @summary Get User\'s MFA Settings
          * @param {string} userId User ID
@@ -6704,6 +6980,32 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
          */
         async respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RespondToSignInChallengeResult>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.respondToSignInChallenge(respondToSignInChallengeParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Save the count of SaaS users. 
+         * @summary Save SaaS Users Count
+         * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async saveSaasUsersCount(saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.saveSaasUsersCount(saveSaasUsersCountParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Search SaaS users by user ID, email, or sign-in ID. 
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchSaasUsersResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.searchSaasUsers(id, email, signInId, limit, cursor, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -6936,6 +7238,15 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getSaasUsers(options).then((request) => request(axios, basePath));
         },
         /**
+         * Get the count of SaaS users. 
+         * @summary Get SaaS Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSaasUsersCount(options?: any): AxiosPromise<SaasUsersCount> {
+            return localVarFp.getSaasUsersCount(options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the user\'s MFA settings. 
          * @summary Get User\'s MFA Settings
          * @param {string} userId User ID
@@ -7005,6 +7316,30 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
          */
         respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: any): AxiosPromise<RespondToSignInChallengeResult> {
             return localVarFp.respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Save the count of SaaS users. 
+         * @summary Save SaaS Users Count
+         * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        saveSaasUsersCount(saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: any): AxiosPromise<void> {
+            return localVarFp.saveSaasUsersCount(saveSaasUsersCountParam, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Search SaaS users by user ID, email, or sign-in ID. 
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchSaasUsersResult> {
+            return localVarFp.searchSaasUsers(id, email, signInId, limit, cursor, options).then((request) => request(axios, basePath));
         },
         /**
          * A user attempts to sign in. 
@@ -7243,6 +7578,17 @@ export class SaasUserApi extends BaseAPI {
     }
 
     /**
+     * Get the count of SaaS users. 
+     * @summary Get SaaS Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public getSaasUsersCount(options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).getSaasUsersCount(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get the user\'s MFA settings. 
      * @summary Get User\'s MFA Settings
      * @param {string} userId User ID
@@ -7325,6 +7671,34 @@ export class SaasUserApi extends BaseAPI {
      */
     public respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig) {
         return SaasUserApiFp(this.configuration).respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Save the count of SaaS users. 
+     * @summary Save SaaS Users Count
+     * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public saveSaasUsersCount(saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).saveSaasUsersCount(saveSaasUsersCountParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Search SaaS users by user ID, email, or sign-in ID. 
+     * @summary Search SaaS Users
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [limit] Maximum number of items to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).searchSaasUsers(id, email, signInId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -9173,6 +9547,40 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * Get the count of tenant users for each tenant. 
+         * @summary Get Tenant Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllTenantUsersCount: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/tenants/all/users/count`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get one tenant user by specific ID. 
          * @summary Get Tenant User
          * @param {string} tenantId Tenant ID
@@ -9253,6 +9661,46 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * Save the count of tenant users for each tenant. 
+         * @summary Save Tenant Users Count
+         * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        saveTenantUsersCounts: async (saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'saveTenantUsersCountsParam' is not null or undefined
+            assertParamExists('saveTenantUsersCounts', 'saveTenantUsersCountsParam', saveTenantUsersCountsParam)
+            const localVarPath = `/tenants/all/users/count`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(saveTenantUsersCountsParam, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Search tenant users by user id, tenant id, email, sign-in ID, env, or role. 
          * @summary Search Tenant Users
          * @param {string} [tenantId] Tenant ID
@@ -9260,13 +9708,13 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [email] Email prefix
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
-         * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {string} [roleName] Role Name
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchTenantUsers: async (tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchTenantUsers: async (tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/tenants/all/users/search`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -9303,8 +9751,8 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
                 localVarQueryParameter['env_id'] = envId;
             }
 
-            if (roleId !== undefined) {
-                localVarQueryParameter['role_id'] = roleId;
+            if (roleName !== undefined) {
+                localVarQueryParameter['role_name'] = roleName;
             }
 
             if (limit !== undefined) {
@@ -9456,6 +9904,16 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Get the count of tenant users for each tenant. 
+         * @summary Get Tenant Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAllTenantUsersCount(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TenantUsersCounts>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllTenantUsersCount(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Get one tenant user by specific ID. 
          * @summary Get Tenant User
          * @param {string} tenantId Tenant ID
@@ -9479,6 +9937,17 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Save the count of tenant users for each tenant. 
+         * @summary Save Tenant Users Count
+         * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async saveTenantUsersCounts(saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.saveTenantUsersCounts(saveTenantUsersCountsParam, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Search tenant users by user id, tenant id, email, sign-in ID, env, or role. 
          * @summary Search Tenant Users
          * @param {string} [tenantId] Tenant ID
@@ -9486,14 +9955,14 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
          * @param {string} [email] Email prefix
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
-         * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {string} [roleName] Role Name
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchTenantUsersResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options);
+        async searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchTenantUsersResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -9587,6 +10056,15 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.getAllTenantUsers(options).then((request) => request(axios, basePath));
         },
         /**
+         * Get the count of tenant users for each tenant. 
+         * @summary Get Tenant Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllTenantUsersCount(options?: any): AxiosPromise<TenantUsersCounts> {
+            return localVarFp.getAllTenantUsersCount(options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get one tenant user by specific ID. 
          * @summary Get Tenant User
          * @param {string} tenantId Tenant ID
@@ -9608,6 +10086,16 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.getTenantUsers(tenantId, options).then((request) => request(axios, basePath));
         },
         /**
+         * Save the count of tenant users for each tenant. 
+         * @summary Save Tenant Users Count
+         * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        saveTenantUsersCounts(saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: any): AxiosPromise<void> {
+            return localVarFp.saveTenantUsersCounts(saveTenantUsersCountsParam, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Search tenant users by user id, tenant id, email, sign-in ID, env, or role. 
          * @summary Search Tenant Users
          * @param {string} [tenantId] Tenant ID
@@ -9615,14 +10103,14 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
          * @param {string} [email] Email prefix
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
-         * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {string} [roleName] Role Name
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchTenantUsersResult> {
-            return localVarFp.searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options).then((request) => request(axios, basePath));
+        searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchTenantUsersResult> {
+            return localVarFp.searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options).then((request) => request(axios, basePath));
         },
         /**
          * Update tenant user attributes. 
@@ -9726,6 +10214,17 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
+     * Get the count of tenant users for each tenant. 
+     * @summary Get Tenant Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantUserApi
+     */
+    public getAllTenantUsersCount(options?: AxiosRequestConfig) {
+        return TenantUserApiFp(this.configuration).getAllTenantUsersCount(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get one tenant user by specific ID. 
      * @summary Get Tenant User
      * @param {string} tenantId Tenant ID
@@ -9751,6 +10250,18 @@ export class TenantUserApi extends BaseAPI {
     }
 
     /**
+     * Save the count of tenant users for each tenant. 
+     * @summary Save Tenant Users Count
+     * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantUserApi
+     */
+    public saveTenantUsersCounts(saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: AxiosRequestConfig) {
+        return TenantUserApiFp(this.configuration).saveTenantUsersCounts(saveTenantUsersCountsParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Search tenant users by user id, tenant id, email, sign-in ID, env, or role. 
      * @summary Search Tenant Users
      * @param {string} [tenantId] Tenant ID
@@ -9758,15 +10269,15 @@ export class TenantUserApi extends BaseAPI {
      * @param {string} [email] Email prefix
      * @param {string} [signInId] Sign-in ID prefix
      * @param {number} [envId] Environment ID
-     * @param {string} [roleId] Role ID
-     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [roleName] Role Name
+     * @param {number} [limit] Maximum number of items to retrieve
      * @param {string} [cursor] Cursor for cursor pagination
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    public searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) {
-        return TenantUserApiFp(this.configuration).searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
+    public searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) {
+        return TenantUserApiFp(this.configuration).searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -10107,7 +10618,7 @@ export class UserAttributeApi extends BaseAPI {
 export const UserInfoApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc. 
          * @summary Get User Info
          * @param {string} token ID Token
          * @param {*} [options] Override http request option.
@@ -10240,7 +10751,7 @@ export const UserInfoApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UserInfoApiAxiosParamCreator(configuration)
     return {
         /**
-         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc. 
          * @summary Get User Info
          * @param {string} token ID Token
          * @param {*} [options] Override http request option.
@@ -10283,7 +10794,7 @@ export const UserInfoApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = UserInfoApiFp(configuration)
     return {
         /**
-         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc. 
          * @summary Get User Info
          * @param {string} token ID Token
          * @param {*} [options] Override http request option.
@@ -10323,7 +10834,7 @@ export const UserInfoApiFactory = function (configuration?: Configuration, baseP
  */
 export class UserInfoApi extends BaseAPI {
     /**
-     * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. 
+     * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc. 
      * @summary Get User Info
      * @param {string} token ID Token
      * @param {*} [options] Override http request option.

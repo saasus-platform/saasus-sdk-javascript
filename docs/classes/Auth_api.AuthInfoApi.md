@@ -61,7 +61,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -75,7 +75,7 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -103,13 +103,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### getAuthInfo
 
-▸ **getAuthInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`\>\>
+▸ **getAuthInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`, {}\>\>
 
 Get the post-login SaaS URL that contains authentication information. You can pass authentication information to the URL obtained here and implement this Callback using the SaaSus SDK.
 
@@ -121,7 +121,7 @@ Get the post-login SaaS URL that contains authentication information. You can pa
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3305](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3305)
+[src/generated/Auth/api.ts:3438](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3438)
 
 ___
 
 ### getIdentityProviders
 
-▸ **getIdentityProviders**(`options?`): `Promise`\<`AxiosResponse`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`\>\>
+▸ **getIdentityProviders**(`options?`): `Promise`\<`AxiosResponse`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`, {}\>\>
 
 Get sign-in information via external provider set in cognito.
 
@@ -153,7 +153,7 @@ Get sign-in information via external provider set in cognito.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -167,13 +167,13 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3316](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3316)
+[src/generated/Auth/api.ts:3449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3449)
 
 ___
 
 ### getSignInSettings
 
-▸ **getSignInSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`\>\>
+▸ **getSignInSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`, {}\>\>
 
 Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
 
@@ -185,7 +185,7 @@ Get user password requirements. Set a secure password that is difficult to decip
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -199,13 +199,13 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3327](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3327)
+[src/generated/Auth/api.ts:3460](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3460)
 
 ___
 
 ### updateAuthInfo
 
-▸ **updateAuthInfo**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateAuthInfo**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
 
@@ -218,7 +218,7 @@ Register post-login SaaS URL for authentication information. It is possible to p
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -232,13 +232,13 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3339)
+[src/generated/Auth/api.ts:3472](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3472)
 
 ___
 
 ### updateIdentityProvider
 
-▸ **updateIdentityProvider**(`updateIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateIdentityProvider**(`updateIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update the sign-in information for the external ID provider
 
@@ -251,7 +251,7 @@ Update the sign-in information for the external ID provider
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -265,13 +265,13 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3351)
+[src/generated/Auth/api.ts:3484](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3484)
 
 ___
 
 ### updateSignInSettings
 
-▸ **updateSignInSettings**(`updateSignInSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSignInSettings**(`updateSignInSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
 
@@ -284,7 +284,7 @@ Update user password requirements. Set a secure password that is difficult to de
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -298,4 +298,4 @@ AuthInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3363)
+[src/generated/Auth/api.ts:3496](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3496)

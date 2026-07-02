@@ -56,7 +56,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Billing/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +70,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -98,13 +98,13 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L50)
+[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Billing/base.ts#L50)
 
 ## Methods
 
 ### returnInternalServerError
 
-▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 This endpoint is used for testing purposes. Returns a server error with status code 500.
 
@@ -116,7 +116,7 @@ This endpoint is used for testing purposes. Returns a server error with status c
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -130,4 +130,4 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:166](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L166)
+[src/generated/Billing/api.ts:166](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Billing/api.ts#L166)

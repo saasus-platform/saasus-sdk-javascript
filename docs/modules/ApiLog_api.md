@@ -46,13 +46,13 @@ ApiLogApi - axios parameter creator
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `getLog` | (`apiLogId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/ApiLog_base.RequestArgs.md)\> | - |
-| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/ApiLog_base.RequestArgs.md)\> | - |
+| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `startAt?`: `number`, `endAt?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/ApiLog_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L249)
+[src/generated/ApiLog/api.ts:249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L249)
 
 ___
 
@@ -77,13 +77,13 @@ ApiLogApi - factory interface
 | Name | Type |
 | :------ | :------ |
 | `getLog` | (`apiLogId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md)\> |
-| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\> |
+| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `startAt?`: `number`, `endAt?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L389)
+[src/generated/ApiLog/api.ts:401](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L401)
 
 ___
 
@@ -106,13 +106,13 @@ ApiLogApi - functional programming interface
 | Name | Type |
 | :------ | :------ |
 | `getLog` | (`apiLogId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md)\>\> |
-| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\>\> |
+| `getLogs` | (`createdDate?`: `string`, `createdAt?`: `string`, `limit?`: `number`, `startAt?`: `number`, `endAt?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md)\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:354](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L354)
+[src/generated/ApiLog/api.ts:364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L364)
 
 ___
 
@@ -140,7 +140,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:458](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L458)
+[src/generated/ApiLog/api.ts:474](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L474)
 
 ___
 
@@ -170,7 +170,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:521](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L521)
+[src/generated/ApiLog/api.ts:537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L537)
 
 ___
 
@@ -198,4 +198,4 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:501](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L501)
+[src/generated/ApiLog/api.ts:517](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L517)

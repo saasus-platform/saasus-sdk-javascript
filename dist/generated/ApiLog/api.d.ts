@@ -249,13 +249,15 @@ export declare const ApiLogApiAxiosParamCreator: (configuration?: Configuration)
      * Retrieve the log of all API executions.
      * @summary Get API execution log list
      * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
      * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+     * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
      * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLogs: (createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    getLogs: (createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * ApiLogApi - functional programming interface
@@ -274,13 +276,15 @@ export declare const ApiLogApiFp: (configuration?: Configuration) => {
      * Retrieve the log of all API executions.
      * @summary Get API execution log list
      * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
      * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+     * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
      * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiLogs>>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiLogs>>;
 };
 /**
  * ApiLogApi - factory interface
@@ -299,13 +303,15 @@ export declare const ApiLogApiFactory: (configuration?: Configuration, basePath?
      * Retrieve the log of all API executions.
      * @summary Get API execution log list
      * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
      * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+     * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
      * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<ApiLogs>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: any): AxiosPromise<ApiLogs>;
 };
 /**
  * ApiLogApi - object-oriented interface
@@ -322,19 +328,21 @@ export declare class ApiLogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
-    getLog(apiLogId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLog, any>>;
+    getLog(apiLogId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLog, any, {}>>;
     /**
      * Retrieve the log of all API executions.
      * @summary Get API execution log list
      * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
      * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+     * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
      * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
-    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLogs, any>>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLogs, any, {}>>;
 }
 /**
  * ErrorApi - axios parameter creator
@@ -389,5 +397,5 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }

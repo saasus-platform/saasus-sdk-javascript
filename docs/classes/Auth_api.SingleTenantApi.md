@@ -58,7 +58,7 @@ SingleTenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ SingleTenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -100,13 +100,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### getCloudFormationLaunchStackLinkForSingleTenant
 
-▸ **getCloudFormationLaunchStackLinkForSingleTenant**(`options?`): `Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md), `any`\>\>
+▸ **getCloudFormationLaunchStackLinkForSingleTenant**(`options?`): `Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md), `any`, {}\>\>
 
 Get the CloudFormation stack activation link for SaaS Infrastructure Management.
 
@@ -118,7 +118,7 @@ Get the CloudFormation stack activation link for SaaS Infrastructure Management.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -132,13 +132,13 @@ SingleTenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7679](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7679)
+[src/generated/Auth/api.ts:8053](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8053)
 
 ___
 
 ### getSingleTenantSettings
 
-▸ **getSingleTenantSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md), `any`\>\>
+▸ **getSingleTenantSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md), `any`, {}\>\>
 
 #### Parameters
 
@@ -148,7 +148,7 @@ ___
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -162,13 +162,13 @@ SingleTenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7690](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7690)
+[src/generated/Auth/api.ts:8064](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8064)
 
 ___
 
 ### updateSingleTenantSettings
 
-▸ **updateSingleTenantSettings**(`updateSingleTenantSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSingleTenantSettings**(`updateSingleTenantSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled.
 
@@ -181,7 +181,7 @@ Updates configuration information for SaaS Infrastructure Management Returns err
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -195,4 +195,4 @@ SingleTenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7702](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7702)
+[src/generated/Auth/api.ts:8076](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8076)

@@ -35,7 +35,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2836](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2836)
+[src/generated/Auth/api.ts:2969](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2969)
 
 ___
 
@@ -49,7 +49,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2818](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2818)
+[src/generated/Auth/api.ts:2951](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2951)
 
 ___
 
@@ -65,7 +65,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2824](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2824)
+[src/generated/Auth/api.ts:2957](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2957)
 
 ___
 
@@ -79,7 +79,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2806](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2806)
+[src/generated/Auth/api.ts:2939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2939)
 
 ___
 
@@ -95,7 +95,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2848](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2848)
+[src/generated/Auth/api.ts:2981](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2981)
 
 ___
 
@@ -111,7 +111,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2812](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2812)
+[src/generated/Auth/api.ts:2945](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2945)
 
 ___
 
@@ -125,7 +125,7 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2842](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2842)
+[src/generated/Auth/api.ts:2975](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2975)
 
 ___
 
@@ -145,4 +145,4 @@ UserAvailableTenant
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2830](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2830)
+[src/generated/Auth/api.ts:2963](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2963)

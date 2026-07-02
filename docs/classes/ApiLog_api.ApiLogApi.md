@@ -57,7 +57,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L52)
 
 ## Properties
 
@@ -71,7 +71,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -99,13 +99,13 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/base.ts#L50)
+[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/base.ts#L50)
 
 ## Methods
 
 ### getLog
 
-▸ **getLog**(`apiLogId`, `options?`): `Promise`\<`AxiosResponse`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md), `any`\>\>
+▸ **getLog**(`apiLogId`, `options?`): `Promise`\<`AxiosResponse`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md), `any`, {}\>\>
 
 Retrieve the log of the API execution with the specified ID.
 
@@ -118,7 +118,7 @@ Retrieve the log of the API execution with the specified ID.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`ApiLog`](../interfaces/ApiLog_api.ApiLog.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -132,13 +132,13 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:433](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L433)
+[src/generated/ApiLog/api.ts:447](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L447)
 
 ___
 
 ### getLogs
 
-▸ **getLogs**(`createdDate?`, `createdAt?`, `limit?`, `cursor?`, `options?`): `Promise`\<`AxiosResponse`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md), `any`\>\>
+▸ **getLogs**(`createdDate?`, `createdAt?`, `limit?`, `startAt?`, `endAt?`, `cursor?`, `options?`): `Promise`\<`AxiosResponse`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md), `any`, {}\>\>
 
 Retrieve the log of all API executions.
 
@@ -147,14 +147,16 @@ Retrieve the log of all API executions.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `createdDate?` | `string` | The date, in format of YYYY-MM-DD, to retrieve the log. |
-| `createdAt?` | `string` | The datetime, in ISO 8601 format, to retrieve the log. |
+| `createdAt?` | `string` | The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at. |
 | `limit?` | `number` | Maximum number of logs to retrieve. |
+| `startAt?` | `number` | The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored. |
+| `endAt?` | `number` | The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored. |
 | `cursor?` | `string` | Cursor for cursor pagination. |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`ApiLogs`](../interfaces/ApiLog_api.ApiLogs.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -168,4 +170,4 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:448](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/ApiLog/api.ts#L448)
+[src/generated/ApiLog/api.ts:464](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/ApiLog/api.ts#L464)

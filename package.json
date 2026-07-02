@@ -1,6 +1,6 @@
 {
   "name": "saasus-sdk",
-  "version": "1.13.2",
+  "version": "999.999.2537",
   "description": "Javascript SDK for SaaSus Platform",
   "main": "./dist/saasus-sdk.js",
   "module": "./dist/saasus-sdk.js",
