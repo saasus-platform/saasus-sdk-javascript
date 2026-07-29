@@ -13,8 +13,9 @@ export class IntegrationClient {
   private apiBase: string;
   private referer: string;
   private xSaaSusReferer: string;
+  private xSaaSusTraceId: string;
 
-  constructor(referer = "", xSaaSusReferer = "") {
+  constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
     this.secret = process.env.SAASUS_SECRET_KEY || "";
     this.saasId = process.env.SAASUS_SAAS_ID || "";
     this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -31,8 +32,9 @@ export class IntegrationClient {
 
     this.referer = referer;
     this.xSaaSusReferer = xSaaSusReferer;
+    this.xSaaSusTraceId = xSaaSusTraceId;
 
-    this.instance = getAxiosInstance(this.apiBase + "/v1/integration", this.referer, this.xSaaSusReferer);
+    this.instance = getAxiosInstance(this.apiBase + "/v1/integration", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
 
     const config = new Configuration({
       basePath: this.apiBase + "/v1/integration",
