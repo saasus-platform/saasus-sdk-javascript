@@ -1703,6 +1703,25 @@ export interface SaasUsers {
 /**
  * 
  * @export
+ * @interface SearchSaasUsersResult
+ */
+export interface SearchSaasUsersResult {
+    /**
+     * 
+     * @type {Array<SaasUser>}
+     * @memberof SearchSaasUsersResult
+     */
+    'users': Array<SaasUser>;
+    /**
+     * Pagination cursor for the next page
+     * @type {string}
+     * @memberof SearchSaasUsersResult
+     */
+    'cursor'?: string;
+}
+/**
+ * 
+ * @export
  * @interface SearchTenantUsersResult
  */
 export interface SearchTenantUsersResult {
@@ -6073,6 +6092,65 @@ export const SaasUserApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * Search SaaS users by user ID, email, or sign-in ID. 
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchSaasUsers: async (id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/users/search`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+            if (email !== undefined) {
+                localVarQueryParameter['email'] = email;
+            }
+
+            if (signInId !== undefined) {
+                localVarQueryParameter['sign_in_id'] = signInId;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (cursor !== undefined) {
+                localVarQueryParameter['cursor'] = cursor;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * A user attempts to sign in. 
          * @summary Sign In
          * @param {SignInParam} [signInParam] 
@@ -6707,6 +6785,21 @@ export const SaasUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Search SaaS users by user ID, email, or sign-in ID. 
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchSaasUsersResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.searchSaasUsers(id, email, signInId, limit, cursor, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * A user attempts to sign in. 
          * @summary Sign In
          * @param {SignInParam} [signInParam] 
@@ -7005,6 +7098,20 @@ export const SaasUserApiFactory = function (configuration?: Configuration, baseP
          */
         respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: any): AxiosPromise<RespondToSignInChallengeResult> {
             return localVarFp.respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Search SaaS users by user ID, email, or sign-in ID. 
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchSaasUsersResult> {
+            return localVarFp.searchSaasUsers(id, email, signInId, limit, cursor, options).then((request) => request(axios, basePath));
         },
         /**
          * A user attempts to sign in. 
@@ -7325,6 +7432,22 @@ export class SaasUserApi extends BaseAPI {
      */
     public respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig) {
         return SaasUserApiFp(this.configuration).respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Search SaaS users by user ID, email, or sign-in ID. 
+     * @summary Search SaaS Users
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [limit] Maximum number of items to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    public searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) {
+        return SaasUserApiFp(this.configuration).searchSaasUsers(id, email, signInId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -9261,7 +9384,7 @@ export const TenantUserApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
          * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9487,7 +9610,7 @@ export const TenantUserApiFp = function(configuration?: Configuration) {
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
          * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9616,7 +9739,7 @@ export const TenantUserApiFactory = function (configuration?: Configuration, bas
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
          * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -9759,7 +9882,7 @@ export class TenantUserApi extends BaseAPI {
      * @param {string} [signInId] Sign-in ID prefix
      * @param {number} [envId] Environment ID
      * @param {string} [roleId] Role ID
-     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {number} [limit] Maximum number of items to retrieve
      * @param {string} [cursor] Cursor for cursor pagination
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

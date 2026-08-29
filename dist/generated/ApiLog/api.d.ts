@@ -322,7 +322,7 @@ export declare class ApiLogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
-    getLog(apiLogId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLog, any>>;
+    getLog(apiLogId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLog, any, {}>>;
     /**
      * Retrieve the log of all API executions.
      * @summary Get API execution log list
@@ -334,7 +334,7 @@ export declare class ApiLogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
-    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLogs, any>>;
+    getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ApiLogs, any, {}>>;
 }
 /**
  * ErrorApi - axios parameter creator
@@ -389,5 +389,5 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }

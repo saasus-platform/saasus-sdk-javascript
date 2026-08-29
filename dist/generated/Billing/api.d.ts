@@ -110,7 +110,7 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * StripeApi - axios parameter creator
@@ -210,7 +210,7 @@ export declare class StripeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof StripeApi
      */
-    deleteStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
      * @summary Get Stripe Connection information
@@ -218,7 +218,7 @@ export declare class StripeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof StripeApi
      */
-    getStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeInfo, any>>;
+    getStripeInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeInfo, any, {}>>;
     /**
      * Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
      * @summary Update Stripe Connection Info
@@ -227,5 +227,5 @@ export declare class StripeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof StripeApi
      */
-    updateStripeInfo(updateStripeInfoParam?: UpdateStripeInfoParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateStripeInfo(updateStripeInfoParam?: UpdateStripeInfoParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }

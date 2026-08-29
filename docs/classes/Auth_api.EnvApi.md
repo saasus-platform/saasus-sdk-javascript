@@ -60,7 +60,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createEnv
 
-▸ **createEnv**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+▸ **createEnv**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}\>\>
 
 Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
 
@@ -121,7 +121,7 @@ Create environment information. Multiple environments can be defined, such as an
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4483](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4483)
+[src/generated/Auth/api.ts:4502](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4502)
 
 ___
 
 ### deleteEnv
 
-▸ **deleteEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete env info. Env with id 3 cannot be deleted.
 
@@ -154,7 +154,7 @@ Delete env info. Env with id 3 cannot be deleted.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -168,13 +168,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4495](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4495)
+[src/generated/Auth/api.ts:4514](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4514)
 
 ___
 
 ### getEnv
 
-▸ **getEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+▸ **getEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}\>\>
 
 Get environment details.
 
@@ -187,7 +187,7 @@ Get environment details.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -201,13 +201,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4507](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4507)
+[src/generated/Auth/api.ts:4526](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4526)
 
 ___
 
 ### getEnvs
 
-▸ **getEnvs**(`options?`): `Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`\>\>
+▸ **getEnvs**(`options?`): `Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`, {}\>\>
 
 Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
 
@@ -219,7 +219,7 @@ Get registered environment information. Multiple environments can be defined, su
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -233,13 +233,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4518)
+[src/generated/Auth/api.ts:4537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4537)
 
 ___
 
 ### updateEnv
 
-▸ **updateEnv**(`envId`, `updateEnvParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateEnv**(`envId`, `updateEnvParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update env info.
 
@@ -253,7 +253,7 @@ Update env info.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -267,4 +267,4 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4531](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4531)
+[src/generated/Auth/api.ts:4550](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4550)

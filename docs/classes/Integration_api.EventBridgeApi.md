@@ -60,7 +60,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L52)
+[src/generated/Integration/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/base.ts#L52)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/base.ts#L50)
+[src/generated/Integration/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/base.ts#L50)
 
 ## Methods
 
 ### createEventBridgeEvent
 
-▸ **createEventBridgeEvent**(`createEventBridgeEventParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **createEventBridgeEvent**(`createEventBridgeEventParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Send events to Amazon EventBridge.
 
@@ -121,7 +121,7 @@ Send events to Amazon EventBridge.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L558)
+[src/generated/Integration/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L558)
 
 ___
 
 ### createEventBridgeTestEvent
 
-▸ **createEventBridgeTestEvent**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **createEventBridgeTestEvent**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Send events to test the connection with Amazon EventBridge.
 
@@ -153,7 +153,7 @@ Send events to test the connection with Amazon EventBridge.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -167,13 +167,13 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L569)
+[src/generated/Integration/api.ts:569](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L569)
 
 ___
 
 ### deleteEventBridgeSettings
 
-▸ **deleteEventBridgeSettings**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteEventBridgeSettings**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete settings used to provide host state via Amazon EventBridge.
 
@@ -185,7 +185,7 @@ Delete settings used to provide host state via Amazon EventBridge.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -199,13 +199,13 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:580](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L580)
+[src/generated/Integration/api.ts:580](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L580)
 
 ___
 
 ### getEventBridgeSettings
 
-▸ **getEventBridgeSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`\>\>
+▸ **getEventBridgeSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`, {}\>\>
 
 Gets the settings for providing real-time status of all monitored hosts via Amazon EventBridge.
 
@@ -217,7 +217,7 @@ Gets the settings for providing real-time status of all monitored hosts via Amaz
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -231,13 +231,13 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L591)
+[src/generated/Integration/api.ts:591](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L591)
 
 ___
 
 ### saveEventBridgeSettings
 
-▸ **saveEventBridgeSettings**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **saveEventBridgeSettings**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update configuration used to provide the host state via Amazon EventBridge.
 
@@ -250,7 +250,7 @@ Update configuration used to provide the host state via Amazon EventBridge.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -264,4 +264,4 @@ EventBridgeApi
 
 #### Defined in
 
-[src/generated/Integration/api.ts:603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L603)
+[src/generated/Integration/api.ts:603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Integration/api.ts#L603)

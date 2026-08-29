@@ -31,7 +31,7 @@ NewDeviceMetadata
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1229](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1229)
+[src/generated/Auth/api.ts:1229](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1229)
 
 ___
 
@@ -47,4 +47,4 @@ NewDeviceMetadata
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1223)
+[src/generated/Auth/api.ts:1223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1223)
