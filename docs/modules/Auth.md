@@ -118,6 +118,7 @@
 - [SaasUserApiFp](Auth.md#saasuserapifp)
 - [SaasUserResetPasswordResult](Auth.md#saasuserresetpasswordresult)
 - [SaasUsers](Auth.md#saasusers)
+- [SearchSaasUsersResult](Auth.md#searchsaasusersresult)
 - [SearchTenantUsersResult](Auth.md#searchtenantusersresult)
 - [SelfRegist](Auth.md#selfregist)
 - [SignInParam](Auth.md#signinparam)
@@ -861,6 +862,12 @@ ___
 ### SaasUsers
 
 Re-exports [SaasUsers](../interfaces/Auth_api.SaasUsers.md)
+
+___
+
+### SearchSaasUsersResult
+
+Re-exports [SearchSaasUsersResult](../interfaces/Auth_api.SearchSaasUsersResult.md)
 
 ___
 

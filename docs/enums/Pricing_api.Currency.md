@@ -23,7 +23,7 @@ Unit of currency
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:45](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L45)
+[src/generated/Pricing/api.ts:45](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L45)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L46)
+[src/generated/Pricing/api.ts:46](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Pricing/api.ts#L46)

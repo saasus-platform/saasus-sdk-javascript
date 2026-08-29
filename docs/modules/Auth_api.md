@@ -98,6 +98,7 @@
 - [SaasUser](../interfaces/Auth_api.SaasUser.md)
 - [SaasUserResetPasswordResult](../interfaces/Auth_api.SaasUserResetPasswordResult.md)
 - [SaasUsers](../interfaces/Auth_api.SaasUsers.md)
+- [SearchSaasUsersResult](../interfaces/Auth_api.SearchSaasUsersResult.md)
 - [SearchTenantUsersResult](../interfaces/Auth_api.SearchTenantUsersResult.md)
 - [SelfRegist](../interfaces/Auth_api.SelfRegist.md)
 - [SignInParam](../interfaces/Auth_api.SignInParam.md)
@@ -218,9 +219,9 @@
 
 #### Defined in
 
-[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L50)
+[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L50)
 
-[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L56)
+[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L56)
 
 ___
 
@@ -230,9 +231,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L44)
+[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L44)
 
-[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L49)
+[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L49)
 
 ___
 
@@ -242,9 +243,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L773)
+[src/generated/Auth/api.ts:773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L773)
 
-[src/generated/Auth/api.ts:779](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L779)
+[src/generated/Auth/api.ts:779](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L779)
 
 ___
 
@@ -254,9 +255,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L840)
+[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L840)
 
-[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L844)
+[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L844)
 
 ___
 
@@ -266,9 +267,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1153)
+[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1153)
 
-[src/generated/Auth/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1158)
+[src/generated/Auth/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1158)
 
 ___
 
@@ -278,9 +279,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1180](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1180)
+[src/generated/Auth/api.ts:1180](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1180)
 
-[src/generated/Auth/api.ts:1185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1185)
+[src/generated/Auth/api.ts:1185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1185)
 
 ___
 
@@ -290,9 +291,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1755)
+[src/generated/Auth/api.ts:1774](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1774)
 
-[src/generated/Auth/api.ts:1759](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1759)
+[src/generated/Auth/api.ts:1778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1778)
 
 ___
 
@@ -304,7 +305,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2167)
+[src/generated/Auth/api.ts:2186](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2186)
 
 ## Variables
 
@@ -322,9 +323,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L50)
+[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L50)
 
-[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L56)
+[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L56)
 
 ___
 
@@ -341,9 +342,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L44)
+[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L44)
 
-[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L49)
+[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L49)
 
 ___
 
@@ -361,9 +362,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L773)
+[src/generated/Auth/api.ts:773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L773)
 
-[src/generated/Auth/api.ts:779](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L779)
+[src/generated/Auth/api.ts:779](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L779)
 
 ___
 
@@ -379,9 +380,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L840)
+[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L840)
 
-[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L844)
+[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L844)
 
 ___
 
@@ -398,9 +399,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1153)
+[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1153)
 
-[src/generated/Auth/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1158)
+[src/generated/Auth/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1158)
 
 ___
 
@@ -417,9 +418,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1180](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1180)
+[src/generated/Auth/api.ts:1180](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1180)
 
-[src/generated/Auth/api.ts:1185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1185)
+[src/generated/Auth/api.ts:1185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1185)
 
 ___
 
@@ -435,9 +436,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1755)
+[src/generated/Auth/api.ts:1774](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1774)
 
-[src/generated/Auth/api.ts:1759](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1759)
+[src/generated/Auth/api.ts:1778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1778)
 
 ## Functions
 
@@ -470,7 +471,7 @@ AuthInfoApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2930](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2930)
+[src/generated/Auth/api.ts:2949](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L2949)
 
 ___
 
@@ -505,7 +506,7 @@ AuthInfoApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3228](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3228)
+[src/generated/Auth/api.ts:3247](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3247)
 
 ___
 
@@ -538,7 +539,7 @@ AuthInfoApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3155](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3155)
+[src/generated/Auth/api.ts:3174](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3174)
 
 ___
 
@@ -573,7 +574,7 @@ BasicInfoApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3373)
+[src/generated/Auth/api.ts:3392](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3392)
 
 ___
 
@@ -610,7 +611,7 @@ BasicInfoApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3764](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3764)
+[src/generated/Auth/api.ts:3783](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3783)
 
 ___
 
@@ -645,7 +646,7 @@ BasicInfoApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3670](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3670)
+[src/generated/Auth/api.ts:3689](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3689)
 
 ___
 
@@ -674,7 +675,7 @@ CredentialApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3951](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3951)
+[src/generated/Auth/api.ts:3970](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3970)
 
 ___
 
@@ -705,7 +706,7 @@ CredentialApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4081](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4081)
+[src/generated/Auth/api.ts:4100](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4100)
 
 ___
 
@@ -734,7 +735,7 @@ CredentialApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4047](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4047)
+[src/generated/Auth/api.ts:4066](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4066)
 
 ___
 
@@ -766,7 +767,7 @@ EnvApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4148](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4148)
+[src/generated/Auth/api.ts:4167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4167)
 
 ___
 
@@ -800,7 +801,7 @@ EnvApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4412](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4412)
+[src/generated/Auth/api.ts:4431](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4431)
 
 ___
 
@@ -832,7 +833,7 @@ EnvApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4347](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4347)
+[src/generated/Auth/api.ts:4366](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4366)
 
 ___
 
@@ -860,7 +861,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4541)
+[src/generated/Auth/api.ts:4560](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4560)
 
 ___
 
@@ -890,7 +891,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4604](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4604)
+[src/generated/Auth/api.ts:4623](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4623)
 
 ___
 
@@ -918,7 +919,7 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4584](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4584)
+[src/generated/Auth/api.ts:4603](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4603)
 
 ___
 
@@ -951,7 +952,7 @@ InvitationApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4643](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4643)
+[src/generated/Auth/api.ts:4662](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4662)
 
 ___
 
@@ -986,7 +987,7 @@ InvitationApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4976](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4976)
+[src/generated/Auth/api.ts:4995](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4995)
 
 ___
 
@@ -1019,7 +1020,7 @@ InvitationApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4896](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4896)
+[src/generated/Auth/api.ts:4915](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4915)
 
 ___
 
@@ -1050,7 +1051,7 @@ RoleApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5135)
+[src/generated/Auth/api.ts:5154](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5154)
 
 ___
 
@@ -1083,7 +1084,7 @@ RoleApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5350)
+[src/generated/Auth/api.ts:5369](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5369)
 
 ___
 
@@ -1114,7 +1115,7 @@ RoleApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5296](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5296)
+[src/generated/Auth/api.ts:5315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5315)
 
 ___
 
@@ -1152,6 +1153,7 @@ SaasUserApi - axios parameter creator
 | `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 | `resetSaasUserPassword` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 | `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `searchSaasUsers` | (`id?`: `string`, `email?`: `string`, `signInId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 | `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 | `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 | `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
@@ -1168,7 +1170,7 @@ SaasUserApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5457](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5457)
+[src/generated/Auth/api.ts:5476](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5476)
 
 ___
 
@@ -1208,6 +1210,7 @@ SaasUserApi - factory interface
 | `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
 | `resetSaasUserPassword` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md)\> |
 | `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `any`) => `AxiosPromise`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md)\> |
+| `searchSaasUsers` | (`id?`: `string`, `email?`: `string`, `signInId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SearchSaasUsersResult`](../interfaces/Auth_api.SearchSaasUsersResult.md)\> |
 | `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `any`) => `AxiosPromise`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md)\> |
 | `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\> |
 | `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\> |
@@ -1224,7 +1227,7 @@ SaasUserApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L6844)
+[src/generated/Auth/api.ts:6937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L6937)
 
 ___
 
@@ -1262,6 +1265,7 @@ SaasUserApi - functional programming interface
 | `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
 | `resetSaasUserPassword` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md)\>\> |
 | `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md)\>\> |
+| `searchSaasUsers` | (`id?`: `string`, `email?`: `string`, `signInId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SearchSaasUsersResult`](../interfaces/Auth_api.SearchSaasUsersResult.md)\>\> |
 | `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md)\>\> |
 | `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\>\> |
 | `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\>\> |
@@ -1278,7 +1282,7 @@ SaasUserApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6528](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L6528)
+[src/generated/Auth/api.ts:6606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L6606)
 
 ___
 
@@ -1308,7 +1312,7 @@ SingleTenantApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7475](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7475)
+[src/generated/Auth/api.ts:7598](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L7598)
 
 ___
 
@@ -1340,7 +1344,7 @@ SingleTenantApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7631](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7631)
+[src/generated/Auth/api.ts:7754](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L7754)
 
 ___
 
@@ -1370,7 +1374,7 @@ SingleTenantApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7590](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7590)
+[src/generated/Auth/api.ts:7713](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L7713)
 
 ___
 
@@ -1410,7 +1414,7 @@ TenantApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7712](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7712)
+[src/generated/Auth/api.ts:7835](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L7835)
 
 ___
 
@@ -1452,7 +1456,7 @@ TenantApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8368)
+[src/generated/Auth/api.ts:8491](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8491)
 
 ___
 
@@ -1492,7 +1496,7 @@ TenantApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8215](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8215)
+[src/generated/Auth/api.ts:8338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8338)
 
 ___
 
@@ -1522,7 +1526,7 @@ TenantAttributeApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8673](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8673)
+[src/generated/Auth/api.ts:8796](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8796)
 
 ___
 
@@ -1554,7 +1558,7 @@ TenantAttributeApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8834](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8834)
+[src/generated/Auth/api.ts:8957](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8957)
 
 ___
 
@@ -1584,7 +1588,7 @@ TenantAttributeApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8792](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8792)
+[src/generated/Auth/api.ts:8915](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L8915)
 
 ___
 
@@ -1621,7 +1625,7 @@ TenantUserApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8917](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8917)
+[src/generated/Auth/api.ts:9040](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9040)
 
 ___
 
@@ -1660,7 +1664,7 @@ TenantUserApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9519](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9519)
+[src/generated/Auth/api.ts:9642](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9642)
 
 ___
 
@@ -1697,7 +1701,7 @@ TenantUserApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9382](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9382)
+[src/generated/Auth/api.ts:9505](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9505)
 
 ___
 
@@ -1728,7 +1732,7 @@ UserAttributeApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9792](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9792)
+[src/generated/Auth/api.ts:9915](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L9915)
 
 ___
 
@@ -1761,7 +1765,7 @@ UserAttributeApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10002](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10002)
+[src/generated/Auth/api.ts:10125](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10125)
 
 ___
 
@@ -1792,7 +1796,7 @@ UserAttributeApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9949](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9949)
+[src/generated/Auth/api.ts:10072](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10072)
 
 ___
 
@@ -1822,7 +1826,7 @@ UserInfoApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10107)
+[src/generated/Auth/api.ts:10230](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10230)
 
 ___
 
@@ -1854,7 +1858,7 @@ UserInfoApi - factory interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10282)
+[src/generated/Auth/api.ts:10405](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10405)
 
 ___
 
@@ -1884,4 +1888,4 @@ UserInfoApi - functional programming interface
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10239](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10239)
+[src/generated/Auth/api.ts:10362](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10362)

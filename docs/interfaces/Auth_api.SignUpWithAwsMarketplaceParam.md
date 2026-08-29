@@ -29,7 +29,7 @@ SignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1859](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1859)
+[src/generated/Auth/api.ts:1878](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1878)
 
 ___
 
@@ -45,4 +45,4 @@ SignUpWithAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1865](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1865)
+[src/generated/Auth/api.ts:1884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1884)
