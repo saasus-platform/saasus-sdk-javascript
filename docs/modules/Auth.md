@@ -118,6 +118,11 @@
 - [SaasUserApiFp](Auth.md#saasuserapifp)
 - [SaasUserResetPasswordResult](Auth.md#saasuserresetpasswordresult)
 - [SaasUsers](Auth.md#saasusers)
+- [SaasUsersCount](Auth.md#saasuserscount)
+- [SaveSaasUsersCountParam](Auth.md#savesaasuserscountparam)
+- [SaveTenantUserCountParam](Auth.md#savetenantusercountparam)
+- [SaveTenantUsersCountsParam](Auth.md#savetenantuserscountsparam)
+- [SearchSaasUsersResult](Auth.md#searchsaasusersresult)
 - [SearchTenantUsersResult](Auth.md#searchtenantusersresult)
 - [SelfRegist](Auth.md#selfregist)
 - [SignInParam](Auth.md#signinparam)
@@ -155,6 +160,8 @@
 - [TenantUserApiAxiosParamCreator](Auth.md#tenantuserapiaxiosparamcreator)
 - [TenantUserApiFactory](Auth.md#tenantuserapifactory)
 - [TenantUserApiFp](Auth.md#tenantuserapifp)
+- [TenantUserCount](Auth.md#tenantusercount)
+- [TenantUsersCounts](Auth.md#tenantuserscounts)
 - [Tenants](Auth.md#tenants)
 - [UpdateBasicInfoParam](Auth.md#updatebasicinfoparam)
 - [UpdateCustomizePageSettingsParam](Auth.md#updatecustomizepagesettingsparam)
@@ -864,6 +871,36 @@ Re-exports [SaasUsers](../interfaces/Auth_api.SaasUsers.md)
 
 ___
 
+### SaasUsersCount
+
+Re-exports [SaasUsersCount](../interfaces/Auth_api.SaasUsersCount.md)
+
+___
+
+### SaveSaasUsersCountParam
+
+Re-exports [SaveSaasUsersCountParam](../interfaces/Auth_api.SaveSaasUsersCountParam.md)
+
+___
+
+### SaveTenantUserCountParam
+
+Re-exports [SaveTenantUserCountParam](../interfaces/Auth_api.SaveTenantUserCountParam.md)
+
+___
+
+### SaveTenantUsersCountsParam
+
+Re-exports [SaveTenantUsersCountsParam](../interfaces/Auth_api.SaveTenantUsersCountsParam.md)
+
+___
+
+### SearchSaasUsersResult
+
+Re-exports [SearchSaasUsersResult](../interfaces/Auth_api.SearchSaasUsersResult.md)
+
+___
+
 ### SearchTenantUsersResult
 
 Re-exports [SearchTenantUsersResult](../interfaces/Auth_api.SearchTenantUsersResult.md)
@@ -1083,6 +1120,18 @@ ___
 ### TenantUserApiFp
 
 Re-exports [TenantUserApiFp](Auth_api.md#tenantuserapifp)
+
+___
+
+### TenantUserCount
+
+Re-exports [TenantUserCount](../interfaces/Auth_api.TenantUserCount.md)
+
+___
+
+### TenantUsersCounts
+
+Re-exports [TenantUsersCounts](../interfaces/Auth_api.TenantUsersCounts.md)
 
 ___
 

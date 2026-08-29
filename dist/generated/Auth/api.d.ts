@@ -540,6 +540,12 @@ export interface CreatedSaasUser {
         [key: string]: any;
     };
     /**
+     * Last login date and time (unix timestamp). Null if the user has never logged in.
+     * @type {number}
+     * @memberof CreatedSaasUser
+     */
+    'last_login_at'?: number | null;
+    /**
      * Auto-generated password (only when sign_in_id authentication and password not specified)
      * @type {string}
      * @memberof CreatedSaasUser
@@ -1628,6 +1634,12 @@ export interface SaasUser {
     'attributes': {
         [key: string]: any;
     };
+    /**
+     * Last login date and time (unix timestamp). Null if the user has never logged in.
+     * @type {number}
+     * @memberof SaasUser
+     */
+    'last_login_at'?: number | null;
 }
 /**
  *
@@ -1654,6 +1666,89 @@ export interface SaasUsers {
      * @memberof SaasUsers
      */
     'users': Array<SaasUser>;
+}
+/**
+ *
+ * @export
+ * @interface SaasUsersCount
+ */
+export interface SaasUsersCount {
+    /**
+     * Count of SaaS users
+     * @type {number}
+     * @memberof SaasUsersCount
+     */
+    'count': number;
+    /**
+     * Unix timestamp (seconds) of the last update
+     * @type {number}
+     * @memberof SaasUsersCount
+     */
+    'updated_at': number;
+}
+/**
+ *
+ * @export
+ * @interface SaveSaasUsersCountParam
+ */
+export interface SaveSaasUsersCountParam {
+    /**
+     * Count of SaaS users
+     * @type {number}
+     * @memberof SaveSaasUsersCountParam
+     */
+    'count': number;
+}
+/**
+ *
+ * @export
+ * @interface SaveTenantUserCountParam
+ */
+export interface SaveTenantUserCountParam {
+    /**
+     *
+     * @type {string}
+     * @memberof SaveTenantUserCountParam
+     */
+    'tenant_id': string;
+    /**
+     * Count of tenant users
+     * @type {number}
+     * @memberof SaveTenantUserCountParam
+     */
+    'count': number;
+}
+/**
+ *
+ * @export
+ * @interface SaveTenantUsersCountsParam
+ */
+export interface SaveTenantUsersCountsParam {
+    /**
+     *
+     * @type {Array<SaveTenantUserCountParam>}
+     * @memberof SaveTenantUsersCountsParam
+     */
+    'tenant_user_counts': Array<SaveTenantUserCountParam>;
+}
+/**
+ *
+ * @export
+ * @interface SearchSaasUsersResult
+ */
+export interface SearchSaasUsersResult {
+    /**
+     *
+     * @type {Array<SaasUser>}
+     * @memberof SearchSaasUsersResult
+     */
+    'users': Array<SaasUser>;
+    /**
+     * Pagination cursor for the next page
+     * @type {string}
+     * @memberof SearchSaasUsersResult
+     */
+    'cursor'?: string;
 }
 /**
  *
@@ -2202,6 +2297,44 @@ export interface TenantProps {
      * @memberof TenantProps
      */
     'back_office_staff_email': string;
+}
+/**
+ *
+ * @export
+ * @interface TenantUserCount
+ */
+export interface TenantUserCount {
+    /**
+     *
+     * @type {string}
+     * @memberof TenantUserCount
+     */
+    'tenant_id': string;
+    /**
+     * Count of tenant users
+     * @type {number}
+     * @memberof TenantUserCount
+     */
+    'count': number;
+    /**
+     * Unix timestamp (seconds) of the last update
+     * @type {number}
+     * @memberof TenantUserCount
+     */
+    'updated_at': number;
+}
+/**
+ *
+ * @export
+ * @interface TenantUsersCounts
+ */
+export interface TenantUsersCounts {
+    /**
+     *
+     * @type {Array<TenantUserCount>}
+     * @memberof TenantUsersCounts
+     */
+    'tenant_user_counts': Array<TenantUserCount>;
 }
 /**
  * Tenant Info
@@ -3060,7 +3193,7 @@ export declare class AuthInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthInfoApi
      */
-    getAuthInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<AuthInfo, any>>;
+    getAuthInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<AuthInfo, any, {}>>;
     /**
      * Get sign-in information via external provider set in cognito.
      * @summary Get Sign-In Information Via External Provider
@@ -3068,7 +3201,7 @@ export declare class AuthInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthInfoApi
      */
-    getIdentityProviders(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<IdentityProviders, any>>;
+    getIdentityProviders(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<IdentityProviders, any, {}>>;
     /**
      * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
      * @summary Get Password Requirements
@@ -3076,7 +3209,7 @@ export declare class AuthInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthInfoApi
      */
-    getSignInSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SignInSettings, any>>;
+    getSignInSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SignInSettings, any, {}>>;
     /**
      * Register post-login SaaS URL for authentication information. It is possible to pass authentication information to the URL registered here and implement this Callback using the SaaSus SDK.
      * @summary Update Authentication Info
@@ -3085,7 +3218,7 @@ export declare class AuthInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthInfoApi
      */
-    updateAuthInfo(body?: AuthInfo, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateAuthInfo(body?: AuthInfo, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update the sign-in information for the external ID provider
      * @summary Update Sign-In Information
@@ -3094,7 +3227,7 @@ export declare class AuthInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthInfoApi
      */
-    updateIdentityProvider(updateIdentityProviderParam?: UpdateIdentityProviderParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateIdentityProvider(updateIdentityProviderParam?: UpdateIdentityProviderParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
      * @summary Update Password Requirements
@@ -3103,7 +3236,7 @@ export declare class AuthInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthInfoApi
      */
-    updateSignInSettings(updateSignInSettingsParam?: UpdateSignInSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSignInSettings(updateSignInSettingsParam?: UpdateSignInSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * BasicInfoApi - axios parameter creator
@@ -3317,7 +3450,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    findNotificationMessages(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<NotificationMessages, any>>;
+    findNotificationMessages(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<NotificationMessages, any, {}>>;
     /**
      * Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
      * @summary Get Basic Configurations
@@ -3325,7 +3458,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    getBasicInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<BasicInfo, any>>;
+    getBasicInfo(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<BasicInfo, any, {}>>;
     /**
      * Get authentication authorization basic information.
      * @summary Get Authentication Authorization Basic Information
@@ -3333,7 +3466,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    getCustomizePageSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CustomizePageSettings, any>>;
+    getCustomizePageSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CustomizePageSettings, any, {}>>;
     /**
      * Get the authentication screen setting information (new registration, login, password reset, etc.).
      * @summary Get Authentication Page Setting
@@ -3341,7 +3474,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    getCustomizePages(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CustomizePages, any>>;
+    getCustomizePages(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CustomizePages, any, {}>>;
     /**
      * Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
      * @summary Update Basic Configurations
@@ -3350,7 +3483,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    updateBasicInfo(updateBasicInfoParam?: UpdateBasicInfoParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateBasicInfo(updateBasicInfoParam?: UpdateBasicInfoParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update authentication authorization basic information.
      * @summary Update Authentication Authorization Basic Information
@@ -3359,7 +3492,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    updateCustomizePageSettings(updateCustomizePageSettingsParam?: UpdateCustomizePageSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateCustomizePageSettings(updateCustomizePageSettingsParam?: UpdateCustomizePageSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update the authentication page setting information (new registration, login, password reset, etc.).
      * @summary Authentication Page Setting
@@ -3368,7 +3501,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    updateCustomizePages(updateCustomizePagesParam?: UpdateCustomizePagesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateCustomizePages(updateCustomizePagesParam?: UpdateCustomizePagesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update notification email template.
      * @summary Update Notification Email Template
@@ -3377,7 +3510,7 @@ export declare class BasicInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BasicInfoApi
      */
-    updateNotificationMessages(updateNotificationMessagesParam?: UpdateNotificationMessagesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateNotificationMessages(updateNotificationMessagesParam?: UpdateNotificationMessagesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * CredentialApi - axios parameter creator
@@ -3466,7 +3599,7 @@ export declare class CredentialApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CredentialApi
      */
-    createAuthCredentials(body?: Credentials, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<AuthorizationTempCode, any>>;
+    createAuthCredentials(body?: Credentials, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<AuthorizationTempCode, any, {}>>;
     /**
      * Get ID token, access token, and refresh token using a temporary code or a refresh token.
      * @summary Get Authentication/Authorization Information
@@ -3477,7 +3610,7 @@ export declare class CredentialApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CredentialApi
      */
-    getAuthCredentials(code?: string, authFlow?: 'tempCodeAuth' | 'refreshTokenAuth', refreshToken?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Credentials, any>>;
+    getAuthCredentials(code?: string, authFlow?: 'tempCodeAuth' | 'refreshTokenAuth', refreshToken?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Credentials, any, {}>>;
 }
 /**
  * EnvApi - axios parameter creator
@@ -3632,7 +3765,7 @@ export declare class EnvApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EnvApi
      */
-    createEnv(body?: Env, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Env, any>>;
+    createEnv(body?: Env, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Env, any, {}>>;
     /**
      * Delete env info. Env with id 3 cannot be deleted.
      * @summary Delete Env Info
@@ -3641,7 +3774,7 @@ export declare class EnvApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EnvApi
      */
-    deleteEnv(envId: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteEnv(envId: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get environment details.
      * @summary Get Env Details
@@ -3650,7 +3783,7 @@ export declare class EnvApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EnvApi
      */
-    getEnv(envId: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Env, any>>;
+    getEnv(envId: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Env, any, {}>>;
     /**
      * Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
      * @summary Get Env Info
@@ -3658,7 +3791,7 @@ export declare class EnvApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EnvApi
      */
-    getEnvs(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Envs, any>>;
+    getEnvs(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Envs, any, {}>>;
     /**
      * Update env info.
      * @summary Update Env Info
@@ -3668,7 +3801,7 @@ export declare class EnvApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EnvApi
      */
-    updateEnv(envId: number, updateEnvParam?: UpdateEnvParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateEnv(envId: number, updateEnvParam?: UpdateEnvParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * ErrorApi - axios parameter creator
@@ -3723,7 +3856,7 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * InvitationApi - axios parameter creator
@@ -3915,7 +4048,7 @@ export declare class InvitationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InvitationApi
      */
-    createTenantInvitation(tenantId: string, createTenantInvitationParam?: CreateTenantInvitationParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitation, any>>;
+    createTenantInvitation(tenantId: string, createTenantInvitationParam?: CreateTenantInvitationParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitation, any, {}>>;
     /**
      * Delete an invitation for the tenant.
      * @summary Delete Tenant Invitation
@@ -3925,7 +4058,7 @@ export declare class InvitationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InvitationApi
      */
-    deleteTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get the validity of an invitation to the tenant.
      * @summary Get Invitation Validity
@@ -3934,7 +4067,7 @@ export declare class InvitationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InvitationApi
      */
-    getInvitationValidity(invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<InvitationValidity, any>>;
+    getInvitationValidity(invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<InvitationValidity, any, {}>>;
     /**
      * Get invitation information for the tenant.
      * @summary Get Tenant Invitation
@@ -3944,7 +4077,7 @@ export declare class InvitationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InvitationApi
      */
-    getTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitation, any>>;
+    getTenantInvitation(tenantId: string, invitationId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitation, any, {}>>;
     /**
      * Get a list of invitations to the tenant.
      * @summary Get Tenant Invitations
@@ -3953,7 +4086,7 @@ export declare class InvitationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InvitationApi
      */
-    getTenantInvitations(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitations, any>>;
+    getTenantInvitations(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Invitations, any, {}>>;
     /**
      * Validate an invitation to the tenant.
      * @summary Validate Invitation
@@ -3963,7 +4096,7 @@ export declare class InvitationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InvitationApi
      */
-    validateInvitation(invitationId: string, validateInvitationParam?: ValidateInvitationParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    validateInvitation(invitationId: string, validateInvitationParam?: ValidateInvitationParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * RoleApi - axios parameter creator
@@ -4094,7 +4227,7 @@ export declare class RoleApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RoleApi
      */
-    createRole(body?: Role, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Role, any>>;
+    createRole(body?: Role, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Role, any, {}>>;
     /**
      * Delete role.
      * @summary Delete Role
@@ -4103,7 +4236,7 @@ export declare class RoleApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RoleApi
      */
-    deleteRole(roleName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteRole(roleName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
      * @summary Get Roles
@@ -4111,7 +4244,7 @@ export declare class RoleApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RoleApi
      */
-    getRoles(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Roles, any>>;
+    getRoles(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Roles, any, {}>>;
     /**
      * Update role display name.
      * @summary Update Role
@@ -4121,7 +4254,7 @@ export declare class RoleApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RoleApi
      */
-    updateRole(roleName: string, updateRoleParam?: UpdateRoleParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateRole(roleName: string, updateRoleParam?: UpdateRoleParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * SaasUserApi - axios parameter creator
@@ -4202,6 +4335,13 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      */
     getSaasUsers: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Get the count of SaaS users.
+     * @summary Get SaaS Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getSaasUsersCount: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Get the user\'s MFA settings.
      * @summary Get User\'s MFA Settings
      * @param {string} userId User ID
@@ -4258,6 +4398,26 @@ export declare const SaasUserApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     respondToSignInChallenge: (respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Save the count of SaaS users.
+     * @summary Save SaaS Users Count
+     * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    saveSaasUsersCount: (saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
+     * Search SaaS users by user ID, email, or sign-in ID.
+     * @summary Search SaaS Users
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [limit] Maximum number of items to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchSaasUsers: (id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * A user attempts to sign in.
      * @summary Sign In
@@ -4433,6 +4593,13 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      */
     getSaasUsers(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUsers>>;
     /**
+     * Get the count of SaaS users.
+     * @summary Get SaaS Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getSaasUsersCount(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SaasUsersCount>>;
+    /**
      * Get the user\'s MFA settings.
      * @summary Get User\'s MFA Settings
      * @param {string} userId User ID
@@ -4489,6 +4656,26 @@ export declare const SaasUserApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RespondToSignInChallengeResult>>;
+    /**
+     * Save the count of SaaS users.
+     * @summary Save SaaS Users Count
+     * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    saveSaasUsersCount(saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    /**
+     * Search SaaS users by user ID, email, or sign-in ID.
+     * @summary Search SaaS Users
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [limit] Maximum number of items to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchSaasUsersResult>>;
     /**
      * A user attempts to sign in.
      * @summary Sign In
@@ -4664,6 +4851,13 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      */
     getSaasUsers(options?: any): AxiosPromise<SaasUsers>;
     /**
+     * Get the count of SaaS users.
+     * @summary Get SaaS Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getSaasUsersCount(options?: any): AxiosPromise<SaasUsersCount>;
+    /**
      * Get the user\'s MFA settings.
      * @summary Get User\'s MFA Settings
      * @param {string} userId User ID
@@ -4720,6 +4914,26 @@ export declare const SaasUserApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: any): AxiosPromise<RespondToSignInChallengeResult>;
+    /**
+     * Save the count of SaaS users.
+     * @summary Save SaaS Users Count
+     * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    saveSaasUsersCount(saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: any): AxiosPromise<void>;
+    /**
+     * Search SaaS users by user ID, email, or sign-in ID.
+     * @summary Search SaaS Users
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [limit] Maximum number of items to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchSaasUsersResult>;
     /**
      * A user attempts to sign in.
      * @summary Sign In
@@ -4831,7 +5045,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ConfirmDeviceResult, any>>;
+    confirmDevice(confirmDeviceParam?: ConfirmDeviceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ConfirmDeviceResult, any, {}>>;
     /**
      * Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
      * @summary Confirm User Email Update
@@ -4841,7 +5055,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    confirmEmailUpdate(userId: string, confirmEmailUpdateParam?: ConfirmEmailUpdateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    confirmEmailUpdate(userId: string, confirmEmailUpdateParam?: ConfirmEmailUpdateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Verify the code for external account user link confirmation.
      * @summary Confirm External User Account Link
@@ -4850,7 +5064,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    confirmExternalUserLink(confirmExternalUserLinkParam?: ConfirmExternalUserLinkParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    confirmExternalUserLink(confirmExternalUserLinkParam?: ConfirmExternalUserLinkParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
      * @summary Confirm Sign Up with AWS Marketplace
@@ -4859,7 +5073,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any>>;
+    confirmSignUpWithAwsMarketplace(confirmSignUpWithAwsMarketplaceParam?: ConfirmSignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any, {}>>;
     /**
      * Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
      * @summary Create SaaS User
@@ -4868,7 +5082,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CreatedSaasUser, any>>;
+    createSaasUser(createSaasUserParam?: CreateSaasUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CreatedSaasUser, any, {}>>;
     /**
      * Create a secret code for authentication application registration.
      * @summary Create secret code for authentication application registration
@@ -4878,7 +5092,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    createSecretCode(userId: string, createSecretCodeParam?: CreateSecretCodeParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SoftwareTokenSecretCode, any>>;
+    createSecretCode(userId: string, createSecretCodeParam?: CreateSecretCodeParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SoftwareTokenSecretCode, any, {}>>;
     /**
      * Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
      * @summary Delete User
@@ -4887,7 +5101,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
+    deleteSaasUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any, {}>>;
     /**
      * Get user information based on user ID.
      * @summary Get User
@@ -4896,7 +5110,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    getSaasUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    getSaasUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any, {}>>;
     /**
      * Get all SaaS users.
      * @summary Get Users
@@ -4904,7 +5118,15 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    getSaasUsers(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUsers, any>>;
+    getSaasUsers(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUsers, any, {}>>;
+    /**
+     * Get the count of SaaS users.
+     * @summary Get SaaS Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    getSaasUsersCount(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUsersCount, any, {}>>;
     /**
      * Get the user\'s MFA settings.
      * @summary Get User\'s MFA Settings
@@ -4913,7 +5135,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    getUserMfaPreference(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MfaPreference, any>>;
+    getUserMfaPreference(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MfaPreference, any, {}>>;
     /**
      * Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
      * @summary Link an existing tenant with AWS Marketplace
@@ -4922,7 +5144,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    linkAwsMarketplace(linkAwsMarketplaceParam?: LinkAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
      * @summary Request User Email Update
@@ -4932,7 +5154,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    requestEmailUpdate(userId: string, requestEmailUpdateParam?: RequestEmailUpdateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    requestEmailUpdate(userId: string, requestEmailUpdateParam?: RequestEmailUpdateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
      * @summary Request External User Account Link
@@ -4941,7 +5163,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    requestExternalUserLink(requestExternalUserLinkParam?: RequestExternalUserLinkParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    requestExternalUserLink(requestExternalUserLinkParam?: RequestExternalUserLinkParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Resend temporary password for the new registered user.
      * @summary Resend Sign Up Confirmation Email
@@ -4950,7 +5172,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    resendSignUpConfirmationEmail(resendSignUpConfirmationEmailParam?: ResendSignUpConfirmationEmailParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
      * @summary Reset Password
@@ -4959,7 +5181,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    resetSaasUserPassword(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUserResetPasswordResult, any>>;
+    resetSaasUserPassword(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUserResetPasswordResult, any, {}>>;
     /**
      * Respond to a sign-in challenge.
      * @summary Respond to Sign In Challenge
@@ -4968,7 +5190,29 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<RespondToSignInChallengeResult, any>>;
+    respondToSignInChallenge(respondToSignInChallengeParam?: RespondToSignInChallengeParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<RespondToSignInChallengeResult, any, {}>>;
+    /**
+     * Save the count of SaaS users.
+     * @summary Save SaaS Users Count
+     * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    saveSaasUsersCount(saveSaasUsersCountParam: SaveSaasUsersCountParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    /**
+     * Search SaaS users by user ID, email, or sign-in ID.
+     * @summary Search SaaS Users
+     * @param {string} [id] User ID
+     * @param {string} [email] Email prefix
+     * @param {string} [signInId] Sign-in ID prefix
+     * @param {number} [limit] Maximum number of items to retrieve
+     * @param {string} [cursor] Cursor for cursor pagination
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SaasUserApi
+     */
+    searchSaasUsers(id?: string, email?: string, signInId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SearchSaasUsersResult, any, {}>>;
     /**
      * A user attempts to sign in.
      * @summary Sign In
@@ -4977,7 +5221,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    signIn(signInParam?: SignInParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SignInResult, any>>;
+    signIn(signInParam?: SignInParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SignInResult, any, {}>>;
     /**
      * Register a new user. A temporary password will be sent to the registered email.
      * @summary Sign Up
@@ -4986,7 +5230,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    signUp(signUpParam?: SignUpParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    signUp(signUpParam?: SignUpParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any, {}>>;
     /**
      * Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
      * @summary Sign Up with AWS Marketplace
@@ -4995,7 +5239,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any>>;
+    signUpWithAwsMarketplace(signUpWithAwsMarketplaceParam?: SignUpWithAwsMarketplaceParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SaasUser, any, {}>>;
     /**
      * Unlink external identity providers.
      * @summary Unlink external identity providers
@@ -5005,7 +5249,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    unlinkProvider(providerName: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Updates the device status.
      * @summary Update Device Status
@@ -5014,7 +5258,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateDeviceStatus(updateDeviceStatusParam?: UpdateDeviceStatusParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update the additional attributes of the SaaS user.
      * @summary Update SaaS User Attributes
@@ -5024,7 +5268,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSaasUserAttributes(userId: string, updateSaasUserAttributesParam?: UpdateSaasUserAttributesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
      * @summary Change Email
@@ -5034,7 +5278,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateSaasUserEmail(userId: string, updateSaasUserEmailParam?: UpdateSaasUserEmailParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSaasUserEmail(userId: string, updateSaasUserEmailParam?: UpdateSaasUserEmailParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Change user\'s login password.
      * @summary Change Password
@@ -5044,7 +5288,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateSaasUserPassword(userId: string, updateSaasUserPasswordParam?: UpdateSaasUserPasswordParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSaasUserPassword(userId: string, updateSaasUserPasswordParam?: UpdateSaasUserPasswordParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Change user\'s sign-in ID.
      * @summary Change Sign-in ID
@@ -5054,7 +5298,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateSaasUserSignInId(userId: string, updateSaasUserSignInIdParam?: UpdateSaasUserSignInIdParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSaasUserSignInId(userId: string, updateSaasUserSignInIdParam?: UpdateSaasUserSignInIdParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Register an authentication application.
      * @summary Register Authentication Application
@@ -5064,7 +5308,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateSoftwareToken(userId: string, updateSoftwareTokenParam?: UpdateSoftwareTokenParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSoftwareToken(userId: string, updateSoftwareTokenParam?: UpdateSoftwareTokenParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update user\'s MFA settings.
      * @summary Update User\'s MFA Settings
@@ -5074,7 +5318,7 @@ export declare class SaasUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SaasUserApi
      */
-    updateUserMfaPreference(userId: string, body?: MfaPreference, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateUserMfaPreference(userId: string, body?: MfaPreference, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * SingleTenantApi - axios parameter creator
@@ -5174,7 +5418,7 @@ export declare class SingleTenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SingleTenantApi
      */
-    getCloudFormationLaunchStackLinkForSingleTenant(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CloudFormationLaunchStackLink, any>>;
+    getCloudFormationLaunchStackLinkForSingleTenant(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<CloudFormationLaunchStackLink, any, {}>>;
     /**
      *
      * @summary Retrieve the settings of the SaaS Infrastructure Management.
@@ -5182,7 +5426,7 @@ export declare class SingleTenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SingleTenantApi
      */
-    getSingleTenantSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SingleTenantSettings, any>>;
+    getSingleTenantSettings(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SingleTenantSettings, any, {}>>;
     /**
      * Updates configuration information for SaaS Infrastructure Management Returns error if SaaS Infrastructure Management feature cannot be enabled.
      * @summary Update configuration information for SaaS Infrastructure Management
@@ -5191,7 +5435,7 @@ export declare class SingleTenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SingleTenantApi
      */
-    updateSingleTenantSettings(updateSingleTenantSettingsParam?: UpdateSingleTenantSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateSingleTenantSettings(updateSingleTenantSettingsParam?: UpdateSingleTenantSettingsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * TenantApi - axios parameter creator
@@ -5538,7 +5782,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    createTenant(body?: TenantProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any>>;
+    createTenant(body?: TenantProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenant, any, {}>>;
     /**
      * Set Stripe initial information via billing
      * @summary Stripe Initial Setting
@@ -5546,7 +5790,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    createTenantAndPricing(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    createTenantAndPricing(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Delete customer and product from Stripe.
      * @summary Delete Customer and Product From Stripe
@@ -5554,7 +5798,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    deleteStripeTenantAndPricing(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteStripeTenantAndPricing(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Delete SaaSus Platform tenant.
      * @summary Delete Tenant
@@ -5563,7 +5807,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    deleteTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get the Stripe Customer information associated with the tenant, including their subscriptions.
      * @summary Get Stripe Customer
@@ -5572,7 +5816,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeCustomer, any>>;
+    getStripeCustomer(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<StripeCustomer, any, {}>>;
     /**
      * Get the details of tenant managed on the SaaSus Platform.
      * @summary Get Tenant Details
@@ -5581,7 +5825,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    getTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantDetail, any>>;
+    getTenant(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantDetail, any, {}>>;
     /**
      * Get sign-in information via external identity provider per tenant.
      * @summary Get identity provider per tenant
@@ -5590,7 +5834,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    getTenantIdentityProviders(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantIdentityProviders, any>>;
+    getTenantIdentityProviders(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantIdentityProviders, any, {}>>;
     /**
      * Get tenants managed by SaaSus Platform.
      * @summary Get Tenants
@@ -5598,7 +5842,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    getTenants(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenants, any>>;
+    getTenants(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Tenants, any, {}>>;
     /**
      * Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
      * @summary Delete all information related to rate plans
@@ -5606,7 +5850,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    resetPlan(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    resetPlan(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update SaaSus Platform tenant details.
      * @summary Update Tenant Details
@@ -5616,7 +5860,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    updateTenant(tenantId: string, body?: TenantProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateTenant(tenantId: string, body?: TenantProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update SaaSus Platform tenant billing information.
      * @summary Update Tenant Billing Information
@@ -5626,7 +5870,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    updateTenantBillingInfo(tenantId: string, body?: BillingInfo, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateTenantBillingInfo(tenantId: string, body?: BillingInfo, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update sign-in information via external identity provider per tenant.
      * @summary Update identity provider per tenant
@@ -5636,7 +5880,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    updateTenantIdentityProvider(tenantId: string, updateTenantIdentityProviderParam?: UpdateTenantIdentityProviderParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateTenantIdentityProvider(tenantId: string, updateTenantIdentityProviderParam?: UpdateTenantIdentityProviderParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Update SaaSus Platform tenant plan information.
      * @summary Update Tenant Plan Information
@@ -5646,7 +5890,7 @@ export declare class TenantApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantApi
      */
-    updateTenantPlan(tenantId: string, body?: PlanReservation, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateTenantPlan(tenantId: string, body?: PlanReservation, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * TenantAttributeApi - axios parameter creator
@@ -5750,7 +5994,7 @@ export declare class TenantAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantAttributeApi
      */
-    createTenantAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any>>;
+    createTenantAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any, {}>>;
     /**
      * Deletes tenant attributes managed by SaaSus Platform.
      * @summary Delete Tenant Attribute
@@ -5759,7 +6003,7 @@ export declare class TenantAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantAttributeApi
      */
-    deleteTenantAttribute(attributeName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteTenantAttribute(attributeName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get definitions for additional tenant attributes managed by the SaaSus Platform. For example, tenant name, memo, etc., then get the attributes from SaaS using the SaaSus SDK/API.
      * @summary Get Tenant Attributes
@@ -5767,7 +6011,7 @@ export declare class TenantAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantAttributeApi
      */
-    getTenantAttributes(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantAttributes, any>>;
+    getTenantAttributes(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantAttributes, any, {}>>;
 }
 /**
  * TenantUserApi - axios parameter creator
@@ -5830,6 +6074,13 @@ export declare const TenantUserApiAxiosParamCreator: (configuration?: Configurat
      */
     getAllTenantUsers: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Get the count of tenant users for each tenant.
+     * @summary Get Tenant Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAllTenantUsersCount: (options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Get one tenant user by specific ID.
      * @summary Get Tenant User
      * @param {string} tenantId Tenant ID
@@ -5847,6 +6098,14 @@ export declare const TenantUserApiAxiosParamCreator: (configuration?: Configurat
      */
     getTenantUsers: (tenantId: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
+     * Save the count of tenant users for each tenant.
+     * @summary Save Tenant Users Count
+     * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    saveTenantUsersCounts: (saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    /**
      * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
      * @summary Search Tenant Users
      * @param {string} [tenantId] Tenant ID
@@ -5854,13 +6113,13 @@ export declare const TenantUserApiAxiosParamCreator: (configuration?: Configurat
      * @param {string} [email] Email prefix
      * @param {string} [signInId] Sign-in ID prefix
      * @param {number} [envId] Environment ID
-     * @param {string} [roleId] Role ID
-     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [roleName] Role Name
+     * @param {number} [limit] Maximum number of items to retrieve
      * @param {string} [cursor] Cursor for cursor pagination
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    searchTenantUsers: (tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    searchTenantUsers: (tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
@@ -5933,6 +6192,13 @@ export declare const TenantUserApiFp: (configuration?: Configuration) => {
      */
     getAllTenantUsers(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Users>>;
     /**
+     * Get the count of tenant users for each tenant.
+     * @summary Get Tenant Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAllTenantUsersCount(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TenantUsersCounts>>;
+    /**
      * Get one tenant user by specific ID.
      * @summary Get Tenant User
      * @param {string} tenantId Tenant ID
@@ -5950,6 +6216,14 @@ export declare const TenantUserApiFp: (configuration?: Configuration) => {
      */
     getTenantUsers(tenantId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Users>>;
     /**
+     * Save the count of tenant users for each tenant.
+     * @summary Save Tenant Users Count
+     * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    saveTenantUsersCounts(saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    /**
      * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
      * @summary Search Tenant Users
      * @param {string} [tenantId] Tenant ID
@@ -5957,13 +6231,13 @@ export declare const TenantUserApiFp: (configuration?: Configuration) => {
      * @param {string} [email] Email prefix
      * @param {string} [signInId] Sign-in ID prefix
      * @param {number} [envId] Environment ID
-     * @param {string} [roleId] Role ID
-     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [roleName] Role Name
+     * @param {number} [limit] Maximum number of items to retrieve
      * @param {string} [cursor] Cursor for cursor pagination
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchTenantUsersResult>>;
+    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchTenantUsersResult>>;
     /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
@@ -6036,6 +6310,13 @@ export declare const TenantUserApiFactory: (configuration?: Configuration, baseP
      */
     getAllTenantUsers(options?: any): AxiosPromise<Users>;
     /**
+     * Get the count of tenant users for each tenant.
+     * @summary Get Tenant Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAllTenantUsersCount(options?: any): AxiosPromise<TenantUsersCounts>;
+    /**
      * Get one tenant user by specific ID.
      * @summary Get Tenant User
      * @param {string} tenantId Tenant ID
@@ -6053,6 +6334,14 @@ export declare const TenantUserApiFactory: (configuration?: Configuration, baseP
      */
     getTenantUsers(tenantId: string, options?: any): AxiosPromise<Users>;
     /**
+     * Save the count of tenant users for each tenant.
+     * @summary Save Tenant Users Count
+     * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    saveTenantUsersCounts(saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: any): AxiosPromise<void>;
+    /**
      * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
      * @summary Search Tenant Users
      * @param {string} [tenantId] Tenant ID
@@ -6060,13 +6349,13 @@ export declare const TenantUserApiFactory: (configuration?: Configuration, baseP
      * @param {string} [email] Email prefix
      * @param {string} [signInId] Sign-in ID prefix
      * @param {number} [envId] Environment ID
-     * @param {string} [roleId] Role ID
-     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [roleName] Role Name
+     * @param {number} [limit] Maximum number of items to retrieve
      * @param {string} [cursor] Cursor for cursor pagination
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchTenantUsersResult>;
+    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<SearchTenantUsersResult>;
     /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
@@ -6094,7 +6383,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    createTenantUser(tenantId: string, createTenantUserParam?: CreateTenantUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<User, any>>;
+    createTenantUser(tenantId: string, createTenantUserParam?: CreateTenantUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<User, any, {}>>;
     /**
      * Create roles on tenant users.
      * @summary Create Tenant User Role
@@ -6106,7 +6395,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    createTenantUserRoles(tenantId: string, userId: string, envId: number, createTenantUserRolesParam?: CreateTenantUserRolesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    createTenantUserRoles(tenantId: string, userId: string, envId: number, createTenantUserRolesParam?: CreateTenantUserRolesParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Delete a user from the tenant.
      * @summary Delete Tenant User
@@ -6116,7 +6405,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    deleteTenantUser(tenantId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteTenantUser(tenantId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Remove a role from a tenant user.
      * @summary Remove Role From Tenant User
@@ -6128,7 +6417,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    deleteTenantUserRole(tenantId: string, userId: string, envId: number, roleName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteTenantUserRole(tenantId: string, userId: string, envId: number, roleName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
      * @summary Get User Info
@@ -6137,7 +6426,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    getAllTenantUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any>>;
+    getAllTenantUser(userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any, {}>>;
     /**
      * Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
      * @summary Get Users
@@ -6145,7 +6434,15 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    getAllTenantUsers(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any>>;
+    getAllTenantUsers(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any, {}>>;
+    /**
+     * Get the count of tenant users for each tenant.
+     * @summary Get Tenant Users Count
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantUserApi
+     */
+    getAllTenantUsersCount(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TenantUsersCounts, any, {}>>;
     /**
      * Get one tenant user by specific ID.
      * @summary Get Tenant User
@@ -6155,7 +6452,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    getTenantUser(tenantId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<User, any>>;
+    getTenantUser(tenantId: string, userId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<User, any, {}>>;
     /**
      * Get all the users belonging to the tenant. Id is unique.
      * @summary Get Tenant Users
@@ -6164,7 +6461,16 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    getTenantUsers(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any>>;
+    getTenantUsers(tenantId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Users, any, {}>>;
+    /**
+     * Save the count of tenant users for each tenant.
+     * @summary Save Tenant Users Count
+     * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TenantUserApi
+     */
+    saveTenantUsersCounts(saveTenantUsersCountsParam: SaveTenantUsersCountsParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
      * @summary Search Tenant Users
@@ -6173,14 +6479,14 @@ export declare class TenantUserApi extends BaseAPI {
      * @param {string} [email] Email prefix
      * @param {string} [signInId] Sign-in ID prefix
      * @param {number} [envId] Environment ID
-     * @param {string} [roleId] Role ID
-     * @param {number} [limit] Maximum number of users to retrieve
+     * @param {string} [roleName] Role Name
+     * @param {number} [limit] Maximum number of items to retrieve
      * @param {string} [cursor] Cursor for cursor pagination
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleId?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SearchTenantUsersResult, any>>;
+    searchTenantUsers(tenantId?: string, id?: string, email?: string, signInId?: string, envId?: number, roleName?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<SearchTenantUsersResult, any, {}>>;
     /**
      * Update tenant user attributes.
      * @summary Update Tenant User Attribute
@@ -6191,7 +6497,7 @@ export declare class TenantUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TenantUserApi
      */
-    updateTenantUser(tenantId: string, userId: string, updateTenantUserParam?: UpdateTenantUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateTenantUser(tenantId: string, userId: string, updateTenantUserParam?: UpdateTenantUserParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
 }
 /**
  * UserAttributeApi - axios parameter creator
@@ -6319,7 +6625,7 @@ export declare class UserAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserAttributeApi
      */
-    createSaasUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any>>;
+    createSaasUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any, {}>>;
     /**
      * Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
      * @summary Create User Attributes
@@ -6328,7 +6634,7 @@ export declare class UserAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserAttributeApi
      */
-    createUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any>>;
+    createUserAttribute(body?: Attribute, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<Attribute, any, {}>>;
     /**
      * Delete user attributes kept on the SaaSus Platform.
      * @summary Delete User Attribute
@@ -6337,7 +6643,7 @@ export declare class UserAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserAttributeApi
      */
-    deleteUserAttribute(attributeName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteUserAttribute(attributeName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
     /**
      * Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
      * @summary Get User Attributes
@@ -6345,7 +6651,7 @@ export declare class UserAttributeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserAttributeApi
      */
-    getUserAttributes(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserAttributes, any>>;
+    getUserAttributes(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserAttributes, any, {}>>;
 }
 /**
  * UserInfoApi - axios parameter creator
@@ -6452,7 +6758,7 @@ export declare class UserInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserInfoApi
      */
-    getUserInfo(token: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
+    getUserInfo(token: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any, {}>>;
     /**
      * Get user information by email address.
      * @summary Get User Info by Email
@@ -6461,7 +6767,7 @@ export declare class UserInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserInfoApi
      */
-    getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
+    getUserInfoByEmail(email: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any, {}>>;
     /**
      * Get user information by sign-in ID.
      * @summary Get User Info by Sign-in ID
@@ -6470,5 +6776,5 @@ export declare class UserInfoApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserInfoApi
      */
-    getUserInfoBySignInId(signInId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any>>;
+    getUserInfoBySignInId(signInId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<UserInfo, any, {}>>;
 }

@@ -36,8 +36,10 @@ TenantUserApi
 - [deleteTenantUserRole](Auth_api.TenantUserApi.md#deletetenantuserrole)
 - [getAllTenantUser](Auth_api.TenantUserApi.md#getalltenantuser)
 - [getAllTenantUsers](Auth_api.TenantUserApi.md#getalltenantusers)
+- [getAllTenantUsersCount](Auth_api.TenantUserApi.md#getalltenantuserscount)
 - [getTenantUser](Auth_api.TenantUserApi.md#gettenantuser)
 - [getTenantUsers](Auth_api.TenantUserApi.md#gettenantusers)
+- [saveTenantUsersCounts](Auth_api.TenantUserApi.md#savetenantuserscounts)
 - [searchTenantUsers](Auth_api.TenantUserApi.md#searchtenantusers)
 - [updateTenantUser](Auth_api.TenantUserApi.md#updatetenantuser)
 
@@ -65,7 +67,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -79,7 +81,7 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -93,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -107,13 +109,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createTenantUser
 
-▸ **createTenantUser**(`tenantId`, `createTenantUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`\>\>
+▸ **createTenantUser**(`tenantId`, `createTenantUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`, {}\>\>
 
 Create a tenant user. If attributes is empty, the additional attributes will be created empty.
 
@@ -127,7 +129,7 @@ Create a tenant user. If attributes is empty, the additional attributes will be 
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -141,13 +143,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9658](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9658)
+[src/generated/Auth/api.ts:10146](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10146)
 
 ___
 
 ### createTenantUserRoles
 
-▸ **createTenantUserRoles**(`tenantId`, `userId`, `envId`, `createTenantUserRolesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **createTenantUserRoles**(`tenantId`, `userId`, `envId`, `createTenantUserRolesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Create roles on tenant users.
 
@@ -163,7 +165,7 @@ Create roles on tenant users.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -177,13 +179,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9673](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9673)
+[src/generated/Auth/api.ts:10161](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10161)
 
 ___
 
 ### deleteTenantUser
 
-▸ **deleteTenantUser**(`tenantId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenantUser**(`tenantId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete a user from the tenant.
 
@@ -197,7 +199,7 @@ Delete a user from the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -211,13 +213,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9686](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9686)
+[src/generated/Auth/api.ts:10174](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10174)
 
 ___
 
 ### deleteTenantUserRole
 
-▸ **deleteTenantUserRole**(`tenantId`, `userId`, `envId`, `roleName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenantUserRole**(`tenantId`, `userId`, `envId`, `roleName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Remove a role from a tenant user.
 
@@ -233,7 +235,7 @@ Remove a role from a tenant user.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -247,13 +249,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9701](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9701)
+[src/generated/Auth/api.ts:10189](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10189)
 
 ___
 
 ### getAllTenantUser
 
-▸ **getAllTenantUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
+▸ **getAllTenantUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, {}\>\>
 
 Get information on user belonging to the tenant from the user ID. If the user belongs to multiple tenants, it will be returned as another object.
 
@@ -266,7 +268,7 @@ Get information on user belonging to the tenant from the user ID. If the user be
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -280,13 +282,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9713](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9713)
+[src/generated/Auth/api.ts:10201](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10201)
 
 ___
 
 ### getAllTenantUsers
 
-▸ **getAllTenantUsers**(`options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
+▸ **getAllTenantUsers**(`options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, {}\>\>
 
 Get all users belonging to the tenant. The same user belonging to multiple tenants will be returned as a different object. Id is not unique.
 
@@ -298,7 +300,7 @@ Get all users belonging to the tenant. The same user belonging to multiple tenan
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -312,13 +314,45 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9724](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9724)
+[src/generated/Auth/api.ts:10212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10212)
+
+___
+
+### getAllTenantUsersCount
+
+▸ **getAllTenantUsersCount**(`options?`): `Promise`\<`AxiosResponse`\<[`TenantUsersCounts`](../interfaces/Auth_api.TenantUsersCounts.md), `any`, {}\>\>
+
+Get the count of tenant users for each tenant.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`TenantUsersCounts`](../interfaces/Auth_api.TenantUsersCounts.md), `any`, {}\>\>
+
+**`Summary`**
+
+Get Tenant Users Count
+
+**`Throws`**
+
+**`Memberof`**
+
+TenantUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:10223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10223)
 
 ___
 
 ### getTenantUser
 
-▸ **getTenantUser**(`tenantId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`\>\>
+▸ **getTenantUser**(`tenantId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`, {}\>\>
 
 Get one tenant user by specific ID.
 
@@ -332,7 +366,7 @@ Get one tenant user by specific ID.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`User`](../interfaces/Auth_api.User.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -346,13 +380,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9737)
+[src/generated/Auth/api.ts:10236](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10236)
 
 ___
 
 ### getTenantUsers
 
-▸ **getTenantUsers**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
+▸ **getTenantUsers**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, {}\>\>
 
 Get all the users belonging to the tenant. Id is unique.
 
@@ -365,7 +399,7 @@ Get all the users belonging to the tenant. Id is unique.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -379,13 +413,46 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9749](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9749)
+[src/generated/Auth/api.ts:10248](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10248)
+
+___
+
+### saveTenantUsersCounts
+
+▸ **saveTenantUsersCounts**(`saveTenantUsersCountsParam`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
+
+Save the count of tenant users for each tenant.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `saveTenantUsersCountsParam` | [`SaveTenantUsersCountsParam`](../interfaces/Auth_api.SaveTenantUsersCountsParam.md) |  |
+| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
+
+**`Summary`**
+
+Save Tenant Users Count
+
+**`Throws`**
+
+**`Memberof`**
+
+TenantUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:10260](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10260)
 
 ___
 
 ### searchTenantUsers
 
-▸ **searchTenantUsers**(`tenantId?`, `id?`, `email?`, `signInId?`, `envId?`, `roleId?`, `limit?`, `cursor?`, `options?`): `Promise`\<`AxiosResponse`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md), `any`\>\>
+▸ **searchTenantUsers**(`tenantId?`, `id?`, `email?`, `signInId?`, `envId?`, `roleName?`, `limit?`, `cursor?`, `options?`): `Promise`\<`AxiosResponse`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md), `any`, {}\>\>
 
 Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
 
@@ -398,14 +465,14 @@ Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
 | `email?` | `string` | Email prefix |
 | `signInId?` | `string` | Sign-in ID prefix |
 | `envId?` | `number` | Environment ID |
-| `roleId?` | `string` | Role ID |
-| `limit?` | `number` | Maximum number of users to retrieve |
+| `roleName?` | `string` | Role Name |
+| `limit?` | `number` | Maximum number of items to retrieve |
 | `cursor?` | `string` | Cursor for cursor pagination |
 | `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -419,13 +486,13 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9768](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9768)
+[src/generated/Auth/api.ts:10279](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10279)
 
 ___
 
 ### updateTenantUser
 
-▸ **updateTenantUser**(`tenantId`, `userId`, `updateTenantUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantUser**(`tenantId`, `userId`, `updateTenantUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update tenant user attributes.
 
@@ -440,7 +507,7 @@ Update tenant user attributes.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -454,4 +521,4 @@ TenantUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9782](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9782)
+[src/generated/Auth/api.ts:10293](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L10293)

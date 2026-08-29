@@ -63,7 +63,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -77,7 +77,7 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -105,13 +105,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### findNotificationMessages
 
-▸ **findNotificationMessages**(`options?`): `Promise`\<`AxiosResponse`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`\>\>
+▸ **findNotificationMessages**(`options?`): `Promise`\<`AxiosResponse`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`, {}\>\>
 
 Get notification email templates.
 
@@ -123,7 +123,7 @@ Get notification email templates.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -137,13 +137,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3860](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3860)
+[src/generated/Auth/api.ts:3993](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L3993)
 
 ___
 
 ### getBasicInfo
 
-▸ **getBasicInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`\>\>
+▸ **getBasicInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`, {}\>\>
 
 Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME record on the DNS the login screen will be generated.
 
@@ -155,7 +155,7 @@ Get the domain name and CNAME record based on the SaaS ID. By setting the CNAME 
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -169,13 +169,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3871](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3871)
+[src/generated/Auth/api.ts:4004](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4004)
 
 ___
 
 ### getCustomizePageSettings
 
-▸ **getCustomizePageSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`\>\>
+▸ **getCustomizePageSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`, {}\>\>
 
 Get authentication authorization basic information.
 
@@ -187,7 +187,7 @@ Get authentication authorization basic information.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -201,13 +201,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3882)
+[src/generated/Auth/api.ts:4015](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4015)
 
 ___
 
 ### getCustomizePages
 
-▸ **getCustomizePages**(`options?`): `Promise`\<`AxiosResponse`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`\>\>
+▸ **getCustomizePages**(`options?`): `Promise`\<`AxiosResponse`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`, {}\>\>
 
 Get the authentication screen setting information (new registration, login, password reset, etc.).
 
@@ -219,7 +219,7 @@ Get the authentication screen setting information (new registration, login, pass
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -233,13 +233,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3893](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3893)
+[src/generated/Auth/api.ts:4026](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4026)
 
 ___
 
 ### updateBasicInfo
 
-▸ **updateBasicInfo**(`updateBasicInfoParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateBasicInfo**(`updateBasicInfoParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update the domain name that was set as a parameter based on the SaaS ID. After the CNAME record is generated, set it in your DNS. If it is set on a SaaS application that is already running, it will affect the behavior.
 
@@ -252,7 +252,7 @@ Update the domain name that was set as a parameter based on the SaaS ID. After t
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -266,13 +266,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3905](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3905)
+[src/generated/Auth/api.ts:4038](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4038)
 
 ___
 
 ### updateCustomizePageSettings
 
-▸ **updateCustomizePageSettings**(`updateCustomizePageSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateCustomizePageSettings**(`updateCustomizePageSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update authentication authorization basic information.
 
@@ -285,7 +285,7 @@ Update authentication authorization basic information.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -299,13 +299,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3917](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3917)
+[src/generated/Auth/api.ts:4050](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4050)
 
 ___
 
 ### updateCustomizePages
 
-▸ **updateCustomizePages**(`updateCustomizePagesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateCustomizePages**(`updateCustomizePagesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update the authentication page setting information (new registration, login, password reset, etc.).
 
@@ -318,7 +318,7 @@ Update the authentication page setting information (new registration, login, pas
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -332,13 +332,13 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3929](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3929)
+[src/generated/Auth/api.ts:4062](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4062)
 
 ___
 
 ### updateNotificationMessages
 
-▸ **updateNotificationMessages**(`updateNotificationMessagesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateNotificationMessages**(`updateNotificationMessagesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Update notification email template.
 
@@ -351,7 +351,7 @@ Update notification email template.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -365,4 +365,4 @@ BasicInfoApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3941](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3941)
+[src/generated/Auth/api.ts:4074](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L4074)

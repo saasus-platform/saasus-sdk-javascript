@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1457](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1457)
+[src/generated/Auth/api.ts:1463](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L1463)

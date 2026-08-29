@@ -61,7 +61,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -75,7 +75,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -103,13 +103,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createTenantInvitation
 
-▸ **createTenantInvitation**(`tenantId`, `createTenantInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+▸ **createTenantInvitation**(`tenantId`, `createTenantInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}\>\>
 
 Create an invitation to the tenant.
 
@@ -123,7 +123,7 @@ Create an invitation to the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -137,13 +137,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5062](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5062)
+[src/generated/Auth/api.ts:5195](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5195)
 
 ___
 
 ### deleteTenantInvitation
 
-▸ **deleteTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Delete an invitation for the tenant.
 
@@ -157,7 +157,7 @@ Delete an invitation for the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -171,13 +171,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5075](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5075)
+[src/generated/Auth/api.ts:5208](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5208)
 
 ___
 
 ### getInvitationValidity
 
-▸ **getInvitationValidity**(`invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`\>\>
+▸ **getInvitationValidity**(`invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`, {}\>\>
 
 Get the validity of an invitation to the tenant.
 
@@ -190,7 +190,7 @@ Get the validity of an invitation to the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -204,13 +204,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5087](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5087)
+[src/generated/Auth/api.ts:5220](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5220)
 
 ___
 
 ### getTenantInvitation
 
-▸ **getTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+▸ **getTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}\>\>
 
 Get invitation information for the tenant.
 
@@ -224,7 +224,7 @@ Get invitation information for the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -238,13 +238,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5100](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5100)
+[src/generated/Auth/api.ts:5233](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5233)
 
 ___
 
 ### getTenantInvitations
 
-▸ **getTenantInvitations**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`\>\>
+▸ **getTenantInvitations**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`, {}\>\>
 
 Get a list of invitations to the tenant.
 
@@ -257,7 +257,7 @@ Get a list of invitations to the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`, {}\>\>
 
 **`Summary`**
 
@@ -271,13 +271,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5112](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5112)
+[src/generated/Auth/api.ts:5245](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5245)
 
 ___
 
 ### validateInvitation
 
-▸ **validateInvitation**(`invitationId`, `validateInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **validateInvitation**(`invitationId`, `validateInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 Validate an invitation to the tenant.
 
@@ -291,7 +291,7 @@ Validate an invitation to the tenant.
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}\>\>
 
 **`Summary`**
 
@@ -305,4 +305,4 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5125](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5125)
+[src/generated/Auth/api.ts:5258](https://github.com/saasus-platform/saasus-sdk-javascript/blob/a487389/src/generated/Auth/api.ts#L5258)
