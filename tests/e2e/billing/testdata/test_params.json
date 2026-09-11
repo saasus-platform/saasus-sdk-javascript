@@ -1,0 +1,7 @@
+{
+    "stripe_info": {
+        "updateParams": {
+            "secret_key": "sk_test_example_key_for_testing"
+        }
+    }
+}

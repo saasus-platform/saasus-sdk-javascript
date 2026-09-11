@@ -1,2 +1,9 @@
 node_modules
 .vscode
+tests/e2e/snapshot/*/story_comparisons/
+tests/e2e/snapshot/*/story_reports/
+tests/e2e/snapshot/*/*/story_comparisons/
+tests/e2e/snapshot/*/*/story_reports/
+tests/e2e/pricing/dist/
+__tests__/snapshots/auth/story_reports/
+.env
