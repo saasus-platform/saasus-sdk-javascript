@@ -1,0 +1,4 @@
+{
+  "module": "integration",
+  "snapshotDir": "test-reports/snapshots/integration"
+}

@@ -1,0 +1,35 @@
+{
+  "metering_unit": {
+    "unit_name": "user_counts",
+    "display_name": "ユーザ数",
+    "description": "ユーザ数カウント用のメーター",
+    "aggregate_usage": "max"
+  },
+  "pricing_unit": {
+    "name": "fixed-unit-name1",
+    "display_name": "固定ユニット1",
+    "description": "固定ユニットdescription1",
+    "type": "fixed",
+    "currency": "JPY",
+    "unit_amount": 300,
+    "recurring_interval": "month"
+  },
+  "pricing_menu": {
+    "name": "fixed-menu_name",
+    "display_name": "固定UNITメニュー",
+    "description": "メニューdescription"
+  },
+  "pricing_plan": {
+    "name": "plan_name",
+    "display_name": "サンプルプラン",
+    "description": "プランdescription"
+  },
+  "tax_rate": {
+    "name": "tax_rate_name",
+    "display_name": "消費税",
+    "description": "日本の消費税",
+    "percentage": 10,
+    "country": "JP",
+    "inclusive": false
+  }
+}

@@ -15,7 +15,24 @@
     "build": "rollup -c",
     "clean": "rimraf dist",
     "preinstall": "typesync || :",
-    "codegen:openapi": "openapi-generator-cli generate -g typescript-axios -i $npm_config_input_dir -o ./src/generated/${npm_config_module}"
+    "codegen:openapi": "openapi-generator-cli generate -g typescript-axios -i $npm_config_input_dir -o ./src/generated/${npm_config_module}",
+    "test:e2e:billing": "node tests/e2e/billing/run-billing-e2e.js",
+    "test:e2e:billing:snapshot": "node tests/e2e/billing/run-billing-snapshot.js",
+    "test:e2e:billing:check": "node tests/e2e/billing/run-check-auth.js",
+    "test:e2e:apilogs": "node tests/e2e/apilogs/run-apilogs-e2e.js",
+    "test:e2e:apilogs:snapshot": "node tests/e2e/apilogs/run-apilogs-snapshot.js",
+    "test:e2e:auth": "jest --testPathPattern=\"tests/e2e/auth/.*\\.e2e\\.test\\.ts$\" --runInBand",
+    "test:e2e:auth:parallel": "E2E_ENABLE_PARALLEL=true E2E_MAX_CONCURRENCY=4 jest --testPathPattern=\"tests/e2e/auth/.*\\.e2e\\.test\\.ts$\" --runInBand",
+    "test:e2e:auth:performance": "E2E_ENABLE_PARALLEL=true E2E_MAX_CONCURRENCY=4 E2E_REQUEST_TIMEOUT=30000 jest --testPathPattern=\"tests/e2e/auth/.*\\.e2e\\.test\\.ts$\" --runInBand",
+    "test:e2e:auth:snapshot": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=\"tests/e2e/auth/.*\\.snapshot.*\\.ts$\" --runInBand",
+    "test:e2e:auth:snapshot:capture": "SNAPSHOT_MODE=capture jest --testPathPattern=\"tests/e2e/auth/.*\\.snapshot.*\\.ts$\" --runInBand",
+    "test:e2e:auth:snapshot:compare": "SNAPSHOT_MODE=compare jest --testPathPattern=\"tests/e2e/auth/.*\\.snapshot.*\\.ts$\" --runInBand",
+    "test:e2e:auth:snapshot:report": "SNAPSHOT_MODE=report jest --testPathPattern=\"tests/e2e/auth/.*\\.snapshot.*\\.ts$\" --runInBand",
+    "test:e2e:auth:snapshot:full": "SNAPSHOT_MODE=full jest --testPathPattern=\"tests/e2e/auth/.*\\.snapshot.*\\.ts$\" --runInBand",
+    "test:e2e:communication": "node tests/e2e/communication/run-communication-e2e.js",
+    "test:e2e:communication:snapshot": "node tests/e2e/communication/run-communication-snapshot.js",
+    "test:e2e:integration": "node tests/e2e/integration/run-integration-e2e.js",
+    "test:e2e:integration:snapshot": "node tests/e2e/integration/run-integration-snapshot.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +45,7 @@
   },
   "homepage": "https://github.com/saasus-platform/saasus-sdk-javascript",
   "devDependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.958.0",
     "@openapitools/openapi-generator-cli": "^2.5.2",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^5.0.2",
@@ -39,8 +57,10 @@
     "@types/node": "^16.18.91",
     "@types/rimraf": "^3.0.2",
     "@types/rollup-plugin-peer-deps-external": "^2.2.1",
+    "dotenv": "^16.6.1",
     "express": "^4.18.2",
     "jest": "^29.3.1",
+    "jest-junit": "^16.0.0",
     "node-mocks-http": "^1.12.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.76.0",
@@ -48,7 +68,7 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.2.6",
-    "ts-node": "^10.4.0",
+    "ts-node": "^10.9.2",
     "typedoc": "^0.25.12",
     "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "^4.5.4",
@@ -59,7 +79,9 @@
   "dependencies": {
     "axios": "^1.2.1",
     "crypto-js": "^4.1.1",
-    "date-and-time": "^2.4.1"
+    "date-and-time": "^2.4.1",
+    "jsondiffpatch": "^0.7.3",
+    "otplib": "^12.0.1"
   },
   "peerDependencies": {
     "axios": "^1.2.1",

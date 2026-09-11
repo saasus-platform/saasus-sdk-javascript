@@ -1,0 +1,181 @@
+{
+  "UpdateBasicInfo": {
+    "updateParams": {
+      "from_email_address": "noreply@example.com",
+      "reply_email_address": "support@example.com"
+    }
+  },
+  "UpdateAuthInfo": {
+    "updateParams": {
+      "callback_url": "https://example.com/callback"
+    }
+  },
+  "CreateSaasUser": {
+    "createParams": {
+      "email": "test-user@example.com",
+      "password": "Passw0rd!"
+    }
+  },
+  "CreateRole": {
+    "createParams": {
+      "display_name": "テスト用文字列",
+      "role_name": "テスト用文字列"
+    }
+  },
+  "CreateUserAttribute": {
+    "createParams": {
+      "attribute_name": "test1_number",
+      "attribute_type": "number",
+      "display_name": "test1_number"
+    }
+  },
+  "CreateTenantAttribute": {
+    "createParams": {
+      "attribute_name": "test1_number",
+      "attribute_type": "number",
+      "display_name": "test1_number"
+    }
+  },
+  "CreateEnv": {
+    "createParams": {
+      "display_name": "テスト用文字列",
+      "id": null,
+      "name": "テスト用文字列"
+    }
+  },
+  "CreateTenant": {
+    "createParams": {
+      "name": "テスト用文字列",
+      "attributes": {},
+      "back_office_staff_email": "test-backoffice@example.com"
+    }
+  },
+  "CreateTenantUser": {
+    "createParams": {
+      "attributes": {
+        "address": "東京都",
+        "birthday": 19940925,
+        "sex": "男"
+      },
+      "email": "test-user@example.com"
+    }
+  },
+  "CreateTenantUserRoles": {
+    "createParams": {
+      "role_names": [
+        "admin"
+      ]
+    }
+  },
+  "UpdateCustomizePages": {
+    "updateParams": {
+      "password_reset_page": {
+        "html_contents": "<html><div>画面内容３</div></html>",
+        "is_privacy_policy": false,
+        "is_terms_of_service": false
+      },
+      "sign_in_page": {
+        "html_contents": "<html><div>画面内容２</div></html>",
+        "is_privacy_policy": false,
+        "is_terms_of_service": false
+      },
+      "sign_up_page": {
+        "html_contents": "<html><div>画面内容１</div></html>",
+        "is_privacy_policy": false,
+        "is_terms_of_service": false
+      }
+    }
+  },
+  "UpdateCustomizePageSettings": {
+    "updateParams": {
+      "favicon": "テスト用文字列",
+      "google_tag_manager_container_id": "テスト用文字列",
+      "icon": "テスト用文字列",
+      "privacy_policy_url": "テスト用文字列",
+      "terms_of_service_url": "テスト用文字列",
+      "title": "テスト用文字列"
+    }
+  },
+  "UpdateSignInSettings": {
+    "updateParams": {
+      "password_policy": {
+        "is_require_lowercase": true,
+        "is_require_numbers": true,
+        "is_require_symbols": true,
+        "is_require_uppercase": true,
+        "minimum_length": 10,
+        "temporary_password_validity_days": 10
+      }
+    }
+  },
+  "UpdateNotificationMessages": {
+    "updateParams": {
+      "authentication_mfa": {
+        "message": "The verification code to your new account is {####}",
+        "subject": "Verify your new account"
+      },
+      "create_user": {
+        "message": "The verification code to your new account is {####}",
+        "subject": "Verify your new account"
+      }
+    }
+  },
+  "CreateSecretCode": {
+    "createParams": {
+      "access_token": "テスト用文字列"
+    }
+  },
+  "UpdateSoftwareToken": {
+    "updateParams": {
+      "access_token": "テスト用文字列",
+      "verification_code": "テスト用文字列"
+    }
+  },
+  "UpdateUserMfaPreference": {
+    "updateParams": {
+      "enabled": false,
+      "method": null
+    }
+  },
+  "UpdateStripeInfo": {
+    "updateParams": {
+      "secret_key": "テスト用文字列"
+    }
+  },
+  "UpdateSettings": {
+    "updateParams": {
+      "cas_bucket_name": "テスト用文字列",
+      "cas_sns_topic_arn": "テスト用文字列",
+      "product_code": "テスト用文字列",
+      "role_arn": "テスト用文字列",
+      "role_external_id": "テスト用文字列",
+      "seller_sns_topic_arn": "テスト用文字列",
+      "sns_topic_arn": "テスト用文字列",
+      "sqs_arn": "テスト用文字列"
+    }
+  },
+  "SignUpWithAwsMarketplace": {
+    "createParams": {
+      "email": "aws-marketplace@example.com",
+      "listing_status": "public",
+      "product_code": "productCode",
+      "registration_token": "registration_token",
+      "role_arn": "arn:aws:iam::123456789012:role/role-name",
+      "sns_topic_arn": "arn:aws:sns:us-east-1:123456789012:topic-name"
+    }
+  },
+  "UpdateTenantBillingInfo": {
+    "updateParams": {
+      "address": {
+        "additional_address_info": "test_additional_info",
+        "city": "test_city",
+        "country": "JP",
+        "postal_code": "123-4567",
+        "state": "test_state",
+        "street": "test_street"
+      },
+      "invoice_language": "ja-JP",
+      "name": "テスト用文字列"
+    }
+  }
+}
