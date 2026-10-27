@@ -1,0 +1,130 @@
+# SDK contract test (A)(B)(C) calling workflow.
+#
+# This thin file lives in the SDK repository. The language-agnostic steps
+# (fetch spec, start Prism, resolve the latest release tag) come from the
+# central reusable repo saasus-platform/github-actions. The JavaScript-specific
+# build/test steps stay here.
+#
+# What it checks:
+#   (A) the candidate SDK builds and type-checks
+#   (B) the candidate SDK's requests are accepted by the mock and it receives
+#       the responses the spec declares
+#   (C) the latest release still round-trips against the latest spec
+#
+# Security:
+#   - pull_request only (never pull_request_target); fork PRs do not receive secrets.
+#   - the api read token is masked; no response body, spec body or PII is printed.
+
+name: SDK Contract Test
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: sdk-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # The job name "contract-test" is the required status check name. Do not rename.
+  contract-test:
+    name: contract-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout PR (candidate SDK)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      # Also the runtime for Prism. The repository declares no engines range;
+      # the existing Run Test workflow still uses the end-of-life Node 16 and is
+      # left alone.
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "20"
+
+      # Short-lived installation token (contents:read on the private api repo only).
+      - name: Mint api read token
+        id: api-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
+        with:
+          app-id: ${{ secrets.SPEC_READER_APP_ID }}
+          private-key: ${{ secrets.SPEC_READER_PRIVATE_KEY }}
+          owner: Anti-Pattern-Inc
+          repositories: saasus-api
+
+      # The api repository and its latest stable tag are resolved inside the action.
+      - name: Fetch OpenAPI spec
+        id: spec
+        uses: saasus-platform/github-actions/.github/actions/fetch-openapi-spec@main
+        with:
+          token: ${{ steps.api-token.outputs.token }}
+
+      # npm install rather than npm ci: package-lock.json disagrees with
+      # package.json, so npm ci fails. The existing Run Test workflow installs
+      # the same way. Reconciling the lock file is a separate change.
+      - name: Install dependencies
+        run: npm install
+
+      # The merged artifact is the committed generated code, so it is built as
+      # committed rather than regenerated here. tsc covers src/** including
+      # src/generated, which rollup only reaches through imports.
+      - name: (A) Build and type-check candidate SDK
+        run: |
+          set -euo pipefail
+          npm run build
+          npx tsc --noEmit -p tsconfig.json
+
+      # Static mode: responses come from the spec's examples, which is how the
+      # spec makes oneOf responses resolvable. Dynamic mode would ignore them.
+      - name: Start Prism mocks
+        uses: saasus-platform/github-actions/.github/actions/setup-prism@main
+        with:
+          spec-dir: ${{ steps.spec.outputs.spec-dir }}
+          modules: ${{ steps.spec.outputs.modules }}
+
+      # The suite enumerates every operation from the spec and reads the
+      # per-module mock URLs from the PRISM_URL_<MODULE> variables exported
+      # above.
+      - name: (B) Candidate SDK contract
+        env:
+          CONTRACT_SPEC_DIR: ${{ steps.spec.outputs.spec-dir }}
+          # The same output the Prism setup consumed, so the module list has no
+          # copy here: the modules mocked and the modules tested cannot drift.
+          CONTRACT_MODULES: ${{ steps.spec.outputs.modules }}
+          # The candidate SDK must cover every spec operation.
+          CONTRACT_REQUIRE_COMPLETE: "true"
+        run: npx jest --config jest.contract.config.js --verbose
+
+      - name: Resolve latest release tag
+        id: release-tag
+        uses: saasus-platform/github-actions/.github/actions/resolve-latest-stable-tag@main
+
+      - name: Checkout latest release
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ steps.release-tag.outputs.tag }}
+          path: latest-release
+
+      - name: Install latest release dependencies
+        working-directory: latest-release
+        run: npm install
+
+      # (C) Forward compatibility: the latest release must still round-trip
+      # against the LATEST spec. The release tag's OWN bundled suite is run (the
+      # current one is not copied into it), so each release is checked with the
+      # test it shipped with. Prism was started above from the latest spec, and
+      # CONTRACT_SPEC_DIR points at that spec.
+      #
+      # A tag published before the suite existed has no jest.contract.config.js
+      # and fails here by design: there is no skip mechanism.
+      - name: (C) Latest release forward-compat (bundled suite)
+        working-directory: latest-release
+        env:
+          CONTRACT_SPEC_DIR: ${{ steps.spec.outputs.spec-dir }}
+          CONTRACT_MODULES: ${{ steps.spec.outputs.modules }}
+        run: npx jest --config jest.contract.config.js --verbose
