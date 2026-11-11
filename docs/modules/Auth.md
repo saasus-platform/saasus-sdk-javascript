@@ -35,6 +35,10 @@
 - [ConfirmEmailUpdateParam](Auth.md#confirmemailupdateparam)
 - [ConfirmExternalUserLinkParam](Auth.md#confirmexternaluserlinkparam)
 - [ConfirmSignUpWithAwsMarketplaceParam](Auth.md#confirmsignupwithawsmarketplaceparam)
+- [CreateAuthCredentialsParam](Auth.md#createauthcredentialsparam)
+- [CreateAuthCredentialsParamAllOf](Auth.md#createauthcredentialsparamallof)
+- [CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum](Auth.md#createauthcredentialsparamallofcodechallengemethodenum)
+- [CreateAuthCredentialsParamCodeChallengeMethodEnum](Auth.md#createauthcredentialsparamcodechallengemethodenum)
 - [CreateSaasUserParam](Auth.md#createsaasuserparam)
 - [CreateSecretCodeParam](Auth.md#createsecretcodeparam)
 - [CreateTenantInvitationParam](Auth.md#createtenantinvitationparam)
@@ -68,6 +72,8 @@
 - [ErrorApiAxiosParamCreator](Auth.md#errorapiaxiosparamcreator)
 - [ErrorApiFactory](Auth.md#errorapifactory)
 - [ErrorApiFp](Auth.md#errorapifp)
+- [ExchangeAuthCredentialsParam](Auth.md#exchangeauthcredentialsparam)
+- [ExchangeAuthCredentialsParamAuthFlowEnum](Auth.md#exchangeauthcredentialsparamauthflowenum)
 - [IdentityProviderConfiguration](Auth.md#identityproviderconfiguration)
 - [IdentityProviderProps](Auth.md#identityproviderprops)
 - [IdentityProviderSaml](Auth.md#identityprovidersaml)
@@ -99,11 +105,14 @@
 - [ProviderName](Auth.md#providername)
 - [ProviderType](Auth.md#providertype)
 - [RecaptchaProps](Auth.md#recaptchaprops)
+- [RefreshTokenValidity](Auth.md#refreshtokenvalidity)
+- [RefreshTokenValidityUnit](Auth.md#refreshtokenvalidityunit)
 - [RequestEmailUpdateParam](Auth.md#requestemailupdateparam)
 - [RequestExternalUserLinkParam](Auth.md#requestexternaluserlinkparam)
 - [ResendSignUpConfirmationEmailParam](Auth.md#resendsignupconfirmationemailparam)
 - [RespondToSignInChallengeParam](Auth.md#respondtosigninchallengeparam)
 - [RespondToSignInChallengeResult](Auth.md#respondtosigninchallengeresult)
+- [RevokeTokenParam](Auth.md#revoketokenparam)
 - [Role](Auth.md#role)
 - [RoleApi](Auth.md#roleapi)
 - [RoleApiAxiosParamCreator](Auth.md#roleapiaxiosparamcreator)
@@ -118,6 +127,11 @@
 - [SaasUserApiFp](Auth.md#saasuserapifp)
 - [SaasUserResetPasswordResult](Auth.md#saasuserresetpasswordresult)
 - [SaasUsers](Auth.md#saasusers)
+- [SaasUsersCount](Auth.md#saasuserscount)
+- [SaveSaasUsersCountParam](Auth.md#savesaasuserscountparam)
+- [SaveTenantUserCountParam](Auth.md#savetenantusercountparam)
+- [SaveTenantUsersCountsParam](Auth.md#savetenantuserscountsparam)
+- [SearchSaasUsersResult](Auth.md#searchsaasusersresult)
 - [SearchTenantUsersResult](Auth.md#searchtenantusersresult)
 - [SelfRegist](Auth.md#selfregist)
 - [SignInParam](Auth.md#signinparam)
@@ -155,6 +169,8 @@
 - [TenantUserApiAxiosParamCreator](Auth.md#tenantuserapiaxiosparamcreator)
 - [TenantUserApiFactory](Auth.md#tenantuserapifactory)
 - [TenantUserApiFp](Auth.md#tenantuserapifp)
+- [TenantUserCount](Auth.md#tenantusercount)
+- [TenantUsersCounts](Auth.md#tenantuserscounts)
 - [Tenants](Auth.md#tenants)
 - [UpdateBasicInfoParam](Auth.md#updatebasicinfoparam)
 - [UpdateCustomizePageSettingsParam](Auth.md#updatecustomizepagesettingsparam)
@@ -366,6 +382,30 @@ Re-exports [ConfirmSignUpWithAwsMarketplaceParam](../interfaces/Auth_api.Confirm
 
 ___
 
+### CreateAuthCredentialsParam
+
+Re-exports [CreateAuthCredentialsParam](../interfaces/Auth_api.CreateAuthCredentialsParam.md)
+
+___
+
+### CreateAuthCredentialsParamAllOf
+
+Re-exports [CreateAuthCredentialsParamAllOf](../interfaces/Auth_api.CreateAuthCredentialsParamAllOf.md)
+
+___
+
+### CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum
+
+Re-exports [CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum](Auth_api.md#createauthcredentialsparamallofcodechallengemethodenum-1)
+
+___
+
+### CreateAuthCredentialsParamCodeChallengeMethodEnum
+
+Re-exports [CreateAuthCredentialsParamCodeChallengeMethodEnum](Auth_api.md#createauthcredentialsparamcodechallengemethodenum-1)
+
+___
+
 ### CreateSaasUserParam
 
 Re-exports [CreateSaasUserParam](../interfaces/Auth_api.CreateSaasUserParam.md)
@@ -564,6 +604,18 @@ Re-exports [ErrorApiFp](Auth_api.md#errorapifp)
 
 ___
 
+### ExchangeAuthCredentialsParam
+
+Re-exports [ExchangeAuthCredentialsParam](../interfaces/Auth_api.ExchangeAuthCredentialsParam.md)
+
+___
+
+### ExchangeAuthCredentialsParamAuthFlowEnum
+
+Re-exports [ExchangeAuthCredentialsParamAuthFlowEnum](Auth_api.md#exchangeauthcredentialsparamauthflowenum-1)
+
+___
+
 ### IdentityProviderConfiguration
 
 Re-exports [IdentityProviderConfiguration](../interfaces/Auth_api.IdentityProviderConfiguration.md)
@@ -750,6 +802,18 @@ Re-exports [RecaptchaProps](../interfaces/Auth_api.RecaptchaProps.md)
 
 ___
 
+### RefreshTokenValidity
+
+Re-exports [RefreshTokenValidity](../interfaces/Auth_api.RefreshTokenValidity.md)
+
+___
+
+### RefreshTokenValidityUnit
+
+Re-exports [RefreshTokenValidityUnit](../enums/Auth_api.RefreshTokenValidityUnit.md)
+
+___
+
 ### RequestEmailUpdateParam
 
 Re-exports [RequestEmailUpdateParam](../interfaces/Auth_api.RequestEmailUpdateParam.md)
@@ -777,6 +841,12 @@ ___
 ### RespondToSignInChallengeResult
 
 Re-exports [RespondToSignInChallengeResult](../interfaces/Auth_api.RespondToSignInChallengeResult.md)
+
+___
+
+### RevokeTokenParam
+
+Re-exports [RevokeTokenParam](../interfaces/Auth_api.RevokeTokenParam.md)
 
 ___
 
@@ -861,6 +931,36 @@ ___
 ### SaasUsers
 
 Re-exports [SaasUsers](../interfaces/Auth_api.SaasUsers.md)
+
+___
+
+### SaasUsersCount
+
+Re-exports [SaasUsersCount](../interfaces/Auth_api.SaasUsersCount.md)
+
+___
+
+### SaveSaasUsersCountParam
+
+Re-exports [SaveSaasUsersCountParam](../interfaces/Auth_api.SaveSaasUsersCountParam.md)
+
+___
+
+### SaveTenantUserCountParam
+
+Re-exports [SaveTenantUserCountParam](../interfaces/Auth_api.SaveTenantUserCountParam.md)
+
+___
+
+### SaveTenantUsersCountsParam
+
+Re-exports [SaveTenantUsersCountsParam](../interfaces/Auth_api.SaveTenantUsersCountsParam.md)
+
+___
+
+### SearchSaasUsersResult
+
+Re-exports [SearchSaasUsersResult](../interfaces/Auth_api.SearchSaasUsersResult.md)
 
 ___
 
@@ -1083,6 +1183,18 @@ ___
 ### TenantUserApiFp
 
 Re-exports [TenantUserApiFp](Auth_api.md#tenantuserapifp)
+
+___
+
+### TenantUserCount
+
+Re-exports [TenantUserCount](../interfaces/Auth_api.TenantUserCount.md)
+
+___
+
+### TenantUsersCounts
+
+Re-exports [TenantUsersCounts](../interfaces/Auth_api.TenantUsersCounts.md)
 
 ___
 

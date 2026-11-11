@@ -67,7 +67,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/base.ts#L52)
 
 ## Properties
 
@@ -81,7 +81,7 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/base.ts#L52)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/base.ts#L52)
+[src/generated/Communication/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/base.ts#L52)
 
 ___
 
@@ -109,13 +109,13 @@ ___
 
 #### Defined in
 
-[src/generated/Communication/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/base.ts#L50)
+[src/generated/Communication/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/base.ts#L50)
 
 ## Methods
 
 ### createFeedback
 
-▸ **createFeedback**(`createFeedbackParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
+▸ **createFeedback**(`createFeedbackParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`, {}, `any`\>\>
 
 Create Feedback.
 
@@ -124,11 +124,11 @@ Create Feedback.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `createFeedbackParam?` | [`CreateFeedbackParam`](../interfaces/Communication_api.CreateFeedbackParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -142,13 +142,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1300)
+[src/generated/Communication/api.ts:1300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1300)
 
 ___
 
 ### createFeedbackComment
 
-▸ **createFeedbackComment**(`feedbackId`, `createFeedbackCommentParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
+▸ **createFeedbackComment**(`feedbackId`, `createFeedbackCommentParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`, {}, `any`\>\>
 
 Post comment to feedback.
 
@@ -158,11 +158,11 @@ Post comment to feedback.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `createFeedbackCommentParam?` | [`CreateFeedbackCommentParam`](../interfaces/Communication_api.CreateFeedbackCommentParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -176,13 +176,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1313)
+[src/generated/Communication/api.ts:1313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1313)
 
 ___
 
 ### createVoteUser
 
-▸ **createVoteUser**(`feedbackId`, `createVoteUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Votes`](../interfaces/Communication_api.Votes.md), `any`\>\>
+▸ **createVoteUser**(`feedbackId`, `createVoteUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Votes`](../interfaces/Communication_api.Votes.md), `any`, {}, `any`\>\>
 
 Vote for feedback.
 
@@ -192,11 +192,11 @@ Vote for feedback.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `createVoteUserParam?` | [`CreateVoteUserParam`](../interfaces/Communication_api.CreateVoteUserParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Votes`](../interfaces/Communication_api.Votes.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Votes`](../interfaces/Communication_api.Votes.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -210,13 +210,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1326)
+[src/generated/Communication/api.ts:1326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1326)
 
 ___
 
 ### deleteFeedback
 
-▸ **deleteFeedback**(`feedbackId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteFeedback**(`feedbackId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete Feedback.
 
@@ -225,11 +225,11 @@ Delete Feedback.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -243,13 +243,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1338)
+[src/generated/Communication/api.ts:1338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1338)
 
 ___
 
 ### deleteFeedbackComment
 
-▸ **deleteFeedbackComment**(`feedbackId`, `commentId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteFeedbackComment**(`feedbackId`, `commentId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete comment for feedback.
 
@@ -259,11 +259,11 @@ Delete comment for feedback.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `commentId` | `string` |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -277,13 +277,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1351)
+[src/generated/Communication/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1351)
 
 ___
 
 ### deleteVoteForFeedback
 
-▸ **deleteVoteForFeedback**(`feedbackId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteVoteForFeedback**(`feedbackId`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Cancel vote for feedback.
 
@@ -293,11 +293,11 @@ Cancel vote for feedback.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `userId` | `string` |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -311,13 +311,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1364)
+[src/generated/Communication/api.ts:1364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1364)
 
 ___
 
 ### getFeedback
 
-▸ **getFeedback**(`feedbackId`, `options?`): `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
+▸ **getFeedback**(`feedbackId`, `options?`): `Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`, {}, `any`\>\>
 
 Retrieve feedback.
 
@@ -326,11 +326,11 @@ Retrieve feedback.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Feedback`](../interfaces/Communication_api.Feedback.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -344,13 +344,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1376](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1376)
+[src/generated/Communication/api.ts:1376](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1376)
 
 ___
 
 ### getFeedbackComment
 
-▸ **getFeedbackComment**(`feedbackId`, `commentId`, `options?`): `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
+▸ **getFeedbackComment**(`feedbackId`, `commentId`, `options?`): `Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`, {}, `any`\>\>
 
 Retrieve comment from feedback.
 
@@ -360,11 +360,11 @@ Retrieve comment from feedback.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `commentId` | `string` |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Comment`](../interfaces/Communication_api.Comment.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -378,13 +378,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1389)
+[src/generated/Communication/api.ts:1389](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1389)
 
 ___
 
 ### getFeedbacks
 
-▸ **getFeedbacks**(`options?`): `Promise`\<`AxiosResponse`\<[`Feedbacks`](../interfaces/Communication_api.Feedbacks.md), `any`\>\>
+▸ **getFeedbacks**(`options?`): `Promise`\<`AxiosResponse`\<[`Feedbacks`](../interfaces/Communication_api.Feedbacks.md), `any`, {}, `any`\>\>
 
 Get the list of feedbacks.
 
@@ -392,11 +392,11 @@ Get the list of feedbacks.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Feedbacks`](../interfaces/Communication_api.Feedbacks.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Feedbacks`](../interfaces/Communication_api.Feedbacks.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -410,13 +410,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1400)
+[src/generated/Communication/api.ts:1400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1400)
 
 ___
 
 ### updateFeedback
 
-▸ **updateFeedback**(`feedbackId`, `updateFeedbackParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateFeedback**(`feedbackId`, `updateFeedbackParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Edit feedback.
 
@@ -426,11 +426,11 @@ Edit feedback.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `updateFeedbackParam?` | [`UpdateFeedbackParam`](../interfaces/Communication_api.UpdateFeedbackParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -444,13 +444,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1413)
+[src/generated/Communication/api.ts:1413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1413)
 
 ___
 
 ### updateFeedbackComment
 
-▸ **updateFeedbackComment**(`feedbackId`, `commentId`, `updateFeedbackCommentParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateFeedbackComment**(`feedbackId`, `commentId`, `updateFeedbackCommentParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Edit comment for feedback.
 
@@ -461,11 +461,11 @@ Edit comment for feedback.
 | `feedbackId` | `string` |  |
 | `commentId` | `string` |  |
 | `updateFeedbackCommentParam?` | [`UpdateFeedbackCommentParam`](../interfaces/Communication_api.UpdateFeedbackCommentParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -479,13 +479,13 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1427](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1427)
+[src/generated/Communication/api.ts:1427](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1427)
 
 ___
 
 ### updateFeedbackStatus
 
-▸ **updateFeedbackStatus**(`feedbackId`, `updateFeedbackStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateFeedbackStatus**(`feedbackId`, `updateFeedbackStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update Feedback Status.
 
@@ -495,11 +495,11 @@ Update Feedback Status.
 | :------ | :------ | :------ |
 | `feedbackId` | `string` |  |
 | `updateFeedbackStatusParam?` | [`UpdateFeedbackStatusParam`](../interfaces/Communication_api.UpdateFeedbackStatusParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -513,4 +513,4 @@ FeedbackApi
 
 #### Defined in
 
-[src/generated/Communication/api.ts:1440](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Communication/api.ts#L1440)
+[src/generated/Communication/api.ts:1440](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L1440)

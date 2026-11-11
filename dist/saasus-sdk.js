@@ -158,13 +158,15 @@
              * Retrieve the log of all API executions.
              * @summary Get API execution log list
              * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-             * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+             * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
              * @param {number} [limit] Maximum number of logs to retrieve.
+             * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+             * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
              * @param {string} [cursor] Cursor for cursor pagination.
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            getLogs: async (createdDate, createdAt, limit, cursor, options = {}) => {
+            getLogs: async (createdDate, createdAt, limit, startAt, endAt, cursor, options = {}) => {
                 const localVarPath = `/logs`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$6);
@@ -190,6 +192,12 @@
                 }
                 if (limit !== undefined) {
                     localVarQueryParameter['limit'] = limit;
+                }
+                if (startAt !== undefined) {
+                    localVarQueryParameter['start_at'] = startAt;
+                }
+                if (endAt !== undefined) {
+                    localVarQueryParameter['end_at'] = endAt;
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameter['cursor'] = cursor;
@@ -226,14 +234,16 @@
              * Retrieve the log of all API executions.
              * @summary Get API execution log list
              * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-             * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+             * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
              * @param {number} [limit] Maximum number of logs to retrieve.
+             * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+             * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
              * @param {string} [cursor] Cursor for cursor pagination.
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async getLogs(createdDate, createdAt, limit, cursor, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(createdDate, createdAt, limit, cursor, options);
+            async getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options);
                 return createRequestFunction$6(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$6, configuration);
             },
         };
@@ -260,15 +270,17 @@
          * Retrieve the log of all API executions.
          * @summary Get API execution log list
          * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
          * @param {number} [limit] Maximum number of logs to retrieve.
+         * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+         * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
          * @param {string} [cursor] Cursor for cursor pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof ApiLogApi
          */
-        getLogs(createdDate, createdAt, limit, cursor, options) {
-            return ApiLogApiFp(this.configuration).getLogs(createdDate, createdAt, limit, cursor, options).then((request) => request(this.axios, this.basePath));
+        getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options) {
+            return ApiLogApiFp(this.configuration).getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options).then((request) => request(this.axios, this.basePath));
         }
     }
 
@@ -311,7 +323,7 @@
         }
     }
 
-    function getAxiosInstance(baseURL, referer, xSaaSusReferer) {
+    function getAxiosInstance(baseURL, referer, xSaaSusReferer, xSaaSusTraceId) {
         const requestConfig = {
             baseURL: baseURL,
             headers: {
@@ -334,13 +346,16 @@
             if (xSaaSusReferer) {
                 config.headers["X-SaaSus-Referer"] = xSaaSusReferer;
             }
+            if (xSaaSusTraceId) {
+                config.headers["X-SaaSus-Trace-Id"] = xSaaSusTraceId;
+            }
             return config;
         }, (error) => error);
         return instance;
     }
 
     class ApiLogClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -353,7 +368,8 @@
             }
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/apilog", this.referer, this.xSaaSusReferer);
+            this.xSaaSusTraceId = xSaaSusTraceId;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/apilog", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             const config = new Configuration$6({
                 basePath: this.apiBase + "/v1/apilog",
             });
@@ -542,8 +558,8 @@
                 };
             },
             /**
-             * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary Get Password Requirements
+             * Get sign-in settings, including user password requirements and refresh token validity period.
+             * @summary Get Sign-In Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -632,8 +648,8 @@
                 };
             },
             /**
-             * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary Update Password Requirements
+             * Update sign-in settings, including user password requirements and refresh token validity period.
+             * @summary Update Sign-In Settings
              * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -692,8 +708,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary Get Password Requirements
+             * Get sign-in settings, including user password requirements and refresh token validity period.
+             * @summary Get Sign-In Settings
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
@@ -724,8 +740,8 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
-             * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-             * @summary Update Password Requirements
+             * Update sign-in settings, including user password requirements and refresh token validity period.
+             * @summary Update Sign-In Settings
              * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
@@ -764,8 +780,8 @@
             return AuthInfoApiFp(this.configuration).getIdentityProviders(options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Get user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-         * @summary Get Password Requirements
+         * Get sign-in settings, including user password requirements and refresh token validity period.
+         * @summary Get Sign-In Settings
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof AuthInfoApi
@@ -796,8 +812,8 @@
             return AuthInfoApiFp(this.configuration).updateIdentityProvider(updateIdentityProviderParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
-         * Update user password requirements. Set a secure password that is difficult to decipher by increasing the number of digits by combining alphabets, numbers, and symbols.
-         * @summary Update Password Requirements
+         * Update sign-in settings, including user password requirements and refresh token validity period.
+         * @summary Update Sign-In Settings
          * @param {UpdateSignInSettingsParam} [updateSignInSettingsParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1243,13 +1259,13 @@
     const CredentialApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+             * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance. When code_challenge is specified, the temporary code can only be exchanged via POST /credentials/exchange and cannot be retrieved via GET /credentials.
              * @summary Save Authentication/Authorization Information
-             * @param {Credentials} [body]
+             * @param {CreateAuthCredentialsParam} [createAuthCredentialsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            createAuthCredentials: async (body, options = {}) => {
+            createAuthCredentials: async (createAuthCredentialsParam, options = {}) => {
                 const localVarPath = `/credentials`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
@@ -1267,7 +1283,40 @@
                 setSearchParams$5(localVarUrlObj, localVarQueryParameter);
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
-                localVarRequestOptions.data = serializeDataIfNeeded$5(body, localVarRequestOptions, configuration);
+                localVarRequestOptions.data = serializeDataIfNeeded$5(createAuthCredentialsParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Exchange a temporary code for ID token, access token, and refresh token by verifying the PKCE code verifier. Only temporary codes created with code_challenge can be exchanged. Temporary codes created without code_challenge must be retrieved via GET /credentials.
+             * @summary Exchange a Temporary Code for Authentication/Authorization Information
+             * @param {ExchangeAuthCredentialsParam} exchangeAuthCredentialsParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            exchangeAuthCredentials: async (exchangeAuthCredentialsParam, options = {}) => {
+                // verify required parameter 'exchangeAuthCredentialsParam' is not null or undefined
+                assertParamExists$3('exchangeAuthCredentials', 'exchangeAuthCredentialsParam', exchangeAuthCredentialsParam);
+                const localVarPath = `/credentials/exchange`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(exchangeAuthCredentialsParam, localVarRequestOptions, configuration);
                 return {
                     url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -1313,6 +1362,39 @@
                     options: localVarRequestOptions,
                 };
             },
+            /**
+             * Revoke the specified refresh token.
+             * @summary Revoke Token
+             * @param {RevokeTokenParam} revokeTokenParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            revokeToken: async (revokeTokenParam, options = {}) => {
+                // verify required parameter 'revokeTokenParam' is not null or undefined
+                assertParamExists$3('revokeToken', 'revokeTokenParam', revokeTokenParam);
+                const localVarPath = `/token/revoke`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(revokeTokenParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
         };
     };
     /**
@@ -1323,14 +1405,25 @@
         const localVarAxiosParamCreator = CredentialApiAxiosParamCreator(configuration);
         return {
             /**
-             * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+             * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance. When code_challenge is specified, the temporary code can only be exchanged via POST /credentials/exchange and cannot be retrieved via GET /credentials.
              * @summary Save Authentication/Authorization Information
-             * @param {Credentials} [body]
+             * @param {CreateAuthCredentialsParam} [createAuthCredentialsParam]
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async createAuthCredentials(body, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.createAuthCredentials(body, options);
+            async createAuthCredentials(createAuthCredentialsParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.createAuthCredentials(createAuthCredentialsParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Exchange a temporary code for ID token, access token, and refresh token by verifying the PKCE code verifier. Only temporary codes created with code_challenge can be exchanged. Temporary codes created without code_challenge must be retrieved via GET /credentials.
+             * @summary Exchange a Temporary Code for Authentication/Authorization Information
+             * @param {ExchangeAuthCredentialsParam} exchangeAuthCredentialsParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async exchangeAuthCredentials(exchangeAuthCredentialsParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.exchangeAuthCredentials(exchangeAuthCredentialsParam, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
@@ -1346,6 +1439,17 @@
                 const localVarAxiosArgs = await localVarAxiosParamCreator.getAuthCredentials(code, authFlow, refreshToken, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
+            /**
+             * Revoke the specified refresh token.
+             * @summary Revoke Token
+             * @param {RevokeTokenParam} revokeTokenParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async revokeToken(revokeTokenParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.revokeToken(revokeTokenParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
         };
     };
     /**
@@ -1356,15 +1460,26 @@
      */
     class CredentialApi extends BaseAPI$5 {
         /**
-         * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance.
+         * Temporarily save the parameter for the ID token, access token, and refresh token and return a temporary code for obtaining. Temporary codes are valid for 10 seconds from issuance. When code_challenge is specified, the temporary code can only be exchanged via POST /credentials/exchange and cannot be retrieved via GET /credentials.
          * @summary Save Authentication/Authorization Information
-         * @param {Credentials} [body]
+         * @param {CreateAuthCredentialsParam} [createAuthCredentialsParam]
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof CredentialApi
          */
-        createAuthCredentials(body, options) {
-            return CredentialApiFp(this.configuration).createAuthCredentials(body, options).then((request) => request(this.axios, this.basePath));
+        createAuthCredentials(createAuthCredentialsParam, options) {
+            return CredentialApiFp(this.configuration).createAuthCredentials(createAuthCredentialsParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Exchange a temporary code for ID token, access token, and refresh token by verifying the PKCE code verifier. Only temporary codes created with code_challenge can be exchanged. Temporary codes created without code_challenge must be retrieved via GET /credentials.
+         * @summary Exchange a Temporary Code for Authentication/Authorization Information
+         * @param {ExchangeAuthCredentialsParam} exchangeAuthCredentialsParam
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof CredentialApi
+         */
+        exchangeAuthCredentials(exchangeAuthCredentialsParam, options) {
+            return CredentialApiFp(this.configuration).exchangeAuthCredentials(exchangeAuthCredentialsParam, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Get ID token, access token, and refresh token using a temporary code or a refresh token.
@@ -1378,6 +1493,17 @@
          */
         getAuthCredentials(code, authFlow, refreshToken, options) {
             return CredentialApiFp(this.configuration).getAuthCredentials(code, authFlow, refreshToken, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Revoke the specified refresh token.
+         * @summary Revoke Token
+         * @param {RevokeTokenParam} revokeTokenParam
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof CredentialApi
+         */
+        revokeToken(revokeTokenParam, options) {
+            return CredentialApiFp(this.configuration).revokeToken(revokeTokenParam, options).then((request) => request(this.axios, this.basePath));
         }
     }
     /**
@@ -2576,6 +2702,34 @@
                 };
             },
             /**
+             * Get the count of SaaS users.
+             * @summary Get SaaS Users Count
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getSaasUsersCount: async (options = {}) => {
+                const localVarPath = `/users/count`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Get the user\'s MFA settings.
              * @summary Get User\'s MFA Settings
              * @param {string} userId User ID
@@ -2793,6 +2947,87 @@
                 let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
                 localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 localVarRequestOptions.data = serializeDataIfNeeded$5(respondToSignInChallengeParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Save the count of SaaS users.
+             * @summary Save SaaS Users Count
+             * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            saveSaasUsersCount: async (saveSaasUsersCountParam, options = {}) => {
+                // verify required parameter 'saveSaasUsersCountParam' is not null or undefined
+                assertParamExists$3('saveSaasUsersCount', 'saveSaasUsersCountParam', saveSaasUsersCountParam);
+                const localVarPath = `/users/count`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(saveSaasUsersCountParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
+             * Search SaaS users by user ID, email, or sign-in ID.
+             * @summary Search SaaS Users
+             * @param {string} [id] User ID
+             * @param {string} [email] Email prefix
+             * @param {string} [signInId] Sign-in ID prefix
+             * @param {number} [limit] Maximum number of items to retrieve
+             * @param {string} [cursor] Cursor for cursor pagination
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            searchSaasUsers: async (id, email, signInId, limit, cursor, options = {}) => {
+                const localVarPath = `/users/search`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                if (id !== undefined) {
+                    localVarQueryParameter['id'] = id;
+                }
+                if (email !== undefined) {
+                    localVarQueryParameter['email'] = email;
+                }
+                if (signInId !== undefined) {
+                    localVarQueryParameter['sign_in_id'] = signInId;
+                }
+                if (limit !== undefined) {
+                    localVarQueryParameter['limit'] = limit;
+                }
+                if (cursor !== undefined) {
+                    localVarQueryParameter['cursor'] = cursor;
+                }
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
                 return {
                     url: toPathString$5(localVarUrlObj),
                     options: localVarRequestOptions,
@@ -3278,6 +3513,16 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Get the count of SaaS users.
+             * @summary Get SaaS Users Count
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getSaasUsersCount(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getSaasUsersCount(options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Get the user\'s MFA settings.
              * @summary Get User\'s MFA Settings
              * @param {string} userId User ID
@@ -3353,6 +3598,32 @@
              */
             async respondToSignInChallenge(respondToSignInChallengeParam, options) {
                 const localVarAxiosArgs = await localVarAxiosParamCreator.respondToSignInChallenge(respondToSignInChallengeParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Save the count of SaaS users.
+             * @summary Save SaaS Users Count
+             * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async saveSaasUsersCount(saveSaasUsersCountParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.saveSaasUsersCount(saveSaasUsersCountParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
+             * Search SaaS users by user ID, email, or sign-in ID.
+             * @summary Search SaaS Users
+             * @param {string} [id] User ID
+             * @param {string} [email] Email prefix
+             * @param {string} [signInId] Sign-in ID prefix
+             * @param {number} [limit] Maximum number of items to retrieve
+             * @param {string} [cursor] Cursor for cursor pagination
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async searchSaasUsers(id, email, signInId, limit, cursor, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.searchSaasUsers(id, email, signInId, limit, cursor, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
@@ -3593,6 +3864,16 @@
             return SaasUserApiFp(this.configuration).getSaasUsers(options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * Get the count of SaaS users.
+         * @summary Get SaaS Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        getSaasUsersCount(options) {
+            return SaasUserApiFp(this.configuration).getSaasUsersCount(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * Get the user\'s MFA settings.
          * @summary Get User\'s MFA Settings
          * @param {string} userId User ID
@@ -3669,6 +3950,32 @@
          */
         respondToSignInChallenge(respondToSignInChallengeParam, options) {
             return SaasUserApiFp(this.configuration).respondToSignInChallenge(respondToSignInChallengeParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Save the count of SaaS users.
+         * @summary Save SaaS Users Count
+         * @param {SaveSaasUsersCountParam} saveSaasUsersCountParam
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        saveSaasUsersCount(saveSaasUsersCountParam, options) {
+            return SaasUserApiFp(this.configuration).saveSaasUsersCount(saveSaasUsersCountParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
+         * Search SaaS users by user ID, email, or sign-in ID.
+         * @summary Search SaaS Users
+         * @param {string} [id] User ID
+         * @param {string} [email] Email prefix
+         * @param {string} [signInId] Sign-in ID prefix
+         * @param {number} [limit] Maximum number of items to retrieve
+         * @param {string} [cursor] Cursor for cursor pagination
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof SaasUserApi
+         */
+        searchSaasUsers(id, email, signInId, limit, cursor, options) {
+            return SaasUserApiFp(this.configuration).searchSaasUsers(id, email, signInId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * A user attempts to sign in.
@@ -4926,6 +5233,34 @@
                 };
             },
             /**
+             * Get the count of tenant users for each tenant.
+             * @summary Get Tenant Users Count
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            getAllTenantUsersCount: async (options = {}) => {
+                const localVarPath = `/tenants/all/users/count`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Get one tenant user by specific ID.
              * @summary Get Tenant User
              * @param {string} tenantId Tenant ID
@@ -4994,6 +5329,39 @@
                 };
             },
             /**
+             * Save the count of tenant users for each tenant.
+             * @summary Save Tenant Users Count
+             * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            saveTenantUsersCounts: async (saveTenantUsersCountsParam, options = {}) => {
+                // verify required parameter 'saveTenantUsersCountsParam' is not null or undefined
+                assertParamExists$3('saveTenantUsersCounts', 'saveTenantUsersCountsParam', saveTenantUsersCountsParam);
+                const localVarPath = `/tenants/all/users/count`;
+                // use dummy base URL string because the URL constructor only accepts absolute URLs.
+                const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
+                let baseOptions;
+                if (configuration) {
+                    baseOptions = configuration.baseOptions;
+                }
+                const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+                const localVarHeaderParameter = {};
+                const localVarQueryParameter = {};
+                // authentication Bearer required
+                // http bearer authentication required
+                await setBearerAuthToObject$5(localVarHeaderParameter, configuration);
+                localVarHeaderParameter['Content-Type'] = 'application/json';
+                setSearchParams$5(localVarUrlObj, localVarQueryParameter);
+                let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+                localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+                localVarRequestOptions.data = serializeDataIfNeeded$5(saveTenantUsersCountsParam, localVarRequestOptions, configuration);
+                return {
+                    url: toPathString$5(localVarUrlObj),
+                    options: localVarRequestOptions,
+                };
+            },
+            /**
              * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
              * @summary Search Tenant Users
              * @param {string} [tenantId] Tenant ID
@@ -5001,13 +5369,13 @@
              * @param {string} [email] Email prefix
              * @param {string} [signInId] Sign-in ID prefix
              * @param {number} [envId] Environment ID
-             * @param {string} [roleId] Role ID
-             * @param {number} [limit] Maximum number of users to retrieve
+             * @param {string} [roleName] Role Name
+             * @param {number} [limit] Maximum number of items to retrieve
              * @param {string} [cursor] Cursor for cursor pagination
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            searchTenantUsers: async (tenantId, id, email, signInId, envId, roleId, limit, cursor, options = {}) => {
+            searchTenantUsers: async (tenantId, id, email, signInId, envId, roleName, limit, cursor, options = {}) => {
                 const localVarPath = `/tenants/all/users/search`;
                 // use dummy base URL string because the URL constructor only accepts absolute URLs.
                 const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL$5);
@@ -5036,8 +5404,8 @@
                 if (envId !== undefined) {
                     localVarQueryParameter['env_id'] = envId;
                 }
-                if (roleId !== undefined) {
-                    localVarQueryParameter['role_id'] = roleId;
+                if (roleName !== undefined) {
+                    localVarQueryParameter['role_name'] = roleName;
                 }
                 if (limit !== undefined) {
                     localVarQueryParameter['limit'] = limit;
@@ -5175,6 +5543,16 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Get the count of tenant users for each tenant.
+             * @summary Get Tenant Users Count
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async getAllTenantUsersCount(options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.getAllTenantUsersCount(options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Get one tenant user by specific ID.
              * @summary Get Tenant User
              * @param {string} tenantId Tenant ID
@@ -5198,6 +5576,17 @@
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
+             * Save the count of tenant users for each tenant.
+             * @summary Save Tenant Users Count
+             * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+             * @param {*} [options] Override http request option.
+             * @throws {RequiredError}
+             */
+            async saveTenantUsersCounts(saveTenantUsersCountsParam, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.saveTenantUsersCounts(saveTenantUsersCountsParam, options);
+                return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
+            },
+            /**
              * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
              * @summary Search Tenant Users
              * @param {string} [tenantId] Tenant ID
@@ -5205,14 +5594,14 @@
              * @param {string} [email] Email prefix
              * @param {string} [signInId] Sign-in ID prefix
              * @param {number} [envId] Environment ID
-             * @param {string} [roleId] Role ID
-             * @param {number} [limit] Maximum number of users to retrieve
+             * @param {string} [roleName] Role Name
+             * @param {number} [limit] Maximum number of items to retrieve
              * @param {string} [cursor] Cursor for cursor pagination
              * @param {*} [options] Override http request option.
              * @throws {RequiredError}
              */
-            async searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options) {
-                const localVarAxiosArgs = await localVarAxiosParamCreator.searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options);
+            async searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options) {
+                const localVarAxiosArgs = await localVarAxiosParamCreator.searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options);
                 return createRequestFunction$5(localVarAxiosArgs, globalAxios__default["default"], BASE_PATH$5, configuration);
             },
             /**
@@ -5311,6 +5700,16 @@
             return TenantUserApiFp(this.configuration).getAllTenantUsers(options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * Get the count of tenant users for each tenant.
+         * @summary Get Tenant Users Count
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantUserApi
+         */
+        getAllTenantUsersCount(options) {
+            return TenantUserApiFp(this.configuration).getAllTenantUsersCount(options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * Get one tenant user by specific ID.
          * @summary Get Tenant User
          * @param {string} tenantId Tenant ID
@@ -5334,6 +5733,17 @@
             return TenantUserApiFp(this.configuration).getTenantUsers(tenantId, options).then((request) => request(this.axios, this.basePath));
         }
         /**
+         * Save the count of tenant users for each tenant.
+         * @summary Save Tenant Users Count
+         * @param {SaveTenantUsersCountsParam} saveTenantUsersCountsParam
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         * @memberof TenantUserApi
+         */
+        saveTenantUsersCounts(saveTenantUsersCountsParam, options) {
+            return TenantUserApiFp(this.configuration).saveTenantUsersCounts(saveTenantUsersCountsParam, options).then((request) => request(this.axios, this.basePath));
+        }
+        /**
          * Search tenant users by user id, tenant id, email, sign-in ID, env, or role.
          * @summary Search Tenant Users
          * @param {string} [tenantId] Tenant ID
@@ -5341,15 +5751,15 @@
          * @param {string} [email] Email prefix
          * @param {string} [signInId] Sign-in ID prefix
          * @param {number} [envId] Environment ID
-         * @param {string} [roleId] Role ID
-         * @param {number} [limit] Maximum number of users to retrieve
+         * @param {string} [roleName] Role Name
+         * @param {number} [limit] Maximum number of items to retrieve
          * @param {string} [cursor] Cursor for cursor pagination
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          * @memberof TenantUserApi
          */
-        searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options) {
-            return TenantUserApiFp(this.configuration).searchTenantUsers(tenantId, id, email, signInId, envId, roleId, limit, cursor, options).then((request) => request(this.axios, this.basePath));
+        searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options) {
+            return TenantUserApiFp(this.configuration).searchTenantUsers(tenantId, id, email, signInId, envId, roleName, limit, cursor, options).then((request) => request(this.axios, this.basePath));
         }
         /**
          * Update tenant user attributes.
@@ -5605,7 +6015,7 @@
     const UserInfoApiAxiosParamCreator = function (configuration) {
         return {
             /**
-             * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
+             * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc.
              * @summary Get User Info
              * @param {string} token ID Token
              * @param {*} [options] Override http request option.
@@ -5716,7 +6126,7 @@
         const localVarAxiosParamCreator = UserInfoApiAxiosParamCreator(configuration);
         return {
             /**
-             * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
+             * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc.
              * @summary Get User Info
              * @param {string} token ID Token
              * @param {*} [options] Override http request option.
@@ -5758,7 +6168,7 @@
      */
     class UserInfoApi extends BaseAPI$5 {
         /**
-         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it.
+         * User information is obtained based on the ID token of the SaaS user (registered user). The ID token is passed to the Callback URL during login from the SaaSus Platform generated login screen. User information can be obtained from calling this API with an ID token from the URL on the server side. Since the acquired tenant, role (role), price plan, etc. are included, it is possible to implement authorization based on it. If the ID token validation fails and 401 Unauthorized is returned, the login screen URL will be returned in data.sign_in_page_url of the response, so the client can respond by redirecting to it, etc.
          * @summary Get User Info
          * @param {string} token ID Token
          * @param {*} [options] Override http request option.
@@ -5832,7 +6242,7 @@
     }
 
     class AuthClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -5845,7 +6255,8 @@
             }
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer, this.xSaaSusReferer);
+            this.xSaaSusTraceId = xSaaSusTraceId;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/auth", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             const config = new Configuration$5({
                 basePath: this.apiBase + "/v1/auth",
             });
@@ -6174,7 +6585,7 @@
     }
 
     class BillingClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -6187,10 +6598,11 @@
             }
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
+            this.xSaaSusTraceId = xSaaSusTraceId;
             const config = new Configuration$4({
                 basePath: this.apiBase + "/v1/billing",
             });
-            this.instance = getAxiosInstance(this.apiBase + "/v1/billing", this.referer, this.xSaaSusReferer);
+            this.instance = getAxiosInstance(this.apiBase + "/v1/billing", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             this.stripeApi = new StripeApi(config, "", this.instance);
         }
     }
@@ -7069,7 +7481,7 @@
     }
 
     class CommunicationClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -7082,7 +7494,8 @@
             }
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/communication", this.referer, this.xSaaSusReferer);
+            this.xSaaSusTraceId = xSaaSusTraceId;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/communication", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             const config = new Configuration$3({
                 basePath: this.apiBase + "/v1/communication",
             });
@@ -9395,7 +9808,7 @@
     }
 
     class PricingClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -9411,7 +9824,8 @@
             });
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/pricing", this.referer, this.xSaaSusReferer);
+            this.xSaaSusTraceId = xSaaSusTraceId;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/pricing", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             this.meteringApi = new MeteringApi(config, "", this.instance);
             this.pricingMenusApi = new PricingMenusApi(config, "", this.instance);
             this.pricingPlansApi = new PricingPlansApi(config, "", this.instance);
@@ -9831,7 +10245,7 @@
     }
 
     class IntegrationClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -9844,7 +10258,8 @@
             }
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/integration", this.referer, this.xSaaSusReferer);
+            this.xSaaSusTraceId = xSaaSusTraceId;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/integration", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             const config = new Configuration$1({
                 basePath: this.apiBase + "/v1/integration",
             });
@@ -10757,7 +11172,7 @@
     }
 
     class AwsMarketplaceClient {
-        constructor(referer = "", xSaaSusReferer = "") {
+        constructor(referer = "", xSaaSusReferer = "", xSaaSusTraceId = "") {
             this.secret = process.env.SAASUS_SECRET_KEY || "";
             this.saasId = process.env.SAASUS_SAAS_ID || "";
             this.apiKey = process.env.SAASUS_API_KEY || "";
@@ -10770,7 +11185,8 @@
             }
             this.referer = referer;
             this.xSaaSusReferer = xSaaSusReferer;
-            this.instance = getAxiosInstance(this.apiBase + "/v1/awsmarketplace", this.referer, this.xSaaSusReferer);
+            this.xSaaSusTraceId = xSaaSusTraceId;
+            this.instance = getAxiosInstance(this.apiBase + "/v1/awsmarketplace", this.referer, this.xSaaSusReferer, this.xSaaSusTraceId);
             const config = new Configuration({
                 basePath: this.apiBase + "/v1/awsmarketplace",
             });
@@ -10814,8 +11230,12 @@
         if (req.headers["x-saasus-referer"]) {
             xSaaSusReferer = req.headers["x-saasus-referer"];
         }
+        let xSaaSusTraceId = "";
+        if (req.headers["x-saasus-trace-id"]) {
+            xSaaSusTraceId = req.headers["x-saasus-trace-id"];
+        }
         try {
-            const apiClient = new AuthClient(referer, xSaaSusReferer);
+            const apiClient = new AuthClient(referer, xSaaSusReferer, xSaaSusTraceId);
             const { data } = await apiClient.userInfoApi.getUserInfo(isAPI()
                 ? req.headers["authorization"].split("Bearer ")[1]
                 : req.cookies.idToken);

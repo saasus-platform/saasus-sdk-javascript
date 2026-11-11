@@ -58,7 +58,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/base.ts#L52)
 
 ## Properties
 
@@ -72,7 +72,7 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L52)
+[src/generated/Billing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/base.ts#L52)
 
 ___
 
@@ -100,13 +100,13 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/base.ts#L50)
+[src/generated/Billing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/base.ts#L50)
 
 ## Methods
 
 ### deleteStripeInfo
 
-▸ **deleteStripeInfo**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteStripeInfo**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete connection with external billing SaaS
 
@@ -114,11 +114,11 @@ Delete connection with external billing SaaS
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -132,13 +132,13 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L380)
+[src/generated/Billing/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L380)
 
 ___
 
 ### getStripeInfo
 
-▸ **getStripeInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`\>\>
+▸ **getStripeInfo**(`options?`): `Promise`\<`AxiosResponse`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`, {}, `any`\>\>
 
 Get information on connnections with external billing SaaS. Currently possible to integrate with Stripe. Without integration, you will need to implement billing using the SaaSus SDK/API.
 
@@ -146,11 +146,11 @@ Get information on connnections with external billing SaaS. Currently possible t
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -164,13 +164,13 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L391)
+[src/generated/Billing/api.ts:391](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L391)
 
 ___
 
 ### updateStripeInfo
 
-▸ **updateStripeInfo**(`updateStripeInfoParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateStripeInfo**(`updateStripeInfoParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Updates information on connection with external billing SaaS. Currently possible to connect to Stripe.
 
@@ -179,11 +179,11 @@ Updates information on connection with external billing SaaS. Currently possible
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `updateStripeInfoParam?` | [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -197,4 +197,4 @@ StripeApi
 
 #### Defined in
 
-[src/generated/Billing/api.ts:403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L403)
+[src/generated/Billing/api.ts:403](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L403)

@@ -315,6 +315,12 @@ export interface PricingFixedUnit {
      */
     'used': boolean;
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingFixedUnit
+     */
+    'type': UnitType;
+    /**
      * Price
      * @type {number}
      * @memberof PricingFixedUnit
@@ -344,12 +350,6 @@ export interface PricingFixedUnit {
      * @memberof PricingFixedUnit
      */
     'description': string;
-    /**
-     *
-     * @type {UnitType}
-     * @memberof PricingFixedUnit
-     */
-    'type': UnitType;
     /**
      *
      * @type {Currency}
@@ -383,6 +383,12 @@ export interface PricingFixedUnitAllOf {
  */
 export interface PricingFixedUnitForSave {
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingFixedUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Price
      * @type {number}
      * @memberof PricingFixedUnitForSave
@@ -414,12 +420,6 @@ export interface PricingFixedUnitForSave {
     'description': string;
     /**
      *
-     * @type {UnitType}
-     * @memberof PricingFixedUnitForSave
-     */
-    'type': UnitType;
-    /**
-     *
      * @type {Currency}
      * @memberof PricingFixedUnitForSave
      */
@@ -431,6 +431,12 @@ export interface PricingFixedUnitForSave {
  * @interface PricingFixedUnitForSaveAllOf
  */
 export interface PricingFixedUnitForSaveAllOf {
+    /**
+     *
+     * @type {string}
+     * @memberof PricingFixedUnitForSaveAllOf
+     */
+    'type'?: PricingFixedUnitForSaveAllOfTypeEnum;
     /**
      * Price
      * @type {number}
@@ -444,6 +450,10 @@ export interface PricingFixedUnitForSaveAllOf {
      */
     'recurring_interval': RecurringInterval;
 }
+export declare const PricingFixedUnitForSaveAllOfTypeEnum: {
+    readonly Fixed: "fixed";
+};
+export type PricingFixedUnitForSaveAllOfTypeEnum = typeof PricingFixedUnitForSaveAllOfTypeEnum[keyof typeof PricingFixedUnitForSaveAllOfTypeEnum];
 /**
  *
  * @export
@@ -767,6 +777,12 @@ export interface PricingTieredUnit {
      */
     'used': boolean;
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingTieredUnit
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUnit
@@ -802,12 +818,6 @@ export interface PricingTieredUnit {
      * @memberof PricingTieredUnit
      */
     'description': string;
-    /**
-     *
-     * @type {UnitType}
-     * @memberof PricingTieredUnit
-     */
-    'type': UnitType;
     /**
      *
      * @type {Currency}
@@ -828,6 +838,12 @@ export interface PricingTieredUnit {
  */
 export interface PricingTieredUnitForSave {
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingTieredUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUnitForSave
@@ -865,12 +881,6 @@ export interface PricingTieredUnitForSave {
     'description': string;
     /**
      *
-     * @type {UnitType}
-     * @memberof PricingTieredUnitForSave
-     */
-    'type': UnitType;
-    /**
-     *
      * @type {Currency}
      * @memberof PricingTieredUnitForSave
      */
@@ -882,6 +892,41 @@ export interface PricingTieredUnitForSave {
      */
     'tiers': Array<PricingTier>;
 }
+/**
+ *
+ * @export
+ * @interface PricingTieredUnitForSaveAllOf
+ */
+export interface PricingTieredUnitForSaveAllOf {
+    /**
+     *
+     * @type {string}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'type'?: PricingTieredUnitForSaveAllOfTypeEnum;
+    /**
+     * Upper limit
+     * @type {number}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'upper_count': number;
+    /**
+     * Metering unit name
+     * @type {string}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'metering_unit_name': string;
+    /**
+     *
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'aggregate_usage'?: AggregateUsage;
+}
+export declare const PricingTieredUnitForSaveAllOfTypeEnum: {
+    readonly Tiered: "tiered";
+};
+export type PricingTieredUnitForSaveAllOfTypeEnum = typeof PricingTieredUnitForSaveAllOfTypeEnum[keyof typeof PricingTieredUnitForSaveAllOfTypeEnum];
 /**
  *
  * @export
@@ -913,6 +958,12 @@ export interface PricingTieredUsageUnit {
      */
     'used': boolean;
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingTieredUsageUnit
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUsageUnit
@@ -948,12 +999,6 @@ export interface PricingTieredUsageUnit {
      * @memberof PricingTieredUsageUnit
      */
     'description': string;
-    /**
-     *
-     * @type {UnitType}
-     * @memberof PricingTieredUsageUnit
-     */
-    'type': UnitType;
     /**
      *
      * @type {Currency}
@@ -1005,6 +1050,12 @@ export interface PricingTieredUsageUnitAllOf {
  */
 export interface PricingTieredUsageUnitForSave {
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingTieredUsageUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUsageUnitForSave
@@ -1042,12 +1093,6 @@ export interface PricingTieredUsageUnitForSave {
     'description': string;
     /**
      *
-     * @type {UnitType}
-     * @memberof PricingTieredUsageUnitForSave
-     */
-    'type': UnitType;
-    /**
-     *
      * @type {Currency}
      * @memberof PricingTieredUsageUnitForSave
      */
@@ -1065,6 +1110,12 @@ export interface PricingTieredUsageUnitForSave {
  * @interface PricingTieredUsageUnitForSaveAllOf
  */
 export interface PricingTieredUsageUnitForSaveAllOf {
+    /**
+     *
+     * @type {string}
+     * @memberof PricingTieredUsageUnitForSaveAllOf
+     */
+    'type'?: PricingTieredUsageUnitForSaveAllOfTypeEnum;
     /**
      * Upper limit
      * @type {number}
@@ -1084,6 +1135,10 @@ export interface PricingTieredUsageUnitForSaveAllOf {
      */
     'aggregate_usage'?: AggregateUsage;
 }
+export declare const PricingTieredUsageUnitForSaveAllOfTypeEnum: {
+    readonly TieredUsage: "tiered_usage";
+};
+export type PricingTieredUsageUnitForSaveAllOfTypeEnum = typeof PricingTieredUsageUnitForSaveAllOfTypeEnum[keyof typeof PricingTieredUsageUnitForSaveAllOfTypeEnum];
 /**
  *
  * @export
@@ -1204,6 +1259,12 @@ export interface PricingUsageUnit {
      */
     'used': boolean;
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingUsageUnit
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingUsageUnit
@@ -1245,12 +1306,6 @@ export interface PricingUsageUnit {
      * @memberof PricingUsageUnit
      */
     'description': string;
-    /**
-     *
-     * @type {UnitType}
-     * @memberof PricingUsageUnit
-     */
-    'type': UnitType;
     /**
      *
      * @type {Currency}
@@ -1296,6 +1351,12 @@ export interface PricingUsageUnitAllOf {
  */
 export interface PricingUsageUnitForSave {
     /**
+     *
+     * @type {UnitType}
+     * @memberof PricingUsageUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingUsageUnitForSave
@@ -1339,12 +1400,6 @@ export interface PricingUsageUnitForSave {
     'description': string;
     /**
      *
-     * @type {UnitType}
-     * @memberof PricingUsageUnitForSave
-     */
-    'type': UnitType;
-    /**
-     *
      * @type {Currency}
      * @memberof PricingUsageUnitForSave
      */
@@ -1356,6 +1411,12 @@ export interface PricingUsageUnitForSave {
  * @interface PricingUsageUnitForSaveAllOf
  */
 export interface PricingUsageUnitForSaveAllOf {
+    /**
+     *
+     * @type {string}
+     * @memberof PricingUsageUnitForSaveAllOf
+     */
+    'type'?: PricingUsageUnitForSaveAllOfTypeEnum;
     /**
      * Upper limit
      * @type {number}
@@ -1381,6 +1442,10 @@ export interface PricingUsageUnitForSaveAllOf {
      */
     'aggregate_usage'?: AggregateUsage;
 }
+export declare const PricingUsageUnitForSaveAllOfTypeEnum: {
+    readonly Usage: "usage";
+};
+export type PricingUsageUnitForSaveAllOfTypeEnum = typeof PricingUsageUnitForSaveAllOfTypeEnum[keyof typeof PricingUsageUnitForSaveAllOfTypeEnum];
 /**
  * Cycle month: Monthly year: Yearly
  * @export
@@ -1704,7 +1769,7 @@ export declare class ErrorApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ErrorApi
      */
-    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    returnInternalServerError(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
 }
 /**
  * MeteringApi - axios parameter creator
@@ -2129,7 +2194,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    createMeteringUnit(body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnit, any>>;
+    createMeteringUnit(body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnit, any, {}, any>>;
     /**
      * Delete metering unit.
      * @summary Delete Metering Unit
@@ -2138,7 +2203,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    deleteMeteringUnitByID(meteringUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteMeteringUnitByID(meteringUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Deletes metering unit count for the specified timestamp.
      * @summary Delete Metering Unit Count for Specified Timestamp
@@ -2149,7 +2214,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Gets the metering unit count for a specific date.
      * @summary Get Metering Unit Count for Specific Date
@@ -2160,7 +2225,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
+    getMeteringUnitDateCountByTenantIdAndUnitNameAndDate(tenantId: string, meteringUnitName: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any, {}, any>>;
     /**
      * Obtain metering unit counts for a specified date/time period.
      * @summary Obtain metering unit counts for a specified date/time period
@@ -2172,7 +2237,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId: string, meteringUnitName: string, startTimestamp?: number, endTimestamp?: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDatePeriodCounts, any>>;
+    getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod(tenantId: string, meteringUnitName: string, startTimestamp?: number, endTimestamp?: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDatePeriodCounts, any, {}, any>>;
     /**
      * Get the metering unit count for the current day.
      * @summary Get Metering Unit Count for the Current Day
@@ -2182,7 +2247,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitDateCountByTenantIdAndUnitNameToday(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any>>;
+    getMeteringUnitDateCountByTenantIdAndUnitNameToday(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCount, any, {}, any>>;
     /**
      * Gets the total metering unit count for the specified date.
      * @summary Get All Metering Unit Counts for a Specified Date
@@ -2192,7 +2257,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitDateCountsByTenantIdAndDate(tenantId: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCounts, any>>;
+    getMeteringUnitDateCountsByTenantIdAndDate(tenantId: string, date: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitDateCounts, any, {}, any>>;
     /**
      * Gets the metering unit count for the specified month.
      * @summary Get the Metering Unit Count for the Specified Month
@@ -2203,7 +2268,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth(tenantId: string, meteringUnitName: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCount, any>>;
+    getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth(tenantId: string, meteringUnitName: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCount, any, {}, any>>;
     /**
      * Get the metering unit count for the current month.
      * @summary Get Metering Unit Count for the Current Month
@@ -2213,7 +2278,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCount, any>>;
+    getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth(tenantId: string, meteringUnitName: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCount, any, {}, any>>;
     /**
      * Gets all metering unit counts for the specified month.
      * @summary Get All Metering Unit Counts for the Specified Month
@@ -2223,7 +2288,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCounts, any>>;
+    getMeteringUnitMonthCountsByTenantIdAndMonth(tenantId: string, month: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitMonthCounts, any, {}, any>>;
     /**
      * Get all metering units.
      * @summary Get all metering units
@@ -2231,7 +2296,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    getMeteringUnits(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnits, any>>;
+    getMeteringUnits(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnits, any, {}, any>>;
     /**
      * Update metering unit.
      * @summary Update Metering Unit
@@ -2241,7 +2306,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateMeteringUnitByID(meteringUnitId: string, body?: MeteringUnitProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Update metering unit count for the specified timestamp.
      * @summary Update Metering Unit Count for Specified Timestamp
@@ -2253,7 +2318,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any>>;
+    updateMeteringUnitTimestampCount(tenantId: string, meteringUnitName: string, timestamp: number, updateMeteringUnitTimestampCountParam?: UpdateMeteringUnitTimestampCountParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any, {}, any>>;
     /**
      * Update the metering unit count for the current time.
      * @summary Update Metering Unit Count for Current Time
@@ -2264,7 +2329,7 @@ export declare class MeteringApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MeteringApi
      */
-    updateMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, updateMeteringUnitTimestampCountNowParam?: UpdateMeteringUnitTimestampCountNowParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any>>;
+    updateMeteringUnitTimestampCountNow(tenantId: string, meteringUnitName: string, updateMeteringUnitTimestampCountNowParam?: UpdateMeteringUnitTimestampCountNowParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<MeteringUnitTimestampCount, any, {}, any>>;
 }
 /**
  * PricingMenusApi - axios parameter creator
@@ -2419,7 +2484,7 @@ export declare class PricingMenusApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingMenusApi
      */
-    createPricingMenu(body?: SavePricingMenuParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenu, any>>;
+    createPricingMenu(body?: SavePricingMenuParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenu, any, {}, any>>;
     /**
      * Delete pricing feature menu.
      * @summary Delete Pricing Feature Menu
@@ -2428,7 +2493,7 @@ export declare class PricingMenusApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingMenusApi
      */
-    deletePricingMenu(menuId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deletePricingMenu(menuId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Get a pricing feature menu.
      * @summary Get Pricing Feature Menu
@@ -2437,7 +2502,7 @@ export declare class PricingMenusApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingMenusApi
      */
-    getPricingMenu(menuId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenu, any>>;
+    getPricingMenu(menuId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenu, any, {}, any>>;
     /**
      * Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
      * @summary Get Pricing Feature Menus
@@ -2445,7 +2510,7 @@ export declare class PricingMenusApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingMenusApi
      */
-    getPricingMenus(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenus, any>>;
+    getPricingMenus(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingMenus, any, {}, any>>;
     /**
      * Update pricing feature menu.
      * @summary Update Pricing Feature Menu
@@ -2455,7 +2520,7 @@ export declare class PricingMenusApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingMenusApi
      */
-    updatePricingMenu(menuId: string, body?: SavePricingMenuParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updatePricingMenu(menuId: string, body?: SavePricingMenuParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
 }
 /**
  * PricingPlansApi - axios parameter creator
@@ -2697,7 +2762,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    createPricingPlan(body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any>>;
+    createPricingPlan(body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any, {}, any>>;
     /**
      * Unconditionally remove all rate plans, menus, units, meters and tax rates.
      * @summary Delete all Plans, Menus, Units, Meters and Tax Rates
@@ -2705,7 +2770,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Delete a pricing plan.
      * @summary Delete Pricing Plan
@@ -2714,7 +2779,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    deletePricingPlan(planId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deletePricingPlan(planId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Delete product data from Stripe.
      * @summary Delete Product Data from Stripe
@@ -2722,7 +2787,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    deleteStripePlan(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deleteStripePlan(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Get a pricing plan.
      * @summary Get Pricing Plan
@@ -2731,7 +2796,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    getPricingPlan(planId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any>>;
+    getPricingPlan(planId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlan, any, {}, any>>;
     /**
      * Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
      * @summary Get Pricing Plans
@@ -2739,7 +2804,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    getPricingPlans(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlans, any>>;
+    getPricingPlans(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingPlans, any, {}, any>>;
     /**
      * Connect information to Stripe.
      * @summary Connect to Stripe
@@ -2747,7 +2812,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    linkPlanToStripe(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    linkPlanToStripe(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Update a pricing plan.
      * @summary Update Pricing Plan
@@ -2757,7 +2822,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    updatePricingPlan(planId: string, body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updatePricingPlan(planId: string, body?: SavePricingPlanParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Update price plan and feature menu/pricing unit to used.
      * @summary Update Used Flag
@@ -2766,7 +2831,7 @@ export declare class PricingPlansApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingPlansApi
      */
-    updatePricingPlansUsed(updatePricingPlansUsedParam?: UpdatePricingPlansUsedParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updatePricingPlansUsed(updatePricingPlansUsedParam?: UpdatePricingPlansUsedParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
 }
 /**
  * PricingUnitsApi - axios parameter creator
@@ -2921,7 +2986,7 @@ export declare class PricingUnitsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingUnitsApi
      */
-    createPricingUnit(body?: PricingUnitForSave, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnit, any>>;
+    createPricingUnit(body?: PricingUnitForSave, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnit, any, {}, any>>;
     /**
      * Delete a pricing unit.
      * @summary Delete Pricing Unit
@@ -2930,7 +2995,7 @@ export declare class PricingUnitsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingUnitsApi
      */
-    deletePricingUnit(pricingUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    deletePricingUnit(pricingUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
     /**
      * Get a pricing unit.
      * @summary Get Pricing Unit
@@ -2939,7 +3004,7 @@ export declare class PricingUnitsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingUnitsApi
      */
-    getPricingUnit(pricingUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnit, any>>;
+    getPricingUnit(pricingUnitId: string, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnit, any, {}, any>>;
     /**
      * Gets the smallest unit of measure on which the charges are based. \"Fixed Unit\" (type=fixed) is a unit of a monthly fixed charge such as a basic charge, \"Usage Unit\" (type=usage) is a unit in which a charge is generated per unit such as billing for the number of users, \"Tiered Unit\" (type=tiered) is a fixed charge unit for each tier of usage, such as the tiered packet charge for mobile phones, \"Tiered Usage Unit\" (type=tiered_usage) is a unit where the charge per unit changes according to the usage amount, such as a volume discount.
      * @summary Get Pricing Units
@@ -2947,7 +3012,7 @@ export declare class PricingUnitsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingUnitsApi
      */
-    getPricingUnits(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnits, any>>;
+    getPricingUnits(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<PricingUnits, any, {}, any>>;
     /**
      * Update pricing unit.
      * @summary Update Pricing Unit
@@ -2957,7 +3022,7 @@ export declare class PricingUnitsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PricingUnitsApi
      */
-    updatePricingUnit(pricingUnitId: string, body?: PricingUnitForSave, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updatePricingUnit(pricingUnitId: string, body?: PricingUnitForSave, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
 }
 /**
  * TaxRateApi - axios parameter creator
@@ -3064,7 +3129,7 @@ export declare class TaxRateApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaxRateApi
      */
-    createTaxRate(body?: TaxRateProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRate, any>>;
+    createTaxRate(body?: TaxRateProps, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRate, any, {}, any>>;
     /**
      * Get all Tax Rates
      * @summary Get Tax Rates
@@ -3072,7 +3137,7 @@ export declare class TaxRateApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaxRateApi
      */
-    getTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRates, any>>;
+    getTaxRates(options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<TaxRates, any, {}, any>>;
     /**
      * Update tax rate.
      * @summary Update Tax Rate
@@ -3082,5 +3147,5 @@ export declare class TaxRateApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaxRateApi
      */
-    updateTaxRate(taxRateId: string, updateTaxRateParam?: UpdateTaxRateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
+    updateTaxRate(taxRateId: string, updateTaxRateParam?: UpdateTaxRateParam, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}, any>>;
 }

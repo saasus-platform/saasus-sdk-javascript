@@ -28,4 +28,4 @@ Tenants
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2256](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2256)
+[src/generated/Auth/api.ts:2545](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2545)

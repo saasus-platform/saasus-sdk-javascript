@@ -29,7 +29,7 @@ UpdateMeteringUnitTimestampCountNowParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1616](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1616)
+[src/generated/Pricing/api.ts:1693](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1693)
 
 ___
 
@@ -43,4 +43,4 @@ UpdateMeteringUnitTimestampCountNowParam
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1610](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1610)
+[src/generated/Pricing/api.ts:1687](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1687)

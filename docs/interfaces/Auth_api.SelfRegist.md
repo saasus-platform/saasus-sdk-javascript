@@ -28,4 +28,4 @@ SelfRegist
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1733](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1733)
+[src/generated/Auth/api.ts:1978](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1978)

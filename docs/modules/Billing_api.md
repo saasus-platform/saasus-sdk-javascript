@@ -44,13 +44,13 @@ ErrorApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Billing/api.ts:74](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L74)
+[src/generated/Billing/api.ts:74](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L74)
 
 ___
 
@@ -74,13 +74,13 @@ ErrorApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Billing/api.ts:137](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L137)
+[src/generated/Billing/api.ts:137](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L137)
 
 ___
 
@@ -102,13 +102,13 @@ ErrorApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Billing/api.ts:117](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L117)
+[src/generated/Billing/api.ts:117](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L117)
 
 ___
 
@@ -130,15 +130,15 @@ StripeApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `deleteStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
-| `getStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
-| `updateStripeInfo` | (`updateStripeInfoParam?`: [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
+| `deleteStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
+| `getStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
+| `updateStripeInfo` | (`updateStripeInfoParam?`: [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Billing_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Billing/api.ts:176](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L176)
+[src/generated/Billing/api.ts:176](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L176)
 
 ___
 
@@ -162,15 +162,15 @@ StripeApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `deleteStripeInfo` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getStripeInfo` | (`options?`: `any`) => `AxiosPromise`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md)\> |
-| `updateStripeInfo` | (`updateStripeInfoParam?`: [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `deleteStripeInfo` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getStripeInfo` | (`options?`: `any`) => `AxiosPromise`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`, `any`\> |
+| `updateStripeInfo` | (`updateStripeInfoParam?`: [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Billing/api.ts:332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L332)
+[src/generated/Billing/api.ts:332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L332)
 
 ___
 
@@ -192,12 +192,12 @@ StripeApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `deleteStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md)\>\> |
-| `updateStripeInfo` | (`updateStripeInfoParam?`: [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `deleteStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getStripeInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`StripeInfo`](../interfaces/Billing_api.StripeInfo.md), `any`, `any`\>\> |
+| `updateStripeInfo` | (`updateStripeInfoParam?`: [`UpdateStripeInfoParam`](../interfaces/Billing_api.UpdateStripeInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Billing/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Billing/api.ts#L291)
+[src/generated/Billing/api.ts:291](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/api.ts#L291)

@@ -49,13 +49,13 @@ ErrorApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/api.ts:139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L139)
+[src/generated/Integration/api.ts:139](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/api.ts#L139)
 
 ___
 
@@ -79,13 +79,13 @@ ErrorApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/api.ts:202](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L202)
+[src/generated/Integration/api.ts:202](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/api.ts#L202)
 
 ___
 
@@ -107,13 +107,13 @@ ErrorApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L182)
+[src/generated/Integration/api.ts:182](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/api.ts#L182)
 
 ___
 
@@ -135,17 +135,17 @@ EventBridgeApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createEventBridgeEvent` | (`createEventBridgeEventParam?`: [`CreateEventBridgeEventParam`](../interfaces/Integration_api.CreateEventBridgeEventParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
-| `createEventBridgeTestEvent` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
-| `deleteEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
-| `getEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
-| `saveEventBridgeSettings` | (`body?`: [`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
+| `createEventBridgeEvent` | (`createEventBridgeEventParam?`: [`CreateEventBridgeEventParam`](../interfaces/Integration_api.CreateEventBridgeEventParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
+| `createEventBridgeTestEvent` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
+| `deleteEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
+| `getEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
+| `saveEventBridgeSettings` | (`body?`: [`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Integration_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/api.ts:241](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L241)
+[src/generated/Integration/api.ts:241](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/api.ts#L241)
 
 ___
 
@@ -169,17 +169,17 @@ EventBridgeApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createEventBridgeEvent` | (`createEventBridgeEventParam?`: [`CreateEventBridgeEventParam`](../interfaces/Integration_api.CreateEventBridgeEventParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `createEventBridgeTestEvent` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `deleteEventBridgeSettings` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getEventBridgeSettings` | (`options?`: `any`) => `AxiosPromise`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md)\> |
-| `saveEventBridgeSettings` | (`body?`: [`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createEventBridgeEvent` | (`createEventBridgeEventParam?`: [`CreateEventBridgeEventParam`](../interfaces/Integration_api.CreateEventBridgeEventParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `createEventBridgeTestEvent` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `deleteEventBridgeSettings` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getEventBridgeSettings` | (`options?`: `any`) => `AxiosPromise`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`, `any`\> |
+| `saveEventBridgeSettings` | (`body?`: [`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/api.ts:490](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L490)
+[src/generated/Integration/api.ts:490](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/api.ts#L490)
 
 ___
 
@@ -201,14 +201,14 @@ EventBridgeApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createEventBridgeEvent` | (`createEventBridgeEventParam?`: [`CreateEventBridgeEventParam`](../interfaces/Integration_api.CreateEventBridgeEventParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `createEventBridgeTestEvent` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `deleteEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md)\>\> |
-| `saveEventBridgeSettings` | (`body?`: [`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createEventBridgeEvent` | (`createEventBridgeEventParam?`: [`CreateEventBridgeEventParam`](../interfaces/Integration_api.CreateEventBridgeEventParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `createEventBridgeTestEvent` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `deleteEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getEventBridgeSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `any`, `any`\>\> |
+| `saveEventBridgeSettings` | (`body?`: [`EventBridgeSettings`](../interfaces/Integration_api.EventBridgeSettings.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/api.ts:428](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/api.ts#L428)
+[src/generated/Integration/api.ts:428](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/api.ts#L428)

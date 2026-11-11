@@ -34,7 +34,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2300](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2300)
+[src/generated/Auth/api.ts:2589](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2589)
 
 ___
 
@@ -50,7 +50,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2324](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2324)
+[src/generated/Auth/api.ts:2613](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2613)
 
 ___
 
@@ -66,7 +66,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2294](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2294)
+[src/generated/Auth/api.ts:2583](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2583)
 
 ___
 
@@ -82,7 +82,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2330](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2330)
+[src/generated/Auth/api.ts:2619](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2619)
 
 ___
 
@@ -98,7 +98,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2318](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2318)
+[src/generated/Auth/api.ts:2607](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2607)
 
 ___
 
@@ -114,7 +114,7 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2312](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2312)
+[src/generated/Auth/api.ts:2601](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2601)
 
 ___
 
@@ -130,4 +130,4 @@ UpdateCustomizePageSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2306)
+[src/generated/Auth/api.ts:2595](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2595)

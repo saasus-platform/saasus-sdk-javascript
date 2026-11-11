@@ -4,6 +4,8 @@
 
 [Auth/api](../modules/Auth_api.md).UpdateSignInSettingsParam
 
+Set both value and unit in refresh_token_validity when updating the refresh token validity period.
+
 **`Export`**
 
 UpdateSignInSettingsParam
@@ -17,6 +19,7 @@ UpdateSignInSettingsParam
 - [mfa\_configuration](Auth_api.UpdateSignInSettingsParam.md#mfa_configuration)
 - [password\_policy](Auth_api.UpdateSignInSettingsParam.md#password_policy)
 - [recaptcha\_props](Auth_api.UpdateSignInSettingsParam.md#recaptcha_props)
+- [refresh\_token\_validity](Auth_api.UpdateSignInSettingsParam.md#refresh_token_validity)
 - [self\_regist](Auth_api.UpdateSignInSettingsParam.md#self_regist)
 
 ## Properties
@@ -31,7 +34,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2606](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2606)
+[src/generated/Auth/api.ts:2895](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2895)
 
 ___
 
@@ -45,7 +48,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2588](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2588)
+[src/generated/Auth/api.ts:2877](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2877)
 
 ___
 
@@ -59,7 +62,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2594](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2594)
+[src/generated/Auth/api.ts:2883](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2883)
 
 ___
 
@@ -73,7 +76,7 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2582](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2582)
+[src/generated/Auth/api.ts:2871](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2871)
 
 ___
 
@@ -87,7 +90,21 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2600](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2600)
+[src/generated/Auth/api.ts:2889](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2889)
+
+___
+
+### refresh\_token\_validity
+
+• `Optional` **refresh\_token\_validity**: [`RefreshTokenValidity`](Auth_api.RefreshTokenValidity.md)
+
+**`Memberof`**
+
+UpdateSignInSettingsParam
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2907](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2907)
 
 ___
 
@@ -101,4 +118,4 @@ UpdateSignInSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2612](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2612)
+[src/generated/Auth/api.ts:2901](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2901)

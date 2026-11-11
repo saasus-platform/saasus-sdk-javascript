@@ -56,7 +56,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -70,7 +70,7 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -98,13 +98,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### returnInternalServerError
 
-▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **returnInternalServerError**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 This endpoint is used for testing purposes. Returns a server error with status code 500.
 
@@ -112,11 +112,11 @@ This endpoint is used for testing purposes. Returns a server error with status c
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -130,4 +130,4 @@ ErrorApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1766](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1766)
+[src/generated/Pricing/api.ts:1843](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1843)

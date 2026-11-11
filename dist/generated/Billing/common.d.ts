@@ -62,4 +62,4 @@ export declare const toPathString: (url: URL) => string;
  *
  * @export
  */
-export declare const createRequestFunction: (axiosArgs: RequestArgs, globalAxios: AxiosInstance, BASE_PATH: string, configuration?: Configuration) => <T = unknown, R = AxiosResponse<T, any>>(axios?: AxiosInstance, basePath?: string) => Promise<R>;
+export declare const createRequestFunction: (axiosArgs: RequestArgs, globalAxios: AxiosInstance, BASE_PATH: string, configuration?: Configuration) => <T = unknown, R = AxiosResponse<T, any, {}, any>>(axios?: AxiosInstance, basePath?: string) => Promise<R extends import("axios").AxiosResponseDefault ? AxiosResponse<T, any, {}, any> : R>;

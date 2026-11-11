@@ -59,7 +59,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -73,7 +73,7 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -101,13 +101,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createSaasUserAttribute
 
-▸ **createSaasUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+▸ **createSaasUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, {}, `any`\>\>
 
 Create additional SaaS user attributes to be kept on the SaaSus Platform. You can give common values to all tenants.
 
@@ -116,11 +116,11 @@ Create additional SaaS user attributes to be kept on the SaaSus Platform. You ca
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`Attribute`](../interfaces/Auth_api.Attribute.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -134,13 +134,13 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10062](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10062)
+[src/generated/Auth/api.ts:10881](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10881)
 
 ___
 
 ### createUserAttribute
 
-▸ **createUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+▸ **createUserAttribute**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, {}, `any`\>\>
 
 Create additional user attributes to be kept on the SaaSus Platform. You can give different values to each tenant. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
 
@@ -149,11 +149,11 @@ Create additional user attributes to be kept on the SaaSus Platform. You can giv
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`Attribute`](../interfaces/Auth_api.Attribute.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -167,13 +167,13 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10074](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10074)
+[src/generated/Auth/api.ts:10893](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10893)
 
 ___
 
 ### deleteUserAttribute
 
-▸ **deleteUserAttribute**(`attributeName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteUserAttribute**(`attributeName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete user attributes kept on the SaaSus Platform.
 
@@ -182,11 +182,11 @@ Delete user attributes kept on the SaaSus Platform.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `attributeName` | `string` | Attribute Name |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -200,13 +200,13 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10086](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10086)
+[src/generated/Auth/api.ts:10905](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10905)
 
 ___
 
 ### getUserAttributes
 
-▸ **getUserAttributes**(`options?`): `Promise`\<`AxiosResponse`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`\>\>
+▸ **getUserAttributes**(`options?`): `Promise`\<`AxiosResponse`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`, {}, `any`\>\>
 
 Get additional attributes of the user saved in the SaaSus Platform. For example, you can define items associated with a user, such as user name, birthday, etc. If you don\'t want personal information on the SaaS Platform side, personal information can be kept on the SaaS side without user attribute definition.
 
@@ -214,11 +214,11 @@ Get additional attributes of the user saved in the SaaSus Platform. For example,
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -232,4 +232,4 @@ UserAttributeApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10097](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10097)
+[src/generated/Auth/api.ts:10916](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10916)

@@ -60,7 +60,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### createPricingMenu
 
-▸ **createPricingMenu**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+▸ **createPricingMenu**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}, `any`\>\>
 
 Create a pricing feature menu.
 
@@ -117,11 +117,11 @@ Create a pricing feature menu.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`SavePricingMenuParam`](../interfaces/Pricing_api.SavePricingMenuParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3271](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3271)
+[src/generated/Pricing/api.ts:3348](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3348)
 
 ___
 
 ### deletePricingMenu
 
-▸ **deletePricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deletePricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete pricing feature menu.
 
@@ -150,11 +150,11 @@ Delete pricing feature menu.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `menuId` | `string` | Menu ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -168,13 +168,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3283](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3283)
+[src/generated/Pricing/api.ts:3360](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3360)
 
 ___
 
 ### getPricingMenu
 
-▸ **getPricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+▸ **getPricingMenu**(`menuId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}, `any`\>\>
 
 Get a pricing feature menu.
 
@@ -183,11 +183,11 @@ Get a pricing feature menu.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `menuId` | `string` | Menu ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingMenu`](../interfaces/Pricing_api.PricingMenu.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -201,13 +201,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3295](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3295)
+[src/generated/Pricing/api.ts:3372](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3372)
 
 ___
 
 ### getPricingMenus
 
-▸ **getPricingMenus**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`\>\>
+▸ **getPricingMenus**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`, {}, `any`\>\>
 
 Get the feature menu list. Multiple measurement units are grouped together and defined as one feature menu. Multiple feature menus defined here are combined into one billing plan.
 
@@ -215,11 +215,11 @@ Get the feature menu list. Multiple measurement units are grouped together and d
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingMenus`](../interfaces/Pricing_api.PricingMenus.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -233,13 +233,13 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3306)
+[src/generated/Pricing/api.ts:3383](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3383)
 
 ___
 
 ### updatePricingMenu
 
-▸ **updatePricingMenu**(`menuId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updatePricingMenu**(`menuId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update pricing feature menu.
 
@@ -249,11 +249,11 @@ Update pricing feature menu.
 | :------ | :------ | :------ |
 | `menuId` | `string` | Menu ID |
 | `body?` | [`SavePricingMenuParam`](../interfaces/Pricing_api.SavePricingMenuParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -267,4 +267,4 @@ PricingMenusApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3319](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3319)
+[src/generated/Pricing/api.ts:3396](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3396)

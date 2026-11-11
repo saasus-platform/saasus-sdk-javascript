@@ -32,7 +32,7 @@ UpdateSingleTenantSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2637](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2637)
+[src/generated/Auth/api.ts:2932](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2932)
 
 ___
 
@@ -48,7 +48,7 @@ UpdateSingleTenantSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2643](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2643)
+[src/generated/Auth/api.ts:2938](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2938)
 
 ___
 
@@ -64,7 +64,7 @@ UpdateSingleTenantSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2625](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2625)
+[src/generated/Auth/api.ts:2920](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2920)
 
 ___
 
@@ -80,7 +80,7 @@ UpdateSingleTenantSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2631](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2631)
+[src/generated/Auth/api.ts:2926](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2926)
 
 ___
 
@@ -96,4 +96,4 @@ UpdateSingleTenantSettingsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2649](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2649)
+[src/generated/Auth/api.ts:2944](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2944)

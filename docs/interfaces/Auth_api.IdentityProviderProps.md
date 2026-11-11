@@ -29,7 +29,7 @@ IdentityProviderProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:926](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L926)
+[src/generated/Auth/api.ts:1034](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1034)
 
 ___
 
@@ -43,7 +43,7 @@ IdentityProviderProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:932](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L932)
+[src/generated/Auth/api.ts:1040](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1040)
 
 ___
 
@@ -57,7 +57,7 @@ IdentityProviderProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:938](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L938)
+[src/generated/Auth/api.ts:1046](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1046)
 
 ___
 
@@ -71,4 +71,4 @@ IdentityProviderProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:944](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L944)
+[src/generated/Auth/api.ts:1052](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1052)

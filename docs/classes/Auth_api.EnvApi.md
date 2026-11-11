@@ -60,7 +60,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -74,7 +74,7 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createEnv
 
-▸ **createEnv**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+▸ **createEnv**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}, `any`\>\>
 
 Create environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
 
@@ -117,11 +117,11 @@ Create environment information. Multiple environments can be defined, such as an
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`Env`](../interfaces/Auth_api.Env.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -135,13 +135,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4483](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4483)
+[src/generated/Auth/api.ts:4924](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4924)
 
 ___
 
 ### deleteEnv
 
-▸ **deleteEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete env info. Env with id 3 cannot be deleted.
 
@@ -150,11 +150,11 @@ Delete env info. Env with id 3 cannot be deleted.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `envId` | `number` | Env ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -168,13 +168,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4495](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4495)
+[src/generated/Auth/api.ts:4936](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4936)
 
 ___
 
 ### getEnv
 
-▸ **getEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+▸ **getEnv**(`envId`, `options?`): `Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}, `any`\>\>
 
 Get environment details.
 
@@ -183,11 +183,11 @@ Get environment details.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `envId` | `number` | Env ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -201,13 +201,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4507](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4507)
+[src/generated/Auth/api.ts:4948](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4948)
 
 ___
 
 ### getEnvs
 
-▸ **getEnvs**(`options?`): `Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`\>\>
+▸ **getEnvs**(`options?`): `Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`, {}, `any`\>\>
 
 Get registered environment information. Multiple environments can be defined, such as an environment for testing linkage, an environment for development, and an environment for actual operation.
 
@@ -215,11 +215,11 @@ Get registered environment information. Multiple environments can be defined, su
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -233,13 +233,13 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4518)
+[src/generated/Auth/api.ts:4959](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4959)
 
 ___
 
 ### updateEnv
 
-▸ **updateEnv**(`envId`, `updateEnvParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateEnv**(`envId`, `updateEnvParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update env info.
 
@@ -249,11 +249,11 @@ Update env info.
 | :------ | :------ | :------ |
 | `envId` | `number` | Env ID |
 | `updateEnvParam?` | [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -267,4 +267,4 @@ EnvApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4531](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4531)
+[src/generated/Auth/api.ts:4972](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4972)
