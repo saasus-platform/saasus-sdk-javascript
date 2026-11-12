@@ -39,6 +39,7 @@ SaasUserApi
 - [deleteSaasUser](Auth_api.SaasUserApi.md#deletesaasuser)
 - [getSaasUser](Auth_api.SaasUserApi.md#getsaasuser)
 - [getSaasUsers](Auth_api.SaasUserApi.md#getsaasusers)
+- [getSaasUsersCount](Auth_api.SaasUserApi.md#getsaasuserscount)
 - [getUserMfaPreference](Auth_api.SaasUserApi.md#getusermfapreference)
 - [linkAwsMarketplace](Auth_api.SaasUserApi.md#linkawsmarketplace)
 - [requestEmailUpdate](Auth_api.SaasUserApi.md#requestemailupdate)
@@ -46,6 +47,8 @@ SaasUserApi
 - [resendSignUpConfirmationEmail](Auth_api.SaasUserApi.md#resendsignupconfirmationemail)
 - [resetSaasUserPassword](Auth_api.SaasUserApi.md#resetsaasuserpassword)
 - [respondToSignInChallenge](Auth_api.SaasUserApi.md#respondtosigninchallenge)
+- [saveSaasUsersCount](Auth_api.SaasUserApi.md#savesaasuserscount)
+- [searchSaasUsers](Auth_api.SaasUserApi.md#searchsaasusers)
 - [signIn](Auth_api.SaasUserApi.md#signin)
 - [signUp](Auth_api.SaasUserApi.md#signup)
 - [signUpWithAwsMarketplace](Auth_api.SaasUserApi.md#signupwithawsmarketplace)
@@ -82,7 +85,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -96,7 +99,7 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -110,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -124,13 +127,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### confirmDevice
 
-▸ **confirmDevice**(`confirmDeviceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md), `any`\>\>
+▸ **confirmDevice**(`confirmDeviceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md), `any`, {}, `any`\>\>
 
 Confirms a device for remembering.
 
@@ -139,11 +142,11 @@ Confirms a device for remembering.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `confirmDeviceParam?` | [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -157,13 +160,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7144](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7144)
+[src/generated/Auth/api.ts:7787](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7787)
 
 ___
 
 ### confirmEmailUpdate
 
-▸ **confirmEmailUpdate**(`userId`, `confirmEmailUpdateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **confirmEmailUpdate**(`userId`, `confirmEmailUpdateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Verify the code to confirm the user\'s email address update. Requires the user\'s access token.
 
@@ -173,11 +176,11 @@ Verify the code to confirm the user\'s email address update. Requires the user\'
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `confirmEmailUpdateParam?` | [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -191,13 +194,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7157](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7157)
+[src/generated/Auth/api.ts:7800](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7800)
 
 ___
 
 ### confirmExternalUserLink
 
-▸ **confirmExternalUserLink**(`confirmExternalUserLinkParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **confirmExternalUserLink**(`confirmExternalUserLinkParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Verify the code for external account user link confirmation.
 
@@ -206,11 +209,11 @@ Verify the code for external account user link confirmation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `confirmExternalUserLinkParam?` | [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -224,13 +227,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7169](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7169)
+[src/generated/Auth/api.ts:7812](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7812)
 
 ___
 
 ### confirmSignUpWithAwsMarketplace
 
-▸ **confirmSignUpWithAwsMarketplace**(`confirmSignUpWithAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
+▸ **confirmSignUpWithAwsMarketplace**(`confirmSignUpWithAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, {}, `any`\>\>
 
 Confirm a new use registeration linked to AWS Marketplace. Create a new tenant linked to AWS Marketplace. If the Registration Token is not valid, an error is returned.
 
@@ -239,11 +242,11 @@ Confirm a new use registeration linked to AWS Marketplace. Create a new tenant l
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `confirmSignUpWithAwsMarketplaceParam?` | [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -257,13 +260,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7181](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7181)
+[src/generated/Auth/api.ts:7824](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7824)
 
 ___
 
 ### createSaasUser
 
-▸ **createSaasUser**(`createSaasUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md), `any`\>\>
+▸ **createSaasUser**(`createSaasUserParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md), `any`, {}, `any`\>\>
 
 Create SaaS User. If attributes is empty, a temporary password will be sent to the registered email.
 
@@ -272,11 +275,11 @@ Create SaaS User. If attributes is empty, a temporary password will be sent to t
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `createSaasUserParam?` | [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -290,13 +293,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7193](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7193)
+[src/generated/Auth/api.ts:7836](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7836)
 
 ___
 
 ### createSecretCode
 
-▸ **createSecretCode**(`userId`, `createSecretCodeParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`\>\>
+▸ **createSecretCode**(`userId`, `createSecretCodeParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`, {}, `any`\>\>
 
 Create a secret code for authentication application registration.
 
@@ -306,11 +309,11 @@ Create a secret code for authentication application registration.
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `createSecretCodeParam?` | [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -324,13 +327,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7206](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7206)
+[src/generated/Auth/api.ts:7849](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7849)
 
 ___
 
 ### deleteSaasUser
 
-▸ **deleteSaasUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`\>\>
+▸ **deleteSaasUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, {}, `any`\>\>
 
 Delete all users with matching user ID from the tenant and SaaS. Returns user information before deletion.
 
@@ -339,11 +342,11 @@ Delete all users with matching user ID from the tenant and SaaS. Returns user in
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -357,13 +360,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7218](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7218)
+[src/generated/Auth/api.ts:7861](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7861)
 
 ___
 
 ### getSaasUser
 
-▸ **getSaasUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
+▸ **getSaasUser**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, {}, `any`\>\>
 
 Get user information based on user ID.
 
@@ -372,11 +375,11 @@ Get user information based on user ID.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -390,13 +393,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7230](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7230)
+[src/generated/Auth/api.ts:7873](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7873)
 
 ___
 
 ### getSaasUsers
 
-▸ **getSaasUsers**(`options?`): `Promise`\<`AxiosResponse`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`\>\>
+▸ **getSaasUsers**(`options?`): `Promise`\<`AxiosResponse`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`, {}, `any`\>\>
 
 Get all SaaS users.
 
@@ -404,11 +407,11 @@ Get all SaaS users.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -422,13 +425,45 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7241](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7241)
+[src/generated/Auth/api.ts:7884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7884)
+
+___
+
+### getSaasUsersCount
+
+▸ **getSaasUsersCount**(`options?`): `Promise`\<`AxiosResponse`\<[`SaasUsersCount`](../interfaces/Auth_api.SaasUsersCount.md), `any`, {}, `any`\>\>
+
+Get the count of SaaS users.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`SaasUsersCount`](../interfaces/Auth_api.SaasUsersCount.md), `any`, {}, `any`\>\>
+
+**`Summary`**
+
+Get SaaS Users Count
+
+**`Throws`**
+
+**`Memberof`**
+
+SaasUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:7895](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7895)
 
 ___
 
 ### getUserMfaPreference
 
-▸ **getUserMfaPreference**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`\>\>
+▸ **getUserMfaPreference**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`, {}, `any`\>\>
 
 Get the user\'s MFA settings.
 
@@ -437,11 +472,11 @@ Get the user\'s MFA settings.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -455,13 +490,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7253](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7253)
+[src/generated/Auth/api.ts:7907](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7907)
 
 ___
 
 ### linkAwsMarketplace
 
-▸ **linkAwsMarketplace**(`linkAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **linkAwsMarketplace**(`linkAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Link an existing tenant with AWS Marketplace. If the Registration Token is not valid, an error is returned.
 
@@ -470,11 +505,11 @@ Link an existing tenant with AWS Marketplace. If the Registration Token is not v
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `linkAwsMarketplaceParam?` | [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -488,13 +523,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7265](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7265)
+[src/generated/Auth/api.ts:7919](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7919)
 
 ___
 
 ### requestEmailUpdate
 
-▸ **requestEmailUpdate**(`userId`, `requestEmailUpdateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **requestEmailUpdate**(`userId`, `requestEmailUpdateParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Request to update the user\'s email address. Sends a verification code to the requested email address. Requires the user\'s access token. The verification code is valid for 24 hours. This API is only available for email-authenticated users. Sign-in ID authentication users cannot use this API.
 
@@ -504,11 +539,11 @@ Request to update the user\'s email address. Sends a verification code to the re
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `requestEmailUpdateParam?` | [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -522,13 +557,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7278](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7278)
+[src/generated/Auth/api.ts:7932](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7932)
 
 ___
 
 ### requestExternalUserLink
 
-▸ **requestExternalUserLink**(`requestExternalUserLinkParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **requestExternalUserLink**(`requestExternalUserLinkParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Request to link an external account user. Get the email address of the user to be linked from the access token and send a verification code to that email address. The verification code is valid for 24 hours.
 
@@ -537,11 +572,11 @@ Request to link an external account user. Get the email address of the user to b
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `requestExternalUserLinkParam?` | [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -555,13 +590,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7290](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7290)
+[src/generated/Auth/api.ts:7944](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7944)
 
 ___
 
 ### resendSignUpConfirmationEmail
 
-▸ **resendSignUpConfirmationEmail**(`resendSignUpConfirmationEmailParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **resendSignUpConfirmationEmail**(`resendSignUpConfirmationEmailParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Resend temporary password for the new registered user.
 
@@ -570,11 +605,11 @@ Resend temporary password for the new registered user.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `resendSignUpConfirmationEmailParam?` | [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -588,13 +623,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7302](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7302)
+[src/generated/Auth/api.ts:7956](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7956)
 
 ___
 
 ### resetSaasUserPassword
 
-▸ **resetSaasUserPassword**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md), `any`\>\>
+▸ **resetSaasUserPassword**(`userId`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md), `any`, {}, `any`\>\>
 
 Reset user\'s login password. The current password will be invalidated and a temporary password will be issued.
 
@@ -603,11 +638,11 @@ Reset user\'s login password. The current password will be invalidated and a tem
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -621,13 +656,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7314](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7314)
+[src/generated/Auth/api.ts:7968](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7968)
 
 ___
 
 ### respondToSignInChallenge
 
-▸ **respondToSignInChallenge**(`respondToSignInChallengeParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`\>\>
+▸ **respondToSignInChallenge**(`respondToSignInChallengeParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`, {}, `any`\>\>
 
 Respond to a sign-in challenge.
 
@@ -636,11 +671,11 @@ Respond to a sign-in challenge.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `respondToSignInChallengeParam?` | [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -654,13 +689,83 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7326](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7326)
+[src/generated/Auth/api.ts:7980](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7980)
+
+___
+
+### saveSaasUsersCount
+
+▸ **saveSaasUsersCount**(`saveSaasUsersCountParam`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
+
+Save the count of SaaS users.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `saveSaasUsersCountParam` | [`SaveSaasUsersCountParam`](../interfaces/Auth_api.SaveSaasUsersCountParam.md) |  |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
+
+**`Summary`**
+
+Save SaaS Users Count
+
+**`Throws`**
+
+**`Memberof`**
+
+SaasUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:7992](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7992)
+
+___
+
+### searchSaasUsers
+
+▸ **searchSaasUsers**(`id?`, `email?`, `signInId?`, `limit?`, `cursor?`, `options?`): `Promise`\<`AxiosResponse`\<[`SearchSaasUsersResult`](../interfaces/Auth_api.SearchSaasUsersResult.md), `any`, {}, `any`\>\>
+
+Search SaaS users by user ID, email, or sign-in ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id?` | `string` | User ID |
+| `email?` | `string` | Email prefix |
+| `signInId?` | `string` | Sign-in ID prefix |
+| `limit?` | `number` | Maximum number of items to retrieve |
+| `cursor?` | `string` | Cursor for cursor pagination |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
+
+#### Returns
+
+`Promise`\<`AxiosResponse`\<[`SearchSaasUsersResult`](../interfaces/Auth_api.SearchSaasUsersResult.md), `any`, {}, `any`\>\>
+
+**`Summary`**
+
+Search SaaS Users
+
+**`Throws`**
+
+**`Memberof`**
+
+SaasUserApi
+
+#### Defined in
+
+[src/generated/Auth/api.ts:8008](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8008)
 
 ___
 
 ### signIn
 
-▸ **signIn**(`signInParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`\>\>
+▸ **signIn**(`signInParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`, {}, `any`\>\>
 
 A user attempts to sign in.
 
@@ -669,11 +774,11 @@ A user attempts to sign in.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `signInParam?` | [`SignInParam`](../interfaces/Auth_api.SignInParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -687,13 +792,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7338)
+[src/generated/Auth/api.ts:8020](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8020)
 
 ___
 
 ### signUp
 
-▸ **signUp**(`signUpParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
+▸ **signUp**(`signUpParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, {}, `any`\>\>
 
 Register a new user. A temporary password will be sent to the registered email.
 
@@ -702,11 +807,11 @@ Register a new user. A temporary password will be sent to the registered email.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `signUpParam?` | [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -720,13 +825,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7350)
+[src/generated/Auth/api.ts:8032](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8032)
 
 ___
 
 ### signUpWithAwsMarketplace
 
-▸ **signUpWithAwsMarketplace**(`signUpWithAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
+▸ **signUpWithAwsMarketplace**(`signUpWithAwsMarketplaceParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, {}, `any`\>\>
 
 Register a new user linked to AWS Marketplace. A temporary password will be sent to the registered email. If the Registration Token is not valid, an error is returned.
 
@@ -735,11 +840,11 @@ Register a new user linked to AWS Marketplace. A temporary password will be sent
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `signUpWithAwsMarketplaceParam?` | [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -753,13 +858,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7362](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7362)
+[src/generated/Auth/api.ts:8044](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8044)
 
 ___
 
 ### unlinkProvider
 
-▸ **unlinkProvider**(`providerName`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **unlinkProvider**(`providerName`, `userId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Unlink external identity providers.
 
@@ -769,11 +874,11 @@ Unlink external identity providers.
 | :------ | :------ | :------ |
 | `providerName` | `string` |  |
 | `userId` | `string` | User ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -787,13 +892,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7375)
+[src/generated/Auth/api.ts:8057](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8057)
 
 ___
 
 ### updateDeviceStatus
 
-▸ **updateDeviceStatus**(`updateDeviceStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateDeviceStatus**(`updateDeviceStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Updates the device status.
 
@@ -802,11 +907,11 @@ Updates the device status.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `updateDeviceStatusParam?` | [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -820,13 +925,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7387](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7387)
+[src/generated/Auth/api.ts:8069](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8069)
 
 ___
 
 ### updateSaasUserAttributes
 
-▸ **updateSaasUserAttributes**(`userId`, `updateSaasUserAttributesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSaasUserAttributes**(`userId`, `updateSaasUserAttributesParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update the additional attributes of the SaaS user.
 
@@ -836,11 +941,11 @@ Update the additional attributes of the SaaS user.
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `updateSaasUserAttributesParam?` | [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -854,13 +959,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7400](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7400)
+[src/generated/Auth/api.ts:8082](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8082)
 
 ___
 
 ### updateSaasUserEmail
 
-▸ **updateSaasUserEmail**(`userId`, `updateSaasUserEmailParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSaasUserEmail**(`userId`, `updateSaasUserEmailParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Change user\'s email. The user must be an email authentication user. Sign-in ID authentication users cannot change their email.
 
@@ -870,11 +975,11 @@ Change user\'s email. The user must be an email authentication user. Sign-in ID 
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `updateSaasUserEmailParam?` | [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -888,13 +993,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7413](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7413)
+[src/generated/Auth/api.ts:8095](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8095)
 
 ___
 
 ### updateSaasUserPassword
 
-▸ **updateSaasUserPassword**(`userId`, `updateSaasUserPasswordParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSaasUserPassword**(`userId`, `updateSaasUserPasswordParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Change user\'s login password.
 
@@ -904,11 +1009,11 @@ Change user\'s login password.
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `updateSaasUserPasswordParam?` | [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -922,13 +1027,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7426](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7426)
+[src/generated/Auth/api.ts:8108](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8108)
 
 ___
 
 ### updateSaasUserSignInId
 
-▸ **updateSaasUserSignInId**(`userId`, `updateSaasUserSignInIdParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSaasUserSignInId**(`userId`, `updateSaasUserSignInIdParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Change user\'s sign-in ID.
 
@@ -938,11 +1043,11 @@ Change user\'s sign-in ID.
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `updateSaasUserSignInIdParam?` | [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -956,13 +1061,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7439](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7439)
+[src/generated/Auth/api.ts:8121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8121)
 
 ___
 
 ### updateSoftwareToken
 
-▸ **updateSoftwareToken**(`userId`, `updateSoftwareTokenParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSoftwareToken**(`userId`, `updateSoftwareTokenParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Register an authentication application.
 
@@ -972,11 +1077,11 @@ Register an authentication application.
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `updateSoftwareTokenParam?` | [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -990,13 +1095,13 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7452](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7452)
+[src/generated/Auth/api.ts:8134](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8134)
 
 ___
 
 ### updateUserMfaPreference
 
-▸ **updateUserMfaPreference**(`userId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateUserMfaPreference**(`userId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update user\'s MFA settings.
 
@@ -1006,11 +1111,11 @@ Update user\'s MFA settings.
 | :------ | :------ | :------ |
 | `userId` | `string` | User ID |
 | `body?` | [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -1024,4 +1129,4 @@ SaasUserApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7465](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7465)
+[src/generated/Auth/api.ts:8147](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8147)

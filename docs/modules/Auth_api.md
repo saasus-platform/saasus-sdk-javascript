@@ -14,6 +14,7 @@
 - [ProrationBehavior](../enums/Auth_api.ProrationBehavior.md)
 - [ProviderName](../enums/Auth_api.ProviderName.md)
 - [ProviderType](../enums/Auth_api.ProviderType.md)
+- [RefreshTokenValidityUnit](../enums/Auth_api.RefreshTokenValidityUnit.md)
 
 ### Classes
 
@@ -49,6 +50,8 @@
 - [ConfirmEmailUpdateParam](../interfaces/Auth_api.ConfirmEmailUpdateParam.md)
 - [ConfirmExternalUserLinkParam](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md)
 - [ConfirmSignUpWithAwsMarketplaceParam](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md)
+- [CreateAuthCredentialsParam](../interfaces/Auth_api.CreateAuthCredentialsParam.md)
+- [CreateAuthCredentialsParamAllOf](../interfaces/Auth_api.CreateAuthCredentialsParamAllOf.md)
 - [CreateSaasUserParam](../interfaces/Auth_api.CreateSaasUserParam.md)
 - [CreateSecretCodeParam](../interfaces/Auth_api.CreateSecretCodeParam.md)
 - [CreateTenantInvitationParam](../interfaces/Auth_api.CreateTenantInvitationParam.md)
@@ -67,6 +70,7 @@
 - [DnsRecord](../interfaces/Auth_api.DnsRecord.md)
 - [Env](../interfaces/Auth_api.Env.md)
 - [Envs](../interfaces/Auth_api.Envs.md)
+- [ExchangeAuthCredentialsParam](../interfaces/Auth_api.ExchangeAuthCredentialsParam.md)
 - [IdentityProviderConfiguration](../interfaces/Auth_api.IdentityProviderConfiguration.md)
 - [IdentityProviderProps](../interfaces/Auth_api.IdentityProviderProps.md)
 - [IdentityProviderSaml](../interfaces/Auth_api.IdentityProviderSaml.md)
@@ -87,17 +91,24 @@
 - [PlanHistory](../interfaces/Auth_api.PlanHistory.md)
 - [PlanReservation](../interfaces/Auth_api.PlanReservation.md)
 - [RecaptchaProps](../interfaces/Auth_api.RecaptchaProps.md)
+- [RefreshTokenValidity](../interfaces/Auth_api.RefreshTokenValidity.md)
 - [RequestEmailUpdateParam](../interfaces/Auth_api.RequestEmailUpdateParam.md)
 - [RequestExternalUserLinkParam](../interfaces/Auth_api.RequestExternalUserLinkParam.md)
 - [ResendSignUpConfirmationEmailParam](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md)
 - [RespondToSignInChallengeParam](../interfaces/Auth_api.RespondToSignInChallengeParam.md)
 - [RespondToSignInChallengeResult](../interfaces/Auth_api.RespondToSignInChallengeResult.md)
+- [RevokeTokenParam](../interfaces/Auth_api.RevokeTokenParam.md)
 - [Role](../interfaces/Auth_api.Role.md)
 - [Roles](../interfaces/Auth_api.Roles.md)
 - [SaasId](../interfaces/Auth_api.SaasId.md)
 - [SaasUser](../interfaces/Auth_api.SaasUser.md)
 - [SaasUserResetPasswordResult](../interfaces/Auth_api.SaasUserResetPasswordResult.md)
 - [SaasUsers](../interfaces/Auth_api.SaasUsers.md)
+- [SaasUsersCount](../interfaces/Auth_api.SaasUsersCount.md)
+- [SaveSaasUsersCountParam](../interfaces/Auth_api.SaveSaasUsersCountParam.md)
+- [SaveTenantUserCountParam](../interfaces/Auth_api.SaveTenantUserCountParam.md)
+- [SaveTenantUsersCountsParam](../interfaces/Auth_api.SaveTenantUsersCountsParam.md)
+- [SearchSaasUsersResult](../interfaces/Auth_api.SearchSaasUsersResult.md)
 - [SearchTenantUsersResult](../interfaces/Auth_api.SearchTenantUsersResult.md)
 - [SelfRegist](../interfaces/Auth_api.SelfRegist.md)
 - [SignInParam](../interfaces/Auth_api.SignInParam.md)
@@ -117,6 +128,8 @@
 - [TenantIdentityProvidersSaml](../interfaces/Auth_api.TenantIdentityProvidersSaml.md)
 - [TenantIdentityProvidersSamlAllOf](../interfaces/Auth_api.TenantIdentityProvidersSamlAllOf.md)
 - [TenantProps](../interfaces/Auth_api.TenantProps.md)
+- [TenantUserCount](../interfaces/Auth_api.TenantUserCount.md)
+- [TenantUsersCounts](../interfaces/Auth_api.TenantUsersCounts.md)
 - [Tenants](../interfaces/Auth_api.Tenants.md)
 - [UpdateBasicInfoParam](../interfaces/Auth_api.UpdateBasicInfoParam.md)
 - [UpdateCustomizePageSettingsParam](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md)
@@ -148,8 +161,11 @@
 
 - [AccountVerificationSendingToEnum](Auth_api.md#accountverificationsendingtoenum)
 - [AccountVerificationVerificationMethodEnum](Auth_api.md#accountverificationverificationmethodenum)
+- [CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum](Auth_api.md#createauthcredentialsparamallofcodechallengemethodenum)
+- [CreateAuthCredentialsParamCodeChallengeMethodEnum](Auth_api.md#createauthcredentialsparamcodechallengemethodenum)
 - [DeviceConfigurationDeviceRememberingEnum](Auth_api.md#deviceconfigurationdevicerememberingenum)
 - [DnsRecordTypeEnum](Auth_api.md#dnsrecordtypeenum)
+- [ExchangeAuthCredentialsParamAuthFlowEnum](Auth_api.md#exchangeauthcredentialsparamauthflowenum)
 - [MfaConfigurationMfaConfigurationEnum](Auth_api.md#mfaconfigurationmfaconfigurationenum)
 - [MfaPreferenceMethodEnum](Auth_api.md#mfapreferencemethodenum)
 - [SignInParamSignInFlowEnum](Auth_api.md#signinparamsigninflowenum)
@@ -159,8 +175,11 @@
 
 - [AccountVerificationSendingToEnum](Auth_api.md#accountverificationsendingtoenum-1)
 - [AccountVerificationVerificationMethodEnum](Auth_api.md#accountverificationverificationmethodenum-1)
+- [CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum](Auth_api.md#createauthcredentialsparamallofcodechallengemethodenum-1)
+- [CreateAuthCredentialsParamCodeChallengeMethodEnum](Auth_api.md#createauthcredentialsparamcodechallengemethodenum-1)
 - [DeviceConfigurationDeviceRememberingEnum](Auth_api.md#deviceconfigurationdevicerememberingenum-1)
 - [DnsRecordTypeEnum](Auth_api.md#dnsrecordtypeenum-1)
+- [ExchangeAuthCredentialsParamAuthFlowEnum](Auth_api.md#exchangeauthcredentialsparamauthflowenum-1)
 - [MfaConfigurationMfaConfigurationEnum](Auth_api.md#mfaconfigurationmfaconfigurationenum-1)
 - [MfaPreferenceMethodEnum](Auth_api.md#mfapreferencemethodenum-1)
 - [SignInParamSignInFlowEnum](Auth_api.md#signinparamsigninflowenum-1)
@@ -218,9 +237,9 @@
 
 #### Defined in
 
-[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L50)
+[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L50)
 
-[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L56)
+[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L56)
 
 ___
 
@@ -230,9 +249,33 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L44)
+[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L44)
 
-[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L49)
+[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L49)
+
+___
+
+### CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum
+
+Ƭ **CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum**: typeof [`CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum`](Auth_api.md#createauthcredentialsparamallofcodechallengemethodenum-1)[keyof typeof [`CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum`](Auth_api.md#createauthcredentialsparamallofcodechallengemethodenum-1)]
+
+#### Defined in
+
+[src/generated/Auth/api.ts:492](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L492)
+
+[src/generated/Auth/api.ts:496](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L496)
+
+___
+
+### CreateAuthCredentialsParamCodeChallengeMethodEnum
+
+Ƭ **CreateAuthCredentialsParamCodeChallengeMethodEnum**: typeof [`CreateAuthCredentialsParamCodeChallengeMethodEnum`](Auth_api.md#createauthcredentialsparamcodechallengemethodenum-1)[keyof typeof [`CreateAuthCredentialsParamCodeChallengeMethodEnum`](Auth_api.md#createauthcredentialsparamcodechallengemethodenum-1)]
+
+#### Defined in
+
+[src/generated/Auth/api.ts:466](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L466)
+
+[src/generated/Auth/api.ts:470](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L470)
 
 ___
 
@@ -242,9 +285,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L773)
+[src/generated/Auth/api.ts:849](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L849)
 
-[src/generated/Auth/api.ts:779](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L779)
+[src/generated/Auth/api.ts:855](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L855)
 
 ___
 
@@ -254,9 +297,21 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L840)
+[src/generated/Auth/api.ts:916](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L916)
 
-[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L844)
+[src/generated/Auth/api.ts:920](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L920)
+
+___
+
+### ExchangeAuthCredentialsParamAuthFlowEnum
+
+Ƭ **ExchangeAuthCredentialsParamAuthFlowEnum**: typeof [`ExchangeAuthCredentialsParamAuthFlowEnum`](Auth_api.md#exchangeauthcredentialsparamauthflowenum-1)[keyof typeof [`ExchangeAuthCredentialsParamAuthFlowEnum`](Auth_api.md#exchangeauthcredentialsparamauthflowenum-1)]
+
+#### Defined in
+
+[src/generated/Auth/api.ts:986](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L986)
+
+[src/generated/Auth/api.ts:990](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L990)
 
 ___
 
@@ -266,9 +321,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1153)
+[src/generated/Auth/api.ts:1261](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1261)
 
-[src/generated/Auth/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1158)
+[src/generated/Auth/api.ts:1266](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1266)
 
 ___
 
@@ -278,9 +333,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1180](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1180)
+[src/generated/Auth/api.ts:1288](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1288)
 
-[src/generated/Auth/api.ts:1185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1185)
+[src/generated/Auth/api.ts:1293](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1293)
 
 ___
 
@@ -290,9 +345,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1755)
+[src/generated/Auth/api.ts:2000](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2000)
 
-[src/generated/Auth/api.ts:1759](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1759)
+[src/generated/Auth/api.ts:2004](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2004)
 
 ___
 
@@ -304,7 +359,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2167)
+[src/generated/Auth/api.ts:2418](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2418)
 
 ## Variables
 
@@ -322,9 +377,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L50)
+[src/generated/Auth/api.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L50)
 
-[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L56)
+[src/generated/Auth/api.ts:56](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L56)
 
 ___
 
@@ -341,9 +396,45 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L44)
+[src/generated/Auth/api.ts:44](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L44)
 
-[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L49)
+[src/generated/Auth/api.ts:49](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L49)
+
+___
+
+### CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum
+
+• `Const` **CreateAuthCredentialsParamAllOfCodeChallengeMethodEnum**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `S256` | ``"S256"`` |
+
+#### Defined in
+
+[src/generated/Auth/api.ts:492](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L492)
+
+[src/generated/Auth/api.ts:496](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L496)
+
+___
+
+### CreateAuthCredentialsParamCodeChallengeMethodEnum
+
+• `Const` **CreateAuthCredentialsParamCodeChallengeMethodEnum**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `S256` | ``"S256"`` |
+
+#### Defined in
+
+[src/generated/Auth/api.ts:466](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L466)
+
+[src/generated/Auth/api.ts:470](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L470)
 
 ___
 
@@ -361,9 +452,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:773](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L773)
+[src/generated/Auth/api.ts:849](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L849)
 
-[src/generated/Auth/api.ts:779](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L779)
+[src/generated/Auth/api.ts:855](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L855)
 
 ___
 
@@ -379,9 +470,27 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:840](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L840)
+[src/generated/Auth/api.ts:916](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L916)
 
-[src/generated/Auth/api.ts:844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L844)
+[src/generated/Auth/api.ts:920](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L920)
+
+___
+
+### ExchangeAuthCredentialsParamAuthFlowEnum
+
+• `Const` **ExchangeAuthCredentialsParamAuthFlowEnum**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `TempCodeAuth` | ``"tempCodeAuth"`` |
+
+#### Defined in
+
+[src/generated/Auth/api.ts:986](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L986)
+
+[src/generated/Auth/api.ts:990](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L990)
 
 ___
 
@@ -398,9 +507,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1153)
+[src/generated/Auth/api.ts:1261](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1261)
 
-[src/generated/Auth/api.ts:1158](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1158)
+[src/generated/Auth/api.ts:1266](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1266)
 
 ___
 
@@ -417,9 +526,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1180](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1180)
+[src/generated/Auth/api.ts:1288](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1288)
 
-[src/generated/Auth/api.ts:1185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1185)
+[src/generated/Auth/api.ts:1293](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1293)
 
 ___
 
@@ -435,9 +544,9 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1755](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1755)
+[src/generated/Auth/api.ts:2000](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2000)
 
-[src/generated/Auth/api.ts:1759](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1759)
+[src/generated/Auth/api.ts:2004](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2004)
 
 ## Functions
 
@@ -459,18 +568,18 @@ AuthInfoApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `getAuthInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getIdentityProviders` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getSignInSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateAuthInfo` | (`body?`: [`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateIdentityProvider` | (`updateIdentityProviderParam?`: [`UpdateIdentityProviderParam`](../interfaces/Auth_api.UpdateIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSignInSettings` | (`updateSignInSettingsParam?`: [`UpdateSignInSettingsParam`](../interfaces/Auth_api.UpdateSignInSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getAuthInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getIdentityProviders` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getSignInSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateAuthInfo` | (`body?`: [`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateIdentityProvider` | (`updateIdentityProviderParam?`: [`UpdateIdentityProviderParam`](../interfaces/Auth_api.UpdateIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSignInSettings` | (`updateSignInSettingsParam?`: [`UpdateSignInSettingsParam`](../interfaces/Auth_api.UpdateSignInSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2930](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2930)
+[src/generated/Auth/api.ts:3225](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3225)
 
 ___
 
@@ -494,18 +603,18 @@ AuthInfoApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `getAuthInfo` | (`options?`: `any`) => `AxiosPromise`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md)\> |
-| `getIdentityProviders` | (`options?`: `any`) => `AxiosPromise`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md)\> |
-| `getSignInSettings` | (`options?`: `any`) => `AxiosPromise`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md)\> |
-| `updateAuthInfo` | (`body?`: [`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateIdentityProvider` | (`updateIdentityProviderParam?`: [`UpdateIdentityProviderParam`](../interfaces/Auth_api.UpdateIdentityProviderParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSignInSettings` | (`updateSignInSettingsParam?`: [`UpdateSignInSettingsParam`](../interfaces/Auth_api.UpdateSignInSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `getAuthInfo` | (`options?`: `any`) => `AxiosPromise`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`, `any`\> |
+| `getIdentityProviders` | (`options?`: `any`) => `AxiosPromise`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`, `any`\> |
+| `getSignInSettings` | (`options?`: `any`) => `AxiosPromise`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`, `any`\> |
+| `updateAuthInfo` | (`body?`: [`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateIdentityProvider` | (`updateIdentityProviderParam?`: [`UpdateIdentityProviderParam`](../interfaces/Auth_api.UpdateIdentityProviderParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSignInSettings` | (`updateSignInSettingsParam?`: [`UpdateSignInSettingsParam`](../interfaces/Auth_api.UpdateSignInSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3228](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3228)
+[src/generated/Auth/api.ts:3523](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3523)
 
 ___
 
@@ -527,18 +636,18 @@ AuthInfoApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `getAuthInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md)\>\> |
-| `getIdentityProviders` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md)\>\> |
-| `getSignInSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md)\>\> |
-| `updateAuthInfo` | (`body?`: [`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateIdentityProvider` | (`updateIdentityProviderParam?`: [`UpdateIdentityProviderParam`](../interfaces/Auth_api.UpdateIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSignInSettings` | (`updateSignInSettingsParam?`: [`UpdateSignInSettingsParam`](../interfaces/Auth_api.UpdateSignInSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `getAuthInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `any`, `any`\>\> |
+| `getIdentityProviders` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`IdentityProviders`](../interfaces/Auth_api.IdentityProviders.md), `any`, `any`\>\> |
+| `getSignInSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SignInSettings`](../interfaces/Auth_api.SignInSettings.md), `any`, `any`\>\> |
+| `updateAuthInfo` | (`body?`: [`AuthInfo`](../interfaces/Auth_api.AuthInfo.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateIdentityProvider` | (`updateIdentityProviderParam?`: [`UpdateIdentityProviderParam`](../interfaces/Auth_api.UpdateIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSignInSettings` | (`updateSignInSettingsParam?`: [`UpdateSignInSettingsParam`](../interfaces/Auth_api.UpdateSignInSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3155](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3155)
+[src/generated/Auth/api.ts:3450](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3450)
 
 ___
 
@@ -560,20 +669,20 @@ BasicInfoApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `findNotificationMessages` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getBasicInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getCustomizePageSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getCustomizePages` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateBasicInfo` | (`updateBasicInfoParam?`: [`UpdateBasicInfoParam`](../interfaces/Auth_api.UpdateBasicInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateCustomizePageSettings` | (`updateCustomizePageSettingsParam?`: [`UpdateCustomizePageSettingsParam`](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateCustomizePages` | (`updateCustomizePagesParam?`: [`UpdateCustomizePagesParam`](../interfaces/Auth_api.UpdateCustomizePagesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateNotificationMessages` | (`updateNotificationMessagesParam?`: [`UpdateNotificationMessagesParam`](../interfaces/Auth_api.UpdateNotificationMessagesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `findNotificationMessages` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getBasicInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getCustomizePageSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getCustomizePages` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateBasicInfo` | (`updateBasicInfoParam?`: [`UpdateBasicInfoParam`](../interfaces/Auth_api.UpdateBasicInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateCustomizePageSettings` | (`updateCustomizePageSettingsParam?`: [`UpdateCustomizePageSettingsParam`](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateCustomizePages` | (`updateCustomizePagesParam?`: [`UpdateCustomizePagesParam`](../interfaces/Auth_api.UpdateCustomizePagesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateNotificationMessages` | (`updateNotificationMessagesParam?`: [`UpdateNotificationMessagesParam`](../interfaces/Auth_api.UpdateNotificationMessagesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3373)
+[src/generated/Auth/api.ts:3668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3668)
 
 ___
 
@@ -597,20 +706,20 @@ BasicInfoApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `findNotificationMessages` | (`options?`: `any`) => `AxiosPromise`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md)\> |
-| `getBasicInfo` | (`options?`: `any`) => `AxiosPromise`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md)\> |
-| `getCustomizePageSettings` | (`options?`: `any`) => `AxiosPromise`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md)\> |
-| `getCustomizePages` | (`options?`: `any`) => `AxiosPromise`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md)\> |
-| `updateBasicInfo` | (`updateBasicInfoParam?`: [`UpdateBasicInfoParam`](../interfaces/Auth_api.UpdateBasicInfoParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateCustomizePageSettings` | (`updateCustomizePageSettingsParam?`: [`UpdateCustomizePageSettingsParam`](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateCustomizePages` | (`updateCustomizePagesParam?`: [`UpdateCustomizePagesParam`](../interfaces/Auth_api.UpdateCustomizePagesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateNotificationMessages` | (`updateNotificationMessagesParam?`: [`UpdateNotificationMessagesParam`](../interfaces/Auth_api.UpdateNotificationMessagesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `findNotificationMessages` | (`options?`: `any`) => `AxiosPromise`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`, `any`\> |
+| `getBasicInfo` | (`options?`: `any`) => `AxiosPromise`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`, `any`\> |
+| `getCustomizePageSettings` | (`options?`: `any`) => `AxiosPromise`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`, `any`\> |
+| `getCustomizePages` | (`options?`: `any`) => `AxiosPromise`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`, `any`\> |
+| `updateBasicInfo` | (`updateBasicInfoParam?`: [`UpdateBasicInfoParam`](../interfaces/Auth_api.UpdateBasicInfoParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateCustomizePageSettings` | (`updateCustomizePageSettingsParam?`: [`UpdateCustomizePageSettingsParam`](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateCustomizePages` | (`updateCustomizePagesParam?`: [`UpdateCustomizePagesParam`](../interfaces/Auth_api.UpdateCustomizePagesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateNotificationMessages` | (`updateNotificationMessagesParam?`: [`UpdateNotificationMessagesParam`](../interfaces/Auth_api.UpdateNotificationMessagesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3764](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3764)
+[src/generated/Auth/api.ts:4059](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4059)
 
 ___
 
@@ -632,20 +741,20 @@ BasicInfoApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `findNotificationMessages` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md)\>\> |
-| `getBasicInfo` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md)\>\> |
-| `getCustomizePageSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md)\>\> |
-| `getCustomizePages` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md)\>\> |
-| `updateBasicInfo` | (`updateBasicInfoParam?`: [`UpdateBasicInfoParam`](../interfaces/Auth_api.UpdateBasicInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateCustomizePageSettings` | (`updateCustomizePageSettingsParam?`: [`UpdateCustomizePageSettingsParam`](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateCustomizePages` | (`updateCustomizePagesParam?`: [`UpdateCustomizePagesParam`](../interfaces/Auth_api.UpdateCustomizePagesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateNotificationMessages` | (`updateNotificationMessagesParam?`: [`UpdateNotificationMessagesParam`](../interfaces/Auth_api.UpdateNotificationMessagesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `findNotificationMessages` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`NotificationMessages`](../interfaces/Auth_api.NotificationMessages.md), `any`, `any`\>\> |
+| `getBasicInfo` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`BasicInfo`](../interfaces/Auth_api.BasicInfo.md), `any`, `any`\>\> |
+| `getCustomizePageSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CustomizePageSettings`](../interfaces/Auth_api.CustomizePageSettings.md), `any`, `any`\>\> |
+| `getCustomizePages` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CustomizePages`](../interfaces/Auth_api.CustomizePages.md), `any`, `any`\>\> |
+| `updateBasicInfo` | (`updateBasicInfoParam?`: [`UpdateBasicInfoParam`](../interfaces/Auth_api.UpdateBasicInfoParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateCustomizePageSettings` | (`updateCustomizePageSettingsParam?`: [`UpdateCustomizePageSettingsParam`](../interfaces/Auth_api.UpdateCustomizePageSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateCustomizePages` | (`updateCustomizePagesParam?`: [`UpdateCustomizePagesParam`](../interfaces/Auth_api.UpdateCustomizePagesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateNotificationMessages` | (`updateNotificationMessagesParam?`: [`UpdateNotificationMessagesParam`](../interfaces/Auth_api.UpdateNotificationMessagesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3670](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3670)
+[src/generated/Auth/api.ts:3965](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3965)
 
 ___
 
@@ -667,14 +776,16 @@ CredentialApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createAuthCredentials` | (`body?`: [`Credentials`](../interfaces/Auth_api.Credentials.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getAuthCredentials` | (`code?`: `string`, `authFlow?`: ``"tempCodeAuth"`` \| ``"refreshTokenAuth"``, `refreshToken?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createAuthCredentials` | (`createAuthCredentialsParam?`: [`CreateAuthCredentialsParam`](../interfaces/Auth_api.CreateAuthCredentialsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `exchangeAuthCredentials` | (`exchangeAuthCredentialsParam`: [`ExchangeAuthCredentialsParam`](../interfaces/Auth_api.ExchangeAuthCredentialsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getAuthCredentials` | (`code?`: `string`, `authFlow?`: ``"tempCodeAuth"`` \| ``"refreshTokenAuth"``, `refreshToken?`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `revokeToken` | (`revokeTokenParam`: [`RevokeTokenParam`](../interfaces/Auth_api.RevokeTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3951](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L3951)
+[src/generated/Auth/api.ts:4246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4246)
 
 ___
 
@@ -698,14 +809,16 @@ CredentialApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createAuthCredentials` | (`body?`: [`Credentials`](../interfaces/Auth_api.Credentials.md), `options?`: `any`) => `AxiosPromise`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md)\> |
-| `getAuthCredentials` | (`code?`: `string`, `authFlow?`: ``"tempCodeAuth"`` \| ``"refreshTokenAuth"``, `refreshToken?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Credentials`](../interfaces/Auth_api.Credentials.md)\> |
+| `createAuthCredentials` | (`createAuthCredentialsParam?`: [`CreateAuthCredentialsParam`](../interfaces/Auth_api.CreateAuthCredentialsParam.md), `options?`: `any`) => `AxiosPromise`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`, `any`\> |
+| `exchangeAuthCredentials` | (`exchangeAuthCredentialsParam`: [`ExchangeAuthCredentialsParam`](../interfaces/Auth_api.ExchangeAuthCredentialsParam.md), `options?`: `any`) => `AxiosPromise`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`, `any`\> |
+| `getAuthCredentials` | (`code?`: `string`, `authFlow?`: ``"tempCodeAuth"`` \| ``"refreshTokenAuth"``, `refreshToken?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`, `any`\> |
+| `revokeToken` | (`revokeTokenParam`: [`RevokeTokenParam`](../interfaces/Auth_api.RevokeTokenParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4081](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4081)
+[src/generated/Auth/api.ts:4478](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4478)
 
 ___
 
@@ -727,14 +840,16 @@ CredentialApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createAuthCredentials` | (`body?`: [`Credentials`](../interfaces/Auth_api.Credentials.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md)\>\> |
-| `getAuthCredentials` | (`code?`: `string`, `authFlow?`: ``"tempCodeAuth"`` \| ``"refreshTokenAuth"``, `refreshToken?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Credentials`](../interfaces/Auth_api.Credentials.md)\>\> |
+| `createAuthCredentials` | (`createAuthCredentialsParam?`: [`CreateAuthCredentialsParam`](../interfaces/Auth_api.CreateAuthCredentialsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`AuthorizationTempCode`](../interfaces/Auth_api.AuthorizationTempCode.md), `any`, `any`\>\> |
+| `exchangeAuthCredentials` | (`exchangeAuthCredentialsParam`: [`ExchangeAuthCredentialsParam`](../interfaces/Auth_api.ExchangeAuthCredentialsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`, `any`\>\> |
+| `getAuthCredentials` | (`code?`: `string`, `authFlow?`: ``"tempCodeAuth"`` \| ``"refreshTokenAuth"``, `refreshToken?`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Credentials`](../interfaces/Auth_api.Credentials.md), `any`, `any`\>\> |
+| `revokeToken` | (`revokeTokenParam`: [`RevokeTokenParam`](../interfaces/Auth_api.RevokeTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4047](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4047)
+[src/generated/Auth/api.ts:4422](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4422)
 
 ___
 
@@ -756,17 +871,17 @@ EnvApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createEnv` | (`body?`: [`Env`](../interfaces/Auth_api.Env.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getEnvs` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateEnv` | (`envId`: `number`, `updateEnvParam?`: [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createEnv` | (`body?`: [`Env`](../interfaces/Auth_api.Env.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getEnvs` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateEnv` | (`envId`: `number`, `updateEnvParam?`: [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4148](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4148)
+[src/generated/Auth/api.ts:4589](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4589)
 
 ___
 
@@ -790,17 +905,17 @@ EnvApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createEnv` | (`body?`: [`Env`](../interfaces/Auth_api.Env.md), `options?`: `any`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md)\> |
-| `deleteEnv` | (`envId`: `number`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getEnv` | (`envId`: `number`, `options?`: `any`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md)\> |
-| `getEnvs` | (`options?`: `any`) => `AxiosPromise`\<[`Envs`](../interfaces/Auth_api.Envs.md)\> |
-| `updateEnv` | (`envId`: `number`, `updateEnvParam?`: [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createEnv` | (`body?`: [`Env`](../interfaces/Auth_api.Env.md), `options?`: `any`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, `any`\> |
+| `deleteEnv` | (`envId`: `number`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getEnv` | (`envId`: `number`, `options?`: `any`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, `any`\> |
+| `getEnvs` | (`options?`: `any`) => `AxiosPromise`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`, `any`\> |
+| `updateEnv` | (`envId`: `number`, `updateEnvParam?`: [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4412](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4412)
+[src/generated/Auth/api.ts:4853](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4853)
 
 ___
 
@@ -822,17 +937,17 @@ EnvApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createEnv` | (`body?`: [`Env`](../interfaces/Auth_api.Env.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md)\>\> |
-| `deleteEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md)\>\> |
-| `getEnvs` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Envs`](../interfaces/Auth_api.Envs.md)\>\> |
-| `updateEnv` | (`envId`: `number`, `updateEnvParam?`: [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createEnv` | (`body?`: [`Env`](../interfaces/Auth_api.Env.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, `any`\>\> |
+| `deleteEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getEnv` | (`envId`: `number`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Env`](../interfaces/Auth_api.Env.md), `any`, `any`\>\> |
+| `getEnvs` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Envs`](../interfaces/Auth_api.Envs.md), `any`, `any`\>\> |
+| `updateEnv` | (`envId`: `number`, `updateEnvParam?`: [`UpdateEnvParam`](../interfaces/Auth_api.UpdateEnvParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4347](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4347)
+[src/generated/Auth/api.ts:4788](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4788)
 
 ___
 
@@ -854,13 +969,13 @@ ErrorApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4541)
+[src/generated/Auth/api.ts:4982](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4982)
 
 ___
 
@@ -884,13 +999,13 @@ ErrorApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4604](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4604)
+[src/generated/Auth/api.ts:5045](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5045)
 
 ___
 
@@ -912,13 +1027,13 @@ ErrorApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4584](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4584)
+[src/generated/Auth/api.ts:5025](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5025)
 
 ___
 
@@ -940,18 +1055,18 @@ InvitationApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createTenantInvitation` | (`tenantId`: `string`, `createTenantInvitationParam?`: [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getInvitationValidity` | (`invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenantInvitations` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `validateInvitation` | (`invitationId`: `string`, `validateInvitationParam?`: [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createTenantInvitation` | (`tenantId`: `string`, `createTenantInvitationParam?`: [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getInvitationValidity` | (`invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenantInvitations` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `validateInvitation` | (`invitationId`: `string`, `validateInvitationParam?`: [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4643](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4643)
+[src/generated/Auth/api.ts:5084](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5084)
 
 ___
 
@@ -975,18 +1090,18 @@ InvitationApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenantInvitation` | (`tenantId`: `string`, `createTenantInvitationParam?`: [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md), `options?`: `any`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md)\> |
-| `deleteTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getInvitationValidity` | (`invitationId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md)\> |
-| `getTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md)\> |
-| `getTenantInvitations` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Invitations`](../interfaces/Auth_api.Invitations.md)\> |
-| `validateInvitation` | (`invitationId`: `string`, `validateInvitationParam?`: [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createTenantInvitation` | (`tenantId`: `string`, `createTenantInvitationParam?`: [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md), `options?`: `any`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, `any`\> |
+| `deleteTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getInvitationValidity` | (`invitationId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`, `any`\> |
+| `getTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, `any`\> |
+| `getTenantInvitations` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`, `any`\> |
+| `validateInvitation` | (`invitationId`: `string`, `validateInvitationParam?`: [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4976](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4976)
+[src/generated/Auth/api.ts:5417](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5417)
 
 ___
 
@@ -1008,18 +1123,18 @@ InvitationApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenantInvitation` | (`tenantId`: `string`, `createTenantInvitationParam?`: [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md)\>\> |
-| `deleteTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getInvitationValidity` | (`invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md)\>\> |
-| `getTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md)\>\> |
-| `getTenantInvitations` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Invitations`](../interfaces/Auth_api.Invitations.md)\>\> |
-| `validateInvitation` | (`invitationId`: `string`, `validateInvitationParam?`: [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createTenantInvitation` | (`tenantId`: `string`, `createTenantInvitationParam?`: [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, `any`\>\> |
+| `deleteTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getInvitationValidity` | (`invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`, `any`\>\> |
+| `getTenantInvitation` | (`tenantId`: `string`, `invitationId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, `any`\>\> |
+| `getTenantInvitations` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`, `any`\>\> |
+| `validateInvitation` | (`invitationId`: `string`, `validateInvitationParam?`: [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4896](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L4896)
+[src/generated/Auth/api.ts:5337](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5337)
 
 ___
 
@@ -1041,16 +1156,16 @@ RoleApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createRole` | (`body?`: [`Role`](../interfaces/Auth_api.Role.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteRole` | (`roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getRoles` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateRole` | (`roleName`: `string`, `updateRoleParam?`: [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createRole` | (`body?`: [`Role`](../interfaces/Auth_api.Role.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteRole` | (`roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getRoles` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateRole` | (`roleName`: `string`, `updateRoleParam?`: [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5135)
+[src/generated/Auth/api.ts:5576](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5576)
 
 ___
 
@@ -1074,16 +1189,16 @@ RoleApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createRole` | (`body?`: [`Role`](../interfaces/Auth_api.Role.md), `options?`: `any`) => `AxiosPromise`\<[`Role`](../interfaces/Auth_api.Role.md)\> |
-| `deleteRole` | (`roleName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getRoles` | (`options?`: `any`) => `AxiosPromise`\<[`Roles`](../interfaces/Auth_api.Roles.md)\> |
-| `updateRole` | (`roleName`: `string`, `updateRoleParam?`: [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createRole` | (`body?`: [`Role`](../interfaces/Auth_api.Role.md), `options?`: `any`) => `AxiosPromise`\<[`Role`](../interfaces/Auth_api.Role.md), `any`, `any`\> |
+| `deleteRole` | (`roleName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getRoles` | (`options?`: `any`) => `AxiosPromise`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`, `any`\> |
+| `updateRole` | (`roleName`: `string`, `updateRoleParam?`: [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5350)
+[src/generated/Auth/api.ts:5791](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5791)
 
 ___
 
@@ -1105,16 +1220,16 @@ RoleApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createRole` | (`body?`: [`Role`](../interfaces/Auth_api.Role.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Role`](../interfaces/Auth_api.Role.md)\>\> |
-| `deleteRole` | (`roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getRoles` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Roles`](../interfaces/Auth_api.Roles.md)\>\> |
-| `updateRole` | (`roleName`: `string`, `updateRoleParam?`: [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createRole` | (`body?`: [`Role`](../interfaces/Auth_api.Role.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Role`](../interfaces/Auth_api.Role.md), `any`, `any`\>\> |
+| `deleteRole` | (`roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getRoles` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`, `any`\>\> |
+| `updateRole` | (`roleName`: `string`, `updateRoleParam?`: [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5296](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5296)
+[src/generated/Auth/api.ts:5737](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5737)
 
 ___
 
@@ -1136,39 +1251,42 @@ SaasUserApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `confirmDevice` | (`confirmDeviceParam?`: [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `confirmEmailUpdate` | (`userId`: `string`, `confirmEmailUpdateParam?`: [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `confirmExternalUserLink` | (`confirmExternalUserLinkParam?`: [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `confirmSignUpWithAwsMarketplace` | (`confirmSignUpWithAwsMarketplaceParam?`: [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `createSaasUser` | (`createSaasUserParam?`: [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `createSecretCode` | (`userId`: `string`, `createSecretCodeParam?`: [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getSaasUsers` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getUserMfaPreference` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `linkAwsMarketplace` | (`linkAwsMarketplaceParam?`: [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `requestEmailUpdate` | (`userId`: `string`, `requestEmailUpdateParam?`: [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `requestExternalUserLink` | (`requestExternalUserLinkParam?`: [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `resetSaasUserPassword` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `unlinkProvider` | (`providerName`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateDeviceStatus` | (`updateDeviceStatusParam?`: [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSaasUserAttributes` | (`userId`: `string`, `updateSaasUserAttributesParam?`: [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSaasUserEmail` | (`userId`: `string`, `updateSaasUserEmailParam?`: [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSaasUserPassword` | (`userId`: `string`, `updateSaasUserPasswordParam?`: [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSaasUserSignInId` | (`userId`: `string`, `updateSaasUserSignInIdParam?`: [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSoftwareToken` | (`userId`: `string`, `updateSoftwareTokenParam?`: [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateUserMfaPreference` | (`userId`: `string`, `body?`: [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `confirmDevice` | (`confirmDeviceParam?`: [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `confirmEmailUpdate` | (`userId`: `string`, `confirmEmailUpdateParam?`: [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `confirmExternalUserLink` | (`confirmExternalUserLinkParam?`: [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `confirmSignUpWithAwsMarketplace` | (`confirmSignUpWithAwsMarketplaceParam?`: [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createSaasUser` | (`createSaasUserParam?`: [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createSecretCode` | (`userId`: `string`, `createSecretCodeParam?`: [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getSaasUsers` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getSaasUsersCount` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getUserMfaPreference` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `linkAwsMarketplace` | (`linkAwsMarketplaceParam?`: [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `requestEmailUpdate` | (`userId`: `string`, `requestEmailUpdateParam?`: [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `requestExternalUserLink` | (`requestExternalUserLinkParam?`: [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `resetSaasUserPassword` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `saveSaasUsersCount` | (`saveSaasUsersCountParam`: [`SaveSaasUsersCountParam`](../interfaces/Auth_api.SaveSaasUsersCountParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `searchSaasUsers` | (`id?`: `string`, `email?`: `string`, `signInId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `unlinkProvider` | (`providerName`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateDeviceStatus` | (`updateDeviceStatusParam?`: [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSaasUserAttributes` | (`userId`: `string`, `updateSaasUserAttributesParam?`: [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSaasUserEmail` | (`userId`: `string`, `updateSaasUserEmailParam?`: [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSaasUserPassword` | (`userId`: `string`, `updateSaasUserPasswordParam?`: [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSaasUserSignInId` | (`userId`: `string`, `updateSaasUserSignInIdParam?`: [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSoftwareToken` | (`userId`: `string`, `updateSoftwareTokenParam?`: [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateUserMfaPreference` | (`userId`: `string`, `body?`: [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5457](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5457)
+[src/generated/Auth/api.ts:5898](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5898)
 
 ___
 
@@ -1192,39 +1310,42 @@ SaasUserApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `confirmDevice` | (`confirmDeviceParam?`: [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md), `options?`: `any`) => `AxiosPromise`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md)\> |
-| `confirmEmailUpdate` | (`userId`: `string`, `confirmEmailUpdateParam?`: [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `confirmExternalUserLink` | (`confirmExternalUserLinkParam?`: [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `confirmSignUpWithAwsMarketplace` | (`confirmSignUpWithAwsMarketplaceParam?`: [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md)\> |
-| `createSaasUser` | (`createSaasUserParam?`: [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md), `options?`: `any`) => `AxiosPromise`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md)\> |
-| `createSecretCode` | (`userId`: `string`, `createSecretCodeParam?`: [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md), `options?`: `any`) => `AxiosPromise`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md)\> |
-| `deleteSaasUser` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\> |
-| `getSaasUser` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\> |
-| `getSaasUsers` | (`options?`: `any`) => `AxiosPromise`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md)\> |
-| `getUserMfaPreference` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md)\> |
-| `linkAwsMarketplace` | (`linkAwsMarketplaceParam?`: [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `requestEmailUpdate` | (`userId`: `string`, `requestEmailUpdateParam?`: [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `requestExternalUserLink` | (`requestExternalUserLinkParam?`: [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `resetSaasUserPassword` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md)\> |
-| `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `any`) => `AxiosPromise`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md)\> |
-| `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `any`) => `AxiosPromise`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md)\> |
-| `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\> |
-| `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\> |
-| `unlinkProvider` | (`providerName`: `string`, `userId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateDeviceStatus` | (`updateDeviceStatusParam?`: [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSaasUserAttributes` | (`userId`: `string`, `updateSaasUserAttributesParam?`: [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSaasUserEmail` | (`userId`: `string`, `updateSaasUserEmailParam?`: [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSaasUserPassword` | (`userId`: `string`, `updateSaasUserPasswordParam?`: [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSaasUserSignInId` | (`userId`: `string`, `updateSaasUserSignInIdParam?`: [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSoftwareToken` | (`userId`: `string`, `updateSoftwareTokenParam?`: [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateUserMfaPreference` | (`userId`: `string`, `body?`: [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `confirmDevice` | (`confirmDeviceParam?`: [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md), `options?`: `any`) => `AxiosPromise`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md), `any`, `any`\> |
+| `confirmEmailUpdate` | (`userId`: `string`, `confirmEmailUpdateParam?`: [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `confirmExternalUserLink` | (`confirmExternalUserLinkParam?`: [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `confirmSignUpWithAwsMarketplace` | (`confirmSignUpWithAwsMarketplaceParam?`: [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, `any`\> |
+| `createSaasUser` | (`createSaasUserParam?`: [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md), `options?`: `any`) => `AxiosPromise`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md), `any`, `any`\> |
+| `createSecretCode` | (`userId`: `string`, `createSecretCodeParam?`: [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md), `options?`: `any`) => `AxiosPromise`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`, `any`\> |
+| `deleteSaasUser` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\> |
+| `getSaasUser` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, `any`\> |
+| `getSaasUsers` | (`options?`: `any`) => `AxiosPromise`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`, `any`\> |
+| `getSaasUsersCount` | (`options?`: `any`) => `AxiosPromise`\<[`SaasUsersCount`](../interfaces/Auth_api.SaasUsersCount.md), `any`, `any`\> |
+| `getUserMfaPreference` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`, `any`\> |
+| `linkAwsMarketplace` | (`linkAwsMarketplaceParam?`: [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `requestEmailUpdate` | (`userId`: `string`, `requestEmailUpdateParam?`: [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `requestExternalUserLink` | (`requestExternalUserLinkParam?`: [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `resetSaasUserPassword` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md), `any`, `any`\> |
+| `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `any`) => `AxiosPromise`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`, `any`\> |
+| `saveSaasUsersCount` | (`saveSaasUsersCountParam`: [`SaveSaasUsersCountParam`](../interfaces/Auth_api.SaveSaasUsersCountParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `searchSaasUsers` | (`id?`: `string`, `email?`: `string`, `signInId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SearchSaasUsersResult`](../interfaces/Auth_api.SearchSaasUsersResult.md), `any`, `any`\> |
+| `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `any`) => `AxiosPromise`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`, `any`\> |
+| `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, `any`\> |
+| `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `any`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, `any`\> |
+| `unlinkProvider` | (`providerName`: `string`, `userId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateDeviceStatus` | (`updateDeviceStatusParam?`: [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSaasUserAttributes` | (`userId`: `string`, `updateSaasUserAttributesParam?`: [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSaasUserEmail` | (`userId`: `string`, `updateSaasUserEmailParam?`: [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSaasUserPassword` | (`userId`: `string`, `updateSaasUserPasswordParam?`: [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSaasUserSignInId` | (`userId`: `string`, `updateSaasUserSignInIdParam?`: [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSoftwareToken` | (`userId`: `string`, `updateSoftwareTokenParam?`: [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateUserMfaPreference` | (`userId`: `string`, `body?`: [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6844](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L6844)
+[src/generated/Auth/api.ts:7454](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7454)
 
 ___
 
@@ -1246,39 +1367,42 @@ SaasUserApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `confirmDevice` | (`confirmDeviceParam?`: [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md)\>\> |
-| `confirmEmailUpdate` | (`userId`: `string`, `confirmEmailUpdateParam?`: [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `confirmExternalUserLink` | (`confirmExternalUserLinkParam?`: [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `confirmSignUpWithAwsMarketplace` | (`confirmSignUpWithAwsMarketplaceParam?`: [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md)\>\> |
-| `createSaasUser` | (`createSaasUserParam?`: [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md)\>\> |
-| `createSecretCode` | (`userId`: `string`, `createSecretCodeParam?`: [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md)\>\> |
-| `deleteSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\>\> |
-| `getSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\>\> |
-| `getSaasUsers` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md)\>\> |
-| `getUserMfaPreference` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md)\>\> |
-| `linkAwsMarketplace` | (`linkAwsMarketplaceParam?`: [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `requestEmailUpdate` | (`userId`: `string`, `requestEmailUpdateParam?`: [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `requestExternalUserLink` | (`requestExternalUserLinkParam?`: [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `resetSaasUserPassword` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md)\>\> |
-| `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md)\>\> |
-| `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md)\>\> |
-| `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\>\> |
-| `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md)\>\> |
-| `unlinkProvider` | (`providerName`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateDeviceStatus` | (`updateDeviceStatusParam?`: [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSaasUserAttributes` | (`userId`: `string`, `updateSaasUserAttributesParam?`: [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSaasUserEmail` | (`userId`: `string`, `updateSaasUserEmailParam?`: [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSaasUserPassword` | (`userId`: `string`, `updateSaasUserPasswordParam?`: [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSaasUserSignInId` | (`userId`: `string`, `updateSaasUserSignInIdParam?`: [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSoftwareToken` | (`userId`: `string`, `updateSoftwareTokenParam?`: [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateUserMfaPreference` | (`userId`: `string`, `body?`: [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `confirmDevice` | (`confirmDeviceParam?`: [`ConfirmDeviceParam`](../interfaces/Auth_api.ConfirmDeviceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`ConfirmDeviceResult`](../interfaces/Auth_api.ConfirmDeviceResult.md), `any`, `any`\>\> |
+| `confirmEmailUpdate` | (`userId`: `string`, `confirmEmailUpdateParam?`: [`ConfirmEmailUpdateParam`](../interfaces/Auth_api.ConfirmEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `confirmExternalUserLink` | (`confirmExternalUserLinkParam?`: [`ConfirmExternalUserLinkParam`](../interfaces/Auth_api.ConfirmExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `confirmSignUpWithAwsMarketplace` | (`confirmSignUpWithAwsMarketplaceParam?`: [`ConfirmSignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.ConfirmSignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, `any`\>\> |
+| `createSaasUser` | (`createSaasUserParam?`: [`CreateSaasUserParam`](../interfaces/Auth_api.CreateSaasUserParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CreatedSaasUser`](../interfaces/Auth_api.CreatedSaasUser.md), `any`, `any`\>\> |
+| `createSecretCode` | (`userId`: `string`, `createSecretCodeParam?`: [`CreateSecretCodeParam`](../interfaces/Auth_api.CreateSecretCodeParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SoftwareTokenSecretCode`](../interfaces/Auth_api.SoftwareTokenSecretCode.md), `any`, `any`\>\> |
+| `deleteSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\>\> |
+| `getSaasUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, `any`\>\> |
+| `getSaasUsers` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUsers`](../interfaces/Auth_api.SaasUsers.md), `any`, `any`\>\> |
+| `getSaasUsersCount` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUsersCount`](../interfaces/Auth_api.SaasUsersCount.md), `any`, `any`\>\> |
+| `getUserMfaPreference` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `any`, `any`\>\> |
+| `linkAwsMarketplace` | (`linkAwsMarketplaceParam?`: [`LinkAwsMarketplaceParam`](../interfaces/Auth_api.LinkAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `requestEmailUpdate` | (`userId`: `string`, `requestEmailUpdateParam?`: [`RequestEmailUpdateParam`](../interfaces/Auth_api.RequestEmailUpdateParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `requestExternalUserLink` | (`requestExternalUserLinkParam?`: [`RequestExternalUserLinkParam`](../interfaces/Auth_api.RequestExternalUserLinkParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `resendSignUpConfirmationEmail` | (`resendSignUpConfirmationEmailParam?`: [`ResendSignUpConfirmationEmailParam`](../interfaces/Auth_api.ResendSignUpConfirmationEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `resetSaasUserPassword` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUserResetPasswordResult`](../interfaces/Auth_api.SaasUserResetPasswordResult.md), `any`, `any`\>\> |
+| `respondToSignInChallenge` | (`respondToSignInChallengeParam?`: [`RespondToSignInChallengeParam`](../interfaces/Auth_api.RespondToSignInChallengeParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`RespondToSignInChallengeResult`](../interfaces/Auth_api.RespondToSignInChallengeResult.md), `any`, `any`\>\> |
+| `saveSaasUsersCount` | (`saveSaasUsersCountParam`: [`SaveSaasUsersCountParam`](../interfaces/Auth_api.SaveSaasUsersCountParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `searchSaasUsers` | (`id?`: `string`, `email?`: `string`, `signInId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SearchSaasUsersResult`](../interfaces/Auth_api.SearchSaasUsersResult.md), `any`, `any`\>\> |
+| `signIn` | (`signInParam?`: [`SignInParam`](../interfaces/Auth_api.SignInParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SignInResult`](../interfaces/Auth_api.SignInResult.md), `any`, `any`\>\> |
+| `signUp` | (`signUpParam?`: [`SignUpParam`](../interfaces/Auth_api.SignUpParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, `any`\>\> |
+| `signUpWithAwsMarketplace` | (`signUpWithAwsMarketplaceParam?`: [`SignUpWithAwsMarketplaceParam`](../interfaces/Auth_api.SignUpWithAwsMarketplaceParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SaasUser`](../interfaces/Auth_api.SaasUser.md), `any`, `any`\>\> |
+| `unlinkProvider` | (`providerName`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateDeviceStatus` | (`updateDeviceStatusParam?`: [`UpdateDeviceStatusParam`](../interfaces/Auth_api.UpdateDeviceStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSaasUserAttributes` | (`userId`: `string`, `updateSaasUserAttributesParam?`: [`UpdateSaasUserAttributesParam`](../interfaces/Auth_api.UpdateSaasUserAttributesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSaasUserEmail` | (`userId`: `string`, `updateSaasUserEmailParam?`: [`UpdateSaasUserEmailParam`](../interfaces/Auth_api.UpdateSaasUserEmailParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSaasUserPassword` | (`userId`: `string`, `updateSaasUserPasswordParam?`: [`UpdateSaasUserPasswordParam`](../interfaces/Auth_api.UpdateSaasUserPasswordParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSaasUserSignInId` | (`userId`: `string`, `updateSaasUserSignInIdParam?`: [`UpdateSaasUserSignInIdParam`](../interfaces/Auth_api.UpdateSaasUserSignInIdParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSoftwareToken` | (`userId`: `string`, `updateSoftwareTokenParam?`: [`UpdateSoftwareTokenParam`](../interfaces/Auth_api.UpdateSoftwareTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateUserMfaPreference` | (`userId`: `string`, `body?`: [`MfaPreference`](../interfaces/Auth_api.MfaPreference.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:6528](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L6528)
+[src/generated/Auth/api.ts:7102](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L7102)
 
 ___
 
@@ -1300,15 +1424,15 @@ SingleTenantApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `getCloudFormationLaunchStackLinkForSingleTenant` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getSingleTenantSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateSingleTenantSettings` | (`updateSingleTenantSettingsParam?`: [`UpdateSingleTenantSettingsParam`](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getCloudFormationLaunchStackLinkForSingleTenant` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getSingleTenantSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateSingleTenantSettings` | (`updateSingleTenantSettingsParam?`: [`UpdateSingleTenantSettingsParam`](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7475](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7475)
+[src/generated/Auth/api.ts:8157](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8157)
 
 ___
 
@@ -1332,15 +1456,15 @@ SingleTenantApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `getCloudFormationLaunchStackLinkForSingleTenant` | (`options?`: `any`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md)\> |
-| `getSingleTenantSettings` | (`options?`: `any`) => `AxiosPromise`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md)\> |
-| `updateSingleTenantSettings` | (`updateSingleTenantSettingsParam?`: [`UpdateSingleTenantSettingsParam`](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `getCloudFormationLaunchStackLinkForSingleTenant` | (`options?`: `any`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md), `any`, `any`\> |
+| `getSingleTenantSettings` | (`options?`: `any`) => `AxiosPromise`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md), `any`, `any`\> |
+| `updateSingleTenantSettings` | (`updateSingleTenantSettingsParam?`: [`UpdateSingleTenantSettingsParam`](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7631](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7631)
+[src/generated/Auth/api.ts:8313](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8313)
 
 ___
 
@@ -1362,15 +1486,15 @@ SingleTenantApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `getCloudFormationLaunchStackLinkForSingleTenant` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md)\>\> |
-| `getSingleTenantSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md)\>\> |
-| `updateSingleTenantSettings` | (`updateSingleTenantSettingsParam?`: [`UpdateSingleTenantSettingsParam`](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `getCloudFormationLaunchStackLinkForSingleTenant` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/Auth_api.CloudFormationLaunchStackLink.md), `any`, `any`\>\> |
+| `getSingleTenantSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SingleTenantSettings`](../interfaces/Auth_api.SingleTenantSettings.md), `any`, `any`\>\> |
+| `updateSingleTenantSettings` | (`updateSingleTenantSettingsParam?`: [`UpdateSingleTenantSettingsParam`](../interfaces/Auth_api.UpdateSingleTenantSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7590](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7590)
+[src/generated/Auth/api.ts:8272](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8272)
 
 ___
 
@@ -1392,25 +1516,25 @@ TenantApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createTenant` | (`body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `createTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteStripeTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getStripeCustomer` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenantIdentityProviders` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenants` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `resetPlan` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateTenant` | (`tenantId`: `string`, `body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateTenantBillingInfo` | (`tenantId`: `string`, `body?`: [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateTenantIdentityProvider` | (`tenantId`: `string`, `updateTenantIdentityProviderParam?`: [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateTenantPlan` | (`tenantId`: `string`, `body?`: [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createTenant` | (`body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteStripeTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getStripeCustomer` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenantIdentityProviders` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenants` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `resetPlan` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateTenant` | (`tenantId`: `string`, `body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateTenantBillingInfo` | (`tenantId`: `string`, `body?`: [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateTenantIdentityProvider` | (`tenantId`: `string`, `updateTenantIdentityProviderParam?`: [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateTenantPlan` | (`tenantId`: `string`, `body?`: [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:7712](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L7712)
+[src/generated/Auth/api.ts:8394](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8394)
 
 ___
 
@@ -1434,25 +1558,25 @@ TenantApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenant` | (`body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `any`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md)\> |
-| `createTenantAndPricing` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `deleteStripeTenantAndPricing` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `deleteTenant` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getStripeCustomer` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md)\> |
-| `getTenant` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md)\> |
-| `getTenantIdentityProviders` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md)\> |
-| `getTenants` | (`options?`: `any`) => `AxiosPromise`\<[`Tenants`](../interfaces/Auth_api.Tenants.md)\> |
-| `resetPlan` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateTenant` | (`tenantId`: `string`, `body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateTenantBillingInfo` | (`tenantId`: `string`, `body?`: [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateTenantIdentityProvider` | (`tenantId`: `string`, `updateTenantIdentityProviderParam?`: [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateTenantPlan` | (`tenantId`: `string`, `body?`: [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createTenant` | (`body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `any`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, `any`\> |
+| `createTenantAndPricing` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `deleteStripeTenantAndPricing` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `deleteTenant` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getStripeCustomer` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`, `any`\> |
+| `getTenant` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`, `any`\> |
+| `getTenantIdentityProviders` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`, `any`\> |
+| `getTenants` | (`options?`: `any`) => `AxiosPromise`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`, `any`\> |
+| `resetPlan` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateTenant` | (`tenantId`: `string`, `body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateTenantBillingInfo` | (`tenantId`: `string`, `body?`: [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateTenantIdentityProvider` | (`tenantId`: `string`, `updateTenantIdentityProviderParam?`: [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateTenantPlan` | (`tenantId`: `string`, `body?`: [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8368)
+[src/generated/Auth/api.ts:9050](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9050)
 
 ___
 
@@ -1474,25 +1598,25 @@ TenantApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenant` | (`body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md)\>\> |
-| `createTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `deleteStripeTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `deleteTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getStripeCustomer` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md)\>\> |
-| `getTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md)\>\> |
-| `getTenantIdentityProviders` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md)\>\> |
-| `getTenants` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Tenants`](../interfaces/Auth_api.Tenants.md)\>\> |
-| `resetPlan` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateTenant` | (`tenantId`: `string`, `body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateTenantBillingInfo` | (`tenantId`: `string`, `body?`: [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateTenantIdentityProvider` | (`tenantId`: `string`, `updateTenantIdentityProviderParam?`: [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateTenantPlan` | (`tenantId`: `string`, `body?`: [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createTenant` | (`body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, `any`\>\> |
+| `createTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `deleteStripeTenantAndPricing` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `deleteTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getStripeCustomer` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`, `any`\>\> |
+| `getTenant` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`, `any`\>\> |
+| `getTenantIdentityProviders` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`, `any`\>\> |
+| `getTenants` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`, `any`\>\> |
+| `resetPlan` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateTenant` | (`tenantId`: `string`, `body?`: [`TenantProps`](../interfaces/Auth_api.TenantProps.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateTenantBillingInfo` | (`tenantId`: `string`, `body?`: [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateTenantIdentityProvider` | (`tenantId`: `string`, `updateTenantIdentityProviderParam?`: [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateTenantPlan` | (`tenantId`: `string`, `body?`: [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8215](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8215)
+[src/generated/Auth/api.ts:8897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L8897)
 
 ___
 
@@ -1514,15 +1638,15 @@ TenantAttributeApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createTenantAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteTenantAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenantAttributes` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createTenantAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteTenantAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenantAttributes` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8673](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8673)
+[src/generated/Auth/api.ts:9355](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9355)
 
 ___
 
@@ -1546,15 +1670,15 @@ TenantAttributeApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenantAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `any`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md)\> |
-| `deleteTenantAttribute` | (`attributeName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getTenantAttributes` | (`options?`: `any`) => `AxiosPromise`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md)\> |
+| `createTenantAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `any`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, `any`\> |
+| `deleteTenantAttribute` | (`attributeName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getTenantAttributes` | (`options?`: `any`) => `AxiosPromise`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8834](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8834)
+[src/generated/Auth/api.ts:9516](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9516)
 
 ___
 
@@ -1576,15 +1700,15 @@ TenantAttributeApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenantAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md)\>\> |
-| `deleteTenantAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getTenantAttributes` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md)\>\> |
+| `createTenantAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, `any`\>\> |
+| `deleteTenantAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getTenantAttributes` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantAttributes`](../interfaces/Auth_api.TenantAttributes.md), `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8792](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8792)
+[src/generated/Auth/api.ts:9474](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9474)
 
 ___
 
@@ -1606,22 +1730,24 @@ TenantUserApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createTenantUser` | (`tenantId`: `string`, `createTenantUserParam?`: [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `createTenantUserRoles` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `createTenantUserRolesParam?`: [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteTenantUserRole` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getAllTenantUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getAllTenantUsers` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getTenantUsers` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `searchTenantUsers` | (`tenantId?`: `string`, `id?`: `string`, `email?`: `string`, `signInId?`: `string`, `envId?`: `number`, `roleId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `updateTenantUser` | (`tenantId`: `string`, `userId`: `string`, `updateTenantUserParam?`: [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createTenantUser` | (`tenantId`: `string`, `createTenantUserParam?`: [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createTenantUserRoles` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `createTenantUserRolesParam?`: [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteTenantUserRole` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getAllTenantUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getAllTenantUsers` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getAllTenantUsersCount` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getTenantUsers` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `saveTenantUsersCounts` | (`saveTenantUsersCountsParam`: [`SaveTenantUsersCountsParam`](../interfaces/Auth_api.SaveTenantUsersCountsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `searchTenantUsers` | (`tenantId?`: `string`, `id?`: `string`, `email?`: `string`, `signInId?`: `string`, `envId?`: `number`, `roleName?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `updateTenantUser` | (`tenantId`: `string`, `userId`: `string`, `updateTenantUserParam?`: [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8917](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8917)
+[src/generated/Auth/api.ts:9599](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9599)
 
 ___
 
@@ -1645,22 +1771,24 @@ TenantUserApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenantUser` | (`tenantId`: `string`, `createTenantUserParam?`: [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md), `options?`: `any`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md)\> |
-| `createTenantUserRoles` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `createTenantUserRolesParam?`: [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `deleteTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `deleteTenantUserRole` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `roleName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getAllTenantUser` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md)\> |
-| `getAllTenantUsers` | (`options?`: `any`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md)\> |
-| `getTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md)\> |
-| `getTenantUsers` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md)\> |
-| `searchTenantUsers` | (`tenantId?`: `string`, `id?`: `string`, `email?`: `string`, `signInId?`: `string`, `envId?`: `number`, `roleId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md)\> |
-| `updateTenantUser` | (`tenantId`: `string`, `userId`: `string`, `updateTenantUserParam?`: [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createTenantUser` | (`tenantId`: `string`, `createTenantUserParam?`: [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md), `options?`: `any`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md), `any`, `any`\> |
+| `createTenantUserRoles` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `createTenantUserRolesParam?`: [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `deleteTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `deleteTenantUserRole` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `roleName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getAllTenantUser` | (`userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, `any`\> |
+| `getAllTenantUsers` | (`options?`: `any`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, `any`\> |
+| `getAllTenantUsersCount` | (`options?`: `any`) => `AxiosPromise`\<[`TenantUsersCounts`](../interfaces/Auth_api.TenantUsersCounts.md), `any`, `any`\> |
+| `getTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md), `any`, `any`\> |
+| `getTenantUsers` | (`tenantId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, `any`\> |
+| `saveTenantUsersCounts` | (`saveTenantUsersCountsParam`: [`SaveTenantUsersCountsParam`](../interfaces/Auth_api.SaveTenantUsersCountsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `searchTenantUsers` | (`tenantId?`: `string`, `id?`: `string`, `email?`: `string`, `signInId?`: `string`, `envId?`: `number`, `roleName?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `any`) => `AxiosPromise`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md), `any`, `any`\> |
+| `updateTenantUser` | (`tenantId`: `string`, `userId`: `string`, `updateTenantUserParam?`: [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9519](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9519)
+[src/generated/Auth/api.ts:10296](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10296)
 
 ___
 
@@ -1682,22 +1810,24 @@ TenantUserApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createTenantUser` | (`tenantId`: `string`, `createTenantUserParam?`: [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md)\>\> |
-| `createTenantUserRoles` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `createTenantUserRolesParam?`: [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `deleteTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `deleteTenantUserRole` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getAllTenantUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md)\>\> |
-| `getAllTenantUsers` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md)\>\> |
-| `getTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md)\>\> |
-| `getTenantUsers` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md)\>\> |
-| `searchTenantUsers` | (`tenantId?`: `string`, `id?`: `string`, `email?`: `string`, `signInId?`: `string`, `envId?`: `number`, `roleId?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md)\>\> |
-| `updateTenantUser` | (`tenantId`: `string`, `userId`: `string`, `updateTenantUserParam?`: [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createTenantUser` | (`tenantId`: `string`, `createTenantUserParam?`: [`CreateTenantUserParam`](../interfaces/Auth_api.CreateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md), `any`, `any`\>\> |
+| `createTenantUserRoles` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `createTenantUserRolesParam?`: [`CreateTenantUserRolesParam`](../interfaces/Auth_api.CreateTenantUserRolesParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `deleteTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `deleteTenantUserRole` | (`tenantId`: `string`, `userId`: `string`, `envId`: `number`, `roleName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getAllTenantUser` | (`userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, `any`\>\> |
+| `getAllTenantUsers` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, `any`\>\> |
+| `getAllTenantUsersCount` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`TenantUsersCounts`](../interfaces/Auth_api.TenantUsersCounts.md), `any`, `any`\>\> |
+| `getTenantUser` | (`tenantId`: `string`, `userId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`User`](../interfaces/Auth_api.User.md), `any`, `any`\>\> |
+| `getTenantUsers` | (`tenantId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Users`](../interfaces/Auth_api.Users.md), `any`, `any`\>\> |
+| `saveTenantUsersCounts` | (`saveTenantUsersCountsParam`: [`SaveTenantUsersCountsParam`](../interfaces/Auth_api.SaveTenantUsersCountsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `searchTenantUsers` | (`tenantId?`: `string`, `id?`: `string`, `email?`: `string`, `signInId?`: `string`, `envId?`: `number`, `roleName?`: `string`, `limit?`: `number`, `cursor?`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`SearchTenantUsersResult`](../interfaces/Auth_api.SearchTenantUsersResult.md), `any`, `any`\>\> |
+| `updateTenantUser` | (`tenantId`: `string`, `userId`: `string`, `updateTenantUserParam?`: [`UpdateTenantUserParam`](../interfaces/Auth_api.UpdateTenantUserParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9382](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9382)
+[src/generated/Auth/api.ts:10138](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10138)
 
 ___
 
@@ -1719,16 +1849,16 @@ UserAttributeApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createSaasUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `createUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `deleteUserAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getUserAttributes` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createSaasUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `createUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `deleteUserAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getUserAttributes` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9792](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9792)
+[src/generated/Auth/api.ts:10611](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10611)
 
 ___
 
@@ -1752,16 +1882,16 @@ UserAttributeApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createSaasUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `any`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md)\> |
-| `createUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `any`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md)\> |
-| `deleteUserAttribute` | (`attributeName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `getUserAttributes` | (`options?`: `any`) => `AxiosPromise`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md)\> |
+| `createSaasUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `any`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, `any`\> |
+| `createUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `any`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, `any`\> |
+| `deleteUserAttribute` | (`attributeName`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `getUserAttributes` | (`options?`: `any`) => `AxiosPromise`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10002](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10002)
+[src/generated/Auth/api.ts:10821](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10821)
 
 ___
 
@@ -1783,16 +1913,16 @@ UserAttributeApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createSaasUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md)\>\> |
-| `createUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md)\>\> |
-| `deleteUserAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `getUserAttributes` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md)\>\> |
+| `createSaasUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, `any`\>\> |
+| `createUserAttribute` | (`body?`: [`Attribute`](../interfaces/Auth_api.Attribute.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Attribute`](../interfaces/Auth_api.Attribute.md), `any`, `any`\>\> |
+| `deleteUserAttribute` | (`attributeName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `getUserAttributes` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserAttributes`](../interfaces/Auth_api.UserAttributes.md), `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:9949](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L9949)
+[src/generated/Auth/api.ts:10768](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10768)
 
 ___
 
@@ -1814,15 +1944,15 @@ UserInfoApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `getUserInfo` | (`token`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getUserInfoByEmail` | (`email`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
-| `getUserInfoBySignInId` | (`signInId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getUserInfo` | (`token`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getUserInfoByEmail` | (`email`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
+| `getUserInfoBySignInId` | (`signInId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/Auth_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10107](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10107)
+[src/generated/Auth/api.ts:10926](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L10926)
 
 ___
 
@@ -1846,15 +1976,15 @@ UserInfoApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `getUserInfo` | (`token`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\> |
-| `getUserInfoByEmail` | (`email`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\> |
-| `getUserInfoBySignInId` | (`signInId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\> |
+| `getUserInfo` | (`token`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\> |
+| `getUserInfoByEmail` | (`email`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\> |
+| `getUserInfoBySignInId` | (`signInId`: `string`, `options?`: `any`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10282)
+[src/generated/Auth/api.ts:11101](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L11101)
 
 ___
 
@@ -1876,12 +2006,12 @@ UserInfoApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `getUserInfo` | (`token`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\>\> |
-| `getUserInfoByEmail` | (`email`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\>\> |
-| `getUserInfoBySignInId` | (`signInId`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md)\>\> |
+| `getUserInfo` | (`token`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\>\> |
+| `getUserInfoByEmail` | (`email`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\>\> |
+| `getUserInfoBySignInId` | (`signInId`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`UserInfo`](../interfaces/Auth_api.UserInfo.md), `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Auth/api.ts:10239](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L10239)
+[src/generated/Auth/api.ts:11058](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L11058)

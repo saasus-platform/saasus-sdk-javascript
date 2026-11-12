@@ -332,6 +332,12 @@ export interface PricingFixedUnit {
      */
     'used': boolean;
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingFixedUnit
+     */
+    'type': UnitType;
+    /**
      * Price
      * @type {number}
      * @memberof PricingFixedUnit
@@ -361,12 +367,6 @@ export interface PricingFixedUnit {
      * @memberof PricingFixedUnit
      */
     'description': string;
-    /**
-     * 
-     * @type {UnitType}
-     * @memberof PricingFixedUnit
-     */
-    'type': UnitType;
     /**
      * 
      * @type {Currency}
@@ -400,6 +400,12 @@ export interface PricingFixedUnitAllOf {
  */
 export interface PricingFixedUnitForSave {
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingFixedUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Price
      * @type {number}
      * @memberof PricingFixedUnitForSave
@@ -431,12 +437,6 @@ export interface PricingFixedUnitForSave {
     'description': string;
     /**
      * 
-     * @type {UnitType}
-     * @memberof PricingFixedUnitForSave
-     */
-    'type': UnitType;
-    /**
-     * 
      * @type {Currency}
      * @memberof PricingFixedUnitForSave
      */
@@ -448,6 +448,12 @@ export interface PricingFixedUnitForSave {
  * @interface PricingFixedUnitForSaveAllOf
  */
 export interface PricingFixedUnitForSaveAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof PricingFixedUnitForSaveAllOf
+     */
+    'type'?: PricingFixedUnitForSaveAllOfTypeEnum;
     /**
      * Price
      * @type {number}
@@ -461,6 +467,13 @@ export interface PricingFixedUnitForSaveAllOf {
      */
     'recurring_interval': RecurringInterval;
 }
+
+export const PricingFixedUnitForSaveAllOfTypeEnum = {
+    Fixed: 'fixed'
+} as const;
+
+export type PricingFixedUnitForSaveAllOfTypeEnum = typeof PricingFixedUnitForSaveAllOfTypeEnum[keyof typeof PricingFixedUnitForSaveAllOfTypeEnum];
+
 /**
  * 
  * @export
@@ -784,6 +797,12 @@ export interface PricingTieredUnit {
      */
     'used': boolean;
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingTieredUnit
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUnit
@@ -819,12 +838,6 @@ export interface PricingTieredUnit {
      * @memberof PricingTieredUnit
      */
     'description': string;
-    /**
-     * 
-     * @type {UnitType}
-     * @memberof PricingTieredUnit
-     */
-    'type': UnitType;
     /**
      * 
      * @type {Currency}
@@ -845,6 +858,12 @@ export interface PricingTieredUnit {
  */
 export interface PricingTieredUnitForSave {
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingTieredUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUnitForSave
@@ -882,12 +901,6 @@ export interface PricingTieredUnitForSave {
     'description': string;
     /**
      * 
-     * @type {UnitType}
-     * @memberof PricingTieredUnitForSave
-     */
-    'type': UnitType;
-    /**
-     * 
      * @type {Currency}
      * @memberof PricingTieredUnitForSave
      */
@@ -899,6 +912,44 @@ export interface PricingTieredUnitForSave {
      */
     'tiers': Array<PricingTier>;
 }
+/**
+ * 
+ * @export
+ * @interface PricingTieredUnitForSaveAllOf
+ */
+export interface PricingTieredUnitForSaveAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'type'?: PricingTieredUnitForSaveAllOfTypeEnum;
+    /**
+     * Upper limit
+     * @type {number}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'upper_count': number;
+    /**
+     * Metering unit name
+     * @type {string}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'metering_unit_name': string;
+    /**
+     * 
+     * @type {AggregateUsage}
+     * @memberof PricingTieredUnitForSaveAllOf
+     */
+    'aggregate_usage'?: AggregateUsage;
+}
+
+export const PricingTieredUnitForSaveAllOfTypeEnum = {
+    Tiered: 'tiered'
+} as const;
+
+export type PricingTieredUnitForSaveAllOfTypeEnum = typeof PricingTieredUnitForSaveAllOfTypeEnum[keyof typeof PricingTieredUnitForSaveAllOfTypeEnum];
+
 /**
  * 
  * @export
@@ -930,6 +981,12 @@ export interface PricingTieredUsageUnit {
      */
     'used': boolean;
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingTieredUsageUnit
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUsageUnit
@@ -965,12 +1022,6 @@ export interface PricingTieredUsageUnit {
      * @memberof PricingTieredUsageUnit
      */
     'description': string;
-    /**
-     * 
-     * @type {UnitType}
-     * @memberof PricingTieredUsageUnit
-     */
-    'type': UnitType;
     /**
      * 
      * @type {Currency}
@@ -1022,6 +1073,12 @@ export interface PricingTieredUsageUnitAllOf {
  */
 export interface PricingTieredUsageUnitForSave {
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingTieredUsageUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingTieredUsageUnitForSave
@@ -1059,12 +1116,6 @@ export interface PricingTieredUsageUnitForSave {
     'description': string;
     /**
      * 
-     * @type {UnitType}
-     * @memberof PricingTieredUsageUnitForSave
-     */
-    'type': UnitType;
-    /**
-     * 
      * @type {Currency}
      * @memberof PricingTieredUsageUnitForSave
      */
@@ -1082,6 +1133,12 @@ export interface PricingTieredUsageUnitForSave {
  * @interface PricingTieredUsageUnitForSaveAllOf
  */
 export interface PricingTieredUsageUnitForSaveAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof PricingTieredUsageUnitForSaveAllOf
+     */
+    'type'?: PricingTieredUsageUnitForSaveAllOfTypeEnum;
     /**
      * Upper limit
      * @type {number}
@@ -1101,6 +1158,13 @@ export interface PricingTieredUsageUnitForSaveAllOf {
      */
     'aggregate_usage'?: AggregateUsage;
 }
+
+export const PricingTieredUsageUnitForSaveAllOfTypeEnum = {
+    TieredUsage: 'tiered_usage'
+} as const;
+
+export type PricingTieredUsageUnitForSaveAllOfTypeEnum = typeof PricingTieredUsageUnitForSaveAllOfTypeEnum[keyof typeof PricingTieredUsageUnitForSaveAllOfTypeEnum];
+
 /**
  * 
  * @export
@@ -1207,6 +1271,12 @@ export interface PricingUsageUnit {
      */
     'used': boolean;
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingUsageUnit
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingUsageUnit
@@ -1248,12 +1318,6 @@ export interface PricingUsageUnit {
      * @memberof PricingUsageUnit
      */
     'description': string;
-    /**
-     * 
-     * @type {UnitType}
-     * @memberof PricingUsageUnit
-     */
-    'type': UnitType;
     /**
      * 
      * @type {Currency}
@@ -1299,6 +1363,12 @@ export interface PricingUsageUnitAllOf {
  */
 export interface PricingUsageUnitForSave {
     /**
+     * 
+     * @type {UnitType}
+     * @memberof PricingUsageUnitForSave
+     */
+    'type': UnitType;
+    /**
      * Upper limit
      * @type {number}
      * @memberof PricingUsageUnitForSave
@@ -1342,12 +1412,6 @@ export interface PricingUsageUnitForSave {
     'description': string;
     /**
      * 
-     * @type {UnitType}
-     * @memberof PricingUsageUnitForSave
-     */
-    'type': UnitType;
-    /**
-     * 
      * @type {Currency}
      * @memberof PricingUsageUnitForSave
      */
@@ -1359,6 +1423,12 @@ export interface PricingUsageUnitForSave {
  * @interface PricingUsageUnitForSaveAllOf
  */
 export interface PricingUsageUnitForSaveAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof PricingUsageUnitForSaveAllOf
+     */
+    'type'?: PricingUsageUnitForSaveAllOfTypeEnum;
     /**
      * Upper limit
      * @type {number}
@@ -1384,6 +1454,13 @@ export interface PricingUsageUnitForSaveAllOf {
      */
     'aggregate_usage'?: AggregateUsage;
 }
+
+export const PricingUsageUnitForSaveAllOfTypeEnum = {
+    Usage: 'usage'
+} as const;
+
+export type PricingUsageUnitForSaveAllOfTypeEnum = typeof PricingUsageUnitForSaveAllOfTypeEnum[keyof typeof PricingUsageUnitForSaveAllOfTypeEnum];
+
 /**
  * Cycle month: Monthly year: Yearly 
  * @export

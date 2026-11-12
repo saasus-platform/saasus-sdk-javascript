@@ -18,6 +18,7 @@ SignInSettings
 - [mfa\_configuration](Auth_api.SignInSettings.md#mfa_configuration)
 - [password\_policy](Auth_api.SignInSettings.md#password_policy)
 - [recaptcha\_props](Auth_api.SignInSettings.md#recaptcha_props)
+- [refresh\_token\_validity](Auth_api.SignInSettings.md#refresh_token_validity)
 - [self\_regist](Auth_api.SignInSettings.md#self_regist)
 
 ## Properties
@@ -32,7 +33,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1821](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1821)
+[src/generated/Auth/api.ts:2066](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2066)
 
 ___
 
@@ -46,7 +47,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1803](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1803)
+[src/generated/Auth/api.ts:2048](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2048)
 
 ___
 
@@ -60,7 +61,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1833](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1833)
+[src/generated/Auth/api.ts:2078](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2078)
 
 ___
 
@@ -74,7 +75,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1809](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1809)
+[src/generated/Auth/api.ts:2054](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2054)
 
 ___
 
@@ -88,7 +89,7 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1797](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1797)
+[src/generated/Auth/api.ts:2042](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2042)
 
 ___
 
@@ -102,7 +103,21 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1815](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1815)
+[src/generated/Auth/api.ts:2060](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2060)
+
+___
+
+### refresh\_token\_validity
+
+• **refresh\_token\_validity**: [`RefreshTokenValidity`](Auth_api.RefreshTokenValidity.md)
+
+**`Memberof`**
+
+SignInSettings
+
+#### Defined in
+
+[src/generated/Auth/api.ts:2084](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2084)
 
 ___
 
@@ -116,4 +131,4 @@ SignInSettings
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1827](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1827)
+[src/generated/Auth/api.ts:2072](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2072)

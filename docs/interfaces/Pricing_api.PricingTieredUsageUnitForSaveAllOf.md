@@ -14,6 +14,7 @@ PricingTieredUsageUnitForSaveAllOf
 
 - [aggregate\_usage](Pricing_api.PricingTieredUsageUnitForSaveAllOf.md#aggregate_usage)
 - [metering\_unit\_name](Pricing_api.PricingTieredUsageUnitForSaveAllOf.md#metering_unit_name)
+- [type](Pricing_api.PricingTieredUsageUnitForSaveAllOf.md#type)
 - [upper\_count](Pricing_api.PricingTieredUsageUnitForSaveAllOf.md#upper_count)
 
 ## Properties
@@ -28,7 +29,7 @@ PricingTieredUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1102](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1102)
+[src/generated/Pricing/api.ts:1159](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1159)
 
 ___
 
@@ -44,7 +45,21 @@ PricingTieredUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1096](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1096)
+[src/generated/Pricing/api.ts:1153](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1153)
+
+___
+
+### type
+
+• `Optional` **type**: ``"tiered_usage"``
+
+**`Memberof`**
+
+PricingTieredUsageUnitForSaveAllOf
+
+#### Defined in
+
+[src/generated/Pricing/api.ts:1141](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1141)
 
 ___
 
@@ -60,4 +75,4 @@ PricingTieredUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1090](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1090)
+[src/generated/Pricing/api.ts:1147](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1147)

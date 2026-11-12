@@ -13,6 +13,7 @@ PricingFixedUnitForSaveAllOf
 ### Properties
 
 - [recurring\_interval](Pricing_api.PricingFixedUnitForSaveAllOf.md#recurring_interval)
+- [type](Pricing_api.PricingFixedUnitForSaveAllOf.md#type)
 - [unit\_amount](Pricing_api.PricingFixedUnitForSaveAllOf.md#unit_amount)
 
 ## Properties
@@ -27,7 +28,21 @@ PricingFixedUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:462](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L462)
+[src/generated/Pricing/api.ts:468](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L468)
+
+___
+
+### type
+
+• `Optional` **type**: ``"fixed"``
+
+**`Memberof`**
+
+PricingFixedUnitForSaveAllOf
+
+#### Defined in
+
+[src/generated/Pricing/api.ts:456](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L456)
 
 ___
 
@@ -43,4 +58,4 @@ PricingFixedUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:456](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L456)
+[src/generated/Pricing/api.ts:462](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L462)

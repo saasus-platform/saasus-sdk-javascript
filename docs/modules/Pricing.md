@@ -34,6 +34,7 @@
 - [PricingFixedUnitAllOf](Pricing.md#pricingfixedunitallof)
 - [PricingFixedUnitForSave](Pricing.md#pricingfixedunitforsave)
 - [PricingFixedUnitForSaveAllOf](Pricing.md#pricingfixedunitforsaveallof)
+- [PricingFixedUnitForSaveAllOfTypeEnum](Pricing.md#pricingfixedunitforsavealloftypeenum)
 - [PricingMenu](Pricing.md#pricingmenu)
 - [PricingMenuAllOf](Pricing.md#pricingmenuallof)
 - [PricingMenuProps](Pricing.md#pricingmenuprops)
@@ -54,10 +55,13 @@
 - [PricingTier](Pricing.md#pricingtier)
 - [PricingTieredUnit](Pricing.md#pricingtieredunit)
 - [PricingTieredUnitForSave](Pricing.md#pricingtieredunitforsave)
+- [PricingTieredUnitForSaveAllOf](Pricing.md#pricingtieredunitforsaveallof)
+- [PricingTieredUnitForSaveAllOfTypeEnum](Pricing.md#pricingtieredunitforsavealloftypeenum)
 - [PricingTieredUsageUnit](Pricing.md#pricingtieredusageunit)
 - [PricingTieredUsageUnitAllOf](Pricing.md#pricingtieredusageunitallof)
 - [PricingTieredUsageUnitForSave](Pricing.md#pricingtieredusageunitforsave)
 - [PricingTieredUsageUnitForSaveAllOf](Pricing.md#pricingtieredusageunitforsaveallof)
+- [PricingTieredUsageUnitForSaveAllOfTypeEnum](Pricing.md#pricingtieredusageunitforsavealloftypeenum)
 - [PricingTiers](Pricing.md#pricingtiers)
 - [PricingUnit](Pricing.md#pricingunit)
 - [PricingUnitBaseProps](Pricing.md#pricingunitbaseprops)
@@ -71,6 +75,7 @@
 - [PricingUsageUnitAllOf](Pricing.md#pricingusageunitallof)
 - [PricingUsageUnitForSave](Pricing.md#pricingusageunitforsave)
 - [PricingUsageUnitForSaveAllOf](Pricing.md#pricingusageunitforsaveallof)
+- [PricingUsageUnitForSaveAllOfTypeEnum](Pricing.md#pricingusageunitforsavealloftypeenum)
 - [RecurringInterval](Pricing.md#recurringinterval)
 - [SavePricingMenuParam](Pricing.md#savepricingmenuparam)
 - [SavePricingPlanParam](Pricing.md#savepricingplanparam)
@@ -258,6 +263,12 @@ Re-exports [PricingFixedUnitForSaveAllOf](../interfaces/Pricing_api.PricingFixed
 
 ___
 
+### PricingFixedUnitForSaveAllOfTypeEnum
+
+Re-exports [PricingFixedUnitForSaveAllOfTypeEnum](Pricing_api.md#pricingfixedunitforsavealloftypeenum-1)
+
+___
+
 ### PricingMenu
 
 Re-exports [PricingMenu](../interfaces/Pricing_api.PricingMenu.md)
@@ -378,6 +389,18 @@ Re-exports [PricingTieredUnitForSave](../interfaces/Pricing_api.PricingTieredUni
 
 ___
 
+### PricingTieredUnitForSaveAllOf
+
+Re-exports [PricingTieredUnitForSaveAllOf](../interfaces/Pricing_api.PricingTieredUnitForSaveAllOf.md)
+
+___
+
+### PricingTieredUnitForSaveAllOfTypeEnum
+
+Re-exports [PricingTieredUnitForSaveAllOfTypeEnum](Pricing_api.md#pricingtieredunitforsavealloftypeenum-1)
+
+___
+
 ### PricingTieredUsageUnit
 
 Re-exports [PricingTieredUsageUnit](../interfaces/Pricing_api.PricingTieredUsageUnit.md)
@@ -399,6 +422,12 @@ ___
 ### PricingTieredUsageUnitForSaveAllOf
 
 Re-exports [PricingTieredUsageUnitForSaveAllOf](../interfaces/Pricing_api.PricingTieredUsageUnitForSaveAllOf.md)
+
+___
+
+### PricingTieredUsageUnitForSaveAllOfTypeEnum
+
+Re-exports [PricingTieredUsageUnitForSaveAllOfTypeEnum](Pricing_api.md#pricingtieredusageunitforsavealloftypeenum-1)
 
 ___
 
@@ -477,6 +506,12 @@ ___
 ### PricingUsageUnitForSaveAllOf
 
 Re-exports [PricingUsageUnitForSaveAllOf](../interfaces/Pricing_api.PricingUsageUnitForSaveAllOf.md)
+
+___
+
+### PricingUsageUnitForSaveAllOfTypeEnum
+
+Re-exports [PricingUsageUnitForSaveAllOfTypeEnum](Pricing_api.md#pricingusageunitforsavealloftypeenum-1)
 
 ___
 

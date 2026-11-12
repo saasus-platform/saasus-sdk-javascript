@@ -30,7 +30,7 @@ LinkAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1112](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1112)
+[src/generated/Auth/api.ts:1220](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1220)
 
 ___
 
@@ -46,7 +46,7 @@ LinkAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1118](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1118)
+[src/generated/Auth/api.ts:1226](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1226)
 
 ___
 
@@ -62,4 +62,4 @@ LinkAwsMarketplaceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1106](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L1106)
+[src/generated/Auth/api.ts:1214](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1214)

@@ -64,7 +64,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -78,7 +78,7 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -106,13 +106,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### createPricingPlan
 
-▸ **createPricingPlan**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`\>\>
+▸ **createPricingPlan**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`, {}, `any`\>\>
 
 Create a pricing plan.
 
@@ -121,11 +121,11 @@ Create a pricing plan.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`SavePricingPlanParam`](../interfaces/Pricing_api.SavePricingPlanParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -139,13 +139,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3882)
+[src/generated/Pricing/api.ts:3959](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3959)
 
 ___
 
 ### deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates
 
-▸ **deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteAllPlansAndMenusAndUnitsAndMetersAndTaxRates**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Unconditionally remove all rate plans, menus, units, meters and tax rates.
 
@@ -153,11 +153,11 @@ Unconditionally remove all rate plans, menus, units, meters and tax rates.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -171,13 +171,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3893](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3893)
+[src/generated/Pricing/api.ts:3970](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3970)
 
 ___
 
 ### deletePricingPlan
 
-▸ **deletePricingPlan**(`planId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deletePricingPlan**(`planId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete a pricing plan.
 
@@ -186,11 +186,11 @@ Delete a pricing plan.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `planId` | `string` | Pricing Plan ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -204,13 +204,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3905](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3905)
+[src/generated/Pricing/api.ts:3982](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3982)
 
 ___
 
 ### deleteStripePlan
 
-▸ **deleteStripePlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteStripePlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete product data from Stripe.
 
@@ -218,11 +218,11 @@ Delete product data from Stripe.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -236,13 +236,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3916](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3916)
+[src/generated/Pricing/api.ts:3993](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3993)
 
 ___
 
 ### getPricingPlan
 
-▸ **getPricingPlan**(`planId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`\>\>
+▸ **getPricingPlan**(`planId`, `options?`): `Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`, {}, `any`\>\>
 
 Get a pricing plan.
 
@@ -251,11 +251,11 @@ Get a pricing plan.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `planId` | `string` | Pricing Plan ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingPlan`](../interfaces/Pricing_api.PricingPlan.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -269,13 +269,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3928](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3928)
+[src/generated/Pricing/api.ts:4005](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L4005)
 
 ___
 
 ### getPricingPlans
 
-▸ **getPricingPlans**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingPlans`](../interfaces/Pricing_api.PricingPlans.md), `any`\>\>
+▸ **getPricingPlans**(`options?`): `Promise`\<`AxiosResponse`\<[`PricingPlans`](../interfaces/Pricing_api.PricingPlans.md), `any`, {}, `any`\>\>
 
 Get pricing plans. Multiple feature menus are grouped together and defined as one pricing plan. Each tenant can choose a pricing plan defined here. If you have a specific tenant-specific rate (private pricing), create and connect the pricing plan specifically for that tenant.
 
@@ -283,11 +283,11 @@ Get pricing plans. Multiple feature menus are grouped together and defined as on
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`PricingPlans`](../interfaces/Pricing_api.PricingPlans.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`PricingPlans`](../interfaces/Pricing_api.PricingPlans.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -301,13 +301,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3939)
+[src/generated/Pricing/api.ts:4016](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L4016)
 
 ___
 
 ### linkPlanToStripe
 
-▸ **linkPlanToStripe**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **linkPlanToStripe**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Connect information to Stripe.
 
@@ -315,11 +315,11 @@ Connect information to Stripe.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -333,13 +333,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3950](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3950)
+[src/generated/Pricing/api.ts:4027](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L4027)
 
 ___
 
 ### updatePricingPlan
 
-▸ **updatePricingPlan**(`planId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updatePricingPlan**(`planId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update a pricing plan.
 
@@ -349,11 +349,11 @@ Update a pricing plan.
 | :------ | :------ | :------ |
 | `planId` | `string` | Pricing Plan ID |
 | `body?` | [`SavePricingPlanParam`](../interfaces/Pricing_api.SavePricingPlanParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -367,13 +367,13 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3963](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3963)
+[src/generated/Pricing/api.ts:4040](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L4040)
 
 ___
 
 ### updatePricingPlansUsed
 
-▸ **updatePricingPlansUsed**(`updatePricingPlansUsedParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updatePricingPlansUsed**(`updatePricingPlansUsedParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update price plan and feature menu/pricing unit to used.
 
@@ -382,11 +382,11 @@ Update price plan and feature menu/pricing unit to used.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `updatePricingPlansUsedParam?` | [`UpdatePricingPlansUsedParam`](../interfaces/Pricing_api.UpdatePricingPlansUsedParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -400,4 +400,4 @@ PricingPlansApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3975](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L3975)
+[src/generated/Pricing/api.ts:4052](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L4052)

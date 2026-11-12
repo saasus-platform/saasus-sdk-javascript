@@ -290,13 +290,15 @@ export const ApiLogApiAxiosParamCreator = function (configuration?: Configuratio
          * Retrieve the log of all API executions.
          * @summary Get API execution log list
          * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
          * @param {number} [limit] Maximum number of logs to retrieve.
+         * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+         * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
          * @param {string} [cursor] Cursor for cursor pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLogs: async (createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getLogs: async (createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/logs`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -327,6 +329,14 @@ export const ApiLogApiAxiosParamCreator = function (configuration?: Configuratio
 
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
+            }
+
+            if (startAt !== undefined) {
+                localVarQueryParameter['start_at'] = startAt;
+            }
+
+            if (endAt !== undefined) {
+                localVarQueryParameter['end_at'] = endAt;
             }
 
             if (cursor !== undefined) {
@@ -369,14 +379,16 @@ export const ApiLogApiFp = function(configuration?: Configuration) {
          * Retrieve the log of all API executions.
          * @summary Get API execution log list
          * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
          * @param {number} [limit] Maximum number of logs to retrieve.
+         * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+         * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
          * @param {string} [cursor] Cursor for cursor pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiLogs>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(createdDate, createdAt, limit, cursor, options);
+        async getLogs(createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiLogs>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -403,14 +415,16 @@ export const ApiLogApiFactory = function (configuration?: Configuration, basePat
          * Retrieve the log of all API executions.
          * @summary Get API execution log list
          * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+         * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
          * @param {number} [limit] Maximum number of logs to retrieve.
+         * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+         * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
          * @param {string} [cursor] Cursor for cursor pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: any): AxiosPromise<ApiLogs> {
-            return localVarFp.getLogs(createdDate, createdAt, limit, cursor, options).then((request) => request(axios, basePath));
+        getLogs(createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: any): AxiosPromise<ApiLogs> {
+            return localVarFp.getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -438,15 +452,17 @@ export class ApiLogApi extends BaseAPI {
      * Retrieve the log of all API executions.
      * @summary Get API execution log list
      * @param {string} [createdDate] The date, in format of YYYY-MM-DD, to retrieve the log.
-     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log.
+     * @param {string} [createdAt] The datetime, in ISO 8601 format, to retrieve the log. Cannot be specified together with start_at/end_at.
      * @param {number} [limit] Maximum number of logs to retrieve.
+     * @param {number} [startAt] The start of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
+     * @param {number} [endAt] The end of the search range as an epoch second timestamp. Used for range search. Cannot be specified together with created_at. When specified, created_date is ignored.
      * @param {string} [cursor] Cursor for cursor pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ApiLogApi
      */
-    public getLogs(createdDate?: string, createdAt?: string, limit?: number, cursor?: string, options?: AxiosRequestConfig) {
-        return ApiLogApiFp(this.configuration).getLogs(createdDate, createdAt, limit, cursor, options).then((request) => request(this.axios, this.basePath));
+    public getLogs(createdDate?: string, createdAt?: string, limit?: number, startAt?: number, endAt?: number, cursor?: string, options?: AxiosRequestConfig) {
+        return ApiLogApiFp(this.configuration).getLogs(createdDate, createdAt, limit, startAt, endAt, cursor, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

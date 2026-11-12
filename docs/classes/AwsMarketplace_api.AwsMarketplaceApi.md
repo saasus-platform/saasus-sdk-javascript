@@ -69,7 +69,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/base.ts#L52)
 
 ## Properties
 
@@ -83,7 +83,7 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/base.ts#L52)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/base.ts#L52)
+[src/generated/AwsMarketplace/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/base.ts#L52)
 
 ___
 
@@ -111,13 +111,13 @@ ___
 
 #### Defined in
 
-[src/generated/AwsMarketplace/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/base.ts#L50)
+[src/generated/AwsMarketplace/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/base.ts#L50)
 
 ## Methods
 
 ### createCustomer
 
-▸ **createCustomer**(`createCustomerParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`\>\>
+▸ **createCustomer**(`createCustomerParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, {}, `any`\>\>
 
 Create customer information to be linked to AWS Marketplace.
 
@@ -126,11 +126,11 @@ Create customer information to be linked to AWS Marketplace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `createCustomerParam?` | [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -144,13 +144,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1212)
+[src/generated/AwsMarketplace/api.ts:1212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1212)
 
 ___
 
 ### getCatalogEntityVisibility
 
-▸ **getCatalogEntityVisibility**(`options?`): `Promise`\<`AxiosResponse`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`\>\>
+▸ **getCatalogEntityVisibility**(`options?`): `Promise`\<`AxiosResponse`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`, {}, `any`\>\>
 
 Retrieve the product\'s publication status from AWS Marketplace.
 
@@ -158,11 +158,11 @@ Retrieve the product\'s publication status from AWS Marketplace.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -176,13 +176,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1223)
+[src/generated/AwsMarketplace/api.ts:1223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1223)
 
 ___
 
 ### getCloudFormationLaunchStackLink
 
-▸ **getCloudFormationLaunchStackLink**(`options?`): `Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`\>\>
+▸ **getCloudFormationLaunchStackLink**(`options?`): `Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`, {}, `any`\>\>
 
 Get the CloudFormation Quick Create link.
 
@@ -190,11 +190,11 @@ Get the CloudFormation Quick Create link.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -208,13 +208,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1234)
+[src/generated/AwsMarketplace/api.ts:1234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1234)
 
 ___
 
 ### getCustomer
 
-▸ **getCustomer**(`customerIdentifier`, `options?`): `Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`\>\>
+▸ **getCustomer**(`customerIdentifier`, `options?`): `Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, {}, `any`\>\>
 
 Get customer information to be linked to AWS Marketplace.
 
@@ -223,11 +223,11 @@ Get customer information to be linked to AWS Marketplace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `customerIdentifier` | `string` | Customer ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -241,13 +241,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1246)
+[src/generated/AwsMarketplace/api.ts:1246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1246)
 
 ___
 
 ### getCustomers
 
-▸ **getCustomers**(`tenantIds?`, `options?`): `Promise`\<`AxiosResponse`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`\>\>
+▸ **getCustomers**(`tenantIds?`, `options?`): `Promise`\<`AxiosResponse`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`, {}, `any`\>\>
 
 Get a list of customer information to be linked to AWS Marketplace.
 
@@ -256,11 +256,11 @@ Get a list of customer information to be linked to AWS Marketplace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `tenantIds?` | `string`[] | 指定したテナントIDの顧客を取得する(Get customers with the specified tenant ID) |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -274,13 +274,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1258](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1258)
+[src/generated/AwsMarketplace/api.ts:1258](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1258)
 
 ___
 
 ### getListingStatus
 
-▸ **getListingStatus**(`options?`): `Promise`\<`AxiosResponse`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`\>\>
+▸ **getListingStatus**(`options?`): `Promise`\<`AxiosResponse`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`, {}, `any`\>\>
 
 Get AWS Marketplace Listing Status.
 
@@ -288,11 +288,11 @@ Get AWS Marketplace Listing Status.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -306,13 +306,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1269](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1269)
+[src/generated/AwsMarketplace/api.ts:1269](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1269)
 
 ___
 
 ### getPlanByPlanName
 
-▸ **getPlanByPlanName**(`planName`, `options?`): `Promise`\<`AxiosResponse`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`\>\>
+▸ **getPlanByPlanName**(`planName`, `options?`): `Promise`\<`AxiosResponse`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`, {}, `any`\>\>
 
 Obtain plan information to link to AWS Marketplace.
 
@@ -321,11 +321,11 @@ Obtain plan information to link to AWS Marketplace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `planName` | `string` | AWS Marketplace linked plan name |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -339,13 +339,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1281)
+[src/generated/AwsMarketplace/api.ts:1281](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1281)
 
 ___
 
 ### getPlans
 
-▸ **getPlans**(`options?`): `Promise`\<`AxiosResponse`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`\>\>
+▸ **getPlans**(`options?`): `Promise`\<`AxiosResponse`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`, {}, `any`\>\>
 
 Obtain plan information to link to AWS Marketplace.
 
@@ -353,11 +353,11 @@ Obtain plan information to link to AWS Marketplace.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -371,13 +371,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1292)
+[src/generated/AwsMarketplace/api.ts:1292](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1292)
 
 ___
 
 ### getSettings
 
-▸ **getSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`\>\>
+▸ **getSettings**(`options?`): `Promise`\<`AxiosResponse`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`, {}, `any`\>\>
 
 Get AWS Marketplace Settings.
 
@@ -385,11 +385,11 @@ Get AWS Marketplace Settings.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -403,13 +403,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1303](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1303)
+[src/generated/AwsMarketplace/api.ts:1303](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1303)
 
 ___
 
 ### savePlan
 
-▸ **savePlan**(`savePlanParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **savePlan**(`savePlanParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Save plan information to be linked to AWSMarketplace.
 
@@ -418,11 +418,11 @@ Save plan information to be linked to AWSMarketplace.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `savePlanParam?` | [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -436,13 +436,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1315)
+[src/generated/AwsMarketplace/api.ts:1315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1315)
 
 ___
 
 ### syncCustomer
 
-▸ **syncCustomer**(`customerIdentifier`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **syncCustomer**(`customerIdentifier`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Sync AWS Marketplace customer information to SaaSus.
 
@@ -451,11 +451,11 @@ Sync AWS Marketplace customer information to SaaSus.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `customerIdentifier` | `string` | Customer ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -469,13 +469,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1327](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1327)
+[src/generated/AwsMarketplace/api.ts:1327](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1327)
 
 ___
 
 ### updateListingStatus
 
-▸ **updateListingStatus**(`updateListingStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateListingStatus**(`updateListingStatusParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update AWS Marketplace Listing Status.
 
@@ -484,11 +484,11 @@ Update AWS Marketplace Listing Status.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `updateListingStatusParam?` | [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -502,13 +502,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1339)
+[src/generated/AwsMarketplace/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1339)
 
 ___
 
 ### updateSettings
 
-▸ **updateSettings**(`updateSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateSettings**(`updateSettingsParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update AWS Marketplace Settings.
 
@@ -517,11 +517,11 @@ Update AWS Marketplace Settings.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `updateSettingsParam?` | [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -535,13 +535,13 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1351)
+[src/generated/AwsMarketplace/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1351)
 
 ___
 
 ### verifyRegistrationToken
 
-▸ **verifyRegistrationToken**(`verifyRegistrationTokenParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **verifyRegistrationToken**(`verifyRegistrationTokenParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Verify Registration Token.
 
@@ -550,11 +550,11 @@ Verify Registration Token.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `verifyRegistrationTokenParam?` | [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -568,4 +568,4 @@ AwsMarketplaceApi
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1363)
+[src/generated/AwsMarketplace/api.ts:1363](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1363)

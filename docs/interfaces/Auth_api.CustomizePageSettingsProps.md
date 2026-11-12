@@ -32,7 +32,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:726](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L726)
+[src/generated/Auth/api.ts:802](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L802)
 
 ___
 
@@ -48,7 +48,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:732](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L732)
+[src/generated/Auth/api.ts:808](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L808)
 
 ___
 
@@ -64,7 +64,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:720](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L720)
+[src/generated/Auth/api.ts:796](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L796)
 
 ___
 
@@ -80,7 +80,7 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:714](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L714)
+[src/generated/Auth/api.ts:790](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L790)
 
 ___
 
@@ -96,4 +96,4 @@ CustomizePageSettingsProps
 
 #### Defined in
 
-[src/generated/Auth/api.ts:708](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L708)
+[src/generated/Auth/api.ts:784](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L784)

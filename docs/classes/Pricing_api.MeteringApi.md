@@ -69,7 +69,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -83,7 +83,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -111,13 +111,13 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
 ### createMeteringUnit
 
-▸ **createMeteringUnit**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnit`](../interfaces/Pricing_api.MeteringUnit.md), `any`\>\>
+▸ **createMeteringUnit**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnit`](../interfaces/Pricing_api.MeteringUnit.md), `any`, {}, `any`\>\>
 
 Create a metering unit.
 
@@ -126,11 +126,11 @@ Create a metering unit.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnit`](../interfaces/Pricing_api.MeteringUnit.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnit`](../interfaces/Pricing_api.MeteringUnit.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -144,13 +144,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2752](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2752)
+[src/generated/Pricing/api.ts:2829](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2829)
 
 ___
 
 ### deleteMeteringUnitByID
 
-▸ **deleteMeteringUnitByID**(`meteringUnitId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteMeteringUnitByID**(`meteringUnitId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete metering unit.
 
@@ -159,11 +159,11 @@ Delete metering unit.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `meteringUnitId` | `string` | Metering Unit ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -177,13 +177,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2764](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2764)
+[src/generated/Pricing/api.ts:2841](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2841)
 
 ___
 
 ### deleteMeteringUnitTimestampCount
 
-▸ **deleteMeteringUnitTimestampCount**(`tenantId`, `meteringUnitName`, `timestamp`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteMeteringUnitTimestampCount**(`tenantId`, `meteringUnitName`, `timestamp`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Deletes metering unit count for the specified timestamp.
 
@@ -194,11 +194,11 @@ Deletes metering unit count for the specified timestamp.
 | `tenantId` | `string` | Tenant ID |
 | `meteringUnitName` | `string` | Metering Unit Name |
 | `timestamp` | `number` | Timestamp |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -212,13 +212,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2778](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2778)
+[src/generated/Pricing/api.ts:2855](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2855)
 
 ___
 
 ### getMeteringUnitDateCountByTenantIdAndUnitNameAndDate
 
-▸ **getMeteringUnitDateCountByTenantIdAndUnitNameAndDate**(`tenantId`, `meteringUnitName`, `date`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`\>\>
+▸ **getMeteringUnitDateCountByTenantIdAndUnitNameAndDate**(`tenantId`, `meteringUnitName`, `date`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`, {}, `any`\>\>
 
 Gets the metering unit count for a specific date.
 
@@ -229,11 +229,11 @@ Gets the metering unit count for a specific date.
 | `tenantId` | `string` | Tenant ID |
 | `meteringUnitName` | `string` | Metering Unit Name |
 | `date` | `string` | Date |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -247,13 +247,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2792](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2792)
+[src/generated/Pricing/api.ts:2869](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2869)
 
 ___
 
 ### getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod
 
-▸ **getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod**(`tenantId`, `meteringUnitName`, `startTimestamp?`, `endTimestamp?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDatePeriodCounts`](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md), `any`\>\>
+▸ **getMeteringUnitDateCountByTenantIdAndUnitNameAndDatePeriod**(`tenantId`, `meteringUnitName`, `startTimestamp?`, `endTimestamp?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDatePeriodCounts`](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md), `any`, {}, `any`\>\>
 
 Obtain metering unit counts for a specified date/time period.
 
@@ -265,11 +265,11 @@ Obtain metering unit counts for a specified date/time period.
 | `meteringUnitName` | `string` | Metering Unit Name |
 | `startTimestamp?` | `number` | Start Date-Time |
 | `endTimestamp?` | `number` | End Date-Time |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitDatePeriodCounts`](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitDatePeriodCounts`](../interfaces/Pricing_api.MeteringUnitDatePeriodCounts.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -283,13 +283,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2807](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2807)
+[src/generated/Pricing/api.ts:2884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2884)
 
 ___
 
 ### getMeteringUnitDateCountByTenantIdAndUnitNameToday
 
-▸ **getMeteringUnitDateCountByTenantIdAndUnitNameToday**(`tenantId`, `meteringUnitName`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`\>\>
+▸ **getMeteringUnitDateCountByTenantIdAndUnitNameToday**(`tenantId`, `meteringUnitName`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`, {}, `any`\>\>
 
 Get the metering unit count for the current day.
 
@@ -299,11 +299,11 @@ Get the metering unit count for the current day.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `meteringUnitName` | `string` | Metering Unit Name |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitDateCount`](../interfaces/Pricing_api.MeteringUnitDateCount.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -317,13 +317,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2820](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2820)
+[src/generated/Pricing/api.ts:2897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2897)
 
 ___
 
 ### getMeteringUnitDateCountsByTenantIdAndDate
 
-▸ **getMeteringUnitDateCountsByTenantIdAndDate**(`tenantId`, `date`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDateCounts`](../interfaces/Pricing_api.MeteringUnitDateCounts.md), `any`\>\>
+▸ **getMeteringUnitDateCountsByTenantIdAndDate**(`tenantId`, `date`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitDateCounts`](../interfaces/Pricing_api.MeteringUnitDateCounts.md), `any`, {}, `any`\>\>
 
 Gets the total metering unit count for the specified date.
 
@@ -333,11 +333,11 @@ Gets the total metering unit count for the specified date.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `date` | `string` | Date |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitDateCounts`](../interfaces/Pricing_api.MeteringUnitDateCounts.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitDateCounts`](../interfaces/Pricing_api.MeteringUnitDateCounts.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -351,13 +351,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2833](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2833)
+[src/generated/Pricing/api.ts:2910](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2910)
 
 ___
 
 ### getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth
 
-▸ **getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth**(`tenantId`, `meteringUnitName`, `month`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`\>\>
+▸ **getMeteringUnitMonthCountByTenantIdAndUnitNameAndMonth**(`tenantId`, `meteringUnitName`, `month`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`, {}, `any`\>\>
 
 Gets the metering unit count for the specified month.
 
@@ -368,11 +368,11 @@ Gets the metering unit count for the specified month.
 | `tenantId` | `string` | Tenant ID |
 | `meteringUnitName` | `string` | Metering Unit Name |
 | `month` | `string` | Month |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -386,13 +386,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2847](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2847)
+[src/generated/Pricing/api.ts:2924](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2924)
 
 ___
 
 ### getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth
 
-▸ **getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth**(`tenantId`, `meteringUnitName`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`\>\>
+▸ **getMeteringUnitMonthCountByTenantIdAndUnitNameThisMonth**(`tenantId`, `meteringUnitName`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`, {}, `any`\>\>
 
 Get the metering unit count for the current month.
 
@@ -402,11 +402,11 @@ Get the metering unit count for the current month.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `meteringUnitName` | `string` | Metering Unit Name |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCount`](../interfaces/Pricing_api.MeteringUnitMonthCount.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -420,13 +420,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2860](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2860)
+[src/generated/Pricing/api.ts:2937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2937)
 
 ___
 
 ### getMeteringUnitMonthCountsByTenantIdAndMonth
 
-▸ **getMeteringUnitMonthCountsByTenantIdAndMonth**(`tenantId`, `month`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCounts`](../interfaces/Pricing_api.MeteringUnitMonthCounts.md), `any`\>\>
+▸ **getMeteringUnitMonthCountsByTenantIdAndMonth**(`tenantId`, `month`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCounts`](../interfaces/Pricing_api.MeteringUnitMonthCounts.md), `any`, {}, `any`\>\>
 
 Gets all metering unit counts for the specified month.
 
@@ -436,11 +436,11 @@ Gets all metering unit counts for the specified month.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `month` | `string` | Month |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCounts`](../interfaces/Pricing_api.MeteringUnitMonthCounts.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitMonthCounts`](../interfaces/Pricing_api.MeteringUnitMonthCounts.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -454,13 +454,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2873](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2873)
+[src/generated/Pricing/api.ts:2950](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2950)
 
 ___
 
 ### getMeteringUnits
 
-▸ **getMeteringUnits**(`options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnits`](../interfaces/Pricing_api.MeteringUnits.md), `any`\>\>
+▸ **getMeteringUnits**(`options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnits`](../interfaces/Pricing_api.MeteringUnits.md), `any`, {}, `any`\>\>
 
 Get all metering units.
 
@@ -468,11 +468,11 @@ Get all metering units.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnits`](../interfaces/Pricing_api.MeteringUnits.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnits`](../interfaces/Pricing_api.MeteringUnits.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -486,13 +486,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2884)
+[src/generated/Pricing/api.ts:2961](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2961)
 
 ___
 
 ### updateMeteringUnitByID
 
-▸ **updateMeteringUnitByID**(`meteringUnitId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateMeteringUnitByID**(`meteringUnitId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update metering unit.
 
@@ -502,11 +502,11 @@ Update metering unit.
 | :------ | :------ | :------ |
 | `meteringUnitId` | `string` | Metering Unit ID |
 | `body?` | [`MeteringUnitProps`](../interfaces/Pricing_api.MeteringUnitProps.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -520,13 +520,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2897)
+[src/generated/Pricing/api.ts:2974](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2974)
 
 ___
 
 ### updateMeteringUnitTimestampCount
 
-▸ **updateMeteringUnitTimestampCount**(`tenantId`, `meteringUnitName`, `timestamp`, `updateMeteringUnitTimestampCountParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`\>\>
+▸ **updateMeteringUnitTimestampCount**(`tenantId`, `meteringUnitName`, `timestamp`, `updateMeteringUnitTimestampCountParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`, {}, `any`\>\>
 
 Update metering unit count for the specified timestamp.
 
@@ -538,11 +538,11 @@ Update metering unit count for the specified timestamp.
 | `meteringUnitName` | `string` | Metering Unit Name |
 | `timestamp` | `number` | Timestamp |
 | `updateMeteringUnitTimestampCountParam?` | [`UpdateMeteringUnitTimestampCountParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -556,13 +556,13 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2912](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2912)
+[src/generated/Pricing/api.ts:2989](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2989)
 
 ___
 
 ### updateMeteringUnitTimestampCountNow
 
-▸ **updateMeteringUnitTimestampCountNow**(`tenantId`, `meteringUnitName`, `updateMeteringUnitTimestampCountNowParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`\>\>
+▸ **updateMeteringUnitTimestampCountNow**(`tenantId`, `meteringUnitName`, `updateMeteringUnitTimestampCountNowParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`, {}, `any`\>\>
 
 Update the metering unit count for the current time.
 
@@ -573,11 +573,11 @@ Update the metering unit count for the current time.
 | `tenantId` | `string` | Tenant ID |
 | `meteringUnitName` | `string` | Metering Unit Name |
 | `updateMeteringUnitTimestampCountNowParam?` | [`UpdateMeteringUnitTimestampCountNowParam`](../interfaces/Pricing_api.UpdateMeteringUnitTimestampCountNowParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`MeteringUnitTimestampCount`](../interfaces/Pricing_api.MeteringUnitTimestampCount.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -591,4 +591,4 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2926](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L2926)
+[src/generated/Pricing/api.ts:3003](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3003)

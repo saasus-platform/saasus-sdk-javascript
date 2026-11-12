@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/generated/Integration/common.ts:24](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L24)
+[src/generated/Integration/common.ts:24](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L24)
 
 ## Functions
 
@@ -56,13 +56,13 @@
 
 #### Defined in
 
-[src/generated/Integration/common.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L31)
+[src/generated/Integration/common.ts:31](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L31)
 
 ___
 
 ### createRequestFunction
 
-▸ **createRequestFunction**(`axiosArgs`, `globalAxios`, `BASE_PATH`, `configuration?`): \<T, R\>(`axios`: `AxiosInstance`, `basePath`: `string`) => `Promise`\<`R`\>
+▸ **createRequestFunction**(`axiosArgs`, `globalAxios`, `BASE_PATH`, `configuration?`): \<T, R\>(`axios`: `AxiosInstance`, `basePath`: `string`) => `Promise`\<`AxiosResponseResult`\<`T`, `R`, `any`, `any`\>\>
 
 #### Parameters
 
@@ -77,14 +77,14 @@ ___
 
 `fn`
 
-▸ \<`T`, `R`\>(`axios?`, `basePath?`): `Promise`\<`R`\>
+▸ \<`T`, `R`\>(`axios?`, `basePath?`): `Promise`\<`AxiosResponseResult`\<`T`, `R`, `any`, `any`\>\>
 
 ##### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `T` | `unknown` |
-| `R` | `AxiosResponse`\<`T`, `any`\> |
+| `R` | `AxiosResponse`\<`T`, `any`, {}, `any`\> |
 
 ##### Parameters
 
@@ -95,13 +95,13 @@ ___
 
 ##### Returns
 
-`Promise`\<`R`\>
+`Promise`\<`AxiosResponseResult`\<`T`, `R`, `any`, `any`\>\>
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/Integration/common.ts:143](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L143)
+[src/generated/Integration/common.ts:143](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L143)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L121)
+[src/generated/Integration/common.ts:121](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L121)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L41)
+[src/generated/Integration/common.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L41)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:54](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L54)
+[src/generated/Integration/common.ts:54](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L54)
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:64](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L64)
+[src/generated/Integration/common.ts:64](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L64)
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L77)
+[src/generated/Integration/common.ts:77](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L77)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L111)
+[src/generated/Integration/common.ts:111](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L111)
 
 ___
 
@@ -265,4 +265,4 @@ ___
 
 #### Defined in
 
-[src/generated/Integration/common.ts:135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Integration/common.ts#L135)
+[src/generated/Integration/common.ts:135](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Integration/common.ts#L135)

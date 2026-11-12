@@ -61,7 +61,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -75,7 +75,7 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -103,13 +103,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createTenantInvitation
 
-▸ **createTenantInvitation**(`tenantId`, `createTenantInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+▸ **createTenantInvitation**(`tenantId`, `createTenantInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}, `any`\>\>
 
 Create an invitation to the tenant.
 
@@ -119,11 +119,11 @@ Create an invitation to the tenant.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `createTenantInvitationParam?` | [`CreateTenantInvitationParam`](../interfaces/Auth_api.CreateTenantInvitationParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -137,13 +137,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5062](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5062)
+[src/generated/Auth/api.ts:5503](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5503)
 
 ___
 
 ### deleteTenantInvitation
 
-▸ **deleteTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete an invitation for the tenant.
 
@@ -153,11 +153,11 @@ Delete an invitation for the tenant.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `invitationId` | `string` | Invitation ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -171,13 +171,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5075](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5075)
+[src/generated/Auth/api.ts:5516](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5516)
 
 ___
 
 ### getInvitationValidity
 
-▸ **getInvitationValidity**(`invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`\>\>
+▸ **getInvitationValidity**(`invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`, {}, `any`\>\>
 
 Get the validity of an invitation to the tenant.
 
@@ -186,11 +186,11 @@ Get the validity of an invitation to the tenant.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `invitationId` | `string` | Invitation ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`InvitationValidity`](../interfaces/Auth_api.InvitationValidity.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -204,13 +204,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5087](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5087)
+[src/generated/Auth/api.ts:5528](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5528)
 
 ___
 
 ### getTenantInvitation
 
-▸ **getTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+▸ **getTenantInvitation**(`tenantId`, `invitationId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}, `any`\>\>
 
 Get invitation information for the tenant.
 
@@ -220,11 +220,11 @@ Get invitation information for the tenant.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `invitationId` | `string` | Invitation ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Invitation`](../interfaces/Auth_api.Invitation.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -238,13 +238,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5100](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5100)
+[src/generated/Auth/api.ts:5541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5541)
 
 ___
 
 ### getTenantInvitations
 
-▸ **getTenantInvitations**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`\>\>
+▸ **getTenantInvitations**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`, {}, `any`\>\>
 
 Get a list of invitations to the tenant.
 
@@ -253,11 +253,11 @@ Get a list of invitations to the tenant.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Invitations`](../interfaces/Auth_api.Invitations.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -271,13 +271,13 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5112](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5112)
+[src/generated/Auth/api.ts:5553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5553)
 
 ___
 
 ### validateInvitation
 
-▸ **validateInvitation**(`invitationId`, `validateInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **validateInvitation**(`invitationId`, `validateInvitationParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Validate an invitation to the tenant.
 
@@ -287,11 +287,11 @@ Validate an invitation to the tenant.
 | :------ | :------ | :------ |
 | `invitationId` | `string` | Invitation ID |
 | `validateInvitationParam?` | [`ValidateInvitationParam`](../interfaces/Auth_api.ValidateInvitationParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -305,4 +305,4 @@ InvitationApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5125](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5125)
+[src/generated/Auth/api.ts:5566](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5566)

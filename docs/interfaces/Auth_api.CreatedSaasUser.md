@@ -15,6 +15,7 @@ CreatedSaasUser
 - [attributes](Auth_api.CreatedSaasUser.md#attributes)
 - [email](Auth_api.CreatedSaasUser.md#email)
 - [id](Auth_api.CreatedSaasUser.md#id)
+- [last\_login\_at](Auth_api.CreatedSaasUser.md#last_login_at)
 - [password](Auth_api.CreatedSaasUser.md#password)
 - [sign\_in\_id](Auth_api.CreatedSaasUser.md#sign_in_id)
 
@@ -36,7 +37,7 @@ CreatedSaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:558](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L558)
+[src/generated/Auth/api.ts:628](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L628)
 
 ___
 
@@ -52,7 +53,7 @@ CreatedSaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:546](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L546)
+[src/generated/Auth/api.ts:616](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L616)
 
 ___
 
@@ -66,7 +67,23 @@ CreatedSaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:540](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L540)
+[src/generated/Auth/api.ts:610](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L610)
+
+___
+
+### last\_login\_at
+
+• `Optional` **last\_login\_at**: ``null`` \| `number`
+
+Last login date and time (unix timestamp). Null if the user has never logged in.
+
+**`Memberof`**
+
+CreatedSaasUser
+
+#### Defined in
+
+[src/generated/Auth/api.ts:634](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L634)
 
 ___
 
@@ -82,7 +99,7 @@ CreatedSaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:564](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L564)
+[src/generated/Auth/api.ts:640](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L640)
 
 ___
 
@@ -98,4 +115,4 @@ CreatedSaasUser
 
 #### Defined in
 
-[src/generated/Auth/api.ts:552](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L552)
+[src/generated/Auth/api.ts:622](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L622)

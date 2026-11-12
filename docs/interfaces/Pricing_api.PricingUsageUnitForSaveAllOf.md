@@ -14,6 +14,7 @@ PricingUsageUnitForSaveAllOf
 
 - [aggregate\_usage](Pricing_api.PricingUsageUnitForSaveAllOf.md#aggregate_usage)
 - [metering\_unit\_name](Pricing_api.PricingUsageUnitForSaveAllOf.md#metering_unit_name)
+- [type](Pricing_api.PricingUsageUnitForSaveAllOf.md#type)
 - [unit\_amount](Pricing_api.PricingUsageUnitForSaveAllOf.md#unit_amount)
 - [upper\_count](Pricing_api.PricingUsageUnitForSaveAllOf.md#upper_count)
 
@@ -29,7 +30,7 @@ PricingUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1385](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1385)
+[src/generated/Pricing/api.ts:1455](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1455)
 
 ___
 
@@ -45,7 +46,21 @@ PricingUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1379](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1379)
+[src/generated/Pricing/api.ts:1449](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1449)
+
+___
+
+### type
+
+• `Optional` **type**: ``"usage"``
+
+**`Memberof`**
+
+PricingUsageUnitForSaveAllOf
+
+#### Defined in
+
+[src/generated/Pricing/api.ts:1431](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1431)
 
 ___
 
@@ -61,7 +76,7 @@ PricingUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1373)
+[src/generated/Pricing/api.ts:1443](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1443)
 
 ___
 
@@ -77,4 +92,4 @@ PricingUsageUnitForSaveAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1367](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Pricing/api.ts#L1367)
+[src/generated/Pricing/api.ts:1437](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1437)

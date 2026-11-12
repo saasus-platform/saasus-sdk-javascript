@@ -60,26 +60,26 @@ AwsMarketplaceApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `createCustomer` | (`createCustomerParam?`: [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getCatalogEntityVisibility` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getCloudFormationLaunchStackLink` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getCustomers` | (`tenantIds?`: `string`[], `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getListingStatus` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getPlanByPlanName` | (`planName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getPlans` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `getSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `savePlan` | (`savePlanParam?`: [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `syncCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `updateListingStatus` | (`updateListingStatusParam?`: [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `updateSettings` | (`updateSettingsParam?`: [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
-| `verifyRegistrationToken` | (`verifyRegistrationTokenParam?`: [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `createCustomer` | (`createCustomerParam?`: [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getCatalogEntityVisibility` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getCloudFormationLaunchStackLink` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getCustomers` | (`tenantIds?`: `string`[], `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getListingStatus` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getPlanByPlanName` | (`planName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getPlans` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `getSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `savePlan` | (`savePlanParam?`: [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `syncCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `updateListingStatus` | (`updateListingStatusParam?`: [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `updateSettings` | (`updateSettingsParam?`: [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `verifyRegistrationToken` | (`verifyRegistrationTokenParam?`: [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L375)
+[src/generated/AwsMarketplace/api.ts:375](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L375)
 
 ___
 
@@ -103,26 +103,26 @@ AwsMarketplaceApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createCustomer` | (`createCustomerParam?`: [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md), `options?`: `any`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md)\> |
-| `getCatalogEntityVisibility` | (`options?`: `any`) => `AxiosPromise`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md)\> |
-| `getCloudFormationLaunchStackLink` | (`options?`: `any`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md)\> |
-| `getCustomer` | (`customerIdentifier`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md)\> |
-| `getCustomers` | (`tenantIds?`: `string`[], `options?`: `any`) => `AxiosPromise`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md)\> |
-| `getListingStatus` | (`options?`: `any`) => `AxiosPromise`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md)\> |
-| `getPlanByPlanName` | (`planName`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md)\> |
-| `getPlans` | (`options?`: `any`) => `AxiosPromise`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md)\> |
-| `getSettings` | (`options?`: `any`) => `AxiosPromise`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md)\> |
-| `savePlan` | (`savePlanParam?`: [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `syncCustomer` | (`customerIdentifier`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateListingStatus` | (`updateListingStatusParam?`: [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `updateSettings` | (`updateSettingsParam?`: [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
-| `verifyRegistrationToken` | (`verifyRegistrationTokenParam?`: [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md), `options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `createCustomer` | (`createCustomerParam?`: [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md), `options?`: `any`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, `any`\> |
+| `getCatalogEntityVisibility` | (`options?`: `any`) => `AxiosPromise`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`, `any`\> |
+| `getCloudFormationLaunchStackLink` | (`options?`: `any`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`, `any`\> |
+| `getCustomer` | (`customerIdentifier`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, `any`\> |
+| `getCustomers` | (`tenantIds?`: `string`[], `options?`: `any`) => `AxiosPromise`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`, `any`\> |
+| `getListingStatus` | (`options?`: `any`) => `AxiosPromise`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`, `any`\> |
+| `getPlanByPlanName` | (`planName`: `string`, `options?`: `any`) => `AxiosPromise`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`, `any`\> |
+| `getPlans` | (`options?`: `any`) => `AxiosPromise`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`, `any`\> |
+| `getSettings` | (`options?`: `any`) => `AxiosPromise`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`, `any`\> |
+| `savePlan` | (`savePlanParam?`: [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `syncCustomer` | (`customerIdentifier`: `string`, `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateListingStatus` | (`updateListingStatusParam?`: [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `updateSettings` | (`updateSettingsParam?`: [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
+| `verifyRegistrationToken` | (`verifyRegistrationTokenParam?`: [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md), `options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1056](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1056)
+[src/generated/AwsMarketplace/api.ts:1056](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1056)
 
 ___
 
@@ -144,26 +144,26 @@ AwsMarketplaceApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createCustomer` | (`createCustomerParam?`: [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md)\>\> |
-| `getCatalogEntityVisibility` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md)\>\> |
-| `getCloudFormationLaunchStackLink` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md)\>\> |
-| `getCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md)\>\> |
-| `getCustomers` | (`tenantIds?`: `string`[], `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md)\>\> |
-| `getListingStatus` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md)\>\> |
-| `getPlanByPlanName` | (`planName`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md)\>\> |
-| `getPlans` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md)\>\> |
-| `getSettings` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md)\>\> |
-| `savePlan` | (`savePlanParam?`: [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `syncCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateListingStatus` | (`updateListingStatusParam?`: [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `updateSettings` | (`updateSettingsParam?`: [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
-| `verifyRegistrationToken` | (`verifyRegistrationTokenParam?`: [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `createCustomer` | (`createCustomerParam?`: [`CreateCustomerParam`](../interfaces/AwsMarketplace_api.CreateCustomerParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, `any`\>\> |
+| `getCatalogEntityVisibility` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CatalogEntityVisibility`](../interfaces/AwsMarketplace_api.CatalogEntityVisibility.md), `any`, `any`\>\> |
+| `getCloudFormationLaunchStackLink` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`CloudFormationLaunchStackLink`](../interfaces/AwsMarketplace_api.CloudFormationLaunchStackLink.md), `any`, `any`\>\> |
+| `getCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Customer`](../interfaces/AwsMarketplace_api.Customer.md), `any`, `any`\>\> |
+| `getCustomers` | (`tenantIds?`: `string`[], `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Customers`](../interfaces/AwsMarketplace_api.Customers.md), `any`, `any`\>\> |
+| `getListingStatus` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`GetListingStatusResult`](../interfaces/AwsMarketplace_api.GetListingStatusResult.md), `any`, `any`\>\> |
+| `getPlanByPlanName` | (`planName`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Plan`](../interfaces/AwsMarketplace_api.Plan.md), `any`, `any`\>\> |
+| `getPlans` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Plans`](../interfaces/AwsMarketplace_api.Plans.md), `any`, `any`\>\> |
+| `getSettings` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<[`Settings`](../interfaces/AwsMarketplace_api.Settings.md), `any`, `any`\>\> |
+| `savePlan` | (`savePlanParam?`: [`SavePlanParam`](../interfaces/AwsMarketplace_api.SavePlanParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `syncCustomer` | (`customerIdentifier`: `string`, `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateListingStatus` | (`updateListingStatusParam?`: [`UpdateListingStatusParam`](../interfaces/AwsMarketplace_api.UpdateListingStatusParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `updateSettings` | (`updateSettingsParam?`: [`UpdateSettingsParam`](../interfaces/AwsMarketplace_api.UpdateSettingsParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
+| `verifyRegistrationToken` | (`verifyRegistrationTokenParam?`: [`VerifyRegistrationTokenParam`](../interfaces/AwsMarketplace_api.VerifyRegistrationTokenParam.md), `options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L897)
+[src/generated/AwsMarketplace/api.ts:897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L897)
 
 ___
 
@@ -185,13 +185,13 @@ ErrorApi - axios parameter creator
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<[`RequestArgs`](../interfaces/AwsMarketplace_base.RequestArgs.md)\> | - |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1373)
+[src/generated/AwsMarketplace/api.ts:1373](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1373)
 
 ___
 
@@ -215,13 +215,13 @@ ErrorApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`\> |
+| `returnInternalServerError` | (`options?`: `any`) => `AxiosPromise`\<`void`, `any`, `any`\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1436](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1436)
+[src/generated/AwsMarketplace/api.ts:1436](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1436)
 
 ___
 
@@ -243,10 +243,10 @@ ErrorApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`\>\> |
+| `returnInternalServerError` | (`options?`: `AxiosRequestConfig`\<`any`, `any`\>) => `Promise`\<(`axios?`: `AxiosInstance`, `basePath?`: `string`) => `AxiosPromise`\<`void`, `any`, `any`\>\> |
 
 **`Export`**
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:1416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/AwsMarketplace/api.ts#L1416)
+[src/generated/AwsMarketplace/api.ts:1416](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L1416)

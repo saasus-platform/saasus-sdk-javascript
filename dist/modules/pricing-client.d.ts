@@ -12,5 +12,6 @@ export declare class PricingClient {
     private apiBase;
     private referer;
     private xSaaSusReferer;
-    constructor(referer?: string, xSaaSusReferer?: string);
+    private xSaaSusTraceId;
+    constructor(referer?: string, xSaaSusReferer?: string, xSaaSusTraceId?: string);
 }

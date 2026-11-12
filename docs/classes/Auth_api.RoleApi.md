@@ -59,7 +59,7 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -73,7 +73,7 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -101,13 +101,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createRole
 
-▸ **createRole**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Role`](../interfaces/Auth_api.Role.md), `any`\>\>
+▸ **createRole**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Role`](../interfaces/Auth_api.Role.md), `any`, {}, `any`\>\>
 
 Create a role. By granting users the roles created here, it becomes easier to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
 
@@ -116,11 +116,11 @@ Create a role. By granting users the roles created here, it becomes easier to im
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`Role`](../interfaces/Auth_api.Role.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Role`](../interfaces/Auth_api.Role.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Role`](../interfaces/Auth_api.Role.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -134,13 +134,13 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5411](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5411)
+[src/generated/Auth/api.ts:5852](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5852)
 
 ___
 
 ### deleteRole
 
-▸ **deleteRole**(`roleName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteRole**(`roleName`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete role.
 
@@ -149,11 +149,11 @@ Delete role.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `roleName` | `string` | Role name |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -167,13 +167,13 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5423](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5423)
+[src/generated/Auth/api.ts:5864](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5864)
 
 ___
 
 ### getRoles
 
-▸ **getRoles**(`options?`): `Promise`\<`AxiosResponse`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`\>\>
+▸ **getRoles**(`options?`): `Promise`\<`AxiosResponse`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`, {}, `any`\>\>
 
 Get registered roles list. Granting users the roles defined here makes it easy to implement role-based authorization on the SaaS side. In addition, even the same user can have different roles for each tenant/environment to which they belong.
 
@@ -181,11 +181,11 @@ Get registered roles list. Granting users the roles defined here makes it easy t
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Roles`](../interfaces/Auth_api.Roles.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -199,13 +199,13 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5434](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5434)
+[src/generated/Auth/api.ts:5875](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5875)
 
 ___
 
 ### updateRole
 
-▸ **updateRole**(`roleName`, `updateRoleParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateRole**(`roleName`, `updateRoleParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update role display name.
 
@@ -215,11 +215,11 @@ Update role display name.
 | :------ | :------ | :------ |
 | `roleName` | `string` | Role name |
 | `updateRoleParam?` | [`UpdateRoleParam`](../interfaces/Auth_api.UpdateRoleParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -233,4 +233,4 @@ RoleApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:5447](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L5447)
+[src/generated/Auth/api.ts:5888](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L5888)

@@ -29,7 +29,7 @@ UpdateSaasUserPasswordParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2550](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2550)
+[src/generated/Auth/api.ts:2839](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2839)
 
 ___
 
@@ -45,4 +45,4 @@ UpdateSaasUserPasswordParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2556](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L2556)
+[src/generated/Auth/api.ts:2845](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2845)

@@ -68,7 +68,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -82,7 +82,7 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -110,13 +110,13 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
 ### createTenant
 
-▸ **createTenant**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
+▸ **createTenant**(`body?`, `options?`): `Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, {}, `any`\>\>
 
 Create a tenant managed by the SaaSus Platform.
 
@@ -125,11 +125,11 @@ Create a tenant managed by the SaaSus Platform.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `body?` | [`TenantProps`](../interfaces/Auth_api.TenantProps.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Tenant`](../interfaces/Auth_api.Tenant.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -143,13 +143,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8519](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8519)
+[src/generated/Auth/api.ts:9201](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9201)
 
 ___
 
 ### createTenantAndPricing
 
-▸ **createTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **createTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Set Stripe initial information via billing
 
@@ -157,11 +157,11 @@ Set Stripe initial information via billing
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -175,13 +175,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8530](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8530)
+[src/generated/Auth/api.ts:9212](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9212)
 
 ___
 
 ### deleteStripeTenantAndPricing
 
-▸ **deleteStripeTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteStripeTenantAndPricing**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete customer and product from Stripe.
 
@@ -189,11 +189,11 @@ Delete customer and product from Stripe.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -207,13 +207,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8541)
+[src/generated/Auth/api.ts:9223](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9223)
 
 ___
 
 ### deleteTenant
 
-▸ **deleteTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **deleteTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete SaaSus Platform tenant.
 
@@ -222,11 +222,11 @@ Delete SaaSus Platform tenant.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -240,13 +240,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8553)
+[src/generated/Auth/api.ts:9235](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9235)
 
 ___
 
 ### getStripeCustomer
 
-▸ **getStripeCustomer**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`\>\>
+▸ **getStripeCustomer**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`, {}, `any`\>\>
 
 Get the Stripe Customer information associated with the tenant, including their subscriptions.
 
@@ -255,11 +255,11 @@ Get the Stripe Customer information associated with the tenant, including their 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`StripeCustomer`](../interfaces/Auth_api.StripeCustomer.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -273,13 +273,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8565](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8565)
+[src/generated/Auth/api.ts:9247](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9247)
 
 ___
 
 ### getTenant
 
-▸ **getTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`\>\>
+▸ **getTenant**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`, {}, `any`\>\>
 
 Get the details of tenant managed on the SaaSus Platform.
 
@@ -288,11 +288,11 @@ Get the details of tenant managed on the SaaSus Platform.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TenantDetail`](../interfaces/Auth_api.TenantDetail.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -306,13 +306,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8577](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8577)
+[src/generated/Auth/api.ts:9259](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9259)
 
 ___
 
 ### getTenantIdentityProviders
 
-▸ **getTenantIdentityProviders**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`\>\>
+▸ **getTenantIdentityProviders**(`tenantId`, `options?`): `Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`, {}, `any`\>\>
 
 Get sign-in information via external identity provider per tenant.
 
@@ -321,11 +321,11 @@ Get sign-in information via external identity provider per tenant.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`TenantIdentityProviders`](../interfaces/Auth_api.TenantIdentityProviders.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -339,13 +339,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8589](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8589)
+[src/generated/Auth/api.ts:9271](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9271)
 
 ___
 
 ### getTenants
 
-▸ **getTenants**(`options?`): `Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`\>\>
+▸ **getTenants**(`options?`): `Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`, {}, `any`\>\>
 
 Get tenants managed by SaaSus Platform.
 
@@ -353,11 +353,11 @@ Get tenants managed by SaaSus Platform.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`\>\>
+`Promise`\<`AxiosResponse`\<[`Tenants`](../interfaces/Auth_api.Tenants.md), `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -371,13 +371,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8600](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8600)
+[src/generated/Auth/api.ts:9282](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9282)
 
 ___
 
 ### resetPlan
 
-▸ **resetPlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **resetPlan**(`options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Delete all information related to rate plans. Delete plans linked to tenants and plan definitions. If you are using the Stripe linkage, the linkage will be removed.
 
@@ -385,11 +385,11 @@ Delete all information related to rate plans. Delete plans linked to tenants and
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -403,13 +403,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8611](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8611)
+[src/generated/Auth/api.ts:9293](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9293)
 
 ___
 
 ### updateTenant
 
-▸ **updateTenant**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenant**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update SaaSus Platform tenant details.
 
@@ -419,11 +419,11 @@ Update SaaSus Platform tenant details.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `body?` | [`TenantProps`](../interfaces/Auth_api.TenantProps.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -437,13 +437,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8624](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8624)
+[src/generated/Auth/api.ts:9306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9306)
 
 ___
 
 ### updateTenantBillingInfo
 
-▸ **updateTenantBillingInfo**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantBillingInfo**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update SaaSus Platform tenant billing information.
 
@@ -453,11 +453,11 @@ Update SaaSus Platform tenant billing information.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `body?` | [`BillingInfo`](../interfaces/Auth_api.BillingInfo.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -471,13 +471,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8637](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8637)
+[src/generated/Auth/api.ts:9319](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9319)
 
 ___
 
 ### updateTenantIdentityProvider
 
-▸ **updateTenantIdentityProvider**(`tenantId`, `updateTenantIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantIdentityProvider**(`tenantId`, `updateTenantIdentityProviderParam?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update sign-in information via external identity provider per tenant.
 
@@ -487,11 +487,11 @@ Update sign-in information via external identity provider per tenant.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `updateTenantIdentityProviderParam?` | [`UpdateTenantIdentityProviderParam`](../interfaces/Auth_api.UpdateTenantIdentityProviderParam.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -505,13 +505,13 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8650](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8650)
+[src/generated/Auth/api.ts:9332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9332)
 
 ___
 
 ### updateTenantPlan
 
-▸ **updateTenantPlan**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+▸ **updateTenantPlan**(`tenantId`, `body?`, `options?`): `Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 Update SaaSus Platform tenant plan information.
 
@@ -521,11 +521,11 @@ Update SaaSus Platform tenant plan information.
 | :------ | :------ | :------ |
 | `tenantId` | `string` | Tenant ID |
 | `body?` | [`PlanReservation`](../interfaces/Auth_api.PlanReservation.md) |  |
-| `options?` | `AxiosRequestConfig`\<`any`\> | Override http request option. |
+| `options?` | `AxiosRequestConfig`\<`any`, `any`\> | Override http request option. |
 
 #### Returns
 
-`Promise`\<`AxiosResponse`\<`void`, `any`\>\>
+`Promise`\<`AxiosResponse`\<`void`, `any`, {}, `any`\>\>
 
 **`Summary`**
 
@@ -539,4 +539,4 @@ TenantApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:8663](https://github.com/saasus-platform/saasus-sdk-javascript/blob/7a3a70e/src/generated/Auth/api.ts#L8663)
+[src/generated/Auth/api.ts:9345](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L9345)
