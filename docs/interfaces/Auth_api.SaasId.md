@@ -28,7 +28,7 @@ SaasId
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1794](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1794)
+[src/generated/Auth/api.ts:1824](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1824)
 
 ___
 
@@ -44,7 +44,7 @@ SaasId
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1800](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1800)
+[src/generated/Auth/api.ts:1830](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1830)
 
 ___
 
@@ -58,4 +58,4 @@ SaasId
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1788](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1788)
+[src/generated/Auth/api.ts:1818](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1818)

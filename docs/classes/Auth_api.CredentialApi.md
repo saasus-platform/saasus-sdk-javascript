@@ -59,7 +59,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/base.ts#L52)
 
 ## Properties
 
@@ -73,7 +73,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L52)
+[src/generated/Auth/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/base.ts#L52)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/base.ts#L50)
+[src/generated/Auth/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/base.ts#L50)
 
 ## Methods
 
@@ -134,7 +134,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4541](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4541)
+[src/generated/Auth/api.ts:4571](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L4571)
 
 ___
 
@@ -167,7 +167,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4553)
+[src/generated/Auth/api.ts:4583](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L4583)
 
 ___
 
@@ -202,7 +202,7 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4567](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4567)
+[src/generated/Auth/api.ts:4597](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L4597)
 
 ___
 
@@ -235,4 +235,4 @@ CredentialApi
 
 #### Defined in
 
-[src/generated/Auth/api.ts:4579](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L4579)
+[src/generated/Auth/api.ts:4609](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L4609)

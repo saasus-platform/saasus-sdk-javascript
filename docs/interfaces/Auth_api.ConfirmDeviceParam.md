@@ -33,7 +33,7 @@ ConfirmDeviceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:332](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L332)
+[src/generated/Auth/api.ts:362](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L362)
 
 ___
 
@@ -49,7 +49,7 @@ ConfirmDeviceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:338](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L338)
+[src/generated/Auth/api.ts:368](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L368)
 
 ___
 
@@ -65,7 +65,7 @@ ConfirmDeviceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:344](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L344)
+[src/generated/Auth/api.ts:374](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L374)
 
 ___
 
@@ -79,4 +79,4 @@ ConfirmDeviceParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L350)
+[src/generated/Auth/api.ts:380](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L380)

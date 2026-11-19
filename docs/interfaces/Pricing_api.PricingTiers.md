@@ -26,4 +26,4 @@ PricingTiers
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1179)
+[src/generated/Pricing/api.ts:1179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1179)

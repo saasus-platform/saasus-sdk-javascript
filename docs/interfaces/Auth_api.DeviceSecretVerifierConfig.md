@@ -31,7 +31,7 @@ DeviceSecretVerifierConfig
 
 #### Defined in
 
-[src/generated/Auth/api.ts:882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L882)
+[src/generated/Auth/api.ts:912](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L912)
 
 ___
 
@@ -47,4 +47,4 @@ DeviceSecretVerifierConfig
 
 #### Defined in
 
-[src/generated/Auth/api.ts:888](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L888)
+[src/generated/Auth/api.ts:918](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L918)

@@ -32,7 +32,7 @@ PricingPlanProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:680](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L680)
+[src/generated/Pricing/api.ts:680](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L680)
 
 ___
 
@@ -48,7 +48,7 @@ PricingPlanProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:674](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L674)
+[src/generated/Pricing/api.ts:674](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L674)
 
 ___
 
@@ -64,7 +64,7 @@ PricingPlanProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L668)
+[src/generated/Pricing/api.ts:668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L668)
 
 ___
 
@@ -78,7 +78,7 @@ PricingPlanProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:692](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L692)
+[src/generated/Pricing/api.ts:692](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L692)
 
 ___
 
@@ -94,4 +94,4 @@ PricingPlanProps
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:686](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L686)
+[src/generated/Pricing/api.ts:686](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L686)

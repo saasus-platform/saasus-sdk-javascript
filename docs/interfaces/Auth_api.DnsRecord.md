@@ -30,7 +30,7 @@ DnsRecord
 
 #### Defined in
 
-[src/generated/Auth/api.ts:907](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L907)
+[src/generated/Auth/api.ts:937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L937)
 
 ___
 
@@ -46,7 +46,7 @@ DnsRecord
 
 #### Defined in
 
-[src/generated/Auth/api.ts:901](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L901)
+[src/generated/Auth/api.ts:931](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L931)
 
 ___
 
@@ -62,4 +62,4 @@ DnsRecord
 
 #### Defined in
 
-[src/generated/Auth/api.ts:913](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L913)
+[src/generated/Auth/api.ts:943](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L943)

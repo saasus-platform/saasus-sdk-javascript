@@ -31,7 +31,7 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3082](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3082)
+[src/generated/Auth/api.ts:3112](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3112)
 
 ___
 
@@ -45,7 +45,7 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3070](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3070)
+[src/generated/Auth/api.ts:3100](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3100)
 
 ___
 
@@ -61,7 +61,7 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3076](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3076)
+[src/generated/Auth/api.ts:3106](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3106)
 
 ___
 
@@ -77,4 +77,4 @@ UserAvailableEnv
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3088](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3088)
+[src/generated/Auth/api.ts:3118](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3118)

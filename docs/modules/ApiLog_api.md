@@ -52,7 +52,7 @@ ApiLogApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L249)
+[src/generated/ApiLog/api.ts:249](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L249)
 
 ___
 
@@ -83,7 +83,7 @@ ApiLogApi - factory interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:401](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L401)
+[src/generated/ApiLog/api.ts:401](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L401)
 
 ___
 
@@ -112,7 +112,7 @@ ApiLogApi - functional programming interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L364)
+[src/generated/ApiLog/api.ts:364](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L364)
 
 ___
 
@@ -140,7 +140,7 @@ ErrorApi - axios parameter creator
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:474](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L474)
+[src/generated/ApiLog/api.ts:474](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L474)
 
 ___
 
@@ -170,7 +170,7 @@ ErrorApi - factory interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L537)
+[src/generated/ApiLog/api.ts:537](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L537)
 
 ___
 
@@ -198,4 +198,4 @@ ErrorApi - functional programming interface
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:517](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L517)
+[src/generated/ApiLog/api.ts:517](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L517)

@@ -137,6 +137,18 @@ export interface BasicInfo {
      */
     'is_dns_validated': boolean;
     /**
+     * Domain setup status. Pending means validation or configuration is in progress; action_required means user action is needed; completed means configuration has been accepted.
+     * @type {string}
+     * @memberof BasicInfo
+     */
+    'domain_setup_status'?: BasicInfoDomainSetupStatusEnum;
+    /**
+     * Reason domain setup is incomplete. Omitted when no known reason is available. DNS validation may still be pending while records propagate. Failed or timed-out certificate requests require resubmitting the domain settings after correcting DNS.
+     * @type {string}
+     * @memberof BasicInfo
+     */
+    'domain_setup_reason_code'?: BasicInfoDomainSetupReasonCodeEnum;
+    /**
      *
      * @type {DnsRecord}
      * @memberof BasicInfo
@@ -179,6 +191,20 @@ export interface BasicInfo {
      */
     'is_ses_sandbox_granted': boolean;
 }
+export declare const BasicInfoDomainSetupStatusEnum: {
+    readonly DomainSetupPending: "pending";
+    readonly DomainSetupActionRequired: "action_required";
+    readonly DomainSetupCompleted: "completed";
+};
+export type BasicInfoDomainSetupStatusEnum = typeof BasicInfoDomainSetupStatusEnum[keyof typeof BasicInfoDomainSetupStatusEnum];
+export declare const BasicInfoDomainSetupReasonCodeEnum: {
+    readonly CnameAlreadyExists: "CNAME_ALREADY_EXISTS";
+    readonly CertificateValidationTimedOut: "CERTIFICATE_VALIDATION_TIMED_OUT";
+    readonly CertificateCaaError: "CERTIFICATE_CAA_ERROR";
+    readonly CertificatePendingValidation: "CERTIFICATE_PENDING_VALIDATION";
+    readonly CloudfrontDnsNotConfigured: "CLOUDFRONT_DNS_NOT_CONFIGURED";
+};
+export type BasicInfoDomainSetupReasonCodeEnum = typeof BasicInfoDomainSetupReasonCodeEnum[keyof typeof BasicInfoDomainSetupReasonCodeEnum];
 /**
  *
  * @export

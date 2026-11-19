@@ -33,7 +33,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:506](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L506)
+[src/generated/Pricing/api.ts:506](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L506)
 
 ___
 
@@ -49,7 +49,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:500](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L500)
+[src/generated/Pricing/api.ts:500](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L500)
 
 ___
 
@@ -65,7 +65,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:488](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L488)
+[src/generated/Pricing/api.ts:488](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L488)
 
 ___
 
@@ -81,7 +81,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:494](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L494)
+[src/generated/Pricing/api.ts:494](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L494)
 
 ___
 
@@ -95,7 +95,7 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L518)
+[src/generated/Pricing/api.ts:518](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L518)
 
 ___
 
@@ -111,4 +111,4 @@ PricingMenu
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:512](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L512)
+[src/generated/Pricing/api.ts:512](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L512)

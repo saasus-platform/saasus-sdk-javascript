@@ -17,6 +17,8 @@ BasicInfo
 - [default\_domain\_name](Auth_api.BasicInfo.md#default_domain_name)
 - [dkim\_dns\_records](Auth_api.BasicInfo.md#dkim_dns_records)
 - [domain\_name](Auth_api.BasicInfo.md#domain_name)
+- [domain\_setup\_reason\_code](Auth_api.BasicInfo.md#domain_setup_reason_code)
+- [domain\_setup\_status](Auth_api.BasicInfo.md#domain_setup_status)
 - [from\_email\_address](Auth_api.BasicInfo.md#from_email_address)
 - [is\_dns\_validated](Auth_api.BasicInfo.md#is_dns_validated)
 - [is\_ses\_sandbox\_granted](Auth_api.BasicInfo.md#is_ses_sandbox_granted)
@@ -34,7 +36,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:161](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L161)
+[src/generated/Auth/api.ts:173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L173)
 
 ___
 
@@ -48,7 +50,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L167)
+[src/generated/Auth/api.ts:179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L179)
 
 ___
 
@@ -64,7 +66,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:179](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L179)
+[src/generated/Auth/api.ts:191](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L191)
 
 ___
 
@@ -80,7 +82,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:173](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L173)
+[src/generated/Auth/api.ts:185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L185)
 
 ___
 
@@ -96,7 +98,39 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L149)
+[src/generated/Auth/api.ts:149](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L149)
+
+___
+
+### domain\_setup\_reason\_code
+
+• `Optional` **domain\_setup\_reason\_code**: [`BasicInfoDomainSetupReasonCodeEnum`](../modules/Auth_api.md#basicinfodomainsetupreasoncodeenum)
+
+Reason domain setup is incomplete. Omitted when no known reason is available. DNS validation may still be pending while records propagate. Failed or timed-out certificate requests require resubmitting the domain settings after correcting DNS.
+
+**`Memberof`**
+
+BasicInfo
+
+#### Defined in
+
+[src/generated/Auth/api.ts:167](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L167)
+
+___
+
+### domain\_setup\_status
+
+• `Optional` **domain\_setup\_status**: [`BasicInfoDomainSetupStatusEnum`](../modules/Auth_api.md#basicinfodomainsetupstatusenum)
+
+Domain setup status. Pending means validation or configuration is in progress; action_required means user action is needed; completed means configuration has been accepted.
+
+**`Memberof`**
+
+BasicInfo
+
+#### Defined in
+
+[src/generated/Auth/api.ts:161](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L161)
 
 ___
 
@@ -112,7 +146,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:185](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L185)
+[src/generated/Auth/api.ts:197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L197)
 
 ___
 
@@ -128,7 +162,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:155](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L155)
+[src/generated/Auth/api.ts:155](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L155)
 
 ___
 
@@ -144,7 +178,7 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L197)
+[src/generated/Auth/api.ts:209](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L209)
 
 ___
 
@@ -160,4 +194,4 @@ BasicInfo
 
 #### Defined in
 
-[src/generated/Auth/api.ts:191](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L191)
+[src/generated/Auth/api.ts:203](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L203)
