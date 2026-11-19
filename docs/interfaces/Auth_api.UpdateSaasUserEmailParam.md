@@ -28,4 +28,4 @@ UpdateSaasUserEmailParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:2826](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L2826)
+[src/generated/Auth/api.ts:2856](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L2856)

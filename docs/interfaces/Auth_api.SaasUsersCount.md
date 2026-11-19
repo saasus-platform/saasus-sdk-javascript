@@ -29,7 +29,7 @@ SaasUsersCount
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1876](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1876)
+[src/generated/Auth/api.ts:1906](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1906)
 
 ___
 
@@ -45,4 +45,4 @@ SaasUsersCount
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1882](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1882)
+[src/generated/Auth/api.ts:1912](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1912)

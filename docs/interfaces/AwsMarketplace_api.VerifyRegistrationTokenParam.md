@@ -26,4 +26,4 @@ VerifyRegistrationTokenParam
 
 #### Defined in
 
-[src/generated/AwsMarketplace/api.ts:353](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/AwsMarketplace/api.ts#L353)
+[src/generated/AwsMarketplace/api.ts:353](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/AwsMarketplace/api.ts#L353)

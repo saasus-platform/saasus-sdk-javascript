@@ -26,4 +26,4 @@ User
 
 #### Defined in
 
-[src/generated/Communication/api.ts:350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Communication/api.ts#L350)
+[src/generated/Communication/api.ts:350](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Communication/api.ts#L350)

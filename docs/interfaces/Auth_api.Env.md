@@ -32,7 +32,7 @@ Env
 
 #### Defined in
 
-[src/generated/Auth/api.ts:945](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L945)
+[src/generated/Auth/api.ts:975](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L975)
 
 ___
 
@@ -46,7 +46,7 @@ Env
 
 #### Defined in
 
-[src/generated/Auth/api.ts:933](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L933)
+[src/generated/Auth/api.ts:963](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L963)
 
 ___
 
@@ -62,4 +62,4 @@ Env
 
 #### Defined in
 
-[src/generated/Auth/api.ts:939](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L939)
+[src/generated/Auth/api.ts:969](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L969)

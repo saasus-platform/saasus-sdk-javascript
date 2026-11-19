@@ -23,6 +23,8 @@
 - [BasicInfoApiAxiosParamCreator](Auth.md#basicinfoapiaxiosparamcreator)
 - [BasicInfoApiFactory](Auth.md#basicinfoapifactory)
 - [BasicInfoApiFp](Auth.md#basicinfoapifp)
+- [BasicInfoDomainSetupReasonCodeEnum](Auth.md#basicinfodomainsetupreasoncodeenum)
+- [BasicInfoDomainSetupStatusEnum](Auth.md#basicinfodomainsetupstatusenum)
 - [BillingAddress](Auth.md#billingaddress)
 - [BillingInfo](Auth.md#billinginfo)
 - [ChallengeName](Auth.md#challengename)
@@ -307,6 +309,18 @@ ___
 ### BasicInfoApiFp
 
 Re-exports [BasicInfoApiFp](Auth_api.md#basicinfoapifp)
+
+___
+
+### BasicInfoDomainSetupReasonCodeEnum
+
+Re-exports [BasicInfoDomainSetupReasonCodeEnum](Auth_api.md#basicinfodomainsetupreasoncodeenum-1)
+
+___
+
+### BasicInfoDomainSetupStatusEnum
+
+Re-exports [BasicInfoDomainSetupStatusEnum](Auth_api.md#basicinfodomainsetupstatusenum-1)
 
 ___
 

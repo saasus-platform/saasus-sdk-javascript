@@ -38,7 +38,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3038](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3038)
+[src/generated/Auth/api.ts:3068](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3068)
 
 ___
 
@@ -54,7 +54,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3026](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3026)
+[src/generated/Auth/api.ts:3056](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3056)
 
 ___
 
@@ -68,7 +68,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3044](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3044)
+[src/generated/Auth/api.ts:3074](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3074)
 
 ___
 
@@ -84,7 +84,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3008](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3008)
+[src/generated/Auth/api.ts:3038](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3038)
 
 ___
 
@@ -100,7 +100,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3032](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3032)
+[src/generated/Auth/api.ts:3062](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3062)
 
 ___
 
@@ -114,7 +114,7 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3014](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3014)
+[src/generated/Auth/api.ts:3044](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3044)
 
 ___
 
@@ -130,4 +130,4 @@ User
 
 #### Defined in
 
-[src/generated/Auth/api.ts:3020](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L3020)
+[src/generated/Auth/api.ts:3050](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L3050)
