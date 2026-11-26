@@ -1,18 +1,21 @@
-import { createRequest, RequestOptions } from "node-mocks-http";
 import getAxiosInstance from "../src/modules/interceptor";
-import { InternalAxiosRequestConfig } from "axios";
 import hmacSHA256 from "crypto-js/hmac-sha256";
 import Hex from "crypto-js/enc-hex";
 import date from "date-and-time";
+
+const { version }: { version: string } = require("../package.json");
 
 describe("getAxiosInstance", () => {
   const OLD_ENV = process.env;
 
   beforeEach(() => {
     jest.resetModules();
-    process.env.SAASUS_SECRET_KEY = "SAASUS_SECRET_KEY";
-    process.env.SAASUS_SAAS_ID = "SAASUS_SAAS_ID";
-    process.env.SAASUS_API_KEY = "SAASUS_API_KEY";
+    process.env = {
+      ...OLD_ENV,
+      SAASUS_SECRET_KEY: "SAASUS_SECRET_KEY",
+      SAASUS_SAAS_ID: "SAASUS_SAAS_ID",
+      SAASUS_API_KEY: "SAASUS_API_KEY",
+    };
   });
 
   afterEach(() => {
@@ -21,37 +24,37 @@ describe("getAxiosInstance", () => {
   });
 
   it("return the same Authorization header when requests fulfilled", async () => {
-    const options: RequestOptions = {
-      method: "GET",
-      url: "https://api.dev.saasus.io/v1/auth/userinfo?token=token",
-      query: {
-        token: "token",
-      },
-    };
-    const request = createRequest(options);
-
+    const url = "https://api.dev.saasus.io/v1/auth/userinfo?token=token";
     const instance = getAxiosInstance("https://api.dev.saasus.io/v1/auth");
-
-    // @ts-expect-error handlersでdoesn't exist エラーが出るため
-    const fulfilledReq: InternalAxiosRequestConfig = instance.interceptors.request.handlers[0].fulfilled(request);
-
     const now = date.format(new Date(), "YYYYMMDDHHmm", true);
     const secret = process.env.SAASUS_SECRET_KEY || "";
     const apiKey = process.env.SAASUS_API_KEY || "";
-    const path = options.url?.split("//")[1];
-    const body = options.data ? options.data : "";
+    const path = url.split("//")[1];
     const hash = Hex.stringify(
       hmacSHA256(
-        now + apiKey + options.method?.toUpperCase() + path + body,
+        now + apiKey + "GET" + path,
         secret
       )
     );
     const header = `SAASUSSIGV1 Sig=${hash}, SaaSID=${process.env.SAASUS_SAAS_ID}, APIKey=${process.env.SAASUS_API_KEY}`;
 
-    expect(fulfilledReq.headers).toEqual(
-      expect.objectContaining({
-        Authorization: header,
-      })
-    );
+    const response = await instance.get(url, {
+      adapter: async (config) => ({ config, status: 200, statusText: "OK", headers: {}, data: {} }),
+    });
+    expect(response.config.headers.get("Authorization")).toBe(header);
+  });
+
+  const product = `SaaSus-SDK-javascript/${version}`;
+  it.each([
+    [undefined, product],
+    ["Example/1.0", `Example/1.0 ${product}`],
+    [`Example/1.0 ${product}`, `Example/1.0 ${product}`],
+  ])("sends the SDK identifier with User-Agent %s", async (userAgent, expected) => {
+    const instance = getAxiosInstance("http://example.test");
+    const response = await instance.get("http://example.test/v1/auth/userinfo", {
+      headers: { "user-agent": userAgent },
+      adapter: async (config) => ({ config, status: 200, statusText: "OK", headers: {}, data: {} }),
+    });
+    expect(response.config.headers.get("User-Agent")).toBe(expected);
   });
 });

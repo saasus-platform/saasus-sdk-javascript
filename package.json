@@ -11,6 +11,7 @@
     "dist"
   ],
   "scripts": {
+    "version": "node scripts/update-version.cjs",
     "test": "jest",
     "build": "rollup -c",
     "clean": "rimraf dist",

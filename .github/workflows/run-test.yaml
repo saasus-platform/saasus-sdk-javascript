@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - run: node scripts/update-version.cjs --check
       - run: npm install
       - run: npm run build
       - run: npm run test
