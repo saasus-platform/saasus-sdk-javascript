@@ -33,7 +33,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:234](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L234)
+[src/generated/Auth/api.ts:264](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L264)
 
 ___
 
@@ -49,7 +49,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:216](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L216)
+[src/generated/Auth/api.ts:246](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L246)
 
 ___
 
@@ -65,7 +65,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:228](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L228)
+[src/generated/Auth/api.ts:258](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L258)
 
 ___
 
@@ -81,7 +81,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:240](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L240)
+[src/generated/Auth/api.ts:270](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L270)
 
 ___
 
@@ -97,7 +97,7 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:222](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L222)
+[src/generated/Auth/api.ts:252](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L252)
 
 ___
 
@@ -113,4 +113,4 @@ BillingAddress
 
 #### Defined in
 
-[src/generated/Auth/api.ts:210](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L210)
+[src/generated/Auth/api.ts:240](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L240)

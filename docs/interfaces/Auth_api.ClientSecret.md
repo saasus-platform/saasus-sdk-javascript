@@ -28,4 +28,4 @@ ClientSecret
 
 #### Defined in
 
-[src/generated/Auth/api.ts:306](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L306)
+[src/generated/Auth/api.ts:336](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L336)

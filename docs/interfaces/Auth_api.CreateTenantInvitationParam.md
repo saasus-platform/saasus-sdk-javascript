@@ -30,7 +30,7 @@ CreateTenantInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:553](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L553)
+[src/generated/Auth/api.ts:583](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L583)
 
 ___
 
@@ -46,7 +46,7 @@ CreateTenantInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:547](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L547)
+[src/generated/Auth/api.ts:577](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L577)
 
 ___
 
@@ -60,4 +60,4 @@ CreateTenantInvitationParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:559](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L559)
+[src/generated/Auth/api.ts:589](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L589)

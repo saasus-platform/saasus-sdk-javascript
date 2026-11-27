@@ -69,7 +69,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/base.ts#L52)
 
 ## Properties
 
@@ -83,7 +83,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L52)
+[src/generated/Pricing/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/base.ts#L52)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/base.ts#L50)
+[src/generated/Pricing/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/base.ts#L50)
 
 ## Methods
 
@@ -144,7 +144,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2829](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2829)
+[src/generated/Pricing/api.ts:2829](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2829)
 
 ___
 
@@ -177,7 +177,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2841](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2841)
+[src/generated/Pricing/api.ts:2841](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2841)
 
 ___
 
@@ -212,7 +212,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2855](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2855)
+[src/generated/Pricing/api.ts:2855](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2855)
 
 ___
 
@@ -247,7 +247,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2869](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2869)
+[src/generated/Pricing/api.ts:2869](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2869)
 
 ___
 
@@ -283,7 +283,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2884)
+[src/generated/Pricing/api.ts:2884](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2884)
 
 ___
 
@@ -317,7 +317,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2897)
+[src/generated/Pricing/api.ts:2897](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2897)
 
 ___
 
@@ -351,7 +351,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2910](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2910)
+[src/generated/Pricing/api.ts:2910](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2910)
 
 ___
 
@@ -386,7 +386,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2924](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2924)
+[src/generated/Pricing/api.ts:2924](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2924)
 
 ___
 
@@ -420,7 +420,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2937)
+[src/generated/Pricing/api.ts:2937](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2937)
 
 ___
 
@@ -454,7 +454,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2950](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2950)
+[src/generated/Pricing/api.ts:2950](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2950)
 
 ___
 
@@ -486,7 +486,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2961](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2961)
+[src/generated/Pricing/api.ts:2961](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2961)
 
 ___
 
@@ -520,7 +520,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2974](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2974)
+[src/generated/Pricing/api.ts:2974](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2974)
 
 ___
 
@@ -556,7 +556,7 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:2989](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L2989)
+[src/generated/Pricing/api.ts:2989](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L2989)
 
 ___
 
@@ -591,4 +591,4 @@ MeteringApi
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:3003](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L3003)
+[src/generated/Pricing/api.ts:3003](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L3003)

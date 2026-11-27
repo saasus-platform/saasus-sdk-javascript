@@ -27,7 +27,7 @@ InvitedUserEnvironmentInformationInner
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1181](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1181)
+[src/generated/Auth/api.ts:1211](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1211)
 
 ___
 
@@ -43,4 +43,4 @@ InvitedUserEnvironmentInformationInner
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1187](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1187)
+[src/generated/Auth/api.ts:1217](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1217)

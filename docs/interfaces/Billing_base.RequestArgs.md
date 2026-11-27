@@ -23,7 +23,7 @@ RequestArgs
 
 #### Defined in
 
-[src/generated/Billing/base.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/base.ts#L41)
+[src/generated/Billing/base.ts:41](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Billing/base.ts#L41)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Billing/base.ts:40](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Billing/base.ts#L40)
+[src/generated/Billing/base.ts:40](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Billing/base.ts#L40)

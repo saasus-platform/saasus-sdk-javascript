@@ -24,7 +24,7 @@ Update method add: Addition sub: Subtraction direct: Overwrite
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1668)
+[src/generated/Pricing/api.ts:1668](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1668)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1670](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1670)
+[src/generated/Pricing/api.ts:1670](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1670)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1669)
+[src/generated/Pricing/api.ts:1669](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1669)

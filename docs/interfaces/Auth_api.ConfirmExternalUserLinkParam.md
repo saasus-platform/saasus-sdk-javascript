@@ -27,7 +27,7 @@ ConfirmExternalUserLinkParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:395](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L395)
+[src/generated/Auth/api.ts:425](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L425)
 
 ___
 
@@ -41,4 +41,4 @@ ConfirmExternalUserLinkParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:401](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L401)
+[src/generated/Auth/api.ts:431](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L431)

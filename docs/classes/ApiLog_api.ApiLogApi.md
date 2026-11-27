@@ -57,7 +57,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/base.ts#L52)
 
 ## Properties
 
@@ -71,7 +71,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/base.ts#L52)
+[src/generated/ApiLog/base.ts:52](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/base.ts#L52)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/base.ts#L50)
+[src/generated/ApiLog/base.ts:50](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/base.ts#L50)
 
 ## Methods
 
@@ -132,7 +132,7 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:447](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L447)
+[src/generated/ApiLog/api.ts:447](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L447)
 
 ___
 
@@ -170,4 +170,4 @@ ApiLogApi
 
 #### Defined in
 
-[src/generated/ApiLog/api.ts:464](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/ApiLog/api.ts#L464)
+[src/generated/ApiLog/api.ts:464](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/ApiLog/api.ts#L464)

@@ -31,7 +31,7 @@ PricingUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1339)
+[src/generated/Pricing/api.ts:1339](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1339)
 
 ___
 
@@ -47,7 +47,7 @@ PricingUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1345](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1345)
+[src/generated/Pricing/api.ts:1345](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1345)
 
 ___
 
@@ -61,7 +61,7 @@ PricingUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1351)
+[src/generated/Pricing/api.ts:1351](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1351)
 
 ___
 
@@ -75,4 +75,4 @@ PricingUsageUnitAllOf
 
 #### Defined in
 
-[src/generated/Pricing/api.ts:1357](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Pricing/api.ts#L1357)
+[src/generated/Pricing/api.ts:1357](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Pricing/api.ts#L1357)

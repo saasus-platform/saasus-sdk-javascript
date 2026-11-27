@@ -32,7 +32,7 @@ CreateAuthCredentialsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:445](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L445)
+[src/generated/Auth/api.ts:475](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L475)
 
 ___
 
@@ -48,7 +48,7 @@ CreateAuthCredentialsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:457](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L457)
+[src/generated/Auth/api.ts:487](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L487)
 
 ___
 
@@ -64,7 +64,7 @@ CreateAuthCredentialsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:463](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L463)
+[src/generated/Auth/api.ts:493](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L493)
 
 ___
 
@@ -80,7 +80,7 @@ CreateAuthCredentialsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:439](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L439)
+[src/generated/Auth/api.ts:469](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L469)
 
 ___
 
@@ -96,4 +96,4 @@ CreateAuthCredentialsParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:451](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L451)
+[src/generated/Auth/api.ts:481](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L481)

@@ -23,7 +23,7 @@ Language of invoice
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1197](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1197)
+[src/generated/Auth/api.ts:1227](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1227)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1196](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1196)
+[src/generated/Auth/api.ts:1226](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1226)

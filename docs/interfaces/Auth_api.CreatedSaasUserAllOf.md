@@ -28,4 +28,4 @@ CreatedSaasUserAllOf
 
 #### Defined in
 
-[src/generated/Auth/api.ts:653](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L653)
+[src/generated/Auth/api.ts:683](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L683)

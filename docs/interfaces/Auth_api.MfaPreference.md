@@ -29,7 +29,7 @@ MfaPreference
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1279](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1279)
+[src/generated/Auth/api.ts:1309](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1309)
 
 ___
 
@@ -45,4 +45,4 @@ MfaPreference
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1285](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1285)
+[src/generated/Auth/api.ts:1315](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1315)

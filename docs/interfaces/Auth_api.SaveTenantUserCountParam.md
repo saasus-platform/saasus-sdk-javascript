@@ -29,7 +29,7 @@ SaveTenantUserCountParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1914](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1914)
+[src/generated/Auth/api.ts:1944](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1944)
 
 ___
 
@@ -43,4 +43,4 @@ SaveTenantUserCountParam
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1908](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1908)
+[src/generated/Auth/api.ts:1938](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1938)

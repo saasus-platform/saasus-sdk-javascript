@@ -29,7 +29,7 @@ SearchSaasUsersResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1946](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1946)
+[src/generated/Auth/api.ts:1976](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1976)
 
 ___
 
@@ -43,4 +43,4 @@ SearchSaasUsersResult
 
 #### Defined in
 
-[src/generated/Auth/api.ts:1940](https://github.com/saasus-platform/saasus-sdk-javascript/blob/354d362/src/generated/Auth/api.ts#L1940)
+[src/generated/Auth/api.ts:1970](https://github.com/saasus-platform/saasus-sdk-javascript/blob/f226248/src/generated/Auth/api.ts#L1970)
